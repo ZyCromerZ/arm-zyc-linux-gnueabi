@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2021-10-07" "gcc-12.0.0" "GNU"
+.TH GCC 1 "2021-10-12" "gcc-12.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -3113,7 +3113,7 @@ errors if these functions are not inlined everywhere they are called.
 .IP "\fB\-fno\-modules\-ts\fR" 4
 .IX Item "-fno-modules-ts"
 .PD
-Enable support for \*(C+20 modules   The
+Enable support for \*(C+20 modules.  The
 \&\fB\-fno\-modules\-ts\fR is usually not needed, as that is the
 default.  Even though this is a \*(C+20 feature, it is not currently
 implicitly enabled by selecting that standard version.
@@ -9683,9 +9683,12 @@ also turns on the following optimization flags:
 \&\-fstrict\-aliasing 
 \&\-fthread\-jumps 
 \&\-ftree\-builtin\-call\-dce 
+\&\-ftree\-loop\-vectorize 
 \&\-ftree\-pre 
+\&\-ftree\-slp\-vectorize 
 \&\-ftree\-switch\-conversion  \-ftree\-tail\-merge 
-\&\-ftree\-vrp\fR
+\&\-ftree\-vrp 
+\&\-fvect\-cost\-model=very\-cheap\fR
 .Sp
 Please note the warning under \fB\-fgcse\fR about
 invoking \fB\-O2\fR on programs that use computed gotos.
@@ -9703,11 +9706,8 @@ by \fB\-O2\fR and also turns on the following optimization flags:
 \&\-fsplit\-loops 
 \&\-fsplit\-paths 
 \&\-ftree\-loop\-distribution 
-\&\-ftree\-loop\-vectorize 
 \&\-ftree\-partial\-pre 
-\&\-ftree\-slp\-vectorize 
 \&\-funswitch\-loops 
-\&\-fvect\-cost\-model 
 \&\-fvect\-cost\-model=dynamic 
 \&\-fversion\-loops\-for\-strides\fR
 .IP "\fB\-O0\fR" 4
@@ -14240,7 +14240,8 @@ The option cannot be combined with \fB\-fsanitize=thread\fR.
 .IX Item "-fsanitize=undefined"
 Enable UndefinedBehaviorSanitizer, a fast undefined behavior detector.
 Various computations are instrumented to detect undefined behavior
-at runtime.  Current suboptions are:
+at runtime.  See <\fBhttps://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html\fR> for more details.   The run-time behavior can be influenced using the
+\&\fB\s-1UBSAN_OPTIONS\s0\fR environment variable.  Current suboptions are:
 .RS 4
 .IP "\fB\-fsanitize=shift\fR" 4
 .IX Item "-fsanitize=shift"

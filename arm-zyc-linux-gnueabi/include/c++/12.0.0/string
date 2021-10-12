@@ -68,9 +68,7 @@ _GLIBCXX_BEGIN_NAMESPACE_VERSION
 #endif
     using u16string = basic_string<char16_t>;
     using u32string = basic_string<char32_t>;
-#ifdef _GLIBCXX_USE_WCHAR_T
     using wstring   = basic_string<wchar_t>;
-#endif
   } // namespace pmr
 
   template<typename _Str>
@@ -100,12 +98,10 @@ _GLIBCXX_BEGIN_NAMESPACE_VERSION
     struct hash<pmr::u32string>
     : public __hash_string_base<pmr::u32string>
     { };
-#ifdef _GLIBCXX_USE_WCHAR_T
   template<>
     struct hash<pmr::wstring>
     : public __hash_string_base<pmr::wstring>
     { };
-#endif
 
 _GLIBCXX_END_NAMESPACE_VERSION
 } // namespace std
@@ -124,12 +120,11 @@ _GLIBCXX_BEGIN_NAMESPACE_VERSION
     erase_if(basic_string<_CharT, _Traits, _Alloc>& __cont, _Predicate __pred)
     {
       using namespace __gnu_cxx;
-      using _It = typename basic_string<_CharT, _Traits, _Alloc>::iterator;
       const auto __osz = __cont.size();
-      _It __removed(std::__remove_if(std::__niter_base(__cont.begin()),
-				      std::__niter_base(__cont.end()),
-				      __ops::__pred_iter(std::ref(__pred))));
-      __cont.erase(__removed, __cont.end());
+      const auto __end = __cont.end();
+      auto __removed = std::__remove_if(__cont.begin(), __end,
+					__ops::__pred_iter(std::ref(__pred)));
+      __cont.erase(__removed, __end);
       return __osz - __cont.size();
     }
 
@@ -138,12 +133,11 @@ _GLIBCXX_BEGIN_NAMESPACE_VERSION
     erase(basic_string<_CharT, _Traits, _Alloc>& __cont, const _Up& __value)
     {
       using namespace __gnu_cxx;
-      using _It = typename basic_string<_CharT, _Traits, _Alloc>::iterator;
       const auto __osz = __cont.size();
-      _It __removed(std::__remove_if(std::__niter_base(__cont.begin()),
-				      std::__niter_base(__cont.end()),
-				      __ops::__iter_equals_val(__value)));
-      __cont.erase(__removed, __cont.end());
+      const auto __end = __cont.end();
+      auto __removed = std::__remove_if(__cont.begin(), __end,
+					__ops::__iter_equals_val(__value));
+      __cont.erase(__removed, __end);
       return __osz - __cont.size();
     }
 _GLIBCXX_END_NAMESPACE_VERSION
