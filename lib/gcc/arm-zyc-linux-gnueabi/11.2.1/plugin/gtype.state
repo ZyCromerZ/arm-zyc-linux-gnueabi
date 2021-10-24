@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "11.2.1 20211019")
+(!version  "11.2.1 20211024")
 (!srcdir  "../../gcc/gcc")
 (!languages 11 ada brig c cp d fortran go jit lto objc objcp)
 (!fileslist 227
@@ -27401,7 +27401,7 @@
    (!type already_seen 1962)
   )
   gc_pointed_to "cp_parser"
-  (!srcfileloc  "cp/parser.c" 44859)
+  (!srcfileloc  "cp/parser.c" 44861)
   (!fields 38 
    (!pair  "lexer"
     (!type already_seen 1948)
@@ -29950,7 +29950,7 @@
   nil )
  (!pair  "cp_parser"
   (!type already_seen 1962)
-  (!srcfileloc  "cp/parser.c" 44859)
+  (!srcfileloc  "cp/parser.c" 44861)
   nil )
  (!pair  "iter_t"
   (!type already_seen 2123)
@@ -34390,11 +34390,11 @@
   nil )
  (!pair  "generic_parm_count"
   (!type already_seen 2)
-  (!srcfileloc  "cp/parser.c" 45351)
+  (!srcfileloc  "cp/parser.c" 45353)
   nil )
  (!pair  "the_parser"
   (!type already_seen 1963)
-  (!srcfileloc  "cp/parser.c" 44859)
+  (!srcfileloc  "cp/parser.c" 44861)
   nil )
  (!pair  "cp_parser_decl_specs_attrs"
   (!type already_seen 84)
@@ -34409,14 +34409,14 @@
  )
  (!pair  "free_saved_scope"
   (!type already_seen 1899)
-  (!srcfileloc  "cp/name-lookup.c" 8388)
+  (!srcfileloc  "cp/name-lookup.c" 8390)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "free_binding_level"
   (!type already_seen 82)
-  (!srcfileloc  "cp/name-lookup.c" 4256)
+  (!srcfileloc  "cp/name-lookup.c" 4258)
   (!options 
    (!option deletable string  "")
   )
@@ -34578,11 +34578,11 @@
   nil )
  (!pair  "start_cleanup_cnt"
   (!type already_seen 2)
-  (!srcfileloc  "cp/decl.c" 9016)
+  (!srcfileloc  "cp/decl.c" 9017)
   nil )
  (!pair  "decomp_type_table"
   (!type already_seen 923)
-  (!srcfileloc  "cp/decl.c" 8469)
+  (!srcfileloc  "cp/decl.c" 8470)
   (!options 
    (!option cache string  "")
   )
