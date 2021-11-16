@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2021-11-03" "gcc-11.2.1" "GNU"
+.TH GCC 1 "2021-11-16" "gcc-11.2.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -26035,7 +26035,7 @@ Supported values for \fIcpu_type\fR are \fB401\fR, \fB403\fR,
 \&\fBe6500\fR, \fBec603e\fR, \fBG3\fR, \fBG4\fR, \fBG5\fR,
 \&\fBtitan\fR, \fBpower3\fR, \fBpower4\fR, \fBpower5\fR, \fBpower5+\fR,
 \&\fBpower6\fR, \fBpower6x\fR, \fBpower7\fR, \fBpower8\fR,
-\&\fBpower9\fR, \fBfuture\fR, \fBpowerpc\fR, \fBpowerpc64\fR,
+\&\fBpower9\fR, \fBpower10\fR, \fBpowerpc\fR, \fBpowerpc64\fR,
 \&\fBpowerpc64le\fR, \fBrs64\fR, and \fBnative\fR.
 .Sp
 \&\fB\-mcpu=powerpc\fR, \fB\-mcpu=powerpc64\fR, and
@@ -26222,10 +26222,9 @@ Enable/disable the \fI_\|_float128\fR keyword for \s-1IEEE\s0 128\-bit floating 
 and use either software emulation for \s-1IEEE\s0 128\-bit floating point or
 hardware instructions.
 .Sp
-The \s-1VSX\s0 instruction set (\fB\-mvsx\fR, \fB\-mcpu=power7\fR,
-\&\fB\-mcpu=power8\fR), or \fB\-mcpu=power9\fR must be enabled to
-use the \s-1IEEE\s0 128\-bit floating point support.  The \s-1IEEE\s0 128\-bit
-floating point support only works on PowerPC Linux systems.
+The \s-1VSX\s0 instruction set (\fB\-mvsx\fR) must be enabled to use the \s-1IEEE\s0
+128\-bit floating point support.  The \s-1IEEE\s0 128\-bit floating point is only
+supported on Linux.
 .Sp
 The default for \fB\-mfloat128\fR is enabled on PowerPC Linux
 systems using the \s-1VSX\s0 instruction set, and disabled on other systems.
@@ -27062,10 +27061,9 @@ the offset with a symbol reference to a canary in the \s-1TLS\s0 block.
 .IP "\fB\-mno\-pcrel\fR" 4
 .IX Item "-mno-pcrel"
 .PD
-Generate (do not generate) pc-relative addressing when the option
-\&\fB\-mcpu=future\fR is used.  The \fB\-mpcrel\fR option requires
-that the medium code model (\fB\-mcmodel=medium\fR) and prefixed
-addressing (\fB\-mprefixed\fR) options are enabled.
+Generate (do not generate) pc-relative addressing.  The \fB\-mpcrel\fR
+option requires that the medium code model (\fB\-mcmodel=medium\fR)
+and prefixed addressing (\fB\-mprefixed\fR) options are enabled.
 .IP "\fB\-mprefixed\fR" 4
 .IX Item "-mprefixed"
 .PD 0
@@ -27073,15 +27071,17 @@ addressing (\fB\-mprefixed\fR) options are enabled.
 .IX Item "-mno-prefixed"
 .PD
 Generate (do not generate) addressing modes using prefixed load and
-store instructions when the option \fB\-mcpu=future\fR is used.
+store instructions.  The \fB\-mprefixed\fR option requires that
+the option \fB\-mcpu=power10\fR (or later) is enabled.
 .IP "\fB\-mmma\fR" 4
 .IX Item "-mmma"
 .PD 0
 .IP "\fB\-mno\-mma\fR" 4
 .IX Item "-mno-mma"
 .PD
-Generate (do not generate) the \s-1MMA\s0 instructions when the option
-\&\fB\-mcpu=future\fR is used.
+Generate (do not generate) the \s-1MMA\s0 instructions.  The \fB\-mma\fR
+option requires that the option \fB\-mcpu=power10\fR (or later)
+is enabled.
 .IP "\fB\-mrop\-protect\fR" 4
 .IX Item "-mrop-protect"
 .PD 0
