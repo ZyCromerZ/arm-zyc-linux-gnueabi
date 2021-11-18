@@ -83,7 +83,7 @@ along with GCC; see the file COPYING3.  If not see
 	  /* After CCP we rewrite no longer addressed locals into SSA
 	     form if possible.  */
 	  NEXT_PASS (pass_forwprop, 1);
-          NEXT_PASS (pass_early_thread_jumps, 1);
+          NEXT_PASS_WITH_ARG (pass_early_thread_jumps, 1, /*first=*/true);
 	  NEXT_PASS (pass_sra_early, 1);
 	  /* pass_build_ealias is a dummy pass that ensures that we
 	     execute TODO_rebuild_alias at this point.  */
@@ -94,13 +94,13 @@ along with GCC; see the file COPYING3.  If not see
           NEXT_PASS (pass_dse, 1);
 	  NEXT_PASS_WITH_ARG (pass_cd_dce, 1, false /* update_address_taken_p */);
 	  NEXT_PASS_WITH_ARG (pass_phiopt, 1, true /* early_p */);
-	  NEXT_PASS (pass_modref, 1);
 	  NEXT_PASS (pass_tail_recursion, 1);
 	  NEXT_PASS (pass_if_to_switch, 1);
 	  NEXT_PASS (pass_convert_switch, 1);
 	  NEXT_PASS (pass_cleanup_eh, 1);
 	  NEXT_PASS (pass_profile, 1);
 	  NEXT_PASS (pass_local_pure_const, 1);
+	  NEXT_PASS (pass_modref, 1);
 	  /* Split functions creates parts that are not run through
 	     early optimizations again.  It is thus good idea to do this
 	      late.  */
@@ -212,9 +212,8 @@ along with GCC; see the file COPYING3.  If not see
       NEXT_PASS (pass_return_slot, 1);
       NEXT_PASS_WITH_ARG (pass_fre, 3, true /* may_iterate */);
       NEXT_PASS (pass_merge_phi, 2);
-      NEXT_PASS (pass_thread_jumps, 1);
+      NEXT_PASS_WITH_ARG (pass_thread_jumps_full, 1, /*first=*/true);
       NEXT_PASS_WITH_ARG (pass_vrp, 1, true /* warn_array_bounds_p */);
-      NEXT_PASS (pass_vrp_threader, 1);
       NEXT_PASS (pass_dse, 2);
       NEXT_PASS (pass_dce, 2);
       /* pass_stdarg is always run and at this point we execute
@@ -236,7 +235,7 @@ along with GCC; see the file COPYING3.  If not see
 	 propagations have already run, but before some more dead code
 	 is removed, and this place fits nicely.  Remember this when
 	 trying to move or duplicate pass_dominator somewhere earlier.  */
-      NEXT_PASS (pass_thread_jumps, 2);
+      NEXT_PASS_WITH_ARG (pass_thread_jumps, 1, /*first=*/true);
       NEXT_PASS_WITH_ARG (pass_dominator, 2, true /* may_peel_loop_headers_p */);
       /* Threading can leave many const/copy propagations in the IL.
 	 Clean them up.  Failure to do so well can lead to false
@@ -335,12 +334,11 @@ along with GCC; see the file COPYING3.  If not see
       NEXT_PASS_WITH_ARG (pass_fre, 5, false /* may_iterate */);
       /* After late FRE we rewrite no longer addressed locals into SSA
          form if possible.  */
-      NEXT_PASS (pass_thread_jumps, 3);
+      NEXT_PASS_WITH_ARG (pass_thread_jumps, 2, /*first=*/false);
       NEXT_PASS_WITH_ARG (pass_dominator, 3, false /* may_peel_loop_headers_p */);
       NEXT_PASS (pass_strlen, 1);
-      NEXT_PASS (pass_thread_jumps, 4);
+      NEXT_PASS_WITH_ARG (pass_thread_jumps_full, 2, /*first=*/false);
       NEXT_PASS_WITH_ARG (pass_vrp, 2, false /* warn_array_bounds_p */);
-      NEXT_PASS (pass_vrp_threader, 2);
       /* Run CCP to compute alignment and nonzero bits.  */
       NEXT_PASS_WITH_ARG (pass_ccp, 4, true /* nonzero_p */);
       NEXT_PASS (pass_warn_restrict, 1);
@@ -364,9 +362,11 @@ along with GCC; see the file COPYING3.  If not see
          number of false positives from it.  */
       NEXT_PASS (pass_split_crit_edges, 1);
       NEXT_PASS (pass_late_warn_uninitialized, 1);
-      NEXT_PASS (pass_uncprop, 1);
       NEXT_PASS (pass_local_pure_const, 2);
       NEXT_PASS (pass_modref, 2);
+      /* uncprop replaces constants by SSA names.  This makes analysis harder
+	 and thus it should be run last.  */
+      NEXT_PASS (pass_uncprop, 1);
   POP_INSERT_PASSES ()
   NEXT_PASS (pass_all_optimizations_g, 1);
   PUSH_INSERT_PASSES_WITHIN (pass_all_optimizations_g)
@@ -397,9 +397,11 @@ along with GCC; see the file COPYING3.  If not see
          number of false positives from it.  */
       NEXT_PASS (pass_split_crit_edges, 2);
       NEXT_PASS (pass_late_warn_uninitialized, 2);
-      NEXT_PASS (pass_uncprop, 2);
       NEXT_PASS (pass_local_pure_const, 3);
       NEXT_PASS (pass_modref, 3);
+      /* uncprop replaces constants by SSA names.  This makes analysis harder
+	 and thus it should be run last.  */
+      NEXT_PASS (pass_uncprop, 2);
   POP_INSERT_PASSES ()
   NEXT_PASS (pass_tm_init, 1);
   PUSH_INSERT_PASSES_WITHIN (pass_tm_init)

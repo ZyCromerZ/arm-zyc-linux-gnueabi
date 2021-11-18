@@ -295,7 +295,7 @@ construct
 'align' clause/modifier in 'allocate'       P       C/C++ on clause
 directive/clause and 'allocator'                    only
 directive
-'thread_limit' clause to 'target'           N
+'thread_limit' clause to 'target'           Y
 construct
 'has_device_addr' clause to 'target'        N
 construct
