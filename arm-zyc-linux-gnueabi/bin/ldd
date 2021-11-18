@@ -24,9 +24,9 @@
 
 # We should be able to find the translation right at the beginning.
 TEXTDOMAIN=libc
-TEXTDOMAINDIR=/drone/src/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/share/locale
+TEXTDOMAINDIR=/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/share/locale
 
-RTLDLIST=/drone/src/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/lib/ld-linux.so.3
+RTLDLIST=/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/lib/ld-linux.so.3
 warn=
 bind_now=
 verbose=

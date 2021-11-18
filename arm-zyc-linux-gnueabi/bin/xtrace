@@ -17,8 +17,8 @@
 # License along with the GNU C Library; if not, see
 # <https://www.gnu.org/licenses/>.
 
-pcprofileso='/drone/src/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/\$LIB/libpcprofile.so'
-pcprofiledump='/drone/src/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/bin/pcprofiledump'
+pcprofileso='/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/\$LIB/libpcprofile.so'
+pcprofiledump='/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/bin/pcprofiledump'
 TEXTDOMAIN=libc
 
 # Print usage message.

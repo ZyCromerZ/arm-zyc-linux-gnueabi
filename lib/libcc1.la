@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/drone/src/arm-zyc-linux-gnueabi/lib/../lib'
+libdir='/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/lib/../lib'
