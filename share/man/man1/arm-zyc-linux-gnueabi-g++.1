@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2021-11-18" "gcc-12.0.0" "GNU"
+.TH GCC 1 "2021-11-21" "gcc-12.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -1435,7 +1435,8 @@ See \s-1RS/6000\s0 and PowerPC Options.
 \&\fB\-mstack\-protector\-guard\-symbol=\fR\fIsymbol\fR 
 \&\fB\-mgeneral\-regs\-only  \-mcall\-ms2sysv\-xlogues \-mrelax\-cmpxchg\-loop 
 \&\-mindirect\-branch=\fR\fIchoice\fR  \fB\-mfunction\-return=\fR\fIchoice\fR 
-\&\fB\-mindirect\-branch\-register \-mharden\-sls=\fR\fIchoice\fR \fB\-mneeded\fR
+\&\fB\-mindirect\-branch\-register \-mharden\-sls=\fR\fIchoice\fR 
+\&\fB\-mindirect\-branch\-cs\-prefix \-mneeded\fR
 .Sp
 \&\fIx86 Windows Options\fR
 \&\fB\-mconsole  \-mcygwin  \-mno\-cygwin  \-mdll 
@@ -1908,7 +1909,8 @@ named \fIdir/bar.*\fR, combining the given \fIdumppfx\fR with the
 default \fIdumpbase\fR derived from the primary output name.  Dump
 outputs also take the input name suffix: \fIdir/bar.c.*\fR.
 .Sp
-It defaults to the location of the output file; options
+It defaults to the location of the output file, unless the output
+file is a special file like \f(CW\*(C`/dev/null\*(C'\fR. Options
 \&\fB\-save\-temps=cwd\fR and \fB\-save\-temps=obj\fR override this
 default, just like an explicit \fB\-dumpdir\fR option.  In case
 multiple such options are given, the last one prevails:
@@ -6604,6 +6606,18 @@ Note that there may be no warning about a variable that is used only
 to compute a value that itself is never used, because such
 computations may be deleted by data flow analysis before the warnings
 are printed.
+.Sp
+In \*(C+, this warning also warns about using uninitialized objects in
+member-initializer-lists.  For example, \s-1GCC\s0 warns about \f(CW\*(C`b\*(C'\fR being
+uninitialized in the following snippet:
+.Sp
+.Vb 5
+\&        struct A {
+\&          int a;
+\&          int b;
+\&          A() : a(b) { }
+\&        };
+.Ve
 .IP "\fB\-Wno\-invalid\-memory\-model\fR" 4
 .IX Item "-Wno-invalid-memory-model"
 This option controls warnings
@@ -8150,6 +8164,8 @@ suppressed by casting the pointer operand to an integer type such
 as \f(CW\*(C`inptr_t\*(C'\fR or \f(CW\*(C`uinptr_t\*(C'\fR.
 Comparisons against string literals result in unspecified behavior
 and are not portable, and suggest the intent was to call \f(CW\*(C`strcmp\*(C'\fR.
+The warning is suppressed if the suspicious expression is the result
+of macro expansion.
 \&\fB\-Waddress\fR warning is enabled by \fB\-Wall\fR.
 .IP "\fB\-Wno\-address\-of\-packed\-member\fR" 4
 .IX Item "-Wno-address-of-packed-member"
@@ -9873,6 +9889,7 @@ valid for all standard-compliant programs.
 It turns on \fB\-ffast\-math\fR, \fB\-fallow\-store\-data\-races\fR
 and the Fortran-specific \fB\-fstack\-arrays\fR, unless
 \&\fB\-fmax\-stack\-var\-size\fR is specified, and \fB\-fno\-protect\-parens\fR.
+It turns off \fB\-fsemantic\-interposition\fR.
 .IP "\fB\-Og\fR" 4
 .IX Item "-Og"
 Optimize debugging experience.  \fB\-Og\fR should be the optimization
@@ -31214,6 +31231,12 @@ Generate code to mitigate against straight line speculation (\s-1SLS\s0) with
 hardening.  \fBreturn\fR enables \s-1SLS\s0 hardening for function return.
 \&\fBindirect-branch\fR enables \s-1SLS\s0 hardening for indirect branch.
 \&\fBall\fR enables all \s-1SLS\s0 hardening.
+.IP "\fB\-mindirect\-branch\-cs\-prefix\fR" 4
+.IX Item "-mindirect-branch-cs-prefix"
+Add \s-1CS\s0 prefix to call and jmp to indirect thunk with branch target in
+r8\-r15 registers so that the call and jmp instruction length is 6 bytes
+to allow them to be replaced with \fBlfence; call *%r8\-r15\fR or
+\&\fBlfence; jmp *%r8\-r15\fR at run-time.
 .PP
 These \fB\-m\fR switches are supported in addition to the above
 on x86\-64 processors in 64\-bit environments.

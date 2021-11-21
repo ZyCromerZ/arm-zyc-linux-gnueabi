@@ -8284,6 +8284,7 @@ struct GTY(()) cl_optimization
   signed char x_flag_sel_sched_reschedule_pipelined;
   signed char x_flag_selective_scheduling;
   signed char x_flag_selective_scheduling2;
+  signed char x_flag_semantic_interposition;
   signed char x_flag_short_enums;
   signed char x_flag_short_wchar;
   signed char x_flag_shrink_wrap;
@@ -8364,7 +8365,7 @@ struct GTY(()) cl_optimization
   signed char x_flag_wrapv;
   signed char x_flag_wrapv_pointer;
   signed char x_debug_nonbind_markers_p;
-  /* 487 members */
+  /* 488 members */
   unsigned HOST_WIDE_INT explicit_mask[8];
 };
 
