@@ -1,0 +1,5 @@
+/* GNU ld script
+   Use the shared library, but some functions are only in
+   the static library, so try that secondarily.  */
+OUTPUT_FORMAT(elf32-littlearm)
+GROUP ( /__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/lib/libc.so.6 /__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/lib/libc_nonshared.a  AS_NEEDED ( /__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/lib/ld-linux.so.3 ) )
