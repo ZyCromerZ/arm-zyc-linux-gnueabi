@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2021-11-18" "gcc-11.2.1" "GNU"
+.TH GCC 1 "2021-11-24" "gcc-11.2.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -1894,7 +1894,8 @@ named \fIdir/bar.*\fR, combining the given \fIdumppfx\fR with the
 default \fIdumpbase\fR derived from the primary output name.  Dump
 outputs also take the input name suffix: \fIdir/bar.c.*\fR.
 .Sp
-It defaults to the location of the output file; options
+It defaults to the location of the output file, unless the output
+file is a special file like \f(CW\*(C`/dev/null\*(C'\fR. Options
 \&\fB\-save\-temps=cwd\fR and \fB\-save\-temps=obj\fR override this
 default, just like an explicit \fB\-dumpdir\fR option.  In case
 multiple such options are given, the last one prevails:
