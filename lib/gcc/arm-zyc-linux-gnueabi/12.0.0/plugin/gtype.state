@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.0 20211202 (experimental)")
+(!version  "12.0.0 20211203 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 230 0
@@ -17651,33 +17651,33 @@
    (!type already_seen 888)
   )
   gc_pointed_to "coverage_data"
-  (!srcfileloc  "coverage.c" 65)
+  (!srcfileloc  "coverage.c" 66)
   (!fields 6 
    (!pair  "next"
     (!type already_seen 889)
-    (!srcfileloc  "coverage.c" 59)
+    (!srcfileloc  "coverage.c" 60)
     nil )
    (!pair  "ident"
     (!type already_seen 2)
-    (!srcfileloc  "coverage.c" 60)
+    (!srcfileloc  "coverage.c" 61)
     nil )
    (!pair  "lineno_checksum"
     (!type already_seen 2)
-    (!srcfileloc  "coverage.c" 61)
+    (!srcfileloc  "coverage.c" 62)
     nil )
    (!pair  "cfg_checksum"
     (!type already_seen 2)
-    (!srcfileloc  "coverage.c" 62)
+    (!srcfileloc  "coverage.c" 63)
     nil )
    (!pair  "fn_decl"
     (!type already_seen 23)
-    (!srcfileloc  "coverage.c" 63)
+    (!srcfileloc  "coverage.c" 64)
     nil )
    (!pair  "ctr_vars"
     (!type array 890 nil  gc_used "GCOV_COUNTERS" 
      (!type already_seen 23)
     )
-    (!srcfileloc  "coverage.c" 64)
+    (!srcfileloc  "coverage.c" 65)
     nil )
   )
   (!options 
@@ -27649,7 +27649,7 @@
    (!type already_seen 1965)
   )
   gc_pointed_to "tinst_level"
-  (!srcfileloc  "cp/pt.c" 9484)
+  (!srcfileloc  "cp/pt.c" 9485)
   (!fields 8 
    (!pair  "next"
     (!type already_seen 1966)
@@ -29542,7 +29542,7 @@
    (!type already_seen 2174)
   )
   gc_pointed_to "pending_template"
-  (!srcfileloc  "cp/pt.c" 9493)
+  (!srcfileloc  "cp/pt.c" 9494)
   (!fields 2 
    (!pair  "next"
     (!type already_seen 2175)
@@ -29614,15 +29614,15 @@
    (!type already_seen 2187)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.c" 29506)
+  (!srcfileloc  "cp/pt.c" 29507)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 531)
-    (!srcfileloc  "cp/pt.c" 29506)
+    (!srcfileloc  "cp/pt.c" 29507)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.c" 29506)
+    (!srcfileloc  "cp/pt.c" 29507)
     nil )
   )
  )
@@ -30763,15 +30763,15 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2187)
-  (!srcfileloc  "cp/pt.c" 29506)
+  (!srcfileloc  "cp/pt.c" 29507)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2174)
-  (!srcfileloc  "cp/pt.c" 9493)
+  (!srcfileloc  "cp/pt.c" 9494)
   nil )
  (!pair  "tinst_level"
   (!type already_seen 1965)
-  (!srcfileloc  "cp/pt.c" 9484)
+  (!srcfileloc  "cp/pt.c" 9485)
   nil )
  (!pair  "spec_hash_table"
   (!type already_seen 2177)
@@ -31427,7 +31427,7 @@
   nil )
  (!pair  "builtin_type"
   (!type already_seen 2)
-  (!srcfileloc  "ada/gcc-interface/utils.c" 6149)
+  (!srcfileloc  "ada/gcc-interface/utils.c" 6146)
   nil )
  (!pair  "pad_type_hasher"
   (!type already_seen 1854)
@@ -31475,7 +31475,7 @@
   nil )
  (!pair  "vinfo_t"
   (!type already_seen 1833)
-  (!srcfileloc  "ada/gcc-interface/decl.c" 7840)
+  (!srcfileloc  "ada/gcc-interface/decl.c" 7846)
   nil )
  (!pair  "intrin_binding_t"
   (!type already_seen 1831)
@@ -31519,7 +31519,7 @@
   nil )
  (!pair  "rewrite_fn"
   (!type already_seen 2)
-  (!srcfileloc  "ada/gcc-interface/gigi.h" 965)
+  (!srcfileloc  "ada/gcc-interface/gigi.h" 964)
   nil )
  (!pair  "builtin_arg"
   (!type already_seen 2)
@@ -35284,60 +35284,60 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2188)
-  (!srcfileloc  "cp/pt.c" 29506)
+  (!srcfileloc  "cp/pt.c" 29507)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "explicit_specifier_map"
   (!type already_seen 926)
-  (!srcfileloc  "cp/pt.c" 13787)
+  (!srcfileloc  "cp/pt.c" 13788)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "defarg_inst"
   (!type already_seen 926)
-  (!srcfileloc  "cp/pt.c" 13671)
+  (!srcfileloc  "cp/pt.c" 13672)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "last_error_tinst_level"
   (!type already_seen 1966)
-  (!srcfileloc  "cp/pt.c" 10953)
+  (!srcfileloc  "cp/pt.c" 10954)
   nil )
  (!pair  "pending_template_freelist_head"
   (!type already_seen 2175)
-  (!srcfileloc  "cp/pt.c" 9493)
+  (!srcfileloc  "cp/pt.c" 9494)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tinst_level_freelist_head"
   (!type already_seen 1966)
-  (!srcfileloc  "cp/pt.c" 9484)
+  (!srcfileloc  "cp/pt.c" 9485)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tree_list_freelist_head"
   (!type already_seen 23)
-  (!srcfileloc  "cp/pt.c" 9475)
+  (!srcfileloc  "cp/pt.c" 9476)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "defaulted_ttp_cache"
   (!type already_seen 392)
-  (!srcfileloc  "cp/pt.c" 7779)
+  (!srcfileloc  "cp/pt.c" 7780)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tparm_obj_values"
   (!type already_seen 392)
-  (!srcfileloc  "cp/pt.c" 7126)
+  (!srcfileloc  "cp/pt.c" 7127)
   nil )
  (!pair  "canonical_template_parms"
   (!type already_seen 84)
@@ -36037,17 +36037,17 @@
   (!type array 2340 nil  gc_used "(int) ATTR_LAST" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "ada/gcc-interface/utils.c" 6319)
+  (!srcfileloc  "ada/gcc-interface/utils.c" 6316)
   nil )
  (!pair  "builtin_types"
   (!type array 2341 nil  gc_used "(int) BT_LAST + 1" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "ada/gcc-interface/utils.c" 6152)
+  (!srcfileloc  "ada/gcc-interface/utils.c" 6149)
   nil )
  (!pair  "dummy_global"
   (!type already_seen 23)
-  (!srcfileloc  "ada/gcc-interface/utils.c" 5905)
+  (!srcfileloc  "ada/gcc-interface/utils.c" 5902)
   nil )
  (!pair  "pad_type_hash_table"
   (!type already_seen 1856)
@@ -37545,25 +37545,25 @@
   nil )
  (!pair  "gcov_fn_info_ptr_type"
   (!type already_seen 23)
-  (!srcfileloc  "coverage.c" 102)
+  (!srcfileloc  "coverage.c" 103)
   nil )
  (!pair  "gcov_fn_info_type"
   (!type already_seen 23)
-  (!srcfileloc  "coverage.c" 101)
+  (!srcfileloc  "coverage.c" 102)
   nil )
  (!pair  "gcov_info_var"
   (!type already_seen 23)
-  (!srcfileloc  "coverage.c" 100)
+  (!srcfileloc  "coverage.c" 101)
   nil )
  (!pair  "fn_v_ctrs"
   (!type array 2365 nil  gc_used "GCOV_COUNTERS" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "coverage.c" 95)
+  (!srcfileloc  "coverage.c" 96)
   nil )
  (!pair  "functions_head"
   (!type already_seen 889)
-  (!srcfileloc  "coverage.c" 86)
+  (!srcfileloc  "coverage.c" 87)
   nil )
  (!pair  "thumb_call_via_label"
   (!type array 2366 nil  gc_used "14" 
