@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.0 20211204 (experimental)")
+(!version  "12.0.0 20211205 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 230 0
@@ -27968,19 +27968,19 @@
   (!fields 4 
    (!pair  "decl"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8292)
+    (!srcfileloc  "cp/cp-tree.h" 8293)
     nil )
    (!pair  "body"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8293)
+    (!srcfileloc  "cp/cp-tree.h" 8294)
     nil )
    (!pair  "parms"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8294)
+    (!srcfileloc  "cp/cp-tree.h" 8295)
     nil )
    (!pair  "result"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8295)
+    (!srcfileloc  "cp/cp-tree.h" 8296)
     nil )
   )
   (!options 
@@ -35260,7 +35260,7 @@
   nil )
  (!pair  "deleted_copy_types"
   (!type already_seen 463)
-  (!srcfileloc  "cp/tree.c" 4342)
+  (!srcfileloc  "cp/tree.c" 4354)
   nil )
  (!pair  "list_hash_table"
   (!type already_seen 2204)
@@ -35775,7 +35775,7 @@
  )
  (!pair  "cv_cache"
   (!type already_seen 393)
-  (!srcfileloc  "cp/constexpr.c" 7737)
+  (!srcfileloc  "cp/constexpr.c" 7864)
   (!options 
    (!option deletable string  "")
   )
