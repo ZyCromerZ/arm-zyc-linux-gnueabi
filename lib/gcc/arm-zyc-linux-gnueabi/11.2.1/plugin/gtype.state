@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "11.2.1 20211126")
+(!version  "11.2.1 20211207")
 (!srcdir  "../../gcc/gcc")
 (!languages 11 ada brig c cp d fortran go jit lto objc objcp)
 (!fileslist 227
@@ -13594,49 +13594,49 @@
                            (!type struct 579 
                             (!type already_seen 578)
                             gc_pointed_to "target_rtl"
-                            (!srcfileloc  "rtl.h" 3896)
+                            (!srcfileloc  "rtl.h" 3904)
                             (!fields 8 
                              (!pair  "x_global_rtl"
                               (!type array 580 nil  gc_used "GR_MAX" 
                                (!type already_seen 100)
                               )
-                              (!srcfileloc  "rtl.h" 3868)
+                              (!srcfileloc  "rtl.h" 3876)
                               nil )
                              (!pair  "x_pic_offset_table_rtx"
                               (!type already_seen 100)
-                              (!srcfileloc  "rtl.h" 3871)
+                              (!srcfileloc  "rtl.h" 3879)
                               nil )
                              (!pair  "x_return_address_pointer_rtx"
                               (!type already_seen 100)
-                              (!srcfileloc  "rtl.h" 3876)
+                              (!srcfileloc  "rtl.h" 3884)
                               nil )
                              (!pair  "x_initial_regno_reg_rtx"
                               (!type array 581 nil  gc_used "FIRST_PSEUDO_REGISTER" 
                                (!type already_seen 100)
                               )
-                              (!srcfileloc  "rtl.h" 3882)
+                              (!srcfileloc  "rtl.h" 3890)
                               nil )
                              (!pair  "x_top_of_stack"
                               (!type array 582 nil  gc_used "MAX_MACHINE_MODE" 
                                (!type already_seen 100)
                               )
-                              (!srcfileloc  "rtl.h" 3885)
+                              (!srcfileloc  "rtl.h" 3893)
                               nil )
                              (!pair  "x_static_reg_base_value"
                               (!type array 583 nil  gc_used "FIRST_PSEUDO_REGISTER" 
                                (!type already_seen 100)
                               )
-                              (!srcfileloc  "rtl.h" 3889)
+                              (!srcfileloc  "rtl.h" 3897)
                               nil )
                              (!pair  "x_mode_mem_attrs"
                               (!type array 584 nil  gc_used "(int) MAX_MACHINE_MODE" 
                                (!type already_seen 226)
                               )
-                              (!srcfileloc  "rtl.h" 3892)
+                              (!srcfileloc  "rtl.h" 3900)
                               nil )
                              (!pair  "target_specific_initialized"
                               (!type already_seen 2)
-                              (!srcfileloc  "rtl.h" 3895)
+                              (!srcfileloc  "rtl.h" 3903)
                               nil )
                             )
                             nil 2047 nil nil )
@@ -16999,15 +16999,15 @@
      (!type struct 821 
       (!type already_seen 820)
       gc_pointed_to "cgraph_rtl_info"
-      (!srcfileloc  "rtl.h" 4536)
+      (!srcfileloc  "rtl.h" 4544)
       (!fields 2 
        (!pair  "preferred_incoming_stack_boundary"
         (!type already_seen 2)
-        (!srcfileloc  "rtl.h" 4531)
+        (!srcfileloc  "rtl.h" 4539)
         nil )
        (!pair  "function_used_regs"
         (!type already_seen 2)
-        (!srcfileloc  "rtl.h" 4535)
+        (!srcfileloc  "rtl.h" 4543)
         nil )
       )
       nil 2047 nil nil )
@@ -22406,23 +22406,23 @@
   nil 0 nil nil )
  
  (!type struct 1340 nil  gc_pointed_to "inline_entry_data"
-  (!srcfileloc  "dwarf2out.c" 23876)
+  (!srcfileloc  "dwarf2out.c" 23879)
   (!fields 4 
    (!pair  "block"
     (!type already_seen 23)
-    (!srcfileloc  "dwarf2out.c" 23868)
+    (!srcfileloc  "dwarf2out.c" 23871)
     nil )
    (!pair  "label_pfx"
     (!type already_seen 11)
-    (!srcfileloc  "dwarf2out.c" 23871)
+    (!srcfileloc  "dwarf2out.c" 23874)
     nil )
    (!pair  "label_num"
     (!type already_seen 2)
-    (!srcfileloc  "dwarf2out.c" 23872)
+    (!srcfileloc  "dwarf2out.c" 23875)
     nil )
    (!pair  "view"
     (!type already_seen 2)
-    (!srcfileloc  "dwarf2out.c" 23875)
+    (!srcfileloc  "dwarf2out.c" 23878)
     nil )
   )
   (!options 
@@ -22431,7 +22431,7 @@
   2047 nil nil )
  
  (!type struct 1341 nil  gc_used "inline_entry_data_hasher"
-  (!srcfileloc  "dwarf2out.c" 23902)
+  (!srcfileloc  "dwarf2out.c" 23905)
   (!fields 0 )
   nil 2047 nil nil )
  
@@ -22440,26 +22440,26 @@
    (!type already_seen 1342)
   )
   gc_pointed_to "hash_table<inline_entry_data_hasher>"
-  (!srcfileloc  "dwarf2out.c" 23902)
+  (!srcfileloc  "dwarf2out.c" 23905)
   (!fields 1 
    (!pair  "inline_entry_data_hasher"
     (!type already_seen 1341)
-    (!srcfileloc  "dwarf2out.c" 23902)
+    (!srcfileloc  "dwarf2out.c" 23905)
     nil )
   )
  )
  
  (!type struct 1344 nil  gc_unused "macinfo_entry_hasher"
-  (!srcfileloc  "dwarf2out.c" 28439)
+  (!srcfileloc  "dwarf2out.c" 28442)
   (!fields 0 )
   nil 2047 nil nil )
  
  (!type user_struct 1345 nil  gc_unused "hash_table<macinfo_entry_hasher>"
-  (!srcfileloc  "dwarf2out.c" 28439)
+  (!srcfileloc  "dwarf2out.c" 28442)
   (!fields 1 
    (!pair  "macinfo_entry_hasher"
     (!type already_seen 1344)
-    (!srcfileloc  "dwarf2out.c" 28439)
+    (!srcfileloc  "dwarf2out.c" 28442)
     nil )
   )
  )
@@ -22469,16 +22469,16 @@
   nil 0 nil nil )
  
  (!type struct 1347 nil  gc_unused "loc_list_hasher"
-  (!srcfileloc  "dwarf2out.c" 31449)
+  (!srcfileloc  "dwarf2out.c" 31452)
   (!fields 0 )
   nil 2047 nil nil )
  
  (!type user_struct 1348 nil  gc_unused "hash_table<loc_list_hasher>"
-  (!srcfileloc  "dwarf2out.c" 31449)
+  (!srcfileloc  "dwarf2out.c" 31452)
   (!fields 1 
    (!pair  "loc_list_hasher"
     (!type already_seen 1347)
-    (!srcfileloc  "dwarf2out.c" 31449)
+    (!srcfileloc  "dwarf2out.c" 31452)
     nil )
   )
  )
@@ -24311,27 +24311,27 @@
   nil 0 nil nil )
  
  (!type struct 1589 nil  gc_used "omp_declare_variant_entry"
-  (!srcfileloc  "omp-general.c" 1887)
+  (!srcfileloc  "omp-general.c" 1893)
   (!fields 5 
    (!pair  "variant"
     (!type already_seen 802)
-    (!srcfileloc  "omp-general.c" 1868)
+    (!srcfileloc  "omp-general.c" 1874)
     nil )
    (!pair  "score"
     (!type already_seen 2)
-    (!srcfileloc  "omp-general.c" 1870)
+    (!srcfileloc  "omp-general.c" 1876)
     nil )
    (!pair  "score_in_declare_simd_clone"
     (!type already_seen 2)
-    (!srcfileloc  "omp-general.c" 1872)
+    (!srcfileloc  "omp-general.c" 1878)
     nil )
    (!pair  "ctx"
     (!type already_seen 23)
-    (!srcfileloc  "omp-general.c" 1874)
+    (!srcfileloc  "omp-general.c" 1880)
     nil )
    (!pair  "matches"
     (!type already_seen 2)
-    (!srcfileloc  "omp-general.c" 1876)
+    (!srcfileloc  "omp-general.c" 1882)
     nil )
   )
   nil 2047 nil nil )
@@ -24341,33 +24341,33 @@
    (!type already_seen 1590)
   )
   gc_pointed_to "vec<omp_declare_variant_entry,va_gc>"
-  (!srcfileloc  "omp-general.c" 1887)
+  (!srcfileloc  "omp-general.c" 1893)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 79)
-    (!srcfileloc  "omp-general.c" 1887)
+    (!srcfileloc  "omp-general.c" 1893)
     nil )
    (!pair  "omp_declare_variant_entry"
     (!type already_seen 1589)
-    (!srcfileloc  "omp-general.c" 1887)
+    (!srcfileloc  "omp-general.c" 1893)
     nil )
   )
  )
  
  (!type struct 1592 nil  gc_pointed_to "omp_declare_variant_base_entry"
-  (!srcfileloc  "omp-general.c" 1888)
+  (!srcfileloc  "omp-general.c" 1894)
   (!fields 3 
    (!pair  "base"
     (!type already_seen 802)
-    (!srcfileloc  "omp-general.c" 1882)
+    (!srcfileloc  "omp-general.c" 1888)
     nil )
    (!pair  "node"
     (!type already_seen 802)
-    (!srcfileloc  "omp-general.c" 1885)
+    (!srcfileloc  "omp-general.c" 1891)
     nil )
    (!pair  "variants"
     (!type already_seen 1591)
-    (!srcfileloc  "omp-general.c" 1887)
+    (!srcfileloc  "omp-general.c" 1893)
     nil )
   )
   (!options 
@@ -24376,7 +24376,7 @@
   2047 nil nil )
  
  (!type struct 1593 nil  gc_used "omp_declare_variant_hasher"
-  (!srcfileloc  "omp-general.c" 1936)
+  (!srcfileloc  "omp-general.c" 1942)
   (!fields 0 )
   nil 2047 nil nil )
  
@@ -24385,17 +24385,17 @@
    (!type already_seen 1594)
   )
   gc_pointed_to "hash_table<omp_declare_variant_hasher>"
-  (!srcfileloc  "omp-general.c" 1936)
+  (!srcfileloc  "omp-general.c" 1942)
   (!fields 1 
    (!pair  "omp_declare_variant_hasher"
     (!type already_seen 1593)
-    (!srcfileloc  "omp-general.c" 1936)
+    (!srcfileloc  "omp-general.c" 1942)
     nil )
   )
  )
  
  (!type struct 1596 nil  gc_used "omp_declare_variant_alt_hasher"
-  (!srcfileloc  "omp-general.c" 1958)
+  (!srcfileloc  "omp-general.c" 1964)
   (!fields 0 )
   nil 2047 nil nil )
  
@@ -24404,11 +24404,11 @@
    (!type already_seen 1597)
   )
   gc_pointed_to "hash_table<omp_declare_variant_alt_hasher>"
-  (!srcfileloc  "omp-general.c" 1958)
+  (!srcfileloc  "omp-general.c" 1964)
   (!fields 1 
    (!pair  "omp_declare_variant_alt_hasher"
     (!type already_seen 1596)
-    (!srcfileloc  "omp-general.c" 1958)
+    (!srcfileloc  "omp-general.c" 1964)
     nil )
   )
  )
@@ -26840,7 +26840,7 @@
    (!type already_seen 1918)
   )
   gc_pointed_to "tinst_level"
-  (!srcfileloc  "cp/pt.c" 9483)
+  (!srcfileloc  "cp/pt.c" 9484)
   (!fields 8 
    (!pair  "next"
     (!type already_seen 1919)
@@ -27952,19 +27952,19 @@
   nil 0 nil nil )
  
  (!type struct 2021 nil  gc_pointed_to "source_location_table_entry"
-  (!srcfileloc  "cp/cp-gimplify.c" 2890)
+  (!srcfileloc  "cp/cp-gimplify.c" 2949)
   (!fields 3 
    (!pair  "loc"
     (!type already_seen 2)
-    (!srcfileloc  "cp/cp-gimplify.c" 2887)
+    (!srcfileloc  "cp/cp-gimplify.c" 2946)
     nil )
    (!pair  "uid"
     (!type already_seen 2)
-    (!srcfileloc  "cp/cp-gimplify.c" 2888)
+    (!srcfileloc  "cp/cp-gimplify.c" 2947)
     nil )
    (!pair  "var"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-gimplify.c" 2889)
+    (!srcfileloc  "cp/cp-gimplify.c" 2948)
     nil )
   )
   (!options 
@@ -27973,7 +27973,7 @@
   1032 nil nil )
  
  (!type struct 2022 nil  gc_used "source_location_table_entry_hash"
-  (!srcfileloc  "cp/cp-gimplify.c" 2966)
+  (!srcfileloc  "cp/cp-gimplify.c" 3025)
   (!fields 0 )
   nil 1032 nil nil )
  
@@ -27982,11 +27982,11 @@
    (!type already_seen 2023)
   )
   gc_pointed_to "hash_table<source_location_table_entry_hash>"
-  (!srcfileloc  "cp/cp-gimplify.c" 2966)
+  (!srcfileloc  "cp/cp-gimplify.c" 3025)
   (!fields 1 
    (!pair  "source_location_table_entry_hash"
     (!type already_seen 2022)
-    (!srcfileloc  "cp/cp-gimplify.c" 2966)
+    (!srcfileloc  "cp/cp-gimplify.c" 3025)
     nil )
   )
  )
@@ -28709,7 +28709,7 @@
    (!type already_seen 2124)
   )
   gc_pointed_to "pending_template"
-  (!srcfileloc  "cp/pt.c" 9492)
+  (!srcfileloc  "cp/pt.c" 9493)
   (!fields 2 
    (!pair  "next"
     (!type already_seen 2125)
@@ -28781,15 +28781,15 @@
    (!type already_seen 2137)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.c" 29194)
+  (!srcfileloc  "cp/pt.c" 29195)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 530)
-    (!srcfileloc  "cp/pt.c" 29194)
+    (!srcfileloc  "cp/pt.c" 29195)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.c" 29194)
+    (!srcfileloc  "cp/pt.c" 29195)
     nil )
   )
  )
@@ -29922,15 +29922,15 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2137)
-  (!srcfileloc  "cp/pt.c" 29194)
+  (!srcfileloc  "cp/pt.c" 29195)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2124)
-  (!srcfileloc  "cp/pt.c" 9492)
+  (!srcfileloc  "cp/pt.c" 9493)
   nil )
  (!pair  "tinst_level"
   (!type already_seen 1918)
-  (!srcfileloc  "cp/pt.c" 9483)
+  (!srcfileloc  "cp/pt.c" 9484)
   nil )
  (!pair  "spec_hash_table"
   (!type already_seen 2127)
@@ -30218,11 +30218,11 @@
   nil )
  (!pair  "source_location_table_entry_hash"
   (!type already_seen 2022)
-  (!srcfileloc  "cp/cp-gimplify.c" 2966)
+  (!srcfileloc  "cp/cp-gimplify.c" 3025)
   nil )
  (!pair  "hash_table<source_location_table_entry_hash>"
   (!type already_seen 2023)
-  (!srcfileloc  "cp/cp-gimplify.c" 2966)
+  (!srcfileloc  "cp/cp-gimplify.c" 3025)
   nil )
  (!pair  "coroutine_info_hasher"
   (!type already_seen 2003)
@@ -31058,27 +31058,27 @@
   nil )
  (!pair  "omp_declare_variant_alt_hasher"
   (!type already_seen 1596)
-  (!srcfileloc  "omp-general.c" 1958)
+  (!srcfileloc  "omp-general.c" 1964)
   nil )
  (!pair  "hash_table<omp_declare_variant_alt_hasher>"
   (!type already_seen 1597)
-  (!srcfileloc  "omp-general.c" 1958)
+  (!srcfileloc  "omp-general.c" 1964)
   nil )
  (!pair  "omp_declare_variant_hasher"
   (!type already_seen 1593)
-  (!srcfileloc  "omp-general.c" 1936)
+  (!srcfileloc  "omp-general.c" 1942)
   nil )
  (!pair  "hash_table<omp_declare_variant_hasher>"
   (!type already_seen 1594)
-  (!srcfileloc  "omp-general.c" 1936)
+  (!srcfileloc  "omp-general.c" 1942)
   nil )
  (!pair  "omp_declare_variant_entry"
   (!type already_seen 1589)
-  (!srcfileloc  "omp-general.c" 1887)
+  (!srcfileloc  "omp-general.c" 1893)
   nil )
  (!pair  "vec<omp_declare_variant_entry,va_gc>"
   (!type already_seen 1590)
-  (!srcfileloc  "omp-general.c" 1887)
+  (!srcfileloc  "omp-general.c" 1893)
   nil )
  (!pair  "use_optype_p"
   (!type already_seen 401)
@@ -31502,35 +31502,35 @@
   nil )
  (!pair  "loc_list_hash_type"
   (!type already_seen 1348)
-  (!srcfileloc  "dwarf2out.c" 31449)
+  (!srcfileloc  "dwarf2out.c" 31452)
   nil )
  (!pair  "loc_list_hasher"
   (!type already_seen 1347)
-  (!srcfileloc  "dwarf2out.c" 31449)
+  (!srcfileloc  "dwarf2out.c" 31452)
   nil )
  (!pair  "hash_table<loc_list_hasher>"
   (!type already_seen 1348)
-  (!srcfileloc  "dwarf2out.c" 31449)
+  (!srcfileloc  "dwarf2out.c" 31452)
   nil )
  (!pair  "macinfo_hash_type"
   (!type already_seen 1345)
-  (!srcfileloc  "dwarf2out.c" 28439)
+  (!srcfileloc  "dwarf2out.c" 28442)
   nil )
  (!pair  "macinfo_entry_hasher"
   (!type already_seen 1344)
-  (!srcfileloc  "dwarf2out.c" 28439)
+  (!srcfileloc  "dwarf2out.c" 28442)
   nil )
  (!pair  "hash_table<macinfo_entry_hasher>"
   (!type already_seen 1345)
-  (!srcfileloc  "dwarf2out.c" 28439)
+  (!srcfileloc  "dwarf2out.c" 28442)
   nil )
  (!pair  "inline_entry_data_hasher"
   (!type already_seen 1341)
-  (!srcfileloc  "dwarf2out.c" 23902)
+  (!srcfileloc  "dwarf2out.c" 23905)
   nil )
  (!pair  "hash_table<inline_entry_data_hasher>"
   (!type already_seen 1342)
-  (!srcfileloc  "dwarf2out.c" 23902)
+  (!srcfileloc  "dwarf2out.c" 23905)
   nil )
  (!pair  "external_ref_hash_type"
   (!type already_seen 1334)
@@ -32540,15 +32540,15 @@
   nil )
  (!pair  "hash_rtx_callback_function"
   (!type already_seen 2)
-  (!srcfileloc  "rtl.h" 3684)
+  (!srcfileloc  "rtl.h" 3692)
   nil )
  (!pair  "rtx_equal_p_callback_function"
   (!type already_seen 2)
-  (!srcfileloc  "rtl.h" 3679)
+  (!srcfileloc  "rtl.h" 3687)
   nil )
  (!pair  "for_each_inc_dec_fn"
   (!type already_seen 2)
-  (!srcfileloc  "rtl.h" 3675)
+  (!srcfileloc  "rtl.h" 3683)
   nil )
  (!pair  "rtx_to_poly_wide_ref"
   (!type already_seen 907)
@@ -34191,11 +34191,11 @@
   nil )
  (!pair  "d_eh_personality_decl"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-lang.cc" 1691)
+  (!srcfileloc  "d/d-lang.cc" 1695)
   nil )
  (!pair  "d_keep_list"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-lang.cc" 1680)
+  (!srcfileloc  "d/d-lang.cc" 1684)
   nil )
  (!pair  "global_declarations"
   (!type already_seen 84)
@@ -34305,60 +34305,60 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2138)
-  (!srcfileloc  "cp/pt.c" 29194)
+  (!srcfileloc  "cp/pt.c" 29195)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "explicit_specifier_map"
   (!type already_seen 923)
-  (!srcfileloc  "cp/pt.c" 13764)
+  (!srcfileloc  "cp/pt.c" 13765)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "defarg_inst"
   (!type already_seen 923)
-  (!srcfileloc  "cp/pt.c" 13648)
+  (!srcfileloc  "cp/pt.c" 13649)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "last_error_tinst_level"
   (!type already_seen 1919)
-  (!srcfileloc  "cp/pt.c" 10921)
+  (!srcfileloc  "cp/pt.c" 10922)
   nil )
  (!pair  "pending_template_freelist_head"
   (!type already_seen 2125)
-  (!srcfileloc  "cp/pt.c" 9492)
+  (!srcfileloc  "cp/pt.c" 9493)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tinst_level_freelist_head"
   (!type already_seen 1919)
-  (!srcfileloc  "cp/pt.c" 9483)
+  (!srcfileloc  "cp/pt.c" 9484)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tree_list_freelist_head"
   (!type already_seen 23)
-  (!srcfileloc  "cp/pt.c" 9474)
+  (!srcfileloc  "cp/pt.c" 9475)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "defaulted_ttp_cache"
   (!type already_seen 392)
-  (!srcfileloc  "cp/pt.c" 7786)
+  (!srcfileloc  "cp/pt.c" 7787)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tparm_obj_values"
   (!type already_seen 392)
-  (!srcfileloc  "cp/pt.c" 7135)
+  (!srcfileloc  "cp/pt.c" 7136)
   nil )
  (!pair  "canonical_template_parms"
   (!type already_seen 84)
@@ -34615,15 +34615,15 @@
   nil )
  (!pair  "source_location_id"
   (!type already_seen 2)
-  (!srcfileloc  "cp/cp-gimplify.c" 2968)
+  (!srcfileloc  "cp/cp-gimplify.c" 3027)
   nil )
  (!pair  "source_location_table"
   (!type already_seen 2024)
-  (!srcfileloc  "cp/cp-gimplify.c" 2967)
+  (!srcfileloc  "cp/cp-gimplify.c" 3026)
   nil )
  (!pair  "fold_cache"
   (!type already_seen 392)
-  (!srcfileloc  "cp/cp-gimplify.c" 2178)
+  (!srcfileloc  "cp/cp-gimplify.c" 2237)
   (!options 
    (!option deletable string  "")
   )
@@ -34796,7 +34796,7 @@
  )
  (!pair  "cv_cache"
   (!type already_seen 392)
-  (!srcfileloc  "cp/constexpr.c" 7519)
+  (!srcfileloc  "cp/constexpr.c" 7523)
   (!options 
    (!option deletable string  "")
   )
@@ -35438,11 +35438,11 @@
   nil )
  (!pair  "omp_declare_variant_alt"
   (!type already_seen 1598)
-  (!srcfileloc  "omp-general.c" 1959)
+  (!srcfileloc  "omp-general.c" 1965)
   nil )
  (!pair  "omp_declare_variants"
   (!type already_seen 1595)
-  (!srcfileloc  "omp-general.c" 1936)
+  (!srcfileloc  "omp-general.c" 1942)
   nil )
  (!pair  "offload_vars"
   (!type already_seen 84)
@@ -35928,7 +35928,7 @@
   nil )
  (!pair  "inline_entry_data_table"
   (!type already_seen 1343)
-  (!srcfileloc  "dwarf2out.c" 23902)
+  (!srcfileloc  "dwarf2out.c" 23905)
   nil )
  (!pair  "external_die_map"
   (!type already_seen 1328)
@@ -36524,31 +36524,31 @@
   nil )
  (!pair  "stack_limit_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 4466)
+  (!srcfileloc  "rtl.h" 4474)
   nil )
  (!pair  "default_target_rtl"
   (!type already_seen 579)
-  (!srcfileloc  "rtl.h" 3898)
+  (!srcfileloc  "rtl.h" 3906)
   nil )
  (!pair  "invalid_insn_rtx"
   (!type already_seen 295)
-  (!srcfileloc  "rtl.h" 3796)
+  (!srcfileloc  "rtl.h" 3804)
   nil )
  (!pair  "simple_return_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 3795)
+  (!srcfileloc  "rtl.h" 3803)
   nil )
  (!pair  "ret_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 3794)
+  (!srcfileloc  "rtl.h" 3802)
   nil )
  (!pair  "cc0_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 3793)
+  (!srcfileloc  "rtl.h" 3801)
   nil )
  (!pair  "pc_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 3792)
+  (!srcfileloc  "rtl.h" 3800)
   nil )
  (!pair  "const_tiny_rtx"
   (!type array 2311 nil  gc_used "4" 
@@ -36556,17 +36556,17 @@
     (!type already_seen 100)
    )
   )
-  (!srcfileloc  "rtl.h" 3779)
+  (!srcfileloc  "rtl.h" 3787)
   nil )
  (!pair  "const_true_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 3777)
+  (!srcfileloc  "rtl.h" 3785)
   nil )
  (!pair  "const_int_rtx"
   (!type array 2313 nil  gc_used "MAX_SAVED_CONST_INT * 2 + 1" 
    (!type already_seen 100)
   )
-  (!srcfileloc  "rtl.h" 3771)
+  (!srcfileloc  "rtl.h" 3779)
   nil )
  (!pair  "gcov_fn_info_ptr_type"
   (!type already_seen 23)
