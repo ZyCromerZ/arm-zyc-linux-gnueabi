@@ -34,7 +34,7 @@
 #define _GLIBCXX_RELEASE 12
 
 // The datestamp of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20211207
+#define __GLIBCXX__ 20211209
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -575,6 +575,15 @@ namespace std
 #else
 # define __glibcxx_assert(cond) \
   do { __glibcxx_constexpr_assert(cond); } while (false)
+#endif
+
+// Macro indicating that TSAN is in use.
+#if __SANITIZE_THREAD__
+#  define _GLIBCXX_TSAN 1
+#elif defined __has_feature
+# if __has_feature(thread_sanitizer)
+#  define _GLIBCXX_TSAN 1
+# endif
 #endif
 
 // Macros for race detectors.
