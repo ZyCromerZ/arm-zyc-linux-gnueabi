@@ -19,8 +19,8 @@ import gdb
 import os
 import os.path
 
-pythondir = '/drone/src/arm-zyc-linux-gnueabi/share/gcc-11.2.1/python'
-libdir = '/drone/src/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/lib'
+pythondir = '/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/share/gcc-11.2.1/python'
+libdir = '/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/lib'
 
 # This file might be loaded when there is no current objfile.  This
 # can happen if the user loads it manually.  In this case we don't
