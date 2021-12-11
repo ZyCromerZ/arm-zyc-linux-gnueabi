@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.0 20211210 (experimental)")
+(!version  "12.0.0 20211211 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 230 0
@@ -21409,7 +21409,7 @@
   (!fields 1 
    (!pair  "modref_access_node"
     (!type struct 1221 nil  gc_unused "modref_access_node"
-     (!srcfileloc  "ipa-modref-tree.h" 134)
+     (!srcfileloc  "ipa-modref-tree.h" 135)
      (!fields 7 
       (!pair  "offset"
        (!type already_seen 2)
@@ -21711,17 +21711,17 @@
   nil 0 nil nil )
  
  (!type user_struct 1251 nil  gc_unused "modref_ref_node"
-  (!srcfileloc  "ipa-modref-tree.h" 201)
+  (!srcfileloc  "ipa-modref-tree.h" 202)
   (!fields 0 )
  )
  
  (!type user_struct 1252 nil  gc_unused "modref_base_node"
-  (!srcfileloc  "ipa-modref-tree.h" 284)
+  (!srcfileloc  "ipa-modref-tree.h" 285)
   (!fields 0 )
  )
  
  (!type user_struct 1253 nil  gc_unused "modref_tree"
-  (!srcfileloc  "ipa-modref-tree.h" 725)
+  (!srcfileloc  "ipa-modref-tree.h" 726)
   (!fields 0 )
  )
  
@@ -32837,15 +32837,15 @@
   nil )
  (!pair  "modref_tree"
   (!type already_seen 1253)
-  (!srcfileloc  "ipa-modref-tree.h" 725)
+  (!srcfileloc  "ipa-modref-tree.h" 726)
   nil )
  (!pair  "modref_base_node"
   (!type already_seen 1252)
-  (!srcfileloc  "ipa-modref-tree.h" 284)
+  (!srcfileloc  "ipa-modref-tree.h" 285)
   nil )
  (!pair  "modref_ref_node"
   (!type already_seen 1251)
-  (!srcfileloc  "ipa-modref-tree.h" 201)
+  (!srcfileloc  "ipa-modref-tree.h" 202)
   nil )
  (!pair  "modref_summary_lto"
   (!type already_seen 1231)
@@ -35196,11 +35196,11 @@
   nil )
  (!pair  "d_eh_personality_decl"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-lang.cc" 1876)
+  (!srcfileloc  "d/d-lang.cc" 1877)
   nil )
  (!pair  "d_keep_list"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-lang.cc" 1865)
+  (!srcfileloc  "d/d-lang.cc" 1866)
   nil )
  (!pair  "global_declarations"
   (!type already_seen 84)

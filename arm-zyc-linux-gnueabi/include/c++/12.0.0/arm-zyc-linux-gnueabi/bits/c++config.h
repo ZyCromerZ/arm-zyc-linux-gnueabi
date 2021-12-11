@@ -34,7 +34,7 @@
 #define _GLIBCXX_RELEASE 12
 
 // The datestamp of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20211210
+#define __GLIBCXX__ 20211211
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -1546,9 +1546,6 @@ namespace std
    */
 #define LT_OBJDIR ".libs/"
 
-/* Defined if no way to sleep is available. */
-/* #undef NO_SLEEP */
-
 /* Name of package */
 /* #undef _GLIBCXX_PACKAGE */
 
@@ -1667,6 +1664,9 @@ namespace std
 
 /* Define if C99 llrint and llround functions are missing from <math.h>. */
 /* #undef _GLIBCXX_NO_C99_ROUNDING_FUNCS */
+
+/* Defined if no way to sleep is available. */
+/* #undef _GLIBCXX_NO_SLEEP */
 
 /* Define if ptrdiff_t is int. */
 #define _GLIBCXX_PTRDIFF_T_IS_INT 1

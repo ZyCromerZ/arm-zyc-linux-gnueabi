@@ -10135,70 +10135,70 @@ enum opt_code
   OPT_fpreview_fixaliasthis = 1399,          /* -fpreview=fixaliasthis */
   OPT_fpreview_in = 1400,                    /* -fpreview=in */
   OPT_fpreview_inclusiveincontracts = 1401,  /* -fpreview=inclusiveincontracts */
-  OPT_fpreview_intpromote = 1402,            /* -fpreview=intpromote */
-  OPT_fpreview_nosharedaccess = 1403,        /* -fpreview=nosharedaccess */
-  OPT_fpreview_rvaluerefparam = 1404,        /* -fpreview=rvaluerefparam */
-  OPT_fpreview_shortenedmethods = 1405,      /* -fpreview=shortenedmethods */
-  OPT_fprintf_return_value = 1406,           /* -fprintf-return-value */
-  OPT_fprofile = 1407,                       /* -fprofile */
-  OPT_fprofile_abs_path = 1408,              /* -fprofile-abs-path */
-  OPT_fprofile_arcs = 1409,                  /* -fprofile-arcs */
-  OPT_fprofile_correction = 1410,            /* -fprofile-correction */
-  OPT_fprofile_dir_ = 1411,                  /* -fprofile-dir= */
-  OPT_fprofile_exclude_files_ = 1412,        /* -fprofile-exclude-files= */
-  OPT_fprofile_filter_files_ = 1413,         /* -fprofile-filter-files= */
-  OPT_fprofile_generate = 1414,              /* -fprofile-generate */
-  OPT_fprofile_generate_ = 1415,             /* -fprofile-generate= */
-  OPT_fprofile_info_section = 1416,          /* -fprofile-info-section */
-  OPT_fprofile_info_section_ = 1417,         /* -fprofile-info-section= */
-  OPT_fprofile_note_ = 1418,                 /* -fprofile-note= */
-  OPT_fprofile_partial_training = 1419,      /* -fprofile-partial-training */
-  OPT_fprofile_prefix_map_ = 1420,           /* -fprofile-prefix-map= */
-  OPT_fprofile_prefix_path_ = 1421,          /* -fprofile-prefix-path= */
-  OPT_fprofile_reorder_functions = 1422,     /* -fprofile-reorder-functions */
-  OPT_fprofile_report = 1423,                /* -fprofile-report */
-  OPT_fprofile_reproducible_ = 1424,         /* -fprofile-reproducible= */
-  OPT_fprofile_update_ = 1425,               /* -fprofile-update= */
-  OPT_fprofile_use = 1426,                   /* -fprofile-use */
-  OPT_fprofile_use_ = 1427,                  /* -fprofile-use= */
-  OPT_fprofile_values = 1428,                /* -fprofile-values */
-  OPT_fprotect_parens = 1429,                /* -fprotect-parens */
-  OPT_frandom_seed = 1430,                   /* -frandom-seed */
-  OPT_frandom_seed_ = 1431,                  /* -frandom-seed= */
-  OPT_frange_check = 1432,                   /* -frange-check */
-  OPT_freal_4_real_10 = 1433,                /* -freal-4-real-10 */
-  OPT_freal_4_real_16 = 1434,                /* -freal-4-real-16 */
-  OPT_freal_4_real_8 = 1435,                 /* -freal-4-real-8 */
-  OPT_freal_8_real_10 = 1436,                /* -freal-8-real-10 */
-  OPT_freal_8_real_16 = 1437,                /* -freal-8-real-16 */
-  OPT_freal_8_real_4 = 1438,                 /* -freal-8-real-4 */
-  OPT_frealloc_lhs = 1439,                   /* -frealloc-lhs */
-  OPT_freciprocal_math = 1440,               /* -freciprocal-math */
-  OPT_frecord_gcc_switches = 1441,           /* -frecord-gcc-switches */
-  OPT_frecord_marker_4 = 1442,               /* -frecord-marker=4 */
-  OPT_frecord_marker_8 = 1443,               /* -frecord-marker=8 */
-  OPT_frecursive = 1444,                     /* -frecursive */
-  OPT_free = 1445,                           /* -free */
-  OPT_freg_struct_return = 1446,             /* -freg-struct-return */
-  /* OPT_fregmove = 1447, */                 /* -fregmove */
-  OPT_frelease = 1448,                       /* -frelease */
-  OPT_frename_registers = 1449,              /* -frename-registers */
-  OPT_freorder_blocks = 1450,                /* -freorder-blocks */
-  OPT_freorder_blocks_algorithm_ = 1451,     /* -freorder-blocks-algorithm= */
-  OPT_freorder_blocks_and_partition = 1452,  /* -freorder-blocks-and-partition */
-  OPT_freorder_functions = 1453,             /* -freorder-functions */
-  OPT_frepack_arrays = 1454,                 /* -frepack-arrays */
-  OPT_freplace_objc_classes = 1455,          /* -freplace-objc-classes */
-  OPT_frepo = 1456,                          /* -frepo */
-  OPT_freport_bug = 1457,                    /* -freport-bug */
-  OPT_frequire_return_statement = 1458,      /* -frequire-return-statement */
-  OPT_frerun_cse_after_loop = 1459,          /* -frerun-cse-after-loop */
-  /* OPT_frerun_loop_opt = 1460, */          /* -frerun-loop-opt */
-  OPT_freschedule_modulo_scheduled_loops = 1461,/* -freschedule-modulo-scheduled-loops */
-  OPT_fresolution_ = 1462,                   /* -fresolution= */
-  OPT_frevert_all = 1463,                    /* -frevert=all */
-  OPT_frevert_dip25 = 1464,                  /* -frevert=dip25 */
-  OPT_frevert_dtorfields = 1465,             /* -frevert=dtorfields */
+  OPT_fpreview_nosharedaccess = 1402,        /* -fpreview=nosharedaccess */
+  OPT_fpreview_rvaluerefparam = 1403,        /* -fpreview=rvaluerefparam */
+  OPT_fpreview_shortenedmethods = 1404,      /* -fpreview=shortenedmethods */
+  OPT_fprintf_return_value = 1405,           /* -fprintf-return-value */
+  OPT_fprofile = 1406,                       /* -fprofile */
+  OPT_fprofile_abs_path = 1407,              /* -fprofile-abs-path */
+  OPT_fprofile_arcs = 1408,                  /* -fprofile-arcs */
+  OPT_fprofile_correction = 1409,            /* -fprofile-correction */
+  OPT_fprofile_dir_ = 1410,                  /* -fprofile-dir= */
+  OPT_fprofile_exclude_files_ = 1411,        /* -fprofile-exclude-files= */
+  OPT_fprofile_filter_files_ = 1412,         /* -fprofile-filter-files= */
+  OPT_fprofile_generate = 1413,              /* -fprofile-generate */
+  OPT_fprofile_generate_ = 1414,             /* -fprofile-generate= */
+  OPT_fprofile_info_section = 1415,          /* -fprofile-info-section */
+  OPT_fprofile_info_section_ = 1416,         /* -fprofile-info-section= */
+  OPT_fprofile_note_ = 1417,                 /* -fprofile-note= */
+  OPT_fprofile_partial_training = 1418,      /* -fprofile-partial-training */
+  OPT_fprofile_prefix_map_ = 1419,           /* -fprofile-prefix-map= */
+  OPT_fprofile_prefix_path_ = 1420,          /* -fprofile-prefix-path= */
+  OPT_fprofile_reorder_functions = 1421,     /* -fprofile-reorder-functions */
+  OPT_fprofile_report = 1422,                /* -fprofile-report */
+  OPT_fprofile_reproducible_ = 1423,         /* -fprofile-reproducible= */
+  OPT_fprofile_update_ = 1424,               /* -fprofile-update= */
+  OPT_fprofile_use = 1425,                   /* -fprofile-use */
+  OPT_fprofile_use_ = 1426,                  /* -fprofile-use= */
+  OPT_fprofile_values = 1427,                /* -fprofile-values */
+  OPT_fprotect_parens = 1428,                /* -fprotect-parens */
+  OPT_frandom_seed = 1429,                   /* -frandom-seed */
+  OPT_frandom_seed_ = 1430,                  /* -frandom-seed= */
+  OPT_frange_check = 1431,                   /* -frange-check */
+  OPT_freal_4_real_10 = 1432,                /* -freal-4-real-10 */
+  OPT_freal_4_real_16 = 1433,                /* -freal-4-real-16 */
+  OPT_freal_4_real_8 = 1434,                 /* -freal-4-real-8 */
+  OPT_freal_8_real_10 = 1435,                /* -freal-8-real-10 */
+  OPT_freal_8_real_16 = 1436,                /* -freal-8-real-16 */
+  OPT_freal_8_real_4 = 1437,                 /* -freal-8-real-4 */
+  OPT_frealloc_lhs = 1438,                   /* -frealloc-lhs */
+  OPT_freciprocal_math = 1439,               /* -freciprocal-math */
+  OPT_frecord_gcc_switches = 1440,           /* -frecord-gcc-switches */
+  OPT_frecord_marker_4 = 1441,               /* -frecord-marker=4 */
+  OPT_frecord_marker_8 = 1442,               /* -frecord-marker=8 */
+  OPT_frecursive = 1443,                     /* -frecursive */
+  OPT_free = 1444,                           /* -free */
+  OPT_freg_struct_return = 1445,             /* -freg-struct-return */
+  /* OPT_fregmove = 1446, */                 /* -fregmove */
+  OPT_frelease = 1447,                       /* -frelease */
+  OPT_frename_registers = 1448,              /* -frename-registers */
+  OPT_freorder_blocks = 1449,                /* -freorder-blocks */
+  OPT_freorder_blocks_algorithm_ = 1450,     /* -freorder-blocks-algorithm= */
+  OPT_freorder_blocks_and_partition = 1451,  /* -freorder-blocks-and-partition */
+  OPT_freorder_functions = 1452,             /* -freorder-functions */
+  OPT_frepack_arrays = 1453,                 /* -frepack-arrays */
+  OPT_freplace_objc_classes = 1454,          /* -freplace-objc-classes */
+  OPT_frepo = 1455,                          /* -frepo */
+  OPT_freport_bug = 1456,                    /* -freport-bug */
+  OPT_frequire_return_statement = 1457,      /* -frequire-return-statement */
+  OPT_frerun_cse_after_loop = 1458,          /* -frerun-cse-after-loop */
+  /* OPT_frerun_loop_opt = 1459, */          /* -frerun-loop-opt */
+  OPT_freschedule_modulo_scheduled_loops = 1460,/* -freschedule-modulo-scheduled-loops */
+  OPT_fresolution_ = 1461,                   /* -fresolution= */
+  OPT_frevert_all = 1462,                    /* -frevert=all */
+  OPT_frevert_dip25 = 1463,                  /* -frevert=dip25 */
+  OPT_frevert_dtorfields = 1464,             /* -frevert=dtorfields */
+  OPT_frevert_intpromote = 1465,             /* -frevert=intpromote */
   OPT_frevert_markdown = 1466,               /* -frevert=markdown */
   OPT_frounding_math = 1467,                 /* -frounding-math */
   OPT_frtti = 1468,                          /* -frtti */
