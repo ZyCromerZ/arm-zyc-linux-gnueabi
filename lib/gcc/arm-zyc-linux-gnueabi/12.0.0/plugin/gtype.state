@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.0 20211219 (experimental)")
+(!version  "12.0.0 20211220 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 230 0
@@ -28987,15 +28987,15 @@
   nil 0 nil nil )
  
  (!type struct 2095 nil  gc_used "tree_int"
-  (!srcfileloc  "cp/lambda.c" 1368)
+  (!srcfileloc  "cp/lambda.c" 1374)
   (!fields 2 
    (!pair  "t"
     (!type already_seen 23)
-    (!srcfileloc  "cp/lambda.c" 1365)
+    (!srcfileloc  "cp/lambda.c" 1371)
     nil )
    (!pair  "i"
     (!type already_seen 2)
-    (!srcfileloc  "cp/lambda.c" 1366)
+    (!srcfileloc  "cp/lambda.c" 1372)
     nil )
   )
   nil 516 nil nil )
@@ -29005,15 +29005,15 @@
    (!type already_seen 2096)
   )
   gc_pointed_to "vec<tree_int,va_gc>"
-  (!srcfileloc  "cp/lambda.c" 1368)
+  (!srcfileloc  "cp/lambda.c" 1374)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 79)
-    (!srcfileloc  "cp/lambda.c" 1368)
+    (!srcfileloc  "cp/lambda.c" 1374)
     nil )
    (!pair  "tree_int"
     (!type already_seen 2095)
-    (!srcfileloc  "cp/lambda.c" 1368)
+    (!srcfileloc  "cp/lambda.c" 1374)
     nil )
   )
  )
@@ -29468,15 +29468,15 @@
   nil 0 nil nil )
  
  (!type struct 2155 nil  gc_used "macro_export"
-  (!srcfileloc  "cp/module.cc" 16545)
+  (!srcfileloc  "cp/module.cc" 16546)
   (!fields 2 
    (!pair  "def"
     (!type already_seen 19)
-    (!srcfileloc  "cp/module.cc" 16538)
+    (!srcfileloc  "cp/module.cc" 16539)
     nil )
    (!pair  "undef_loc"
     (!type already_seen 2)
-    (!srcfileloc  "cp/module.cc" 16539)
+    (!srcfileloc  "cp/module.cc" 16540)
     nil )
   )
   nil 516 nil nil )
@@ -29490,15 +29490,15 @@
    (!type already_seen 2157)
   )
   gc_pointed_to "vec<macro_export,va_gc>"
-  (!srcfileloc  "cp/module.cc" 16702)
+  (!srcfileloc  "cp/module.cc" 16703)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 79)
-    (!srcfileloc  "cp/module.cc" 16702)
+    (!srcfileloc  "cp/module.cc" 16703)
     nil )
    (!pair  "macro_export"
     (!type already_seen 2155)
-    (!srcfileloc  "cp/module.cc" 16702)
+    (!srcfileloc  "cp/module.cc" 16703)
     nil )
   )
  )
@@ -30855,11 +30855,11 @@
   nil )
  (!pair  "vec<macro_export,va_gc>"
   (!type already_seen 2157)
-  (!srcfileloc  "cp/module.cc" 16702)
+  (!srcfileloc  "cp/module.cc" 16703)
   nil )
  (!pair  "macro_export"
   (!type already_seen 2155)
-  (!srcfileloc  "cp/module.cc" 16541)
+  (!srcfileloc  "cp/module.cc" 16542)
   nil )
  (!pair  "note_defs_table_t"
   (!type already_seen 2151)
@@ -31049,11 +31049,11 @@
   nil )
  (!pair  "tree_int"
   (!type already_seen 2095)
-  (!srcfileloc  "cp/lambda.c" 1368)
+  (!srcfileloc  "cp/lambda.c" 1374)
   nil )
  (!pair  "vec<tree_int,va_gc>"
   (!type already_seen 2096)
-  (!srcfileloc  "cp/lambda.c" 1368)
+  (!srcfileloc  "cp/lambda.c" 1374)
   nil )
  (!pair  "pending_noexcept"
   (!type already_seen 2091)
@@ -35447,11 +35447,11 @@
  )
  (!pair  "headers"
   (!type already_seen 386)
-  (!srcfileloc  "cp/module.cc" 16706)
+  (!srcfileloc  "cp/module.cc" 16707)
   nil )
  (!pair  "macro_exports"
   (!type already_seen 2158)
-  (!srcfileloc  "cp/module.cc" 16702)
+  (!srcfileloc  "cp/module.cc" 16703)
   nil )
  (!pair  "note_defs"
   (!type already_seen 2152)
@@ -35516,23 +35516,23 @@
   nil )
  (!pair  "lambda_scope_stack"
   (!type already_seen 2097)
-  (!srcfileloc  "cp/lambda.c" 1368)
+  (!srcfileloc  "cp/lambda.c" 1374)
   nil )
  (!pair  "lambda_count"
   (!type already_seen 2)
-  (!srcfileloc  "cp/lambda.c" 1362)
+  (!srcfileloc  "cp/lambda.c" 1368)
   nil )
  (!pair  "lambda_scope"
   (!type already_seen 23)
-  (!srcfileloc  "cp/lambda.c" 1361)
+  (!srcfileloc  "cp/lambda.c" 1367)
   nil )
  (!pair  "max_id"
   (!type already_seen 23)
-  (!srcfileloc  "cp/lambda.c" 463)
+  (!srcfileloc  "cp/lambda.c" 469)
   nil )
  (!pair  "ptr_id"
   (!type already_seen 23)
-  (!srcfileloc  "cp/lambda.c" 462)
+  (!srcfileloc  "cp/lambda.c" 468)
   nil )
  (!pair  "nsdmi_inst"
   (!type already_seen 928)
