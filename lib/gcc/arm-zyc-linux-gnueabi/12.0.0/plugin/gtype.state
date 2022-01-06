@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.0 20220105 (experimental)")
+(!version  "12.0.0 20220106 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -17319,7 +17319,7 @@
    (!type already_seen 828)
   )
   gc_unused "gcc_options"
-  (!srcfileloc  "c-family/c-pragma.c" 1047)
+  (!srcfileloc  "c-family/c-pragma.c" 1051)
   (!fields 0 )
   nil 774 nil nil )
  
@@ -20849,31 +20849,35 @@
    (!type already_seen 1167)
   )
   gc_pointed_to "ipa_fn_summary"
-  (!srcfileloc  "ipa-fnsummary.h" 214)
-  (!fields 14 
+  (!srcfileloc  "ipa-fnsummary.h" 219)
+  (!fields 15 
    (!pair  "min_size"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-fnsummary.h" 158)
+    (!srcfileloc  "ipa-fnsummary.h" 159)
     nil )
    (!pair  "inlinable"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-fnsummary.h" 161)
+    (!srcfileloc  "ipa-fnsummary.h" 162)
     nil )
    (!pair  "single_caller"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-fnsummary.h" 164)
+    (!srcfileloc  "ipa-fnsummary.h" 165)
     nil )
    (!pair  "fp_expressions"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-fnsummary.h" 166)
+    (!srcfileloc  "ipa-fnsummary.h" 167)
+    nil )
+   (!pair  "target_info"
+    (!type already_seen 2)
+    (!srcfileloc  "ipa-fnsummary.h" 171)
     nil )
    (!pair  "estimated_stack_size"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-fnsummary.h" 173)
+    (!srcfileloc  "ipa-fnsummary.h" 178)
     nil )
    (!pair  "time"
     (!type already_seen 1016)
-    (!srcfileloc  "ipa-fnsummary.h" 175)
+    (!srcfileloc  "ipa-fnsummary.h" 180)
     (!options 
      (!option skip string  "")
     )
@@ -20970,45 +20974,45 @@
       )
      )
     )
-    (!srcfileloc  "ipa-fnsummary.h" 179)
+    (!srcfileloc  "ipa-fnsummary.h" 184)
     nil )
    (!pair  "size_time_table"
     (!type user_struct 1176 nil  gc_unused "auto_vec<size_time_entry>"
-     (!srcfileloc  "ipa-fnsummary.h" 184)
+     (!srcfileloc  "ipa-fnsummary.h" 189)
      (!fields 1 
       (!pair  "size_time_entry"
        (!type struct 1177 nil  gc_unused "size_time_entry"
-        (!srcfileloc  "ipa-fnsummary.h" 184)
+        (!srcfileloc  "ipa-fnsummary.h" 189)
         (!fields 0 )
         nil 1023 nil nil )
-       (!srcfileloc  "ipa-fnsummary.h" 184)
+       (!srcfileloc  "ipa-fnsummary.h" 189)
        nil )
      )
     )
-    (!srcfileloc  "ipa-fnsummary.h" 184)
+    (!srcfileloc  "ipa-fnsummary.h" 189)
     (!options 
      (!option skip string  "")
     )
    )
    (!pair  "call_size_time_table"
     (!type user_struct 1178 nil  gc_unused "vec<size_time_entry,va_heap,vl_ptr>"
-     (!srcfileloc  "ipa-fnsummary.h" 188)
+     (!srcfileloc  "ipa-fnsummary.h" 193)
      (!fields 3 
       (!pair  "vl_ptr"
        (!type already_seen 821)
-       (!srcfileloc  "ipa-fnsummary.h" 188)
+       (!srcfileloc  "ipa-fnsummary.h" 193)
        nil )
       (!pair  "va_heap"
        (!type already_seen 822)
-       (!srcfileloc  "ipa-fnsummary.h" 188)
+       (!srcfileloc  "ipa-fnsummary.h" 193)
        nil )
       (!pair  "size_time_entry"
        (!type already_seen 1177)
-       (!srcfileloc  "ipa-fnsummary.h" 188)
+       (!srcfileloc  "ipa-fnsummary.h" 193)
        nil )
      )
     )
-    (!srcfileloc  "ipa-fnsummary.h" 188)
+    (!srcfileloc  "ipa-fnsummary.h" 193)
     (!options 
      (!option skip string  "")
     )
@@ -21018,15 +21022,15 @@
      (!type user_struct 1180 
       (!type already_seen 1179)
       gc_pointed_to "vec<ipa_freqcounting_predicate,va_gc>"
-      (!srcfileloc  "ipa-fnsummary.h" 191)
+      (!srcfileloc  "ipa-fnsummary.h" 196)
       (!fields 2 
        (!pair  "va_gc"
         (!type already_seen 79)
-        (!srcfileloc  "ipa-fnsummary.h" 191)
+        (!srcfileloc  "ipa-fnsummary.h" 196)
         nil )
        (!pair  "ipa_freqcounting_predicate"
         (!type struct 1181 nil  gc_used "ipa_freqcounting_predicate"
-         (!srcfileloc  "ipa-fnsummary.h" 191)
+         (!srcfileloc  "ipa-fnsummary.h" 196)
          (!fields 2 
           (!pair  "freq"
            (!type already_seen 1016)
@@ -21048,47 +21052,47 @@
           )
          )
          nil 1023 nil nil )
-        (!srcfileloc  "ipa-fnsummary.h" 191)
+        (!srcfileloc  "ipa-fnsummary.h" 196)
         nil )
       )
      )
     )
-    (!srcfileloc  "ipa-fnsummary.h" 191)
+    (!srcfileloc  "ipa-fnsummary.h" 196)
     nil )
    (!pair  "loop_strides"
     (!type already_seen 1179)
-    (!srcfileloc  "ipa-fnsummary.h" 193)
+    (!srcfileloc  "ipa-fnsummary.h" 198)
     nil )
    (!pair  "builtin_constant_p_parms"
     (!type user_struct 1184 nil  gc_unused "vec<int,va_heap,vl_ptr>"
-     (!srcfileloc  "ipa-fnsummary.h" 195)
+     (!srcfileloc  "ipa-fnsummary.h" 200)
      (!fields 3 
       (!pair  "vl_ptr"
        (!type already_seen 821)
-       (!srcfileloc  "ipa-fnsummary.h" 195)
+       (!srcfileloc  "ipa-fnsummary.h" 200)
        nil )
       (!pair  "va_heap"
        (!type already_seen 822)
-       (!srcfileloc  "ipa-fnsummary.h" 195)
+       (!srcfileloc  "ipa-fnsummary.h" 200)
        nil )
       (!pair  "int"
        (!type already_seen 373)
-       (!srcfileloc  "ipa-fnsummary.h" 195)
+       (!srcfileloc  "ipa-fnsummary.h" 200)
        nil )
      )
     )
-    (!srcfileloc  "ipa-fnsummary.h" 195)
+    (!srcfileloc  "ipa-fnsummary.h" 200)
     (!options 
      (!option skip string  "")
     )
    )
    (!pair  "growth"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-fnsummary.h" 201)
+    (!srcfileloc  "ipa-fnsummary.h" 206)
     nil )
    (!pair  "scc_no"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-fnsummary.h" 203)
+    (!srcfileloc  "ipa-fnsummary.h" 208)
     nil )
   )
   nil 1023 nil nil )
@@ -25848,7 +25852,7 @@
  (!type already_seen 1184)
  
  (!type user_struct 1755 nil  gc_unused "ipa_fn_summary_t"
-  (!srcfileloc  "ipa-fnsummary.h" 242)
+  (!srcfileloc  "ipa-fnsummary.h" 247)
   (!fields 0 )
  )
  
@@ -25857,15 +25861,15 @@
    (!type already_seen 1756)
   )
   gc_pointed_to "fast_function_summary<ipa_fn_summary*,va_gc>"
-  (!srcfileloc  "ipa-fnsummary.h" 244)
+  (!srcfileloc  "ipa-fnsummary.h" 249)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 79)
-    (!srcfileloc  "ipa-fnsummary.h" 244)
+    (!srcfileloc  "ipa-fnsummary.h" 249)
     nil )
    (!pair  "ipa_fn_summary"
     (!type already_seen 1168)
-    (!srcfileloc  "ipa-fnsummary.h" 244)
+    (!srcfileloc  "ipa-fnsummary.h" 249)
     nil )
   )
  )
@@ -26873,15 +26877,15 @@
  )
  
  (!type struct 1903 nil  gc_used "pending_redefinition"
-  (!srcfileloc  "c-family/c-pragma.c" 494)
+  (!srcfileloc  "c-family/c-pragma.c" 496)
   (!fields 2 
    (!pair  "oldname"
     (!type already_seen 23)
-    (!srcfileloc  "c-family/c-pragma.c" 489)
+    (!srcfileloc  "c-family/c-pragma.c" 491)
     nil )
    (!pair  "newname"
     (!type already_seen 23)
-    (!srcfileloc  "c-family/c-pragma.c" 490)
+    (!srcfileloc  "c-family/c-pragma.c" 492)
     nil )
   )
   nil 774 nil nil )
@@ -26891,15 +26895,15 @@
    (!type already_seen 1904)
   )
   gc_pointed_to "vec<pending_redefinition,va_gc>"
-  (!srcfileloc  "c-family/c-pragma.c" 494)
+  (!srcfileloc  "c-family/c-pragma.c" 496)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 79)
-    (!srcfileloc  "c-family/c-pragma.c" 494)
+    (!srcfileloc  "c-family/c-pragma.c" 496)
     nil )
    (!pair  "pending_redefinition"
     (!type already_seen 1903)
-    (!srcfileloc  "c-family/c-pragma.c" 494)
+    (!srcfileloc  "c-family/c-pragma.c" 496)
     nil )
   )
  )
@@ -26909,31 +26913,31 @@
    (!type already_seen 1906)
   )
   gc_pointed_to "opt_stack"
-  (!srcfileloc  "c-family/c-pragma.c" 1048)
+  (!srcfileloc  "c-family/c-pragma.c" 1052)
   (!fields 6 
    (!pair  "prev"
     (!type already_seen 1907)
-    (!srcfileloc  "c-family/c-pragma.c" 1042)
+    (!srcfileloc  "c-family/c-pragma.c" 1046)
     nil )
    (!pair  "target_binary"
     (!type already_seen 23)
-    (!srcfileloc  "c-family/c-pragma.c" 1043)
+    (!srcfileloc  "c-family/c-pragma.c" 1047)
     nil )
    (!pair  "target_strings"
     (!type already_seen 23)
-    (!srcfileloc  "c-family/c-pragma.c" 1044)
+    (!srcfileloc  "c-family/c-pragma.c" 1048)
     nil )
    (!pair  "optimize_binary"
     (!type already_seen 23)
-    (!srcfileloc  "c-family/c-pragma.c" 1045)
+    (!srcfileloc  "c-family/c-pragma.c" 1049)
     nil )
    (!pair  "optimize_strings"
     (!type already_seen 23)
-    (!srcfileloc  "c-family/c-pragma.c" 1046)
+    (!srcfileloc  "c-family/c-pragma.c" 1050)
     nil )
    (!pair  "saved_global_options"
     (!type already_seen 829)
-    (!srcfileloc  "c-family/c-pragma.c" 1047)
+    (!srcfileloc  "c-family/c-pragma.c" 1051)
     (!options 
      (!option skip string  "")
     )
@@ -29658,15 +29662,15 @@
    (!type already_seen 2191)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.c" 29596)
+  (!srcfileloc  "cp/pt.c" 29599)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 533)
-    (!srcfileloc  "cp/pt.c" 29596)
+    (!srcfileloc  "cp/pt.c" 29599)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.c" 29596)
+    (!srcfileloc  "cp/pt.c" 29599)
     nil )
   )
  )
@@ -30811,7 +30815,7 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2191)
-  (!srcfileloc  "cp/pt.c" 29596)
+  (!srcfileloc  "cp/pt.c" 29599)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2178)
@@ -31379,15 +31383,15 @@
   nil )
  (!pair  "gcc_options"
   (!type already_seen 828)
-  (!srcfileloc  "c-family/c-pragma.c" 1047)
+  (!srcfileloc  "c-family/c-pragma.c" 1051)
   nil )
  (!pair  "pending_redefinition"
   (!type already_seen 1903)
-  (!srcfileloc  "c-family/c-pragma.c" 494)
+  (!srcfileloc  "c-family/c-pragma.c" 496)
   nil )
  (!pair  "vec<pending_redefinition,va_gc>"
   (!type already_seen 1904)
-  (!srcfileloc  "c-family/c-pragma.c" 494)
+  (!srcfileloc  "c-family/c-pragma.c" 496)
   nil )
  (!pair  "pending_weak"
   (!type already_seen 1900)
@@ -31643,35 +31647,35 @@
   nil )
  (!pair  "fast_function_summary<ipa_fn_summary*,va_gc>"
   (!type already_seen 1756)
-  (!srcfileloc  "ipa-fnsummary.h" 244)
+  (!srcfileloc  "ipa-fnsummary.h" 249)
   nil )
  (!pair  "ipa_fn_summary_t"
   (!type already_seen 1755)
-  (!srcfileloc  "ipa-fnsummary.h" 242)
+  (!srcfileloc  "ipa-fnsummary.h" 247)
   nil )
  (!pair  "vec<int,va_heap,vl_ptr>"
   (!type already_seen 1184)
-  (!srcfileloc  "ipa-fnsummary.h" 195)
+  (!srcfileloc  "ipa-fnsummary.h" 200)
   nil )
  (!pair  "ipa_freqcounting_predicate"
   (!type already_seen 1181)
-  (!srcfileloc  "ipa-fnsummary.h" 191)
+  (!srcfileloc  "ipa-fnsummary.h" 196)
   nil )
  (!pair  "vec<ipa_freqcounting_predicate,va_gc>"
   (!type already_seen 1180)
-  (!srcfileloc  "ipa-fnsummary.h" 191)
+  (!srcfileloc  "ipa-fnsummary.h" 196)
   nil )
  (!pair  "vec<size_time_entry,va_heap,vl_ptr>"
   (!type already_seen 1178)
-  (!srcfileloc  "ipa-fnsummary.h" 188)
+  (!srcfileloc  "ipa-fnsummary.h" 193)
   nil )
  (!pair  "size_time_entry"
   (!type already_seen 1177)
-  (!srcfileloc  "ipa-fnsummary.h" 184)
+  (!srcfileloc  "ipa-fnsummary.h" 189)
   nil )
  (!pair  "auto_vec<size_time_entry>"
   (!type already_seen 1176)
-  (!srcfileloc  "ipa-fnsummary.h" 184)
+  (!srcfileloc  "ipa-fnsummary.h" 189)
   nil )
  (!pair  "ipa_fn_summary"
   (!type already_seen 1167)
@@ -35324,21 +35328,21 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2192)
-  (!srcfileloc  "cp/pt.c" 29596)
+  (!srcfileloc  "cp/pt.c" 29599)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "explicit_specifier_map"
   (!type already_seen 928)
-  (!srcfileloc  "cp/pt.c" 13774)
+  (!srcfileloc  "cp/pt.c" 13777)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "defarg_inst"
   (!type already_seen 928)
-  (!srcfileloc  "cp/pt.c" 13658)
+  (!srcfileloc  "cp/pt.c" 13661)
   (!options 
    (!option cache string  "")
   )
@@ -35943,11 +35947,11 @@
   nil )
  (!pair  "options_stack"
   (!type already_seen 1907)
-  (!srcfileloc  "c-family/c-pragma.c" 1050)
+  (!srcfileloc  "c-family/c-pragma.c" 1054)
   nil )
  (!pair  "pending_redefine_extname"
   (!type already_seen 1905)
-  (!srcfileloc  "c-family/c-pragma.c" 494)
+  (!srcfileloc  "c-family/c-pragma.c" 496)
   nil )
  (!pair  "pending_weaks"
   (!type already_seen 1902)
@@ -36331,7 +36335,7 @@
   nil )
  (!pair  "ipa_fn_summaries"
   (!type already_seen 1757)
-  (!srcfileloc  "ipa-fnsummary.h" 245)
+  (!srcfileloc  "ipa-fnsummary.h" 250)
   nil )
  (!pair  "tm_wrap_map"
   (!type already_seen 1714)

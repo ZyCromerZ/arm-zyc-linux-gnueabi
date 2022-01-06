@@ -42299,6 +42299,38 @@ be documented in 'extend.texi'.
      specific target options and the caller does not use the same
      options.
 
+ -- Target Hook: bool TARGET_UPDATE_IPA_FN_TARGET_INFO (unsigned int&
+          INFO, const gimple* STMT)
+     Allow target to analyze all gimple statements for the given
+     function to record and update some target specific information for
+     inlining.  A typical example is that a caller with one isa feature
+     disabled is normally not allowed to inline a callee with that same
+     isa feature enabled even which is attributed by always_inline, but
+     with the conservative analysis on all statements of the callee if
+     we are able to guarantee the callee does not exploit any
+     instructions from the mismatch isa feature, it would be safe to
+     allow the caller to inline the callee.  INFO is one 'unsigned int'
+     value to record information in which one set bit indicates one
+     corresponding feature is detected in the analysis, STMT is the
+     statement being analyzed.  Return true if target still need to
+     analyze the subsequent statements, otherwise return false to stop
+     subsequent analysis.  The default version of this hook returns
+     false.
+
+ -- Target Hook: bool TARGET_NEED_IPA_FN_TARGET_INFO (const_tree DECL,
+          unsigned int& INFO)
+     Allow target to check early whether it is necessary to analyze all
+     gimple statements in the given function to update target specific
+     information for inlining.  See hook 'update_ipa_fn_target_info' for
+     usage example of target specific information.  This hook is
+     expected to be invoked ahead of the iterating with hook
+     'update_ipa_fn_target_info'.  DECL is the function being analyzed,
+     INFO is the same as what in hook 'update_ipa_fn_target_info',
+     target can do one time update into INFO without iterating for some
+     case.  Return true if target decides to analyze all gimple
+     statements to collect information, otherwise return false.  The
+     default version of this hook returns false.
+
  -- Target Hook: void TARGET_RELAYOUT_FUNCTION (tree FNDECL)
      This target hook fixes function FNDECL after attributes are
      processed.  Default does nothing.  On ARM, the default function's
@@ -57306,6 +57338,7 @@ Concept Index
 * TARGET_MUST_PASS_IN_STACK, and TARGET_FUNCTION_ARG: Register Arguments.
                                                              (line   43)
 * TARGET_NARROW_VOLATILE_BITFIELD:       Storage Layout.     (line  447)
+* TARGET_NEED_IPA_FN_TARGET_INFO:        Target Attributes.  (line  198)
 * TARGET_NEW_ADDRESS_PROFITABLE_P:       Costs.              (line  422)
 * TARGET_NOCE_CONVERSION_PROFITABLE_P:   Costs.              (line  416)
 * TARGET_NO_REGISTER_ALLOCATION:         DWARF.              (line   85)
@@ -57361,7 +57394,7 @@ Concept Index
 * TARGET_REGISTER_MOVE_COST:             Costs.              (line   31)
 * TARGET_REGISTER_PRIORITY:              Register Classes.   (line  584)
 * TARGET_REGISTER_USAGE_LEVELING_P:      Register Classes.   (line  596)
-* TARGET_RELAYOUT_FUNCTION:              Target Attributes.  (line  180)
+* TARGET_RELAYOUT_FUNCTION:              Target Attributes.  (line  212)
 * TARGET_RESET_LOCATION_VIEW:            DWARF.              (line   57)
 * TARGET_RESOLVE_OVERLOADED_BUILTIN:     Misc.               (line  663)
 * TARGET_RETURN_IN_MEMORY:               Aggregate Return.   (line   15)
@@ -57483,6 +57516,7 @@ Concept Index
 * TARGET_UNWIND_TABLES_DEFAULT:          Exception Region Output.
                                                              (line   73)
 * TARGET_UNWIND_WORD_MODE:               Storage Layout.     (line  514)
+* TARGET_UPDATE_IPA_FN_TARGET_INFO:      Target Attributes.  (line  180)
 * TARGET_UPDATE_STACK_BOUNDARY:          Misc.               (line 1075)
 * TARGET_USES_WEAK_UNWIND_INFO:          Exception Handling. (line  123)
 * TARGET_USE_ANCHORS_FOR_SYMBOL_P:       Anchored Addresses. (line   53)
@@ -58464,66 +58498,66 @@ Node: BTF Debug1815077
 Node: Floating Point1815420
 Node: Mode Switching1818175
 Node: Target Attributes1822612
-Node: Emulated TLS1832088
-Node: MIPS Coprocessors1835478
-Node: PCH Target1836637
-Node: C++ ABI1838479
-Node: D Language and ABI1843271
-Node: Named Address Spaces1846214
-Node: Misc1852141
-Ref: TARGET_SHIFT_TRUNCATION_MASK1860012
-Node: Host Config1920721
-Node: Host Common1921790
-Node: Filesystem1924164
-Node: Host Misc1928279
-Node: Fragments1930728
-Node: Target Fragment1931923
-Node: Host Fragment1942735
-Node: Collect21942975
-Node: Header Dirs1945611
-Node: Type Information1947034
-Node: GTY Options1950565
-Node: Inheritance and GTY1962177
-Ref: Inheritance and GTY-Footnote-11963742
-Node: User GC1964012
-Node: GGC Roots1967763
-Node: Files1968476
-Node: Invoking the garbage collector1971104
-Node: Troubleshooting1972746
-Node: Plugins1973821
-Node: Plugins loading1974950
-Node: Plugin API1976049
-Node: Plugins pass1983916
-Node: Plugins GC1985887
-Node: Plugins description1987604
-Node: Plugins attr1988140
-Node: Plugins recording1990420
-Node: Plugins gate1991270
-Node: Plugins tracking1991861
-Node: Plugins building1992449
-Node: LTO1995950
-Node: LTO Overview1996822
-Node: LTO object file layout2002574
-Node: IPA2007204
-Node: WHOPR2016254
-Node: Internal flags2020814
-Node: Match and Simplify2022225
-Node: GIMPLE API2023187
-Node: The Language2025982
-Node: Static Analyzer2038481
-Node: Analyzer Internals2038746
-Node: Debugging the Analyzer2054633
-Node: User Experience Guidelines2057553
-Node: Guidelines for Diagnostics2058489
-Ref: input_location_example2066664
-Node: Guidelines for Options2076349
-Node: Funding2076526
-Node: GNU Project2079033
-Node: Copying2079684
-Node: GNU Free Documentation License2117198
-Node: Contributors2142321
-Node: Option Index2183297
-Node: Concept Index2184174
+Node: Emulated TLS1834014
+Node: MIPS Coprocessors1837404
+Node: PCH Target1838563
+Node: C++ ABI1840405
+Node: D Language and ABI1845197
+Node: Named Address Spaces1848140
+Node: Misc1854067
+Ref: TARGET_SHIFT_TRUNCATION_MASK1861938
+Node: Host Config1922647
+Node: Host Common1923716
+Node: Filesystem1926090
+Node: Host Misc1930205
+Node: Fragments1932654
+Node: Target Fragment1933849
+Node: Host Fragment1944661
+Node: Collect21944901
+Node: Header Dirs1947537
+Node: Type Information1948960
+Node: GTY Options1952491
+Node: Inheritance and GTY1964103
+Ref: Inheritance and GTY-Footnote-11965668
+Node: User GC1965938
+Node: GGC Roots1969689
+Node: Files1970402
+Node: Invoking the garbage collector1973030
+Node: Troubleshooting1974672
+Node: Plugins1975747
+Node: Plugins loading1976876
+Node: Plugin API1977975
+Node: Plugins pass1985842
+Node: Plugins GC1987813
+Node: Plugins description1989530
+Node: Plugins attr1990066
+Node: Plugins recording1992346
+Node: Plugins gate1993196
+Node: Plugins tracking1993787
+Node: Plugins building1994375
+Node: LTO1997876
+Node: LTO Overview1998748
+Node: LTO object file layout2004500
+Node: IPA2009130
+Node: WHOPR2018180
+Node: Internal flags2022740
+Node: Match and Simplify2024151
+Node: GIMPLE API2025113
+Node: The Language2027908
+Node: Static Analyzer2040407
+Node: Analyzer Internals2040672
+Node: Debugging the Analyzer2056559
+Node: User Experience Guidelines2059479
+Node: Guidelines for Diagnostics2060415
+Ref: input_location_example2068590
+Node: Guidelines for Options2078275
+Node: Funding2078452
+Node: GNU Project2080959
+Node: Copying2081610
+Node: GNU Free Documentation License2119124
+Node: Contributors2144247
+Node: Option Index2185223
+Node: Concept Index2186100
 
 End Tag Table
 
