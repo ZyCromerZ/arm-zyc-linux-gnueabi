@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.0 20220114 (experimental)")
+(!version  "12.0.0 20220115 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -21213,31 +21213,31 @@
    (!type already_seen 1197)
   )
   gc_pointed_to "param_access"
-  (!srcfileloc  "ipa-sra.c" 127)
+  (!srcfileloc  "ipa-sra.c" 125)
   (!fields 6 
    (!pair  "type"
     (!type already_seen 23)
-    (!srcfileloc  "ipa-sra.c" 110)
+    (!srcfileloc  "ipa-sra.c" 108)
     nil )
    (!pair  "alias_ptr_type"
     (!type already_seen 23)
-    (!srcfileloc  "ipa-sra.c" 114)
+    (!srcfileloc  "ipa-sra.c" 112)
     nil )
    (!pair  "unit_offset"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 118)
+    (!srcfileloc  "ipa-sra.c" 116)
     nil )
    (!pair  "unit_size"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 119)
+    (!srcfileloc  "ipa-sra.c" 117)
     nil )
    (!pair  "certain"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 124)
+    (!srcfileloc  "ipa-sra.c" 122)
     nil )
    (!pair  "reverse"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 126)
+    (!srcfileloc  "ipa-sra.c" 124)
     nil )
   )
   nil 1023 nil nil )
@@ -21251,45 +21251,45 @@
    (!type already_seen 1200)
   )
   gc_pointed_to "vec<param_access*,va_gc>"
-  (!srcfileloc  "ipa-sra.c" 169)
+  (!srcfileloc  "ipa-sra.c" 167)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 79)
-    (!srcfileloc  "ipa-sra.c" 169)
+    (!srcfileloc  "ipa-sra.c" 167)
     nil )
    (!pair  "param_access"
     (!type already_seen 1198)
-    (!srcfileloc  "ipa-sra.c" 169)
+    (!srcfileloc  "ipa-sra.c" 167)
     nil )
   )
  )
  
  (!type struct 1202 nil  gc_used "isra_param_desc"
-  (!srcfileloc  "ipa-sra.c" 258)
+  (!srcfileloc  "ipa-sra.c" 256)
   (!fields 6 
    (!pair  "accesses"
     (!type already_seen 1201)
-    (!srcfileloc  "ipa-sra.c" 169)
+    (!srcfileloc  "ipa-sra.c" 167)
     nil )
    (!pair  "param_size_limit"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 172)
+    (!srcfileloc  "ipa-sra.c" 170)
     nil )
    (!pair  "size_reached"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 174)
+    (!srcfileloc  "ipa-sra.c" 172)
     nil )
    (!pair  "locally_unused"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 178)
+    (!srcfileloc  "ipa-sra.c" 176)
     nil )
    (!pair  "split_candidate"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 180)
+    (!srcfileloc  "ipa-sra.c" 178)
     nil )
    (!pair  "by_ref"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 182)
+    (!srcfileloc  "ipa-sra.c" 180)
     nil )
   )
   nil 1023 nil nil )
@@ -21299,43 +21299,43 @@
   nil 0 nil nil )
  
  (!type struct 1204 nil  gc_pointed_to "isra_func_summary"
-  (!srcfileloc  "ipa-sra.c" 276)
+  (!srcfileloc  "ipa-sra.c" 274)
   (!fields 5 
    (!pair  "m_parameters"
     (!type pointer 1205 nil  gc_used
      (!type user_struct 1206 
       (!type already_seen 1205)
       gc_pointed_to "vec<isra_param_desc,va_gc>"
-      (!srcfileloc  "ipa-sra.c" 258)
+      (!srcfileloc  "ipa-sra.c" 256)
       (!fields 2 
        (!pair  "va_gc"
         (!type already_seen 79)
-        (!srcfileloc  "ipa-sra.c" 258)
+        (!srcfileloc  "ipa-sra.c" 256)
         nil )
        (!pair  "isra_param_desc"
         (!type already_seen 1202)
-        (!srcfileloc  "ipa-sra.c" 258)
+        (!srcfileloc  "ipa-sra.c" 256)
         nil )
       )
      )
     )
-    (!srcfileloc  "ipa-sra.c" 258)
+    (!srcfileloc  "ipa-sra.c" 256)
     nil )
    (!pair  "m_candidate"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 262)
+    (!srcfileloc  "ipa-sra.c" 260)
     nil )
    (!pair  "m_returns_value"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 265)
+    (!srcfileloc  "ipa-sra.c" 263)
     nil )
    (!pair  "m_return_ignored"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 270)
+    (!srcfileloc  "ipa-sra.c" 268)
     nil )
    (!pair  "m_queued"
     (!type already_seen 2)
-    (!srcfileloc  "ipa-sra.c" 275)
+    (!srcfileloc  "ipa-sra.c" 273)
     nil )
   )
   (!options 
@@ -21358,7 +21358,7 @@
    (!type already_seen 1209)
   )
   gc_pointed_to "ipa_sra_function_summaries"
-  (!srcfileloc  "ipa-sra.c" 385)
+  (!srcfileloc  "ipa-sra.c" 383)
   (!fields 0 )
  )
  
@@ -28825,19 +28825,19 @@
   nil 0 nil nil )
  
  (!type struct 2073 nil  gc_pointed_to "source_location_table_entry"
-  (!srcfileloc  "cp/cp-gimplify.c" 3100)
+  (!srcfileloc  "cp/cp-gimplify.c" 3107)
   (!fields 3 
    (!pair  "loc"
     (!type already_seen 2)
-    (!srcfileloc  "cp/cp-gimplify.c" 3097)
+    (!srcfileloc  "cp/cp-gimplify.c" 3104)
     nil )
    (!pair  "uid"
     (!type already_seen 2)
-    (!srcfileloc  "cp/cp-gimplify.c" 3098)
+    (!srcfileloc  "cp/cp-gimplify.c" 3105)
     nil )
    (!pair  "var"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-gimplify.c" 3099)
+    (!srcfileloc  "cp/cp-gimplify.c" 3106)
     nil )
   )
   (!options 
@@ -28846,7 +28846,7 @@
   516 nil nil )
  
  (!type struct 2074 nil  gc_used "source_location_table_entry_hash"
-  (!srcfileloc  "cp/cp-gimplify.c" 3176)
+  (!srcfileloc  "cp/cp-gimplify.c" 3183)
   (!fields 0 )
   nil 516 nil nil )
  
@@ -28855,11 +28855,11 @@
    (!type already_seen 2075)
   )
   gc_pointed_to "hash_table<source_location_table_entry_hash>"
-  (!srcfileloc  "cp/cp-gimplify.c" 3176)
+  (!srcfileloc  "cp/cp-gimplify.c" 3183)
   (!fields 1 
    (!pair  "source_location_table_entry_hash"
     (!type already_seen 2074)
-    (!srcfileloc  "cp/cp-gimplify.c" 3176)
+    (!srcfileloc  "cp/cp-gimplify.c" 3183)
     nil )
   )
  )
@@ -31111,11 +31111,11 @@
   nil )
  (!pair  "source_location_table_entry_hash"
   (!type already_seen 2074)
-  (!srcfileloc  "cp/cp-gimplify.c" 3176)
+  (!srcfileloc  "cp/cp-gimplify.c" 3183)
   nil )
  (!pair  "hash_table<source_location_table_entry_hash>"
   (!type already_seen 2075)
-  (!srcfileloc  "cp/cp-gimplify.c" 3176)
+  (!srcfileloc  "cp/cp-gimplify.c" 3183)
   nil )
  (!pair  "coroutine_info_hasher"
   (!type already_seen 2055)
@@ -32923,23 +32923,23 @@
   nil )
  (!pair  "ipa_sra_function_summaries"
   (!type already_seen 1209)
-  (!srcfileloc  "ipa-sra.c" 385)
+  (!srcfileloc  "ipa-sra.c" 383)
   nil )
  (!pair  "isra_param_desc"
   (!type already_seen 1202)
-  (!srcfileloc  "ipa-sra.c" 258)
+  (!srcfileloc  "ipa-sra.c" 256)
   nil )
  (!pair  "vec<isra_param_desc,va_gc>"
   (!type already_seen 1206)
-  (!srcfileloc  "ipa-sra.c" 258)
+  (!srcfileloc  "ipa-sra.c" 256)
   nil )
  (!pair  "isra_func_summary"
   (!type already_seen 1204)
-  (!srcfileloc  "ipa-sra.c" 242)
+  (!srcfileloc  "ipa-sra.c" 240)
   nil )
  (!pair  "vec<param_access*,va_gc>"
   (!type already_seen 1200)
-  (!srcfileloc  "ipa-sra.c" 169)
+  (!srcfileloc  "ipa-sra.c" 167)
   nil )
  (!pair  "ipa_adjusted_param"
   (!type already_seen 1065)
@@ -35638,15 +35638,15 @@
   nil )
  (!pair  "source_location_id"
   (!type already_seen 2)
-  (!srcfileloc  "cp/cp-gimplify.c" 3178)
+  (!srcfileloc  "cp/cp-gimplify.c" 3185)
   nil )
  (!pair  "source_location_table"
   (!type already_seen 2076)
-  (!srcfileloc  "cp/cp-gimplify.c" 3177)
+  (!srcfileloc  "cp/cp-gimplify.c" 3184)
   nil )
  (!pair  "fold_cache"
   (!type already_seen 393)
-  (!srcfileloc  "cp/cp-gimplify.c" 2369)
+  (!srcfileloc  "cp/cp-gimplify.c" 2376)
   (!options 
    (!option deletable string  "")
   )
@@ -37312,7 +37312,7 @@
  )
  (!pair  "func_sums"
   (!type already_seen 1210)
-  (!srcfileloc  "ipa-sra.c" 436)
+  (!srcfileloc  "ipa-sra.c" 435)
   nil )
  (!pair  "ipa_vr_hash_table"
   (!type already_seen 1111)
