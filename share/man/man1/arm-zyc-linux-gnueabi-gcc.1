@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-01-18" "gcc-12.0.1" "GNU"
+.TH GCC 1 "2022-01-20" "gcc-12.0.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -14115,6 +14115,9 @@ per supernode, before terminating analysis.
 .IX Item "ranger-logical-depth"
 Maximum depth of logical expression evaluation ranger will look through
 when evaluating outgoing edge ranges.
+.IP "\fBrelation-block-limit\fR" 4
+.IX Item "relation-block-limit"
+Maximum number of relations the oracle will register in a basic block.
 .IP "\fBopenacc-kernels\fR" 4
 .IX Item "openacc-kernels"
 Specify mode of OpenACC `kernels' constructs handling.

@@ -764,14 +764,14 @@ struct GTY(()) cgraph_simd_clone_arg {
      variable), uniform, or vector.  */
   enum cgraph_simd_clone_arg_type arg_type;
 
+  /* Variable alignment if available, otherwise 0.  */
+  unsigned int alignment;
+
   /* For arg_type SIMD_CLONE_ARG_TYPE_LINEAR_*CONSTANT_STEP this is
      the constant linear step, if arg_type is
      SIMD_CLONE_ARG_TYPE_LINEAR_*VARIABLE_STEP, this is index of
      the uniform argument holding the step, otherwise 0.  */
   HOST_WIDE_INT linear_step;
-
-  /* Variable alignment if available, otherwise 0.  */
-  unsigned int alignment;
 };
 
 /* Specific data for a SIMD function clone.  */
@@ -2568,7 +2568,7 @@ asmname_hasher::equal (symtab_node *n, const_tree t)
 }
 
 /* In cgraph.cc  */
-void cgraph_c_finalize (void);
+void cgraph_cc_finalize (void);
 void release_function_body (tree);
 cgraph_indirect_call_info *cgraph_allocate_init_indirect_info (void);
 
@@ -2579,7 +2579,7 @@ const char* cgraph_inline_failed_string (cgraph_inline_failed_t);
 cgraph_inline_failed_type_t cgraph_inline_failed_type (cgraph_inline_failed_t);
 
 /* In cgraphunit.cc  */
-void cgraphunit_c_finalize (void);
+void cgraphunit_cc_finalize (void);
 int tp_first_run_node_cmp (const void *pa, const void *pb);
 
 /* In symtab-thunks.cc  */
