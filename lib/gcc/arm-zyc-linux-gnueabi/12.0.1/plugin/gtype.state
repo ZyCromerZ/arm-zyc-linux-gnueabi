@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.1 20220131 (experimental)")
+(!version  "12.0.1 20220201 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -29678,15 +29678,15 @@
    (!type already_seen 2192)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.cc" 29606)
+  (!srcfileloc  "cp/pt.cc" 29603)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 533)
-    (!srcfileloc  "cp/pt.cc" 29606)
+    (!srcfileloc  "cp/pt.cc" 29603)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.cc" 29606)
+    (!srcfileloc  "cp/pt.cc" 29603)
     nil )
   )
  )
@@ -30831,7 +30831,7 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2192)
-  (!srcfileloc  "cp/pt.cc" 29606)
+  (!srcfileloc  "cp/pt.cc" 29603)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2179)
@@ -35344,28 +35344,28 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2193)
-  (!srcfileloc  "cp/pt.cc" 29606)
+  (!srcfileloc  "cp/pt.cc" 29603)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "explicit_specifier_map"
   (!type already_seen 929)
-  (!srcfileloc  "cp/pt.cc" 13800)
+  (!srcfileloc  "cp/pt.cc" 13795)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "defarg_inst"
   (!type already_seen 929)
-  (!srcfileloc  "cp/pt.cc" 13684)
+  (!srcfileloc  "cp/pt.cc" 13679)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "last_error_tinst_level"
   (!type already_seen 1971)
-  (!srcfileloc  "cp/pt.cc" 10969)
+  (!srcfileloc  "cp/pt.cc" 10964)
   nil )
  (!pair  "pending_template_freelist_head"
   (!type already_seen 2180)
@@ -35854,11 +35854,11 @@
   nil )
  (!pair  "dvirt_fn"
   (!type already_seen 23)
-  (!srcfileloc  "cp/class.cc" 9809)
+  (!srcfileloc  "cp/class.cc" 9811)
   nil )
  (!pair  "abort_fndecl_addr"
   (!type already_seen 23)
-  (!srcfileloc  "cp/class.cc" 9808)
+  (!srcfileloc  "cp/class.cc" 9810)
   nil )
  (!pair  "enum_to_min_precision"
   (!type already_seen 2031)
