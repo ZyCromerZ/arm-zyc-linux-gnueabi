@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-02-08" "gcc-12.0.1" "GNU"
+.TH GCC 1 "2022-02-09" "gcc-12.0.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -1192,7 +1192,8 @@ See \s-1RS/6000\s0 and PowerPC Options.
 \&\-mabi=\fR\fIABI-string\fR 
 \&\fB\-mfdiv  \-mno\-fdiv 
 \&\-mdiv  \-mno\-div 
-\&\-march=\fR\fIISA-string\fR 
+\&\-misa\-spec=\fR\fIISA-spec-string\fR 
+\&\fB\-march=\fR\fIISA-string\fR 
 \&\fB\-mtune=\fR\fIprocessor-string\fR 
 \&\fB\-mpreferred\-stack\-boundary=\fR\fInum\fR 
 \&\fB\-msmall\-data\-limit=\fR\fIN\-bytes\fR 
@@ -26602,6 +26603,30 @@ is to use them if the specified architecture has these instructions.
 Do or don't use hardware instructions for integer division.  This requires the
 M extension.  The default is to use them if the specified architecture has
 these instructions.
+.IP "\fB\-misa\-spec=\fR\fIISA-spec-string\fR" 4
+.IX Item "-misa-spec=ISA-spec-string"
+Specify the version of the RISC-V Unprivileged (formerly User-Level)
+\&\s-1ISA\s0 specification to produce code conforming to.  The possibilities
+for \fIISA-spec-string\fR are:
+.RS 4
+.ie n .IP "2.2" 4
+.el .IP "\f(CW2.2\fR" 4
+.IX Item "2.2"
+Produce code conforming to version 2.2.
+.ie n .IP "20190608" 4
+.el .IP "\f(CW20190608\fR" 4
+.IX Item "20190608"
+Produce code conforming to version 20190608.
+.ie n .IP "20191213" 4
+.el .IP "\f(CW20191213\fR" 4
+.IX Item "20191213"
+Produce code conforming to version 20191213.
+.RE
+.RS 4
+.Sp
+The default is \fB\-misa\-spec=20191213\fR unless \s-1GCC\s0 has been configured
+with \fB\-\-with\-isa\-spec=\fR specifying a different default version.
+.RE
 .IP "\fB\-march=\fR\fIISA-string\fR" 4
 .IX Item "-march=ISA-string"
 Generate code for given RISC-V \s-1ISA\s0 (e.g. \fBrv64im\fR).  \s-1ISA\s0 strings must be
