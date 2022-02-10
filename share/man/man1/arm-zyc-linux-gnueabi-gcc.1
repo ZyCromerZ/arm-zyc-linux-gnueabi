@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-02-09" "gcc-12.0.1" "GNU"
+.TH GCC 1 "2022-02-10" "gcc-12.0.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -1445,7 +1445,7 @@ See \s-1RS/6000\s0 and PowerPC Options.
 \&\fB\-mgeneral\-regs\-only  \-mcall\-ms2sysv\-xlogues \-mrelax\-cmpxchg\-loop 
 \&\-mindirect\-branch=\fR\fIchoice\fR  \fB\-mfunction\-return=\fR\fIchoice\fR 
 \&\fB\-mindirect\-branch\-register \-mharden\-sls=\fR\fIchoice\fR 
-\&\fB\-mindirect\-branch\-cs\-prefix \-mneeded\fR
+\&\fB\-mindirect\-branch\-cs\-prefix \-mneeded \-mno\-direct\-extern\-access\fR
 .Sp
 \&\fIx86 Windows Options\fR
 \&\fB\-mconsole  \-mcygwin  \-mno\-cygwin  \-mdll 
@@ -31618,6 +31618,17 @@ x32 environments.
 .PD
 Emit \s-1GNU_PROPERTY_X86_ISA_1_NEEDED GNU\s0 property for Linux target to
 indicate the micro-architecture \s-1ISA\s0 level required to execute the binary.
+.IP "\fB\-mno\-direct\-extern\-access\fR" 4
+.IX Item "-mno-direct-extern-access"
+Without \fB\-fpic\fR nor \fB\-fPIC\fR, always use the \s-1GOT\s0 pointer
+to access external symbols.  With \fB\-fpic\fR or \fB\-fPIC\fR,
+treat access to protected symbols as local symbols.  The default is
+\&\fB\-mdirect\-extern\-access\fR.
+.Sp
+\&\fBWarning:\fR shared libraries compiled with
+\&\fB\-mno\-direct\-extern\-access\fR and executable compiled with
+\&\fB\-mdirect\-extern\-access\fR may not be binary compatible if
+protected symbols are used in shared libraries and executable.
 .PP
 \fIx86 Windows Options\fR
 .IX Subsection "x86 Windows Options"
