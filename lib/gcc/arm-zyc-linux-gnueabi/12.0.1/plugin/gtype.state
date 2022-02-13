@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.1 20220212 (experimental)")
+(!version  "12.0.1 20220213 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -36317,29 +36317,29 @@
  )
  (!pair  "hwasan_ctor_statements"
   (!type already_seen 23)
-  (!srcfileloc  "asan.cc" 4516)
+  (!srcfileloc  "asan.cc" 4552)
   nil )
  (!pair  "asan_ctor_statements"
   (!type already_seen 23)
-  (!srcfileloc  "asan.cc" 3473)
+  (!srcfileloc  "asan.cc" 3509)
   nil )
  (!pair  "asan_detect_stack_use_after_return"
   (!type already_seen 23)
-  (!srcfileloc  "asan.cc" 432)
+  (!srcfileloc  "asan.cc" 433)
   nil )
  (!pair  "shadow_ptr_types"
   (!type array 2357 nil  gc_used "3" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "asan.cc" 429)
+  (!srcfileloc  "asan.cc" 430)
   nil )
  (!pair  "hwasan_frame_base_init_seq"
   (!type already_seen 296)
-  (!srcfileloc  "asan.cc" 282)
+  (!srcfileloc  "asan.cc" 283)
   nil )
  (!pair  "hwasan_frame_base_ptr"
   (!type already_seen 99)
-  (!srcfileloc  "asan.cc" 271)
+  (!srcfileloc  "asan.cc" 272)
   nil )
  (!pair  "vtbl_mangled_name_ids"
   (!type already_seen 84)
