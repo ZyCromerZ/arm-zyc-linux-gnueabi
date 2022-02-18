@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.1 20220217 (experimental)")
+(!version  "12.0.1 20220218 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -27713,7 +27713,7 @@
    (!type already_seen 1970)
   )
   gc_pointed_to "tinst_level"
-  (!srcfileloc  "cp/pt.cc" 9560)
+  (!srcfileloc  "cp/pt.cc" 9564)
   (!fields 8 
    (!pair  "next"
     (!type already_seen 1971)
@@ -28032,19 +28032,19 @@
   (!fields 4 
    (!pair  "decl"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8372)
+    (!srcfileloc  "cp/cp-tree.h" 8373)
     nil )
    (!pair  "body"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8373)
+    (!srcfileloc  "cp/cp-tree.h" 8374)
     nil )
    (!pair  "parms"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8374)
+    (!srcfileloc  "cp/cp-tree.h" 8375)
     nil )
    (!pair  "result"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8375)
+    (!srcfileloc  "cp/cp-tree.h" 8376)
     nil )
   )
   (!options 
@@ -29610,7 +29610,7 @@
    (!type already_seen 2180)
   )
   gc_pointed_to "pending_template"
-  (!srcfileloc  "cp/pt.cc" 9569)
+  (!srcfileloc  "cp/pt.cc" 9573)
   (!fields 2 
    (!pair  "next"
     (!type already_seen 2181)
@@ -29682,15 +29682,15 @@
    (!type already_seen 2193)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.cc" 29742)
+  (!srcfileloc  "cp/pt.cc" 29738)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 533)
-    (!srcfileloc  "cp/pt.cc" 29742)
+    (!srcfileloc  "cp/pt.cc" 29738)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.cc" 29742)
+    (!srcfileloc  "cp/pt.cc" 29738)
     nil )
   )
  )
@@ -30835,15 +30835,15 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2193)
-  (!srcfileloc  "cp/pt.cc" 29742)
+  (!srcfileloc  "cp/pt.cc" 29738)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2180)
-  (!srcfileloc  "cp/pt.cc" 9569)
+  (!srcfileloc  "cp/pt.cc" 9573)
   nil )
  (!pair  "tinst_level"
   (!type already_seen 1970)
-  (!srcfileloc  "cp/pt.cc" 9560)
+  (!srcfileloc  "cp/pt.cc" 9564)
   nil )
  (!pair  "spec_hash_table"
   (!type already_seen 2183)
@@ -35348,53 +35348,53 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2194)
-  (!srcfileloc  "cp/pt.cc" 29742)
+  (!srcfileloc  "cp/pt.cc" 29738)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "explicit_specifier_map"
   (!type already_seen 930)
-  (!srcfileloc  "cp/pt.cc" 13879)
+  (!srcfileloc  "cp/pt.cc" 13883)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "defarg_inst"
   (!type already_seen 1549)
-  (!srcfileloc  "cp/pt.cc" 13742)
+  (!srcfileloc  "cp/pt.cc" 13746)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "last_error_tinst_level"
   (!type already_seen 1971)
-  (!srcfileloc  "cp/pt.cc" 11024)
+  (!srcfileloc  "cp/pt.cc" 11028)
   nil )
  (!pair  "pending_template_freelist_head"
   (!type already_seen 2181)
-  (!srcfileloc  "cp/pt.cc" 9569)
+  (!srcfileloc  "cp/pt.cc" 9573)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tinst_level_freelist_head"
   (!type already_seen 1971)
-  (!srcfileloc  "cp/pt.cc" 9560)
+  (!srcfileloc  "cp/pt.cc" 9564)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tree_list_freelist_head"
   (!type already_seen 23)
-  (!srcfileloc  "cp/pt.cc" 9551)
+  (!srcfileloc  "cp/pt.cc" 9555)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "defaulted_ttp_cache"
   (!type already_seen 393)
-  (!srcfileloc  "cp/pt.cc" 7834)
+  (!srcfileloc  "cp/pt.cc" 7838)
   (!options 
    (!option deletable string  "")
   )
@@ -35881,7 +35881,7 @@
   nil )
  (!pair  "unemitted_tinfo_decls"
   (!type already_seen 84)
-  (!srcfileloc  "cp/cp-tree.h" 7440)
+  (!srcfileloc  "cp/cp-tree.h" 7441)
   nil )
  (!pair  "ovl_op_alternate"
   (!type array 2336 nil  gc_used "OVL_OP_MAX" 
