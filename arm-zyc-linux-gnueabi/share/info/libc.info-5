@@ -1,9 +1,9 @@
 This is libc.info, produced by makeinfo version 6.7 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.34
+This is ‘The GNU C Library Reference Manual’, for version 2.35
 (ZyC-GCC).
 
-   Copyright © 1993–2021 Free Software Foundation, Inc.
+   Copyright © 1993–2022 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -58,6 +58,9 @@ START-INFO-DIR-ENTRY
 * CS8: (libc)Control Modes.
 * CSIZE: (libc)Control Modes.
 * CSTOPB: (libc)Control Modes.
+* DLFO_EH_SEGMENT_TYPE: (libc)Dynamic Linker Introspection.
+* DLFO_STRUCT_HAS_EH_COUNT: (libc)Dynamic Linker Introspection.
+* DLFO_STRUCT_HAS_EH_DBASE: (libc)Dynamic Linker Introspection.
 * DTTOIF: (libc)Directory Entries.
 * E2BIG: (libc)Error Codes.
 * EACCES: (libc)Error Codes.
@@ -351,6 +354,7 @@ START-INFO-DIR-ENTRY
 * RAND_MAX: (libc)ISO Random.
 * RE_DUP_MAX: (libc)General Limits.
 * RLIM_INFINITY: (libc)Limits on Resources.
+* RSEQ_SIG: (libc)Restartable Sequences.
 * R_OK: (libc)Testing File Access.
 * SA_NOCLDSTOP: (libc)Flags for Sigaction.
 * SA_ONSTACK: (libc)Flags for Sigaction.
@@ -499,6 +503,7 @@ START-INFO-DIR-ENTRY
 * __riscv_flush_icache: (libc)RISC-V.
 * __va_copy: (libc)Argument Macros.
 * __x86_get_cpuid_feature_leaf: (libc)X86.
+* _dl_find_object: (libc)Dynamic Linker Introspection.
 * _exit: (libc)Termination Internals.
 * _flushlbf: (libc)Flushing Buffers.
 * _tolower: (libc)Case Conversion.
@@ -802,6 +807,7 @@ START-INFO-DIR-ENTRY
 * dcgettext: (libc)Translation with gettext.
 * dcngettext: (libc)Advanced gettext functions.
 * ddivl: (libc)Misc FP Arithmetic.
+* dfmal: (libc)Misc FP Arithmetic.
 * dgettext: (libc)Translation with gettext.
 * difftime: (libc)Calculating Elapsed Time.
 * dirfd: (libc)Opening a Directory.
@@ -814,6 +820,7 @@ START-INFO-DIR-ENTRY
 * drem: (libc)Remainder Functions.
 * dremf: (libc)Remainder Functions.
 * dreml: (libc)Remainder Functions.
+* dsqrtl: (libc)Misc FP Arithmetic.
 * dsubl: (libc)Misc FP Arithmetic.
 * dup2: (libc)Duplicating Descriptors.
 * dup: (libc)Duplicating Descriptors.
@@ -885,16 +892,24 @@ START-INFO-DIR-ENTRY
 * fMaddfNx: (libc)Misc FP Arithmetic.
 * fMdivfN: (libc)Misc FP Arithmetic.
 * fMdivfNx: (libc)Misc FP Arithmetic.
+* fMfmafN: (libc)Misc FP Arithmetic.
+* fMfmafNx: (libc)Misc FP Arithmetic.
 * fMmulfN: (libc)Misc FP Arithmetic.
 * fMmulfNx: (libc)Misc FP Arithmetic.
+* fMsqrtfN: (libc)Misc FP Arithmetic.
+* fMsqrtfNx: (libc)Misc FP Arithmetic.
 * fMsubfN: (libc)Misc FP Arithmetic.
 * fMsubfNx: (libc)Misc FP Arithmetic.
 * fMxaddfN: (libc)Misc FP Arithmetic.
 * fMxaddfNx: (libc)Misc FP Arithmetic.
 * fMxdivfN: (libc)Misc FP Arithmetic.
 * fMxdivfNx: (libc)Misc FP Arithmetic.
+* fMxfmafN: (libc)Misc FP Arithmetic.
+* fMxfmafNx: (libc)Misc FP Arithmetic.
 * fMxmulfN: (libc)Misc FP Arithmetic.
 * fMxmulfNx: (libc)Misc FP Arithmetic.
+* fMxsqrtfN: (libc)Misc FP Arithmetic.
+* fMxsqrtfNx: (libc)Misc FP Arithmetic.
 * fMxsubfN: (libc)Misc FP Arithmetic.
 * fMxsubfNx: (libc)Misc FP Arithmetic.
 * fabs: (libc)Absolute Value.
@@ -947,6 +962,8 @@ START-INFO-DIR-ENTRY
 * fexecve: (libc)Executing a File.
 * fflush: (libc)Flushing Buffers.
 * fflush_unlocked: (libc)Flushing Buffers.
+* ffma: (libc)Misc FP Arithmetic.
+* ffmal: (libc)Misc FP Arithmetic.
 * fgetc: (libc)Character Input.
 * fgetc_unlocked: (libc)Character Input.
 * fgetgrent: (libc)Scanning All Groups.
@@ -981,6 +998,26 @@ START-INFO-DIR-ENTRY
 * fmaxf: (libc)Misc FP Arithmetic.
 * fmaxfN: (libc)Misc FP Arithmetic.
 * fmaxfNx: (libc)Misc FP Arithmetic.
+* fmaximum: (libc)Misc FP Arithmetic.
+* fmaximum_mag: (libc)Misc FP Arithmetic.
+* fmaximum_mag_num: (libc)Misc FP Arithmetic.
+* fmaximum_mag_numf: (libc)Misc FP Arithmetic.
+* fmaximum_mag_numfN: (libc)Misc FP Arithmetic.
+* fmaximum_mag_numfNx: (libc)Misc FP Arithmetic.
+* fmaximum_mag_numl: (libc)Misc FP Arithmetic.
+* fmaximum_magf: (libc)Misc FP Arithmetic.
+* fmaximum_magfN: (libc)Misc FP Arithmetic.
+* fmaximum_magfNx: (libc)Misc FP Arithmetic.
+* fmaximum_magl: (libc)Misc FP Arithmetic.
+* fmaximum_num: (libc)Misc FP Arithmetic.
+* fmaximum_numf: (libc)Misc FP Arithmetic.
+* fmaximum_numfN: (libc)Misc FP Arithmetic.
+* fmaximum_numfNx: (libc)Misc FP Arithmetic.
+* fmaximum_numl: (libc)Misc FP Arithmetic.
+* fmaximumf: (libc)Misc FP Arithmetic.
+* fmaximumfN: (libc)Misc FP Arithmetic.
+* fmaximumfNx: (libc)Misc FP Arithmetic.
+* fmaximuml: (libc)Misc FP Arithmetic.
 * fmaxl: (libc)Misc FP Arithmetic.
 * fmaxmag: (libc)Misc FP Arithmetic.
 * fmaxmagf: (libc)Misc FP Arithmetic.
@@ -992,6 +1029,26 @@ START-INFO-DIR-ENTRY
 * fminf: (libc)Misc FP Arithmetic.
 * fminfN: (libc)Misc FP Arithmetic.
 * fminfNx: (libc)Misc FP Arithmetic.
+* fminimum: (libc)Misc FP Arithmetic.
+* fminimum_mag: (libc)Misc FP Arithmetic.
+* fminimum_mag_num: (libc)Misc FP Arithmetic.
+* fminimum_mag_numf: (libc)Misc FP Arithmetic.
+* fminimum_mag_numfN: (libc)Misc FP Arithmetic.
+* fminimum_mag_numfNx: (libc)Misc FP Arithmetic.
+* fminimum_mag_numl: (libc)Misc FP Arithmetic.
+* fminimum_magf: (libc)Misc FP Arithmetic.
+* fminimum_magfN: (libc)Misc FP Arithmetic.
+* fminimum_magfNx: (libc)Misc FP Arithmetic.
+* fminimum_magl: (libc)Misc FP Arithmetic.
+* fminimum_num: (libc)Misc FP Arithmetic.
+* fminimum_numf: (libc)Misc FP Arithmetic.
+* fminimum_numfN: (libc)Misc FP Arithmetic.
+* fminimum_numfNx: (libc)Misc FP Arithmetic.
+* fminimum_numl: (libc)Misc FP Arithmetic.
+* fminimumf: (libc)Misc FP Arithmetic.
+* fminimumfN: (libc)Misc FP Arithmetic.
+* fminimumfNx: (libc)Misc FP Arithmetic.
+* fminimuml: (libc)Misc FP Arithmetic.
 * fminl: (libc)Misc FP Arithmetic.
 * fminmag: (libc)Misc FP Arithmetic.
 * fminmagf: (libc)Misc FP Arithmetic.
@@ -1049,6 +1106,8 @@ START-INFO-DIR-ENTRY
 * fseeko: (libc)File Positioning.
 * fsetpos64: (libc)Portable Positioning.
 * fsetpos: (libc)Portable Positioning.
+* fsqrt: (libc)Misc FP Arithmetic.
+* fsqrtl: (libc)Misc FP Arithmetic.
 * fstat64: (libc)Reading Attributes.
 * fstat: (libc)Reading Attributes.
 * fsub: (libc)Misc FP Arithmetic.
@@ -2105,6 +2164,337 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
+File: libc.info,  Node: Streams and I18N,  Next: Simple Output,  Prev: Streams and Threads,  Up: I/O on Streams
+
+12.6 Streams in Internationalized Applications
+==============================================
+
+ISO C90 introduced the new type ‘wchar_t’ to allow handling larger
+character sets.  What was missing was a possibility to output strings of
+‘wchar_t’ directly.  One had to convert them into multibyte strings
+using ‘mbstowcs’ (there was no ‘mbsrtowcs’ yet) and then use the normal
+stream functions.  While this is doable it is very cumbersome since
+performing the conversions is not trivial and greatly increases program
+complexity and size.
+
+   The Unix standard early on (I think in XPG4.2) introduced two
+additional format specifiers for the ‘printf’ and ‘scanf’ families of
+functions.  Printing and reading of single wide characters was made
+possible using the ‘%C’ specifier and wide character strings can be
+handled with ‘%S’.  These modifiers behave just like ‘%c’ and ‘%s’ only
+that they expect the corresponding argument to have the wide character
+type and that the wide character and string are transformed into/from
+multibyte strings before being used.
+
+   This was a beginning but it is still not good enough.  Not always is
+it desirable to use ‘printf’ and ‘scanf’.  The other, smaller and faster
+functions cannot handle wide characters.  Second, it is not possible to
+have a format string for ‘printf’ and ‘scanf’ consisting of wide
+characters.  The result is that format strings would have to be
+generated if they have to contain non-basic characters.
+
+   In the Amendment 1 to ISO C90 a whole new set of functions was added
+to solve the problem.  Most of the stream functions got a counterpart
+which take a wide character or wide character string instead of a
+character or string respectively.  The new functions operate on the same
+streams (like ‘stdout’).  This is different from the model of the C++
+runtime library where separate streams for wide and normal I/O are used.
+
+   Being able to use the same stream for wide and normal operations
+comes with a restriction: a stream can be used either for wide
+operations or for normal operations.  Once it is decided there is no way
+back.  Only a call to ‘freopen’ or ‘freopen64’ can reset the
+“orientation”.  The orientation can be decided in three ways:
+
+   • If any of the normal character functions are used (this includes
+     the ‘fread’ and ‘fwrite’ functions) the stream is marked as not
+     wide oriented.
+
+   • If any of the wide character functions are used the stream is
+     marked as wide oriented.
+
+   • The ‘fwide’ function can be used to set the orientation either way.
+
+   It is important to never mix the use of wide and not wide operations
+on a stream.  There are no diagnostics issued.  The application behavior
+will simply be strange or the application will simply crash.  The
+‘fwide’ function can help avoid this.
+
+ -- Function: int fwide (FILE *STREAM, int MODE)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe lock | *Note
+     POSIX Safety Concepts::.
+
+     The ‘fwide’ function can be used to set and query the state of the
+     orientation of the stream STREAM.  If the MODE parameter has a
+     positive value the streams get wide oriented, for negative values
+     narrow oriented.  It is not possible to overwrite previous
+     orientations with ‘fwide’.  I.e., if the stream STREAM was already
+     oriented before the call nothing is done.
+
+     If MODE is zero the current orientation state is queried and
+     nothing is changed.
+
+     The ‘fwide’ function returns a negative value, zero, or a positive
+     value if the stream is narrow, not at all, or wide oriented
+     respectively.
+
+     This function was introduced in Amendment 1 to ISO C90 and is
+     declared in ‘wchar.h’.
+
+   It is generally a good idea to orient a stream as early as possible.
+This can prevent surprise especially for the standard streams ‘stdin’,
+‘stdout’, and ‘stderr’.  If some library function in some situations
+uses one of these streams and this use orients the stream in a different
+way the rest of the application expects it one might end up with hard to
+reproduce errors.  Remember that no errors are signal if the streams are
+used incorrectly.  Leaving a stream unoriented after creation is
+normally only necessary for library functions which create streams which
+can be used in different contexts.
+
+   When writing code which uses streams and which can be used in
+different contexts it is important to query the orientation of the
+stream before using it (unless the rules of the library interface demand
+a specific orientation).  The following little, silly function
+illustrates this.
+
+     void
+     print_f (FILE *fp)
+     {
+       if (fwide (fp, 0) > 0)
+         /* Positive return value means wide orientation.  */
+         fputwc (L'f', fp);
+       else
+         fputc ('f', fp);
+     }
+
+   Note that in this case the function ‘print_f’ decides about the
+orientation of the stream if it was unoriented before (will not happen
+if the advice above is followed).
+
+   The encoding used for the ‘wchar_t’ values is unspecified and the
+user must not make any assumptions about it.  For I/O of ‘wchar_t’
+values this means that it is impossible to write these values directly
+to the stream.  This is not what follows from the ISO C locale model
+either.  What happens instead is that the bytes read from or written to
+the underlying media are first converted into the internal encoding
+chosen by the implementation for ‘wchar_t’.  The external encoding is
+determined by the ‘LC_CTYPE’ category of the current locale or by the
+‘ccs’ part of the mode specification given to ‘fopen’, ‘fopen64’,
+‘freopen’, or ‘freopen64’.  How and when the conversion happens is
+unspecified and it happens invisibly to the user.
+
+   Since a stream is created in the unoriented state it has at that
+point no conversion associated with it.  The conversion which will be
+used is determined by the ‘LC_CTYPE’ category selected at the time the
+stream is oriented.  If the locales are changed at the runtime this
+might produce surprising results unless one pays attention.  This is
+just another good reason to orient the stream explicitly as soon as
+possible, perhaps with a call to ‘fwide’.
+
+
+File: libc.info,  Node: Simple Output,  Next: Character Input,  Prev: Streams and I18N,  Up: I/O on Streams
+
+12.7 Simple Output by Characters or Lines
+=========================================
+
+This section describes functions for performing character- and
+line-oriented output.
+
+   These narrow stream functions are declared in the header file
+‘stdio.h’ and the wide stream functions in ‘wchar.h’.
+
+ -- Function: int fputc (int C, FILE *STREAM)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe corrupt lock
+     | *Note POSIX Safety Concepts::.
+
+     The ‘fputc’ function converts the character C to type ‘unsigned
+     char’, and writes it to the stream STREAM.  ‘EOF’ is returned if a
+     write error occurs; otherwise the character C is returned.
+
+ -- Function: wint_t fputwc (wchar_t WC, FILE *STREAM)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe corrupt lock
+     | *Note POSIX Safety Concepts::.
+
+     The ‘fputwc’ function writes the wide character WC to the stream
+     STREAM.  ‘WEOF’ is returned if a write error occurs; otherwise the
+     character WC is returned.
+
+ -- Function: int fputc_unlocked (int C, FILE *STREAM)
+
+     Preliminary: | MT-Safe race:stream | AS-Unsafe corrupt | AC-Unsafe
+     corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘fputc_unlocked’ function is equivalent to the ‘fputc’ function
+     except that it does not implicitly lock the stream.
+
+ -- Function: wint_t fputwc_unlocked (wchar_t WC, FILE *STREAM)
+
+     Preliminary: | MT-Safe race:stream | AS-Unsafe corrupt | AC-Unsafe
+     corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘fputwc_unlocked’ function is equivalent to the ‘fputwc’
+     function except that it does not implicitly lock the stream.
+
+     This function is a GNU extension.
+
+ -- Function: int putc (int C, FILE *STREAM)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe corrupt lock
+     | *Note POSIX Safety Concepts::.
+
+     This is just like ‘fputc’, except that most systems implement it as
+     a macro, making it faster.  One consequence is that it may evaluate
+     the STREAM argument more than once, which is an exception to the
+     general rule for macros.  ‘putc’ is usually the best function to
+     use for writing a single character.
+
+ -- Function: wint_t putwc (wchar_t WC, FILE *STREAM)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe corrupt lock
+     | *Note POSIX Safety Concepts::.
+
+     This is just like ‘fputwc’, except that it can be implement as a
+     macro, making it faster.  One consequence is that it may evaluate
+     the STREAM argument more than once, which is an exception to the
+     general rule for macros.  ‘putwc’ is usually the best function to
+     use for writing a single wide character.
+
+ -- Function: int putc_unlocked (int C, FILE *STREAM)
+
+     Preliminary: | MT-Safe race:stream | AS-Unsafe corrupt | AC-Unsafe
+     corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘putc_unlocked’ function is equivalent to the ‘putc’ function
+     except that it does not implicitly lock the stream.
+
+ -- Function: wint_t putwc_unlocked (wchar_t WC, FILE *STREAM)
+
+     Preliminary: | MT-Safe race:stream | AS-Unsafe corrupt | AC-Unsafe
+     corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘putwc_unlocked’ function is equivalent to the ‘putwc’ function
+     except that it does not implicitly lock the stream.
+
+     This function is a GNU extension.
+
+ -- Function: int putchar (int C)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe corrupt lock
+     | *Note POSIX Safety Concepts::.
+
+     The ‘putchar’ function is equivalent to ‘putc’ with ‘stdout’ as the
+     value of the STREAM argument.
+
+ -- Function: wint_t putwchar (wchar_t WC)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe corrupt lock
+     | *Note POSIX Safety Concepts::.
+
+     The ‘putwchar’ function is equivalent to ‘putwc’ with ‘stdout’ as
+     the value of the STREAM argument.
+
+ -- Function: int putchar_unlocked (int C)
+
+     Preliminary: | MT-Unsafe race:stdout | AS-Unsafe corrupt |
+     AC-Unsafe corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘putchar_unlocked’ function is equivalent to the ‘putchar’
+     function except that it does not implicitly lock the stream.
+
+ -- Function: wint_t putwchar_unlocked (wchar_t WC)
+
+     Preliminary: | MT-Unsafe race:stdout | AS-Unsafe corrupt |
+     AC-Unsafe corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘putwchar_unlocked’ function is equivalent to the ‘putwchar’
+     function except that it does not implicitly lock the stream.
+
+     This function is a GNU extension.
+
+ -- Function: int fputs (const char *S, FILE *STREAM)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe corrupt lock
+     | *Note POSIX Safety Concepts::.
+
+     The function ‘fputs’ writes the string S to the stream STREAM.  The
+     terminating null character is not written.  This function does
+     _not_ add a newline character, either.  It outputs only the
+     characters in the string.
+
+     This function returns ‘EOF’ if a write error occurs, and otherwise
+     a non-negative value.
+
+     For example:
+
+          fputs ("Are ", stdout);
+          fputs ("you ", stdout);
+          fputs ("hungry?\n", stdout);
+
+     outputs the text ‘Are you hungry?’ followed by a newline.
+
+ -- Function: int fputws (const wchar_t *WS, FILE *STREAM)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe corrupt lock
+     | *Note POSIX Safety Concepts::.
+
+     The function ‘fputws’ writes the wide character string WS to the
+     stream STREAM.  The terminating null character is not written.
+     This function does _not_ add a newline character, either.  It
+     outputs only the characters in the string.
+
+     This function returns ‘WEOF’ if a write error occurs, and otherwise
+     a non-negative value.
+
+ -- Function: int fputs_unlocked (const char *S, FILE *STREAM)
+
+     Preliminary: | MT-Safe race:stream | AS-Unsafe corrupt | AC-Unsafe
+     corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘fputs_unlocked’ function is equivalent to the ‘fputs’ function
+     except that it does not implicitly lock the stream.
+
+     This function is a GNU extension.
+
+ -- Function: int fputws_unlocked (const wchar_t *WS, FILE *STREAM)
+
+     Preliminary: | MT-Safe race:stream | AS-Unsafe corrupt | AC-Unsafe
+     corrupt | *Note POSIX Safety Concepts::.
+
+     The ‘fputws_unlocked’ function is equivalent to the ‘fputws’
+     function except that it does not implicitly lock the stream.
+
+     This function is a GNU extension.
+
+ -- Function: int puts (const char *S)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe lock corrupt
+     | *Note POSIX Safety Concepts::.
+
+     The ‘puts’ function writes the string S to the stream ‘stdout’
+     followed by a newline.  The terminating null character of the
+     string is not written.  (Note that ‘fputs’ does _not_ write a
+     newline as this function does.)
+
+     ‘puts’ is the most convenient function for printing simple
+     messages.  For example:
+
+          puts ("This is a message.");
+
+     outputs the text ‘This is a message.’ followed by a newline.
+
+ -- Function: int putw (int W, FILE *STREAM)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe lock corrupt
+     | *Note POSIX Safety Concepts::.
+
+     This function writes the word W (that is, an ‘int’) to STREAM.  It
+     is provided for compatibility with SVID, but we recommend you use
+     ‘fwrite’ instead (*note Block Input/Output::).
+
+
 File: libc.info,  Node: Character Input,  Next: Line Input,  Prev: Simple Output,  Up: I/O on Streams
 
 12.8 Character Input
@@ -2729,8 +3119,8 @@ conversion to specify printing of a string argument, and the ‘%%’
 conversion to print a literal ‘%’ character.
 
    There are also conversions for printing an integer argument as an
-unsigned value in octal, decimal, or hexadecimal radix (‘%o’, ‘%u’, or
-‘%x’, respectively); or as a character value (‘%c’).
+unsigned value in binary, octal, decimal, or hexadecimal radix (‘%b’,
+‘%o’, ‘%u’, or ‘%x’, respectively); or as a character value (‘%c’).
 
    Floating-point numbers can be printed in normal, fixed-point notation
 using the ‘%f’ conversion or in exponential notation using the ‘%e’
@@ -2875,6 +3265,12 @@ Here is a table summarizing what all the different conversions do:
      output, but are different when used with ‘scanf’ for input (*note
      Table of Input Conversions::).
 
+‘%b’, ‘%B’
+     Print an integer as an unsigned binary number.  ‘%b’ uses
+     lower-case ‘b’ with the ‘#’ flag and ‘%B’ uses upper-case.  ‘%b’ is
+     an ISO C2X feature; ‘%B’ is an extension recommended by ISO C2X.
+     *Note Integer Conversions::, for details.
+
 ‘%o’
      Print an integer as an unsigned octal number.  *Note Integer
      Conversions::, for details.
@@ -2952,16 +3348,17 @@ File: libc.info,  Node: Integer Conversions,  Next: Floating-Point Conversions, 
 12.12.4 Integer Conversions
 ---------------------------
 
-This section describes the options for the ‘%d’, ‘%i’, ‘%o’, ‘%u’, ‘%x’,
-and ‘%X’ conversion specifications.  These conversions print integers in
-various formats.
+This section describes the options for the ‘%d’, ‘%i’, ‘%b’, ‘%B’, ‘%o’,
+‘%u’, ‘%x’, and ‘%X’ conversion specifications.  These conversions print
+integers in various formats.
 
    The ‘%d’ and ‘%i’ conversion specifications both print an ‘int’
-argument as a signed decimal number; while ‘%o’, ‘%u’, and ‘%x’ print
-the argument as an unsigned octal, decimal, or hexadecimal number
-(respectively).  The ‘%X’ conversion specification is just like ‘%x’
-except that it uses the characters ‘ABCDEF’ as digits instead of
-‘abcdef’.
+argument as a signed decimal number; while ‘b’, ‘%o’, ‘%u’, and ‘%x’
+print the argument as an unsigned binary, octal, decimal, or hexadecimal
+number (respectively).  The ‘%X’ conversion specification is just like
+‘%x’ except that it uses the characters ‘ABCDEF’ as digits instead of
+‘abcdef’.  The ‘%B’ conversion specification is just like ‘%b’ except
+that, with the ‘#’ flag, the output starts with ‘0B’ instead of ‘0b’.
 
    The following flags are meaningful:
 
@@ -2982,11 +3379,16 @@ except that it uses the characters ‘ABCDEF’ as digits instead of
 ‘#’
      For the ‘%o’ conversion, this forces the leading digit to be ‘0’,
      as if by increasing the precision.  For ‘%x’ or ‘%X’, this prefixes
-     a leading ‘0x’ or ‘0X’ (respectively) to the result.  This doesn’t
-     do anything useful for the ‘%d’, ‘%i’, or ‘%u’ conversions.  Using
-     this flag produces output which can be parsed by the ‘strtoul’
-     function (*note Parsing of Integers::) and ‘scanf’ with the ‘%i’
-     conversion (*note Numeric Input Conversions::).
+     a leading ‘0x’ or ‘0X’ (respectively) to the result.  For ‘%b’ or
+     ‘%B’, this prefixes a leading ‘0b’ or ‘0B’ (respectively) to the
+     result.  This doesn’t do anything useful for the ‘%d’, ‘%i’, or
+     ‘%u’ conversions.  Using this flag produces output which can be
+     parsed by the ‘strtoul’ function (*note Parsing of Integers::) and
+     ‘scanf’ with the ‘%i’ conversion (*note Numeric Input
+     Conversions::).
+
+     For the ‘%m’ conversion, print an error constant or decimal error
+     number, instead of a (possibly translated) error message.
 
 ‘'’
      Separate the digits into groups as specified by the locale
@@ -3006,10 +3408,11 @@ zero, then no characters at all are produced.
 
    Without a type modifier, the corresponding argument is treated as an
 ‘int’ (for the signed conversions ‘%i’ and ‘%d’) or ‘unsigned int’ (for
-the unsigned conversions ‘%o’, ‘%u’, ‘%x’, and ‘%X’).  Recall that since
-‘printf’ and friends are variadic, any ‘char’ and ‘short’ arguments are
-automatically converted to ‘int’ by the default argument promotions.
-For arguments of other integer types, you can use these modifiers:
+the unsigned conversions ‘%b’, ‘%B’, ‘%o’, ‘%u’, ‘%x’, and ‘%X’).
+Recall that since ‘printf’ and friends are variadic, any ‘char’ and
+‘short’ arguments are automatically converted to ‘int’ by the default
+argument promotions.  For arguments of other integer types, you can use
+these modifiers:
 
 ‘hh’
      Specifies that the argument is a ‘signed char’ or ‘unsigned char’,
@@ -3136,7 +3539,10 @@ as necessary to represent the value exactly.
    If the value to be printed represents infinity or a NaN, the output
 is [‘-’]‘inf’ or ‘nan’ respectively if the conversion specifier is ‘%a’,
 ‘%e’, ‘%f’, or ‘%g’ and it is [‘-’]‘INF’ or ‘NAN’ respectively if the
-conversion is ‘%A’, ‘%E’, or ‘%G’.
+conversion is ‘%A’, ‘%E’, or ‘%G’.  On some implementations, a NaN may
+result in longer output with information about the payload of the NaN;
+ISO C2X defines a macro ‘_PRINTF_NAN_LEN_MAX’ giving the maximum length
+of such output.
 
    The following flags can be used to modify the behavior:
 
@@ -3264,7 +3670,9 @@ is equivalent to:
 
      fprintf (stderr, "can't open `%s': %s\n", filename, strerror (errno));
 
-The ‘%m’ conversion is a GNU C Library extension.
+   The ‘%m’ conversion can be used with the ‘#’ flag to print an error
+constant, as provided by ‘strerrorname_np’.  Both ‘%m’ and ‘%#m’ are GNU
+C Library extensions.
 
    The ‘%p’ conversion prints a pointer value.  The corresponding
 argument must be of type ‘void *’.  In practice, you can use any type of
@@ -6777,9 +7185,9 @@ that it is closed.
      Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
      Concepts::.
 
-     The function ‘closefrom’ closes all file descriptors larger than or
-     equal to LOWFD then LOWFD.  This function is similar to calling
-     ‘close’ for all open file descriptors not less than LOWFD.
+     The function ‘closefrom’ closes all file descriptors greater than
+     or equal to LOWFD.  This function is similar to calling ‘close’ for
+     all open file descriptors not less than LOWFD.
 
      Already closed file descriptors are ignored.
 
@@ -7119,189 +7527,4 @@ These functions are declared in the header file ‘unistd.h’.
      When the source file is compiled using ‘_FILE_OFFSET_BITS == 64’ on
      a 32 bit machine this function is actually available under the name
      ‘pwrite’ and so transparently replaces the 32 bit interface.
-
-
-File: libc.info,  Node: File Position Primitive,  Next: Descriptors and Streams,  Prev: I/O Primitives,  Up: Low-Level I/O
-
-13.3 Setting the File Position of a Descriptor
-==============================================
-
-Just as you can set the file position of a stream with ‘fseek’, you can
-set the file position of a descriptor with ‘lseek’.  This specifies the
-position in the file for the next ‘read’ or ‘write’ operation.  *Note
-File Positioning::, for more information on the file position and what
-it means.
-
-   To read the current file position value from a descriptor, use ‘lseek
-(DESC, 0, SEEK_CUR)’.
-
- -- Function: off_t lseek (int FILEDES, off_t OFFSET, int WHENCE)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     The ‘lseek’ function is used to change the file position of the
-     file with descriptor FILEDES.
-
-     The WHENCE argument specifies how the OFFSET should be interpreted,
-     in the same way as for the ‘fseek’ function, and it must be one of
-     the symbolic constants ‘SEEK_SET’, ‘SEEK_CUR’, or ‘SEEK_END’.
-
-     ‘SEEK_SET’
-          Specifies that OFFSET is a count of characters from the
-          beginning of the file.
-
-     ‘SEEK_CUR’
-          Specifies that OFFSET is a count of characters from the
-          current file position.  This count may be positive or
-          negative.
-
-     ‘SEEK_END’
-          Specifies that OFFSET is a count of characters from the end of
-          the file.  A negative count specifies a position within the
-          current extent of the file; a positive count specifies a
-          position past the current end.  If you set the position past
-          the current end, and actually write data, you will extend the
-          file with zeros up to that position.
-
-     The return value from ‘lseek’ is normally the resulting file
-     position, measured in bytes from the beginning of the file.  You
-     can use this feature together with ‘SEEK_CUR’ to read the current
-     file position.
-
-     If you want to append to the file, setting the file position to the
-     current end of file with ‘SEEK_END’ is not sufficient.  Another
-     process may write more data after you seek but before you write,
-     extending the file so the position you write onto clobbers their
-     data.  Instead, use the ‘O_APPEND’ operating mode; *note Operating
-     Modes::.
-
-     You can set the file position past the current end of the file.
-     This does not by itself make the file longer; ‘lseek’ never changes
-     the file.  But subsequent output at that position will extend the
-     file.  Characters between the previous end of file and the new
-     position are filled with zeros.  Extending the file in this way can
-     create a “hole”: the blocks of zeros are not actually allocated on
-     disk, so the file takes up less space than it appears to; it is
-     then called a “sparse file”.
-
-     If the file position cannot be changed, or the operation is in some
-     way invalid, ‘lseek’ returns a value of -1.  The following ‘errno’
-     error conditions are defined for this function:
-
-     ‘EBADF’
-          The FILEDES is not a valid file descriptor.
-
-     ‘EINVAL’
-          The WHENCE argument value is not valid, or the resulting file
-          offset is not valid.  A file offset is invalid.
-
-     ‘ESPIPE’
-          The FILEDES corresponds to an object that cannot be
-          positioned, such as a pipe, FIFO or terminal device.  (POSIX.1
-          specifies this error only for pipes and FIFOs, but on GNU
-          systems, you always get ‘ESPIPE’ if the object is not
-          seekable.)
-
-     When the source file is compiled with ‘_FILE_OFFSET_BITS == 64’ the
-     ‘lseek’ function is in fact ‘lseek64’ and the type ‘off_t’ has 64
-     bits which makes it possible to handle files up to 2^63 bytes in
-     length.
-
-     This function is a cancellation point in multi-threaded programs.
-     This is a problem if the thread allocates some resources (like
-     memory, file descriptors, semaphores or whatever) at the time
-     ‘lseek’ is called.  If the thread gets canceled these resources
-     stay allocated until the program ends.  To avoid this calls to
-     ‘lseek’ should be protected using cancellation handlers.
-
-     The ‘lseek’ function is the underlying primitive for the ‘fseek’,
-     ‘fseeko’, ‘ftell’, ‘ftello’ and ‘rewind’ functions, which operate
-     on streams instead of file descriptors.
-
- -- Function: off64_t lseek64 (int FILEDES, off64_t OFFSET, int WHENCE)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     This function is similar to the ‘lseek’ function.  The difference
-     is that the OFFSET parameter is of type ‘off64_t’ instead of
-     ‘off_t’ which makes it possible on 32 bit machines to address files
-     larger than 2^31 bytes and up to 2^63 bytes.  The file descriptor
-     ‘filedes’ must be opened using ‘open64’ since otherwise the large
-     offsets possible with ‘off64_t’ will lead to errors with a
-     descriptor in small file mode.
-
-     When the source file is compiled with ‘_FILE_OFFSET_BITS == 64’ on
-     a 32 bits machine this function is actually available under the
-     name ‘lseek’ and so transparently replaces the 32 bit interface.
-
-   You can have multiple descriptors for the same file if you open the
-file more than once, or if you duplicate a descriptor with ‘dup’.
-Descriptors that come from separate calls to ‘open’ have independent
-file positions; using ‘lseek’ on one descriptor has no effect on the
-other.  For example,
-
-     {
-       int d1, d2;
-       char buf[4];
-       d1 = open ("foo", O_RDONLY);
-       d2 = open ("foo", O_RDONLY);
-       lseek (d1, 1024, SEEK_SET);
-       read (d2, buf, 4);
-     }
-
-will read the first four characters of the file ‘foo’.  (The
-error-checking code necessary for a real program has been omitted here
-for brevity.)
-
-   By contrast, descriptors made by duplication share a common file
-position with the original descriptor that was duplicated.  Anything
-which alters the file position of one of the duplicates, including
-reading or writing data, affects all of them alike.  Thus, for example,
-
-     {
-       int d1, d2, d3;
-       char buf1[4], buf2[4];
-       d1 = open ("foo", O_RDONLY);
-       d2 = dup (d1);
-       d3 = dup (d2);
-       lseek (d3, 1024, SEEK_SET);
-       read (d1, buf1, 4);
-       read (d2, buf2, 4);
-     }
-
-will read four characters starting with the 1024’th character of ‘foo’,
-and then four more characters starting with the 1028’th character.
-
- -- Data Type: off_t
-
-     This is a signed integer type used to represent file sizes.  In the
-     GNU C Library, this type is no narrower than ‘int’.
-
-     If the source is compiled with ‘_FILE_OFFSET_BITS == 64’ this type
-     is transparently replaced by ‘off64_t’.
-
- -- Data Type: off64_t
-
-     This type is used similar to ‘off_t’.  The difference is that even
-     on 32 bit machines, where the ‘off_t’ type would have 32 bits,
-     ‘off64_t’ has 64 bits and so is able to address files up to 2^63
-     bytes in length.
-
-     When compiling with ‘_FILE_OFFSET_BITS == 64’ this type is
-     available under the name ‘off_t’.
-
-   These aliases for the ‘SEEK_...’ constants exist for the sake of
-compatibility with older BSD systems.  They are defined in two different
-header files: ‘fcntl.h’ and ‘sys/file.h’.
-
-‘L_SET’
-     An alias for ‘SEEK_SET’.
-
-‘L_INCR’
-     An alias for ‘SEEK_CUR’.
-
-‘L_XTND’
-     An alias for ‘SEEK_END’.
 

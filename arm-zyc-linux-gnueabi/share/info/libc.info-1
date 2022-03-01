@@ -1,9 +1,9 @@
 This is libc.info, produced by makeinfo version 6.7 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.34
+This is ‘The GNU C Library Reference Manual’, for version 2.35
 (ZyC-GCC).
 
-   Copyright © 1993–2021 Free Software Foundation, Inc.
+   Copyright © 1993–2022 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -58,6 +58,9 @@ START-INFO-DIR-ENTRY
 * CS8: (libc)Control Modes.
 * CSIZE: (libc)Control Modes.
 * CSTOPB: (libc)Control Modes.
+* DLFO_EH_SEGMENT_TYPE: (libc)Dynamic Linker Introspection.
+* DLFO_STRUCT_HAS_EH_COUNT: (libc)Dynamic Linker Introspection.
+* DLFO_STRUCT_HAS_EH_DBASE: (libc)Dynamic Linker Introspection.
 * DTTOIF: (libc)Directory Entries.
 * E2BIG: (libc)Error Codes.
 * EACCES: (libc)Error Codes.
@@ -351,6 +354,7 @@ START-INFO-DIR-ENTRY
 * RAND_MAX: (libc)ISO Random.
 * RE_DUP_MAX: (libc)General Limits.
 * RLIM_INFINITY: (libc)Limits on Resources.
+* RSEQ_SIG: (libc)Restartable Sequences.
 * R_OK: (libc)Testing File Access.
 * SA_NOCLDSTOP: (libc)Flags for Sigaction.
 * SA_ONSTACK: (libc)Flags for Sigaction.
@@ -499,6 +503,7 @@ START-INFO-DIR-ENTRY
 * __riscv_flush_icache: (libc)RISC-V.
 * __va_copy: (libc)Argument Macros.
 * __x86_get_cpuid_feature_leaf: (libc)X86.
+* _dl_find_object: (libc)Dynamic Linker Introspection.
 * _exit: (libc)Termination Internals.
 * _flushlbf: (libc)Flushing Buffers.
 * _tolower: (libc)Case Conversion.
@@ -802,6 +807,7 @@ START-INFO-DIR-ENTRY
 * dcgettext: (libc)Translation with gettext.
 * dcngettext: (libc)Advanced gettext functions.
 * ddivl: (libc)Misc FP Arithmetic.
+* dfmal: (libc)Misc FP Arithmetic.
 * dgettext: (libc)Translation with gettext.
 * difftime: (libc)Calculating Elapsed Time.
 * dirfd: (libc)Opening a Directory.
@@ -814,6 +820,7 @@ START-INFO-DIR-ENTRY
 * drem: (libc)Remainder Functions.
 * dremf: (libc)Remainder Functions.
 * dreml: (libc)Remainder Functions.
+* dsqrtl: (libc)Misc FP Arithmetic.
 * dsubl: (libc)Misc FP Arithmetic.
 * dup2: (libc)Duplicating Descriptors.
 * dup: (libc)Duplicating Descriptors.
@@ -885,16 +892,24 @@ START-INFO-DIR-ENTRY
 * fMaddfNx: (libc)Misc FP Arithmetic.
 * fMdivfN: (libc)Misc FP Arithmetic.
 * fMdivfNx: (libc)Misc FP Arithmetic.
+* fMfmafN: (libc)Misc FP Arithmetic.
+* fMfmafNx: (libc)Misc FP Arithmetic.
 * fMmulfN: (libc)Misc FP Arithmetic.
 * fMmulfNx: (libc)Misc FP Arithmetic.
+* fMsqrtfN: (libc)Misc FP Arithmetic.
+* fMsqrtfNx: (libc)Misc FP Arithmetic.
 * fMsubfN: (libc)Misc FP Arithmetic.
 * fMsubfNx: (libc)Misc FP Arithmetic.
 * fMxaddfN: (libc)Misc FP Arithmetic.
 * fMxaddfNx: (libc)Misc FP Arithmetic.
 * fMxdivfN: (libc)Misc FP Arithmetic.
 * fMxdivfNx: (libc)Misc FP Arithmetic.
+* fMxfmafN: (libc)Misc FP Arithmetic.
+* fMxfmafNx: (libc)Misc FP Arithmetic.
 * fMxmulfN: (libc)Misc FP Arithmetic.
 * fMxmulfNx: (libc)Misc FP Arithmetic.
+* fMxsqrtfN: (libc)Misc FP Arithmetic.
+* fMxsqrtfNx: (libc)Misc FP Arithmetic.
 * fMxsubfN: (libc)Misc FP Arithmetic.
 * fMxsubfNx: (libc)Misc FP Arithmetic.
 * fabs: (libc)Absolute Value.
@@ -947,6 +962,8 @@ START-INFO-DIR-ENTRY
 * fexecve: (libc)Executing a File.
 * fflush: (libc)Flushing Buffers.
 * fflush_unlocked: (libc)Flushing Buffers.
+* ffma: (libc)Misc FP Arithmetic.
+* ffmal: (libc)Misc FP Arithmetic.
 * fgetc: (libc)Character Input.
 * fgetc_unlocked: (libc)Character Input.
 * fgetgrent: (libc)Scanning All Groups.
@@ -981,6 +998,26 @@ START-INFO-DIR-ENTRY
 * fmaxf: (libc)Misc FP Arithmetic.
 * fmaxfN: (libc)Misc FP Arithmetic.
 * fmaxfNx: (libc)Misc FP Arithmetic.
+* fmaximum: (libc)Misc FP Arithmetic.
+* fmaximum_mag: (libc)Misc FP Arithmetic.
+* fmaximum_mag_num: (libc)Misc FP Arithmetic.
+* fmaximum_mag_numf: (libc)Misc FP Arithmetic.
+* fmaximum_mag_numfN: (libc)Misc FP Arithmetic.
+* fmaximum_mag_numfNx: (libc)Misc FP Arithmetic.
+* fmaximum_mag_numl: (libc)Misc FP Arithmetic.
+* fmaximum_magf: (libc)Misc FP Arithmetic.
+* fmaximum_magfN: (libc)Misc FP Arithmetic.
+* fmaximum_magfNx: (libc)Misc FP Arithmetic.
+* fmaximum_magl: (libc)Misc FP Arithmetic.
+* fmaximum_num: (libc)Misc FP Arithmetic.
+* fmaximum_numf: (libc)Misc FP Arithmetic.
+* fmaximum_numfN: (libc)Misc FP Arithmetic.
+* fmaximum_numfNx: (libc)Misc FP Arithmetic.
+* fmaximum_numl: (libc)Misc FP Arithmetic.
+* fmaximumf: (libc)Misc FP Arithmetic.
+* fmaximumfN: (libc)Misc FP Arithmetic.
+* fmaximumfNx: (libc)Misc FP Arithmetic.
+* fmaximuml: (libc)Misc FP Arithmetic.
 * fmaxl: (libc)Misc FP Arithmetic.
 * fmaxmag: (libc)Misc FP Arithmetic.
 * fmaxmagf: (libc)Misc FP Arithmetic.
@@ -992,6 +1029,26 @@ START-INFO-DIR-ENTRY
 * fminf: (libc)Misc FP Arithmetic.
 * fminfN: (libc)Misc FP Arithmetic.
 * fminfNx: (libc)Misc FP Arithmetic.
+* fminimum: (libc)Misc FP Arithmetic.
+* fminimum_mag: (libc)Misc FP Arithmetic.
+* fminimum_mag_num: (libc)Misc FP Arithmetic.
+* fminimum_mag_numf: (libc)Misc FP Arithmetic.
+* fminimum_mag_numfN: (libc)Misc FP Arithmetic.
+* fminimum_mag_numfNx: (libc)Misc FP Arithmetic.
+* fminimum_mag_numl: (libc)Misc FP Arithmetic.
+* fminimum_magf: (libc)Misc FP Arithmetic.
+* fminimum_magfN: (libc)Misc FP Arithmetic.
+* fminimum_magfNx: (libc)Misc FP Arithmetic.
+* fminimum_magl: (libc)Misc FP Arithmetic.
+* fminimum_num: (libc)Misc FP Arithmetic.
+* fminimum_numf: (libc)Misc FP Arithmetic.
+* fminimum_numfN: (libc)Misc FP Arithmetic.
+* fminimum_numfNx: (libc)Misc FP Arithmetic.
+* fminimum_numl: (libc)Misc FP Arithmetic.
+* fminimumf: (libc)Misc FP Arithmetic.
+* fminimumfN: (libc)Misc FP Arithmetic.
+* fminimumfNx: (libc)Misc FP Arithmetic.
+* fminimuml: (libc)Misc FP Arithmetic.
 * fminl: (libc)Misc FP Arithmetic.
 * fminmag: (libc)Misc FP Arithmetic.
 * fminmagf: (libc)Misc FP Arithmetic.
@@ -1049,6 +1106,8 @@ START-INFO-DIR-ENTRY
 * fseeko: (libc)File Positioning.
 * fsetpos64: (libc)Portable Positioning.
 * fsetpos: (libc)Portable Positioning.
+* fsqrt: (libc)Misc FP Arithmetic.
+* fsqrtl: (libc)Misc FP Arithmetic.
 * fstat64: (libc)Reading Attributes.
 * fstat: (libc)Reading Attributes.
 * fsub: (libc)Misc FP Arithmetic.
@@ -2110,10 +2169,10 @@ File: libc.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 Main Menu
 *********
 
-This is ‘The GNU C Library Reference Manual’, for version 2.34
+This is ‘The GNU C Library Reference Manual’, for version 2.35
 (ZyC-GCC).
 
-   Copyright © 1993–2021 Free Software Foundation, Inc.
+   Copyright © 1993–2022 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -2182,6 +2241,7 @@ developing GNU and promoting software freedom.”
 * Debugging Support::            Functions to help debugging applications.
 * Threads::                      Functions, constants, and data types for
                                    working with threads.
+* Dynamic Linker::               Loading programs and shared objects..
 * Internal Probes::              Probes to monitor libc internal behavior.
 * Tunables::                     Tunable switches to alter libc internal
                                    behavior.
@@ -3400,6 +3460,12 @@ Non-POSIX Extensions
 * Waiting with Explicit Clocks::          Functions for waiting with an
                                           explicit clock specification.
 * Single-Threaded::                       Detecting single-threaded execution.
+* Restartable Sequences::                 Linux-specific restartable sequences
+                                          integration.
+
+Dynamic Linker
+
+* Dynamic Linker Introspection::    Interfaces for querying mapping information.
 
 Internal Probes
 
@@ -4766,9 +4832,9 @@ on semantics undefined within the standard.
      extension (LFS).
 
  -- Macro: _TIME_BITS
-     This macro determines the bit size of ‘time_t’, and therefore the
-     bit size of all ‘time_t’-derived types and the prototypes of all
-     related functions.
+     Define this macro to control the bit size of ‘time_t’, and
+     therefore the bit size of all ‘time_t’-derived types and the
+     prototypes of all related functions.
 
        1. If ‘_TIME_BITS’ is undefined, the bit size of ‘time_t’ is
           architecture dependent.  Currently it defaults to 64 bits on
@@ -7110,120 +7176,4 @@ that, use ‘aligned_alloc’ or ‘posix_memalign’.  ‘aligned_alloc’ and
 
      The ‘valloc’ function is obsolete and ‘aligned_alloc’ or
      ‘posix_memalign’ should be used instead.
-
-
-File: libc.info,  Node: Malloc Tunable Parameters,  Next: Heap Consistency Checking,  Prev: Aligned Memory Blocks,  Up: Unconstrained Allocation
-
-3.2.3.7 Malloc Tunable Parameters
-.................................
-
-You can adjust some parameters for dynamic memory allocation with the
-‘mallopt’ function.  This function is the general SVID/XPG interface,
-defined in ‘malloc.h’.
-
- -- Function: int mallopt (int PARAM, int VALUE)
-     Preliminary: | MT-Unsafe init const:mallopt | AS-Unsafe init lock |
-     AC-Unsafe init lock | *Note POSIX Safety Concepts::.
-
-     When calling ‘mallopt’, the PARAM argument specifies the parameter
-     to be set, and VALUE the new value to be set.  Possible choices for
-     PARAM, as defined in ‘malloc.h’, are:
-
-     ‘M_MMAP_MAX’
-          The maximum number of chunks to allocate with ‘mmap’.  Setting
-          this to zero disables all use of ‘mmap’.
-
-          The default value of this parameter is ‘65536’.
-
-          This parameter can also be set for the process at startup by
-          setting the environment variable ‘MALLOC_MMAP_MAX_’ to the
-          desired value.
-
-     ‘M_MMAP_THRESHOLD’
-          All chunks larger than this value are allocated outside the
-          normal heap, using the ‘mmap’ system call.  This way it is
-          guaranteed that the memory for these chunks can be returned to
-          the system on ‘free’.  Note that requests smaller than this
-          threshold might still be allocated via ‘mmap’.
-
-          If this parameter is not set, the default value is set as 128
-          KiB and the threshold is adjusted dynamically to suit the
-          allocation patterns of the program.  If the parameter is set,
-          the dynamic adjustment is disabled and the value is set
-          statically to the input value.
-
-          This parameter can also be set for the process at startup by
-          setting the environment variable ‘MALLOC_MMAP_THRESHOLD_’ to
-          the desired value.
-
-     ‘M_PERTURB’
-          If non-zero, memory blocks are filled with values depending on
-          some low order bits of this parameter when they are allocated
-          (except when allocated by ‘calloc’) and freed.  This can be
-          used to debug the use of uninitialized or freed heap memory.
-          Note that this option does not guarantee that the freed block
-          will have any specific values.  It only guarantees that the
-          content the block had before it was freed will be overwritten.
-
-          The default value of this parameter is ‘0’.
-
-          This parameter can also be set for the process at startup by
-          setting the environment variable ‘MALLOC_PERTURB_’ to the
-          desired value.
-
-     ‘M_TOP_PAD’
-          This parameter determines the amount of extra memory to obtain
-          from the system when an arena needs to be extended.  It also
-          specifies the number of bytes to retain when shrinking an
-          arena.  This provides the necessary hysteresis in heap size
-          such that excessive amounts of system calls can be avoided.
-
-          The default value of this parameter is ‘0’.
-
-          This parameter can also be set for the process at startup by
-          setting the environment variable ‘MALLOC_TOP_PAD_’ to the
-          desired value.
-
-     ‘M_TRIM_THRESHOLD’
-          This is the minimum size (in bytes) of the top-most,
-          releasable chunk that will trigger a system call in order to
-          return memory to the system.
-
-          If this parameter is not set, the default value is set as 128
-          KiB and the threshold is adjusted dynamically to suit the
-          allocation patterns of the program.  If the parameter is set,
-          the dynamic adjustment is disabled and the value is set
-          statically to the provided input.
-
-          This parameter can also be set for the process at startup by
-          setting the environment variable ‘MALLOC_TRIM_THRESHOLD_’ to
-          the desired value.
-
-     ‘M_ARENA_TEST’
-          This parameter specifies the number of arenas that can be
-          created before the test on the limit to the number of arenas
-          is conducted.  The value is ignored if ‘M_ARENA_MAX’ is set.
-
-          The default value of this parameter is 2 on 32-bit systems and
-          8 on 64-bit systems.
-
-          This parameter can also be set for the process at startup by
-          setting the environment variable ‘MALLOC_ARENA_TEST’ to the
-          desired value.
-
-     ‘M_ARENA_MAX’
-          This parameter sets the number of arenas to use regardless of
-          the number of cores in the system.
-
-          The default value of this tunable is ‘0’, meaning that the
-          limit on the number of arenas is determined by the number of
-          CPU cores online.  For 32-bit systems the limit is twice the
-          number of cores online and on 64-bit systems, it is eight
-          times the number of cores online.  Note that the default value
-          is not derived from the default value of M_ARENA_TEST and is
-          computed independently.
-
-          This parameter can also be set for the process at startup by
-          setting the environment variable ‘MALLOC_ARENA_MAX’ to the
-          desired value.
 
