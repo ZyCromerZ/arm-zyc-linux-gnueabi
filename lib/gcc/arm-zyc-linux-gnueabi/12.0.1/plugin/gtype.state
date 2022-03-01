@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.1 20220228 (experimental)")
+(!version  "12.0.1 20220301 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -29682,15 +29682,15 @@
    (!type already_seen 2193)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.cc" 29738)
+  (!srcfileloc  "cp/pt.cc" 29747)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 533)
-    (!srcfileloc  "cp/pt.cc" 29738)
+    (!srcfileloc  "cp/pt.cc" 29747)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.cc" 29738)
+    (!srcfileloc  "cp/pt.cc" 29747)
     nil )
   )
  )
@@ -30835,7 +30835,7 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2193)
-  (!srcfileloc  "cp/pt.cc" 29738)
+  (!srcfileloc  "cp/pt.cc" 29747)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2180)
@@ -35348,7 +35348,7 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2194)
-  (!srcfileloc  "cp/pt.cc" 29738)
+  (!srcfileloc  "cp/pt.cc" 29747)
   (!options 
    (!option deletable string  "")
   )
@@ -35585,19 +35585,19 @@
   nil )
  (!pair  "ssdf_decls"
   (!type already_seen 84)
-  (!srcfileloc  "cp/decl2.cc" 3918)
+  (!srcfileloc  "cp/decl2.cc" 3921)
   nil )
  (!pair  "ssdf_decl"
   (!type already_seen 23)
-  (!srcfileloc  "cp/decl2.cc" 3914)
+  (!srcfileloc  "cp/decl2.cc" 3917)
   nil )
  (!pair  "priority_decl"
   (!type already_seen 23)
-  (!srcfileloc  "cp/decl2.cc" 3911)
+  (!srcfileloc  "cp/decl2.cc" 3914)
   nil )
  (!pair  "initialize_p_decl"
   (!type already_seen 23)
-  (!srcfileloc  "cp/decl2.cc" 3908)
+  (!srcfileloc  "cp/decl2.cc" 3911)
   nil )
  (!pair  "mangled_decls"
   (!type already_seen 2093)
