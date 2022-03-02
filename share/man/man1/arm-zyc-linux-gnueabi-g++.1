@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-03-01" "gcc-12.0.1" "GNU"
+.TH GCC 1 "2022-03-02" "gcc-12.0.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -12489,6 +12489,7 @@ counts to a file called \fI\fIsourcename\fI.gcda\fR for each source
 file.  The information in this data file is very dependent on the
 structure of the generated code, so you must use the same source code
 and the same optimization options for both compilations.
+See details about the file naming in \fB\-fprofile\-arcs\fR.
 .Sp
 With \fB\-fbranch\-probabilities\fR, \s-1GCC\s0 puts a
 \&\fB\s-1REG_BR_PROB\s0\fR note on each \fB\s-1JUMP_INSN\s0\fR and \fB\s-1CALL_INSN\s0\fR.
@@ -14258,6 +14259,11 @@ explicitly specified and it is not the final executable, otherwise it is
 the basename of the source file.  In both cases any suffix is removed
 (e.g. \fIfoo.gcda\fR for input file \fIdir/foo.c\fR, or
 \&\fIdir/foo.gcda\fR for output file specified as \fB\-o dir/foo.o\fR).
+.Sp
+Note that if a command line directly links source files, the corresponding
+\&\fI.gcda\fR files will be prefixed with the unsuffixed name of the output file.
+E.g. \f(CW\*(C`gcc a.c b.c \-o binary\*(C'\fR would generate \fIbinary\-a.gcda\fR and
+\&\fIbinary\-b.gcda\fR files.
 .IP "\fB\-\-coverage\fR" 4
 .IX Item "--coverage"
 This option is used to compile and link code instrumented for coverage
@@ -14334,7 +14340,8 @@ profile data file appears in the same directory as the object file.
 In order to prevent the file name clashing, if the object file name is
 not an absolute path, we mangle the absolute path of the
 \&\fI\fIsourcename\fI.gcda\fR file and use it as the file name of a
-\&\fI.gcda\fR file.  See similar option \fB\-fprofile\-note\fR.
+\&\fI.gcda\fR file.  See details about the file naming in \fB\-fprofile\-arcs\fR.
+See similar option \fB\-fprofile\-note\fR.
 .Sp
 When an executable is run in a massive parallel environment, it is recommended
 to save profile to different folders.  That can be done with variables

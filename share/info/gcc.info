@@ -12147,7 +12147,8 @@ includes experimental options that may produce broken code.
      file called 'SOURCENAME.gcda' for each source file.  The
      information in this data file is very dependent on the structure of
      the generated code, so you must use the same source code and the
-     same optimization options for both compilations.
+     same optimization options for both compilations.  See details about
+     the file naming in '-fprofile-arcs'.
 
      With '-fbranch-probabilities', GCC puts a 'REG_BR_PROB' note on
      each 'JUMP_INSN' and 'CALL_INSN'.  These can be used to improve
@@ -13981,8 +13982,14 @@ program analysis purposes.
      explicitly specified and it is not the final executable, otherwise
      it is the basename of the source file.  In both cases any suffix is
      removed (e.g. 'foo.gcda' for input file 'dir/foo.c', or
-     'dir/foo.gcda' for output file specified as '-o dir/foo.o').  *Note
-     Cross-profiling::.
+     'dir/foo.gcda' for output file specified as '-o dir/foo.o').
+
+     Note that if a command line directly links source files, the
+     corresponding .GCDA files will be prefixed with the unsuffixed name
+     of the output file.  E.g.  'gcc a.c b.c -o binary' would generate
+     'binary-a.gcda' and 'binary-b.gcda' files.
+
+     *Note Cross-profiling::.
 
 '--coverage'
 
@@ -14062,7 +14069,8 @@ program analysis purposes.
      order to prevent the file name clashing, if the object file name is
      not an absolute path, we mangle the absolute path of the
      'SOURCENAME.gcda' file and use it as the file name of a '.gcda'
-     file.  See similar option '-fprofile-note'.
+     file.  See details about the file naming in '-fprofile-arcs'.  See
+     similar option '-fprofile-note'.
 
      When an executable is run in a massive parallel environment, it is
      recommended to save profile to different folders.  That can be done
@@ -63119,7 +63127,7 @@ look up both forms.
 * client_name:                           Darwin Options.     (line  196)
 * compatibility_version:                 Darwin Options.     (line  196)
 * coverage:                              Instrumentation Options.
-                                                             (line   50)
+                                                             (line   56)
 * current_version:                       Darwin Options.     (line  196)
 * D:                                     Preprocessor Options.
                                                              (line   19)
@@ -63212,7 +63220,7 @@ look up both forms.
 * fanalyzer-transitivity:                Static Analyzer Options.
                                                              (line  364)
 * fasan-shadow-offset:                   Instrumentation Options.
-                                                             (line  612)
+                                                             (line  619)
 * fasm:                                  C Dialect Options.  (line  225)
 * fassociative-math:                     Optimize Options.   (line 2369)
 * fasynchronous-unwind-tables:           Code Gen Options.   (line  159)
@@ -63227,7 +63235,7 @@ look up both forms.
 * fcaller-saves:                         Optimize Options.   (line  934)
 * fcallgraph-info:                       Developer Options.  (line   34)
 * fcf-protection:                        Instrumentation Options.
-                                                             (line  685)
+                                                             (line  692)
 * fchar8_t:                              C++ Dialect Options.
                                                              (line  122)
 * fcheck-new:                            C++ Dialect Options.
@@ -63267,7 +63275,7 @@ look up both forms.
 * fcse-skip-blocks:                      Optimize Options.   (line  497)
 * fcx-fortran-rules:                     Optimize Options.   (line 2502)
 * fcx-limited-range:                     Optimize Options.   (line 2490)
-* fdata-sections:                        Optimize Options.   (line 2661)
+* fdata-sections:                        Optimize Options.   (line 2662)
 * fdbg-cnt:                              Developer Options.  (line  924)
 * fdbg-cnt-list:                         Developer Options.  (line  921)
 * fdce:                                  Optimize Options.   (line  582)
@@ -63471,7 +63479,7 @@ look up both forms.
 * ffreestanding <3>:                     Common Function Attributes.
                                                              (line  443)
 * ffunction-cse:                         Optimize Options.   (line  442)
-* ffunction-sections:                    Optimize Options.   (line 2661)
+* ffunction-sections:                    Optimize Options.   (line 2662)
 * fgcse:                                 Optimize Options.   (line  511)
 * fgcse-after-reload:                    Optimize Options.   (line  547)
 * fgcse-las:                             Optimize Options.   (line  540)
@@ -63488,9 +63496,9 @@ look up both forms.
 * fgraphite-identity:                    Optimize Options.   (line 1264)
 * fguess-branch-probability:             Optimize Options.   (line 1601)
 * fharden-compares:                      Instrumentation Options.
-                                                             (line  718)
+                                                             (line  725)
 * fharden-conditional-branches:          Instrumentation Options.
-                                                             (line  727)
+                                                             (line  734)
 * fhoist-adjacent-loads:                 Optimize Options.   (line 1005)
 * fhosted:                               C Dialect Options.  (line  327)
 * fident:                                Code Gen Options.   (line  255)
@@ -63517,13 +63525,13 @@ look up both forms.
 * finput-charset:                        Preprocessor Options.
                                                              (line  286)
 * finstrument-functions:                 Instrumentation Options.
-                                                             (line  904)
+                                                             (line  911)
 * finstrument-functions <1>:             Common Function Attributes.
                                                              (line  806)
 * finstrument-functions-exclude-file-list: Instrumentation Options.
-                                                             (line  940)
+                                                             (line  947)
 * finstrument-functions-exclude-function-list: Instrumentation Options.
-                                                             (line  961)
+                                                             (line  968)
 * fipa-bit-cp:                           Optimize Options.   (line 1072)
 * fipa-cp:                               Optimize Options.   (line 1053)
 * fipa-cp-clone:                         Optimize Options.   (line 1062)
@@ -63613,8 +63621,8 @@ look up both forms.
                                                              (line  303)
 * fmodulo-sched:                         Optimize Options.   (line  416)
 * fmodulo-sched-allow-regmoves:          Optimize Options.   (line  421)
-* fmove-loop-invariants:                 Optimize Options.   (line 2613)
-* fmove-loop-stores:                     Optimize Options.   (line 2617)
+* fmove-loop-invariants:                 Optimize Options.   (line 2614)
+* fmove-loop-stores:                     Optimize Options.   (line 2618)
 * fms-extensions:                        C Dialect Options.  (line  340)
 * fms-extensions <1>:                    C++ Dialect Options.
                                                              (line  341)
@@ -63737,9 +63745,9 @@ look up both forms.
 * fno-rtti:                              C++ Dialect Options.
                                                              (line  401)
 * fno-sanitize-recover:                  Instrumentation Options.
-                                                             (line  621)
+                                                             (line  628)
 * fno-sanitize=all:                      Instrumentation Options.
-                                                             (line  606)
+                                                             (line  613)
 * fno-sched-interblock:                  Optimize Options.   (line  784)
 * fno-sched-spec:                        Optimize Options.   (line  789)
 * fno-set-stack-executable:              x86 Windows Options.
@@ -63749,7 +63757,7 @@ look up both forms.
 * fno-signed-bitfields:                  C Dialect Options.  (line  451)
 * fno-signed-zeros:                      Optimize Options.   (line 2408)
 * fno-stack-limit:                       Instrumentation Options.
-                                                             (line  816)
+                                                             (line  823)
 * fno-threadsafe-statics:                C++ Dialect Options.
                                                              (line  456)
 * fno-toplevel-reorder:                  Optimize Options.   (line 1855)
@@ -63804,14 +63812,14 @@ look up both forms.
 * fpack-struct:                          Code Gen Options.   (line  472)
 * fpartial-inlining:                     Optimize Options.   (line 1544)
 * fpatchable-function-entry:             Instrumentation Options.
-                                                             (line  973)
+                                                             (line  980)
 * fpcc-struct-return:                    Code Gen Options.   (line  178)
 * fpcc-struct-return <1>:                Incompatibilities.  (line  170)
 * fpch-deps:                             Preprocessor Options.
                                                              (line  296)
 * fpch-preprocess:                       Preprocessor Options.
                                                              (line  304)
-* fpeel-loops:                           Optimize Options.   (line 2605)
+* fpeel-loops:                           Optimize Options.   (line 2606)
 * fpeephole:                             Optimize Options.   (line 1592)
 * fpeephole2:                            Optimize Options.   (line 1592)
 * fpermissive:                           C++ Dialect Options.
@@ -63838,43 +63846,43 @@ look up both forms.
                                                              (line  389)
 * fprintf-return-value:                  Optimize Options.   (line 1569)
 * fprofile-abs-path:                     Instrumentation Options.
-                                                             (line  110)
+                                                             (line  116)
 * fprofile-arcs:                         Instrumentation Options.
                                                              (line   30)
 * fprofile-arcs <1>:                     Other Builtins.     (line  590)
 * fprofile-correction:                   Optimize Options.   (line 2193)
 * fprofile-dir:                          Instrumentation Options.
-                                                             (line  116)
+                                                             (line  122)
 * fprofile-exclude-files:                Instrumentation Options.
-                                                             (line  292)
+                                                             (line  299)
 * fprofile-filter-files:                 Instrumentation Options.
-                                                             (line  284)
+                                                             (line  291)
 * fprofile-generate:                     Instrumentation Options.
-                                                             (line  141)
+                                                             (line  148)
 * fprofile-info-section:                 Instrumentation Options.
-                                                             (line  159)
+                                                             (line  166)
 * fprofile-note:                         Instrumentation Options.
-                                                             (line  241)
+                                                             (line  248)
 * fprofile-partial-training:             Optimize Options.   (line 2202)
 * fprofile-prefix-map:                   Instrumentation Options.
-                                                             (line  262)
+                                                             (line  269)
 * fprofile-prefix-path:                  Instrumentation Options.
-                                                             (line  247)
-* fprofile-reorder-functions:            Optimize Options.   (line 2545)
+                                                             (line  254)
+* fprofile-reorder-functions:            Optimize Options.   (line 2546)
 * fprofile-report:                       Developer Options.  (line  882)
 * fprofile-reproducible:                 Instrumentation Options.
-                                                             (line  301)
+                                                             (line  308)
 * fprofile-update:                       Instrumentation Options.
-                                                             (line  267)
+                                                             (line  274)
 * fprofile-use:                          Optimize Options.   (line 2216)
-* fprofile-values:                       Optimize Options.   (line 2535)
+* fprofile-values:                       Optimize Options.   (line 2536)
 * fpu:                                   RX Options.         (line   17)
 * frandom-seed:                          Developer Options.  (line  721)
 * freciprocal-math:                      Optimize Options.   (line 2386)
 * frecord-gcc-switches:                  Code Gen Options.   (line  344)
 * free:                                  Optimize Options.   (line  667)
 * freg-struct-return:                    Code Gen Options.   (line  196)
-* frename-registers:                     Optimize Options.   (line 2564)
+* frename-registers:                     Optimize Options.   (line 2565)
 * freorder-blocks:                       Optimize Options.   (line 1622)
 * freorder-blocks-algorithm:             Optimize Options.   (line 1628)
 * freorder-blocks-and-partition:         Optimize Options.   (line 1639)
@@ -63888,81 +63896,81 @@ look up both forms.
 * frtti:                                 C++ Dialect Options.
                                                              (line  401)
 * fsanitize-address-use-after-scope:     Instrumentation Options.
-                                                             (line  657)
+                                                             (line  664)
 * fsanitize-coverage=trace-cmp:          Instrumentation Options.
-                                                             (line  672)
+                                                             (line  679)
 * fsanitize-coverage=trace-pc:           Instrumentation Options.
-                                                             (line  668)
+                                                             (line  675)
 * fsanitize-recover:                     Instrumentation Options.
-                                                             (line  621)
+                                                             (line  628)
 * fsanitize-sections:                    Instrumentation Options.
-                                                             (line  617)
+                                                             (line  624)
 * fsanitize-undefined-trap-on-error:     Instrumentation Options.
-                                                             (line  661)
+                                                             (line  668)
 * fsanitize=address:                     Instrumentation Options.
-                                                             (line  329)
+                                                             (line  336)
 * fsanitize=alignment:                   Instrumentation Options.
-                                                             (line  532)
-* fsanitize=bool:                        Instrumentation Options.
-                                                             (line  570)
-* fsanitize=bounds:                      Instrumentation Options.
-                                                             (line  519)
-* fsanitize=bounds-strict:               Instrumentation Options.
-                                                             (line  525)
-* fsanitize=builtin:                     Instrumentation Options.
-                                                             (line  594)
-* fsanitize=enum:                        Instrumentation Options.
-                                                             (line  575)
-* fsanitize=float-cast-overflow:         Instrumentation Options.
-                                                             (line  550)
-* fsanitize=float-divide-by-zero:        Instrumentation Options.
-                                                             (line  544)
-* fsanitize=hwaddress:                   Instrumentation Options.
-                                                             (line  349)
-* fsanitize=integer-divide-by-zero:      Instrumentation Options.
-                                                             (line  482)
-* fsanitize=kernel-address:              Instrumentation Options.
-                                                             (line  345)
-* fsanitize=kernel-hwaddress:            Instrumentation Options.
-                                                             (line  363)
-* fsanitize=leak:                        Instrumentation Options.
-                                                             (line  444)
-* fsanitize=nonnull-attribute:           Instrumentation Options.
-                                                             (line  558)
-* fsanitize=null:                        Instrumentation Options.
-                                                             (line  495)
-* fsanitize=object-size:                 Instrumentation Options.
                                                              (line  539)
+* fsanitize=bool:                        Instrumentation Options.
+                                                             (line  577)
+* fsanitize=bounds:                      Instrumentation Options.
+                                                             (line  526)
+* fsanitize=bounds-strict:               Instrumentation Options.
+                                                             (line  532)
+* fsanitize=builtin:                     Instrumentation Options.
+                                                             (line  601)
+* fsanitize=enum:                        Instrumentation Options.
+                                                             (line  582)
+* fsanitize=float-cast-overflow:         Instrumentation Options.
+                                                             (line  557)
+* fsanitize=float-divide-by-zero:        Instrumentation Options.
+                                                             (line  551)
+* fsanitize=hwaddress:                   Instrumentation Options.
+                                                             (line  356)
+* fsanitize=integer-divide-by-zero:      Instrumentation Options.
+                                                             (line  489)
+* fsanitize=kernel-address:              Instrumentation Options.
+                                                             (line  352)
+* fsanitize=kernel-hwaddress:            Instrumentation Options.
+                                                             (line  370)
+* fsanitize=leak:                        Instrumentation Options.
+                                                             (line  451)
+* fsanitize=nonnull-attribute:           Instrumentation Options.
+                                                             (line  565)
+* fsanitize=null:                        Instrumentation Options.
+                                                             (line  502)
+* fsanitize=object-size:                 Instrumentation Options.
+                                                             (line  546)
 * fsanitize=pointer-compare:             Instrumentation Options.
-                                                             (line  379)
+                                                             (line  386)
 * fsanitize=pointer-overflow:            Instrumentation Options.
-                                                             (line  588)
+                                                             (line  595)
 * fsanitize=pointer-subtract:            Instrumentation Options.
-                                                             (line  389)
+                                                             (line  396)
 * fsanitize=return:                      Instrumentation Options.
-                                                             (line  503)
+                                                             (line  510)
 * fsanitize=returns-nonnull-attribute:   Instrumentation Options.
-                                                             (line  564)
+                                                             (line  571)
 * fsanitize=shadow-call-stack:           Instrumentation Options.
-                                                             (line  399)
+                                                             (line  406)
 * fsanitize=shift:                       Instrumentation Options.
-                                                             (line  462)
+                                                             (line  469)
 * fsanitize=shift-base:                  Instrumentation Options.
-                                                             (line  475)
+                                                             (line  482)
 * fsanitize=shift-exponent:              Instrumentation Options.
-                                                             (line  470)
+                                                             (line  477)
 * fsanitize=signed-integer-overflow:     Instrumentation Options.
-                                                             (line  509)
+                                                             (line  516)
 * fsanitize=thread:                      Instrumentation Options.
-                                                             (line  430)
+                                                             (line  437)
 * fsanitize=undefined:                   Instrumentation Options.
-                                                             (line  454)
+                                                             (line  461)
 * fsanitize=unreachable:                 Instrumentation Options.
-                                                             (line  485)
+                                                             (line  492)
 * fsanitize=vla-bound:                   Instrumentation Options.
-                                                             (line  491)
+                                                             (line  498)
 * fsanitize=vptr:                        Instrumentation Options.
-                                                             (line  581)
+                                                             (line  588)
 * fsave-optimization-record:             Developer Options.  (line  593)
 * fsched-critical-path-heuristic:        Optimize Options.   (line  849)
 * fsched-dep-count-heuristic:            Optimize Options.   (line  876)
@@ -63979,10 +63987,10 @@ look up both forms.
 * fsched-stalled-insns-dep:              Optimize Options.   (line  824)
 * fsched-verbose:                        Developer Options.  (line  633)
 * fsched2-use-superblocks:               Optimize Options.   (line  833)
-* fschedule-fusion:                      Optimize Options.   (line 2574)
+* fschedule-fusion:                      Optimize Options.   (line 2575)
 * fschedule-insns:                       Optimize Options.   (line  765)
 * fschedule-insns2:                      Optimize Options.   (line  775)
-* fsection-anchors:                      Optimize Options.   (line 2694)
+* fsection-anchors:                      Optimize Options.   (line 2695)
 * fsel-sched-pipelining:                 Optimize Options.   (line  896)
 * fsel-sched-pipelining-outer-loops:     Optimize Options.   (line  901)
 * fselective-scheduling:                 Optimize Options.   (line  888)
@@ -64013,10 +64021,10 @@ look up both forms.
 * fsized-deallocation:                   C++ Dialect Options.
                                                              (line  416)
 * fsplit-ivs-in-unroller:                Optimize Options.   (line 1522)
-* fsplit-loops:                          Optimize Options.   (line 2625)
+* fsplit-loops:                          Optimize Options.   (line 2626)
 * fsplit-paths:                          Optimize Options.   (line 1517)
 * fsplit-stack:                          Instrumentation Options.
-                                                             (line  833)
+                                                             (line  840)
 * fsplit-stack <1>:                      Common Function Attributes.
                                                              (line  861)
 * fsplit-wide-types:                     Optimize Options.   (line  474)
@@ -64025,25 +64033,25 @@ look up both forms.
 * fssa-phiopt:                           Optimize Options.   (line 1194)
 * fsso-struct:                           C Dialect Options.  (line  482)
 * fstack-check:                          Instrumentation Options.
-                                                             (line  759)
+                                                             (line  766)
 * fstack-clash-protection:               Instrumentation Options.
-                                                             (line  801)
+                                                             (line  808)
 * fstack-limit-register:                 Instrumentation Options.
-                                                             (line  816)
+                                                             (line  823)
 * fstack-limit-symbol:                   Instrumentation Options.
-                                                             (line  816)
+                                                             (line  823)
 * fstack-protector:                      Instrumentation Options.
-                                                             (line  734)
+                                                             (line  741)
 * fstack-protector-all:                  Instrumentation Options.
-                                                             (line  745)
+                                                             (line  752)
 * fstack-protector-explicit:             Instrumentation Options.
-                                                             (line  755)
+                                                             (line  762)
 * fstack-protector-strong:               Instrumentation Options.
-                                                             (line  748)
+                                                             (line  755)
 * fstack-usage:                          Developer Options.  (line  886)
 * fstack_reuse:                          Code Gen Options.   (line   15)
 * fstats:                                Developer Options.  (line  915)
-* fstdarg-opt:                           Optimize Options.   (line 2690)
+* fstdarg-opt:                           Optimize Options.   (line 2691)
 * fstore-merging:                        Optimize Options.   (line 1413)
 * fstrict-aliasing:                      Optimize Options.   (line 1671)
 * fstrict-enums:                         C++ Dialect Options.
@@ -64061,7 +64069,7 @@ look up both forms.
 * ftemplate-depth:                       C++ Dialect Options.
                                                              (line  447)
 * ftest-coverage:                        Instrumentation Options.
-                                                             (line  101)
+                                                             (line  107)
 * fthread-jumps:                         Optimize Options.   (line  465)
 * fthreadsafe-statics:                   C++ Dialect Options.
                                                              (line  456)
@@ -64069,7 +64077,7 @@ look up both forms.
 * ftime-report-details:                  Developer Options.  (line  847)
 * ftls-model:                            Code Gen Options.   (line  496)
 * ftoplevel-reorder:                     Optimize Options.   (line 1855)
-* ftracer:                               Optimize Options.   (line 2582)
+* ftracer:                               Optimize Options.   (line 2583)
 * ftrack-macro-expansion:                Preprocessor Options.
                                                              (line  247)
 * ftrampolines:                          Code Gen Options.   (line  507)
@@ -64113,8 +64121,8 @@ look up both forms.
 * ftrivial-auto-var-init:                Optimize Options.   (line 1449)
 * funconstrained-commons:                Optimize Options.   (line  563)
 * funit-at-a-time:                       Optimize Options.   (line 1848)
-* funroll-all-loops:                     Optimize Options.   (line 2599)
-* funroll-loops:                         Optimize Options.   (line 2589)
+* funroll-all-loops:                     Optimize Options.   (line 2600)
+* funroll-loops:                         Optimize Options.   (line 2590)
 * funsafe-math-optimizations:            Optimize Options.   (line 2351)
 * funsigned-bitfields:                   C Dialect Options.  (line  451)
 * funsigned-bitfields <1>:               Structures unions enumerations and bit-fields implementation.
@@ -64123,7 +64131,7 @@ look up both forms.
 * funsigned-char:                        C Dialect Options.  (line  464)
 * funsigned-char <1>:                    Characters implementation.
                                                              (line   31)
-* funswitch-loops:                       Optimize Options.   (line 2631)
+* funswitch-loops:                       Optimize Options.   (line 2632)
 * funwind-tables:                        Code Gen Options.   (line  152)
 * fuse-cxa-atexit:                       C++ Dialect Options.
                                                              (line  462)
@@ -64140,19 +64148,19 @@ look up both forms.
 * fvariable-expansion-in-unroller:       Optimize Options.   (line 1536)
 * fvect-cost-model:                      Optimize Options.   (line 1480)
 * fverbose-asm:                          Code Gen Options.   (line  265)
-* fversion-loops-for-strides:            Optimize Options.   (line 2638)
+* fversion-loops-for-strides:            Optimize Options.   (line 2639)
 * fvisibility:                           Code Gen Options.   (line  536)
 * fvisibility-inlines-hidden:            C++ Dialect Options.
                                                              (line  474)
 * fvisibility-ms-compat:                 C++ Dialect Options.
                                                              (line  502)
-* fvpt:                                  Optimize Options.   (line 2552)
+* fvpt:                                  Optimize Options.   (line 2553)
 * fvtable-verify:                        Instrumentation Options.
-                                                             (line  851)
+                                                             (line  858)
 * fvtv-counts:                           Instrumentation Options.
-                                                             (line  887)
+                                                             (line  894)
 * fvtv-debug:                            Instrumentation Options.
-                                                             (line  874)
+                                                             (line  881)
 * fweak:                                 C++ Dialect Options.
                                                              (line  531)
 * fweb:                                  Optimize Options.   (line 1868)
@@ -64165,7 +64173,7 @@ look up both forms.
 * fwrapv-pointer:                        Code Gen Options.   (line  109)
 * fwritable-relocated-rdata:             x86 Windows Options.
                                                              (line   53)
-* fzero-call-used-regs:                  Optimize Options.   (line 2718)
+* fzero-call-used-regs:                  Optimize Options.   (line 2719)
 * fzero-initialized-in-bss:              Optimize Options.   (line  453)
 * fzero-link:                            Objective-C and Objective-C++ Dialect Options.
                                                              (line  140)
@@ -66205,7 +66213,7 @@ look up both forms.
 * p <1>:                                 Common Function Attributes.
                                                              (line  806)
 * pagezero_size:                         Darwin Options.     (line  196)
-* param:                                 Optimize Options.   (line 2731)
+* param:                                 Optimize Options.   (line 2732)
 * pass-exit-codes:                       Overall Options.    (line  597)
 * pedantic:                              Standards.          (line   13)
 * pedantic <1>:                          Warning Options.    (line   88)
@@ -68428,7 +68436,7 @@ Keyword Index
 * GCC_URLS environment variable:         Diagnostic Message Formatting Options.
                                                              (line  144)
 * gcov:                                  Instrumentation Options.
-                                                             (line   49)
+                                                             (line   55)
 * general-regs-only function attribute, AArch64: AArch64 Function Attributes.
                                                              (line   12)
 * general-regs-only function attribute, ARM: ARM Function Attributes.
@@ -70060,424 +70068,424 @@ Node: Static Analyzer Options388017
 Node: Debugging Options407643
 Node: Optimize Options428880
 Ref: Type-punning501089
-Node: Instrumentation Options620595
-Node: Preprocessor Options668387
-Ref: dashMF673234
-Ref: fdollars-in-identifiers677896
-Node: Assembler Options691101
-Node: Link Options691792
-Ref: Link Options-Footnote-1708752
-Node: Directory Options709088
-Node: Code Gen Options717491
-Node: Developer Options746364
-Node: Submodel Options787749
-Node: AArch64 Options789559
-Ref: aarch64-feature-modifiers805105
-Node: Adapteva Epiphany Options810666
-Node: AMD GCN Options816618
-Node: ARC Options818181
-Node: ARM Options838950
-Node: AVR Options880975
-Node: Blackfin Options907512
-Node: C6X Options915404
-Node: CRIS Options916947
-Node: CR16 Options920688
-Node: C-SKY Options921600
-Node: Darwin Options927327
-Node: DEC Alpha Options934768
-Node: eBPF Options946384
-Node: FR30 Options948760
-Node: FT32 Options949320
-Node: FRV Options950266
-Node: GNU/Linux Options957030
-Node: H8/300 Options958411
-Node: HPPA Options959863
-Node: IA-64 Options969395
-Node: LM32 Options977523
-Node: M32C Options978046
-Node: M32R/D Options979319
-Node: M680x0 Options982864
-Node: MCore Options997019
-Node: MeP Options998521
-Node: MicroBlaze Options1002481
-Node: MIPS Options1005546
-Node: MMIX Options1042343
-Node: MN10300 Options1044820
-Node: Moxie Options1047363
-Node: MSP430 Options1047850
-Node: NDS32 Options1055611
-Node: Nios II Options1057781
-Node: Nvidia PTX Options1070997
-Node: OpenRISC Options1073796
-Node: PDP-11 Options1076550
-Node: picoChip Options1077799
-Node: PowerPC Options1079937
-Node: PRU Options1080157
-Node: RISC-V Options1082366
-Node: RL78 Options1090767
-Node: RS/6000 and PowerPC Options1094542
-Node: RX Options1136058
-Node: S/390 and zSeries Options1144660
-Node: Score Options1155439
-Node: SH Options1156288
-Node: Solaris 2 Options1171428
-Node: SPARC Options1172666
-Node: System V Options1188318
-Node: TILE-Gx Options1189146
-Node: TILEPro Options1190164
-Node: V850 Options1190668
-Node: VAX Options1197355
-Node: Visium Options1198047
-Node: VMS Options1200355
-Node: VxWorks Options1201171
-Node: x86 Options1202323
-Node: x86 Windows Options1270676
-Node: Xstormy16 Options1273482
-Node: Xtensa Options1273776
-Node: zSeries Options1279912
-Node: Spec Files1280108
-Node: Environment Variables1306187
-Node: Precompiled Headers1315620
-Node: C++ Modules1321829
-Ref: C++ Modules-Footnote-11327969
-Node: C++ Module Mapper1328222
-Node: C++ Module Preprocessing1333375
-Node: C++ Compiled Module Interface1335204
-Ref: C++ Compiled Module Interface-Footnote-11338588
-Ref: C++ Compiled Module Interface-Footnote-21338677
-Node: C Implementation1338733
-Node: Translation implementation1340424
-Node: Environment implementation1341015
-Node: Identifiers implementation1341569
-Node: Characters implementation1342655
-Node: Integers implementation1346305
-Node: Floating point implementation1348354
-Node: Arrays and pointers implementation1351417
-Ref: Arrays and pointers implementation-Footnote-11352877
-Node: Hints implementation1353003
-Node: Structures unions enumerations and bit-fields implementation1354498
-Node: Qualifiers implementation1356722
-Node: Declarators implementation1358783
-Node: Statements implementation1359124
-Node: Preprocessing directives implementation1359450
-Node: Library functions implementation1361771
-Node: Architecture implementation1362420
-Node: Locale-specific behavior implementation1364065
-Node: C++ Implementation1364370
-Node: Conditionally-supported behavior1365654
-Node: Exception handling1366271
-Node: C Extensions1366738
-Node: Statement Exprs1371961
-Node: Local Labels1377333
-Node: Labels as Values1380306
-Ref: Labels as Values-Footnote-11382833
-Node: Nested Functions1383018
-Node: Nonlocal Gotos1386972
-Node: Constructing Calls1389238
-Node: Typeof1393953
-Node: Conditionals1397882
-Node: __int1281398771
-Node: Long Long1399296
-Node: Complex1400787
-Node: Floating Types1405532
-Node: Half-Precision1409053
-Node: Decimal Float1412521
-Node: Hex Floats1414375
-Node: Fixed-Point1415449
-Node: Named Address Spaces1418707
-Ref: AVR Named Address Spaces1419393
-Node: Zero Length1426687
-Node: Empty Structures1430868
-Node: Variable Length1431274
-Node: Variadic Macros1433992
-Node: Escaped Newlines1436370
-Node: Subscripting1437231
-Node: Pointer Arith1437956
-Node: Variadic Pointer Args1438533
-Node: Pointers to Arrays1439258
-Node: Initializers1440011
-Node: Compound Literals1440512
-Node: Designated Inits1444079
-Node: Case Ranges1448003
-Node: Cast to Union1448684
-Node: Mixed Labels and Declarations1450418
-Node: Function Attributes1451055
-Node: Common Function Attributes1455566
-Ref: Common Function Attributes-Footnote-11532030
-Node: AArch64 Function Attributes1532347
-Node: AMD GCN Function Attributes1538541
-Node: ARC Function Attributes1541594
-Node: ARM Function Attributes1544531
-Node: AVR Function Attributes1549670
-Node: Blackfin Function Attributes1554205
-Node: BPF Function Attributes1556702
-Node: CR16 Function Attributes1557290
-Node: C-SKY Function Attributes1557809
-Node: Epiphany Function Attributes1559108
-Node: H8/300 Function Attributes1561863
-Node: IA-64 Function Attributes1563061
-Node: M32C Function Attributes1564103
-Node: M32R/D Function Attributes1566441
-Node: m68k Function Attributes1567915
-Node: MCORE Function Attributes1568859
-Node: MeP Function Attributes1569670
-Node: MicroBlaze Function Attributes1570971
-Node: Microsoft Windows Function Attributes1572478
-Node: MIPS Function Attributes1577047
-Node: MSP430 Function Attributes1582665
-Node: NDS32 Function Attributes1586744
-Node: Nios II Function Attributes1589168
-Node: Nvidia PTX Function Attributes1590465
-Node: PowerPC Function Attributes1591080
-Node: RISC-V Function Attributes1597854
-Node: RL78 Function Attributes1599270
-Node: RX Function Attributes1600509
-Node: S/390 Function Attributes1603056
-Node: SH Function Attributes1604884
-Node: Symbian OS Function Attributes1608312
-Node: V850 Function Attributes1608648
-Node: Visium Function Attributes1609193
-Node: x86 Function Attributes1609721
-Node: Xstormy16 Function Attributes1633676
-Node: Variable Attributes1634183
-Node: Common Variable Attributes1635716
-Node: ARC Variable Attributes1657623
-Node: AVR Variable Attributes1658005
-Node: Blackfin Variable Attributes1663168
-Node: H8/300 Variable Attributes1664026
-Node: IA-64 Variable Attributes1665099
-Node: M32R/D Variable Attributes1665850
-Node: MeP Variable Attributes1666633
-Node: Microsoft Windows Variable Attributes1668726
-Node: MSP430 Variable Attributes1671179
-Node: Nvidia PTX Variable Attributes1672393
-Node: PowerPC Variable Attributes1673010
-Node: RL78 Variable Attributes1673567
-Node: V850 Variable Attributes1673986
-Node: x86 Variable Attributes1674619
-Node: Xstormy16 Variable Attributes1675675
-Node: Type Attributes1676245
-Node: Common Type Attributes1677933
-Node: ARC Type Attributes1700294
-Node: ARM Type Attributes1700766
-Node: BPF Type Attributes1701548
-Node: MeP Type Attributes1702065
-Node: PowerPC Type Attributes1702467
-Node: x86 Type Attributes1703456
-Node: Label Attributes1704448
-Node: Enumerator Attributes1706475
-Node: Statement Attributes1708007
-Node: Attribute Syntax1709490
-Node: Function Prototypes1720748
-Node: C++ Comments1722528
-Node: Dollar Signs1723047
-Node: Character Escapes1723512
-Node: Alignment1723796
-Node: Inline1725449
-Node: Volatiles1730266
-Node: Using Assembly Language with C1733165
-Node: Basic Asm1734402
-Node: Extended Asm1740025
-Ref: Volatile1744139
-Ref: AssemblerTemplate1748252
-Ref: OutputOperands1752492
-Ref: FlagOutputOperands1759455
-Ref: InputOperands1762402
-Ref: Clobbers and Scratch Registers1766670
-Ref: GotoLabels1775311
-Ref: x86Operandmodifiers1778934
-Ref: x86floatingpointasmoperands1783750
-Ref: msp430Operandmodifiers1787079
-Node: Constraints1788737
-Node: Simple Constraints1789843
-Node: Multi-Alternative1797157
-Node: Modifiers1798832
-Node: Machine Constraints1801631
-Node: Asm Labels1858458
-Node: Explicit Register Variables1860078
-Ref: Explicit Reg Vars1860292
-Node: Global Register Variables1860901
-Ref: Global Reg Vars1861109
-Node: Local Register Variables1865891
-Ref: Local Reg Vars1866111
-Node: Size of an asm1869739
-Node: Alternate Keywords1871217
-Node: Incomplete Enums1872722
-Node: Function Names1873479
-Node: Return Address1875383
-Node: Vector Extensions1879970
-Node: Offsetof1890953
-Node: __sync Builtins1891786
-Node: __atomic Builtins1898229
-Node: Integer Overflow Builtins1911742
-Node: x86 specific memory model extensions for transactional memory1918225
-Node: Object Size Checking1919491
-Node: Other Builtins1926507
-Node: Target Builtins1978808
-Node: AArch64 Built-in Functions1980583
-Node: Alpha Built-in Functions1981279
-Node: Altera Nios II Built-in Functions1984373
-Node: ARC Built-in Functions1988812
-Node: ARC SIMD Built-in Functions1994024
-Node: ARM iWMMXt Built-in Functions2003022
-Node: ARM C Language Extensions (ACLE)2010158
-Node: ARM Floating Point Status and Control Intrinsics2011435
-Node: ARM ARMv8-M Security Extensions2011922
-Node: AVR Built-in Functions2013214
-Node: Blackfin Built-in Functions2016980
-Node: BPF Built-in Functions2017600
-Node: FR-V Built-in Functions2019059
-Node: Argument Types2019922
-Node: Directly-mapped Integer Functions2021753
-Node: Directly-mapped Media Functions2022913
-Node: Raw read/write Functions2031195
-Node: Other Built-in Functions2032103
-Node: MIPS DSP Built-in Functions2033289
-Node: MIPS Paired-Single Support2046044
-Node: MIPS Loongson Built-in Functions2047543
-Node: Paired-Single Arithmetic2054065
-Node: Paired-Single Built-in Functions2055088
-Node: MIPS-3D Built-in Functions2057755
-Node: MIPS SIMD Architecture (MSA) Support2063149
-Node: MIPS SIMD Architecture Built-in Functions2065989
-Node: Other MIPS Built-in Functions2092843
-Node: MSP430 Built-in Functions2093852
-Node: NDS32 Built-in Functions2095253
-Node: picoChip Built-in Functions2096546
-Node: Basic PowerPC Built-in Functions2097895
-Node: Basic PowerPC Built-in Functions Available on all Configurations2098753
-Node: Basic PowerPC Built-in Functions Available on ISA 2.052107263
-Node: Basic PowerPC Built-in Functions Available on ISA 2.062112098
-Node: Basic PowerPC Built-in Functions Available on ISA 2.072114178
-Node: Basic PowerPC Built-in Functions Available on ISA 3.02115032
-Node: Basic PowerPC Built-in Functions Available on ISA 3.12122010
-Node: PowerPC AltiVec/VSX Built-in Functions2125175
-Node: PowerPC AltiVec Built-in Functions on ISA 2.052133244
-Node: PowerPC AltiVec Built-in Functions Available on ISA 2.062158644
-Node: PowerPC AltiVec Built-in Functions Available on ISA 2.072165710
-Node: PowerPC AltiVec Built-in Functions Available on ISA 3.02175520
-Node: PowerPC AltiVec Built-in Functions Available on ISA 3.12191243
-Node: PowerPC Hardware Transactional Memory Built-in Functions2224527
-Node: PowerPC Atomic Memory Operation Functions2233077
-Node: PowerPC Matrix-Multiply Assist Built-in Functions2235640
-Node: PRU Built-in Functions2241765
-Node: RISC-V Built-in Functions2242953
-Node: RX Built-in Functions2243364
-Node: S/390 System z Built-in Functions2247366
-Node: SH Built-in Functions2252596
-Node: SPARC VIS Built-in Functions2254324
-Node: TI C6X Built-in Functions2262855
-Node: TILE-Gx Built-in Functions2263906
-Node: TILEPro Built-in Functions2265031
-Node: x86 Built-in Functions2266139
-Node: x86 transactional memory intrinsics2331438
-Node: x86 control-flow protection intrinsics2334705
-Node: Target Format Checks2336476
-Node: Solaris Format Checks2336908
-Node: Darwin Format Checks2337334
-Node: Pragmas2338297
-Node: AArch64 Pragmas2339238
-Node: ARM Pragmas2339695
-Node: M32C Pragmas2340322
-Node: MeP Pragmas2341394
-Node: PRU Pragmas2343446
-Node: RS/6000 and PowerPC Pragmas2344024
-Node: S/390 Pragmas2344764
-Node: Darwin Pragmas2345330
-Node: Solaris Pragmas2346383
-Node: Symbol-Renaming Pragmas2347547
-Node: Structure-Layout Pragmas2349184
-Node: Weak Pragmas2351464
-Node: Diagnostic Pragmas2352199
-Node: Visibility Pragmas2356950
-Node: Push/Pop Macro Pragmas2357635
-Node: Function Specific Option Pragmas2358608
-Node: Loop-Specific Pragmas2360574
-Node: Unnamed Fields2362174
-Node: Thread-Local2364371
-Node: C99 Thread-Local Edits2366477
-Node: C++98 Thread-Local Edits2368475
-Node: Binary constants2371920
-Node: C++ Extensions2372591
-Node: C++ Volatiles2374221
-Node: Restricted Pointers2376569
-Node: Vague Linkage2378160
-Node: C++ Interface2381783
-Ref: C++ Interface-Footnote-12385580
-Node: Template Instantiation2385718
-Node: Bound member functions2391809
-Node: C++ Attributes2393341
-Node: Function Multiversioning2397413
-Node: Type Traits2399221
-Node: C++ Concepts2406171
-Node: Deprecated Features2407677
-Node: Backwards Compatibility2409502
-Node: Objective-C2410574
-Node: GNU Objective-C runtime API2411181
-Node: Modern GNU Objective-C runtime API2412188
-Node: Traditional GNU Objective-C runtime API2414624
-Node: Executing code before main2415351
-Node: What you can and what you cannot do in +load2418095
-Node: Type encoding2420465
-Node: Legacy type encoding2425831
-Node: @encode2426921
-Node: Method signatures2427466
-Node: Garbage Collection2429458
-Node: Constant string objects2432148
-Node: compatibility_alias2434657
-Node: Exceptions2435382
-Node: Synchronization2438092
-Node: Fast enumeration2439276
-Node: Using fast enumeration2439588
-Node: c99-like fast enumeration syntax2440799
-Node: Fast enumeration details2441502
-Node: Fast enumeration protocol2443842
-Node: Messaging with the GNU Objective-C runtime2446994
-Node: Dynamically registering methods2448366
-Node: Forwarding hook2450057
-Node: Compatibility2453097
-Node: Gcov2459653
-Node: Gcov Intro2460188
-Node: Invoking Gcov2462906
-Node: Gcov and Optimization2485639
-Node: Gcov Data Files2489392
-Node: Cross-profiling2490801
-Node: Gcov-tool2492655
-Node: Gcov-tool Intro2493080
-Node: Invoking Gcov-tool2495050
-Node: Gcov-dump2497628
-Node: Gcov-dump Intro2497951
-Node: Invoking Gcov-dump2498218
-Node: lto-dump2498875
-Node: lto-dump Intro2499174
-Node: Invoking lto-dump2499424
-Node: Trouble2500520
-Node: Actual Bugs2501937
-Node: Interoperation2502384
-Node: Incompatibilities2509275
-Node: Fixed Headers2517427
-Node: Standard Libraries2519085
-Node: Disappointments2520457
-Node: C++ Misunderstandings2524816
-Node: Static Definitions2525627
-Node: Name lookup2526680
-Ref: Name lookup-Footnote-12531461
-Node: Temporaries2531650
-Node: Copy Assignment2533626
-Node: Non-bugs2535461
-Node: Warnings and Errors2545967
-Node: Bugs2547729
-Node: Bug Criteria2548196
-Node: Bug Reporting2550406
-Node: Service2550624
-Node: Contributing2551445
-Node: Funding2552191
-Node: GNU Project2554681
-Node: Copying2555329
-Node: GNU Free Documentation License2592840
-Node: Contributors2617960
-Node: Option Index2658934
-Node: Keyword Index2956456
+Node: Instrumentation Options620656
+Node: Preprocessor Options668768
+Ref: dashMF673615
+Ref: fdollars-in-identifiers678277
+Node: Assembler Options691482
+Node: Link Options692173
+Ref: Link Options-Footnote-1709133
+Node: Directory Options709469
+Node: Code Gen Options717872
+Node: Developer Options746745
+Node: Submodel Options788130
+Node: AArch64 Options789940
+Ref: aarch64-feature-modifiers805486
+Node: Adapteva Epiphany Options811047
+Node: AMD GCN Options816999
+Node: ARC Options818562
+Node: ARM Options839331
+Node: AVR Options881356
+Node: Blackfin Options907893
+Node: C6X Options915785
+Node: CRIS Options917328
+Node: CR16 Options921069
+Node: C-SKY Options921981
+Node: Darwin Options927708
+Node: DEC Alpha Options935149
+Node: eBPF Options946765
+Node: FR30 Options949141
+Node: FT32 Options949701
+Node: FRV Options950647
+Node: GNU/Linux Options957411
+Node: H8/300 Options958792
+Node: HPPA Options960244
+Node: IA-64 Options969776
+Node: LM32 Options977904
+Node: M32C Options978427
+Node: M32R/D Options979700
+Node: M680x0 Options983245
+Node: MCore Options997400
+Node: MeP Options998902
+Node: MicroBlaze Options1002862
+Node: MIPS Options1005927
+Node: MMIX Options1042724
+Node: MN10300 Options1045201
+Node: Moxie Options1047744
+Node: MSP430 Options1048231
+Node: NDS32 Options1055992
+Node: Nios II Options1058162
+Node: Nvidia PTX Options1071378
+Node: OpenRISC Options1074177
+Node: PDP-11 Options1076931
+Node: picoChip Options1078180
+Node: PowerPC Options1080318
+Node: PRU Options1080538
+Node: RISC-V Options1082747
+Node: RL78 Options1091148
+Node: RS/6000 and PowerPC Options1094923
+Node: RX Options1136439
+Node: S/390 and zSeries Options1145041
+Node: Score Options1155820
+Node: SH Options1156669
+Node: Solaris 2 Options1171809
+Node: SPARC Options1173047
+Node: System V Options1188699
+Node: TILE-Gx Options1189527
+Node: TILEPro Options1190545
+Node: V850 Options1191049
+Node: VAX Options1197736
+Node: Visium Options1198428
+Node: VMS Options1200736
+Node: VxWorks Options1201552
+Node: x86 Options1202704
+Node: x86 Windows Options1271057
+Node: Xstormy16 Options1273863
+Node: Xtensa Options1274157
+Node: zSeries Options1280293
+Node: Spec Files1280489
+Node: Environment Variables1306568
+Node: Precompiled Headers1316001
+Node: C++ Modules1322210
+Ref: C++ Modules-Footnote-11328350
+Node: C++ Module Mapper1328603
+Node: C++ Module Preprocessing1333756
+Node: C++ Compiled Module Interface1335585
+Ref: C++ Compiled Module Interface-Footnote-11338969
+Ref: C++ Compiled Module Interface-Footnote-21339058
+Node: C Implementation1339114
+Node: Translation implementation1340805
+Node: Environment implementation1341396
+Node: Identifiers implementation1341950
+Node: Characters implementation1343036
+Node: Integers implementation1346686
+Node: Floating point implementation1348735
+Node: Arrays and pointers implementation1351798
+Ref: Arrays and pointers implementation-Footnote-11353258
+Node: Hints implementation1353384
+Node: Structures unions enumerations and bit-fields implementation1354879
+Node: Qualifiers implementation1357103
+Node: Declarators implementation1359164
+Node: Statements implementation1359505
+Node: Preprocessing directives implementation1359831
+Node: Library functions implementation1362152
+Node: Architecture implementation1362801
+Node: Locale-specific behavior implementation1364446
+Node: C++ Implementation1364751
+Node: Conditionally-supported behavior1366035
+Node: Exception handling1366652
+Node: C Extensions1367119
+Node: Statement Exprs1372342
+Node: Local Labels1377714
+Node: Labels as Values1380687
+Ref: Labels as Values-Footnote-11383214
+Node: Nested Functions1383399
+Node: Nonlocal Gotos1387353
+Node: Constructing Calls1389619
+Node: Typeof1394334
+Node: Conditionals1398263
+Node: __int1281399152
+Node: Long Long1399677
+Node: Complex1401168
+Node: Floating Types1405913
+Node: Half-Precision1409434
+Node: Decimal Float1412902
+Node: Hex Floats1414756
+Node: Fixed-Point1415830
+Node: Named Address Spaces1419088
+Ref: AVR Named Address Spaces1419774
+Node: Zero Length1427068
+Node: Empty Structures1431249
+Node: Variable Length1431655
+Node: Variadic Macros1434373
+Node: Escaped Newlines1436751
+Node: Subscripting1437612
+Node: Pointer Arith1438337
+Node: Variadic Pointer Args1438914
+Node: Pointers to Arrays1439639
+Node: Initializers1440392
+Node: Compound Literals1440893
+Node: Designated Inits1444460
+Node: Case Ranges1448384
+Node: Cast to Union1449065
+Node: Mixed Labels and Declarations1450799
+Node: Function Attributes1451436
+Node: Common Function Attributes1455947
+Ref: Common Function Attributes-Footnote-11532411
+Node: AArch64 Function Attributes1532728
+Node: AMD GCN Function Attributes1538922
+Node: ARC Function Attributes1541975
+Node: ARM Function Attributes1544912
+Node: AVR Function Attributes1550051
+Node: Blackfin Function Attributes1554586
+Node: BPF Function Attributes1557083
+Node: CR16 Function Attributes1557671
+Node: C-SKY Function Attributes1558190
+Node: Epiphany Function Attributes1559489
+Node: H8/300 Function Attributes1562244
+Node: IA-64 Function Attributes1563442
+Node: M32C Function Attributes1564484
+Node: M32R/D Function Attributes1566822
+Node: m68k Function Attributes1568296
+Node: MCORE Function Attributes1569240
+Node: MeP Function Attributes1570051
+Node: MicroBlaze Function Attributes1571352
+Node: Microsoft Windows Function Attributes1572859
+Node: MIPS Function Attributes1577428
+Node: MSP430 Function Attributes1583046
+Node: NDS32 Function Attributes1587125
+Node: Nios II Function Attributes1589549
+Node: Nvidia PTX Function Attributes1590846
+Node: PowerPC Function Attributes1591461
+Node: RISC-V Function Attributes1598235
+Node: RL78 Function Attributes1599651
+Node: RX Function Attributes1600890
+Node: S/390 Function Attributes1603437
+Node: SH Function Attributes1605265
+Node: Symbian OS Function Attributes1608693
+Node: V850 Function Attributes1609029
+Node: Visium Function Attributes1609574
+Node: x86 Function Attributes1610102
+Node: Xstormy16 Function Attributes1634057
+Node: Variable Attributes1634564
+Node: Common Variable Attributes1636097
+Node: ARC Variable Attributes1658004
+Node: AVR Variable Attributes1658386
+Node: Blackfin Variable Attributes1663549
+Node: H8/300 Variable Attributes1664407
+Node: IA-64 Variable Attributes1665480
+Node: M32R/D Variable Attributes1666231
+Node: MeP Variable Attributes1667014
+Node: Microsoft Windows Variable Attributes1669107
+Node: MSP430 Variable Attributes1671560
+Node: Nvidia PTX Variable Attributes1672774
+Node: PowerPC Variable Attributes1673391
+Node: RL78 Variable Attributes1673948
+Node: V850 Variable Attributes1674367
+Node: x86 Variable Attributes1675000
+Node: Xstormy16 Variable Attributes1676056
+Node: Type Attributes1676626
+Node: Common Type Attributes1678314
+Node: ARC Type Attributes1700675
+Node: ARM Type Attributes1701147
+Node: BPF Type Attributes1701929
+Node: MeP Type Attributes1702446
+Node: PowerPC Type Attributes1702848
+Node: x86 Type Attributes1703837
+Node: Label Attributes1704829
+Node: Enumerator Attributes1706856
+Node: Statement Attributes1708388
+Node: Attribute Syntax1709871
+Node: Function Prototypes1721129
+Node: C++ Comments1722909
+Node: Dollar Signs1723428
+Node: Character Escapes1723893
+Node: Alignment1724177
+Node: Inline1725830
+Node: Volatiles1730647
+Node: Using Assembly Language with C1733546
+Node: Basic Asm1734783
+Node: Extended Asm1740406
+Ref: Volatile1744520
+Ref: AssemblerTemplate1748633
+Ref: OutputOperands1752873
+Ref: FlagOutputOperands1759836
+Ref: InputOperands1762783
+Ref: Clobbers and Scratch Registers1767051
+Ref: GotoLabels1775692
+Ref: x86Operandmodifiers1779315
+Ref: x86floatingpointasmoperands1784131
+Ref: msp430Operandmodifiers1787460
+Node: Constraints1789118
+Node: Simple Constraints1790224
+Node: Multi-Alternative1797538
+Node: Modifiers1799213
+Node: Machine Constraints1802012
+Node: Asm Labels1858839
+Node: Explicit Register Variables1860459
+Ref: Explicit Reg Vars1860673
+Node: Global Register Variables1861282
+Ref: Global Reg Vars1861490
+Node: Local Register Variables1866272
+Ref: Local Reg Vars1866492
+Node: Size of an asm1870120
+Node: Alternate Keywords1871598
+Node: Incomplete Enums1873103
+Node: Function Names1873860
+Node: Return Address1875764
+Node: Vector Extensions1880351
+Node: Offsetof1891334
+Node: __sync Builtins1892167
+Node: __atomic Builtins1898610
+Node: Integer Overflow Builtins1912123
+Node: x86 specific memory model extensions for transactional memory1918606
+Node: Object Size Checking1919872
+Node: Other Builtins1926888
+Node: Target Builtins1979189
+Node: AArch64 Built-in Functions1980964
+Node: Alpha Built-in Functions1981660
+Node: Altera Nios II Built-in Functions1984754
+Node: ARC Built-in Functions1989193
+Node: ARC SIMD Built-in Functions1994405
+Node: ARM iWMMXt Built-in Functions2003403
+Node: ARM C Language Extensions (ACLE)2010539
+Node: ARM Floating Point Status and Control Intrinsics2011816
+Node: ARM ARMv8-M Security Extensions2012303
+Node: AVR Built-in Functions2013595
+Node: Blackfin Built-in Functions2017361
+Node: BPF Built-in Functions2017981
+Node: FR-V Built-in Functions2019440
+Node: Argument Types2020303
+Node: Directly-mapped Integer Functions2022134
+Node: Directly-mapped Media Functions2023294
+Node: Raw read/write Functions2031576
+Node: Other Built-in Functions2032484
+Node: MIPS DSP Built-in Functions2033670
+Node: MIPS Paired-Single Support2046425
+Node: MIPS Loongson Built-in Functions2047924
+Node: Paired-Single Arithmetic2054446
+Node: Paired-Single Built-in Functions2055469
+Node: MIPS-3D Built-in Functions2058136
+Node: MIPS SIMD Architecture (MSA) Support2063530
+Node: MIPS SIMD Architecture Built-in Functions2066370
+Node: Other MIPS Built-in Functions2093224
+Node: MSP430 Built-in Functions2094233
+Node: NDS32 Built-in Functions2095634
+Node: picoChip Built-in Functions2096927
+Node: Basic PowerPC Built-in Functions2098276
+Node: Basic PowerPC Built-in Functions Available on all Configurations2099134
+Node: Basic PowerPC Built-in Functions Available on ISA 2.052107644
+Node: Basic PowerPC Built-in Functions Available on ISA 2.062112479
+Node: Basic PowerPC Built-in Functions Available on ISA 2.072114559
+Node: Basic PowerPC Built-in Functions Available on ISA 3.02115413
+Node: Basic PowerPC Built-in Functions Available on ISA 3.12122391
+Node: PowerPC AltiVec/VSX Built-in Functions2125556
+Node: PowerPC AltiVec Built-in Functions on ISA 2.052133625
+Node: PowerPC AltiVec Built-in Functions Available on ISA 2.062159025
+Node: PowerPC AltiVec Built-in Functions Available on ISA 2.072166091
+Node: PowerPC AltiVec Built-in Functions Available on ISA 3.02175901
+Node: PowerPC AltiVec Built-in Functions Available on ISA 3.12191624
+Node: PowerPC Hardware Transactional Memory Built-in Functions2224908
+Node: PowerPC Atomic Memory Operation Functions2233458
+Node: PowerPC Matrix-Multiply Assist Built-in Functions2236021
+Node: PRU Built-in Functions2242146
+Node: RISC-V Built-in Functions2243334
+Node: RX Built-in Functions2243745
+Node: S/390 System z Built-in Functions2247747
+Node: SH Built-in Functions2252977
+Node: SPARC VIS Built-in Functions2254705
+Node: TI C6X Built-in Functions2263236
+Node: TILE-Gx Built-in Functions2264287
+Node: TILEPro Built-in Functions2265412
+Node: x86 Built-in Functions2266520
+Node: x86 transactional memory intrinsics2331819
+Node: x86 control-flow protection intrinsics2335086
+Node: Target Format Checks2336857
+Node: Solaris Format Checks2337289
+Node: Darwin Format Checks2337715
+Node: Pragmas2338678
+Node: AArch64 Pragmas2339619
+Node: ARM Pragmas2340076
+Node: M32C Pragmas2340703
+Node: MeP Pragmas2341775
+Node: PRU Pragmas2343827
+Node: RS/6000 and PowerPC Pragmas2344405
+Node: S/390 Pragmas2345145
+Node: Darwin Pragmas2345711
+Node: Solaris Pragmas2346764
+Node: Symbol-Renaming Pragmas2347928
+Node: Structure-Layout Pragmas2349565
+Node: Weak Pragmas2351845
+Node: Diagnostic Pragmas2352580
+Node: Visibility Pragmas2357331
+Node: Push/Pop Macro Pragmas2358016
+Node: Function Specific Option Pragmas2358989
+Node: Loop-Specific Pragmas2360955
+Node: Unnamed Fields2362555
+Node: Thread-Local2364752
+Node: C99 Thread-Local Edits2366858
+Node: C++98 Thread-Local Edits2368856
+Node: Binary constants2372301
+Node: C++ Extensions2372972
+Node: C++ Volatiles2374602
+Node: Restricted Pointers2376950
+Node: Vague Linkage2378541
+Node: C++ Interface2382164
+Ref: C++ Interface-Footnote-12385961
+Node: Template Instantiation2386099
+Node: Bound member functions2392190
+Node: C++ Attributes2393722
+Node: Function Multiversioning2397794
+Node: Type Traits2399602
+Node: C++ Concepts2406552
+Node: Deprecated Features2408058
+Node: Backwards Compatibility2409883
+Node: Objective-C2410955
+Node: GNU Objective-C runtime API2411562
+Node: Modern GNU Objective-C runtime API2412569
+Node: Traditional GNU Objective-C runtime API2415005
+Node: Executing code before main2415732
+Node: What you can and what you cannot do in +load2418476
+Node: Type encoding2420846
+Node: Legacy type encoding2426212
+Node: @encode2427302
+Node: Method signatures2427847
+Node: Garbage Collection2429839
+Node: Constant string objects2432529
+Node: compatibility_alias2435038
+Node: Exceptions2435763
+Node: Synchronization2438473
+Node: Fast enumeration2439657
+Node: Using fast enumeration2439969
+Node: c99-like fast enumeration syntax2441180
+Node: Fast enumeration details2441883
+Node: Fast enumeration protocol2444223
+Node: Messaging with the GNU Objective-C runtime2447375
+Node: Dynamically registering methods2448747
+Node: Forwarding hook2450438
+Node: Compatibility2453478
+Node: Gcov2460034
+Node: Gcov Intro2460569
+Node: Invoking Gcov2463287
+Node: Gcov and Optimization2486020
+Node: Gcov Data Files2489773
+Node: Cross-profiling2491182
+Node: Gcov-tool2493036
+Node: Gcov-tool Intro2493461
+Node: Invoking Gcov-tool2495431
+Node: Gcov-dump2498009
+Node: Gcov-dump Intro2498332
+Node: Invoking Gcov-dump2498599
+Node: lto-dump2499256
+Node: lto-dump Intro2499555
+Node: Invoking lto-dump2499805
+Node: Trouble2500901
+Node: Actual Bugs2502318
+Node: Interoperation2502765
+Node: Incompatibilities2509656
+Node: Fixed Headers2517808
+Node: Standard Libraries2519466
+Node: Disappointments2520838
+Node: C++ Misunderstandings2525197
+Node: Static Definitions2526008
+Node: Name lookup2527061
+Ref: Name lookup-Footnote-12531842
+Node: Temporaries2532031
+Node: Copy Assignment2534007
+Node: Non-bugs2535842
+Node: Warnings and Errors2546348
+Node: Bugs2548110
+Node: Bug Criteria2548577
+Node: Bug Reporting2550787
+Node: Service2551005
+Node: Contributing2551826
+Node: Funding2552572
+Node: GNU Project2555062
+Node: Copying2555710
+Node: GNU Free Documentation License2593221
+Node: Contributors2618341
+Node: Option Index2659315
+Node: Keyword Index2956837
 
 End Tag Table
 
