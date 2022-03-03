@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-03-02" "gcc-12.0.1" "GNU"
+.TH GCC 1 "2022-03-03" "gcc-12.0.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -423,7 +423,7 @@ in the following sections.
 \&\fB\-Wswitch  \-Wno\-switch\-bool  \-Wswitch\-default  \-Wswitch\-enum 
 \&\-Wno\-switch\-outside\-range  \-Wno\-switch\-unreachable  \-Wsync\-nand 
 \&\-Wsystem\-headers  \-Wtautological\-compare  \-Wtrampolines  \-Wtrigraphs 
-\&\-Wtsan \-Wtype\-limits  \-Wundef 
+\&\-Wtrivial\-auto\-var\-init \-Wtsan \-Wtype\-limits  \-Wundef 
 \&\-Wuninitialized  \-Wunknown\-pragmas 
 \&\-Wunsuffixed\-float\-constants  \-Wunused 
 \&\-Wunused\-but\-set\-parameter  \-Wunused\-but\-set\-variable 
@@ -6592,6 +6592,12 @@ This warning is enabled by default for C and \*(C+ programs.
 .IX Item "-Wsync-nand (C and only)"
 Warn when \f(CW\*(C`_\|_sync_fetch_and_nand\*(C'\fR and \f(CW\*(C`_\|_sync_nand_and_fetch\*(C'\fR
 built-in functions are used.  These functions changed semantics in \s-1GCC 4.4.\s0
+.IP "\fB\-Wtrivial\-auto\-var\-init\fR" 4
+.IX Item "-Wtrivial-auto-var-init"
+Warn when \f(CW\*(C`\-ftrivial\-auto\-var\-init\*(C'\fR cannot initialize the automatic
+variable.  A common situation is an automatic variable that is declared
+between the controlling expression and the first case label of a \f(CW\*(C`switch\*(C'\fR
+statement.
 .IP "\fB\-Wunused\-but\-set\-parameter\fR" 4
 .IX Item "-Wunused-but-set-parameter"
 Warn whenever a function parameter is assigned to, but otherwise unused
@@ -11386,6 +11392,10 @@ initializer as uninitialized, \fB\-Wuninitialized\fR and
 warning messages on such automatic variables.
 With this option, \s-1GCC\s0 will also initialize any padding of automatic variables
 that have structure or union types to zeroes.
+However, the current implementation cannot initialize automatic variables that
+are declared between the controlling expression and the first case of a
+\&\f(CW\*(C`switch\*(C'\fR statement.  Using \fB\-Wtrivial\-auto\-var\-init\fR to report all
+such cases.
 .Sp
 The three values of \fIchoice\fR are:
 .RS 4
