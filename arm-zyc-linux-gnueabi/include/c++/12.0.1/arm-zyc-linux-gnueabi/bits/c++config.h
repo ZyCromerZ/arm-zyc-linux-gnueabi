@@ -34,7 +34,7 @@
 #define _GLIBCXX_RELEASE 12
 
 // The datestamp of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20220305
+#define __GLIBCXX__ 20220306
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -305,6 +305,7 @@ namespace std
   // This allows the library to terminate without including all of <exception>
   // and without making the declaration of std::terminate visible to users.
   extern "C++" __attribute__ ((__noreturn__, __always_inline__))
+  _GLIBCXX_VISIBILITY(default)
   inline void __terminate() _GLIBCXX_USE_NOEXCEPT
   {
     void terminate() _GLIBCXX_USE_NOEXCEPT __attribute__ ((__noreturn__));
@@ -554,7 +555,7 @@ namespace std
 {
   // Avoid the use of assert, because we're trying to keep the <cassert>
   // include out of the mix.
-  extern "C++" _GLIBCXX_NORETURN
+  extern "C++" _GLIBCXX_NORETURN _GLIBCXX_VISIBILITY(default)
   void
   __glibcxx_assert_fail(const char* __file, int __line,
 			const char* __function, const char* __condition)
