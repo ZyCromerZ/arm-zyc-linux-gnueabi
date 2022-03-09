@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-03-08" "gcc-12.0.1" "GNU"
+.TH GCC 1 "2022-03-09" "gcc-12.0.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -14014,6 +14014,9 @@ The maximum factor which the loop vectorizer applies to the cost of statements
 in an inner loop relative to the loop being vectorized.  The factor applied
 is the maximum of the estimated number of iterations of the inner loop and
 this parameter.  The default value of this parameter is 50.
+.IP "\fBvect-induction-float\fR" 4
+.IX Item "vect-induction-float"
+Enable loop vectorization of floating point inductions.
 .IP "\fBavoid-fma-max-bits\fR" 4
 .IX Item "avoid-fma-max-bits"
 Maximum number of bits for which we avoid creating FMAs.
