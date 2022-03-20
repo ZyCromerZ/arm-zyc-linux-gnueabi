@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.1 20220319 (experimental)")
+(!version  "12.0.1 20220320 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -26753,17 +26753,17 @@
  )
  
  (!type user_struct 1884 nil  gc_unused "hash_set<char*,false,nofree_string_hash>"
-  (!srcfileloc  "c-family/c-common.cc" 9217)
+  (!srcfileloc  "c-family/c-common.cc" 9219)
   (!fields 2 
    (!pair  "nofree_string_hash"
     (!type undefined 1885 nil  gc_unused "nofree_string_hash"
-     (!srcfileloc  "c-family/c-common.cc" 9217)
+     (!srcfileloc  "c-family/c-common.cc" 9219)
     )
-    (!srcfileloc  "c-family/c-common.cc" 9217)
+    (!srcfileloc  "c-family/c-common.cc" 9219)
     nil )
    (!pair  "false"
     (!type already_seen 864)
-    (!srcfileloc  "c-family/c-common.cc" 9217)
+    (!srcfileloc  "c-family/c-common.cc" 9219)
     nil )
   )
  )
@@ -26771,7 +26771,7 @@
  (!type already_seen 1885)
  
  (!type user_struct 1886 nil  gc_unused "hash_map<char*,per_file_includes_t*>"
-  (!srcfileloc  "c-family/c-common.cc" 9222)
+  (!srcfileloc  "c-family/c-common.cc" 9224)
   (!fields 1 
    (!pair  "per_file_includes_t"
     (!type pointer 1887 nil  gc_unused
@@ -26781,7 +26781,7 @@
       (!fields 0 )
       nil 0 nil nil )
     )
-    (!srcfileloc  "c-family/c-common.cc" 9222)
+    (!srcfileloc  "c-family/c-common.cc" 9224)
     nil )
   )
  )
@@ -31459,23 +31459,23 @@
   nil )
  (!pair  "added_includes_t"
   (!type already_seen 1886)
-  (!srcfileloc  "c-family/c-common.cc" 9222)
+  (!srcfileloc  "c-family/c-common.cc" 9224)
   nil )
  (!pair  "hash_map<char*,per_file_includes_t*>"
   (!type already_seen 1886)
-  (!srcfileloc  "c-family/c-common.cc" 9222)
+  (!srcfileloc  "c-family/c-common.cc" 9224)
   nil )
  (!pair  "per_file_includes_t"
   (!type already_seen 1884)
-  (!srcfileloc  "c-family/c-common.cc" 9217)
+  (!srcfileloc  "c-family/c-common.cc" 9219)
   nil )
  (!pair  "nofree_string_hash"
   (!type already_seen 1885)
-  (!srcfileloc  "c-family/c-common.cc" 9217)
+  (!srcfileloc  "c-family/c-common.cc" 9219)
   nil )
  (!pair  "hash_set<char*,false,nofree_string_hash>"
   (!type already_seen 1884)
-  (!srcfileloc  "c-family/c-common.cc" 9217)
+  (!srcfileloc  "c-family/c-common.cc" 9219)
   nil )
  (!pair  "vec<tree_gc_vec,va_gc>"
   (!type already_seen 1882)
