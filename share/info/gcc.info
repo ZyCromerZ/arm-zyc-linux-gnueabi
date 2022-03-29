@@ -56808,34 +56808,35 @@ pair of types).
 
 '__has_trivial_assign (type)'
      If 'type' is 'const'- qualified or is a reference type then the
-     trait is 'false'.  Otherwise if '__is_pod (type)' is 'true' then
-     the trait is 'true', else if 'type' is a cv-qualified class or
+     trait is 'false'.  Otherwise if '__is_trivial (type)' is 'true'
+     then the trait is 'true', else if 'type' is a cv-qualified class or
      union type with a trivial copy assignment ([class.copy]) then the
      trait is 'true', else it is 'false'.  Requires: 'type' shall be a
      complete type, (possibly cv-qualified) 'void', or an array of
      unknown bound.
 
 '__has_trivial_copy (type)'
-     If '__is_pod (type)' is 'true' or 'type' is a reference type then
-     the trait is 'true', else if 'type' is a cv class or union type
-     with a trivial copy constructor ([class.copy]) then the trait is
-     'true', else it is 'false'.  Requires: 'type' shall be a complete
-     type, (possibly cv-qualified) 'void', or an array of unknown bound.
+     If '__is_trivial (type)' is 'true' or 'type' is a reference type
+     then the trait is 'true', else if 'type' is a cv class or union
+     type with a trivial copy constructor ([class.copy]) then the trait
+     is 'true', else it is 'false'.  Requires: 'type' shall be a
+     complete type, (possibly cv-qualified) 'void', or an array of
+     unknown bound.
 
 '__has_trivial_constructor (type)'
-     If '__is_pod (type)' is 'true' then the trait is 'true', else if
-     'type' is a cv-qualified class or union type (or array thereof)
+     If '__is_trivial (type)' is 'true' then the trait is 'true', else
+     if 'type' is a cv-qualified class or union type (or array thereof)
      with a trivial default constructor ([class.ctor]) then the trait is
      'true', else it is 'false'.  Requires: 'type' shall be a complete
      type, (possibly cv-qualified) 'void', or an array of unknown bound.
 
 '__has_trivial_destructor (type)'
-     If '__is_pod (type)' is 'true' or 'type' is a reference type then
-     the trait is 'true', else if 'type' is a cv class or union type (or
-     array thereof) with a trivial destructor ([class.dtor]) then the
-     trait is 'true', else it is 'false'.  Requires: 'type' shall be a
-     complete type, (possibly cv-qualified) 'void', or an array of
-     unknown bound.
+     If '__is_trivial (type)' is 'true' or 'type' is a reference type
+     then the trait is 'true', else if 'type' is a cv class or union
+     type (or array thereof) with a trivial destructor ([class.dtor])
+     then the trait is 'true', else it is 'false'.  Requires: 'type'
+     shall be a complete type, (possibly cv-qualified) 'void', or an
+     array of unknown bound.
 
 '__has_virtual_destructor (type)'
      If 'type' is a class type with a virtual destructor ([class.dtor])
@@ -70474,75 +70475,75 @@ Node: Bound member functions2394228
 Node: C++ Attributes2395760
 Node: Function Multiversioning2399832
 Node: Type Traits2401640
-Node: C++ Concepts2408590
-Node: Deprecated Features2410096
-Node: Backwards Compatibility2411921
-Node: Objective-C2412993
-Node: GNU Objective-C runtime API2413600
-Node: Modern GNU Objective-C runtime API2414607
-Node: Traditional GNU Objective-C runtime API2417043
-Node: Executing code before main2417770
-Node: What you can and what you cannot do in +load2420514
-Node: Type encoding2422884
-Node: Legacy type encoding2428250
-Node: @encode2429340
-Node: Method signatures2429885
-Node: Garbage Collection2431877
-Node: Constant string objects2434567
-Node: compatibility_alias2437076
-Node: Exceptions2437801
-Node: Synchronization2440511
-Node: Fast enumeration2441695
-Node: Using fast enumeration2442007
-Node: c99-like fast enumeration syntax2443218
-Node: Fast enumeration details2443921
-Node: Fast enumeration protocol2446261
-Node: Messaging with the GNU Objective-C runtime2449413
-Node: Dynamically registering methods2450785
-Node: Forwarding hook2452476
-Node: Compatibility2455516
-Node: Gcov2462072
-Node: Gcov Intro2462607
-Node: Invoking Gcov2465325
-Node: Gcov and Optimization2488058
-Node: Gcov Data Files2491811
-Node: Cross-profiling2493220
-Node: Gcov-tool2495074
-Node: Gcov-tool Intro2495499
-Node: Invoking Gcov-tool2497469
-Node: Gcov-dump2500047
-Node: Gcov-dump Intro2500370
-Node: Invoking Gcov-dump2500637
-Node: lto-dump2501294
-Node: lto-dump Intro2501593
-Node: Invoking lto-dump2501843
-Node: Trouble2502939
-Node: Actual Bugs2504356
-Node: Interoperation2504803
-Node: Incompatibilities2511694
-Node: Fixed Headers2519846
-Node: Standard Libraries2521504
-Node: Disappointments2522876
-Node: C++ Misunderstandings2527235
-Node: Static Definitions2528046
-Node: Name lookup2529099
-Ref: Name lookup-Footnote-12533880
-Node: Temporaries2534069
-Node: Copy Assignment2536045
-Node: Non-bugs2537880
-Node: Warnings and Errors2548386
-Node: Bugs2550148
-Node: Bug Criteria2550615
-Node: Bug Reporting2552825
-Node: Service2553043
-Node: Contributing2553864
-Node: Funding2554610
-Node: GNU Project2557100
-Node: Copying2557748
-Node: GNU Free Documentation License2595259
-Node: Contributors2620379
-Node: Option Index2661353
-Node: Keyword Index2959430
+Node: C++ Concepts2408611
+Node: Deprecated Features2410117
+Node: Backwards Compatibility2411942
+Node: Objective-C2413014
+Node: GNU Objective-C runtime API2413621
+Node: Modern GNU Objective-C runtime API2414628
+Node: Traditional GNU Objective-C runtime API2417064
+Node: Executing code before main2417791
+Node: What you can and what you cannot do in +load2420535
+Node: Type encoding2422905
+Node: Legacy type encoding2428271
+Node: @encode2429361
+Node: Method signatures2429906
+Node: Garbage Collection2431898
+Node: Constant string objects2434588
+Node: compatibility_alias2437097
+Node: Exceptions2437822
+Node: Synchronization2440532
+Node: Fast enumeration2441716
+Node: Using fast enumeration2442028
+Node: c99-like fast enumeration syntax2443239
+Node: Fast enumeration details2443942
+Node: Fast enumeration protocol2446282
+Node: Messaging with the GNU Objective-C runtime2449434
+Node: Dynamically registering methods2450806
+Node: Forwarding hook2452497
+Node: Compatibility2455537
+Node: Gcov2462093
+Node: Gcov Intro2462628
+Node: Invoking Gcov2465346
+Node: Gcov and Optimization2488079
+Node: Gcov Data Files2491832
+Node: Cross-profiling2493241
+Node: Gcov-tool2495095
+Node: Gcov-tool Intro2495520
+Node: Invoking Gcov-tool2497490
+Node: Gcov-dump2500068
+Node: Gcov-dump Intro2500391
+Node: Invoking Gcov-dump2500658
+Node: lto-dump2501315
+Node: lto-dump Intro2501614
+Node: Invoking lto-dump2501864
+Node: Trouble2502960
+Node: Actual Bugs2504377
+Node: Interoperation2504824
+Node: Incompatibilities2511715
+Node: Fixed Headers2519867
+Node: Standard Libraries2521525
+Node: Disappointments2522897
+Node: C++ Misunderstandings2527256
+Node: Static Definitions2528067
+Node: Name lookup2529120
+Ref: Name lookup-Footnote-12533901
+Node: Temporaries2534090
+Node: Copy Assignment2536066
+Node: Non-bugs2537901
+Node: Warnings and Errors2548407
+Node: Bugs2550169
+Node: Bug Criteria2550636
+Node: Bug Reporting2552846
+Node: Service2553064
+Node: Contributing2553885
+Node: Funding2554631
+Node: GNU Project2557121
+Node: Copying2557769
+Node: GNU Free Documentation License2595280
+Node: Contributors2620400
+Node: Option Index2661374
+Node: Keyword Index2959451
 
 End Tag Table
 
