@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-03-30" "gcc-12.0.1" "GNU"
+.TH GCC 1 "2022-03-31" "gcc-12.0.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -26583,17 +26583,37 @@ These options are defined for Nvidia \s-1PTX:\s0
 .IX Item "-m64"
 Ignored, but preserved for backward compatibility.  Only 64\-bit \s-1ABI\s0 is
 supported.
-.IP "\fB\-misa=\fR\fIISA-string\fR" 4
-.IX Item "-misa=ISA-string"
-Generate code for given the specified \s-1PTX ISA\s0 (e.g. \fBsm_35\fR).  \s-1ISA\s0
-strings must be lower-case.  Valid \s-1ISA\s0 strings include \fBsm_30\fR and
-\&\fBsm_35\fR.  The default \s-1ISA\s0 is sm_35.
+.IP "\fB\-march=\fR\fIarchitecture-string\fR" 4
+.IX Item "-march=architecture-string"
+Generate code for the specified \s-1PTX ISA\s0 target architecture
+(e.g. \fBsm_35\fR).  Valid architecture strings are \fBsm_30\fR,
+\&\fBsm_35\fR, \fBsm_53\fR, \fBsm_70\fR, \fBsm_75\fR and
+\&\fBsm_80\fR.  The default target architecture is sm_30.
+.Sp
+This option sets the value of the preprocessor macro
+\&\f(CW\*(C`_\|_PTX_SM_\|_\*(C'\fR; for instance, for \fBsm_35\fR, it has the value
+\&\fB350\fR.
+.IP "\fB\-misa=\fR\fIarchitecture-string\fR" 4
+.IX Item "-misa=architecture-string"
+Alias of \fB\-march=\fR.
+.IP "\fB\-march\-map=\fR\fIarchitecture-string\fR" 4
+.IX Item "-march-map=architecture-string"
+Select the closest available \fB\-march=\fR value that is not more
+capable.  For instance, for \fB\-march\-map=sm_50\fR select
+\&\fB\-march=sm_35\fR, and for \fB\-march\-map=sm_53\fR select
+\&\fB\-march=sm_53\fR.
 .IP "\fB\-mptx=\fR\fIversion-string\fR" 4
 .IX Item "-mptx=version-string"
-Generate code for given the specified \s-1PTX\s0 version (e.g. \fB7.0\fR).
+Generate code for the specified \s-1PTX ISA\s0 version (e.g. \fB7.0\fR).
 Valid version strings include \fB3.1\fR, \fB6.0\fR, \fB6.3\fR, and
-\&\fB7.0\fR.  The default \s-1PTX\s0 version is 6.0, unless a higher minimal
-version is required for specified \s-1PTX ISA\s0 via option \fB\-misa=\fR.
+\&\fB7.0\fR.  The default \s-1PTX ISA\s0 version is 6.0, unless a higher
+version is required for specified \s-1PTX ISA\s0 target architecture via
+option \fB\-march=\fR.
+.Sp
+This option sets the values of the preprocessor macros
+\&\f(CW\*(C`_\|_PTX_ISA_VERSION_MAJOR_\|_\*(C'\fR and \f(CW\*(C`_\|_PTX_ISA_VERSION_MINOR_\|_\*(C'\fR;
+for instance, for \fB3.1\fR the macros have the values \fB3\fR and
+\&\fB1\fR, respectively.
 .IP "\fB\-mmainkernel\fR" 4
 .IX Item "-mmainkernel"
 Link in code for a _\|_main kernel.  This is for stand-alone instead of
