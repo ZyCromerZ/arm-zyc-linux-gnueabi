@@ -35268,37 +35268,37 @@
   (!type array 2331 nil  gc_used "(int) BT_LAST + 1" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "d/d-builtins.cc" 1018)
+  (!srcfileloc  "d/d-builtins.cc" 1027)
   nil )
  (!pair  "built_in_attributes"
   (!type array 2332 nil  gc_used "(int) ATTR_LAST" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "d/d-builtins.cc" 922)
+  (!srcfileloc  "d/d-builtins.cc" 931)
   nil )
  (!pair  "signed_size_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 770)
+  (!srcfileloc  "d/d-builtins.cc" 779)
   nil )
  (!pair  "uintmax_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 769)
+  (!srcfileloc  "d/d-builtins.cc" 778)
   nil )
  (!pair  "intmax_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 768)
+  (!srcfileloc  "d/d-builtins.cc" 777)
   nil )
  (!pair  "wint_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 767)
+  (!srcfileloc  "d/d-builtins.cc" 776)
   nil )
  (!pair  "const_string_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 766)
+  (!srcfileloc  "d/d-builtins.cc" 775)
   nil )
  (!pair  "string_type_node"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-builtins.cc" 765)
+  (!srcfileloc  "d/d-builtins.cc" 774)
   nil )
  (!pair  "gcc_builtins_types"
   (!type already_seen 84)
