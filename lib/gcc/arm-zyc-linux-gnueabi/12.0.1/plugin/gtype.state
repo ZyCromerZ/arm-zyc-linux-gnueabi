@@ -35250,19 +35250,19 @@
   nil )
  (!pair  "d_eh_personality_decl"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-lang.cc" 1877)
+  (!srcfileloc  "d/d-lang.cc" 1881)
   nil )
  (!pair  "d_keep_list"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-lang.cc" 1866)
+  (!srcfileloc  "d/d-lang.cc" 1870)
   nil )
  (!pair  "global_declarations"
   (!type already_seen 84)
-  (!srcfileloc  "d/d-lang.cc" 94)
+  (!srcfileloc  "d/d-lang.cc" 95)
   nil )
  (!pair  "global_context"
   (!type already_seen 23)
-  (!srcfileloc  "d/d-lang.cc" 91)
+  (!srcfileloc  "d/d-lang.cc" 92)
   nil )
  (!pair  "builtin_types"
   (!type array 2331 nil  gc_used "(int) BT_LAST + 1" 
