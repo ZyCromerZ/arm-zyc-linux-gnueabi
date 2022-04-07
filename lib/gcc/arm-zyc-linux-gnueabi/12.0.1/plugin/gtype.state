@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.1 20220406 (experimental)")
+(!version  "12.0.1 20220407 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -35472,14 +35472,14 @@
  )
  (!pair  "free_saved_scope"
   (!type already_seen 1951)
-  (!srcfileloc  "cp/name-lookup.cc" 8319)
+  (!srcfileloc  "cp/name-lookup.cc" 8323)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "free_binding_level"
   (!type already_seen 82)
-  (!srcfileloc  "cp/name-lookup.cc" 4247)
+  (!srcfileloc  "cp/name-lookup.cc" 4251)
   (!options 
    (!option deletable string  "")
   )
@@ -36542,7 +36542,7 @@
  )
  (!pair  "addr_list"
   (!type already_seen 220)
-  (!srcfileloc  "tree-ssa-loop-ivopts.cc" 2590)
+  (!srcfileloc  "tree-ssa-loop-ivopts.cc" 2592)
   nil )
  (!pair  "mem_addr_template_list"
   (!type already_seen 1588)
