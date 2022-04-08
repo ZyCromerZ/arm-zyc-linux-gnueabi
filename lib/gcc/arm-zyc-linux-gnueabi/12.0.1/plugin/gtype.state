@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.1 20220407 (experimental)")
+(!version  "12.0.1 20220408 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -29037,15 +29037,15 @@
   nil 0 nil nil )
  
  (!type struct 2098 nil  gc_used "tree_int"
-  (!srcfileloc  "cp/lambda.cc" 1374)
+  (!srcfileloc  "cp/lambda.cc" 1380)
   (!fields 2 
    (!pair  "t"
     (!type already_seen 23)
-    (!srcfileloc  "cp/lambda.cc" 1371)
+    (!srcfileloc  "cp/lambda.cc" 1377)
     nil )
    (!pair  "i"
     (!type already_seen 2)
-    (!srcfileloc  "cp/lambda.cc" 1372)
+    (!srcfileloc  "cp/lambda.cc" 1378)
     nil )
   )
   nil 516 nil nil )
@@ -29055,15 +29055,15 @@
    (!type already_seen 2099)
   )
   gc_pointed_to "vec<tree_int,va_gc>"
-  (!srcfileloc  "cp/lambda.cc" 1374)
+  (!srcfileloc  "cp/lambda.cc" 1380)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 79)
-    (!srcfileloc  "cp/lambda.cc" 1374)
+    (!srcfileloc  "cp/lambda.cc" 1380)
     nil )
    (!pair  "tree_int"
     (!type already_seen 2098)
-    (!srcfileloc  "cp/lambda.cc" 1374)
+    (!srcfileloc  "cp/lambda.cc" 1380)
     nil )
   )
  )
@@ -31099,11 +31099,11 @@
   nil )
  (!pair  "tree_int"
   (!type already_seen 2098)
-  (!srcfileloc  "cp/lambda.cc" 1374)
+  (!srcfileloc  "cp/lambda.cc" 1380)
   nil )
  (!pair  "vec<tree_int,va_gc>"
   (!type already_seen 2099)
-  (!srcfileloc  "cp/lambda.cc" 1374)
+  (!srcfileloc  "cp/lambda.cc" 1380)
   nil )
  (!pair  "pending_noexcept"
   (!type already_seen 2094)
@@ -35472,25 +35472,25 @@
  )
  (!pair  "free_saved_scope"
   (!type already_seen 1951)
-  (!srcfileloc  "cp/name-lookup.cc" 8323)
+  (!srcfileloc  "cp/name-lookup.cc" 8305)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "free_binding_level"
   (!type already_seen 82)
-  (!srcfileloc  "cp/name-lookup.cc" 4251)
+  (!srcfileloc  "cp/name-lookup.cc" 4233)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "extern_c_decls"
   (!type already_seen 91)
-  (!srcfileloc  "cp/name-lookup.cc" 3004)
+  (!srcfileloc  "cp/name-lookup.cc" 2986)
   nil )
  (!pair  "free_bindings"
   (!type already_seen 89)
-  (!srcfileloc  "cp/name-lookup.cc" 2394)
+  (!srcfileloc  "cp/name-lookup.cc" 2376)
   (!options 
    (!option deletable string  "")
   )
@@ -35566,15 +35566,15 @@
   nil )
  (!pair  "lambda_scope_stack"
   (!type already_seen 2100)
-  (!srcfileloc  "cp/lambda.cc" 1374)
+  (!srcfileloc  "cp/lambda.cc" 1380)
   nil )
  (!pair  "lambda_count"
   (!type already_seen 2)
-  (!srcfileloc  "cp/lambda.cc" 1368)
+  (!srcfileloc  "cp/lambda.cc" 1374)
   nil )
  (!pair  "lambda_scope"
   (!type already_seen 23)
-  (!srcfileloc  "cp/lambda.cc" 1367)
+  (!srcfileloc  "cp/lambda.cc" 1373)
   nil )
  (!pair  "max_id"
   (!type already_seen 23)
@@ -36617,11 +36617,11 @@
   nil )
  (!pair  "gcc_eh_personality_decl"
   (!type already_seen 23)
-  (!srcfileloc  "tree.cc" 11862)
+  (!srcfileloc  "tree.cc" 11917)
   nil )
  (!pair  "anon_cnt"
   (!type already_seen 2)
-  (!srcfileloc  "tree.cc" 8580)
+  (!srcfileloc  "tree.cc" 8635)
   nil )
  (!pair  "nonstandard_boolean_type_cache"
   (!type array 2359 nil  gc_used "MAX_BOOL_CACHED_PREC + 1" 
