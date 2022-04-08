@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "11.2.1 20220407")
+(!version  "11.2.1 20220408")
 (!srcdir  "../../gcc/gcc")
 (!languages 11 ada brig c cp d fortran go jit lto objc objcp)
 (!fileslist 227
@@ -27760,39 +27760,39 @@
  )
  
  (!type struct 1997 nil  gc_pointed_to "sat_entry"
-  (!srcfileloc  "cp/constraint.cc" 2503)
+  (!srcfileloc  "cp/constraint.cc" 2498)
   (!fields 8 
    (!pair  "atom"
     (!type already_seen 23)
-    (!srcfileloc  "cp/constraint.cc" 2473)
+    (!srcfileloc  "cp/constraint.cc" 2468)
     nil )
    (!pair  "args"
     (!type already_seen 23)
-    (!srcfileloc  "cp/constraint.cc" 2476)
+    (!srcfileloc  "cp/constraint.cc" 2471)
     nil )
    (!pair  "result"
     (!type already_seen 23)
-    (!srcfileloc  "cp/constraint.cc" 2483)
+    (!srcfileloc  "cp/constraint.cc" 2478)
     nil )
    (!pair  "location"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2487)
+    (!srcfileloc  "cp/constraint.cc" 2482)
     nil )
    (!pair  "ftc_begin"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2492)
+    (!srcfileloc  "cp/constraint.cc" 2487)
     nil )
    (!pair  "ftc_end"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2492)
+    (!srcfileloc  "cp/constraint.cc" 2487)
     nil )
    (!pair  "diagnose_instability"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2497)
+    (!srcfileloc  "cp/constraint.cc" 2492)
     nil )
    (!pair  "evaluating"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2502)
+    (!srcfileloc  "cp/constraint.cc" 2497)
     nil )
   )
   (!options 
@@ -27801,7 +27801,7 @@
   1032 nil nil )
  
  (!type struct 1998 nil  gc_used "sat_hasher"
-  (!srcfileloc  "cp/constraint.cc" 2575)
+  (!srcfileloc  "cp/constraint.cc" 2570)
   (!fields 0 )
   nil 1032 nil nil )
  
@@ -27810,11 +27810,11 @@
    (!type already_seen 1999)
   )
   gc_pointed_to "hash_table<sat_hasher>"
-  (!srcfileloc  "cp/constraint.cc" 2575)
+  (!srcfileloc  "cp/constraint.cc" 2570)
   (!fields 1 
    (!pair  "sat_hasher"
     (!type already_seen 1998)
-    (!srcfileloc  "cp/constraint.cc" 2575)
+    (!srcfileloc  "cp/constraint.cc" 2570)
     nil )
   )
  )
@@ -28789,15 +28789,15 @@
    (!type already_seen 2137)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.c" 29261)
+  (!srcfileloc  "cp/pt.c" 29283)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 530)
-    (!srcfileloc  "cp/pt.c" 29261)
+    (!srcfileloc  "cp/pt.c" 29283)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.c" 29261)
+    (!srcfileloc  "cp/pt.c" 29283)
     nil )
   )
  )
@@ -29930,7 +29930,7 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2137)
-  (!srcfileloc  "cp/pt.c" 29261)
+  (!srcfileloc  "cp/pt.c" 29283)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2124)
@@ -30242,11 +30242,11 @@
   nil )
  (!pair  "sat_hasher"
   (!type already_seen 1998)
-  (!srcfileloc  "cp/constraint.cc" 2575)
+  (!srcfileloc  "cp/constraint.cc" 2570)
   nil )
  (!pair  "hash_table<sat_hasher>"
   (!type already_seen 1999)
-  (!srcfileloc  "cp/constraint.cc" 2575)
+  (!srcfileloc  "cp/constraint.cc" 2570)
   nil )
  (!pair  "atom_hasher"
   (!type already_seen 1938)
@@ -34289,7 +34289,7 @@
   nil )
  (!pair  "deleted_copy_types"
   (!type already_seen 463)
-  (!srcfileloc  "cp/tree.c" 4309)
+  (!srcfileloc  "cp/tree.c" 4313)
   nil )
  (!pair  "list_hash_table"
   (!type already_seen 2153)
@@ -34313,7 +34313,7 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2138)
-  (!srcfileloc  "cp/pt.c" 29261)
+  (!srcfileloc  "cp/pt.c" 29283)
   (!options 
    (!option deletable string  "")
   )
@@ -34762,21 +34762,21 @@
   nil )
  (!pair  "decl_satisfied_cache"
   (!type already_seen 392)
-  (!srcfileloc  "cp/constraint.cc" 2578)
+  (!srcfileloc  "cp/constraint.cc" 2573)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "sat_cache"
   (!type already_seen 2000)
-  (!srcfileloc  "cp/constraint.cc" 2575)
+  (!srcfileloc  "cp/constraint.cc" 2570)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "failed_type_completions"
   (!type already_seen 84)
-  (!srcfileloc  "cp/constraint.cc" 2433)
+  (!srcfileloc  "cp/constraint.cc" 2428)
   (!options 
    (!option deletable string  "")
   )
