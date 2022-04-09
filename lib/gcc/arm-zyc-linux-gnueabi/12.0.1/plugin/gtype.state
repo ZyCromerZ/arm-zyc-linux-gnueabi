@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.1 20220408 (experimental)")
+(!version  "12.0.1 20220409 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -27733,7 +27733,7 @@
    (!type already_seen 1970)
   )
   gc_pointed_to "tinst_level"
-  (!srcfileloc  "cp/pt.cc" 9573)
+  (!srcfileloc  "cp/pt.cc" 9575)
   (!fields 8 
    (!pair  "next"
     (!type already_seen 1971)
@@ -29630,7 +29630,7 @@
    (!type already_seen 2180)
   )
   gc_pointed_to "pending_template"
-  (!srcfileloc  "cp/pt.cc" 9582)
+  (!srcfileloc  "cp/pt.cc" 9584)
   (!fields 2 
    (!pair  "next"
     (!type already_seen 2181)
@@ -29702,15 +29702,15 @@
    (!type already_seen 2193)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.cc" 29795)
+  (!srcfileloc  "cp/pt.cc" 29797)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 533)
-    (!srcfileloc  "cp/pt.cc" 29795)
+    (!srcfileloc  "cp/pt.cc" 29797)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.cc" 29795)
+    (!srcfileloc  "cp/pt.cc" 29797)
     nil )
   )
  )
@@ -30855,15 +30855,15 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2193)
-  (!srcfileloc  "cp/pt.cc" 29795)
+  (!srcfileloc  "cp/pt.cc" 29797)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2180)
-  (!srcfileloc  "cp/pt.cc" 9582)
+  (!srcfileloc  "cp/pt.cc" 9584)
   nil )
  (!pair  "tinst_level"
   (!type already_seen 1970)
-  (!srcfileloc  "cp/pt.cc" 9573)
+  (!srcfileloc  "cp/pt.cc" 9575)
   nil )
  (!pair  "spec_hash_table"
   (!type already_seen 2183)
@@ -35368,60 +35368,60 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2194)
-  (!srcfileloc  "cp/pt.cc" 29795)
+  (!srcfileloc  "cp/pt.cc" 29797)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "explicit_specifier_map"
   (!type already_seen 930)
-  (!srcfileloc  "cp/pt.cc" 13892)
+  (!srcfileloc  "cp/pt.cc" 13894)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "defarg_inst"
   (!type already_seen 1549)
-  (!srcfileloc  "cp/pt.cc" 13755)
+  (!srcfileloc  "cp/pt.cc" 13757)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "last_error_tinst_level"
   (!type already_seen 1971)
-  (!srcfileloc  "cp/pt.cc" 11037)
+  (!srcfileloc  "cp/pt.cc" 11039)
   nil )
  (!pair  "pending_template_freelist_head"
   (!type already_seen 2181)
-  (!srcfileloc  "cp/pt.cc" 9582)
+  (!srcfileloc  "cp/pt.cc" 9584)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tinst_level_freelist_head"
   (!type already_seen 1971)
-  (!srcfileloc  "cp/pt.cc" 9573)
+  (!srcfileloc  "cp/pt.cc" 9575)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tree_list_freelist_head"
   (!type already_seen 23)
-  (!srcfileloc  "cp/pt.cc" 9564)
+  (!srcfileloc  "cp/pt.cc" 9566)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "defaulted_ttp_cache"
   (!type already_seen 393)
-  (!srcfileloc  "cp/pt.cc" 7847)
+  (!srcfileloc  "cp/pt.cc" 7849)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tparm_obj_values"
   (!type already_seen 393)
-  (!srcfileloc  "cp/pt.cc" 7188)
+  (!srcfileloc  "cp/pt.cc" 7190)
   nil )
  (!pair  "canonical_template_parms"
   (!type already_seen 84)
@@ -35472,7 +35472,7 @@
  )
  (!pair  "free_saved_scope"
   (!type already_seen 1951)
-  (!srcfileloc  "cp/name-lookup.cc" 8305)
+  (!srcfileloc  "cp/name-lookup.cc" 8320)
   (!options 
    (!option deletable string  "")
   )
@@ -35605,19 +35605,19 @@
   nil )
  (!pair  "ssdf_decls"
   (!type already_seen 84)
-  (!srcfileloc  "cp/decl2.cc" 3922)
+  (!srcfileloc  "cp/decl2.cc" 3943)
   nil )
  (!pair  "ssdf_decl"
   (!type already_seen 23)
-  (!srcfileloc  "cp/decl2.cc" 3918)
+  (!srcfileloc  "cp/decl2.cc" 3939)
   nil )
  (!pair  "priority_decl"
   (!type already_seen 23)
-  (!srcfileloc  "cp/decl2.cc" 3915)
+  (!srcfileloc  "cp/decl2.cc" 3936)
   nil )
  (!pair  "initialize_p_decl"
   (!type already_seen 23)
-  (!srcfileloc  "cp/decl2.cc" 3912)
+  (!srcfileloc  "cp/decl2.cc" 3933)
   nil )
  (!pair  "mangled_decls"
   (!type already_seen 2093)
