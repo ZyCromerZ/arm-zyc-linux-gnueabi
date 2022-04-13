@@ -34,7 +34,7 @@
 #define _GLIBCXX_RELEASE 12
 
 // The datestamp of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20220412
+#define __GLIBCXX__ 20220413
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -1265,6 +1265,9 @@ namespace std
 
 /* Define to 1 if you have the <sys/machine.h> header file. */
 /* #undef _GLIBCXX_HAVE_SYS_MACHINE_H */
+
+/* Define to 1 if you have the <sys/mman.h> header file. */
+/* #undef _GLIBCXX_HAVE_SYS_MMAN_H */
 
 /* Define to 1 if you have the <sys/param.h> header file. */
 #define _GLIBCXX_HAVE_SYS_PARAM_H 1
