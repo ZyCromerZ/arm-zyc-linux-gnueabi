@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.1 20220413 (experimental)")
+(!version  "12.0.1 20220414 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -28052,19 +28052,19 @@
   (!fields 4 
    (!pair  "decl"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8390)
+    (!srcfileloc  "cp/cp-tree.h" 8391)
     nil )
    (!pair  "body"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8391)
+    (!srcfileloc  "cp/cp-tree.h" 8392)
     nil )
    (!pair  "parms"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8392)
+    (!srcfileloc  "cp/cp-tree.h" 8393)
     nil )
    (!pair  "result"
     (!type already_seen 23)
-    (!srcfileloc  "cp/cp-tree.h" 8393)
+    (!srcfileloc  "cp/cp-tree.h" 8394)
     nil )
   )
   (!options 
@@ -29702,15 +29702,15 @@
    (!type already_seen 2193)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.cc" 29797)
+  (!srcfileloc  "cp/pt.cc" 29800)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 533)
-    (!srcfileloc  "cp/pt.cc" 29797)
+    (!srcfileloc  "cp/pt.cc" 29800)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.cc" 29797)
+    (!srcfileloc  "cp/pt.cc" 29800)
     nil )
   )
  )
@@ -30855,7 +30855,7 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2193)
-  (!srcfileloc  "cp/pt.cc" 29797)
+  (!srcfileloc  "cp/pt.cc" 29800)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2180)
@@ -35368,7 +35368,7 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2194)
-  (!srcfileloc  "cp/pt.cc" 29797)
+  (!srcfileloc  "cp/pt.cc" 29800)
   (!options 
    (!option deletable string  "")
   )
@@ -35605,19 +35605,19 @@
   nil )
  (!pair  "ssdf_decls"
   (!type already_seen 84)
-  (!srcfileloc  "cp/decl2.cc" 3951)
+  (!srcfileloc  "cp/decl2.cc" 3958)
   nil )
  (!pair  "ssdf_decl"
   (!type already_seen 23)
-  (!srcfileloc  "cp/decl2.cc" 3947)
+  (!srcfileloc  "cp/decl2.cc" 3954)
   nil )
  (!pair  "priority_decl"
   (!type already_seen 23)
-  (!srcfileloc  "cp/decl2.cc" 3944)
+  (!srcfileloc  "cp/decl2.cc" 3951)
   nil )
  (!pair  "initialize_p_decl"
   (!type already_seen 23)
-  (!srcfileloc  "cp/decl2.cc" 3941)
+  (!srcfileloc  "cp/decl2.cc" 3948)
   nil )
  (!pair  "mangled_decls"
   (!type already_seen 2093)
@@ -35859,7 +35859,7 @@
  )
  (!pair  "cv_cache"
   (!type already_seen 393)
-  (!srcfileloc  "cp/constexpr.cc" 8063)
+  (!srcfileloc  "cp/constexpr.cc" 8069)
   (!options 
    (!option deletable string  "")
   )
@@ -35897,7 +35897,7 @@
   nil )
  (!pair  "default_arg_context"
   (!type already_seen 84)
-  (!srcfileloc  "cp/call.cc" 8652)
+  (!srcfileloc  "cp/call.cc" 8663)
   nil )
  (!pair  "unemitted_tinfo_decls"
   (!type already_seen 84)
@@ -36617,11 +36617,11 @@
   nil )
  (!pair  "gcc_eh_personality_decl"
   (!type already_seen 23)
-  (!srcfileloc  "tree.cc" 11926)
+  (!srcfileloc  "tree.cc" 11936)
   nil )
  (!pair  "anon_cnt"
   (!type already_seen 2)
-  (!srcfileloc  "tree.cc" 8644)
+  (!srcfileloc  "tree.cc" 8654)
   nil )
  (!pair  "nonstandard_boolean_type_cache"
   (!type array 2359 nil  gc_used "MAX_BOOL_CACHED_PREC + 1" 

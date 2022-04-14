@@ -203,7 +203,7 @@ constructs                                          stub
 'taskloop' and 'taskloop simd' constructs
 'taskloop' construct cancelable by          Y
 'cancel' construct
-'mutexinouset' _dependence-type_ for        Y
+'mutexinoutset' _dependence-type_ for       Y
 'depend' clause
 Predefined memory spaces, memory            Y       Some are only
 allocators, allocator traits                        stubs
