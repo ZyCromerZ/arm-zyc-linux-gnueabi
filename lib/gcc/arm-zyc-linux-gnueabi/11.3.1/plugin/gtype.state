@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "11.3.1 20220428")
+(!version  "11.3.1 20220429")
 (!srcdir  "../../gcc/gcc")
 (!languages 11 ada brig c cp d fortran go jit lto objc objcp)
 (!fileslist 227
@@ -26852,7 +26852,7 @@
    (!type already_seen 1918)
   )
   gc_pointed_to "tinst_level"
-  (!srcfileloc  "cp/pt.c" 9565)
+  (!srcfileloc  "cp/pt.c" 9566)
   (!fields 8 
    (!pair  "next"
     (!type already_seen 1919)
@@ -27413,7 +27413,7 @@
    (!type already_seen 1962)
   )
   gc_pointed_to "cp_parser"
-  (!srcfileloc  "cp/parser.c" 44878)
+  (!srcfileloc  "cp/parser.c" 44879)
   (!fields 38 
    (!pair  "lexer"
     (!type already_seen 1948)
@@ -28713,7 +28713,7 @@
   nil 0 nil nil )
  
  (!type undefined 2123 nil  gc_unused "class_to_loc_map_t::iterator"
-  (!srcfileloc  "cp/parser.c" 32578)
+  (!srcfileloc  "cp/parser.c" 32579)
  )
  
  (!type struct 2124 
@@ -28721,7 +28721,7 @@
    (!type already_seen 2124)
   )
   gc_pointed_to "pending_template"
-  (!srcfileloc  "cp/pt.c" 9574)
+  (!srcfileloc  "cp/pt.c" 9575)
   (!fields 2 
    (!pair  "next"
     (!type already_seen 2125)
@@ -28793,15 +28793,15 @@
    (!type already_seen 2137)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.c" 29367)
+  (!srcfileloc  "cp/pt.c" 29368)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 530)
-    (!srcfileloc  "cp/pt.c" 29367)
+    (!srcfileloc  "cp/pt.c" 29368)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.c" 29367)
+    (!srcfileloc  "cp/pt.c" 29368)
     nil )
   )
  )
@@ -29934,15 +29934,15 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2137)
-  (!srcfileloc  "cp/pt.c" 29367)
+  (!srcfileloc  "cp/pt.c" 29368)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2124)
-  (!srcfileloc  "cp/pt.c" 9574)
+  (!srcfileloc  "cp/pt.c" 9575)
   nil )
  (!pair  "tinst_level"
   (!type already_seen 1918)
-  (!srcfileloc  "cp/pt.c" 9565)
+  (!srcfileloc  "cp/pt.c" 9566)
   nil )
  (!pair  "spec_hash_table"
   (!type already_seen 2127)
@@ -29962,15 +29962,15 @@
   nil )
  (!pair  "cp_parser"
   (!type already_seen 1962)
-  (!srcfileloc  "cp/parser.c" 44878)
+  (!srcfileloc  "cp/parser.c" 44879)
   nil )
  (!pair  "iter_t"
   (!type already_seen 2123)
-  (!srcfileloc  "cp/parser.c" 32578)
+  (!srcfileloc  "cp/parser.c" 32579)
   nil )
  (!pair  "class_to_loc_map_t::iterator"
   (!type already_seen 2123)
-  (!srcfileloc  "cp/parser.c" 32578)
+  (!srcfileloc  "cp/parser.c" 32579)
   nil )
  (!pair  "cp_parser_expression_stack"
   (!type array 2246 nil  gc_unused "NUM_PREC_VALUES" 
@@ -34317,60 +34317,60 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2138)
-  (!srcfileloc  "cp/pt.c" 29367)
+  (!srcfileloc  "cp/pt.c" 29368)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "explicit_specifier_map"
   (!type already_seen 924)
-  (!srcfileloc  "cp/pt.c" 13883)
+  (!srcfileloc  "cp/pt.c" 13884)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "defarg_inst"
   (!type already_seen 1496)
-  (!srcfileloc  "cp/pt.c" 13746)
+  (!srcfileloc  "cp/pt.c" 13747)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "last_error_tinst_level"
   (!type already_seen 1919)
-  (!srcfileloc  "cp/pt.c" 11008)
+  (!srcfileloc  "cp/pt.c" 11009)
   nil )
  (!pair  "pending_template_freelist_head"
   (!type already_seen 2125)
-  (!srcfileloc  "cp/pt.c" 9574)
+  (!srcfileloc  "cp/pt.c" 9575)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tinst_level_freelist_head"
   (!type already_seen 1919)
-  (!srcfileloc  "cp/pt.c" 9565)
+  (!srcfileloc  "cp/pt.c" 9566)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tree_list_freelist_head"
   (!type already_seen 23)
-  (!srcfileloc  "cp/pt.c" 9556)
+  (!srcfileloc  "cp/pt.c" 9557)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "defaulted_ttp_cache"
   (!type already_seen 392)
-  (!srcfileloc  "cp/pt.c" 7848)
+  (!srcfileloc  "cp/pt.c" 7849)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "tparm_obj_values"
   (!type already_seen 392)
-  (!srcfileloc  "cp/pt.c" 7195)
+  (!srcfileloc  "cp/pt.c" 7196)
   nil )
  (!pair  "canonical_template_parms"
   (!type already_seen 84)
@@ -34402,11 +34402,11 @@
   nil )
  (!pair  "generic_parm_count"
   (!type already_seen 2)
-  (!srcfileloc  "cp/parser.c" 45370)
+  (!srcfileloc  "cp/parser.c" 45371)
   nil )
  (!pair  "the_parser"
   (!type already_seen 1963)
-  (!srcfileloc  "cp/parser.c" 44878)
+  (!srcfileloc  "cp/parser.c" 44879)
   nil )
  (!pair  "cp_parser_decl_specs_attrs"
   (!type already_seen 84)
