@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-04-30" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-05-19" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -373,6 +373,7 @@ in the following sections.
 \&\-Wno\-div\-by\-zero  \-Wdouble\-promotion 
 \&\-Wduplicated\-branches  \-Wduplicated\-cond 
 \&\-Wempty\-body  \-Wno\-endif\-labels  \-Wenum\-compare  \-Wenum\-conversion 
+\&\-Wenum\-int\-mismatch 
 \&\-Werror  \-Werror=*  \-Wexpansion\-to\-defined  \-Wfatal\-errors 
 \&\-Wfloat\-conversion  \-Wfloat\-equal  \-Wformat  \-Wformat=2 
 \&\-Wno\-format\-contains\-nul  \-Wno\-format\-extra\-args  
@@ -487,6 +488,10 @@ in the following sections.
 \&\-Wno\-analyzer\-use\-after\-free 
 \&\-Wno\-analyzer\-use\-of\-pointer\-in\-stale\-stack\-frame 
 \&\-Wno\-analyzer\-use\-of\-uninitialized\-value 
+\&\-Wno\-analyzer\-va\-arg\-type\-mismatch 
+\&\-Wno\-analyzer\-va\-list\-exhausted 
+\&\-Wno\-analyzer\-va\-list\-leak 
+\&\-Wno\-analyzer\-va\-list\-use\-after\-va\-end 
 \&\-Wno\-analyzer\-write\-to\-const 
 \&\-Wno\-analyzer\-write\-to\-string\-literal\fR
 .IP "\fIC and Objective-C-only Warning Options\fR" 4
@@ -4649,7 +4654,7 @@ The default \fB\s-1GCC_COLORS\s0\fR is
 \&        error=01;31:warning=01;35:note=01;36:range1=32:range2=34:locus=01:\e
 \&        quote=01:path=01;36:fixit\-insert=32:fixit\-delete=31:\e
 \&        diff\-filename=01:diff\-hunk=32:diff\-delete=31:diff\-insert=32:\e
-\&        type\-diff=01;32
+\&        type\-diff=01;32:fnname=01;32:targs=35
 .Ve
 .Sp
 where \fB01;31\fR is bold red, \fB01;35\fR is bold magenta,
@@ -4693,6 +4698,14 @@ individual events and lines indicating interprocedural calls and returns.
 .el .IP "\f(CWquote=\fR" 4
 .IX Item "quote="
 \&\s-1SGR\s0 substring for information printed within quotes.
+.ie n .IP """fnname=""" 4
+.el .IP "\f(CWfnname=\fR" 4
+.IX Item "fnname="
+\&\s-1SGR\s0 substring for names of \*(C+ functions.
+.ie n .IP """targs=""" 4
+.el .IP "\f(CWtargs=\fR" 4
+.IX Item "targs="
+\&\s-1SGR\s0 substring for \*(C+ function template parameter bindings.
 .ie n .IP """fixit\-insert=""" 4
 .el .IP "\f(CWfixit\-insert=\fR" 4
 .IX Item "fixit-insert="
@@ -5490,6 +5503,7 @@ Options\fR and \fBObjective-C and Objective\-\*(C+ Dialect Options\fR.
 \&\-Wdangling\-pointer=2  
 \&\-Wduplicate\-decl\-specifier\fR (C and Objective-C only) 
 \&\fB\-Wenum\-compare\fR (in C/ObjC; this is on by default in \*(C+) 
+\&\fB\-Wenum\-int\-mismatch\fR (C and Objective-C only) 
 \&\fB\-Wformat   
 \&\-Wformat\-overflow  
 \&\-Wformat\-truncation  
@@ -8226,6 +8240,23 @@ enabled by \fB\-Wall\fR.
 Warn when a value of enumerated type is implicitly converted to a 
 different enumerated type.  This warning is enabled by \fB\-Wextra\fR
 in C.
+.IP "\fB\-Wenum\-int\-mismatch\fR (C and Objective-C only)" 4
+.IX Item "-Wenum-int-mismatch (C and Objective-C only)"
+Warn about mismatches between an enumerated type and an integer type in
+declarations.  For example:
+.Sp
+.Vb 3
+\&        enum E { l = \-1, z = 0, g = 1 };
+\&        int foo(void);
+\&        enum E foo(void);
+.Ve
+.Sp
+In C, an enumerated type is compatible with \f(CW\*(C`char\*(C'\fR, a signed
+integer type, or an unsigned integer type.  However, since the choice
+of the underlying type of an enumerated type is implementation-defined,
+such mismatches may cause portability issues.  In \*(C+, such mismatches
+are an error.  In C, this warning is enabled by \fB\-Wall\fR and
+\&\fB\-Wc++\-compat\fR.
 .IP "\fB\-Wjump\-misses\-init\fR (C, Objective-C only)" 4
 .IX Item "-Wjump-misses-init (C, Objective-C only)"
 Warn if a \f(CW\*(C`goto\*(C'\fR statement or a \f(CW\*(C`switch\*(C'\fR statement jumps
@@ -9028,6 +9059,10 @@ Enabling this option effectively enables the following warnings:
 \&\-Wanalyzer\-use\-after\-free 
 \&\-Wanalyzer\-use\-of\-pointer\-in\-stale\-stack\-frame 
 \&\-Wanalyzer\-use\-of\-uninitialized\-value 
+\&\-Wanalyzer\-va\-arg\-type\-mismatch 
+\&\-Wanalyzer\-va\-list\-exhausted 
+\&\-Wanalyzer\-va\-list\-leak 
+\&\-Wanalyzer\-va\-list\-use\-after\-va\-end 
 \&\-Wanalyzer\-write\-to\-const 
 \&\-Wanalyzer\-write\-to\-string\-literal\fR
 .Sp
@@ -9255,6 +9290,45 @@ to disable it.
 .Sp
 This diagnostic warns for paths through the code in which a pointer
 is dereferenced that points to a variable in a stale stack frame.
+.IP "\fB\-Wno\-analyzer\-va\-arg\-type\-mismatch\fR" 4
+.IX Item "-Wno-analyzer-va-arg-type-mismatch"
+This warning requires \fB\-fanalyzer\fR, which enables it; use
+\&\fB\-Wno\-analyzer\-va\-arg\-type\-mismatch\fR
+to disable it.
+.Sp
+This diagnostic warns for interprocedural paths through the code for which
+the analyzer detects an attempt to use \f(CW\*(C`va_arg\*(C'\fR to extract a value
+passed to a variadic call, but uses a type that does not match that of
+the expression passed to the call.
+.IP "\fB\-Wno\-analyzer\-va\-list\-exhausted\fR" 4
+.IX Item "-Wno-analyzer-va-list-exhausted"
+This warning requires \fB\-fanalyzer\fR, which enables it; use
+\&\fB\-Wno\-analyzer\-va\-list\-exhausted\fR
+to disable it.
+.Sp
+This diagnostic warns for interprocedural paths through the code for which
+the analyzer detects an attempt to use \f(CW\*(C`va_arg\*(C'\fR to access the next
+value passed to a variadic call, but all of the values in the
+\&\f(CW\*(C`va_list\*(C'\fR have already been consumed.
+.IP "\fB\-Wno\-analyzer\-va\-list\-leak\fR" 4
+.IX Item "-Wno-analyzer-va-list-leak"
+This warning requires \fB\-fanalyzer\fR, which enables it; use
+\&\fB\-Wno\-analyzer\-va\-list\-leak\fR
+to disable it.
+.Sp
+This diagnostic warns for interprocedural paths through the code for which
+the analyzer detects that \f(CW\*(C`va_start\*(C'\fR or \f(CW\*(C`va_copy\*(C'\fR has been called
+on a \f(CW\*(C`va_list\*(C'\fR without a corresponding call to \f(CW\*(C`va_end\*(C'\fR.
+.IP "\fB\-Wno\-analyzer\-va\-list\-use\-after\-va\-end\fR" 4
+.IX Item "-Wno-analyzer-va-list-use-after-va-end"
+This warning requires \fB\-fanalyzer\fR, which enables it; use
+\&\fB\-Wno\-analyzer\-va\-list\-use\-after\-va\-end\fR
+to disable it.
+.Sp
+This diagnostic warns for interprocedural paths through the code for which
+the analyzer detects an attempt to use a \f(CW\*(C`va_list\*(C'\fR  after
+\&\f(CW\*(C`va_end\*(C'\fR has been called on it.
+\&\f(CW\*(C`va_list\*(C'\fR.
 .IP "\fB\-Wno\-analyzer\-write\-to\-const\fR" 4
 .IX Item "-Wno-analyzer-write-to-const"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
