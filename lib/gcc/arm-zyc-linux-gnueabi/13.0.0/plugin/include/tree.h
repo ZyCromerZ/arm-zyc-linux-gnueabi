@@ -1841,6 +1841,11 @@ class auto_suppress_location_wrappers
 #define OMP_CLAUSE_LINEAR_VARIABLE_STRIDE(NODE) \
   TREE_PROTECTED (OMP_CLAUSE_SUBCODE_CHECK (NODE, OMP_CLAUSE_LINEAR))
 
+/* True for a LINEAR clause with old style modifier syntax
+   linear(modifier(list)) or linear(modifier(list):step).  */
+#define OMP_CLAUSE_LINEAR_OLD_LINEAR_MODIFIER(NODE) \
+  (OMP_CLAUSE_SUBCODE_CHECK (NODE, OMP_CLAUSE_LINEAR)->base.addressable_flag)
+
 /* True if a LINEAR clause is for an array or allocatable variable that
    needs special handling by the frontend.  */
 #define OMP_CLAUSE_LINEAR_ARRAY(NODE) \
@@ -1924,6 +1929,10 @@ class auto_suppress_location_wrappers
 
 #define OMP_CLAUSE_BIND_KIND(NODE) \
   (OMP_CLAUSE_SUBCODE_CHECK (NODE, OMP_CLAUSE_BIND)->omp_clause.subcode.bind_kind)
+
+/* True if ENTER clause is spelled as TO.  */
+#define OMP_CLAUSE_ENTER_TO(NODE) \
+  (OMP_CLAUSE_SUBCODE_CHECK (NODE, OMP_CLAUSE_ENTER)->base.public_flag)
 
 #define OMP_CLAUSE_TILE_LIST(NODE) \
   OMP_CLAUSE_OPERAND (OMP_CLAUSE_SUBCODE_CHECK (NODE, OMP_CLAUSE_TILE), 0)

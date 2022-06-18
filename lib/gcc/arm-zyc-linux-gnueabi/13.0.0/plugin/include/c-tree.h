@@ -699,7 +699,8 @@ extern struct c_expr convert_lvalue_to_rvalue (location_t, struct c_expr,
 extern tree decl_constant_value_1 (tree, bool);
 extern void mark_exp_read (tree);
 extern tree composite_type (tree, tree);
-extern tree build_component_ref (location_t, tree, tree, location_t);
+extern tree build_component_ref (location_t, tree, tree, location_t,
+				 location_t);
 extern tree build_array_ref (location_t, tree, tree);
 extern tree build_external_ref (location_t, tree, bool, tree *);
 extern void pop_maybe_used (bool);
@@ -835,6 +836,8 @@ set_c_expr_source_range (c_expr *expr,
 
 /* In c-fold.cc */
 extern vec<tree> incomplete_record_decls;
+
+extern const char *c_get_sarif_source_language (const char *filename);
 
 #if CHECKING_P
 namespace selftest {

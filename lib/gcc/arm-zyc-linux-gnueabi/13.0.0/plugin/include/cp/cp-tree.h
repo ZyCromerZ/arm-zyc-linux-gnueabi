@@ -6647,6 +6647,7 @@ extern bool make_safe_copy_elision		(tree, tree);
 extern bool cp_handle_deprecated_or_unavailable (tree, tsubst_flags_t = tf_warning_or_error);
 extern void cp_warn_deprecated_use_scopes	(tree);
 extern tree get_function_version_dispatcher	(tree);
+extern bool any_template_arguments_need_structural_equality_p (tree);
 
 /* in class.cc */
 extern tree build_vfield_ref			(tree, tree);
@@ -7178,7 +7179,8 @@ extern module_state *get_module (tree name, module_state *parent = NULL,
 				 bool partition = false);
 extern bool module_may_redeclare (tree decl);
 
-extern int module_initializer_kind ();
+extern bool module_global_init_needed ();
+extern bool module_determine_import_inits ();
 extern void module_add_import_initializers ();
 
 /* Where the namespace-scope decl was originally declared.  */
@@ -7207,9 +7209,9 @@ extern void import_module (module_state *, location_t, bool export_p,
 extern void declare_module (module_state *, location_t, bool export_p,
 			    tree attr, cpp_reader *);
 extern void init_modules (cpp_reader *);
-extern void fini_modules ();
+extern void fini_modules (cpp_reader *, void *cookie, bool);
 extern void maybe_check_all_macros (cpp_reader *);
-extern void finish_module_processing (cpp_reader *);
+extern void *finish_module_processing (cpp_reader *);
 extern char const *module_name (unsigned, bool header_ok);
 extern bitmap get_import_bitmap ();
 extern bitmap visible_instantiation_path (bitmap *);
@@ -7234,6 +7236,7 @@ extern void inject_this_parameter (tree, cp_cv_quals);
 extern location_t defparse_location (tree);
 extern void maybe_show_extern_c_location (void);
 extern bool literal_integer_zerop (const_tree);
+extern tree attr_chainon (tree, tree);
 
 /* in pt.cc */
 extern tree canonical_type_parameter		(tree);
@@ -7325,7 +7328,7 @@ extern tree get_template_info			(const_tree);
 extern int template_class_depth			(tree);
 extern int is_specialization_of			(tree, tree);
 extern bool is_specialization_of_friend		(tree, tree);
-extern int comp_template_args			(tree, tree, tree * = NULL,
+extern bool comp_template_args			(tree, tree, tree * = NULL,
 						 tree * = NULL, bool = false);
 extern int template_args_equal                  (tree, tree, bool = false);
 extern tree maybe_process_partial_specialization (tree);
@@ -7393,6 +7396,7 @@ extern bool push_tinst_level_loc                (tree, location_t);
 extern bool push_tinst_level_loc                (tree, tree, location_t);
 extern void pop_tinst_level                     (void);
 extern struct tinst_level *outermost_tinst_level(void);
+extern bool non_templated_friend_p		(tree);
 extern void init_template_processing		(void);
 extern void print_template_statistics		(void);
 bool template_template_parameter_p		(const_tree);
@@ -7875,9 +7879,8 @@ extern tree make_ptrmem_cst			(tree, tree);
 extern tree cp_build_type_attribute_variant     (tree, tree);
 extern tree cp_build_reference_type		(tree, bool);
 extern tree move				(tree);
-extern tree cp_build_qualified_type_real	(tree, int, tsubst_flags_t);
-#define cp_build_qualified_type(TYPE, QUALS) \
-  cp_build_qualified_type_real ((TYPE), (QUALS), tf_warning_or_error)
+extern tree cp_build_qualified_type		(tree, int,
+						 tsubst_flags_t = tf_warning_or_error);
 extern bool cv_qualified_p			(const_tree);
 extern tree cv_unqualified			(tree);
 extern special_function_kind special_function_p (const_tree);

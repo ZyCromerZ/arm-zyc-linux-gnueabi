@@ -184,6 +184,12 @@ typedef enum omp_event_handle_t __GOMP_UINTPTR_T_ENUM
   __omp_event_handle_t_max__ = __UINTPTR_MAX__
 } omp_event_handle_t;
 
+enum
+{
+  omp_initial_device = -1,
+  omp_invalid_device = -4
+};
+
 #ifdef __cplusplus
 extern "C" {
 # define __GOMP_NOTHROW throw ()
@@ -272,12 +278,24 @@ extern int omp_target_is_present (const void *, int) __GOMP_NOTHROW;
 extern int omp_target_memcpy (void *, const void *, __SIZE_TYPE__,
 			      __SIZE_TYPE__, __SIZE_TYPE__, int, int)
   __GOMP_NOTHROW;
+extern int omp_target_memcpy_async (void *, const void *, __SIZE_TYPE__,
+				    __SIZE_TYPE__, __SIZE_TYPE__, int, int,
+				    int, omp_depend_t *)
+  __GOMP_NOTHROW;
 extern int omp_target_memcpy_rect (void *, const void *, __SIZE_TYPE__, int,
 				   const __SIZE_TYPE__ *,
 				   const __SIZE_TYPE__ *,
 				   const __SIZE_TYPE__ *,
 				   const __SIZE_TYPE__ *,
 				   const __SIZE_TYPE__ *, int, int)
+  __GOMP_NOTHROW;
+extern int omp_target_memcpy_rect_async (void *, const void *, __SIZE_TYPE__,
+					 int, const __SIZE_TYPE__ *,
+					 const __SIZE_TYPE__ *,
+					 const __SIZE_TYPE__ *,
+					 const __SIZE_TYPE__ *,
+					 const __SIZE_TYPE__ *, int, int, int,
+					 omp_depend_t *)
   __GOMP_NOTHROW;
 extern int omp_target_associate_ptr (const void *, const void *, __SIZE_TYPE__,
 				     __SIZE_TYPE__, int) __GOMP_NOTHROW;
