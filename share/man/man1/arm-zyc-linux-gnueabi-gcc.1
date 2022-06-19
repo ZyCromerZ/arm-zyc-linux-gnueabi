@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-06-18" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-06-19" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -628,6 +628,7 @@ in the following sections.
 \&\fB\-fprofile\-exclude\-files=\fR\fIregex\fR 
 \&\fB\-fprofile\-reproducible=\fR[\fBmultithreaded\fR|\fBparallel-runs\fR|\fBserial\fR] 
 \&\fB\-fsanitize=\fR\fIstyle\fR  \fB\-fsanitize\-recover  \-fsanitize\-recover=\fR\fIstyle\fR 
+\&\fB\-fsanitize\-trap   \-fsanitize\-trap=\fR\fIstyle\fR  
 \&\fB\-fasan\-shadow\-offset=\fR\fInumber\fR  \fB\-fsanitize\-sections=\fR\fIs1\fR\fB,\fR\fIs2\fR\fB,... 
 \&\-fsanitize\-undefined\-trap\-on\-error  \-fbounds\-check 
 \&\-fcf\-protection=\fR[\fBfull\fR|\fBbranch\fR|\fBreturn\fR|\fBnone\fR|\fBcheck\fR] 
@@ -15038,13 +15039,35 @@ equivalent to specifying an \fIopts\fR list of:
 .IX Item "-fsanitize-address-use-after-scope"
 Enable sanitization of local variables to detect use-after-scope bugs.
 The option sets \fB\-fstack\-reuse\fR to \fBnone\fR.
+.IP "\fB\-fsanitize\-trap\fR[\fB=\fR\fIopts\fR]" 4
+.IX Item "-fsanitize-trap[=opts]"
+The \fB\-fsanitize\-trap=\fR option instructs the compiler to
+report for sanitizers mentioned in comma-separated list of \fIopts\fR
+undefined behavior using \f(CW\*(C`_\|_builtin_trap\*(C'\fR rather than a \f(CW\*(C`libubsan\*(C'\fR
+library routine.  If this option is enabled for certain sanitizer,
+it takes precedence over the \fB\-fsanitizer\-recover=\fR for that
+sanitizer, \f(CW\*(C`_\|_builtin_trap\*(C'\fR will be emitted and be fatal regardless
+of whether recovery is enabled or disabled using \fB\-fsanitize\-recover=\fR.
+.Sp
+The advantage of this is that the \f(CW\*(C`libubsan\*(C'\fR library is not needed
+and is not linked in, so this is usable even in freestanding environments.
+.Sp
+Currently this feature works with \fB\-fsanitize=undefined\fR (and its suboptions
+except for \fB\-fsanitize=vptr\fR), \fB\-fsanitize=float\-cast\-overflow\fR,
+\&\fB\-fsanitize=float\-divide\-by\-zero\fR and
+\&\fB\-fsanitize=bounds\-strict\fR.  \f(CW\*(C`\-fsanitize\-trap=all\*(C'\fR can be also
+specified, which enables it for \f(CW\*(C`undefined\*(C'\fR suboptions,
+\&\fB\-fsanitize=float\-cast\-overflow\fR,
+\&\fB\-fsanitize=float\-divide\-by\-zero\fR and
+\&\fB\-fsanitize=bounds\-strict\fR.
+If \f(CW\*(C`\-fsanitize\-trap=undefined\*(C'\fR or \f(CW\*(C`\-fsanitize\-trap=all\*(C'\fR is used
+and \f(CW\*(C`\-fsanitize=vptr\*(C'\fR is enabled on the command line, the
+instrumentation is silently ignored as the instrumentation always needs
+\&\f(CW\*(C`libubsan\*(C'\fR support, \fB\-fsanitize\-trap=vptr\fR is not allowed.
 .IP "\fB\-fsanitize\-undefined\-trap\-on\-error\fR" 4
 .IX Item "-fsanitize-undefined-trap-on-error"
-The \fB\-fsanitize\-undefined\-trap\-on\-error\fR option instructs the compiler to
-report undefined behavior using \f(CW\*(C`_\|_builtin_trap\*(C'\fR rather than
-a \f(CW\*(C`libubsan\*(C'\fR library routine.  The advantage of this is that the
-\&\f(CW\*(C`libubsan\*(C'\fR library is not needed and is not linked in, so this
-is usable even in freestanding environments.
+The \fB\-fsanitize\-undefined\-trap\-on\-error\fR option is deprecated
+equivalent of \fB\-fsanitize\-trap=all\fR.
 .IP "\fB\-fsanitize\-coverage=trace\-pc\fR" 4
 .IX Item "-fsanitize-coverage=trace-pc"
 Enable coverage-guided fuzzing code instrumentation.
