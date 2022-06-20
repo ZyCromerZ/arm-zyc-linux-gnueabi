@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.1.1 20220619")
+(!version  "12.1.1 20220620")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -24722,7 +24722,7 @@
   nil 0 nil nil )
  
  (!type struct 1564 nil  gc_used "tm_clone_hasher"
-  (!srcfileloc  "varasm.cc" 6368)
+  (!srcfileloc  "varasm.cc" 6374)
   (!fields 0 )
   nil 1023 nil nil )
  
@@ -24731,11 +24731,11 @@
    (!type already_seen 1565)
   )
   gc_pointed_to "hash_table<tm_clone_hasher>"
-  (!srcfileloc  "varasm.cc" 6368)
+  (!srcfileloc  "varasm.cc" 6374)
   (!fields 1 
    (!pair  "tm_clone_hasher"
     (!type already_seen 1564)
-    (!srcfileloc  "varasm.cc" 6368)
+    (!srcfileloc  "varasm.cc" 6374)
     nil )
   )
  )
@@ -32099,11 +32099,11 @@
   nil )
  (!pair  "tm_clone_hasher"
   (!type already_seen 1564)
-  (!srcfileloc  "varasm.cc" 6368)
+  (!srcfileloc  "varasm.cc" 6374)
   nil )
  (!pair  "hash_table<tm_clone_hasher>"
   (!type already_seen 1565)
-  (!srcfileloc  "varasm.cc" 6368)
+  (!srcfileloc  "varasm.cc" 6374)
   nil )
  (!pair  "const_rtx_desc_hasher"
   (!type already_seen 999)
@@ -35867,7 +35867,7 @@
  )
  (!pair  "cv_cache"
   (!type already_seen 393)
-  (!srcfileloc  "cp/constexpr.cc" 8064)
+  (!srcfileloc  "cp/constexpr.cc" 8071)
   (!options 
    (!option deletable string  "")
   )
@@ -36558,22 +36558,22 @@
   nil )
  (!pair  "elf_fini_array_section"
   (!type already_seen 213)
-  (!srcfileloc  "varasm.cc" 8380)
+  (!srcfileloc  "varasm.cc" 8386)
   nil )
  (!pair  "elf_init_array_section"
   (!type already_seen 213)
-  (!srcfileloc  "varasm.cc" 8379)
+  (!srcfileloc  "varasm.cc" 8385)
   nil )
  (!pair  "tm_clone_hash"
   (!type already_seen 1566)
-  (!srcfileloc  "varasm.cc" 6368)
+  (!srcfileloc  "varasm.cc" 6374)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "weakref_targets"
   (!type already_seen 23)
-  (!srcfileloc  "varasm.cc" 6023)
+  (!srcfileloc  "varasm.cc" 6029)
   nil )
  (!pair  "const_desc_htab"
   (!type already_seen 1559)
