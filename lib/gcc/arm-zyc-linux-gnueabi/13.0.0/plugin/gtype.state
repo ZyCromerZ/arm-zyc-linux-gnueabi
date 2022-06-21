@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "13.0.0 20220620 (experimental)")
+(!version  "13.0.0 20220621 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -6322,15 +6322,15 @@
                                     nil )
                                    (!pair  "count"
                                     (!type struct 299 nil  gc_used "profile_count"
-                                     (!srcfileloc  "profile-count.h" 1249)
+                                     (!srcfileloc  "profile-count.h" 1289)
                                      (!fields 2 
                                       (!pair  "UINT64_BIT_FIELD_ALIGN"
                                        (!type already_seen 2)
-                                       (!srcfileloc  "profile-count.h" 714)
+                                       (!srcfileloc  "profile-count.h" 734)
                                        nil )
                                       (!pair  "m_quality"
                                        (!type already_seen 2)
-                                       (!srcfileloc  "profile-count.h" 716)
+                                       (!srcfileloc  "profile-count.h" 736)
                                        nil )
                                      )
                                      nil 1023 nil nil )
@@ -19366,12 +19366,12 @@
   nil 0 nil nil )
  
  (!type struct 1018 nil  gc_used "sreal"
-  (!srcfileloc  "profile-count.h" 1209)
+  (!srcfileloc  "profile-count.h" 1249)
   (!fields 0 )
   nil 1023 nil nil )
  
  (!type user_struct 1019 nil  gc_unused "profile_probability"
-  (!srcfileloc  "profile-count.h" 637)
+  (!srcfileloc  "profile-count.h" 657)
   (!fields 0 )
  )
  
@@ -33338,11 +33338,11 @@
   nil )
  (!pair  "sreal"
   (!type already_seen 1018)
-  (!srcfileloc  "profile-count.h" 1209)
+  (!srcfileloc  "profile-count.h" 1249)
   nil )
  (!pair  "profile_probability"
   (!type already_seen 1019)
-  (!srcfileloc  "profile-count.h" 637)
+  (!srcfileloc  "profile-count.h" 657)
   nil )
  (!pair  "profile_count"
   (!type already_seen 299)
