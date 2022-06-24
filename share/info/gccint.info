@@ -5866,6 +5866,9 @@ specified for the particular test in an earlier 'dg-options' or
 'trampolines'
      Target supports trampolines.
 
+'two_plus_gigs'
+     Target supports linking programs with 2+GiB of data.
+
 'uclibc'
      Target supports uClibc.
 
@@ -58379,396 +58382,396 @@ Ref: arm_softfp_ok247561
 Ref: arm_hard_ok247634
 Ref: arm_mve247701
 Ref: arm_v8_1_lob_ok247774
-Ref: stack_size_et262265
-Node: Add Options264851
-Ref: arm_fp16_ieee266089
-Ref: arm_fp16_alternative266344
-Ref: stack_size_ao268908
-Node: Require Support269270
-Node: Final Actions272172
-Node: Ada Tests282458
-Node: C Tests283621
-Node: LTO Testing287993
-Node: gcov Testing289636
-Node: profopt Testing292606
-Node: compat Testing294321
-Node: Torture Tests298561
-Node: GIMPLE Tests300195
-Node: RTL Tests301437
-Node: Options302743
-Node: Option file format303184
-Node: Option properties311667
-Node: Passes328611
-Node: Parsing pass329484
-Node: Gimplification pass333012
-Node: Pass manager334846
-Node: IPA passes336688
-Node: Small IPA passes337581
-Node: Regular IPA passes341031
-Node: Late IPA passes345833
-Node: Tree SSA passes346794
-Node: RTL passes368484
-Node: Optimization info380813
-Node: Dump setup381632
-Node: Optimization groups382762
-Node: Dump files and streams383741
-Node: Dump output verbosity384939
-Node: Dump types385995
-Node: Dump examples388338
-Node: poly_int389819
-Node: Overview of poly_int391299
-Node: Consequences of using poly_int393903
-Node: Comparisons involving poly_int395538
-Node: Comparison functions for poly_int397176
-Node: Properties of the poly_int comparisons398383
-Node: Comparing potentially-unordered poly_ints400825
-Node: Comparing ordered poly_ints401736
-Node: Checking for a poly_int marker value403760
-Node: Range checks on poly_ints404609
-Node: Sorting poly_ints407263
-Node: Arithmetic on poly_ints408036
-Node: Using poly_int with C++ arithmetic operators408837
-Node: wi arithmetic on poly_ints410368
-Node: Division of poly_ints411220
-Node: Other poly_int arithmetic412727
-Node: Alignment of poly_ints414133
-Node: Computing bounds on poly_ints417410
-Node: Converting poly_ints418799
-Node: Miscellaneous poly_int routines422346
-Node: Guidelines for using poly_int422986
-Node: GENERIC427918
-Node: Deficiencies429740
-Node: Tree overview429981
-Node: Macros and Functions434105
-Node: Identifiers434930
-Node: Containers436539
-Node: Types437696
-Node: Declarations450107
-Node: Working with declarations450602
-Node: Internal structure456206
-Node: Current structure hierarchy456590
-Node: Adding new DECL node types458683
-Node: Attributes462969
-Node: Expression trees464213
-Node: Constant expressions465967
-Node: Storage References472059
-Node: Unary and Binary Expressions475900
-Node: Vectors497233
-Node: Statements505723
-Node: Basic Statements506255
-Node: Blocks511030
-Node: Statement Sequences512731
-Node: Empty Statements513064
-Node: Jumps513638
-Node: Cleanups514291
-Node: OpenMP516332
-Node: OpenACC522179
-Node: Functions523296
-Node: Function Basics523767
-Node: Function Properties527451
-Node: Language-dependent trees530232
-Node: C and C++ Trees531119
-Node: Types for C++534004
-Node: Namespaces538974
-Node: Classes542080
-Node: Functions for C++546988
-Node: Statements for C and C++553245
-Node: C++ Expressions561752
-Node: GIMPLE563263
-Node: Tuple representation566928
-Node: Class hierarchy of GIMPLE statements573888
-Node: GIMPLE instruction set578876
-Node: GIMPLE Exception Handling580508
-Node: Temporaries582420
-Ref: Temporaries-Footnote-1583738
-Node: Operands583803
-Node: Compound Expressions584564
-Node: Compound Lvalues584798
-Node: Conditional Expressions585560
-Node: Logical Operators586219
-Node: Manipulating GIMPLE statements593581
-Node: Tuple specific accessors599163
-Node: GIMPLE_ASM599942
-Node: GIMPLE_ASSIGN602325
-Node: GIMPLE_BIND607029
-Node: GIMPLE_CALL608843
-Node: GIMPLE_CATCH612986
-Node: GIMPLE_COND614136
-Node: GIMPLE_DEBUG616931
-Node: GIMPLE_EH_FILTER621529
-Node: GIMPLE_LABEL623092
-Node: GIMPLE_GOTO623705
-Node: GIMPLE_NOP624228
-Node: GIMPLE_OMP_ATOMIC_LOAD624590
-Node: GIMPLE_OMP_ATOMIC_STORE625586
-Node: GIMPLE_OMP_CONTINUE626285
-Node: GIMPLE_OMP_CRITICAL627764
-Node: GIMPLE_OMP_FOR628758
-Node: GIMPLE_OMP_MASTER632174
-Node: GIMPLE_OMP_ORDERED632552
-Node: GIMPLE_OMP_PARALLEL632946
-Node: GIMPLE_OMP_RETURN635715
-Node: GIMPLE_OMP_SECTION636360
-Node: GIMPLE_OMP_SECTIONS637020
-Node: GIMPLE_OMP_SINGLE638630
-Node: GIMPLE_PHI639576
-Node: GIMPLE_RESX640855
-Node: GIMPLE_RETURN641574
-Node: GIMPLE_SWITCH642148
-Node: GIMPLE_TRY644023
-Node: GIMPLE_WITH_CLEANUP_EXPR645795
-Node: GIMPLE sequences646674
-Node: Sequence iterators649880
-Node: Adding a new GIMPLE statement code658337
-Node: Statement and operand traversals659686
-Node: Tree SSA662278
-Node: Annotations664066
-Node: SSA Operands664471
-Node: SSA678275
-Node: Alias analysis687982
-Node: Memory model691757
-Node: RTL693116
-Node: RTL Objects695358
-Node: RTL Classes699242
-Node: Accessors704540
-Node: Special Accessors706713
-Node: Flags712500
-Node: Machine Modes727763
-Node: Constants745330
-Node: Regs and Memory757129
-Node: Arithmetic774400
-Node: Comparisons784779
-Node: Bit-Fields788481
-Node: Vector Operations790032
-Node: Conversions792136
-Node: RTL Declarations796634
-Node: Side Effects797478
-Node: Incdec813966
-Node: Assembler817302
-Node: Debug Information818847
-Node: Insns820774
-Node: Calls846663
-Node: RTL SSA849256
-Node: Using RTL SSA850647
-Node: RTL SSA Instructions852564
-Ref: RTL SSA Instructions-Footnote-1853950
-Node: RTL SSA Basic Blocks854084
-Ref: real RTL SSA insns854552
-Ref: RTL SSA Basic Blocks-Footnote-1856774
-Node: RTL SSA Resources856908
-Node: RTL SSA Accesses858025
-Ref: RTL SSA Accesses-Footnote-1859726
-Node: RTL SSA Phi Nodes859869
-Node: RTL SSA Access Lists861873
-Node: Changing RTL Instructions866154
-Node: Changing One RTL SSA Instruction866763
-Node: Changing Multiple RTL SSA Instructions871699
-Node: Sharing875942
-Node: Reading RTL879098
-Node: Control Flow880090
-Node: Basic Blocks881858
-Node: Edges887312
-Node: Profile information895931
-Node: Maintaining the CFG900615
-Node: Liveness information906383
-Node: Loop Analysis and Representation908510
-Node: Loop representation909546
-Node: Loop querying916990
-Node: Loop manipulation919811
-Node: LCSSA922157
-Node: Scalar evolutions924226
-Node: loop-iv927470
-Node: Number of iterations929392
-Node: Dependency analysis933473
-Node: Machine Desc939825
-Node: Overview942388
-Node: Patterns944428
-Node: Example949395
-Node: RTL Template950856
-Node: Output Template961512
-Node: Output Statement965693
-Node: Predicates970032
-Node: Machine-Independent Predicates972950
-Node: Defining Predicates977895
-Node: Constraints983858
-Node: Simple Constraints985327
-Node: Multi-Alternative998167
-Node: Class Preferences1001376
-Node: Modifiers1002268
-Node: Machine Constraints1007002
-Node: Disable Insn Alternatives1070652
-Node: Define Constraints1074144
-Node: C Constraint Interface1082733
-Node: Standard Names1085860
-Ref: shift patterns1127483
-Ref: prologue instruction pattern1189153
-Ref: window_save instruction pattern1189646
-Ref: epilogue instruction pattern1189923
-Node: Pattern Ordering1213148
-Node: Dependent Patterns1214384
-Node: Jump Patterns1216004
-Node: Looping Patterns1217681
-Node: Insn Canonicalizations1223320
-Node: Expander Definitions1228517
-Node: Insn Splitting1236730
-Node: Including Patterns1251760
-Node: Peephole Definitions1253544
-Node: define_peephole1254797
-Node: define_peephole21261127
-Node: Insn Attributes1265216
-Node: Defining Attributes1266313
-Ref: define_enum_attr1269805
-Node: Expressions1270841
-Node: Tagging Insns1277591
-Node: Attr Example1281944
-Node: Insn Lengths1284317
-Node: Constant Attributes1287729
-Node: Mnemonic Attribute1288905
-Node: Delay Slots1290424
-Node: Processor pipeline description1293647
-Ref: Processor pipeline description-Footnote-11312459
-Node: Conditional Execution1312783
-Node: Define Subst1316266
-Node: Define Subst Example1318301
-Node: Define Subst Pattern Matching1321296
-Node: Define Subst Output Template1322522
-Node: Constant Definitions1324845
-Ref: define_enum1328704
-Node: Iterators1329192
-Node: Mode Iterators1329837
-Node: Defining Mode Iterators1330815
-Node: Substitutions1332309
-Node: Examples1334551
-Node: Code Iterators1336011
-Node: Int Iterators1339141
-Node: Subst Iterators1341605
-Node: Parameterized Names1343325
-Node: Target Macros1347343
-Node: Target Structure1350406
-Node: Driver1352898
-Node: Run-time Target1371871
-Node: Per-Function Data1381397
-Node: Storage Layout1384161
-Node: Type Layout1412058
-Node: Registers1425400
-Node: Register Basics1426374
-Node: Allocation Order1433936
-Node: Values in Registers1436420
-Node: Leaf Functions1443896
-Node: Stack Registers1446755
-Node: Register Classes1448028
-Node: Stack and Calling1482805
-Node: Frame Layout1483411
-Node: Exception Handling1495247
-Node: Stack Checking1501457
-Node: Frame Registers1507083
-Node: Elimination1515634
-Node: Stack Arguments1519490
-Node: Register Arguments1526943
-Node: Scalar Return1551503
-Node: Aggregate Return1557959
-Node: Caller Saves1562513
-Node: Function Entry1563255
-Node: Profiling1574807
-Node: Tail Calls1576917
-Node: Shrink-wrapping separate components1578827
-Node: Stack Smashing Protection1581868
-Node: Miscellaneous Register Hooks1584357
-Node: Varargs1585222
-Node: Trampolines1593108
-Node: Library Calls1602801
-Node: Addressing Modes1607888
-Node: Anchored Addresses1638679
-Node: Condition Code1641322
-Node: MODE_CC Condition Codes1643167
-Node: Costs1649930
-Node: Scheduling1672250
-Node: Sections1696172
-Node: PIC1712542
-Node: Assembler Format1714601
-Node: File Framework1715739
-Ref: TARGET_HAVE_SWITCHABLE_BSS_SECTIONS1723338
-Node: Data Output1725013
-Node: Uninitialized Data1733301
-Node: Label Output1738316
-Node: Initialization1762929
-Node: Macros for Initialization1768890
-Node: Instruction Output1776041
-Node: Dispatch Tables1786671
-Node: Exception Region Output1792422
-Node: Alignment Output1799504
-Node: Debugging Info1803191
-Node: All Debuggers1803949
-Node: DBX Options1806721
-Node: DBX Hooks1812159
-Node: File Names and DBX1813468
-Node: DWARF1815572
-Node: VMS Debug1821387
-Node: CTF Debug1821984
-Node: BTF Debug1822345
-Node: Floating Point1822688
-Node: Mode Switching1825443
-Node: Target Attributes1829880
-Node: Emulated TLS1841283
-Node: MIPS Coprocessors1844673
-Node: PCH Target1845832
-Node: C++ ABI1847674
-Node: D Language and ABI1852466
-Node: Named Address Spaces1855409
-Node: Misc1861336
-Ref: TARGET_SHIFT_TRUNCATION_MASK1869207
-Node: Host Config1930483
-Node: Host Common1931552
-Node: Filesystem1933926
-Node: Host Misc1938041
-Node: Fragments1940490
-Node: Target Fragment1941685
-Node: Host Fragment1952497
-Node: Collect21952737
-Node: Header Dirs1955373
-Node: Type Information1956796
-Node: GTY Options1960327
-Node: Inheritance and GTY1971940
-Ref: Inheritance and GTY-Footnote-11973505
-Node: User GC1973775
-Node: GGC Roots1977526
-Node: Files1978239
-Node: Invoking the garbage collector1980870
-Node: Troubleshooting1982512
-Node: Plugins1983587
-Node: Plugins loading1984716
-Node: Plugin API1985815
-Node: Plugins pass1993682
-Node: Plugins GC1995653
-Node: Plugins description1997370
-Node: Plugins attr1997906
-Node: Plugins recording2000186
-Node: Plugins gate2001036
-Node: Plugins tracking2001627
-Node: Plugins building2002215
-Node: LTO2005718
-Node: LTO Overview2006590
-Node: LTO object file layout2012346
-Node: IPA2016990
-Node: WHOPR2026042
-Node: Internal flags2030602
-Node: Match and Simplify2032013
-Node: GIMPLE API2032983
-Node: The Language2035785
-Node: Static Analyzer2048412
-Node: Analyzer Internals2048677
-Node: Debugging the Analyzer2064564
-Node: User Experience Guidelines2068132
-Node: Guidelines for Diagnostics2069068
-Ref: input_location_example2077243
-Node: Guidelines for Options2086928
-Node: Funding2087105
-Node: GNU Project2089612
-Node: Copying2090263
-Node: GNU Free Documentation License2127777
-Node: Contributors2152900
-Node: Option Index2193877
-Node: Concept Index2194754
+Ref: stack_size_et262340
+Node: Add Options264926
+Ref: arm_fp16_ieee266164
+Ref: arm_fp16_alternative266419
+Ref: stack_size_ao268983
+Node: Require Support269345
+Node: Final Actions272247
+Node: Ada Tests282533
+Node: C Tests283696
+Node: LTO Testing288068
+Node: gcov Testing289711
+Node: profopt Testing292681
+Node: compat Testing294396
+Node: Torture Tests298636
+Node: GIMPLE Tests300270
+Node: RTL Tests301512
+Node: Options302818
+Node: Option file format303259
+Node: Option properties311742
+Node: Passes328686
+Node: Parsing pass329559
+Node: Gimplification pass333087
+Node: Pass manager334921
+Node: IPA passes336763
+Node: Small IPA passes337656
+Node: Regular IPA passes341106
+Node: Late IPA passes345908
+Node: Tree SSA passes346869
+Node: RTL passes368559
+Node: Optimization info380888
+Node: Dump setup381707
+Node: Optimization groups382837
+Node: Dump files and streams383816
+Node: Dump output verbosity385014
+Node: Dump types386070
+Node: Dump examples388413
+Node: poly_int389894
+Node: Overview of poly_int391374
+Node: Consequences of using poly_int393978
+Node: Comparisons involving poly_int395613
+Node: Comparison functions for poly_int397251
+Node: Properties of the poly_int comparisons398458
+Node: Comparing potentially-unordered poly_ints400900
+Node: Comparing ordered poly_ints401811
+Node: Checking for a poly_int marker value403835
+Node: Range checks on poly_ints404684
+Node: Sorting poly_ints407338
+Node: Arithmetic on poly_ints408111
+Node: Using poly_int with C++ arithmetic operators408912
+Node: wi arithmetic on poly_ints410443
+Node: Division of poly_ints411295
+Node: Other poly_int arithmetic412802
+Node: Alignment of poly_ints414208
+Node: Computing bounds on poly_ints417485
+Node: Converting poly_ints418874
+Node: Miscellaneous poly_int routines422421
+Node: Guidelines for using poly_int423061
+Node: GENERIC427993
+Node: Deficiencies429815
+Node: Tree overview430056
+Node: Macros and Functions434180
+Node: Identifiers435005
+Node: Containers436614
+Node: Types437771
+Node: Declarations450182
+Node: Working with declarations450677
+Node: Internal structure456281
+Node: Current structure hierarchy456665
+Node: Adding new DECL node types458758
+Node: Attributes463044
+Node: Expression trees464288
+Node: Constant expressions466042
+Node: Storage References472134
+Node: Unary and Binary Expressions475975
+Node: Vectors497308
+Node: Statements505798
+Node: Basic Statements506330
+Node: Blocks511105
+Node: Statement Sequences512806
+Node: Empty Statements513139
+Node: Jumps513713
+Node: Cleanups514366
+Node: OpenMP516407
+Node: OpenACC522254
+Node: Functions523371
+Node: Function Basics523842
+Node: Function Properties527526
+Node: Language-dependent trees530307
+Node: C and C++ Trees531194
+Node: Types for C++534079
+Node: Namespaces539049
+Node: Classes542155
+Node: Functions for C++547063
+Node: Statements for C and C++553320
+Node: C++ Expressions561827
+Node: GIMPLE563338
+Node: Tuple representation567003
+Node: Class hierarchy of GIMPLE statements573963
+Node: GIMPLE instruction set578951
+Node: GIMPLE Exception Handling580583
+Node: Temporaries582495
+Ref: Temporaries-Footnote-1583813
+Node: Operands583878
+Node: Compound Expressions584639
+Node: Compound Lvalues584873
+Node: Conditional Expressions585635
+Node: Logical Operators586294
+Node: Manipulating GIMPLE statements593656
+Node: Tuple specific accessors599238
+Node: GIMPLE_ASM600017
+Node: GIMPLE_ASSIGN602400
+Node: GIMPLE_BIND607104
+Node: GIMPLE_CALL608918
+Node: GIMPLE_CATCH613061
+Node: GIMPLE_COND614211
+Node: GIMPLE_DEBUG617006
+Node: GIMPLE_EH_FILTER621604
+Node: GIMPLE_LABEL623167
+Node: GIMPLE_GOTO623780
+Node: GIMPLE_NOP624303
+Node: GIMPLE_OMP_ATOMIC_LOAD624665
+Node: GIMPLE_OMP_ATOMIC_STORE625661
+Node: GIMPLE_OMP_CONTINUE626360
+Node: GIMPLE_OMP_CRITICAL627839
+Node: GIMPLE_OMP_FOR628833
+Node: GIMPLE_OMP_MASTER632249
+Node: GIMPLE_OMP_ORDERED632627
+Node: GIMPLE_OMP_PARALLEL633021
+Node: GIMPLE_OMP_RETURN635790
+Node: GIMPLE_OMP_SECTION636435
+Node: GIMPLE_OMP_SECTIONS637095
+Node: GIMPLE_OMP_SINGLE638705
+Node: GIMPLE_PHI639651
+Node: GIMPLE_RESX640930
+Node: GIMPLE_RETURN641649
+Node: GIMPLE_SWITCH642223
+Node: GIMPLE_TRY644098
+Node: GIMPLE_WITH_CLEANUP_EXPR645870
+Node: GIMPLE sequences646749
+Node: Sequence iterators649955
+Node: Adding a new GIMPLE statement code658412
+Node: Statement and operand traversals659761
+Node: Tree SSA662353
+Node: Annotations664141
+Node: SSA Operands664546
+Node: SSA678350
+Node: Alias analysis688057
+Node: Memory model691832
+Node: RTL693191
+Node: RTL Objects695433
+Node: RTL Classes699317
+Node: Accessors704615
+Node: Special Accessors706788
+Node: Flags712575
+Node: Machine Modes727838
+Node: Constants745405
+Node: Regs and Memory757204
+Node: Arithmetic774475
+Node: Comparisons784854
+Node: Bit-Fields788556
+Node: Vector Operations790107
+Node: Conversions792211
+Node: RTL Declarations796709
+Node: Side Effects797553
+Node: Incdec814041
+Node: Assembler817377
+Node: Debug Information818922
+Node: Insns820849
+Node: Calls846738
+Node: RTL SSA849331
+Node: Using RTL SSA850722
+Node: RTL SSA Instructions852639
+Ref: RTL SSA Instructions-Footnote-1854025
+Node: RTL SSA Basic Blocks854159
+Ref: real RTL SSA insns854627
+Ref: RTL SSA Basic Blocks-Footnote-1856849
+Node: RTL SSA Resources856983
+Node: RTL SSA Accesses858100
+Ref: RTL SSA Accesses-Footnote-1859801
+Node: RTL SSA Phi Nodes859944
+Node: RTL SSA Access Lists861948
+Node: Changing RTL Instructions866229
+Node: Changing One RTL SSA Instruction866838
+Node: Changing Multiple RTL SSA Instructions871774
+Node: Sharing876017
+Node: Reading RTL879173
+Node: Control Flow880165
+Node: Basic Blocks881933
+Node: Edges887387
+Node: Profile information896006
+Node: Maintaining the CFG900690
+Node: Liveness information906458
+Node: Loop Analysis and Representation908585
+Node: Loop representation909621
+Node: Loop querying917065
+Node: Loop manipulation919886
+Node: LCSSA922232
+Node: Scalar evolutions924301
+Node: loop-iv927545
+Node: Number of iterations929467
+Node: Dependency analysis933548
+Node: Machine Desc939900
+Node: Overview942463
+Node: Patterns944503
+Node: Example949470
+Node: RTL Template950931
+Node: Output Template961587
+Node: Output Statement965768
+Node: Predicates970107
+Node: Machine-Independent Predicates973025
+Node: Defining Predicates977970
+Node: Constraints983933
+Node: Simple Constraints985402
+Node: Multi-Alternative998242
+Node: Class Preferences1001451
+Node: Modifiers1002343
+Node: Machine Constraints1007077
+Node: Disable Insn Alternatives1070727
+Node: Define Constraints1074219
+Node: C Constraint Interface1082808
+Node: Standard Names1085935
+Ref: shift patterns1127558
+Ref: prologue instruction pattern1189228
+Ref: window_save instruction pattern1189721
+Ref: epilogue instruction pattern1189998
+Node: Pattern Ordering1213223
+Node: Dependent Patterns1214459
+Node: Jump Patterns1216079
+Node: Looping Patterns1217756
+Node: Insn Canonicalizations1223395
+Node: Expander Definitions1228592
+Node: Insn Splitting1236805
+Node: Including Patterns1251835
+Node: Peephole Definitions1253619
+Node: define_peephole1254872
+Node: define_peephole21261202
+Node: Insn Attributes1265291
+Node: Defining Attributes1266388
+Ref: define_enum_attr1269880
+Node: Expressions1270916
+Node: Tagging Insns1277666
+Node: Attr Example1282019
+Node: Insn Lengths1284392
+Node: Constant Attributes1287804
+Node: Mnemonic Attribute1288980
+Node: Delay Slots1290499
+Node: Processor pipeline description1293722
+Ref: Processor pipeline description-Footnote-11312534
+Node: Conditional Execution1312858
+Node: Define Subst1316341
+Node: Define Subst Example1318376
+Node: Define Subst Pattern Matching1321371
+Node: Define Subst Output Template1322597
+Node: Constant Definitions1324920
+Ref: define_enum1328779
+Node: Iterators1329267
+Node: Mode Iterators1329912
+Node: Defining Mode Iterators1330890
+Node: Substitutions1332384
+Node: Examples1334626
+Node: Code Iterators1336086
+Node: Int Iterators1339216
+Node: Subst Iterators1341680
+Node: Parameterized Names1343400
+Node: Target Macros1347418
+Node: Target Structure1350481
+Node: Driver1352973
+Node: Run-time Target1371946
+Node: Per-Function Data1381472
+Node: Storage Layout1384236
+Node: Type Layout1412133
+Node: Registers1425475
+Node: Register Basics1426449
+Node: Allocation Order1434011
+Node: Values in Registers1436495
+Node: Leaf Functions1443971
+Node: Stack Registers1446830
+Node: Register Classes1448103
+Node: Stack and Calling1482880
+Node: Frame Layout1483486
+Node: Exception Handling1495322
+Node: Stack Checking1501532
+Node: Frame Registers1507158
+Node: Elimination1515709
+Node: Stack Arguments1519565
+Node: Register Arguments1527018
+Node: Scalar Return1551578
+Node: Aggregate Return1558034
+Node: Caller Saves1562588
+Node: Function Entry1563330
+Node: Profiling1574882
+Node: Tail Calls1576992
+Node: Shrink-wrapping separate components1578902
+Node: Stack Smashing Protection1581943
+Node: Miscellaneous Register Hooks1584432
+Node: Varargs1585297
+Node: Trampolines1593183
+Node: Library Calls1602876
+Node: Addressing Modes1607963
+Node: Anchored Addresses1638754
+Node: Condition Code1641397
+Node: MODE_CC Condition Codes1643242
+Node: Costs1650005
+Node: Scheduling1672325
+Node: Sections1696247
+Node: PIC1712617
+Node: Assembler Format1714676
+Node: File Framework1715814
+Ref: TARGET_HAVE_SWITCHABLE_BSS_SECTIONS1723413
+Node: Data Output1725088
+Node: Uninitialized Data1733376
+Node: Label Output1738391
+Node: Initialization1763004
+Node: Macros for Initialization1768965
+Node: Instruction Output1776116
+Node: Dispatch Tables1786746
+Node: Exception Region Output1792497
+Node: Alignment Output1799579
+Node: Debugging Info1803266
+Node: All Debuggers1804024
+Node: DBX Options1806796
+Node: DBX Hooks1812234
+Node: File Names and DBX1813543
+Node: DWARF1815647
+Node: VMS Debug1821462
+Node: CTF Debug1822059
+Node: BTF Debug1822420
+Node: Floating Point1822763
+Node: Mode Switching1825518
+Node: Target Attributes1829955
+Node: Emulated TLS1841358
+Node: MIPS Coprocessors1844748
+Node: PCH Target1845907
+Node: C++ ABI1847749
+Node: D Language and ABI1852541
+Node: Named Address Spaces1855484
+Node: Misc1861411
+Ref: TARGET_SHIFT_TRUNCATION_MASK1869282
+Node: Host Config1930558
+Node: Host Common1931627
+Node: Filesystem1934001
+Node: Host Misc1938116
+Node: Fragments1940565
+Node: Target Fragment1941760
+Node: Host Fragment1952572
+Node: Collect21952812
+Node: Header Dirs1955448
+Node: Type Information1956871
+Node: GTY Options1960402
+Node: Inheritance and GTY1972015
+Ref: Inheritance and GTY-Footnote-11973580
+Node: User GC1973850
+Node: GGC Roots1977601
+Node: Files1978314
+Node: Invoking the garbage collector1980945
+Node: Troubleshooting1982587
+Node: Plugins1983662
+Node: Plugins loading1984791
+Node: Plugin API1985890
+Node: Plugins pass1993757
+Node: Plugins GC1995728
+Node: Plugins description1997445
+Node: Plugins attr1997981
+Node: Plugins recording2000261
+Node: Plugins gate2001111
+Node: Plugins tracking2001702
+Node: Plugins building2002290
+Node: LTO2005793
+Node: LTO Overview2006665
+Node: LTO object file layout2012421
+Node: IPA2017065
+Node: WHOPR2026117
+Node: Internal flags2030677
+Node: Match and Simplify2032088
+Node: GIMPLE API2033058
+Node: The Language2035860
+Node: Static Analyzer2048487
+Node: Analyzer Internals2048752
+Node: Debugging the Analyzer2064639
+Node: User Experience Guidelines2068207
+Node: Guidelines for Diagnostics2069143
+Ref: input_location_example2077318
+Node: Guidelines for Options2087003
+Node: Funding2087180
+Node: GNU Project2089687
+Node: Copying2090338
+Node: GNU Free Documentation License2127852
+Node: Contributors2152975
+Node: Option Index2193952
+Node: Concept Index2194829
 
 End Tag Table
 

@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-06-23" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-06-24" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -330,6 +330,7 @@ in the following sections.
 \&\fB\-fno\-diagnostics\-show\-option  \-fno\-diagnostics\-show\-caret 
 \&\-fno\-diagnostics\-show\-labels  \-fno\-diagnostics\-show\-line\-numbers 
 \&\-fno\-diagnostics\-show\-cwe  
+\&\-fno\-diagnostics\-show\-rule  
 \&\-fdiagnostics\-minimum\-margin\-width=\fR\fIwidth\fR 
 \&\fB\-fdiagnostics\-parseable\-fixits  \-fdiagnostics\-generate\-patch 
 \&\-fdiagnostics\-show\-template\-tree  \-fno\-elide\-type 
@@ -668,7 +669,7 @@ in the following sections.
 .IP "\fILinker Options\fR" 4
 .IX Item "Linker Options"
 \&\fIobject-file-name\fR  \fB\-fuse\-ld=\fR\fIlinker\fR  \fB\-l\fR\fIlibrary\fR 
-\&\fB\-nostartfiles  \-nodefaultlibs  \-nolibc  \-nostdlib 
+\&\fB\-nostartfiles  \-nodefaultlibs  \-nolibc  \-nostdlib  \-nostdlib++ 
 \&\-e\fR \fIentry\fR  \fB\-\-entry=\fR\fIentry\fR 
 \&\fB\-pie  \-pthread  \-r  \-rdynamic 
 \&\-s  \-static  \-static\-pie  \-static\-libgcc  \-static\-libstdc++ 
@@ -4819,6 +4820,13 @@ Diagnostic messages can optionally have an associated
 \&\f(CW@url\fR{https://cwe.mitre.org/index.html, \s-1CWE\s0} identifier.
 \&\s-1GCC\s0 itself only provides such metadata for some of the \fB\-fanalyzer\fR
 diagnostics.  \s-1GCC\s0 plugins may also provide diagnostics with such metadata.
+By default, if this information is present, it will be printed with
+the diagnostic.  This option suppresses the printing of this metadata.
+.IP "\fB\-fno\-diagnostics\-show\-rules\fR" 4
+.IX Item "-fno-diagnostics-show-rules"
+Diagnostic messages can optionally have rules associated with them, such
+as from a coding standard, or a specification.
+\&\s-1GCC\s0 itself does not do this for any of its diagnostics, but plugins may do so.
 By default, if this information is present, it will be printed with
 the diagnostic.  This option suppresses the printing of this metadata.
 .IP "\fB\-fno\-diagnostics\-show\-line\-numbers\fR" 4
@@ -16143,6 +16151,9 @@ This ensures that you have no unresolved references to internal \s-1GCC\s0
 library subroutines.
 (An example of such an internal subroutine is \f(CW\*(C`_\|_main\*(C'\fR, used to ensure \*(C+
 constructors are called.)
+.IP "\fB\-nostdlib++\fR" 4
+.IX Item "-nostdlib++"
+Do not implicitly link with standard \*(C+ libraries.
 .IP "\fB\-e\fR \fIentry\fR" 4
 .IX Item "-e entry"
 .PD 0
