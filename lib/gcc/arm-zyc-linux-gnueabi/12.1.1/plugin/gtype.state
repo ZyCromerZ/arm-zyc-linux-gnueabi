@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.1.1 20220623")
+(!version  "12.1.1 20220624")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -29710,15 +29710,15 @@
    (!type already_seen 2193)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.cc" 29875)
+  (!srcfileloc  "cp/pt.cc" 29885)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 533)
-    (!srcfileloc  "cp/pt.cc" 29875)
+    (!srcfileloc  "cp/pt.cc" 29885)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.cc" 29875)
+    (!srcfileloc  "cp/pt.cc" 29885)
     nil )
   )
  )
@@ -30863,7 +30863,7 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2193)
-  (!srcfileloc  "cp/pt.cc" 29875)
+  (!srcfileloc  "cp/pt.cc" 29885)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2180)
@@ -35376,7 +35376,7 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2194)
-  (!srcfileloc  "cp/pt.cc" 29875)
+  (!srcfileloc  "cp/pt.cc" 29885)
   (!options 
    (!option deletable string  "")
   )
@@ -35480,7 +35480,7 @@
  )
  (!pair  "free_saved_scope"
   (!type already_seen 1951)
-  (!srcfileloc  "cp/name-lookup.cc" 8320)
+  (!srcfileloc  "cp/name-lookup.cc" 8324)
   (!options 
    (!option deletable string  "")
   )
@@ -35649,11 +35649,11 @@
   nil )
  (!pair  "start_cleanup_cnt"
   (!type already_seen 2)
-  (!srcfileloc  "cp/decl.cc" 9366)
+  (!srcfileloc  "cp/decl.cc" 9369)
   nil )
  (!pair  "decomp_type_table"
   (!type already_seen 930)
-  (!srcfileloc  "cp/decl.cc" 8819)
+  (!srcfileloc  "cp/decl.cc" 8822)
   (!options 
    (!option cache string  "")
   )
