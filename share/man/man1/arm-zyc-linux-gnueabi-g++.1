@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-06-24" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-06-25" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -3934,6 +3934,10 @@ a \*(C+ program.  The new-style casts (\f(CW\*(C`dynamic_cast\*(C'\fR,
 less vulnerable to unintended effects and much easier to search for.
 .IP "\fB\-Woverloaded\-virtual\fR (\*(C+ and Objective\-\*(C+ only)" 4
 .IX Item "-Woverloaded-virtual ( and Objective- only)"
+.PD 0
+.IP "\fB\-Woverloaded\-virtual=\fR\fIn\fR" 4
+.IX Item "-Woverloaded-virtual=n"
+.PD
 Warn when a function declaration hides virtual functions from a
 base class.  For example, in:
 .Sp
@@ -3943,7 +3947,7 @@ base class.  For example, in:
 \&        };
 \&        
 \&        struct B: public A {
-\&          void f(int);
+\&          void f(int); // does not override
 \&        };
 .Ve
 .Sp
@@ -3956,6 +3960,29 @@ like:
 .Ve
 .Sp
 fails to compile.
+.Sp
+The optional level suffix controls the behavior when all the
+declarations in the derived class override virtual functions in the
+base class, even if not all of the base functions are overridden:
+.Sp
+.Vb 4
+\&        struct C {
+\&          virtual void f();
+\&          virtual void f(int);
+\&        };
+\&        
+\&        struct D: public C {
+\&          void f(int); // does override
+\&        }
+.Ve
+.Sp
+This pattern is less likely to be a mistake; if D is only used
+virtually, the user might have decided that the base class semantics
+for some of the overloads are fine.
+.Sp
+At level 1, this case does not warn; at level 2, it does.
+\&\fB\-Woverloaded\-virtual\fR by itself selects level 2.  Level 1 is
+included in \fB\-Wall\fR.
 .IP "\fB\-Wno\-pmf\-conversions\fR (\*(C+ and Objective\-\*(C+ only)" 4
 .IX Item "-Wno-pmf-conversions ( and Objective- only)"
 Disable the diagnostic for converting a bound pointer to member function

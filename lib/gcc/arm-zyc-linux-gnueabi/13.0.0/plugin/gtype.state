@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "13.0.0 20220624 (experimental)")
+(!version  "13.0.0 20220625 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -6322,15 +6322,15 @@
                                     nil )
                                    (!pair  "count"
                                     (!type struct 299 nil  gc_used "profile_count"
-                                     (!srcfileloc  "profile-count.h" 1289)
+                                     (!srcfileloc  "profile-count.h" 1293)
                                      (!fields 2 
                                       (!pair  "UINT64_BIT_FIELD_ALIGN"
                                        (!type already_seen 2)
-                                       (!srcfileloc  "profile-count.h" 734)
+                                       (!srcfileloc  "profile-count.h" 736)
                                        nil )
                                       (!pair  "m_quality"
                                        (!type already_seen 2)
-                                       (!srcfileloc  "profile-count.h" 736)
+                                       (!srcfileloc  "profile-count.h" 738)
                                        nil )
                                      )
                                      nil 1023 nil nil )
@@ -19370,12 +19370,12 @@
   nil 0 nil nil )
  
  (!type struct 1018 nil  gc_used "sreal"
-  (!srcfileloc  "profile-count.h" 1249)
+  (!srcfileloc  "profile-count.h" 1253)
   (!fields 0 )
   nil 1023 nil nil )
  
  (!type user_struct 1019 nil  gc_unused "profile_probability"
-  (!srcfileloc  "profile-count.h" 657)
+  (!srcfileloc  "profile-count.h" 659)
   (!fields 0 )
  )
  
@@ -28535,15 +28535,15 @@
    (!type already_seen 2034)
   )
   gc_pointed_to "hash_map<tree,int>"
-  (!srcfileloc  "cp/class.cc" 3392)
+  (!srcfileloc  "cp/class.cc" 3401)
   (!fields 2 
    (!pair  "int"
     (!type already_seen 372)
-    (!srcfileloc  "cp/class.cc" 3392)
+    (!srcfileloc  "cp/class.cc" 3401)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/class.cc" 3392)
+    (!srcfileloc  "cp/class.cc" 3401)
     nil )
   )
  )
@@ -31287,7 +31287,7 @@
   nil )
  (!pair  "hash_map<tree,int>"
   (!type already_seen 2034)
-  (!srcfileloc  "cp/class.cc" 3392)
+  (!srcfileloc  "cp/class.cc" 3401)
   nil )
  (!pair  "subobject_offset_fn"
   (!type already_seen 2)
@@ -33363,11 +33363,11 @@
   nil )
  (!pair  "sreal"
   (!type already_seen 1018)
-  (!srcfileloc  "profile-count.h" 1249)
+  (!srcfileloc  "profile-count.h" 1253)
   nil )
  (!pair  "profile_probability"
   (!type already_seen 1019)
-  (!srcfileloc  "profile-count.h" 657)
+  (!srcfileloc  "profile-count.h" 659)
   nil )
  (!pair  "profile_count"
   (!type already_seen 299)
@@ -35946,15 +35946,15 @@
   nil )
  (!pair  "dvirt_fn"
   (!type already_seen 23)
-  (!srcfileloc  "cp/class.cc" 9859)
+  (!srcfileloc  "cp/class.cc" 9868)
   nil )
  (!pair  "abort_fndecl_addr"
   (!type already_seen 23)
-  (!srcfileloc  "cp/class.cc" 9858)
+  (!srcfileloc  "cp/class.cc" 9867)
   nil )
  (!pair  "enum_to_min_precision"
   (!type already_seen 2035)
-  (!srcfileloc  "cp/class.cc" 3392)
+  (!srcfileloc  "cp/class.cc" 3401)
   (!options 
    (!option deletable string  "")
   )
