@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "13.0.0 20220629 (experimental)")
+(!version  "13.0.0 20220630 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -29413,11 +29413,11 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 2147 nil  gc_unused "macro_info"nil 
+ (!type struct 2147 nil  gc_unused "macro_loc_info"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 2148 nil  gc_unused "macro_traits"nil 
+ (!type struct 2148 nil  gc_unused "macro_loc_traits"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -29555,15 +29555,15 @@
   nil 0 nil nil )
  
  (!type struct 2166 nil  gc_used "macro_export"
-  (!srcfileloc  "cp/module.cc" 16673)
+  (!srcfileloc  "cp/module.cc" 16649)
   (!fields 2 
    (!pair  "def"
     (!type already_seen 19)
-    (!srcfileloc  "cp/module.cc" 16666)
+    (!srcfileloc  "cp/module.cc" 16642)
     nil )
    (!pair  "undef_loc"
     (!type already_seen 2)
-    (!srcfileloc  "cp/module.cc" 16667)
+    (!srcfileloc  "cp/module.cc" 16643)
     nil )
   )
   nil 516 nil nil )
@@ -29577,15 +29577,15 @@
    (!type already_seen 2168)
   )
   gc_pointed_to "vec<macro_export,va_gc>"
-  (!srcfileloc  "cp/module.cc" 16830)
+  (!srcfileloc  "cp/module.cc" 16806)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 78)
-    (!srcfileloc  "cp/module.cc" 16830)
+    (!srcfileloc  "cp/module.cc" 16806)
     nil )
    (!pair  "macro_export"
     (!type already_seen 2166)
-    (!srcfileloc  "cp/module.cc" 16830)
+    (!srcfileloc  "cp/module.cc" 16806)
     nil )
   )
  )
@@ -30973,11 +30973,11 @@
   nil )
  (!pair  "vec<macro_export,va_gc>"
   (!type already_seen 2168)
-  (!srcfileloc  "cp/module.cc" 16830)
+  (!srcfileloc  "cp/module.cc" 16806)
   nil )
  (!pair  "macro_export"
   (!type already_seen 2166)
-  (!srcfileloc  "cp/module.cc" 16669)
+  (!srcfileloc  "cp/module.cc" 16645)
   nil )
  (!pair  "note_defs_table_t"
   (!type already_seen 2162)
@@ -35571,11 +35571,11 @@
  )
  (!pair  "headers"
   (!type already_seen 385)
-  (!srcfileloc  "cp/module.cc" 16834)
+  (!srcfileloc  "cp/module.cc" 16810)
   nil )
  (!pair  "macro_exports"
   (!type already_seen 2169)
-  (!srcfileloc  "cp/module.cc" 16830)
+  (!srcfileloc  "cp/module.cc" 16806)
   nil )
  (!pair  "note_defs"
   (!type already_seen 2163)
