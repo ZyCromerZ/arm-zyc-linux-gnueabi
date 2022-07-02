@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "13.0.0 20220701 (experimental)")
+(!version  "13.0.0 20220702 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -17659,7 +17659,7 @@
  )
  
  (!type user_struct 882 nil  gc_unused "trailing_wide_ints"
-  (!srcfileloc  "wide-int.h" 1408)
+  (!srcfileloc  "wide-int.h" 1417)
   (!fields 0 )
  )
  
@@ -28311,7 +28311,7 @@
    (!type already_seen 2020)
   )
   gc_pointed_to "cp_parser"
-  (!srcfileloc  "cp/parser.cc" 47874)
+  (!srcfileloc  "cp/parser.cc" 47932)
   (!fields 39 
    (!pair  "lexer"
     (!type already_seen 2006)
@@ -29685,7 +29685,7 @@
   nil 0 nil nil )
  
  (!type undefined 2192 nil  gc_unused "class_to_loc_map_t::iterator"
-  (!srcfileloc  "cp/parser.cc" 33930)
+  (!srcfileloc  "cp/parser.cc" 33972)
  )
  
  (!type struct 2193 
@@ -30973,25 +30973,25 @@
   nil )
  (!pair  "cp_parser"
   (!type already_seen 2020)
-  (!srcfileloc  "cp/parser.cc" 47874)
+  (!srcfileloc  "cp/parser.cc" 47932)
   nil )
  (!pair  "iter_t"
   (!type already_seen 2192)
-  (!srcfileloc  "cp/parser.cc" 33930)
+  (!srcfileloc  "cp/parser.cc" 33972)
   nil )
  (!pair  "class_to_loc_map_t::iterator"
   (!type already_seen 2192)
-  (!srcfileloc  "cp/parser.cc" 33930)
+  (!srcfileloc  "cp/parser.cc" 33972)
   nil )
  (!pair  "cp_parser_expression_stack"
   (!type array 2321 nil  gc_unused "NUM_PREC_VALUES" 
    (!type already_seen 2187)
   )
-  (!srcfileloc  "cp/parser.cc" 1999)
+  (!srcfileloc  "cp/parser.cc" 2013)
   nil )
  (!pair  "cp_parser_flags"
   (!type already_seen 2)
-  (!srcfileloc  "cp/parser.cc" 1930)
+  (!srcfileloc  "cp/parser.cc" 1944)
   nil )
  (!pair  "vec<macro_export,va_gc>"
   (!type already_seen 2172)
@@ -33789,7 +33789,7 @@
   nil )
  (!pair  "trailing_wide_ints"
   (!type already_seen 882)
-  (!srcfileloc  "wide-int.h" 1408)
+  (!srcfileloc  "wide-int.h" 1417)
   nil )
  (!pair  "trailing_wide_int"
   (!type already_seen 881)
@@ -35553,19 +35553,19 @@
   nil )
  (!pair  "generic_parm_count"
   (!type already_seen 2)
-  (!srcfileloc  "cp/parser.cc" 48386)
+  (!srcfileloc  "cp/parser.cc" 48444)
   nil )
  (!pair  "the_parser"
   (!type already_seen 2021)
-  (!srcfileloc  "cp/parser.cc" 47874)
+  (!srcfileloc  "cp/parser.cc" 47932)
   nil )
  (!pair  "cp_parser_decl_specs_attrs"
   (!type already_seen 83)
-  (!srcfileloc  "cp/parser.cc" 19293)
+  (!srcfileloc  "cp/parser.cc" 19314)
   nil )
  (!pair  "cp_parser_context_free_list"
   (!type already_seen 2013)
-  (!srcfileloc  "cp/parser.cc" 2010)
+  (!srcfileloc  "cp/parser.cc" 2024)
   (!options 
    (!option deletable string  "")
   )
@@ -35949,7 +35949,7 @@
  )
  (!pair  "cv_cache"
   (!type already_seen 392)
-  (!srcfileloc  "cp/constexpr.cc" 8114)
+  (!srcfileloc  "cp/constexpr.cc" 8121)
   (!options 
    (!option deletable string  "")
   )

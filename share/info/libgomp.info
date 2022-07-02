@@ -421,7 +421,7 @@ Reproducible semantics changed for          N
 'allocate' and 'firstprivate' clauses on    Y
 'scope'
 'ompt_callback_work'                        N
-Default map-type for 'map' clause in        N
+Default map-type for 'map' clause in        Y
 'target enter/exit data'
 New 'doacross' clause as alias for          N
 'depend' with 'source'/'sink' modifier
