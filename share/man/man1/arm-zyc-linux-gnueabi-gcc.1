@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-07-03" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-07-04" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -23897,7 +23897,8 @@ Set the cost of branches to roughly \fIn\fR instructions.
 .IX Item "-mno-check-zero-divison"
 .PD
 Trap (do not trap) on integer division by zero.  The default is
-\&\fB\-mcheck\-zero\-division\fR.
+\&\fB\-mcheck\-zero\-division\fR for \fB\-O0\fR or \fB\-Og\fR, and
+\&\fB\-mno\-check\-zero\-division\fR for other optimization levels.
 .IP "\fB\-mcond\-move\-int\fR" 4
 .IX Item "-mcond-move-int"
 .PD 0
