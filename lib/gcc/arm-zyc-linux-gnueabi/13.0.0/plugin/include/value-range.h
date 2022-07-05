@@ -109,6 +109,7 @@ protected:
 class GTY((user)) irange : public vrange
 {
   friend class vrange_allocator;
+  friend class irange_storage_slot; // For legacy_mode_p checks.
 public:
   // In-place setters.
   virtual void set (tree, tree, value_range_kind = VR_RANGE) override;
@@ -149,6 +150,10 @@ public:
   virtual bool fits_p (const vrange &r) const override;
   virtual void dump (FILE * = stderr) const override;
 
+  // Nonzero masks.
+  wide_int get_nonzero_bits () const;
+  void set_nonzero_bits (const wide_int_ref &bits);
+
   // Deprecated legacy public methods.
   tree min () const;				// DEPRECATED
   tree max () const;				// DEPRECATED
@@ -157,8 +162,6 @@ public:
   void normalize_symbolics ();			// DEPRECATED
   void normalize_addresses ();			// DEPRECATED
   bool may_contain_p (tree) const;		// DEPRECATED
-  void set (tree);				// DEPRECATED
-  bool equal_p (const irange &) const;		// DEPRECATED
   bool legacy_verbose_union_ (const class irange *);	// DEPRECATED
   bool legacy_verbose_intersect (const irange *);	// DEPRECATED
 
@@ -198,10 +201,15 @@ private:
 
   void irange_set_1bit_anti_range (tree, tree);
   bool varying_compatible_p () const;
+  void set_nonzero_bits (tree bits) { m_nonzero_mask = bits; }
+  bool intersect_nonzero_bits (const irange &r);
+  bool union_nonzero_bits (const irange &r);
+  void dump_bitmasks (FILE *) const;
 
   bool intersect (const wide_int& lb, const wide_int& ub);
   unsigned char m_num_ranges;
   unsigned char m_max_ranges;
+  tree m_nonzero_mask;
   tree *m_base;
 };
 
@@ -610,6 +618,8 @@ gt_ggc_mx (irange *x)
       gt_ggc_mx (x->m_base[i * 2]);
       gt_ggc_mx (x->m_base[i * 2 + 1]);
     }
+  if (x->m_nonzero_mask)
+    gt_ggc_mx (x->m_nonzero_mask);
 }
 
 inline void
@@ -620,6 +630,8 @@ gt_pch_nx (irange *x)
       gt_pch_nx (x->m_base[i * 2]);
       gt_pch_nx (x->m_base[i * 2 + 1]);
     }
+  if (x->m_nonzero_mask)
+    gt_pch_nx (x->m_nonzero_mask);
 }
 
 inline void
@@ -630,6 +642,8 @@ gt_pch_nx (irange *x, gt_pointer_operator op, void *cookie)
       op (&x->m_base[i * 2], NULL, cookie);
       op (&x->m_base[i * 2 + 1], NULL, cookie);
     }
+  if (x->m_nonzero_mask)
+    op (&x->m_nonzero_mask, NULL, cookie);
 }
 
 template<unsigned N>
@@ -720,16 +734,11 @@ int_range<N>::operator= (const int_range &src)
 }
 
 inline void
-irange::set (tree val)
-{
-  set (val, val);
-}
-
-inline void
 irange::set_undefined ()
 {
   m_kind = VR_UNDEFINED;
   m_num_ranges = 0;
+  m_nonzero_mask = NULL;
 }
 
 inline void
@@ -737,6 +746,7 @@ irange::set_varying (tree type)
 {
   m_kind = VR_VARYING;
   m_num_ranges = 1;
+  m_nonzero_mask = NULL;
 
   if (INTEGRAL_TYPE_P (type))
     {
@@ -763,12 +773,6 @@ irange::set_varying (tree type)
     }
   else
     m_base[0] = m_base[1] = error_mark_node;
-}
-
-inline bool
-irange::operator== (const irange &r) const
-{
-  return equal_p (r);
 }
 
 // Return the lower bound of a sub-range.  PAIR is the sub-range in
@@ -846,7 +850,7 @@ irange::set_zero (tree type)
 {
   tree z = build_int_cst (type, 0);
   if (legacy_mode_p ())
-    set (z);
+    set (z, z);
   else
     irange_set (z, z);
 }
@@ -857,7 +861,7 @@ inline void
 irange::normalize_kind ()
 {
   if (m_num_ranges == 0)
-    m_kind = VR_UNDEFINED;
+    set_undefined ();
   else if (varying_compatible_p ())
     {
       if (m_kind == VR_RANGE)
