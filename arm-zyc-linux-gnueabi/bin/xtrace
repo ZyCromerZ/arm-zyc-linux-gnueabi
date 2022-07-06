@@ -1,7 +1,6 @@
 #!/bin/bash
-# Copyright (C) 1999-2021 Free Software Foundation, Inc.
+# Copyright (C) 1999-2022 Free Software Foundation, Inc.
 # This file is part of the GNU C Library.
-# Contributed by Ulrich Drepper <drepper@gnu.org>, 1999.
 
 # The GNU C Library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -60,11 +59,11 @@ short options.
 }
 
 do_version() {
-  echo 'xtrace (ZyC-GCC) 2.34'
+  echo 'xtrace (ZyC-GCC) 2.35'
   printf $"Copyright (C) %s Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-" "2021"
+" "2022"
   printf $"Written by %s.
 " "Ulrich Drepper"
   exit 0

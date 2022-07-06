@@ -19,7 +19,7 @@ import gdb
 import os
 import os.path
 
-pythondir = '/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/share/gcc-10.3.1/python'
+pythondir = '/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/share/gcc-10.4.1/python'
 libdir = '/__w/gcc-builder/gcc-builder/arm-zyc-linux-gnueabi/arm-zyc-linux-gnueabi/lib'
 
 # This file might be loaded when there is no current objfile.  This
