@@ -2211,7 +2211,7 @@
 
 /* The linker hash style */
 #ifndef USED_FOR_TARGET
-/* #undef LINKER_HASH_STYLE */
+#define LINKER_HASH_STYLE "both"
 #endif
 
 
