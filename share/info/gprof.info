@@ -27,7 +27,7 @@ to determine which parts of a program are taking most of the execution
 time.  We assume that you know how to write, compile, and execute
 programs.  GNU 'gprof' was written by Jay Fenlason.
 
-   This manual is for 'gprof' (ZyC-GCC) version 2.38.
+   This manual is for 'gprof' (ZyC-GCC) version 2.38.50.
 
    This document is distributed under the terms of the GNU Free
 Documentation License version 1.3.  A copy of the license is included in
@@ -2426,35 +2426,35 @@ their use in free software.
 
 Tag Table:
 Node: Top719
-Node: Introduction2037
-Node: Compiling4528
-Node: Executing8584
-Node: Invoking11477
-Node: Output Options12892
-Node: Analysis Options19984
-Node: Miscellaneous Options23904
-Node: Deprecated Options25158
-Node: Symspecs27221
-Node: Output29047
-Node: Flat Profile30087
-Node: Call Graph35040
-Node: Primary38272
-Node: Callers40860
-Node: Subroutines42978
-Node: Cycles44819
-Node: Line-by-line51596
-Node: Annotated Source55672
-Node: Inaccuracy58670
-Node: Sampling Error58928
-Node: Assumptions61832
-Node: How do I?63302
-Node: Incompatibilities64859
-Node: Details66353
-Node: Implementation66746
-Node: File Format72645
-Node: Internals76937
-Node: Debugging85427
-Node: GNU Free Documentation License87017
+Node: Introduction2040
+Node: Compiling4531
+Node: Executing8587
+Node: Invoking11480
+Node: Output Options12895
+Node: Analysis Options19987
+Node: Miscellaneous Options23907
+Node: Deprecated Options25161
+Node: Symspecs27224
+Node: Output29050
+Node: Flat Profile30090
+Node: Call Graph35043
+Node: Primary38275
+Node: Callers40863
+Node: Subroutines42981
+Node: Cycles44822
+Node: Line-by-line51599
+Node: Annotated Source55675
+Node: Inaccuracy58673
+Node: Sampling Error58931
+Node: Assumptions61835
+Node: How do I?63305
+Node: Incompatibilities64862
+Node: Details66356
+Node: Implementation66749
+Node: File Format72648
+Node: Internals76940
+Node: Debugging85430
+Node: GNU Free Documentation License87020
 
 End Tag Table
 
