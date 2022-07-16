@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-07-15" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-07-16" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -469,6 +469,11 @@ in the following sections.
 \&\-Wno\-analyzer\-double\-fclose 
 \&\-Wno\-analyzer\-double\-free 
 \&\-Wno\-analyzer\-exposure\-through\-output\-file 
+\&\-Wno\-analyzer\-fd\-access\-mode\-mismatch 
+\&\-Wno\-analyzer\-fd\-double\-close 
+\&\-Wno\-analyzer\-fd\-leak 
+\&\-Wno\-analyzer\-fd\-use\-after\-close 
+\&\-Wno\-analyzer\-fd\-use\-without\-check 
 \&\-Wno\-analyzer\-file\-leak 
 \&\-Wno\-analyzer\-free\-of\-non\-heap 
 \&\-Wno\-analyzer\-malloc\-leak 
@@ -9489,6 +9494,11 @@ following warnings from \fB\-fanalyzer\fR:
 \&\fB\-Wanalyzer\-double\-fclose 
 \&\-Wanalyzer\-double\-free 
 \&\-Wanalyzer\-exposure\-through\-output\-file 
+\&\-Wanalyzer\-fd\-access\-mode\-mismatch 
+\&\-Wanalyzer\-fd\-double\-close 
+\&\-Wanalyzer\-fd\-leak 
+\&\-Wanalyzer\-fd\-use\-after\-close 
+\&\-Wanalyzer\-fd\-use\-without\-check 
 \&\-Wanalyzer\-file\-leak 
 \&\-Wanalyzer\-free\-of\-non\-heap 
 \&\-Wanalyzer\-malloc\-leak 
