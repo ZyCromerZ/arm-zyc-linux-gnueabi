@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-07-23" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-07-24" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -9174,7 +9174,13 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 to disable it.
 .Sp
 This diagnostic warns for paths through code in which a 
-\&\f(CW\*(C`read\*(C'\fR on a write-only file descriptor is attempted, or vice versa
+\&\f(CW\*(C`read\*(C'\fR on a write-only file descriptor is attempted, or vice versa.
+.Sp
+This diagnostic also warns for code paths in a which a function with attribute
+\&\f(CW\*(C`fd_arg_read (N)\*(C'\fR is called with a file descriptor opened with
+\&\f(CW\*(C`O_WRONLY\*(C'\fR at referenced argument \f(CW\*(C`N\*(C'\fR or a function with attribute
+\&\f(CW\*(C`fd_arg_write (N)\*(C'\fR is called with a file descriptor opened with
+\&\f(CW\*(C`O_RDONLY\*(C'\fR at referenced argument \fIN\fR.
 .IP "\fB\-Wno\-analyzer\-fd\-double\-close\fR" 4
 .IX Item "-Wno-analyzer-fd-double-close"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9199,6 +9205,11 @@ to disable it.
 .Sp
 This diagnostic warns for paths through code in which a 
 read or write is called on a closed file descriptor.
+.Sp
+This diagnostic also warns for paths through code in which
+a function with attribute \f(CW\*(C`fd_arg (N)\*(C'\fR or \f(CW\*(C`fd_arg_read (N)\*(C'\fR
+or \f(CW\*(C`fd_arg_write (N)\*(C'\fR is called with a closed file descriptor at
+referenced argument \f(CW\*(C`N\*(C'\fR.
 .IP "\fB\-Wno\-analyzer\-fd\-use\-without\-check\fR" 4
 .IX Item "-Wno-analyzer-fd-use-without-check"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9207,6 +9218,11 @@ to disable it.
 .Sp
 This diagnostic warns for paths through code in which a 
 file descriptor is used without being checked for validity.
+.Sp
+This diagnostic also warns for paths through code in which
+a function with attribute \f(CW\*(C`fd_arg (N)\*(C'\fR or \f(CW\*(C`fd_arg_read (N)\*(C'\fR
+or \f(CW\*(C`fd_arg_write (N)\*(C'\fR is called with a file descriptor, at referenced
+argument \f(CW\*(C`N\*(C'\fR, without being checked for validity.
 .IP "\fB\-Wno\-analyzer\-file\-leak\fR" 4
 .IX Item "-Wno-analyzer-file-leak"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
