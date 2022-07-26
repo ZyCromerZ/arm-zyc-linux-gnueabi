@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-07-25" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-07-26" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -9173,7 +9173,7 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 \&\fB\-Wno\-analyzer\-fd\-access\-mode\-mismatch\fR
 to disable it.
 .Sp
-This diagnostic warns for paths through code in which a 
+This diagnostic warns for paths through code in which a
 \&\f(CW\*(C`read\*(C'\fR on a write-only file descriptor is attempted, or vice versa.
 .Sp
 This diagnostic also warns for code paths in a which a function with attribute
@@ -9187,7 +9187,7 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 \&\fB\-Wno\-analyzer\-fd\-double\-close\fR
 to disable it.
 .Sp
-This diagnostic warns for paths through code in which a 
+This diagnostic warns for paths through code in which a
 file descriptor can be closed more than once.
 .IP "\fB\-Wno\-analyzer\-fd\-leak\fR" 4
 .IX Item "-Wno-analyzer-fd-leak"
@@ -9195,7 +9195,7 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 \&\fB\-Wno\-analyzer\-fd\-leak\fR
 to disable it.
 .Sp
-This diagnostic warns for paths through code in which an 
+This diagnostic warns for paths through code in which an
 open file descriptor is leaked.
 .IP "\fB\-Wno\-analyzer\-fd\-use\-after\-close\fR" 4
 .IX Item "-Wno-analyzer-fd-use-after-close"
@@ -9203,7 +9203,7 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 \&\fB\-Wno\-analyzer\-fd\-use\-after\-close\fR
 to disable it.
 .Sp
-This diagnostic warns for paths through code in which a 
+This diagnostic warns for paths through code in which a
 read or write is called on a closed file descriptor.
 .Sp
 This diagnostic also warns for paths through code in which
@@ -9216,7 +9216,7 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 \&\fB\-Wno\-analyzer\-fd\-use\-without\-check\fR
 to disable it.
 .Sp
-This diagnostic warns for paths through code in which a 
+This diagnostic warns for paths through code in which a
 file descriptor is used without being checked for validity.
 .Sp
 This diagnostic also warns for paths through code in which
