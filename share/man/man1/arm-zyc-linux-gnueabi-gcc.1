@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-07-27" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-07-28" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -24060,6 +24060,20 @@ global symbol: The data got table must be within +/\-8EiB addressing space.
 .Sp
 The default code model is \f(CW\*(C`normal\*(C'\fR.
 .RE
+.IP "\fB\-mexplicit\-relocs\fR" 4
+.IX Item "-mexplicit-relocs"
+.PD 0
+.IP "\fB\-mno\-explicit\-relocs\fR" 4
+.IX Item "-mno-explicit-relocs"
+.PD
+Use or do not use assembler relocation operators when dealing with symbolic
+addresses.  The alternative is to use assembler macros instead, which may
+limit optimization.  The default value for the option is determined during
+\&\s-1GCC\s0 build-time by detecting corresponding assembler support:
+\&\f(CW\*(C`\-mexplicit\-relocs\*(C'\fR if said support is present,
+\&\f(CW\*(C`\-mno\-explicit\-relocs\*(C'\fR otherwise.  This option is mostly useful for
+debugging, or interoperation with assemblers different from the build-time
+one.
 .PP
 \fIM32C Options\fR
 .IX Subsection "M32C Options"
