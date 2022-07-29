@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-07-28" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-07-29" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -482,6 +482,7 @@ in the following sections.
 \&\-Wno\-analyzer\-null\-dereference 
 \&\-Wno\-analyzer\-possible\-null\-argument 
 \&\-Wno\-analyzer\-possible\-null\-dereference 
+\&\-Wno\-analyzer\-putenv\-of\-auto\-var 
 \&\-Wno\-analyzer\-shift\-count\-negative 
 \&\-Wno\-analyzer\-shift\-count\-overflow 
 \&\-Wno\-analyzer\-stale\-setjmp\-buffer 
@@ -4842,7 +4843,7 @@ the vertical bars and the \*(L"char *\*(R" and \*(L"long int\*(R" text).
 .IP "\fB\-fno\-diagnostics\-show\-cwe\fR" 4
 .IX Item "-fno-diagnostics-show-cwe"
 Diagnostic messages can optionally have an associated
-\&\f(CW@url\fR{https://cwe.mitre.org/index.html, \s-1CWE\s0} identifier.
+ \s-1CWE\s0 (\f(CW\*(C`https://cwe.mitre.org/index.html\*(C'\fR) identifier.
 \&\s-1GCC\s0 itself only provides such metadata for some of the \fB\-fanalyzer\fR
 diagnostics.  \s-1GCC\s0 plugins may also provide diagnostics with such metadata.
 By default, if this information is present, it will be printed with
@@ -9107,6 +9108,7 @@ Enabling this option effectively enables the following warnings:
 \&\-Wanalyzer\-null\-dereference 
 \&\-Wanalyzer\-possible\-null\-argument 
 \&\-Wanalyzer\-possible\-null\-dereference 
+\&\-Wanalyzer\-putenv\-of\-auto\-var 
 \&\-Wanalyzer\-shift\-count\-negative 
 \&\-Wanalyzer\-shift\-count\-overflow 
 \&\-Wanalyzer\-stale\-setjmp\-buffer 
@@ -9142,7 +9144,7 @@ This diagnostic warns for paths through the code in which a pointer to
 a buffer is assigned to point at a buffer with a size that is not a
 multiple of \f(CW\*(C`sizeof (*pointer)\*(C'\fR.
 .Sp
-See \f(CW@url\fR{https://cwe.mitre.org/data/definitions/131.html, \s-1CWE\-131:\s0 Incorrect Calculation of Buffer Size}.
+See  \s-1CWE\-131:\s0 Incorrect Calculation of Buffer Size (\f(CW\*(C`https://cwe.mitre.org/data/definitions/131.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-double\-fclose\fR" 4
 .IX Item "-Wno-analyzer-double-fclose"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9150,6 +9152,8 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 .Sp
 This diagnostic warns for paths through the code in which a \f(CW\*(C`FILE *\*(C'\fR
 can have \f(CW\*(C`fclose\*(C'\fR called on it more than once.
+.Sp
+See  \s-1CWE\-1341:\s0 Multiple Releases of Same Resource or Handle (\f(CW\*(C`https://cwe.mitre.org/data/definitions/1341.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-double\-free\fR" 4
 .IX Item "-Wno-analyzer-double-free"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9158,6 +9162,8 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 This diagnostic warns for paths through the code in which a pointer
 can have a deallocator called on it more than once, either \f(CW\*(C`free\*(C'\fR,
 or a deallocator referenced by attribute \f(CW\*(C`malloc\*(C'\fR.
+.Sp
+See  \s-1CWE\-415:\s0 Double Free (\f(CW\*(C`https://cwe.mitre.org/data/definitions/415.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-exposure\-through\-output\-file\fR" 4
 .IX Item "-Wno-analyzer-exposure-through-output-file"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9167,6 +9173,8 @@ to disable it.
 This diagnostic warns for paths through the code in which a
 security-sensitive value is written to an output file
 (such as writing a password to a log file).
+.Sp
+See  \s-1CWE\-532:\s0 Information Exposure Through Log Files (\f(CW\*(C`https://cwe.mitre.org/data/definitions/532.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-fd\-access\-mode\-mismatch\fR" 4
 .IX Item "-Wno-analyzer-fd-access-mode-mismatch"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9189,6 +9197,8 @@ to disable it.
 .Sp
 This diagnostic warns for paths through code in which a
 file descriptor can be closed more than once.
+.Sp
+See  \s-1CWE\-1341:\s0 Multiple Releases of Same Resource or Handle (\f(CW\*(C`https://cwe.mitre.org/data/definitions/1341.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-fd\-leak\fR" 4
 .IX Item "-Wno-analyzer-fd-leak"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9197,6 +9207,8 @@ to disable it.
 .Sp
 This diagnostic warns for paths through code in which an
 open file descriptor is leaked.
+.Sp
+See  \s-1CWE\-775:\s0 Missing Release of File Descriptor or Handle after Effective Lifetime (\f(CW\*(C`https://cwe.mitre.org/data/definitions/775.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-fd\-use\-after\-close\fR" 4
 .IX Item "-Wno-analyzer-fd-use-after-close"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9231,6 +9243,8 @@ to disable it.
 .Sp
 This diagnostic warns for paths through the code in which a
 \&\f(CW\*(C`<stdio.h>\*(C'\fR \f(CW\*(C`FILE *\*(C'\fR stream object is leaked.
+.Sp
+See  \s-1CWE\-775:\s0 Missing Release of File Descriptor or Handle after Effective Lifetime (\f(CW\*(C`https://cwe.mitre.org/data/definitions/775.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-free\-of\-non\-heap\fR" 4
 .IX Item "-Wno-analyzer-free-of-non-heap"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9239,6 +9253,8 @@ to disable it.
 .Sp
 This diagnostic warns for paths through the code in which \f(CW\*(C`free\*(C'\fR
 is called on a non-heap pointer (e.g. an on-stack buffer, or a global).
+.Sp
+See  \s-1CWE\-590:\s0 Free of Memory not on the Heap (\f(CW\*(C`https://cwe.mitre.org/data/definitions/590.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-malloc\-leak\fR" 4
 .IX Item "-Wno-analyzer-malloc-leak"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9248,6 +9264,8 @@ to disable it.
 This diagnostic warns for paths through the code in which a
 pointer allocated via an allocator is leaked: either \f(CW\*(C`malloc\*(C'\fR,
 or a function marked with attribute \f(CW\*(C`malloc\*(C'\fR.
+.Sp
+See  \s-1CWE\-401:\s0 Missing Release of Memory after Effective Lifetime (\f(CW\*(C`https://cwe.mitre.org/data/definitions/401.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-mismatching\-deallocation\fR" 4
 .IX Item "-Wno-analyzer-mismatching-deallocation"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9260,6 +9278,8 @@ which function was used to allocate the pointer value.  The diagnostic
 will warn about mismatches between \f(CW\*(C`free\*(C'\fR, scalar \f(CW\*(C`delete\*(C'\fR
 and vector \f(CW\*(C`delete[]\*(C'\fR, and those marked as allocator/deallocator
 pairs using attribute \f(CW\*(C`malloc\*(C'\fR.
+.Sp
+See  \s-1CWE\-762:\s0 Mismatched Memory Management Routines (\f(CW\*(C`https://cwe.mitre.org/data/definitions/762.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-possible\-null\-argument\fR" 4
 .IX Item "-Wno-analyzer-possible-null-argument"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9269,6 +9289,8 @@ This diagnostic warns for paths through the code in which a
 possibly-NULL value is passed to a function argument marked
 with \f(CW\*(C`_\|_attribute_\|_((nonnull))\*(C'\fR as requiring a non-NULL
 value.
+.Sp
+See  \s-1CWE\-690:\s0 Unchecked Return Value to \s-1NULL\s0 Pointer Dereference (\f(CW\*(C`https://cwe.mitre.org/data/definitions/690.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-possible\-null\-dereference\fR" 4
 .IX Item "-Wno-analyzer-possible-null-dereference"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9276,6 +9298,8 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 .Sp
 This diagnostic warns for paths through the code in which a
 possibly-NULL value is dereferenced.
+.Sp
+See  \s-1CWE\-690:\s0 Unchecked Return Value to \s-1NULL\s0 Pointer Dereference (\f(CW\*(C`https://cwe.mitre.org/data/definitions/690.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-null\-argument\fR" 4
 .IX Item "-Wno-analyzer-null-argument"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9285,6 +9309,8 @@ This diagnostic warns for paths through the code in which a
 value known to be \s-1NULL\s0 is passed to a function argument marked
 with \f(CW\*(C`_\|_attribute_\|_((nonnull))\*(C'\fR as requiring a non-NULL
 value.
+.Sp
+See  \s-1CWE\-476: NULL\s0 Pointer Dereference (\f(CW\*(C`https://cwe.mitre.org/data/definitions/476.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-null\-dereference\fR" 4
 .IX Item "-Wno-analyzer-null-dereference"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9292,6 +9318,18 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 .Sp
 This diagnostic warns for paths through the code in which a
 value known to be \s-1NULL\s0 is dereferenced.
+.Sp
+See  \s-1CWE\-476: NULL\s0 Pointer Dereference (\f(CW\*(C`https://cwe.mitre.org/data/definitions/476.html\*(C'\fR).
+.IP "\fB\-Wno\-analyzer\-putenv\-of\-auto\-var\fR" 4
+.IX Item "-Wno-analyzer-putenv-of-auto-var"
+This warning requires \fB\-fanalyzer\fR, which enables it; use
+\&\fB\-Wno\-analyzer\-possible\-null\-dereference\fR to disable it.
+.Sp
+This diagnostic warns for paths through the code in which a
+call to \f(CW\*(C`putenv\*(C'\fR is passed a pointer to an automatic variable
+or an on-stack buffer.
+.Sp
+See  \s-1POS34\-C.\s0 Do not call \fBputenv()\fR with a pointer to an automatic variable as the argument (\f(CW\*(C`https://wiki.sei.cmu.edu/confluence/x/6NYxBQ\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-shift\-count\-negative\fR" 4
 .IX Item "-Wno-analyzer-shift-count-negative"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9343,7 +9381,7 @@ of an allocation without being sanitized, so that an attacker could
 inject an excessively large allocation and potentially cause a denial
 of service attack.
 .Sp
-See \f(CW@url\fR{https://cwe.mitre.org/data/definitions/789.html, \s-1CWE\-789:\s0 Memory Allocation with Excessive Size Value}.
+See  \s-1CWE\-789:\s0 Memory Allocation with Excessive Size Value (\f(CW\*(C`https://cwe.mitre.org/data/definitions/789.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-tainted\-array\-index\fR" 4
 .IX Item "-Wno-analyzer-tainted-array-index"
 This warning requires both \fB\-fanalyzer\fR and
@@ -9355,7 +9393,7 @@ that could be under an attacker's control is used as the index
 of an array access without being sanitized, so that an attacker
 could inject an out-of-bounds access.
 .Sp
-See \f(CW@url\fR{https://cwe.mitre.org/data/definitions/129.html, \s-1CWE\-129:\s0 Improper Validation of Array Index}.
+See  \s-1CWE\-129:\s0 Improper Validation of Array Index (\f(CW\*(C`https://cwe.mitre.org/data/definitions/129.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-tainted\-divisor\fR" 4
 .IX Item "-Wno-analyzer-tainted-divisor"
 This warning requires both \fB\-fanalyzer\fR and
@@ -9366,6 +9404,8 @@ This diagnostic warns for paths through the code in which a value
 that could be under an attacker's control is used as the divisor
 in a division or modulus operation without being sanitized, so that
 an attacker could inject a division-by-zero.
+.Sp
+See  \s-1CWE\-369:\s0 Divide By Zero (\f(CW\*(C`https://cwe.mitre.org/data/definitions/369.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-tainted\-offset\fR" 4
 .IX Item "-Wno-analyzer-tainted-offset"
 This warning requires both \fB\-fanalyzer\fR and
@@ -9377,7 +9417,7 @@ that could be under an attacker's control is used as a pointer offset
 without being sanitized, so that an attacker could inject an out-of-bounds
 access.
 .Sp
-See \f(CW@url\fR{https://cwe.mitre.org/data/definitions/823.html, \s-1CWE\-823:\s0 Use of Out-of-range Pointer Offset}.
+See  \s-1CWE\-823:\s0 Use of Out-of-range Pointer Offset (\f(CW\*(C`https://cwe.mitre.org/data/definitions/823.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-tainted\-size\fR" 4
 .IX Item "-Wno-analyzer-tainted-size"
 This warning requires both \fB\-fanalyzer\fR and
@@ -9388,6 +9428,8 @@ This diagnostic warns for paths through the code in which a value
 that could be under an attacker's control is used as the size of
 an operation such as \f(CW\*(C`memset\*(C'\fR without being sanitized, so that an
 attacker could inject an out-of-bounds access.
+.Sp
+See  \s-1CWE\-129:\s0 Improper Validation of Array Index (\f(CW\*(C`https://cwe.mitre.org/data/definitions/129.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-unsafe\-call\-within\-signal\-handler\fR" 4
 .IX Item "-Wno-analyzer-unsafe-call-within-signal-handler"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9396,6 +9438,8 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 This diagnostic warns for paths through the code in which a
 function known to be async-signal-unsafe (such as \f(CW\*(C`fprintf\*(C'\fR) is
 called from a signal handler.
+.Sp
+See  \s-1CWE\-479:\s0 Signal Handler Use of a Non-reentrant Function (\f(CW\*(C`https://cwe.mitre.org/data/definitions/479.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-use\-after\-free\fR" 4
 .IX Item "-Wno-analyzer-use-after-free"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9404,6 +9448,8 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 This diagnostic warns for paths through the code in which a
 pointer is used after a deallocator is called on it: either \f(CW\*(C`free\*(C'\fR,
 or a deallocator referenced by attribute \f(CW\*(C`malloc\*(C'\fR.
+.Sp
+See  \s-1CWE\-416:\s0 Use After Free (\f(CW\*(C`https://cwe.mitre.org/data/definitions/416.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-use\-of\-pointer\-in\-stale\-stack\-frame\fR" 4
 .IX Item "-Wno-analyzer-use-of-pointer-in-stale-stack-frame"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9422,6 +9468,8 @@ This diagnostic warns for interprocedural paths through the code for which
 the analyzer detects an attempt to use \f(CW\*(C`va_arg\*(C'\fR to extract a value
 passed to a variadic call, but uses a type that does not match that of
 the expression passed to the call.
+.Sp
+See  \s-1CWE\-686:\s0 Function Call With Incorrect Argument Type (\f(CW\*(C`https://cwe.mitre.org/data/definitions/686.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-va\-list\-exhausted\fR" 4
 .IX Item "-Wno-analyzer-va-list-exhausted"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9432,6 +9480,8 @@ This diagnostic warns for interprocedural paths through the code for which
 the analyzer detects an attempt to use \f(CW\*(C`va_arg\*(C'\fR to access the next
 value passed to a variadic call, but all of the values in the
 \&\f(CW\*(C`va_list\*(C'\fR have already been consumed.
+.Sp
+See  \s-1CWE\-685:\s0 Function Call With Incorrect Number of Arguments (\f(CW\*(C`https://cwe.mitre.org/data/definitions/685.html\*(C'\fR).
 .IP "\fB\-Wno\-analyzer\-va\-list\-leak\fR" 4
 .IX Item "-Wno-analyzer-va-list-leak"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
@@ -9478,6 +9528,8 @@ This warning requires \fB\-fanalyzer\fR, which enables it; use
 .Sp
 This diagnostic warns for paths through the code in which an uninitialized
 value is used.
+.Sp
+See  \s-1CWE\-457:\s0 Use of Uninitialized Variable (\f(CW\*(C`https://cwe.mitre.org/data/definitions/457.html\*(C'\fR).
 .PP
 Pertinent parameters for controlling the exploration are:
 \&\fB\-\-param analyzer\-bb\-explosion\-factor=\fR\fIvalue\fR,
@@ -12680,6 +12732,11 @@ an exact implementation of \s-1IEEE\s0 or \s-1ISO\s0 rules/specifications for
 math functions.
 .Sp
 The default is \fB\-ftrapping\-math\fR.
+.Sp
+Future versions of \s-1GCC\s0 may provide finer control of this setting
+using C99's \f(CW\*(C`FENV_ACCESS\*(C'\fR pragma.  This command-line option
+will be used along with \fB\-frounding\-math\fR to specify the
+default state for \f(CW\*(C`FENV_ACCESS\*(C'\fR.
 .IP "\fB\-frounding\-math\fR" 4
 .IX Item "-frounding-math"
 Disable transformations and optimizations that assume default floating-point
@@ -12698,7 +12755,8 @@ This option is experimental and does not currently guarantee to
 disable all \s-1GCC\s0 optimizations that are affected by rounding mode.
 Future versions of \s-1GCC\s0 may provide finer control of this setting
 using C99's \f(CW\*(C`FENV_ACCESS\*(C'\fR pragma.  This command-line option
-will be used to specify the default state for \f(CW\*(C`FENV_ACCESS\*(C'\fR.
+will be used along with \fB\-ftrapping\-math\fR to specify the
+default state for \f(CW\*(C`FENV_ACCESS\*(C'\fR.
 .IP "\fB\-fsignaling\-nans\fR" 4
 .IX Item "-fsignaling-nans"
 Compile code assuming that \s-1IEEE\s0 signaling NaNs may generate user-visible
