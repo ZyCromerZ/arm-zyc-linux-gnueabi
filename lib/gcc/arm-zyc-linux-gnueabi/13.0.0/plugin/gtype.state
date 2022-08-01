@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "13.0.0 20220731 (experimental)")
+(!version  "13.0.0 20220801 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 233 0
@@ -15047,27 +15047,27 @@
                        )
                        (!pair  "userdef_literal"
                         (!type struct 673 nil  gc_used "tree_userdef_literal"
-                         (!srcfileloc  "c-family/c-common.h" 1326)
+                         (!srcfileloc  "c-family/c-common.h" 1328)
                          (!fields 5 
                           (!pair  "base"
                            (!type already_seen 25)
-                           (!srcfileloc  "c-family/c-common.h" 1321)
+                           (!srcfileloc  "c-family/c-common.h" 1323)
                            nil )
                           (!pair  "suffix_id"
                            (!type already_seen 23)
-                           (!srcfileloc  "c-family/c-common.h" 1322)
+                           (!srcfileloc  "c-family/c-common.h" 1324)
                            nil )
                           (!pair  "value"
                            (!type already_seen 23)
-                           (!srcfileloc  "c-family/c-common.h" 1323)
+                           (!srcfileloc  "c-family/c-common.h" 1325)
                            nil )
                           (!pair  "num_string"
                            (!type already_seen 23)
-                           (!srcfileloc  "c-family/c-common.h" 1324)
+                           (!srcfileloc  "c-family/c-common.h" 1326)
                            nil )
                           (!pair  "overflow"
                            (!type already_seen 2)
-                           (!srcfileloc  "c-family/c-common.h" 1325)
+                           (!srcfileloc  "c-family/c-common.h" 1327)
                            nil )
                          )
                          nil 774 nil nil )
@@ -26785,15 +26785,15 @@
    (!type already_seen 1893)
   )
   gc_pointed_to "vec<const_char_p,va_gc>"
-  (!srcfileloc  "c-family/c-common.cc" 5852)
+  (!srcfileloc  "c-family/c-common.cc" 5854)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 78)
-    (!srcfileloc  "c-family/c-common.cc" 5852)
+    (!srcfileloc  "c-family/c-common.cc" 5854)
     nil )
    (!pair  "const_char_p"
     (!type already_seen 11)
-    (!srcfileloc  "c-family/c-common.cc" 5852)
+    (!srcfileloc  "c-family/c-common.cc" 5854)
     nil )
   )
  )
@@ -26803,31 +26803,31 @@
    (!type already_seen 1895)
   )
   gc_pointed_to "vec<tree_gc_vec,va_gc>"
-  (!srcfileloc  "c-family/c-common.cc" 8266)
+  (!srcfileloc  "c-family/c-common.cc" 8268)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 78)
-    (!srcfileloc  "c-family/c-common.cc" 8266)
+    (!srcfileloc  "c-family/c-common.cc" 8268)
     nil )
    (!pair  "tree_gc_vec"
     (!type already_seen 83)
-    (!srcfileloc  "c-family/c-common.cc" 8266)
+    (!srcfileloc  "c-family/c-common.cc" 8268)
     nil )
   )
  )
  
  (!type user_struct 1897 nil  gc_unused "hash_set<char*,false,nofree_string_hash>"
-  (!srcfileloc  "c-family/c-common.cc" 9237)
+  (!srcfileloc  "c-family/c-common.cc" 9239)
   (!fields 2 
    (!pair  "nofree_string_hash"
     (!type undefined 1898 nil  gc_unused "nofree_string_hash"
-     (!srcfileloc  "c-family/c-common.cc" 9237)
+     (!srcfileloc  "c-family/c-common.cc" 9239)
     )
-    (!srcfileloc  "c-family/c-common.cc" 9237)
+    (!srcfileloc  "c-family/c-common.cc" 9239)
     nil )
    (!pair  "false"
     (!type already_seen 864)
-    (!srcfileloc  "c-family/c-common.cc" 9237)
+    (!srcfileloc  "c-family/c-common.cc" 9239)
     nil )
   )
  )
@@ -26835,7 +26835,7 @@
  (!type already_seen 1898)
  
  (!type user_struct 1899 nil  gc_unused "hash_map<char*,per_file_includes_t*>"
-  (!srcfileloc  "c-family/c-common.cc" 9242)
+  (!srcfileloc  "c-family/c-common.cc" 9244)
   (!fields 1 
    (!pair  "per_file_includes_t"
     (!type pointer 1900 nil  gc_unused
@@ -26845,7 +26845,7 @@
       (!fields 0 )
       nil 0 nil nil )
     )
-    (!srcfileloc  "c-family/c-common.cc" 9242)
+    (!srcfileloc  "c-family/c-common.cc" 9244)
     nil )
   )
  )
@@ -26871,7 +26871,7 @@
   nil 0 nil nil )
  
  (!type undefined 1906 nil  gc_unused "wide_int_bitmask"
-  (!srcfileloc  "c-family/c-common.h" 1200)
+  (!srcfileloc  "c-family/c-common.h" 1202)
  )
  
  (!type struct 1907 nil  gc_unused "c_omp_directive"nil 
@@ -31607,15 +31607,15 @@
   nil )
  (!pair  "omp_clause_mask"
   (!type already_seen 1906)
-  (!srcfileloc  "c-family/c-common.h" 1200)
+  (!srcfileloc  "c-family/c-common.h" 1202)
   nil )
  (!pair  "wide_int_bitmask"
   (!type already_seen 1906)
-  (!srcfileloc  "c-family/c-common.h" 1200)
+  (!srcfileloc  "c-family/c-common.h" 1202)
   nil )
  (!pair  "bc_state_t"
   (!type already_seen 1905)
-  (!srcfileloc  "c-family/c-common.h" 1155)
+  (!srcfileloc  "c-family/c-common.h" 1157)
   nil )
  (!pair  "stmt_tree"
   (!type already_seen 448)
@@ -31623,39 +31623,39 @@
   nil )
  (!pair  "added_includes_t"
   (!type already_seen 1899)
-  (!srcfileloc  "c-family/c-common.cc" 9242)
+  (!srcfileloc  "c-family/c-common.cc" 9244)
   nil )
  (!pair  "hash_map<char*,per_file_includes_t*>"
   (!type already_seen 1899)
-  (!srcfileloc  "c-family/c-common.cc" 9242)
+  (!srcfileloc  "c-family/c-common.cc" 9244)
   nil )
  (!pair  "per_file_includes_t"
   (!type already_seen 1897)
-  (!srcfileloc  "c-family/c-common.cc" 9237)
+  (!srcfileloc  "c-family/c-common.cc" 9239)
   nil )
  (!pair  "nofree_string_hash"
   (!type already_seen 1898)
-  (!srcfileloc  "c-family/c-common.cc" 9237)
+  (!srcfileloc  "c-family/c-common.cc" 9239)
   nil )
  (!pair  "hash_set<char*,false,nofree_string_hash>"
   (!type already_seen 1897)
-  (!srcfileloc  "c-family/c-common.cc" 9237)
+  (!srcfileloc  "c-family/c-common.cc" 9239)
   nil )
  (!pair  "vec<tree_gc_vec,va_gc>"
   (!type already_seen 1895)
-  (!srcfileloc  "c-family/c-common.cc" 8266)
+  (!srcfileloc  "c-family/c-common.cc" 8268)
   nil )
  (!pair  "tree_gc_vec"
   (!type already_seen 83)
-  (!srcfileloc  "c-family/c-common.cc" 8265)
+  (!srcfileloc  "c-family/c-common.cc" 8267)
   nil )
  (!pair  "vec<const_char_p,va_gc>"
   (!type already_seen 1893)
-  (!srcfileloc  "c-family/c-common.cc" 5852)
+  (!srcfileloc  "c-family/c-common.cc" 5854)
   nil )
  (!pair  "const_char_p"
   (!type already_seen 9)
-  (!srcfileloc  "c-family/c-common.cc" 5851)
+  (!srcfileloc  "c-family/c-common.cc" 5853)
   nil )
  (!pair  "c_binding_ptr"
   (!type already_seen 634)
@@ -36011,7 +36011,7 @@
  )
  (!pair  "cv_cache"
   (!type already_seen 392)
-  (!srcfileloc  "cp/constexpr.cc" 8121)
+  (!srcfileloc  "cp/constexpr.cc" 8127)
   (!options 
    (!option deletable string  "")
   )
@@ -36169,15 +36169,15 @@
   nil )
  (!pair  "g_string_concat_db"
   (!type already_seen 724)
-  (!srcfileloc  "c-family/c-common.h" 1145)
+  (!srcfileloc  "c-family/c-common.h" 1147)
   nil )
  (!pair  "registered_builtin_types"
   (!type already_seen 23)
-  (!srcfileloc  "c-family/c-common.h" 1128)
+  (!srcfileloc  "c-family/c-common.h" 1130)
   nil )
  (!pair  "pending_lang_change"
   (!type already_seen 2)
-  (!srcfileloc  "c-family/c-common.h" 1081)
+  (!srcfileloc  "c-family/c-common.h" 1083)
   nil )
  (!pair  "c_global_trees"
   (!type array 2367 nil  gc_used "CTI_MAX" 
@@ -36194,24 +36194,24 @@
  )
  (!pair  "tree_vector_cache"
   (!type already_seen 1896)
-  (!srcfileloc  "c-family/c-common.cc" 8266)
+  (!srcfileloc  "c-family/c-common.cc" 8268)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "optimize_args"
   (!type already_seen 1894)
-  (!srcfileloc  "c-family/c-common.cc" 5852)
+  (!srcfileloc  "c-family/c-common.cc" 5854)
   nil )
  (!pair  "compound_literal_number"
   (!type already_seen 2)
-  (!srcfileloc  "c-family/c-common.cc" 4729)
+  (!srcfileloc  "c-family/c-common.cc" 4731)
   nil )
  (!pair  "built_in_attributes"
   (!type array 2368 nil  gc_used "(int) ATTR_LAST" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "c-family/c-common.cc" 4018)
+  (!srcfileloc  "c-family/c-common.cc" 4020)
   nil )
  (!pair  "ext_block"
   (!type already_seen 23)
