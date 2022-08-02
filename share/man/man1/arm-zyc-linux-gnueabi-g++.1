@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2022-08-01" "gcc-13.0.0" "GNU"
+.TH GCC 1 "2022-08-02" "gcc-13.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -9323,7 +9323,7 @@ See  \s-1CWE\-476: NULL\s0 Pointer Dereference (\f(CW\*(C`https://cwe.mitre.org/
 .IP "\fB\-Wno\-analyzer\-putenv\-of\-auto\-var\fR" 4
 .IX Item "-Wno-analyzer-putenv-of-auto-var"
 This warning requires \fB\-fanalyzer\fR, which enables it; use
-\&\fB\-Wno\-analyzer\-possible\-null\-dereference\fR to disable it.
+\&\fB\-Wno\-analyzer\-putenv\-of\-auto\-var\fR to disable it.
 .Sp
 This diagnostic warns for paths through the code in which a
 call to \f(CW\*(C`putenv\*(C'\fR is passed a pointer to an automatic variable

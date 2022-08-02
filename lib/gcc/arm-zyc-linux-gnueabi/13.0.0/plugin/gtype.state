@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "13.0.0 20220801 (experimental)")
+(!version  "13.0.0 20220802 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 233 0
@@ -23004,40 +23004,40 @@
   )
   nil 1023 nil nil )
  
- (!type union 1377 nil  gc_used "anonymous:../../gcc/gcc/ctfc.h:165"
-  (!srcfileloc  "ctfc.h" 176)
+ (!type union 1377 nil  gc_used "anonymous:../../gcc/gcc/ctfc.h:166"
+  (!srcfileloc  "ctfc.h" 177)
   (!fields 5 
    (!pair  "dtu_members"
     (!type already_seen 1374)
-    (!srcfileloc  "ctfc.h" 167)
+    (!srcfileloc  "ctfc.h" 168)
     (!options 
      (!option tag string  "CTF_DTU_D_MEMBERS")
     )
    )
    (!pair  "dtu_arr"
     (!type already_seen 1368)
-    (!srcfileloc  "ctfc.h" 169)
+    (!srcfileloc  "ctfc.h" 170)
     (!options 
      (!option tag string  "CTF_DTU_D_ARRAY")
     )
    )
    (!pair  "dtu_enc"
     (!type already_seen 1367)
-    (!srcfileloc  "ctfc.h" 171)
+    (!srcfileloc  "ctfc.h" 172)
     (!options 
      (!option tag string  "CTF_DTU_D_ENCODING")
     )
    )
    (!pair  "dtu_argv"
     (!type already_seen 1376)
-    (!srcfileloc  "ctfc.h" 173)
+    (!srcfileloc  "ctfc.h" 174)
     (!options 
      (!option tag string  "CTF_DTU_D_ARGUMENTS")
     )
    )
    (!pair  "dtu_slice"
     (!type already_seen 1370)
-    (!srcfileloc  "ctfc.h" 175)
+    (!srcfileloc  "ctfc.h" 176)
     (!options 
      (!option tag string  "CTF_DTU_D_SLICE")
     )
@@ -23057,8 +23057,8 @@
    (!type already_seen 1378)
   )
   gc_pointed_to "ctf_dtdef"
-  (!srcfileloc  "ctfc.h" 177)
-  (!fields 6 
+  (!srcfileloc  "ctfc.h" 178)
+  (!fields 7 
    (!pair  "dtd_key"
     (!type already_seen 481)
     (!srcfileloc  "ctfc.h" 158)
@@ -23079,9 +23079,13 @@
     (!type already_seen 2)
     (!srcfileloc  "ctfc.h" 162)
     nil )
+   (!pair  "linkage"
+    (!type already_seen 2)
+    (!srcfileloc  "ctfc.h" 164)
+    nil )
    (!pair  "dtd_u"
     (!type already_seen 1377)
-    (!srcfileloc  "ctfc.h" 176)
+    (!srcfileloc  "ctfc.h" 177)
     nil )
   )
   (!options 
@@ -23098,27 +23102,27 @@
    (!type already_seen 1381)
   )
   gc_pointed_to "ctf_dvdef"
-  (!srcfileloc  "ctfc.h" 190)
+  (!srcfileloc  "ctfc.h" 191)
   (!fields 5 
    (!pair  "dvd_key"
     (!type already_seen 481)
-    (!srcfileloc  "ctfc.h" 185)
+    (!srcfileloc  "ctfc.h" 186)
     nil )
    (!pair  "dvd_name"
     (!type already_seen 11)
-    (!srcfileloc  "ctfc.h" 186)
+    (!srcfileloc  "ctfc.h" 187)
     nil )
    (!pair  "dvd_name_offset"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 187)
+    (!srcfileloc  "ctfc.h" 188)
     nil )
    (!pair  "dvd_visibility"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 188)
+    (!srcfileloc  "ctfc.h" 189)
     nil )
    (!pair  "dvd_type"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 189)
+    (!srcfileloc  "ctfc.h" 190)
     nil )
   )
   (!options 
@@ -23131,30 +23135,30 @@
    (!type already_seen 1384)
   )
   gc_unused "ctf_srcloc"
-  (!srcfileloc  "ctfc.h" 204)
+  (!srcfileloc  "ctfc.h" 205)
   (!fields 3 
    (!pair  "ctsloc_file"
     (!type already_seen 11)
-    (!srcfileloc  "ctfc.h" 201)
+    (!srcfileloc  "ctfc.h" 202)
     nil )
    (!pair  "ctsloc_line"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 202)
+    (!srcfileloc  "ctfc.h" 203)
     nil )
    (!pair  "ctsloc_col"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 203)
+    (!srcfileloc  "ctfc.h" 204)
     nil )
   )
   nil 1023 nil nil )
  
  (!type struct 1386 nil  gc_used "ctfc_dtd_hasher"
-  (!srcfileloc  "ctfc.h" 274)
+  (!srcfileloc  "ctfc.h" 275)
   (!fields 0 )
   nil 1023 nil nil )
  
  (!type struct 1387 nil  gc_used "ctfc_dvd_hasher"
-  (!srcfileloc  "ctfc.h" 276)
+  (!srcfileloc  "ctfc.h" 277)
   (!fields 0 )
   nil 1023 nil nil )
  
@@ -23163,11 +23167,11 @@
    (!type already_seen 1388)
   )
   gc_pointed_to "hash_table<ctfc_dtd_hasher>"
-  (!srcfileloc  "ctfc.h" 274)
+  (!srcfileloc  "ctfc.h" 275)
   (!fields 1 
    (!pair  "ctfc_dtd_hasher"
     (!type already_seen 1386)
-    (!srcfileloc  "ctfc.h" 274)
+    (!srcfileloc  "ctfc.h" 275)
     nil )
   )
  )
@@ -23177,11 +23181,11 @@
    (!type already_seen 1390)
   )
   gc_pointed_to "hash_table<ctfc_dvd_hasher>"
-  (!srcfileloc  "ctfc.h" 276)
+  (!srcfileloc  "ctfc.h" 277)
   (!fields 1 
    (!pair  "ctfc_dvd_hasher"
     (!type already_seen 1387)
-    (!srcfileloc  "ctfc.h" 276)
+    (!srcfileloc  "ctfc.h" 277)
     nil )
   )
  )
@@ -23191,111 +23195,111 @@
    (!type already_seen 1392)
   )
   gc_pointed_to "ctf_container"
-  (!srcfileloc  "ctfc.h" 332)
+  (!srcfileloc  "ctfc.h" 333)
   (!fields 23 
    (!pair  "ctfc_magic"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 268)
+    (!srcfileloc  "ctfc.h" 269)
     nil )
    (!pair  "ctfc_version"
     (!type already_seen 8)
-    (!srcfileloc  "ctfc.h" 269)
+    (!srcfileloc  "ctfc.h" 270)
     nil )
    (!pair  "ctfc_flags"
     (!type already_seen 8)
-    (!srcfileloc  "ctfc.h" 270)
+    (!srcfileloc  "ctfc.h" 271)
     nil )
    (!pair  "ctfc_cuname_offset"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 271)
+    (!srcfileloc  "ctfc.h" 272)
     nil )
    (!pair  "ctfc_types"
     (!type already_seen 1389)
-    (!srcfileloc  "ctfc.h" 274)
+    (!srcfileloc  "ctfc.h" 275)
     nil )
    (!pair  "ctfc_vars"
     (!type already_seen 1391)
-    (!srcfileloc  "ctfc.h" 276)
+    (!srcfileloc  "ctfc.h" 277)
     nil )
    (!pair  "ctfc_ignore_vars"
     (!type already_seen 1391)
-    (!srcfileloc  "ctfc.h" 278)
+    (!srcfileloc  "ctfc.h" 279)
     nil )
    (!pair  "ctfc_strtable"
     (!type already_seen 1366)
-    (!srcfileloc  "ctfc.h" 281)
+    (!srcfileloc  "ctfc.h" 282)
     nil )
    (!pair  "ctfc_aux_strtable"
     (!type already_seen 1366)
-    (!srcfileloc  "ctfc.h" 284)
+    (!srcfileloc  "ctfc.h" 285)
     nil )
    (!pair  "ctfc_num_types"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 286)
+    (!srcfileloc  "ctfc.h" 287)
     nil )
    (!pair  "ctfc_num_stypes"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 287)
+    (!srcfileloc  "ctfc.h" 288)
     nil )
    (!pair  "ctfc_num_global_funcs"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 288)
+    (!srcfileloc  "ctfc.h" 289)
     nil )
    (!pair  "ctfc_num_global_objts"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 289)
+    (!srcfileloc  "ctfc.h" 290)
     nil )
    (!pair  "ctfc_num_vlen_bytes"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 294)
+    (!srcfileloc  "ctfc.h" 295)
     nil )
    (!pair  "ctfc_nextid"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 297)
+    (!srcfileloc  "ctfc.h" 298)
     nil )
    (!pair  "ctfc_vars_list"
     (!type already_seen 1383)
-    (!srcfileloc  "ctfc.h" 305)
+    (!srcfileloc  "ctfc.h" 306)
     (!options 
      (!option length string  "0")
     )
    )
    (!pair  "ctfc_vars_list_count"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 307)
+    (!srcfileloc  "ctfc.h" 308)
     nil )
    (!pair  "ctfc_types_list"
     (!type already_seen 1380)
-    (!srcfileloc  "ctfc.h" 311)
+    (!srcfileloc  "ctfc.h" 312)
     (!options 
      (!option length string  "0")
     )
    )
    (!pair  "ctfc_gfuncs_list"
     (!type already_seen 1380)
-    (!srcfileloc  "ctfc.h" 315)
+    (!srcfileloc  "ctfc.h" 316)
     (!options 
      (!option length string  "0")
     )
    )
    (!pair  "ctfc_gobjts_list"
     (!type already_seen 1383)
-    (!srcfileloc  "ctfc.h" 318)
+    (!srcfileloc  "ctfc.h" 319)
     (!options 
      (!option length string  "0")
     )
    )
    (!pair  "ctfc_numbytes_asm"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 326)
+    (!srcfileloc  "ctfc.h" 327)
     nil )
    (!pair  "ctfc_strlen"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 328)
+    (!srcfileloc  "ctfc.h" 329)
     nil )
    (!pair  "ctfc_aux_strlen"
     (!type already_seen 2)
-    (!srcfileloc  "ctfc.h" 330)
+    (!srcfileloc  "ctfc.h" 331)
     nil )
   )
   nil 1023 nil nil )
@@ -32639,51 +32643,51 @@
   nil )
  (!pair  "ctf_container_ref"
   (!type already_seen 1393)
-  (!srcfileloc  "ctfc.h" 339)
+  (!srcfileloc  "ctfc.h" 340)
   nil )
  (!pair  "ctf_container_t"
   (!type already_seen 1392)
-  (!srcfileloc  "ctfc.h" 332)
+  (!srcfileloc  "ctfc.h" 333)
   nil )
  (!pair  "ctfc_dvd_hasher"
   (!type already_seen 1387)
-  (!srcfileloc  "ctfc.h" 276)
+  (!srcfileloc  "ctfc.h" 277)
   nil )
  (!pair  "hash_table<ctfc_dvd_hasher>"
   (!type already_seen 1390)
-  (!srcfileloc  "ctfc.h" 276)
+  (!srcfileloc  "ctfc.h" 277)
   nil )
  (!pair  "ctfc_dtd_hasher"
   (!type already_seen 1386)
-  (!srcfileloc  "ctfc.h" 274)
+  (!srcfileloc  "ctfc.h" 275)
   nil )
  (!pair  "hash_table<ctfc_dtd_hasher>"
   (!type already_seen 1388)
-  (!srcfileloc  "ctfc.h" 274)
+  (!srcfileloc  "ctfc.h" 275)
   nil )
  (!pair  "ctf_srcloc_ref"
   (!type already_seen 1385)
-  (!srcfileloc  "ctfc.h" 206)
+  (!srcfileloc  "ctfc.h" 207)
   nil )
  (!pair  "ctf_srcloc_t"
   (!type already_seen 1384)
-  (!srcfileloc  "ctfc.h" 204)
+  (!srcfileloc  "ctfc.h" 205)
   nil )
  (!pair  "ctf_dtdef_ref"
   (!type already_seen 1379)
-  (!srcfileloc  "ctfc.h" 195)
+  (!srcfileloc  "ctfc.h" 196)
   nil )
  (!pair  "ctf_dvdef_ref"
   (!type already_seen 1382)
-  (!srcfileloc  "ctfc.h" 194)
+  (!srcfileloc  "ctfc.h" 195)
   nil )
  (!pair  "ctf_dvdef_t"
   (!type already_seen 1381)
-  (!srcfileloc  "ctfc.h" 192)
+  (!srcfileloc  "ctfc.h" 193)
   nil )
  (!pair  "ctf_dtdef_t"
   (!type already_seen 1378)
-  (!srcfileloc  "ctfc.h" 179)
+  (!srcfileloc  "ctfc.h" 180)
   nil )
  (!pair  "ctf_func_arg_t"
   (!type already_seen 1375)
@@ -37117,7 +37121,7 @@
   nil )
  (!pair  "tu_ctfc"
   (!type already_seen 1393)
-  (!srcfileloc  "ctfc.h" 341)
+  (!srcfileloc  "ctfc.h" 342)
   nil )
  (!pair  "inline_entry_data_table"
   (!type already_seen 1358)
