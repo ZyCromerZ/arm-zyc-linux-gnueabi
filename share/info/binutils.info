@@ -4096,6 +4096,7 @@ export information.
              [-v|--verbose]
              [-h|--help] [-V|--version]
              [--no-leading-underscore] [--leading-underscore]
+             [--deterministic-libraries] [--non-deterministic-libraries]
              [object-file ...]
 
    'dlltool' reads its inputs, which can come from the '-d' and '-b'
@@ -4196,6 +4197,14 @@ description of the '-I' or '--identify' option.
 '--output-delaylib FILENAME'
      Specifies the name of the delay-import library file to be created
      by dlltool.
+
+'--deterministic-libraries'
+'--non-deterministic-libraries'
+     When creating output libraries in response to either the
+     '--output-lib' or '--output-delaylib' options either use the value
+     of zero for any timestamps, user ids and group ids created
+     ('--deterministic-libraries') or the actual timestamps, user ids
+     and group ids ('--non-deterministic-libraries').
 
 '--export-all-symbols'
      Treat all global and weak defined symbols found in the input object
@@ -5924,7 +5933,7 @@ Binutils Index
 * Archive file symbol index information: readelf.             (line 272)
 * archive headers:                       objdump.             (line  82)
 * archives:                              ar.                  (line   6)
-* base files:                            dlltool.             (line 124)
+* base files:                            dlltool.             (line 125)
 * bug criteria:                          Bug Criteria.        (line   6)
 * bug reports:                           Bug Reporting.       (line   6)
 * bugs:                                  Reporting Bugs.      (line   6)
@@ -5998,7 +6007,7 @@ Binutils Index
 * fatal signal:                          Bug Criteria.        (line   9)
 * file name:                             nm.                  (line 183)
 * header information, all:               objdump.             (line 898)
-* input .def file:                       dlltool.             (line 120)
+* input .def file:                       dlltool.             (line 121)
 * input file name:                       nm.                  (line 183)
 * Instruction width:                     objdump.             (line 536)
 * libraries:                             ar.                  (line  25)
@@ -6108,19 +6117,19 @@ Node: addr2line146397
 Node: windmc152352
 Node: windres156011
 Node: dlltool162581
-Node: def file format175578
-Node: readelf178108
-Node: elfedit197207
-Node: Common Options200633
-Node: Selecting the Target System201667
-Node: Target Selection202595
-Node: Architecture Selection204576
-Node: debuginfod205404
-Node: Reporting Bugs206406
-Node: Bug Criteria207168
-Node: Bug Reporting207721
-Node: GNU Free Documentation License214588
-Node: Binutils Index239748
+Node: def file format176034
+Node: readelf178564
+Node: elfedit197663
+Node: Common Options201089
+Node: Selecting the Target System202123
+Node: Target Selection203051
+Node: Architecture Selection205032
+Node: debuginfod205860
+Node: Reporting Bugs206862
+Node: Bug Criteria207624
+Node: Bug Reporting208177
+Node: GNU Free Documentation License215044
+Node: Binutils Index240204
 
 End Tag Table
 
