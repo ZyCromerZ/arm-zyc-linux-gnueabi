@@ -34,7 +34,7 @@
 #define _GLIBCXX_RELEASE 11
 
 // The datestamp of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20220911
+#define __GLIBCXX__ 20220912
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
