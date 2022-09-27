@@ -1891,19 +1891,21 @@ the '--reverse-bytes' option.)
 '--compress-debug-sections=zlib'
 '--compress-debug-sections=zlib-gnu'
 '--compress-debug-sections=zlib-gabi'
+'--compress-debug-sections=zstd'
      For ELF files, these options control how DWARF debug sections are
      compressed.  '--compress-debug-sections=none' is equivalent to
      '--decompress-debug-sections'.  '--compress-debug-sections=zlib'
      and '--compress-debug-sections=zlib-gabi' are equivalent to
      '--compress-debug-sections'.  '--compress-debug-sections=zlib-gnu'
-     compresses DWARF debug sections using zlib.  The debug sections are
-     renamed to begin with '.zdebug' instead of '.debug'.  Note - if
-     compression would actually make a section _larger_, then it is not
-     compressed nor renamed.
+     compresses DWARF debug sections using the obsoleted zlib-gnu
+     format.  The debug sections are renamed to begin with '.zdebug'.
+     '--compress-debug-sections=zstd' compresses DWARF debug sections
+     using zstd.  Note - if compression would actually make a section
+     _larger_, then it is not compressed nor renamed.
 
 '--decompress-debug-sections'
-     Decompress DWARF debug sections using zlib.  The original section
-     names of the compressed sections are restored.
+     Decompress DWARF debug sections.  For a '.zdebug' section, the
+     original name is restored.
 
 '--elf-stt-common=yes'
 '--elf-stt-common=no'
@@ -6106,30 +6108,30 @@ Node: ar cmdline6900
 Node: ar scripts20216
 Node: nm25902
 Node: objcopy41579
-Node: objdump82427
-Node: ranlib119173
-Node: size120772
-Node: strings124741
-Node: strip130598
-Node: c++filt140440
-Ref: c++filt-Footnote-1146301
-Node: addr2line146407
-Node: windmc152362
-Node: windres156021
-Node: dlltool162591
-Node: def file format176044
-Node: readelf178574
-Node: elfedit197673
-Node: Common Options201099
-Node: Selecting the Target System202133
-Node: Target Selection203061
-Node: Architecture Selection205042
-Node: debuginfod205870
-Node: Reporting Bugs206872
-Node: Bug Criteria207634
-Node: Bug Reporting208187
-Node: GNU Free Documentation License215054
-Node: Binutils Index240214
+Node: objdump82524
+Node: ranlib119270
+Node: size120869
+Node: strings124838
+Node: strip130695
+Node: c++filt140537
+Ref: c++filt-Footnote-1146398
+Node: addr2line146504
+Node: windmc152459
+Node: windres156118
+Node: dlltool162688
+Node: def file format176141
+Node: readelf178671
+Node: elfedit197770
+Node: Common Options201196
+Node: Selecting the Target System202230
+Node: Target Selection203158
+Node: Architecture Selection205139
+Node: debuginfod205967
+Node: Reporting Bugs206969
+Node: Bug Criteria207731
+Node: Bug Reporting208284
+Node: GNU Free Documentation License215151
+Node: Binutils Index240311
 
 End Tag Table
 
