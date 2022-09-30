@@ -318,6 +318,9 @@ which prints a flat profile and call graph analysis for all functions.
      tables.  This is useful if you intend to print out the output, or
      are tired of seeing the blurbs.
 
+'-B'
+     The '-B' option causes 'gprof' to print the call graph analysis.
+
 '-C[SYMSPEC]'
 '--exec-counts[=SYMSPEC]'
      The '-C' option causes 'gprof' to print a tally of functions and
@@ -2431,30 +2434,30 @@ Node: Compiling4531
 Node: Executing8587
 Node: Invoking11480
 Node: Output Options12895
-Node: Analysis Options19987
-Node: Miscellaneous Options23907
-Node: Deprecated Options25161
-Node: Symspecs27224
-Node: Output29050
-Node: Flat Profile30090
-Node: Call Graph35043
-Node: Primary38275
-Node: Callers40863
-Node: Subroutines42981
-Node: Cycles44822
-Node: Line-by-line51599
-Node: Annotated Source55675
-Node: Inaccuracy58673
-Node: Sampling Error58931
-Node: Assumptions61835
-Node: How do I?63305
-Node: Incompatibilities64862
-Node: Details66356
-Node: Implementation66749
-Node: File Format72648
-Node: Internals76940
-Node: Debugging85430
-Node: GNU Free Documentation License87020
+Node: Analysis Options20063
+Node: Miscellaneous Options23983
+Node: Deprecated Options25237
+Node: Symspecs27300
+Node: Output29126
+Node: Flat Profile30166
+Node: Call Graph35119
+Node: Primary38351
+Node: Callers40939
+Node: Subroutines43057
+Node: Cycles44898
+Node: Line-by-line51675
+Node: Annotated Source55751
+Node: Inaccuracy58749
+Node: Sampling Error59007
+Node: Assumptions61911
+Node: How do I?63381
+Node: Incompatibilities64938
+Node: Details66432
+Node: Implementation66825
+Node: File Format72724
+Node: Internals77016
+Node: Debugging85506
+Node: GNU Free Documentation License87096
 
 End Tag Table
 
