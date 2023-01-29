@@ -1,6 +1,6 @@
-This is libc.info, produced by makeinfo version 6.7 from libc.texinfo.
+This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.35
+This is ‘The GNU C Library Reference Manual’, for version 2.36
 (ZyC-GCC).
 
    Copyright © 1993–2022 Free Software Foundation, Inc.
@@ -547,6 +547,9 @@ START-INFO-DIR-ENTRY
 * alloca: (libc)Variable Size Automatic.
 * alphasort64: (libc)Scanning Directory Content.
 * alphasort: (libc)Scanning Directory Content.
+* arc4random: (libc)High Quality Random.
+* arc4random_buf: (libc)High Quality Random.
+* arc4random_uniform: (libc)High Quality Random.
 * argp_error: (libc)Argp Helper Functions.
 * argp_failure: (libc)Argp Helper Functions.
 * argp_help: (libc)Argp Help.
@@ -813,6 +816,7 @@ START-INFO-DIR-ENTRY
 * dirfd: (libc)Opening a Directory.
 * dirname: (libc)Finding Tokens in a String.
 * div: (libc)Integer Division.
+* dlinfo: (libc)Dynamic Linker Introspection.
 * dmull: (libc)Misc FP Arithmetic.
 * dngettext: (libc)Advanced gettext functions.
 * drand48: (libc)SVID Random.
@@ -2197,7 +2201,7 @@ Program and File Index
 * ctype.h <1>:                           Classification of Characters.
                                                               (line  25)
 * ctype.h <2>:                           Case Conversion.     (line  21)
-* dirent.h:                              Reserved Names.      (line  81)
+* dirent.h:                              Reserved Names.      (line  80)
 * dirent.h <1>:                          Directory Entries.   (line   6)
 * dirent.h <2>:                          Opening a Directory. (line   6)
 * dirent.h <3>:                          Reading/Closing Directory.
@@ -2207,10 +2211,10 @@ Program and File Index
 * envz.h:                                Envz Functions.      (line  26)
 * errno.h:                               Error Reporting.     (line  13)
 * errno.h <1>:                           Checking for Errors. (line  12)
-* errno.h <2>:                           Checking for Errors. (line  55)
+* errno.h <2>:                           Checking for Errors. (line  54)
 * errno.h <3>:                           Error Codes.         (line   6)
 * execinfo.h:                            Backtraces.          (line  13)
-* fcntl.h:                               Reserved Names.      (line  84)
+* fcntl.h:                               Reserved Names.      (line  83)
 * fcntl.h <1>:                           Opening and Closing Files.
                                                               (line   8)
 * fcntl.h <2>:                           Control Operations.  (line  15)
@@ -2225,10 +2229,10 @@ Program and File Index
 * float.h:                               Floating Point Parameters.
                                                               (line   6)
 * fnmatch.h:                             Wildcard Matching.   (line   6)
-* gcc:                                   ISO C.               (line  16)
+* gcc:                                   ISO C.               (line  15)
 * gconv.h:                               glibc iconv Implementation.
-                                                              (line 207)
-* grp.h:                                 Reserved Names.      (line  86)
+                                                              (line 201)
+* grp.h:                                 Reserved Names.      (line  85)
 * grp.h <1>:                             Setting Groups.      (line  79)
 * grp.h <2>:                             Setting Groups.      (line 115)
 * grp.h <3>:                             Group Data Structure.
@@ -2238,21 +2242,21 @@ Program and File Index
 * iconv.h:                               Generic Conversion Interface.
                                                               (line  79)
 * iconv.h <1>:                           Generic Conversion Interface.
-                                                              (line 107)
+                                                              (line 106)
 * iconv.h <2>:                           Generic Conversion Interface.
-                                                              (line 201)
+                                                              (line 200)
 * kill:                                  Termination Signals. (line  28)
 * ksh:                                   Wildcard Matching.   (line  79)
 * langinfo.h:                            The Elegant and Fast Way.
                                                               (line  27)
-* limits.h:                              Reserved Names.      (line  88)
+* limits.h:                              Reserved Names.      (line  87)
 * limits.h <1>:                          Selecting the Conversion.
                                                               (line  23)
 * limits.h <2>:                          General Limits.      (line  13)
 * limits.h <3>:                          Limits for Files.    (line  14)
 * limits.h <4>:                          Width of Type.       (line   6)
 * locale:                                Locale Names.        (line   8)
-* locale.h:                              Setting the Locale.  (line  23)
+* locale.h:                              Setting the Locale.  (line  21)
 * locale.h <1>:                          The Lame Way to Locale Data.
                                                               (line  13)
 * localtime:                             TZ Variable.         (line 135)
@@ -2288,14 +2292,14 @@ Program and File Index
 * printf.h <1>:                          Conversion Specifier Options.
                                                               (line  13)
 * pt_chown:                              Configuring and compiling.
-                                                              (line 203)
-* pwd.h:                                 Reserved Names.      (line  90)
+                                                              (line 209)
+* pwd.h:                                 Reserved Names.      (line  89)
 * pwd.h <1>:                             User Data Structure. (line   7)
 * setjmp.h:                              Non-Local Details.   (line   8)
 * setjmp.h <1>:                          Non-Local Exits and Signals.
                                                               (line  18)
 * sh:                                    Running a Command.   (line  13)
-* signal.h:                              Reserved Names.      (line  93)
+* signal.h:                              Reserved Names.      (line  92)
 * signal.h <1>:                          Standard Signals.    (line   6)
 * signal.h <2>:                          Basic Signal Handling.
                                                               (line   8)
@@ -2329,7 +2333,7 @@ Program and File Index
                                                               (line   8)
 * stdio.h <9>:                           File Positioning.    (line  19)
 * stdio.h <10>:                          Portable Positioning.
-                                                              (line  51)
+                                                              (line  50)
 * stdio.h <11>:                          Flushing Buffers.    (line  23)
 * stdio.h <12>:                          Controlling Buffering.
                                                               (line  11)
@@ -2362,20 +2366,21 @@ Program and File Index
 * stdlib.h <9>:                          Array Sort Function. (line   7)
 * stdlib.h <10>:                         Temporary Files.     (line 165)
 * stdlib.h <11>:                         Allocation.          (line   6)
-* stdlib.h <12>:                         ISO Random.          (line  11)
+* stdlib.h <12>:                         ISO Random.          (line  10)
 * stdlib.h <13>:                         BSD Random.          (line  10)
 * stdlib.h <14>:                         SVID Random.         (line  31)
-* stdlib.h <15>:                         Integer Division.    (line  16)
-* stdlib.h <16>:                         Absolute Value.      (line  12)
-* stdlib.h <17>:                         Parsing of Integers. (line   6)
-* stdlib.h <18>:                         Parsing of Floats.   (line   6)
-* stdlib.h <19>:                         Printing of Floats.  (line   6)
-* stdlib.h <20>:                         Environment Access.  (line   7)
-* stdlib.h <21>:                         Exit Status.         (line  43)
-* stdlib.h <22>:                         Aborting a Program.  (line   7)
-* stdlib.h <23>:                         Running a Command.   (line  34)
-* string.h:                              Error Messages.      (line  83)
-* string.h <1>:                          Error Messages.      (line  95)
+* stdlib.h <15>:                         High Quality Random. (line  15)
+* stdlib.h <16>:                         Integer Division.    (line  16)
+* stdlib.h <17>:                         Absolute Value.      (line  12)
+* stdlib.h <18>:                         Parsing of Integers. (line   6)
+* stdlib.h <19>:                         Parsing of Floats.   (line   6)
+* stdlib.h <20>:                         Printing of Floats.  (line   6)
+* stdlib.h <21>:                         Environment Access.  (line   7)
+* stdlib.h <22>:                         Exit Status.         (line  43)
+* stdlib.h <23>:                         Aborting a Program.  (line   7)
+* stdlib.h <24>:                         Running a Command.   (line  34)
+* string.h:                              Error Messages.      (line  82)
+* string.h <1>:                          Error Messages.      (line  94)
 * string.h <2>:                          String Length.       (line   7)
 * string.h <3>:                          Copying Strings and Arrays.
                                                               (line   9)
@@ -2414,7 +2419,7 @@ Program and File Index
                                                               (line   6)
 * sys/socket.h <14>:                     Socket-Level Options.
                                                               (line  12)
-* sys/stat.h:                            Reserved Names.      (line  96)
+* sys/stat.h:                            Reserved Names.      (line  95)
 * sys/stat.h <1>:                        Creating Directories.
                                                               (line  51)
 * sys/stat.h <2>:                        Attribute Meanings.  (line  12)
@@ -2427,7 +2432,7 @@ Program and File Index
 * sys/time.h:                            File Times.          (line  97)
 * sys/time.h <1>:                        Setting an Alarm.    (line  51)
 * sys/times.h:                           Reserved Names.      (line  98)
-* sys/times.h <1>:                       Processor Time.      (line  10)
+* sys/times.h <1>:                       Processor Time.      (line   9)
 * sys/timex.h:                           Setting and Adjusting the Time.
                                                               (line  60)
 * sys/types.h:                           Waiting for I/O.     (line  23)
@@ -2448,7 +2453,7 @@ Program and File Index
 * sys/wait.h <1>:                        Process Completion Status.
                                                               (line  10)
 * sys/wait.h <2>:                        BSD Wait Functions.  (line   9)
-* termios.h:                             Reserved Names.      (line 102)
+* termios.h:                             Reserved Names.      (line 101)
 * termios.h <1>:                         Terminal Modes.      (line   6)
 * threads.h:                             ISO C Threads.       (line   6)
 * time.h:                                File Times.          (line  14)
@@ -2505,10 +2510,10 @@ Program and File Index
 * wchar.h <1>:                           Concatenating Strings.
                                                               (line   6)
 * wchar.h <2>:                           Collation Functions. (line  18)
-* wchar.h <3>:                           Extended Char Intro. (line 104)
-* wchar.h <4>:                           Extended Char Intro. (line 154)
+* wchar.h <3>:                           Extended Char Intro. (line  98)
+* wchar.h <4>:                           Extended Char Intro. (line 147)
 * wchar.h <5>:                           Keeping the state.   (line  20)
-* wchar.h <6>:                           Keeping the state.   (line  58)
+* wchar.h <6>:                           Keeping the state.   (line  57)
 * wchar.h <7>:                           Converting a Character.
                                                               (line  33)
 * wchar.h <8>:                           Converting a Character.
@@ -2518,40 +2523,40 @@ Program and File Index
 * wchar.h <10>:                          Converting a Character.
                                                               (line 238)
 * wchar.h <11>:                          Converting a Character.
-                                                              (line 335)
-* wchar.h <12>:                          Converting Strings.  (line  55)
-* wchar.h <13>:                          Converting Strings.  (line 138)
+                                                              (line 336)
+* wchar.h <12>:                          Converting Strings.  (line  54)
+* wchar.h <13>:                          Converting Strings.  (line 137)
 * wchar.h <14>:                          Simple Output.       (line  10)
 * wchar.h <15>:                          Character Input.     (line   8)
 * wchar.h <16>:                          Parsing of Integers. (line   6)
 * wctype.h:                              Classification of Wide Characters.
-                                                              (line  36)
+                                                              (line  35)
 * wctype.h <1>:                          Classification of Wide Characters.
-                                                              (line  55)
+                                                              (line  54)
 * wctype.h <2>:                          Classification of Wide Characters.
-                                                              (line  69)
+                                                              (line  68)
 * wctype.h <3>:                          Classification of Wide Characters.
-                                                              (line  91)
+                                                              (line  90)
 * wctype.h <4>:                          Classification of Wide Characters.
-                                                              (line 111)
+                                                              (line 110)
 * wctype.h <5>:                          Classification of Wide Characters.
-                                                              (line 125)
+                                                              (line 124)
 * wctype.h <6>:                          Classification of Wide Characters.
-                                                              (line 149)
+                                                              (line 148)
 * wctype.h <7>:                          Classification of Wide Characters.
-                                                              (line 164)
+                                                              (line 163)
 * wctype.h <8>:                          Classification of Wide Characters.
-                                                              (line 178)
+                                                              (line 177)
 * wctype.h <9>:                          Classification of Wide Characters.
-                                                              (line 192)
+                                                              (line 191)
 * wctype.h <10>:                         Classification of Wide Characters.
-                                                              (line 206)
+                                                              (line 205)
 * wctype.h <11>:                         Classification of Wide Characters.
-                                                              (line 239)
+                                                              (line 238)
 * wctype.h <12>:                         Classification of Wide Characters.
-                                                              (line 253)
+                                                              (line 252)
 * wctype.h <13>:                         Classification of Wide Characters.
-                                                              (line 268)
+                                                              (line 267)
 * wctype.h <14>:                         Wide Character Case Conversion.
                                                               (line  18)
 * wctype.h <15>:                         Wide Character Case Conversion.

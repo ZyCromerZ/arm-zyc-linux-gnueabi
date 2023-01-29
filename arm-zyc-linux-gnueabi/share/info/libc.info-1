@@ -1,6 +1,6 @@
-This is libc.info, produced by makeinfo version 6.7 from libc.texinfo.
+This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.35
+This is ‘The GNU C Library Reference Manual’, for version 2.36
 (ZyC-GCC).
 
    Copyright © 1993–2022 Free Software Foundation, Inc.
@@ -547,6 +547,9 @@ START-INFO-DIR-ENTRY
 * alloca: (libc)Variable Size Automatic.
 * alphasort64: (libc)Scanning Directory Content.
 * alphasort: (libc)Scanning Directory Content.
+* arc4random: (libc)High Quality Random.
+* arc4random_buf: (libc)High Quality Random.
+* arc4random_uniform: (libc)High Quality Random.
 * argp_error: (libc)Argp Helper Functions.
 * argp_failure: (libc)Argp Helper Functions.
 * argp_help: (libc)Argp Help.
@@ -813,6 +816,7 @@ START-INFO-DIR-ENTRY
 * dirfd: (libc)Opening a Directory.
 * dirname: (libc)Finding Tokens in a String.
 * div: (libc)Integer Division.
+* dlinfo: (libc)Dynamic Linker Introspection.
 * dmull: (libc)Misc FP Arithmetic.
 * dngettext: (libc)Advanced gettext functions.
 * drand48: (libc)SVID Random.
@@ -2169,7 +2173,7 @@ File: libc.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 Main Menu
 *********
 
-This is ‘The GNU C Library Reference Manual’, for version 2.35
+This is ‘The GNU C Library Reference Manual’, for version 2.36
 (ZyC-GCC).
 
    Copyright © 1993–2022 Free Software Foundation, Inc.
@@ -2995,6 +2999,7 @@ Pseudo-Random Numbers
 * ISO Random::                  ‘rand’ and friends.
 * BSD Random::                  ‘random’ and friends.
 * SVID Random::                 ‘drand48’ and friends.
+* High Quality Random::         ‘arc4random’ and friends.
 
 Arithmetic
 
@@ -5757,6 +5762,10 @@ on other systems.
      this particular function will always fail with ‘ENOSYS’ unless you
      install a new version of the C library or the operating system.
 
+ -- Macro: int ELIBEXEC
+
+     “Cannot exec a shared library directly.”
+
  -- Macro: int ENOTSUP
 
      “Not supported.” A function returns this error when certain
@@ -5994,10 +6003,6 @@ They are not yet documented._
  -- Macro: int ELIBMAX
 
      “Attempting to link in too many shared libraries.”
-
- -- Macro: int ELIBEXEC
-
-     “Cannot exec a shared library directly.”
 
  -- Macro: int ESTRPIPE
 
