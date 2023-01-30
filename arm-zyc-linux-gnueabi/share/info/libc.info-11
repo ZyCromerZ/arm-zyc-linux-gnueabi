@@ -1,9 +1,9 @@
-This is libc.info, produced by makeinfo version 6.7 from libc.texinfo.
+This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.35
+This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
 (ZyC-GCC).
 
-   Copyright © 1993–2022 Free Software Foundation, Inc.
+   Copyright © 1993–2023 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -547,6 +547,9 @@ START-INFO-DIR-ENTRY
 * alloca: (libc)Variable Size Automatic.
 * alphasort64: (libc)Scanning Directory Content.
 * alphasort: (libc)Scanning Directory Content.
+* arc4random: (libc)High Quality Random.
+* arc4random_buf: (libc)High Quality Random.
+* arc4random_uniform: (libc)High Quality Random.
 * argp_error: (libc)Argp Helper Functions.
 * argp_failure: (libc)Argp Helper Functions.
 * argp_help: (libc)Argp Help.
@@ -813,6 +816,7 @@ START-INFO-DIR-ENTRY
 * dirfd: (libc)Opening a Directory.
 * dirname: (libc)Finding Tokens in a String.
 * div: (libc)Integer Division.
+* dlinfo: (libc)Dynamic Linker Introspection.
 * dmull: (libc)Misc FP Arithmetic.
 * dngettext: (libc)Advanced gettext functions.
 * drand48: (libc)SVID Random.
@@ -2164,6 +2168,264 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
+File: libc.info,  Node: Delivery of Signal,  Prev: Signal Generation,  Up: Concepts of Signals
+
+24.1.3 How Signals Are Delivered
+--------------------------------
+
+When a signal is generated, it becomes “pending”.  Normally it remains
+pending for just a short period of time and then is “delivered” to the
+process that was signaled.  However, if that kind of signal is currently
+“blocked”, it may remain pending indefinitely—until signals of that kind
+are “unblocked”.  Once unblocked, it will be delivered immediately.
+*Note Blocking Signals::.
+
+   When the signal is delivered, whether right away or after a long
+delay, the “specified action” for that signal is taken.  For certain
+signals, such as ‘SIGKILL’ and ‘SIGSTOP’, the action is fixed, but for
+most signals, the program has a choice: ignore the signal, specify a
+“handler function”, or accept the “default action” for that kind of
+signal.  The program specifies its choice using functions such as
+‘signal’ or ‘sigaction’ (*note Signal Actions::).  We sometimes say that
+a handler “catches” the signal.  While the handler is running, that
+particular signal is normally blocked.
+
+   If the specified action for a kind of signal is to ignore it, then
+any such signal which is generated is discarded immediately.  This
+happens even if the signal is also blocked at the time.  A signal
+discarded in this way will never be delivered, not even if the program
+subsequently specifies a different action for that kind of signal and
+then unblocks it.
+
+   If a signal arrives which the program has neither handled nor
+ignored, its “default action” takes place.  Each kind of signal has its
+own default action, documented below (*note Standard Signals::).  For
+most kinds of signals, the default action is to terminate the process.
+For certain kinds of signals that represent “harmless” events, the
+default action is to do nothing.
+
+   When a signal terminates a process, its parent process can determine
+the cause of termination by examining the termination status code
+reported by the ‘wait’ or ‘waitpid’ functions.  (This is discussed in
+more detail in *note Process Completion::.)  The information it can get
+includes the fact that termination was due to a signal and the kind of
+signal involved.  If a program you run from a shell is terminated by a
+signal, the shell typically prints some kind of error message.
+
+   The signals that normally represent program errors have a special
+property: when one of these signals terminates the process, it also
+writes a “core dump file” which records the state of the process at the
+time of termination.  You can examine the core dump with a debugger to
+investigate what caused the error.
+
+   If you raise a “program error” signal by explicit request, and this
+terminates the process, it makes a core dump file just as if the signal
+had been due directly to an error.
+
+
+File: libc.info,  Node: Standard Signals,  Next: Signal Actions,  Prev: Concepts of Signals,  Up: Signal Handling
+
+24.2 Standard Signals
+=====================
+
+This section lists the names for various standard kinds of signals and
+describes what kind of event they mean.  Each signal name is a macro
+which stands for a positive integer—the “signal number” for that kind of
+signal.  Your programs should never make assumptions about the numeric
+code for a particular kind of signal, but rather refer to them always by
+the names defined here.  This is because the number for a given kind of
+signal can vary from system to system, but the meanings of the names are
+standardized and fairly uniform.
+
+   The signal names are defined in the header file ‘signal.h’.
+
+ -- Macro: int NSIG
+
+     The value of this symbolic constant is the total number of signals
+     defined.  Since the signal numbers are allocated consecutively,
+     ‘NSIG’ is also one greater than the largest defined signal number.
+
+* Menu:
+
+* Program Error Signals::       Used to report serious program errors.
+* Termination Signals::         Used to interrupt and/or terminate the
+                                 program.
+* Alarm Signals::               Used to indicate expiration of timers.
+* Asynchronous I/O Signals::    Used to indicate input is available.
+* Job Control Signals::         Signals used to support job control.
+* Operation Error Signals::     Used to report operational system errors.
+* Miscellaneous Signals::       Miscellaneous Signals.
+* Signal Messages::             Printing a message describing a signal.
+
+
+File: libc.info,  Node: Program Error Signals,  Next: Termination Signals,  Up: Standard Signals
+
+24.2.1 Program Error Signals
+----------------------------
+
+The following signals are generated when a serious program error is
+detected by the operating system or the computer itself.  In general,
+all of these signals are indications that your program is seriously
+broken in some way, and there’s usually no way to continue the
+computation which encountered the error.
+
+   Some programs handle program error signals in order to tidy up before
+terminating; for example, programs that turn off echoing of terminal
+input should handle program error signals in order to turn echoing back
+on.  The handler should end by specifying the default action for the
+signal that happened and then reraising it; this will cause the program
+to terminate with that signal, as if it had not had a handler.  (*Note
+Termination in Handler::.)
+
+   Termination is the sensible ultimate outcome from a program error in
+most programs.  However, programming systems such as Lisp that can load
+compiled user programs might need to keep executing even if a user
+program incurs an error.  These programs have handlers which use
+‘longjmp’ to return control to the command level.
+
+   The default action for all of these signals is to cause the process
+to terminate.  If you block or ignore these signals or establish
+handlers for them that return normally, your program will probably break
+horribly when such signals happen, unless they are generated by ‘raise’
+or ‘kill’ instead of a real error.
+
+   When one of these program error signals terminates a process, it also
+writes a “core dump file” which records the state of the process at the
+time of termination.  The core dump file is named ‘core’ and is written
+in whichever directory is current in the process at the time.  (On
+GNU/Hurd systems, you can specify the file name for core dumps with the
+environment variable ‘COREFILE’.)  The purpose of core dump files is so
+that you can examine them with a debugger to investigate what caused the
+error.
+
+ -- Macro: int SIGFPE
+
+     The ‘SIGFPE’ signal reports a fatal arithmetic error.  Although the
+     name is derived from “floating-point exception”, this signal
+     actually covers all arithmetic errors, including division by zero
+     and overflow.  If a program stores integer data in a location which
+     is then used in a floating-point operation, this often causes an
+     “invalid operation” exception, because the processor cannot
+     recognize the data as a floating-point number.
+
+     Actual floating-point exceptions are a complicated subject because
+     there are many types of exceptions with subtly different meanings,
+     and the ‘SIGFPE’ signal doesn’t distinguish between them.  The
+     ‘IEEE Standard for Binary Floating-Point Arithmetic (ANSI/IEEE Std
+     754-1985 and ANSI/IEEE Std 854-1987)’ defines various
+     floating-point exceptions and requires conforming computer systems
+     to report their occurrences.  However, this standard does not
+     specify how the exceptions are reported, or what kinds of handling
+     and control the operating system can offer to the programmer.
+
+   BSD systems provide the ‘SIGFPE’ handler with an extra argument that
+distinguishes various causes of the exception.  In order to access this
+argument, you must define the handler to accept two arguments, which
+means you must cast it to a one-argument function type in order to
+establish the handler.  The GNU C Library does provide this extra
+argument, but the value is meaningful only on operating systems that
+provide the information (BSD systems and GNU systems).
+
+‘FPE_INTOVF_TRAP’
+
+     Integer overflow (impossible in a C program unless you enable
+     overflow trapping in a hardware-specific fashion).
+‘FPE_INTDIV_TRAP’
+
+     Integer division by zero.
+‘FPE_SUBRNG_TRAP’
+
+     Subscript-range (something that C programs never check for).
+‘FPE_FLTOVF_TRAP’
+
+     Floating overflow trap.
+‘FPE_FLTDIV_TRAP’
+
+     Floating/decimal division by zero.
+‘FPE_FLTUND_TRAP’
+
+     Floating underflow trap.  (Trapping on floating underflow is not
+     normally enabled.)
+‘FPE_DECOVF_TRAP’
+
+     Decimal overflow trap.  (Only a few machines have decimal
+     arithmetic and C never uses it.)
+
+ -- Macro: int SIGILL
+
+     The name of this signal is derived from “illegal instruction”; it
+     usually means your program is trying to execute garbage or a
+     privileged instruction.  Since the C compiler generates only valid
+     instructions, ‘SIGILL’ typically indicates that the executable file
+     is corrupted, or that you are trying to execute data.  Some common
+     ways of getting into the latter situation are by passing an invalid
+     object where a pointer to a function was expected, or by writing
+     past the end of an automatic array (or similar problems with
+     pointers to automatic variables) and corrupting other data on the
+     stack such as the return address of a stack frame.
+
+     ‘SIGILL’ can also be generated when the stack overflows, or when
+     the system has trouble running the handler for a signal.
+
+ -- Macro: int SIGSEGV
+
+     This signal is generated when a program tries to read or write
+     outside the memory that is allocated for it, or to write memory
+     that can only be read.  (Actually, the signals only occur when the
+     program goes far enough outside to be detected by the system’s
+     memory protection mechanism.)  The name is an abbreviation for
+     “segmentation violation”.
+
+     Common ways of getting a ‘SIGSEGV’ condition include dereferencing
+     a null or uninitialized pointer, or when you use a pointer to step
+     through an array, but fail to check for the end of the array.  It
+     varies among systems whether dereferencing a null pointer generates
+     ‘SIGSEGV’ or ‘SIGBUS’.
+
+ -- Macro: int SIGBUS
+
+     This signal is generated when an invalid pointer is dereferenced.
+     Like ‘SIGSEGV’, this signal is typically the result of
+     dereferencing an uninitialized pointer.  The difference between the
+     two is that ‘SIGSEGV’ indicates an invalid access to valid memory,
+     while ‘SIGBUS’ indicates an access to an invalid address.  In
+     particular, ‘SIGBUS’ signals often result from dereferencing a
+     misaligned pointer, such as referring to a four-word integer at an
+     address not divisible by four.  (Each kind of computer has its own
+     requirements for address alignment.)
+
+     The name of this signal is an abbreviation for “bus error”.
+
+ -- Macro: int SIGABRT
+
+     This signal indicates an error detected by the program itself and
+     reported by calling ‘abort’.  *Note Aborting a Program::.
+
+ -- Macro: int SIGIOT
+
+     Generated by the PDP-11 “iot” instruction.  On most machines, this
+     is just another name for ‘SIGABRT’.
+
+ -- Macro: int SIGTRAP
+
+     Generated by the machine’s breakpoint instruction, and possibly
+     other trap instructions.  This signal is used by debuggers.  Your
+     program will probably only see ‘SIGTRAP’ if it is somehow executing
+     bad instructions.
+
+ -- Macro: int SIGEMT
+
+     Emulator trap; this results from certain unimplemented instructions
+     which might be emulated in software, or the operating system’s
+     failure to properly emulate them.
+
+ -- Macro: int SIGSYS
+
+     Bad system call; that is to say, the instruction to trap to the
+     operating system was executed, but the code number for the system
+     call to perform was invalid.
+
+
 File: libc.info,  Node: Termination Signals,  Next: Alarm Signals,  Prev: Program Error Signals,  Up: Standard Signals
 
 24.2.2 Termination Signals
@@ -2981,7 +3243,8 @@ Primitives::, to see what this is about.
      If this flag is set for a particular signal number, the system uses
      the signal stack when delivering that kind of signal.  *Note Signal
      Stack::.  If a signal with this flag arrives and you have not set a
-     signal stack, the system terminates the program with ‘SIGILL’.
+     signal stack, the normal user stack is used instead, as if the flag
+     had not been set.
 
  -- Macro: int SA_RESTART
 
@@ -5412,6 +5675,8 @@ helps beginners remember how to use the program.
 
      When ‘getopt_long’ encounters a long option, it takes actions based
      on the ‘flag’ and ‘val’ fields of the definition of that option.
+     The option name may be abbreviated as long as the abbreviation is
+     unique.
 
      If ‘flag’ is a null pointer, then ‘getopt_long’ returns the
      contents of ‘val’ to indicate which option it found.  You should
@@ -5600,21 +5865,6 @@ consistent and efficient option-parsing for abstractions implemented by
 the libraries.
 
    The header file ‘<argp.h>’ should be included to use argp.
-
-* Menu:
-
-* Argp Global Variables::
-* Argp Parsers::
-* Argp Option Vectors::
-* Argp Parser Functions::
-* Argp Children::
-* Argp Flags::
-* Argp Help Filtering::
-* Argp Help::
-* Argp Help Flags::
-* Argp Examples::
-* Argp User Customization::
-* Suboptions Example::
 
 25.3.1 The ‘argp_parse’ Function
 --------------------------------
@@ -7116,10 +7366,6 @@ variable to a comma-separated list of tokens.  Whitespace is ignored:
      This will word wrap help output at or before column N.  The default
      is 79.
 
-* Menu:
-
-* Suboptions::
-
 
 File: libc.info,  Node: Suboptions,  Next: Suboptions Example,  Prev: Argp,  Up: Parsing Program Arguments
 
@@ -7254,195 +7500,4 @@ example of the use of ‘getsubopt’:
 
        return 0;
      }
-
-
-File: libc.info,  Node: Environment Variables,  Next: Auxiliary Vector,  Prev: Program Arguments,  Up: Program Basics
-
-25.4 Environment Variables
-==========================
-
-When a program is executed, it receives information about the context in
-which it was invoked in two ways.  The first mechanism uses the ARGV and
-ARGC arguments to its ‘main’ function, and is discussed in *note Program
-Arguments::.  The second mechanism uses “environment variables” and is
-discussed in this section.
-
-   The ARGV mechanism is typically used to pass command-line arguments
-specific to the particular program being invoked.  The environment, on
-the other hand, keeps track of information that is shared by many
-programs, changes infrequently, and that is less frequently used.
-
-   The environment variables discussed in this section are the same
-environment variables that you set using assignments and the ‘export’
-command in the shell.  Programs executed from the shell inherit all of
-the environment variables from the shell.
-
-   Standard environment variables are used for information about the
-user’s home directory, terminal type, current locale, and so on; you can
-define additional variables for other purposes.  The set of all
-environment variables that have values is collectively known as the
-“environment”.
-
-   Names of environment variables are case-sensitive and must not
-contain the character ‘=’.  System-defined environment variables are
-invariably uppercase.
-
-   The values of environment variables can be anything that can be
-represented as a string.  A value must not contain an embedded null
-character, since this is assumed to terminate the string.
-
-* Menu:
-
-* Environment Access::          How to get and set the values of
-				 environment variables.
-* Standard Environment::        These environment variables have
-                		 standard interpretations.
-
-
-File: libc.info,  Node: Environment Access,  Next: Standard Environment,  Up: Environment Variables
-
-25.4.1 Environment Access
--------------------------
-
-The value of an environment variable can be accessed with the ‘getenv’
-function.  This is declared in the header file ‘stdlib.h’.
-
-   Libraries should use ‘secure_getenv’ instead of ‘getenv’, so that
-they do not accidentally use untrusted environment variables.
-Modifications of environment variables are not allowed in multi-threaded
-programs.  The ‘getenv’ and ‘secure_getenv’ functions can be safely used
-in multi-threaded programs.
-
- -- Function: char * getenv (const char *NAME)
-
-     Preliminary: | MT-Safe env | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     This function returns a string that is the value of the environment
-     variable NAME.  You must not modify this string.  In some non-Unix
-     systems not using the GNU C Library, it might be overwritten by
-     subsequent calls to ‘getenv’ (but not by any other library
-     function).  If the environment variable NAME is not defined, the
-     value is a null pointer.
-
- -- Function: char * secure_getenv (const char *NAME)
-
-     Preliminary: | MT-Safe env | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     This function is similar to ‘getenv’, but it returns a null pointer
-     if the environment is untrusted.  This happens when the program
-     file has SUID or SGID bits set.  General-purpose libraries should
-     always prefer this function over ‘getenv’ to avoid vulnerabilities
-     if the library is referenced from a SUID/SGID program.
-
-     This function is a GNU extension.
-
- -- Function: int putenv (char *STRING)
-
-     Preliminary: | MT-Unsafe const:env | AS-Unsafe heap lock |
-     AC-Unsafe corrupt lock mem | *Note POSIX Safety Concepts::.
-
-     The ‘putenv’ function adds or removes definitions from the
-     environment.  If the STRING is of the form ‘NAME=VALUE’, the
-     definition is added to the environment.  Otherwise, the STRING is
-     interpreted as the name of an environment variable, and any
-     definition for this variable in the environment is removed.
-
-     If the function is successful it returns ‘0’.  Otherwise the return
-     value is nonzero and ‘errno’ is set to indicate the error.
-
-     The difference to the ‘setenv’ function is that the exact string
-     given as the parameter STRING is put into the environment.  If the
-     user should change the string after the ‘putenv’ call this will
-     reflect automatically in the environment.  This also requires that
-     STRING not be an automatic variable whose scope is left before the
-     variable is removed from the environment.  The same applies of
-     course to dynamically allocated variables which are freed later.
-
-     This function is part of the extended Unix interface.  You should
-     define _XOPEN_SOURCE before including any header.
-
- -- Function: int setenv (const char *NAME, const char *VALUE, int
-          REPLACE)
-
-     Preliminary: | MT-Unsafe const:env | AS-Unsafe heap lock |
-     AC-Unsafe corrupt lock mem | *Note POSIX Safety Concepts::.
-
-     The ‘setenv’ function can be used to add a new definition to the
-     environment.  The entry with the name NAME is replaced by the value
-     ‘NAME=VALUE’.  Please note that this is also true if VALUE is the
-     empty string.  To do this a new string is created and the strings
-     NAME and VALUE are copied.  A null pointer for the VALUE parameter
-     is illegal.  If the environment already contains an entry with key
-     NAME the REPLACE parameter controls the action.  If replace is
-     zero, nothing happens.  Otherwise the old entry is replaced by the
-     new one.
-
-     Please note that you cannot remove an entry completely using this
-     function.
-
-     If the function is successful it returns ‘0’.  Otherwise the
-     environment is unchanged and the return value is ‘-1’ and ‘errno’
-     is set.
-
-     This function was originally part of the BSD library but is now
-     part of the Unix standard.
-
- -- Function: int unsetenv (const char *NAME)
-
-     Preliminary: | MT-Unsafe const:env | AS-Unsafe lock | AC-Unsafe
-     lock | *Note POSIX Safety Concepts::.
-
-     Using this function one can remove an entry completely from the
-     environment.  If the environment contains an entry with the key
-     NAME this whole entry is removed.  A call to this function is
-     equivalent to a call to ‘putenv’ when the VALUE part of the string
-     is empty.
-
-     The function returns ‘-1’ if NAME is a null pointer, points to an
-     empty string, or points to a string containing a ‘=’ character.  It
-     returns ‘0’ if the call succeeded.
-
-     This function was originally part of the BSD library but is now
-     part of the Unix standard.  The BSD version had no return value,
-     though.
-
-   There is one more function to modify the whole environment.  This
-function is said to be used in the POSIX.9 (POSIX bindings for Fortran
-77) and so one should expect it did made it into POSIX.1.  But this
-never happened.  But we still provide this function as a GNU extension
-to enable writing standard compliant Fortran environments.
-
- -- Function: int clearenv (void)
-
-     Preliminary: | MT-Unsafe const:env | AS-Unsafe heap lock |
-     AC-Unsafe lock mem | *Note POSIX Safety Concepts::.
-
-     The ‘clearenv’ function removes all entries from the environment.
-     Using ‘putenv’ and ‘setenv’ new entries can be added again later.
-
-     If the function is successful it returns ‘0’.  Otherwise the return
-     value is nonzero.
-
-   You can deal directly with the underlying representation of
-environment objects to add more variables to the environment (for
-example, to communicate with another program you are about to execute;
-*note Executing a File::).
-
- -- Variable: char ** environ
-
-     The environment is represented as an array of strings.  Each string
-     is of the format ‘NAME=VALUE’.  The order in which strings appear
-     in the environment is not significant, but the same NAME must not
-     appear more than once.  The last element of the array is a null
-     pointer.
-
-     This variable is declared in the header file ‘unistd.h’.
-
-     If you just want to get the value of an environment variable, use
-     ‘getenv’.
-
-   Unix systems, and GNU systems, pass the initial value of ‘environ’ as
-the third argument to ‘main’.  *Note Program Arguments::.
 

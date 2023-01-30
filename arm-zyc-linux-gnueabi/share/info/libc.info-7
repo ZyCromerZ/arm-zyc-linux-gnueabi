@@ -1,9 +1,9 @@
-This is libc.info, produced by makeinfo version 6.7 from libc.texinfo.
+This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.35
+This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
 (ZyC-GCC).
 
-   Copyright © 1993–2022 Free Software Foundation, Inc.
+   Copyright © 1993–2023 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -547,6 +547,9 @@ START-INFO-DIR-ENTRY
 * alloca: (libc)Variable Size Automatic.
 * alphasort64: (libc)Scanning Directory Content.
 * alphasort: (libc)Scanning Directory Content.
+* arc4random: (libc)High Quality Random.
+* arc4random_buf: (libc)High Quality Random.
+* arc4random_uniform: (libc)High Quality Random.
 * argp_error: (libc)Argp Helper Functions.
 * argp_failure: (libc)Argp Helper Functions.
 * argp_help: (libc)Argp Help.
@@ -813,6 +816,7 @@ START-INFO-DIR-ENTRY
 * dirfd: (libc)Opening a Directory.
 * dirname: (libc)Finding Tokens in a String.
 * div: (libc)Integer Division.
+* dlinfo: (libc)Dynamic Linker Introspection.
 * dmull: (libc)Misc FP Arithmetic.
 * dngettext: (libc)Advanced gettext functions.
 * drand48: (libc)SVID Random.
@@ -2162,6 +2166,113 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Hard Links,  Next: Symbolic Links,  Prev: Working with Directory Trees,  Up: File System Interface
+
+14.4 Hard Links
+===============
+
+In POSIX systems, one file can have many names at the same time.  All of
+the names are equally real, and no one of them is preferred to the
+others.
+
+   To add a name to a file, use the ‘link’ function.  (The new name is
+also called a “hard link” to the file.)  Creating a new link to a file
+does not copy the contents of the file; it simply makes a new name by
+which the file can be known, in addition to the file’s existing name or
+names.
+
+   One file can have names in several directories, so the organization
+of the file system is not a strict hierarchy or tree.
+
+   In most implementations, it is not possible to have hard links to the
+same file in multiple file systems.  ‘link’ reports an error if you try
+to make a hard link to the file from another file system when this
+cannot be done.
+
+   The prototype for the ‘link’ function is declared in the header file
+‘unistd.h’.
+
+ -- Function: int link (const char *OLDNAME, const char *NEWNAME)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     The ‘link’ function makes a new link to the existing file named by
+     OLDNAME, under the new name NEWNAME.
+
+     This function returns a value of ‘0’ if it is successful and ‘-1’
+     on failure.  In addition to the usual file name errors (*note File
+     Name Errors::) for both OLDNAME and NEWNAME, the following ‘errno’
+     error conditions are defined for this function:
+
+     ‘EACCES’
+          You are not allowed to write to the directory in which the new
+          link is to be written.
+
+     ‘EEXIST’
+          There is already a file named NEWNAME.  If you want to replace
+          this link with a new link, you must remove the old link
+          explicitly first.
+
+     ‘EMLINK’
+          There are already too many links to the file named by OLDNAME.
+          (The maximum number of links to a file is ‘LINK_MAX’; see
+          *note Limits for Files::.)
+
+     ‘ENOENT’
+          The file named by OLDNAME doesn’t exist.  You can’t make a
+          link to a file that doesn’t exist.
+
+     ‘ENOSPC’
+          The directory or file system that would contain the new link
+          is full and cannot be extended.
+
+     ‘EPERM’
+          On GNU/Linux and GNU/Hurd systems and some others, you cannot
+          make links to directories.  Many systems allow only privileged
+          users to do so.  This error is used to report the problem.
+
+     ‘EROFS’
+          The directory containing the new link can’t be modified
+          because it’s on a read-only file system.
+
+     ‘EXDEV’
+          The directory specified in NEWNAME is on a different file
+          system than the existing file.
+
+     ‘EIO’
+          A hardware error occurred while trying to read or write the to
+          filesystem.
+
+ -- Function: int linkat (int oldfd, const char *OLDNAME, int newfd,
+          const char *NEWNAME, int flags)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     The ‘linkat’ function is analogous to the ‘link’ function, except
+     that it identifies its source and target using a combination of a
+     file descriptor (referring to a directory) and a pathname.  If a
+     pathnames is not absolute, it is resolved relative to the
+     corresponding file descriptor.  The special file descriptor
+     ‘AT_FDCWD’ denotes the current directory.
+
+     The FLAGS argument is a combination of the following flags:
+
+     ‘AT_SYMLINK_FOLLOW’
+          If the source path identified by OLDFD and OLDNAME is a
+          symbolic link, ‘linkat’ follows the symbolic link and creates
+          a link to its target.  If the flag is not set, a link for the
+          symbolic link itself is created; this is not supported by all
+          file systems and ‘linkat’ can fail in this case.
+
+     ‘AT_EMPTY_PATH’
+          If this flag is specified, OLDNAME can be an empty string.  In
+          this case, a new link to the file denoted by the descriptor
+          OLDFD is created, which may have been opened with ‘O_PATH’ or
+          ‘O_TMPFILE’.  This flag is a GNU extension.
 
 
 File: libc.info,  Node: Symbolic Links,  Next: Deleting Files,  Prev: Hard Links,  Up: File System Interface
@@ -7534,70 +7645,4 @@ tells you where it was sent from.  This function is declared in
 because you know where it should come from or because you treat all
 possible senders alike).  Even ‘read’ can be used if you don’t want to
 specify FLAGS (*note I/O Primitives::).
-
-
-File: libc.info,  Node: Datagram Example,  Next: Example Receiver,  Prev: Receiving Datagrams,  Up: Datagrams
-
-16.10.3 Datagram Socket Example
--------------------------------
-
-Here is a set of example programs that send messages over a datagram
-stream in the local namespace.  Both the client and server programs use
-the ‘make_named_socket’ function that was presented in *note Local
-Socket Example::, to create and name their sockets.
-
-   First, here is the server program.  It sits in a loop waiting for
-messages to arrive, bouncing each message back to the sender.  Obviously
-this isn’t a particularly useful program, but it does show the general
-ideas involved.
-
-
-     #include <stdio.h>
-     #include <errno.h>
-     #include <stdlib.h>
-     #include <sys/socket.h>
-     #include <sys/un.h>
-
-     #define SERVER  "/tmp/serversocket"
-     #define MAXMSG  512
-
-     int
-     main (void)
-     {
-       int sock;
-       char message[MAXMSG];
-       struct sockaddr_un name;
-       size_t size;
-       int nbytes;
-
-       /* Remove the filename first, it’s ok if the call fails */
-       unlink (SERVER);
-
-       /* Make the socket, then loop endlessly. */
-       sock = make_named_socket (SERVER);
-       while (1)
-         {
-           /* Wait for a datagram. */
-           size = sizeof (name);
-           nbytes = recvfrom (sock, message, MAXMSG, 0,
-                              (struct sockaddr *) & name, &size);
-           if (nbytes < 0)
-             {
-               perror ("recfrom (server)");
-               exit (EXIT_FAILURE);
-             }
-
-           /* Give a diagnostic message. */
-           fprintf (stderr, "Server: got message: %s\n", message);
-
-           /* Bounce the message back to the sender. */
-           nbytes = sendto (sock, message, nbytes, 0,
-                            (struct sockaddr *) & name, size);
-           if (nbytes < 0)
-             {
-               perror ("sendto (server)");
-               exit (EXIT_FAILURE);
-             }
-         }
-     }
 

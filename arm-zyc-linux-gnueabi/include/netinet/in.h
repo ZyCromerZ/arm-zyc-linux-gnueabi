@@ -1,4 +1,4 @@
-/* Copyright (C) 1991-2022 Free Software Foundation, Inc.
+/* Copyright (C) 1991-2023 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -81,6 +81,8 @@ enum
 #define IPPROTO_PIM		IPPROTO_PIM
     IPPROTO_COMP = 108,	   /* Compression Header Protocol.  */
 #define IPPROTO_COMP		IPPROTO_COMP
+    IPPROTO_L2TP = 115,	   /* Layer 2 Tunnelling Protocol.  */
+#define IPPROTO_L2TP		IPPROTO_L2TP
     IPPROTO_SCTP = 132,	   /* Stream Control Transmission Protocol.  */
 #define IPPROTO_SCTP		IPPROTO_SCTP
     IPPROTO_UDPLITE = 136, /* UDP-Lite protocol.  */
@@ -276,6 +278,19 @@ struct ip_mreq
 
     /* Local IP address of interface.  */
     struct in_addr imr_interface;
+  };
+
+/* IPv4 multicast request with interface index.  */
+struct ip_mreqn
+  {
+    /* IP multicast address of group.  */
+    struct in_addr imr_multiaddr;
+
+    /* Local IP address of interface.  */
+    struct in_addr imr_address;
+
+    /* Interface index.  */
+    int imr_ifindex;
   };
 
 struct ip_mreq_source

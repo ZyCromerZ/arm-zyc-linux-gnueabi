@@ -1,9 +1,9 @@
-This is libc.info, produced by makeinfo version 6.7 from libc.texinfo.
+This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.35
+This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
 (ZyC-GCC).
 
-   Copyright © 1993–2022 Free Software Foundation, Inc.
+   Copyright © 1993–2023 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -547,6 +547,9 @@ START-INFO-DIR-ENTRY
 * alloca: (libc)Variable Size Automatic.
 * alphasort64: (libc)Scanning Directory Content.
 * alphasort: (libc)Scanning Directory Content.
+* arc4random: (libc)High Quality Random.
+* arc4random_buf: (libc)High Quality Random.
+* arc4random_uniform: (libc)High Quality Random.
 * argp_error: (libc)Argp Helper Functions.
 * argp_failure: (libc)Argp Helper Functions.
 * argp_help: (libc)Argp Help.
@@ -813,6 +816,7 @@ START-INFO-DIR-ENTRY
 * dirfd: (libc)Opening a Directory.
 * dirname: (libc)Finding Tokens in a String.
 * div: (libc)Integer Division.
+* dlinfo: (libc)Dynamic Linker Introspection.
 * dmull: (libc)Misc FP Arithmetic.
 * dngettext: (libc)Advanced gettext functions.
 * drand48: (libc)SVID Random.
@@ -2173,13 +2177,13 @@ Variable and Constant Macro Index
 * Menu:
 
 * (*__gconv_end_fct):                    glibc iconv Implementation.
-                                                              (line 563)
+                                                              (line 557)
 * (*__gconv_fct):                        glibc iconv Implementation.
-                                                              (line 582)
+                                                              (line 576)
 * (*__gconv_init_fct):                   glibc iconv Implementation.
-                                                              (line 409)
-* (void):                                Error Messages.      (line 257)
-* _ATFILE_SOURCE:                        Feature Test Macros. (line 280)
+                                                              (line 403)
+* (void):                                Error Messages.      (line 255)
+* _ATFILE_SOURCE:                        Feature Test Macros. (line 274)
 * _Complex_I:                            Complex Numbers.     (line  21)
 * _CS_LFS64_CFLAGS:                      String Parameters.   (line  71)
 * _CS_LFS64_LDFLAGS:                     String Parameters.   (line  78)
@@ -2190,22 +2194,22 @@ Variable and Constant Macro Index
 * _CS_LFS_LIBS:                          String Parameters.   (line  57)
 * _CS_LFS_LINTFLAGS:                     String Parameters.   (line  64)
 * _CS_PATH:                              String Parameters.   (line  38)
-* _DEFAULT_SOURCE:                       Feature Test Macros. (line 264)
-* _DYNAMIC_STACK_SIZE_SOURCE:            Feature Test Macros. (line 291)
-* _FILE_OFFSET_BITS:                     Feature Test Macros. (line 143)
-* _FORTIFY_SOURCE:                       Feature Test Macros. (line 284)
-* _GNU_SOURCE:                           Feature Test Macros. (line 257)
+* _DEFAULT_SOURCE:                       Feature Test Macros. (line 258)
+* _DYNAMIC_STACK_SIZE_SOURCE:            Feature Test Macros. (line 287)
+* _FILE_OFFSET_BITS:                     Feature Test Macros. (line 138)
+* _FORTIFY_SOURCE:                       Feature Test Macros. (line 278)
+* _GNU_SOURCE:                           Feature Test Macros. (line 251)
 * _IOFBF:                                Controlling Buffering.
                                                               (line  45)
 * _IOLBF:                                Controlling Buffering.
                                                               (line  51)
 * _IONBF:                                Controlling Buffering.
                                                               (line  57)
-* _ISOC11_SOURCE:                        Feature Test Macros. (line 213)
-* _ISOC2X_SOURCE:                        Feature Test Macros. (line 218)
-* _ISOC99_SOURCE:                        Feature Test Macros. (line 207)
-* _LARGEFILE64_SOURCE:                   Feature Test Macros. (line 124)
-* _LARGEFILE_SOURCE:                     Feature Test Macros. (line 112)
+* _ISOC11_SOURCE:                        Feature Test Macros. (line 207)
+* _ISOC2X_SOURCE:                        Feature Test Macros. (line 212)
+* _ISOC99_SOURCE:                        Feature Test Macros. (line 201)
+* _LARGEFILE64_SOURCE:                   Feature Test Macros. (line 120)
+* _LARGEFILE_SOURCE:                     Feature Test Macros. (line 108)
 * _PATH_FSTAB:                           Mount Information.   (line  29)
 * _PATH_MNTTAB:                          Mount Information.   (line  29)
 * _PATH_MOUNTED:                         Mount Information.   (line  29)
@@ -2250,7 +2254,7 @@ Variable and Constant Macro Index
 * _POSIX_ARG_MAX:                        Minimums.            (line  26)
 * _POSIX_CHILD_MAX:                      Minimums.            (line  33)
 * _POSIX_CHOWN_RESTRICTED:               Options for Files.   (line  26)
-* _POSIX_C_SOURCE:                       Feature Test Macros. (line  49)
+* _POSIX_C_SOURCE:                       Feature Test Macros. (line  46)
 * _POSIX_JOB_CONTROL:                    Job Control.         (line  18)
 * _POSIX_JOB_CONTROL <1>:                System Options.      (line  19)
 * _POSIX_LINK_MAX:                       File Minimums.       (line  13)
@@ -2263,14 +2267,14 @@ Variable and Constant Macro Index
 * _POSIX_PATH_MAX:                       File Minimums.       (line  39)
 * _POSIX_PIPE_BUF:                       File Minimums.       (line  45)
 * _POSIX_SAVED_IDS:                      System Options.      (line  27)
-* _POSIX_SOURCE:                         Feature Test Macros. (line  38)
+* _POSIX_SOURCE:                         Feature Test Macros. (line  37)
 * _POSIX_SSIZE_MAX:                      Minimums.            (line  51)
 * _POSIX_STREAM_MAX:                     Minimums.            (line  57)
 * _POSIX_TZNAME_MAX:                     Minimums.            (line  63)
 * _POSIX_VDISABLE:                       Special Characters.  (line  22)
 * _POSIX_VDISABLE <1>:                   Options for Files.   (line  40)
 * _POSIX_VERSION:                        Version Supported.   (line   6)
-* _REENTRANT:                            Feature Test Macros. (line 296)
+* _REENTRANT:                            Feature Test Macros. (line 292)
 * _SC_2_C_DEV:                           Constants for Sysconf.
                                                               (line 306)
 * _SC_2_FORT_DEV:                        Constants for Sysconf.
@@ -2558,10 +2562,10 @@ Variable and Constant Macro Index
                                                               (line 524)
 * _SC_XOPEN_XPG4:                        Constants for Sysconf.
                                                               (line 528)
-* _THREAD_SAFE:                          Feature Test Macros. (line 297)
-* _TIME_BITS:                            Feature Test Macros. (line 175)
-* _XOPEN_SOURCE:                         Feature Test Macros. (line  90)
-* _XOPEN_SOURCE_EXTENDED:                Feature Test Macros. (line  91)
+* _THREAD_SAFE:                          Feature Test Macros. (line 293)
+* _TIME_BITS:                            Feature Test Macros. (line 169)
+* _XOPEN_SOURCE:                         Feature Test Macros. (line  87)
+* _XOPEN_SOURCE_EXTENDED:                Feature Test Macros. (line  88)
 * __libc_single_threaded:                Single-Threaded.     (line  15)
 * __rseq_flags:                          Restartable Sequences.
                                                               (line  63)
@@ -2569,11 +2573,11 @@ Variable and Constant Macro Index
                                                               (line  45)
 * __rseq_size:                           Restartable Sequences.
                                                               (line  54)
-* __STDC_WANT_IEC_60559_BFP_EXT__:       Feature Test Macros. (line 230)
-* __STDC_WANT_IEC_60559_EXT__:           Feature Test Macros. (line 251)
-* __STDC_WANT_IEC_60559_FUNCS_EXT__:     Feature Test Macros. (line 237)
-* __STDC_WANT_IEC_60559_TYPES_EXT__:     Feature Test Macros. (line 244)
-* __STDC_WANT_LIB_EXT2__:                Feature Test Macros. (line 224)
+* __STDC_WANT_IEC_60559_BFP_EXT__:       Feature Test Macros. (line 224)
+* __STDC_WANT_IEC_60559_EXT__:           Feature Test Macros. (line 245)
+* __STDC_WANT_IEC_60559_FUNCS_EXT__:     Feature Test Macros. (line 231)
+* __STDC_WANT_IEC_60559_TYPES_EXT__:     Feature Test Macros. (line 238)
+* __STDC_WANT_LIB_EXT2__:                Feature Test Macros. (line 218)
 * ABDAY_1:                               The Elegant and Fast Way.
                                                               (line  35)
 * ABDAY_2:                               The Elegant and Fast Way.
@@ -2734,16 +2738,16 @@ Variable and Constant Macro Index
                                                               (line  63)
 * CCTS_OFLOW:                            Control Modes.       (line  94)
 * CHAR_BIT:                              Width of Type.       (line  52)
-* CHAR_MAX:                              Range of Type.       (line  40)
-* CHAR_MIN:                              Range of Type.       (line  35)
+* CHAR_MAX:                              Range of Type.       (line  39)
+* CHAR_MIN:                              Range of Type.       (line  34)
 * CHAR_WIDTH:                            Width of Type.       (line  11)
 * CHILD_MAX:                             General Limits.      (line  29)
 * CIGNORE:                               Control Modes.       (line 108)
-* CLK_TCK:                               Processor Time.      (line  44)
+* CLK_TCK:                               Processor Time.      (line  43)
 * CLOCAL:                                Control Modes.       (line  18)
 * CLOCKS_PER_SEC:                        CPU Time.            (line  33)
-* CLOCK_MONOTONIC:                       Getting the Time.    (line  61)
-* CLOCK_REALTIME:                        Getting the Time.    (line  49)
+* CLOCK_MONOTONIC:                       Getting the Time.    (line  59)
+* CLOCK_REALTIME:                        Getting the Time.    (line  47)
 * CLOSE_RANGE_CLOEXEC:                   Opening and Closing Files.
                                                               (line 226)
 * CLOSE_RANGE_UNSHARE:                   Opening and Closing Files.
@@ -2782,34 +2786,34 @@ Variable and Constant Macro Index
 * DAY_7:                                 The Elegant and Fast Way.
                                                               (line  50)
 * DBL_DIG:                               Floating Point Parameters.
-                                                              (line 101)
+                                                              (line 100)
 * DBL_EPSILON:                           Floating Point Parameters.
-                                                              (line 192)
+                                                              (line 191)
 * DBL_MANT_DIG:                          Floating Point Parameters.
                                                               (line  80)
 * DBL_MAX:                               Floating Point Parameters.
-                                                              (line 166)
+                                                              (line 165)
 * DBL_MAX_10_EXP:                        Floating Point Parameters.
-                                                              (line 152)
+                                                              (line 151)
 * DBL_MAX_EXP:                           Floating Point Parameters.
-                                                              (line 140)
+                                                              (line 139)
 * DBL_MIN:                               Floating Point Parameters.
-                                                              (line 179)
+                                                              (line 178)
 * DBL_MIN_10_EXP:                        Floating Point Parameters.
-                                                              (line 127)
+                                                              (line 126)
 * DBL_MIN_EXP:                           Floating Point Parameters.
-                                                              (line 115)
+                                                              (line 114)
 * DEAD_PROCESS:                          Manipulating the Database.
                                                               (line 109)
 * DEAD_PROCESS <1>:                      XPG Functions.       (line  78)
 * DECIMAL_POINT:                         The Elegant and Fast Way.
                                                               (line 240)
 * DLFO_EH_SEGMENT_TYPE:                  Dynamic Linker Introspection.
-                                                              (line  54)
+                                                              (line 132)
 * DLFO_STRUCT_HAS_EH_COUNT:              Dynamic Linker Introspection.
-                                                              (line  44)
+                                                              (line 122)
 * DLFO_STRUCT_HAS_EH_DBASE:              Dynamic Linker Introspection.
-                                                              (line  35)
+                                                              (line 113)
 * DT_BLK:                                Directory Entries.   (line  58)
 * DT_CHR:                                Directory Entries.   (line  55)
 * DT_DIR:                                Directory Entries.   (line  46)
@@ -2826,24 +2830,24 @@ Variable and Constant Macro Index
 * EACCES:                                Error Codes.         (line  88)
 * EADDRINUSE:                            Error Codes.         (line 328)
 * EADDRNOTAVAIL:                         Error Codes.         (line 333)
-* EADV:                                  Error Codes.         (line 716)
+* EADV:                                  Error Codes.         (line 720)
 * EAFNOSUPPORT:                          Error Codes.         (line 322)
 * EAGAIN:                                Error Codes.         (line 220)
 * EALREADY:                              Error Codes.         (line 271)
 * EAUTH:                                 Error Codes.         (line 506)
-* EBACKGROUND:                           Error Codes.         (line 544)
-* EBADE:                                 Error Codes.         (line 676)
+* EBACKGROUND:                           Error Codes.         (line 548)
+* EBADE:                                 Error Codes.         (line 680)
 * EBADF:                                 Error Codes.         (line  63)
 * EBADF <1>:                             Line Control.        (line 138)
-* EBADFD:                                Error Codes.         (line 736)
-* EBADMSG:                               Error Codes.         (line 578)
-* EBADR:                                 Error Codes.         (line 680)
+* EBADFD:                                Error Codes.         (line 740)
+* EBADMSG:                               Error Codes.         (line 582)
+* EBADR:                                 Error Codes.         (line 684)
 * EBADRPC:                               Error Codes.         (line 471)
-* EBADRQC:                               Error Codes.         (line 692)
-* EBADSLT:                               Error Codes.         (line 696)
-* EBFONT:                                Error Codes.         (line 704)
+* EBADRQC:                               Error Codes.         (line 696)
+* EBADSLT:                               Error Codes.         (line 700)
+* EBFONT:                                Error Codes.         (line 708)
 * EBUSY:                                 Error Codes.         (line 104)
-* ECANCELED:                             Error Codes.         (line 622)
+* ECANCELED:                             Error Codes.         (line 626)
 * ECHILD:                                Error Codes.         (line  69)
 * ECHO:                                  Local Modes.         (line  23)
 * ECHOCTL:                               Local Modes.         (line  79)
@@ -2852,31 +2856,31 @@ Variable and Constant Macro Index
 * ECHOKE:                                Local Modes.         (line  66)
 * ECHONL:                                Local Modes.         (line  73)
 * ECHOPRT:                               Local Modes.         (line  39)
-* ECHRNG:                                Error Codes.         (line 644)
-* ECOMM:                                 Error Codes.         (line 724)
+* ECHRNG:                                Error Codes.         (line 648)
+* ECOMM:                                 Error Codes.         (line 728)
 * ECONNABORTED:                          Error Codes.         (line 354)
 * ECONNREFUSED:                          Error Codes.         (line 406)
 * ECONNRESET:                            Error Codes.         (line 359)
-* ED:                                    Error Codes.         (line 561)
+* ED:                                    Error Codes.         (line 565)
 * EDEADLK:                               Error Codes.         (line  75)
-* EDEADLOCK:                             Error Codes.         (line 700)
+* EDEADLOCK:                             Error Codes.         (line 704)
 * EDESTADDRREQ:                          Error Codes.         (line 385)
-* EDIED:                                 Error Codes.         (line 554)
+* EDIED:                                 Error Codes.         (line 558)
 * EDOM:                                  Error Codes.         (line 208)
-* EDOTDOT:                               Error Codes.         (line 728)
+* EDOTDOT:                               Error Codes.         (line 732)
 * EDQUOT:                                Error Codes.         (line 451)
 * EEXIST:                                Error Codes.         (line 110)
 * EFAULT:                                Error Codes.         (line  93)
 * EFBIG:                                 Error Codes.         (line 175)
 * EFTYPE:                                Error Codes.         (line 498)
-* EGRATUITOUS:                           Error Codes.         (line 574)
-* EGREGIOUS:                             Error Codes.         (line 565)
+* EGRATUITOUS:                           Error Codes.         (line 578)
+* EGREGIOUS:                             Error Codes.         (line 569)
 * EHOSTDOWN:                             Error Codes.         (line 424)
 * EHOSTUNREACH:                          Error Codes.         (line 429)
 * EHWPOISON:                             Error Codes.         (line 816)
-* EIDRM:                                 Error Codes.         (line 582)
-* EIEIO:                                 Error Codes.         (line 569)
-* EILSEQ:                                Error Codes.         (line 537)
+* EIDRM:                                 Error Codes.         (line 586)
+* EIEIO:                                 Error Codes.         (line 573)
+* EILSEQ:                                Error Codes.         (line 541)
 * EINPROGRESS:                           Error Codes.         (line 259)
 * EINTR:                                 Error Codes.         (line  27)
 * EINVAL:                                Error Codes.         (line 137)
@@ -2888,16 +2892,16 @@ Variable and Constant Macro Index
 * EKEYEXPIRED:                           Error Codes.         (line 800)
 * EKEYREJECTED:                          Error Codes.         (line 808)
 * EKEYREVOKED:                           Error Codes.         (line 804)
-* EL2HLT:                                Error Codes.         (line 672)
-* EL2NSYNC:                              Error Codes.         (line 648)
-* EL3HLT:                                Error Codes.         (line 652)
-* EL3RST:                                Error Codes.         (line 656)
-* ELIBACC:                               Error Codes.         (line 744)
-* ELIBBAD:                               Error Codes.         (line 748)
-* ELIBEXEC:                              Error Codes.         (line 760)
-* ELIBMAX:                               Error Codes.         (line 756)
-* ELIBSCN:                               Error Codes.         (line 752)
-* ELNRNG:                                Error Codes.         (line 660)
+* EL2HLT:                                Error Codes.         (line 676)
+* EL2NSYNC:                              Error Codes.         (line 652)
+* EL3HLT:                                Error Codes.         (line 656)
+* EL3RST:                                Error Codes.         (line 660)
+* ELIBACC:                               Error Codes.         (line 748)
+* ELIBBAD:                               Error Codes.         (line 752)
+* ELIBEXEC:                              Error Codes.         (line 522)
+* ELIBMAX:                               Error Codes.         (line 760)
+* ELIBSCN:                               Error Codes.         (line 756)
+* ELNRNG:                                Error Codes.         (line 664)
 * ELOOP:                                 Error Codes.         (line 412)
 * EMEDIUMTYPE:                           Error Codes.         (line 792)
 * EMFILE:                                Error Codes.         (line 142)
@@ -2906,7 +2910,7 @@ Variable and Constant Macro Index
                                                               (line  72)
 * EMPTY <1>:                             XPG Functions.       (line  41)
 * EMSGSIZE:                              Error Codes.         (line 281)
-* EMULTIHOP:                             Error Codes.         (line 586)
+* EMULTIHOP:                             Error Codes.         (line 590)
 * ENAMETOOLONG:                          Error Codes.         (line 418)
 * ENAVAIL:                               Error Codes.         (line 776)
 * endorder:                              Tree Search Function.
@@ -2916,43 +2920,43 @@ Variable and Constant Macro Index
 * ENETRESET:                             Error Codes.         (line 349)
 * ENETUNREACH:                           Error Codes.         (line 344)
 * ENFILE:                                Error Codes.         (line 153)
-* ENOANO:                                Error Codes.         (line 688)
+* ENOANO:                                Error Codes.         (line 692)
 * ENOBUFS:                               Error Codes.         (line 365)
-* ENOCSI:                                Error Codes.         (line 668)
-* ENODATA:                               Error Codes.         (line 590)
+* ENOCSI:                                Error Codes.         (line 672)
+* ENODATA:                               Error Codes.         (line 594)
 * ENODEV:                                Error Codes.         (line 122)
 * ENOENT:                                Error Codes.         (line  17)
 * ENOEXEC:                               Error Codes.         (line  57)
 * ENOKEY:                                Error Codes.         (line 796)
 * ENOLCK:                                Error Codes.         (line 491)
-* ENOLINK:                               Error Codes.         (line 594)
+* ENOLINK:                               Error Codes.         (line 598)
 * ENOMEDIUM:                             Error Codes.         (line 788)
 * ENOMEM:                                Error Codes.         (line  83)
-* ENOMSG:                                Error Codes.         (line 598)
-* ENONET:                                Error Codes.         (line 708)
-* ENOPKG:                                Error Codes.         (line 712)
+* ENOMSG:                                Error Codes.         (line 602)
+* ENONET:                                Error Codes.         (line 712)
+* ENOPKG:                                Error Codes.         (line 716)
 * ENOPROTOOPT:                           Error Codes.         (line 291)
 * ENOSPC:                                Error Codes.         (line 180)
-* ENOSR:                                 Error Codes.         (line 602)
-* ENOSTR:                                Error Codes.         (line 606)
+* ENOSR:                                 Error Codes.         (line 606)
+* ENOSTR:                                Error Codes.         (line 610)
 * ENOSYS:                                Error Codes.         (line 514)
 * ENOTBLK:                               Error Codes.         (line  98)
 * ENOTCONN:                              Error Codes.         (line 377)
 * ENOTDIR:                               Error Codes.         (line 127)
 * ENOTEMPTY:                             Error Codes.         (line 434)
 * ENOTNAM:                               Error Codes.         (line 772)
-* ENOTRECOVERABLE:                       Error Codes.         (line 633)
+* ENOTRECOVERABLE:                       Error Codes.         (line 637)
 * ENOTSOCK:                              Error Codes.         (line 276)
-* ENOTSUP:                               Error Codes.         (line 522)
+* ENOTSUP:                               Error Codes.         (line 526)
 * ENOTTY:                                Error Codes.         (line 160)
 * ENOTTY <1>:                            Line Control.        (line 141)
-* ENOTUNIQ:                              Error Codes.         (line 732)
+* ENOTUNIQ:                              Error Codes.         (line 736)
 * environ:                               Environment Access.  (line 132)
 * ENXIO:                                 Error Codes.         (line  42)
 * EOF:                                   EOF and Errors.      (line  15)
 * EOPNOTSUPP:                            Error Codes.         (line 307)
-* EOVERFLOW:                             Error Codes.         (line 610)
-* EOWNERDEAD:                            Error Codes.         (line 629)
+* EOVERFLOW:                             Error Codes.         (line 614)
+* EOWNERDEAD:                            Error Codes.         (line 633)
 * EPERM:                                 Error Codes.         (line  11)
 * EPFNOSUPPORT:                          Error Codes.         (line 317)
 * EPIPE:                                 Error Codes.         (line 200)
@@ -2960,7 +2964,7 @@ Variable and Constant Macro Index
 * EPROCUNAVAIL:                          Error Codes.         (line 487)
 * EPROGMISMATCH:                         Error Codes.         (line 483)
 * EPROGUNAVAIL:                          Error Codes.         (line 479)
-* EPROTO:                                Error Codes.         (line 614)
+* EPROTO:                                Error Codes.         (line 618)
 * EPROTONOSUPPORT:                       Error Codes.         (line 297)
 * EPROTOTYPE:                            Error Codes.         (line 286)
 * EQUIV_CLASS_MAX:                       Utility Limits.      (line  53)
@@ -2975,33 +2979,33 @@ Variable and Constant Macro Index
                                                               (line 160)
 * ERA_YEAR:                              The Elegant and Fast Way.
                                                               (line 148)
-* EREMCHG:                               Error Codes.         (line 740)
+* EREMCHG:                               Error Codes.         (line 744)
 * EREMOTE:                               Error Codes.         (line 463)
 * EREMOTEIO:                             Error Codes.         (line 784)
-* ERESTART:                              Error Codes.         (line 640)
+* ERESTART:                              Error Codes.         (line 644)
 * ERFKILL:                               Error Codes.         (line 812)
 * EROFS:                                 Error Codes.         (line 189)
 * ERPCMISMATCH:                          Error Codes.         (line 475)
 * errno:                                 Checking for Errors. (line  14)
-* error_message_count:                   Error Messages.      (line 269)
-* error_one_per_line:                    Error Messages.      (line 275)
+* error_message_count:                   Error Messages.      (line 267)
+* error_one_per_line:                    Error Messages.      (line 273)
 * ESHUTDOWN:                             Error Codes.         (line 392)
 * ESOCKTNOSUPPORT:                       Error Codes.         (line 303)
 * ESPIPE:                                Error Codes.         (line 185)
 * ESRCH:                                 Error Codes.         (line  23)
-* ESRMNT:                                Error Codes.         (line 720)
+* ESRMNT:                                Error Codes.         (line 724)
 * ESTALE:                                Error Codes.         (line 455)
 * ESTRPIPE:                              Error Codes.         (line 764)
-* ETIME:                                 Error Codes.         (line 618)
+* ETIME:                                 Error Codes.         (line 622)
 * ETIMEDOUT:                             Error Codes.         (line 401)
 * ETOOMANYREFS:                          Error Codes.         (line 397)
 * ETXTBSY:                               Error Codes.         (line 166)
 * EUCLEAN:                               Error Codes.         (line 768)
-* EUNATCH:                               Error Codes.         (line 664)
+* EUNATCH:                               Error Codes.         (line 668)
 * EUSERS:                                Error Codes.         (line 446)
 * EWOULDBLOCK:                           Error Codes.         (line 250)
 * EXDEV:                                 Error Codes.         (line 115)
-* EXFULL:                                Error Codes.         (line 684)
+* EXFULL:                                Error Codes.         (line 688)
 * EXIT_FAILURE:                          Exit Status.         (line  54)
 * EXIT_SUCCESS:                          Exit Status.         (line  45)
 * EXPR_NEST_MAX:                         Utility Limits.      (line  40)
@@ -3013,7 +3017,7 @@ Variable and Constant Macro Index
 * FE_DFL_MODE:                           Control Functions.   (line 101)
 * FE_DIVBYZERO:                          Status bit operations.
                                                               (line  20)
-* FE_DOWNWARD:                           Rounding.            (line  48)
+* FE_DOWNWARD:                           Rounding.            (line  47)
 * FE_INEXACT:                            Status bit operations.
                                                               (line  17)
 * FE_INVALID:                            Status bit operations.
@@ -3022,30 +3026,30 @@ Variable and Constant Macro Index
 * FE_OVERFLOW:                           Status bit operations.
                                                               (line  26)
 * FE_SNANS_ALWAYS_SIGNAL:                Infinity and NaN.    (line  72)
-* FE_TONEAREST:                          Rounding.            (line  40)
-* FE_TOWARDZERO:                         Rounding.            (line  52)
+* FE_TONEAREST:                          Rounding.            (line  39)
+* FE_TOWARDZERO:                         Rounding.            (line  51)
 * FE_UNDERFLOW:                          Status bit operations.
                                                               (line  23)
-* FE_UPWARD:                             Rounding.            (line  44)
+* FE_UPWARD:                             Rounding.            (line  43)
 * FILENAME_MAX:                          Limits for Files.    (line  70)
 * FLT_DIG:                               Floating Point Parameters.
                                                               (line  87)
 * FLT_EPSILON:                           Floating Point Parameters.
-                                                              (line 186)
+                                                              (line 185)
 * FLT_MANT_DIG:                          Floating Point Parameters.
                                                               (line  67)
 * FLT_MAX:                               Floating Point Parameters.
-                                                              (line 158)
+                                                              (line 157)
 * FLT_MAX_10_EXP:                        Floating Point Parameters.
-                                                              (line 146)
+                                                              (line 145)
 * FLT_MAX_EXP:                           Floating Point Parameters.
-                                                              (line 133)
+                                                              (line 132)
 * FLT_MIN:                               Floating Point Parameters.
-                                                              (line 173)
+                                                              (line 172)
 * FLT_MIN_10_EXP:                        Floating Point Parameters.
-                                                              (line 121)
+                                                              (line 120)
 * FLT_MIN_EXP:                           Floating Point Parameters.
-                                                              (line 108)
+                                                              (line 107)
 * FLT_RADIX:                             Floating Point Parameters.
                                                               (line  60)
 * FLT_ROUNDS:                            Floating Point Parameters.
@@ -3092,9 +3096,9 @@ Variable and Constant Macro Index
 * FP_NAN:                                Floating Point Classes.
                                                               (line  17)
 * FP_NORMAL:                             Floating Point Classes.
-                                                              (line  39)
+                                                              (line  38)
 * FP_SUBNORMAL:                          Floating Point Classes.
-                                                              (line  31)
+                                                              (line  30)
 * FP_ZERO:                               Floating Point Classes.
                                                               (line  25)
 * FRAC_DIGITS:                           The Elegant and Fast Way.
@@ -3109,29 +3113,29 @@ Variable and Constant Macro Index
 * FSTAB_SW:                              fstab.               (line  59)
 * FSTAB_XX:                              fstab.               (line  61)
 * FTW_ACTIONRETVAL:                      Working with Directory Trees.
-                                                              (line 231)
+                                                              (line 230)
 * FTW_CHDIR:                             Working with Directory Trees.
-                                                              (line 220)
+                                                              (line 219)
 * FTW_D:                                 Working with Directory Trees.
-                                                              (line  37)
+                                                              (line  36)
 * FTW_DEPTH:                             Working with Directory Trees.
-                                                              (line 225)
+                                                              (line 224)
 * FTW_DNR:                               Working with Directory Trees.
-                                                              (line  42)
+                                                              (line  41)
 * FTW_DP:                                Working with Directory Trees.
-                                                              (line  77)
+                                                              (line  76)
 * FTW_F:                                 Working with Directory Trees.
-                                                              (line  33)
+                                                              (line  32)
 * FTW_MOUNT:                             Working with Directory Trees.
-                                                              (line 216)
+                                                              (line 215)
 * FTW_NS:                                Working with Directory Trees.
-                                                              (line  39)
+                                                              (line  38)
 * FTW_PHYS:                              Working with Directory Trees.
-                                                              (line 210)
+                                                              (line 209)
 * FTW_SL:                                Working with Directory Trees.
-                                                              (line  44)
+                                                              (line  43)
 * FTW_SLN:                               Working with Directory Trees.
-                                                              (line  82)
+                                                              (line  81)
 * F_DUPFD:                               Control Operations.  (line  30)
 * F_DUPFD <1>:                           Duplicating Descriptors.
                                                               (line  53)
@@ -3149,29 +3153,29 @@ Variable and Constant Macro Index
                                                               (line  56)
 * F_OFD_SETLK:                           Control Operations.  (line  64)
 * F_OFD_SETLK <1>:                       Open File Description Locks.
-                                                              (line  97)
+                                                              (line  96)
 * F_OFD_SETLKW:                          Control Operations.  (line  68)
 * F_OFD_SETLKW <1>:                      Open File Description Locks.
-                                                              (line 144)
+                                                              (line 142)
 * F_OK:                                  Testing File Access. (line  91)
-* F_RDLCK:                               File Locks.          (line 192)
+* F_RDLCK:                               File Locks.          (line 190)
 * F_SETFD:                               Control Operations.  (line  39)
 * F_SETFD <1>:                           Descriptor Flags.    (line  34)
 * F_SETFL:                               Control Operations.  (line  47)
 * F_SETFL <1>:                           Getting File Status Flags.
                                                               (line  25)
 * F_SETLK:                               Control Operations.  (line  54)
-* F_SETLK <1>:                           File Locks.          (line 113)
+* F_SETLK <1>:                           File Locks.          (line 112)
 * F_SETLKW:                              Control Operations.  (line  57)
-* F_SETLKW <1>:                          File Locks.          (line 164)
+* F_SETLKW <1>:                          File Locks.          (line 162)
 * F_SETOWN:                              Control Operations.  (line  76)
 * F_SETOWN <1>:                          Interrupt Input.     (line  38)
-* F_UNLCK:                               File Locks.          (line 200)
-* F_WRLCK:                               File Locks.          (line 196)
+* F_UNLCK:                               File Locks.          (line 198)
+* F_WRLCK:                               File Locks.          (line 194)
 * getdate_err:                           General Time String Parsing.
                                                               (line  13)
 * GETFSIZE:                              Limits on Resources. (line 222)
-* GLOB_ABORTED:                          Calling Glob.        (line 271)
+* GLOB_ABORTED:                          Calling Glob.        (line 267)
 * GLOB_ALTDIRFUNC:                       More Flags for Globbing.
                                                               (line  23)
 * GLOB_APPEND:                           Flags for Globbing.  (line  13)
@@ -3186,9 +3190,9 @@ Variable and Constant Macro Index
 * GLOB_NOESCAPE:                         Flags for Globbing.  (line  73)
 * GLOB_NOMAGIC:                          More Flags for Globbing.
                                                               (line  62)
-* GLOB_NOMATCH:                          Calling Glob.        (line 278)
+* GLOB_NOMATCH:                          Calling Glob.        (line 274)
 * GLOB_NOSORT:                           Flags for Globbing.  (line  87)
-* GLOB_NOSPACE:                          Calling Glob.        (line 285)
+* GLOB_NOSPACE:                          Calling Glob.        (line 281)
 * GLOB_ONLYDIR:                          More Flags for Globbing.
                                                               (line 111)
 * GLOB_PERIOD:                           More Flags for Globbing.
@@ -3201,15 +3205,15 @@ Variable and Constant Macro Index
                                                               (line 253)
 * HOST_NOT_FOUND:                        Host Names.          (line 110)
 * HUGE_VAL:                              Math Error Reporting.
-                                                              (line  49)
+                                                              (line  48)
 * HUGE_VALF:                             Math Error Reporting.
-                                                              (line  50)
+                                                              (line  49)
 * HUGE_VALL:                             Math Error Reporting.
-                                                              (line  51)
+                                                              (line  50)
 * HUGE_VAL_FN:                           Math Error Reporting.
-                                                              (line  52)
+                                                              (line  51)
 * HUGE_VAL_FNx:                          Math Error Reporting.
-                                                              (line  53)
+                                                              (line  52)
 * HUPCL:                                 Control Modes.       (line  36)
 * h_errno:                               Host Names.          (line 103)
 * I:                                     Complex Numbers.     (line  36)
@@ -3244,8 +3248,8 @@ Variable and Constant Macro Index
                                                               (line 172)
 * INT_FRAC_DIGITS:                       The Elegant and Fast Way.
                                                               (line 196)
-* INT_MAX:                               Range of Type.       (line  64)
-* INT_MIN:                               Range of Type.       (line  58)
+* INT_MAX:                               Range of Type.       (line  63)
+* INT_MIN:                               Range of Type.       (line  57)
 * INT_N_CS_PRECEDES:                     The Elegant and Fast Way.
                                                               (line 227)
 * INT_N_SEP_BY_SPACE:                    The Elegant and Fast Way.
@@ -3279,23 +3283,23 @@ Variable and Constant Macro Index
 * LC_NUMERIC:                            Locale Categories.   (line  32)
 * LC_TIME:                               Locale Categories.   (line  37)
 * LDBL_DIG:                              Floating Point Parameters.
-                                                              (line 102)
+                                                              (line 101)
 * LDBL_EPSILON:                          Floating Point Parameters.
-                                                              (line 193)
+                                                              (line 192)
 * LDBL_MANT_DIG:                         Floating Point Parameters.
                                                               (line  81)
 * LDBL_MAX:                              Floating Point Parameters.
-                                                              (line 167)
+                                                              (line 166)
 * LDBL_MAX_10_EXP:                       Floating Point Parameters.
-                                                              (line 153)
+                                                              (line 152)
 * LDBL_MAX_EXP:                          Floating Point Parameters.
-                                                              (line 141)
+                                                              (line 140)
 * LDBL_MIN:                              Floating Point Parameters.
-                                                              (line 180)
+                                                              (line 179)
 * LDBL_MIN_10_EXP:                       Floating Point Parameters.
-                                                              (line 128)
+                                                              (line 127)
 * LDBL_MIN_EXP:                          Floating Point Parameters.
-                                                              (line 116)
+                                                              (line 115)
 * leaf:                                  Tree Search Function.
                                                               (line 135)
 * LIM_CORE:                              Limits on Resources. (line 263)
@@ -3309,8 +3313,8 @@ Variable and Constant Macro Index
 * LIO_NOP:                               Asynchronous I/O.    (line  94)
 * LIO_READ:                              Asynchronous I/O.    (line  84)
 * LIO_WRITE:                             Asynchronous I/O.    (line  89)
-* LLONG_MAX:                             Range of Type.       (line  89)
-* LLONG_MIN:                             Range of Type.       (line  82)
+* LLONG_MAX:                             Range of Type.       (line  87)
+* LLONG_MIN:                             Range of Type.       (line  81)
 * LLONG_WIDTH:                           Width of Type.       (line  20)
 * LOCPATH:                               Locale Names.        (line  57)
 * LOGIN_PROCESS:                         Manipulating the Database.
@@ -3348,10 +3352,10 @@ Variable and Constant Macro Index
 * LOG_USER:                              syslog; vsyslog.     (line  28)
 * LOG_UUCP:                              syslog; vsyslog.     (line  42)
 * LOG_WARNING:                           syslog; vsyslog.     (line  89)
-* LONG_LONG_MAX:                         Range of Type.       (line  96)
-* LONG_LONG_MIN:                         Range of Type.       (line  95)
-* LONG_MAX:                              Range of Type.       (line  76)
-* LONG_MIN:                              Range of Type.       (line  70)
+* LONG_LONG_MAX:                         Range of Type.       (line  94)
+* LONG_LONG_MIN:                         Range of Type.       (line  93)
+* LONG_MAX:                              Range of Type.       (line  75)
+* LONG_MIN:                              Range of Type.       (line  69)
 * LONG_WIDTH:                            Width of Type.       (line  18)
 * L_ctermid:                             Identifying the Terminal.
                                                               (line  31)
@@ -3710,8 +3714,8 @@ Variable and Constant Macro Index
                                                               (line  84)
 * PRIO_USER:                             Traditional Scheduling Functions.
                                                               (line  93)
-* program_invocation_name:               Error Messages.      (line 110)
-* program_invocation_short_name:         Error Messages.      (line 119)
+* program_invocation_name:               Error Messages.      (line 109)
+* program_invocation_short_name:         Error Messages.      (line 118)
 * PROT_EXEC:                             Memory Protection.   (line  22)
 * PROT_NONE:                             Memory Protection.   (line  28)
 * PROT_READ:                             Memory Protection.   (line  16)
@@ -3729,7 +3733,7 @@ Variable and Constant Macro Index
 * P_tmpdir:                              Temporary Files.     (line 148)
 * RADIXCHAR:                             The Elegant and Fast Way.
                                                               (line 241)
-* RAND_MAX:                              ISO Random.          (line  13)
+* RAND_MAX:                              ISO Random.          (line  12)
 * REG_BADBR:                             POSIX Regexp Compilation.
                                                               (line  70)
 * REG_BADPAT:                            POSIX Regexp Compilation.
@@ -3786,6 +3790,22 @@ Variable and Constant Macro Index
 * RLIM_NLIMITS:                          Limits on Resources. (line 191)
 * RSEQ_SIG:                              Restartable Sequences.
                                                               (line  68)
+* RTLD_DI_LINKMAP:                       Dynamic Linker Introspection.
+                                                              (line  24)
+* RTLD_DI_LMID:                          Dynamic Linker Introspection.
+                                                              (line  29)
+* RTLD_DI_ORIGIN:                        Dynamic Linker Introspection.
+                                                              (line  34)
+* RTLD_DI_PHDR:                          Dynamic Linker Introspection.
+                                                              (line  73)
+* RTLD_DI_SERINFO:                       Dynamic Linker Introspection.
+                                                              (line  42)
+* RTLD_DI_SERINFOSIZE:                   Dynamic Linker Introspection.
+                                                              (line  43)
+* RTLD_DI_TLS_DATA:                      Dynamic Linker Introspection.
+                                                              (line  60)
+* RTLD_DI_TLS_MODID:                     Dynamic Linker Introspection.
+                                                              (line  67)
 * RUN_LVL:                               Manipulating the Database.
                                                               (line  77)
 * RUN_LVL <1>:                           XPG Functions.       (line  46)
@@ -3799,8 +3819,8 @@ Variable and Constant Macro Index
 * R_OK:                                  Testing File Access. (line  79)
 * SA_NOCLDSTOP:                          Flags for Sigaction. (line  25)
 * SA_ONSTACK:                            Flags for Sigaction. (line  34)
-* SA_RESTART:                            Flags for Sigaction. (line  41)
-* SCHAR_MAX:                             Range of Type.       (line  29)
+* SA_RESTART:                            Flags for Sigaction. (line  42)
+* SCHAR_MAX:                             Range of Type.       (line  28)
 * SCHAR_MIN:                             Range of Type.       (line  23)
 * SCHAR_WIDTH:                           Width of Type.       (line  12)
 * SCHED_FIFO:                            Basic Scheduling Functions.
@@ -3819,8 +3839,8 @@ Variable and Constant Macro Index
 * SEEK_SET <1>:                          File Position Primitive.
                                                               (line  27)
 * SETFSIZE:                              Limits on Resources. (line 226)
-* SHRT_MAX:                              Range of Type.       (line  52)
-* SHRT_MIN:                              Range of Type.       (line  46)
+* SHRT_MAX:                              Range of Type.       (line  51)
+* SHRT_MIN:                              Range of Type.       (line  45)
 * SHRT_WIDTH:                            Width of Type.       (line  14)
 * SIGABRT:                               Program Error Signals.
                                                               (line 139)
@@ -4008,20 +4028,20 @@ Variable and Constant Macro Index
                                                               (line 124)
 * T_FMT_AMPM:                            The Elegant and Fast Way.
                                                               (line 127)
-* UCHAR_MAX:                             Range of Type.       (line  30)
+* UCHAR_MAX:                             Range of Type.       (line  29)
 * UCHAR_WIDTH:                           Width of Type.       (line  13)
 * UINTPTR_WIDTH:                         Width of Type.       (line  32)
-* UINT_MAX:                              Range of Type.       (line  65)
+* UINT_MAX:                              Range of Type.       (line  64)
 * UINT_WIDTH:                            Width of Type.       (line  17)
-* ULLONG_MAX:                            Range of Type.       (line  90)
+* ULLONG_MAX:                            Range of Type.       (line  88)
 * ULLONG_WIDTH:                          Width of Type.       (line  21)
-* ULONG_LONG_MAX:                        Range of Type.       (line  97)
-* ULONG_MAX:                             Range of Type.       (line  77)
+* ULONG_LONG_MAX:                        Range of Type.       (line  95)
+* ULONG_MAX:                             Range of Type.       (line  76)
 * ULONG_WIDTH:                           Width of Type.       (line  19)
 * USER_PROCESS:                          Manipulating the Database.
                                                               (line 105)
 * USER_PROCESS <1>:                      XPG Functions.       (line  74)
-* USHRT_MAX:                             Range of Type.       (line  53)
+* USHRT_MAX:                             Range of Type.       (line  52)
 * USHRT_WIDTH:                           Width of Type.       (line  15)
 * VDISCARD:                              Other Special.       (line  24)
 * VDSUSP:                                Signal Characters.   (line  55)
@@ -4032,7 +4052,7 @@ Variable and Constant Macro Index
 * VINTR:                                 Signal Characters.   (line  10)
 * VKILL:                                 Editing Characters.  (line  89)
 * VLNEXT:                                Other Special.       (line   6)
-* VMIN:                                  Noncanonical Input.  (line  25)
+* VMIN:                                  Noncanonical Input.  (line  24)
 * VQUIT:                                 Signal Characters.   (line  22)
 * VREPRINT:                              Editing Characters.  (line 101)
 * VSTART:                                Start/Stop Characters.
@@ -4041,15 +4061,15 @@ Variable and Constant Macro Index
 * VSTOP:                                 Start/Stop Characters.
                                                               (line  28)
 * VSUSP:                                 Signal Characters.   (line  34)
-* VTIME:                                 Noncanonical Input.  (line  34)
+* VTIME:                                 Noncanonical Input.  (line  33)
 * VWERASE:                               Editing Characters.  (line  64)
 * WAIT_ANY:                              Process Completion.  (line  81)
 * WAIT_MYPGRP:                           Process Completion.  (line  86)
-* WCHAR_MAX:                             Extended Char Intro. (line 119)
-* WCHAR_MAX <1>:                         Range of Type.       (line 104)
-* WCHAR_MIN:                             Extended Char Intro. (line 112)
+* WCHAR_MAX:                             Extended Char Intro. (line 112)
+* WCHAR_MAX <1>:                         Range of Type.       (line 102)
+* WCHAR_MIN:                             Extended Char Intro. (line 105)
 * WCHAR_WIDTH:                           Width of Type.       (line  36)
-* WEOF:                                  Extended Char Intro. (line 128)
+* WEOF:                                  Extended Char Intro. (line 121)
 * WEOF <1>:                              EOF and Errors.      (line  24)
 * WINT_WIDTH:                            Width of Type.       (line  37)
 * WNOHANG:                               Process Completion.  (line  95)

@@ -1,4 +1,4 @@
-/* Copyright (C) 1991-2022 Free Software Foundation, Inc.
+/* Copyright (C) 1991-2023 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -73,7 +73,7 @@ extern int memcmp (const void *__s1, const void *__s2, size_t __n)
    or bcmp are correct implementations.
 
    __memcmpeq is meant to be used by compilers when memcmp return is
-   only used for its bolean value.
+   only used for its boolean value.
 
    __memcmpeq is declared only for use by compilers.  Programs should
    continue to use memcmp.  */
