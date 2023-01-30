@@ -1,9 +1,9 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.36
+This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
 (ZyC-GCC).
 
-   Copyright © 1993–2022 Free Software Foundation, Inc.
+   Copyright © 1993–2023 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -2166,102 +2166,6 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
-
-
-File: libc.info,  Node: Group Data Structure,  Next: Lookup Group,  Up: Group Database
-
-30.14.1 The Data Structure for a Group
---------------------------------------
-
-The functions and data structures for accessing the system group
-database are declared in the header file ‘grp.h’.
-
- -- Data Type: struct group
-
-     The ‘group’ structure is used to hold information about an entry in
-     the system group database.  It has at least the following members:
-
-     ‘char *gr_name’
-          The name of the group.
-
-     ‘gid_t gr_gid’
-          The group ID of the group.
-
-     ‘char **gr_mem’
-          A vector of pointers to the names of users in the group.  Each
-          user name is a null-terminated string, and the vector itself
-          is terminated by a null pointer.
-
-
-File: libc.info,  Node: Lookup Group,  Next: Scanning All Groups,  Prev: Group Data Structure,  Up: Group Database
-
-30.14.2 Looking Up One Group
-----------------------------
-
-You can search the group database for information about a specific group
-using ‘getgrgid’ or ‘getgrnam’.  These functions are declared in
-‘grp.h’.
-
- -- Function: struct group * getgrgid (gid_t GID)
-
-     Preliminary: | MT-Unsafe race:grgid locale | AS-Unsafe dlopen
-     plugin heap lock | AC-Unsafe corrupt lock fd mem | *Note POSIX
-     Safety Concepts::.
-
-     This function returns a pointer to a statically-allocated structure
-     containing information about the group whose group ID is GID.  This
-     structure may be overwritten by subsequent calls to ‘getgrgid’.
-
-     A null pointer indicates there is no group with ID GID.
-
- -- Function: int getgrgid_r (gid_t GID, struct group *RESULT_BUF, char
-          *BUFFER, size_t BUFLEN, struct group **RESULT)
-
-     Preliminary: | MT-Safe locale | AS-Unsafe dlopen plugin heap lock |
-     AC-Unsafe corrupt lock fd mem | *Note POSIX Safety Concepts::.
-
-     This function is similar to ‘getgrgid’ in that it returns
-     information about the group whose group ID is GID.  However, it
-     fills the user supplied structure pointed to by RESULT_BUF with the
-     information instead of using a static buffer.  The first BUFLEN
-     bytes of the additional buffer pointed to by BUFFER are used to
-     contain additional information, normally strings which are pointed
-     to by the elements of the result structure.
-
-     If a group with ID GID is found, the pointer returned in RESULT
-     points to the record which contains the wanted data (i.e., RESULT
-     contains the value RESULT_BUF).  If no group is found or if an
-     error occurred, the pointer returned in RESULT is a null pointer.
-     The function returns zero or an error code.  If the buffer BUFFER
-     is too small to contain all the needed information, the error code
-     ‘ERANGE’ is returned and ‘errno’ is set to ‘ERANGE’.
-
- -- Function: struct group * getgrnam (const char *NAME)
-
-     Preliminary: | MT-Unsafe race:grnam locale | AS-Unsafe dlopen
-     plugin heap lock | AC-Unsafe corrupt lock fd mem | *Note POSIX
-     Safety Concepts::.
-
-     This function returns a pointer to a statically-allocated structure
-     containing information about the group whose group name is NAME.
-     This structure may be overwritten by subsequent calls to
-     ‘getgrnam’.
-
-     A null pointer indicates there is no group named NAME.
-
- -- Function: int getgrnam_r (const char *NAME, struct group
-          *RESULT_BUF, char *BUFFER, size_t BUFLEN, struct group
-          **RESULT)
-
-     Preliminary: | MT-Safe locale | AS-Unsafe dlopen plugin heap lock |
-     AC-Unsafe corrupt lock fd mem | *Note POSIX Safety Concepts::.
-
-     This function is similar to ‘getgrnam’ in that it returns
-     information about the group whose group name is NAME.  Like
-     ‘getgrgid_r’, it uses the user supplied buffers in RESULT_BUF and
-     BUFFER, not a static buffer.
-
-     The return values are the same as for ‘getgrgid_r’.
 
 
 File: libc.info,  Node: Scanning All Groups,  Prev: Lookup Group,  Up: Group Database
@@ -7405,7 +7309,7 @@ File: libc.info,  Node: Memory Allocation Tunables,  Next: Dynamic Linking Tunab
      of the arenas.  This provides the necessary hysteresis in heap size
      such that excessive amounts of system calls can be avoided.
 
-     The default value of this tunable is ‘0’.
+     The default value of this tunable is ‘131072’ (128 KB).
 
  -- Tunable: glibc.malloc.perturb
      This tunable supersedes the ‘MALLOC_PERTURB_’ environment variable
@@ -7658,4 +7562,45 @@ File: libc.info,  Node: Elision Tunables,  Next: POSIX Thread Tunables,  Prev: D
      accesses.  Expressed in number of try lock attempts.
 
      The default value of this tunable is ‘3’.
+
+
+File: libc.info,  Node: POSIX Thread Tunables,  Next: Hardware Capability Tunables,  Prev: Elision Tunables,  Up: Tunables
+
+38.5 POSIX Thread Tunables
+==========================
+
+ -- Tunable namespace: glibc.pthread
+     The behavior of POSIX threads can be tuned to gain performance
+     improvements according to specific hardware capabilities and
+     workload characteristics by setting the following tunables in the
+     ‘pthread’ namespace:
+
+ -- Tunable: glibc.pthread.mutex_spin_count
+     The ‘glibc.pthread.mutex_spin_count’ tunable sets the maximum
+     number of times a thread should spin on the lock before calling
+     into the kernel to block.  Adaptive spin is used for mutexes
+     initialized with the ‘PTHREAD_MUTEX_ADAPTIVE_NP’ GNU extension.  It
+     affects both ‘pthread_mutex_lock’ and ‘pthread_mutex_timedlock’.
+
+     The thread spins until either the maximum spin count is reached or
+     the lock is acquired.
+
+     The default value of this tunable is ‘100’.
+
+ -- Tunable: glibc.pthread.stack_cache_size
+     This tunable configures the maximum size of the stack cache.  Once
+     the stack cache exceeds this size, unused thread stacks are
+     returned to the kernel, to bring the cache size below this limit.
+
+     The value is measured in bytes.  The default is ‘41943040’ (fourty
+     mibibytes).
+
+ -- Tunable: glibc.pthread.rseq
+     The ‘glibc.pthread.rseq’ tunable can be set to ‘0’, to disable
+     restartable sequences support in the GNU C Library.  This enables
+     applications to perform direct restartable sequence registration
+     with the kernel.  The default is ‘1’, which means that the GNU C
+     Library performs registration on behalf of the application.
+
+     Restartable sequences are a Linux-specific extension.
 

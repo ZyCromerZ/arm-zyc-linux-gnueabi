@@ -1,9 +1,9 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.36
+This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
 (ZyC-GCC).
 
-   Copyright © 1993–2022 Free Software Foundation, Inc.
+   Copyright © 1993–2023 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -2926,12 +2926,13 @@ Appendix D Library Maintenance
 
 * Source Layout::         How to add new functions or header files
                              to the GNU C Library.
+* Source Fortification::  Fortification of function calls.
 * Symbol handling::       How to handle symbols in the GNU C Library.
 * Porting::               How to port the GNU C Library to
                              a new machine or operating system.
 
 
-File: libc.info,  Node: Source Layout,  Next: Symbol handling,  Up: Maintenance
+File: libc.info,  Node: Source Layout,  Next: Source Fortification,  Up: Maintenance
 
 D.1 Adding New Functions
 ========================
@@ -3095,9 +3096,245 @@ the machine-specific directory, e.g.,
 ‘sysdeps/powerpc/sys/platform/ppc.h’.
 
 
-File: libc.info,  Node: Symbol handling,  Next: Porting,  Prev: Source Layout,  Up: Maintenance
+File: libc.info,  Node: Source Fortification,  Next: Symbol handling,  Prev: Source Layout,  Up: Maintenance
 
-D.2 Symbol handling in the GNU C Library
+D.2 Fortification of function calls
+===================================
+
+This section contains implementation details of the GNU C Library and
+may not remain stable across releases.
+
+   The ‘_FORTIFY_SOURCE’ macro may be defined by users to control
+hardening of calls into some functions in the GNU C Library.  The
+definition should be at the top of the source file before any headers
+are included or at the pre-processor commandline using the ‘-D’ switch.
+The hardening primarily focuses on accesses to buffers passed to the
+functions but may also include checks for validity of other inputs to
+the functions.
+
+   When the ‘_FORTIFY_SOURCE’ macro is defined, it enables code that
+validates inputs passed to some functions in the GNU C Library to
+determine if they are safe.  If the compiler is unable to determine that
+the inputs to the function call are safe, the call may be replaced by a
+call to its hardened variant that does additional safety checks at
+runtime.  Some hardened variants need the size of the buffer to perform
+access validation and this is provided by the ‘__builtin_object_size’ or
+the ‘__builtin_dynamic_object_size’ builtin functions.
+
+   At runtime, if any of those safety checks fail, the program will
+terminate with a ‘SIGABRT’ signal.  ‘_FORTIFY_SOURCE’ may be defined to
+one of the following values:
+
+   • 1: This enables buffer bounds checking using the value returned by
+     the ‘__builtin_object_size’ compiler builtin function.  If the
+     function returns ‘(size_t) -1’, the function call is left
+     untouched.  Additionally, this level also enables validation of
+     flags to the ‘open’, ‘open64’, ‘openat’ and ‘openat64’ functions.
+
+   • 2: This behaves like 1, with the addition of some checks that may
+     trap code that is conforming but unsafe, e.g.  accepting ‘%n’ only
+     in read-only format strings.
+
+   • 3: This enables buffer bounds checking using the value returned by
+     the ‘__builtin_dynamic_object_size’ compiler builtin function.  If
+     the function returns ‘(size_t) -1’, the function call is left
+     untouched.  Fortification at this level may have a impact on
+     program performance if the function call that is fortified is
+     frequently encountered and the size expression returned by
+     ‘__builtin_dynamic_object_size’ is complex.
+
+   In general, the fortified variants of the function calls use the name
+of the function with a ‘__’ prefix and a ‘_chk’ suffix.  There are some
+exceptions, e.g.  the ‘printf’ family of functions where, depending on
+the architecture, one may also see fortified variants have the
+‘_chkieee128’ suffix or the ‘__nldbl___’ prefix to their names.
+
+   Another exception is the ‘open’ family of functions, where their
+fortified replacements have the ‘__’ prefix and a ‘_2’ suffix.  The
+‘FD_SET’, ‘FD_CLR’ and ‘FD_ISSET’ macros use the ‘__fdelt_chk’ function
+on fortification.
+
+   The following functions and macros are fortified in the GNU C
+Library:
+
+   • ‘asprintf’
+
+   • ‘confstr’
+
+   • ‘dprintf’
+
+   • ‘explicit_bzero’
+
+   • ‘FD_SET’
+
+   • ‘FD_CLR’
+
+   • ‘FD_ISSET’
+
+   • ‘fgets’
+
+   • ‘fgets_unlocked’
+
+   • ‘fgetws’
+
+   • ‘fgetws_unlocked’
+
+   • ‘fprintf’
+
+   • ‘fread’
+
+   • ‘fread_unlocked’
+
+   • ‘fwprintf’
+
+   • ‘getcwd’
+
+   • ‘getdomainname’
+
+   • ‘getgroups’
+
+   • ‘gethostname’
+
+   • ‘getlogin_r’
+
+   • ‘gets’
+
+   • ‘getwd’
+
+   • ‘longjmp’
+
+   • ‘mbsnrtowcs’
+
+   • ‘mbsrtowcs’
+
+   • ‘mbstowcs’
+
+   • ‘memcpy’
+
+   • ‘memmove’
+
+   • ‘mempcpy’
+
+   • ‘memset’
+
+   • ‘mq_open’
+
+   • ‘obstack_printf’
+
+   • ‘obstack_vprintf’
+
+   • ‘open’
+
+   • ‘open64’
+
+   • ‘openat’
+
+   • ‘openat64’
+
+   • ‘poll’
+
+   • ‘ppoll64’
+
+   • ‘ppoll’
+
+   • ‘pread64’
+
+   • ‘pread’
+
+   • ‘printf’
+
+   • ‘ptsname_r’
+
+   • ‘read’
+
+   • ‘readlinkat’
+
+   • ‘readlink’
+
+   • ‘realpath’
+
+   • ‘recv’
+
+   • ‘recvfrom’
+
+   • ‘snprintf’
+
+   • ‘sprintf’
+
+   • ‘stpcpy’
+
+   • ‘stpncpy’
+
+   • ‘strcat’
+
+   • ‘strcpy’
+
+   • ‘strncat’
+
+   • ‘strncpy’
+
+   • ‘swprintf’
+
+   • ‘syslog’
+
+   • ‘ttyname_r’
+
+   • ‘vasprintf’
+
+   • ‘vdprintf’
+
+   • ‘vfprintf’
+
+   • ‘vfwprintf’
+
+   • ‘vprintf’
+
+   • ‘vsnprintf’
+
+   • ‘vsprintf’
+
+   • ‘vswprintf’
+
+   • ‘vsyslog’
+
+   • ‘vwprintf’
+
+   • ‘wcpcpy’
+
+   • ‘wcpncpy’
+
+   • ‘wcrtomb’
+
+   • ‘wcscat’
+
+   • ‘wcscpy’
+
+   • ‘wcsncat’
+
+   • ‘wcsncpy’
+
+   • ‘wcsnrtombs’
+
+   • ‘wcsrtombs’
+
+   • ‘wcstombs’
+
+   • ‘wctomb’
+
+   • ‘wmemcpy’
+
+   • ‘wmemmove’
+
+   • ‘wmempcpy’
+
+   • ‘wmemset’
+
+   • ‘wprintf’
+
+
+File: libc.info,  Node: Symbol handling,  Next: Porting,  Prev: Source Fortification,  Up: Maintenance
+
+D.3 Symbol handling in the GNU C Library
 ========================================
 
 * Menu:
@@ -3108,7 +3345,7 @@ D.2 Symbol handling in the GNU C Library
 
 File: libc.info,  Node: 64-bit time symbol handling,  Up: Symbol handling
 
-D.2.1 64-bit time symbol handling in the GNU C Library
+D.3.1 64-bit time symbol handling in the GNU C Library
 ------------------------------------------------------
 
 With respect to time handling, GNU C Library configurations fall in two
@@ -3213,7 +3450,7 @@ dual-time configurations:
 
 File: libc.info,  Node: Porting,  Prev: Symbol handling,  Up: Maintenance
 
-D.3 Porting the GNU C Library
+D.4 Porting the GNU C Library
 =============================
 
 The GNU C Library is written to be easily portable to a variety of
@@ -3368,7 +3605,7 @@ directories.
 
 File: libc.info,  Node: Hierarchy Conventions,  Next: Porting to Unix,  Up: Porting
 
-D.3.1 Layout of the ‘sysdeps’ Directory Hierarchy
+D.4.1 Layout of the ‘sysdeps’ Directory Hierarchy
 -------------------------------------------------
 
 A GNU configuration name has three parts: the CPU type, the
@@ -3481,7 +3718,7 @@ hierarchy that are not for particular machine architectures.
 
 File: libc.info,  Node: Porting to Unix,  Prev: Hierarchy Conventions,  Up: Porting
 
-D.3.2 Porting the GNU C Library to Unix Systems
+D.4.2 Porting the GNU C Library to Unix Systems
 -----------------------------------------------
 
 Most Unix systems are fundamentally very similar.  There are variations

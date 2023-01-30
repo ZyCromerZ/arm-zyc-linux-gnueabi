@@ -1,9 +1,9 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.36
+This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
 (ZyC-GCC).
 
-   Copyright © 1993–2022 Free Software Foundation, Inc.
+   Copyright © 1993–2023 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -2166,47 +2166,6 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
-
-
-File: libc.info,  Node: POSIX Thread Tunables,  Next: Hardware Capability Tunables,  Prev: Elision Tunables,  Up: Tunables
-
-38.5 POSIX Thread Tunables
-==========================
-
- -- Tunable namespace: glibc.pthread
-     The behavior of POSIX threads can be tuned to gain performance
-     improvements according to specific hardware capabilities and
-     workload characteristics by setting the following tunables in the
-     ‘pthread’ namespace:
-
- -- Tunable: glibc.pthread.mutex_spin_count
-     The ‘glibc.pthread.mutex_spin_count’ tunable sets the maximum
-     number of times a thread should spin on the lock before calling
-     into the kernel to block.  Adaptive spin is used for mutexes
-     initialized with the ‘PTHREAD_MUTEX_ADAPTIVE_NP’ GNU extension.  It
-     affects both ‘pthread_mutex_lock’ and ‘pthread_mutex_timedlock’.
-
-     The thread spins until either the maximum spin count is reached or
-     the lock is acquired.
-
-     The default value of this tunable is ‘100’.
-
- -- Tunable: glibc.pthread.stack_cache_size
-     This tunable configures the maximum size of the stack cache.  Once
-     the stack cache exceeds this size, unused thread stacks are
-     returned to the kernel, to bring the cache size below this limit.
-
-     The value is measured in bytes.  The default is ‘41943040’ (fourty
-     mibibytes).
-
- -- Tunable: glibc.pthread.rseq
-     The ‘glibc.pthread.rseq’ tunable can be set to ‘0’, to disable
-     restartable sequences support in the GNU C Library.  This enables
-     applications to perform direct restartable sequence registration
-     with the kernel.  The default is ‘1’, which means that the GNU C
-     Library performs registration on behalf of the application.
-
-     Restartable sequences are a Linux-specific extension.
 
 
 File: libc.info,  Node: Hardware Capability Tunables,  Next: Memory Related Tunables,  Prev: POSIX Thread Tunables,  Up: Tunables

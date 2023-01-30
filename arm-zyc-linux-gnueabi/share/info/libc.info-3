@@ -1,9 +1,9 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.36
+This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
 (ZyC-GCC).
 
-   Copyright © 1993–2022 Free Software Foundation, Inc.
+   Copyright © 1993–2023 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -2231,7 +2231,7 @@ better than not using it.  At present, the only way to do a more
 thorough job is to write the entire sensitive operation in assembly
 language.  We anticipate that future compilers will recognize calls to
 ‘explicit_bzero’ and take appropriate steps to erase all the copies of
-the affected data, whereever they may be.
+the affected data, wherever they may be.
 
  -- Function: void explicit_bzero (void *BLOCK, size_t LEN)
 

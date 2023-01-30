@@ -1,9 +1,9 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.36
+This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
 (ZyC-GCC).
 
-   Copyright © 1993–2022 Free Software Foundation, Inc.
+   Copyright © 1993–2023 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -2173,10 +2173,10 @@ File: libc.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 Main Menu
 *********
 
-This is ‘The GNU C Library Reference Manual’, for version 2.36
+This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
 (ZyC-GCC).
 
-   Copyright © 1993–2022 Free Software Foundation, Inc.
+   Copyright © 1993–2023 Free Software Foundation, Inc.
 
    Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -3546,6 +3546,7 @@ Maintenance
 
 * Source Layout::         How to add new functions or header files
                              to the GNU C Library.
+* Source Fortification::  Fortification of function calls.
 * Symbol handling::       How to handle symbols in the GNU C Library.
 * Porting::               How to port the GNU C Library to
                              a new machine or operating system.
@@ -4950,7 +4951,9 @@ on semantics undefined within the standard.
      If this macro is defined to 1, security hardening is added to
      various library functions.  If defined to 2, even stricter checks
      are applied.  If defined to 3, the GNU C Library may also use
-     checks that may have an additional performance overhead.
+     checks that may have an additional performance overhead.  *Note
+     Fortification of function calls: Source Fortification. for more
+     information.
 
  -- Macro: _DYNAMIC_STACK_SIZE_SOURCE
 

@@ -1,5 +1,5 @@
 /* This file defines standard ELF types, structures, and macros.
-   Copyright (C) 1995-2022 Free Software Foundation, Inc.
+   Copyright (C) 1995-2023 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -506,6 +506,7 @@ typedef struct
 
 /* Legal values for ch_type (compression algorithm).  */
 #define ELFCOMPRESS_ZLIB	1	   /* ZLIB/DEFLATE algorithm.  */
+#define ELFCOMPRESS_ZSTD	2	   /* Zstandard algorithm.  */
 #define ELFCOMPRESS_LOOS	0x60000000 /* Start of OS-specific.  */
 #define ELFCOMPRESS_HIOS	0x6fffffff /* End of OS-specific.  */
 #define ELFCOMPRESS_LOPROC	0x70000000 /* Start of processor-specific.  */
@@ -808,6 +809,7 @@ typedef struct
 #define NT_S390_GS_BC	0x30c		/* s390 guarded storage
 					   broadcast control block.  */
 #define NT_S390_RI_CB	0x30d		/* s390 runtime instrumentation.  */
+#define NT_S390_PV_CPU_DATA	0x30e	/* s390 protvirt cpu dump data.  */
 #define NT_ARM_VFP	0x400		/* ARM VFP/NEON registers */
 #define NT_ARM_TLS	0x401		/* ARM TLS register */
 #define NT_ARM_HW_BREAK	0x402		/* ARM hardware breakpoint registers */
@@ -829,6 +831,15 @@ typedef struct
 #define NT_MIPS_DSP	0x800		/* MIPS DSP ASE registers.  */
 #define NT_MIPS_FP_MODE	0x801		/* MIPS floating-point mode.  */
 #define NT_MIPS_MSA	0x802		/* MIPS SIMD registers.  */
+#define NT_LOONGARCH_CPUCFG	0xa00	/* LoongArch CPU config registers.  */
+#define NT_LOONGARCH_CSR	0xa01	/* LoongArch control and
+					   status registers.  */
+#define NT_LOONGARCH_LSX	0xa02	/* LoongArch Loongson SIMD
+					   Extension registers.  */
+#define NT_LOONGARCH_LASX	0xa03	/* LoongArch Loongson Advanced
+					   SIMD Extension registers.  */
+#define NT_LOONGARCH_LBT	0xa04	/* LoongArch Loongson Binary
+					   Translation registers.  */
 
 /* Legal values for the note segment descriptor types for object files.  */
 
@@ -1054,7 +1065,8 @@ typedef struct
 
 /* Legal values for vd_flags (version information flags).  */
 #define VER_FLG_BASE	0x1		/* Version definition of file itself */
-#define VER_FLG_WEAK	0x2		/* Weak version identifier */
+#define VER_FLG_WEAK	0x2		/* Weak version identifier.  Also
+					   used by vna_flags below.  */
 
 /* Versym symbol index values.  */
 #define	VER_NDX_LOCAL		0	/* Symbol is local.  */
@@ -1130,10 +1142,6 @@ typedef struct
   Elf64_Word	vna_next;		/* Offset in bytes to next vernaux
 					   entry */
 } Elf64_Vernaux;
-
-
-/* Legal values for vna_flags.  */
-#define VER_FLG_WEAK	0x2		/* Weak version identifier */
 
 
 /* Auxiliary vector.  */
@@ -4085,8 +4093,11 @@ enum
 #define R_NDS32_TLS_DESC	119
 
 /* LoongArch ELF Flags */
-#define EF_LARCH_ABI    	0x07
-#define EF_LARCH_ABI_LP64D	0x03
+#define EF_LARCH_ABI_MODIFIER_MASK  0x07
+#define EF_LARCH_ABI_SOFT_FLOAT     0x01
+#define EF_LARCH_ABI_SINGLE_FLOAT   0x02
+#define EF_LARCH_ABI_DOUBLE_FLOAT   0x03
+#define EF_LARCH_OBJABI_V1          0x40
 
 /* LoongArch specific dynamic relocations */
 #define R_LARCH_NONE		0
@@ -4148,6 +4159,15 @@ enum
 #define R_LARCH_GNU_VTINHERIT  57
 #define R_LARCH_GNU_VTENTRY  58
 
+/* ARC specific declarations.  */
+
+/* Processor specific flags for the Ehdr e_flags field.  */
+#define EF_ARC_MACH_MSK	    0x000000ff
+#define EF_ARC_OSABI_MSK    0x00000f00
+#define EF_ARC_ALL_MSK	    (EF_ARC_MACH_MSK | EF_ARC_OSABI_MSK)
+
+/* Processor specific values for the Shdr sh_type field.  */
+#define SHT_ARC_ATTRIBUTES	(SHT_LOPROC + 1) /* ARC attributes section.  */
 
 /* ARCompact/ARCv2 specific relocs.  */
 #define R_ARC_NONE		0x0
@@ -4155,7 +4175,7 @@ enum
 #define R_ARC_16		0x2
 #define R_ARC_24		0x3
 #define R_ARC_32		0x4
-#define R_ARC_B26		0x5
+
 #define R_ARC_B22_PCREL		0x6
 #define R_ARC_H30		0x7
 #define R_ARC_N8		0x8
@@ -4195,16 +4215,23 @@ enum
 #define R_ARC_SECTOFF_ME_2	0x2A
 #define R_ARC_SECTOFF_1		0x2B
 #define R_ARC_SECTOFF_2		0x2C
+#define R_ARC_SDA_12		0x2D
+#define R_ARC_SDA16_ST2		0x30
+#define R_ARC_32_PCREL		0x31
 #define R_ARC_PC32		0x32
 #define R_ARC_GOTPC32		0x33
 #define R_ARC_PLT32		0x34
 #define R_ARC_COPY		0x35
 #define R_ARC_GLOB_DAT		0x36
-#define R_ARC_JUMP_SLOT		0x37
+#define R_ARC_JMP_SLOT		0x37
 #define R_ARC_RELATIVE		0x38
 #define R_ARC_GOTOFF		0x39
 #define R_ARC_GOTPC		0x3A
 #define R_ARC_GOT32		0x3B
+#define R_ARC_S21W_PCREL_PLT	0x3C
+#define R_ARC_S25H_PCREL_PLT	0x3D
+
+#define R_ARC_JLI_SECTOFF	0x3F
 
 #define R_ARC_TLS_DTPMOD	0x42
 #define R_ARC_TLS_DTPOFF	0x43
@@ -4213,9 +4240,12 @@ enum
 #define R_ARC_TLS_GD_LD	        0x46
 #define R_ARC_TLS_GD_CALL	0x47
 #define R_ARC_TLS_IE_GOT	0x48
-#define R_ARC_TLS_DTPOFF_S9	0x4a
-#define R_ARC_TLS_LE_S9		0x4a
-#define R_ARC_TLS_LE_32		0x4b
+#define R_ARC_TLS_DTPOFF_S9	0x49
+#define R_ARC_TLS_LE_S9		0x4A
+#define R_ARC_TLS_LE_32		0x4B
+#define R_ARC_S25W_PCREL_PLT	0x4C
+#define R_ARC_S21H_PCREL_PLT	0x4D
+#define R_ARC_NPS_CMEM16	0x4E
 
 /* OpenRISC 1000 specific relocs.  */
 #define R_OR1K_NONE		0

@@ -1,5 +1,5 @@
 /* Definitions for POSIX spawn interface.
-   Copyright (C) 2000-2022 Free Software Foundation, Inc.
+   Copyright (C) 2000-2023 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -198,7 +198,7 @@ extern int posix_spawn_file_actions_adddup2 (posix_spawn_file_actions_t *
 					     int __fd, int __newfd)
      __THROW __nonnull ((1));
 
-#ifdef __USE_GNU
+#ifdef __USE_MISC
 /* Add an action changing the directory to PATH during spawn.  This
    affects the subsequent file actions.  */
 extern int posix_spawn_file_actions_addchdir_np (posix_spawn_file_actions_t *
@@ -227,7 +227,7 @@ posix_spawn_file_actions_addtcsetpgrp_np (posix_spawn_file_actions_t *,
 					  int __tcfd)
      __THROW __nonnull ((1));
 
-#endif
+#endif /* __USE_MISC */
 
 __END_DECLS
 
