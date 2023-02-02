@@ -1,6 +1,6 @@
 This is libc.info, produced by makeinfo version 6.8 from libc.texinfo.
 
-This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
+This is ‘The GNU C Library Reference Manual’, for version 2.37.9000
 (ZyC-GCC).
 
    Copyright © 1993–2023 Free Software Foundation, Inc.
@@ -2173,7 +2173,7 @@ File: libc.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
 Main Menu
 *********
 
-This is ‘The GNU C Library Reference Manual’, for version 2.36.9000
+This is ‘The GNU C Library Reference Manual’, for version 2.37.9000
 (ZyC-GCC).
 
    Copyright © 1993–2023 Free Software Foundation, Inc.
