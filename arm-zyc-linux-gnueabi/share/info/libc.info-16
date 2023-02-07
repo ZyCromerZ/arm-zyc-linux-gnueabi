@@ -6549,7 +6549,7 @@ Function and Macro Index
                                                               (line 107)
 * imaxabs:                               Absolute Value.      (line  19)
 * imaxdiv:                               Integer Division.    (line 114)
-* index:                                 Search Functions.    (line 341)
+* index:                                 Search Functions.    (line 335)
 * inet_addr:                             Host Address Functions.
                                                               (line  22)
 * inet_aton:                             Host Address Functions.
@@ -6857,12 +6857,12 @@ Function and Macro Index
                                                               (line  32)
 * memfd_create:                          Memory-mapped I/O.   (line 384)
 * memfrob:                               Obfuscating Data.    (line  22)
-* memmem:                                Search Functions.    (line 232)
+* memmem:                                Search Functions.    (line 226)
 * memmove:                               Copying Strings and Arrays.
                                                               (line 133)
 * mempcpy:                               Copying Strings and Arrays.
                                                               (line  78)
-* memrchr:                               Search Functions.    (line  60)
+* memrchr:                               Search Functions.    (line  54)
 * memset:                                Copying Strings and Arrays.
                                                               (line 183)
 * merge:                                 Actions in the NSS configuration.
@@ -7151,7 +7151,7 @@ Function and Macro Index
 * rewind:                                File Positioning.    (line 159)
 * rewinddir:                             Random Access Directory.
                                                               (line  10)
-* rindex:                                Search Functions.    (line 351)
+* rindex:                                Search Functions.    (line 345)
 * rint:                                  Rounding Functions.  (line  80)
 * rintf:                                 Rounding Functions.  (line  81)
 * rintfN:                                Rounding Functions.  (line  83)
@@ -7395,17 +7395,17 @@ Function and Macro Index
 * stpncpy:                               Truncating Strings.  (line 101)
 * strcasecmp:                            String/Array Comparison.
                                                               (line 127)
-* strcasestr:                            Search Functions.    (line 215)
+* strcasestr:                            Search Functions.    (line 209)
 * strcat:                                Concatenating Strings.
                                                               (line  12)
-* strchr:                                Search Functions.    (line  71)
-* strchrnul:                             Search Functions.    (line 112)
+* strchr:                                Search Functions.    (line  65)
+* strchrnul:                             Search Functions.    (line 106)
 * strcmp:                                String/Array Comparison.
                                                               (line  87)
 * strcoll:                               Collation Functions. (line  39)
 * strcpy:                                Copying Strings and Arrays.
                                                               (line 202)
-* strcspn:                               Search Functions.    (line 274)
+* strcspn:                               Search Functions.    (line 268)
 * strdup:                                Copying Strings and Arrays.
                                                               (line 224)
 * strdupa:                               Copying Strings and Arrays.
@@ -7433,15 +7433,15 @@ Function and Macro Index
 * strndup:                               Truncating Strings.  (line  62)
 * strndupa:                              Truncating Strings.  (line  82)
 * strnlen:                               String Length.       (line  86)
-* strpbrk:                               Search Functions.    (line 306)
+* strpbrk:                               Search Functions.    (line 300)
 * strptime:                              Low-Level Time String Parsing.
                                                               (line  11)
-* strrchr:                               Search Functions.    (line 153)
+* strrchr:                               Search Functions.    (line 147)
 * strsep:                                Finding Tokens in a String.
                                                               (line 158)
 * strsignal:                             Signal Messages.     (line  14)
-* strspn:                                Search Functions.    (line 244)
-* strstr:                                Search Functions.    (line 175)
+* strspn:                                Search Functions.    (line 238)
+* strstr:                                Search Functions.    (line 169)
 * strtod:                                Parsing of Floats.   (line  12)
 * strtof:                                Parsing of Floats.   (line  84)
 * strtofN:                               Parsing of Floats.   (line  99)
@@ -7709,14 +7709,14 @@ Function and Macro Index
                                                               (line 141)
 * wcscat:                                Concatenating Strings.
                                                               (line  36)
-* wcschr:                                Search Functions.    (line  96)
-* wcschrnul:                             Search Functions.    (line 123)
+* wcschr:                                Search Functions.    (line  90)
+* wcschrnul:                             Search Functions.    (line 117)
 * wcscmp:                                String/Array Comparison.
                                                               (line 107)
 * wcscoll:                               Collation Functions. (line  48)
 * wcscpy:                                Copying Strings and Arrays.
                                                               (line 213)
-* wcscspn:                               Search Functions.    (line 293)
+* wcscspn:                               Search Functions.    (line 287)
 * wcsdup:                                Copying Strings and Arrays.
                                                               (line 235)
 * wcsftime:                              Formatting Calendar Time.
@@ -7730,11 +7730,11 @@ Function and Macro Index
 * wcsncpy:                               Truncating Strings.  (line  38)
 * wcsnlen:                               String Length.       (line 106)
 * wcsnrtombs:                            Converting Strings.  (line 205)
-* wcspbrk:                               Search Functions.    (line 326)
-* wcsrchr:                               Search Functions.    (line 166)
+* wcspbrk:                               Search Functions.    (line 320)
+* wcsrchr:                               Search Functions.    (line 160)
 * wcsrtombs:                             Converting Strings.  (line  98)
-* wcsspn:                                Search Functions.    (line 262)
-* wcsstr:                                Search Functions.    (line 192)
+* wcsspn:                                Search Functions.    (line 256)
+* wcsstr:                                Search Functions.    (line 186)
 * wcstod:                                Parsing of Floats.   (line 110)
 * wcstof:                                Parsing of Floats.   (line 112)
 * wcstofN:                               Parsing of Floats.   (line 115)
@@ -7752,7 +7752,7 @@ Function and Macro Index
 * wcstoull:                              Parsing of Integers. (line 172)
 * wcstoumax:                             Parsing of Integers. (line 243)
 * wcstouq:                               Parsing of Integers. (line 191)
-* wcswcs:                                Search Functions.    (line 205)
+* wcswcs:                                Search Functions.    (line 199)
 * wcsxfrm:                               Collation Functions. (line 118)
 * wctob:                                 Converting a Character.
                                                               (line  68)
