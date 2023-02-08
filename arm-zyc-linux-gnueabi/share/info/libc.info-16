@@ -5097,27 +5097,27 @@ Type Index
 * glibc.cpu:                             Hardware Capability Tunables.
                                                               (line   6)
 * glibc.cpu.cached_memopt:               Hardware Capability Tunables.
-                                                              (line  29)
+                                                              (line  34)
 * glibc.cpu.hwcaps:                      Hardware Capability Tunables.
                                                               (line  21)
 * glibc.cpu.hwcap_mask:                  Hardware Capability Tunables.
                                                               (line  11)
 * glibc.cpu.name:                        Hardware Capability Tunables.
-                                                              (line  38)
+                                                              (line  43)
 * glibc.cpu.x86_data_cache_size:         Hardware Capability Tunables.
-                                                              (line  46)
+                                                              (line  51)
 * glibc.cpu.x86_ibt:                     Hardware Capability Tunables.
-                                                              (line  81)
+                                                              (line  86)
 * glibc.cpu.x86_non_temporal_threshold:  Hardware Capability Tunables.
-                                                              (line  57)
+                                                              (line  62)
 * glibc.cpu.x86_rep_movsb_threshold:     Hardware Capability Tunables.
-                                                              (line  67)
+                                                              (line  72)
 * glibc.cpu.x86_rep_stosb_threshold:     Hardware Capability Tunables.
-                                                              (line  74)
+                                                              (line  79)
 * glibc.cpu.x86_shared_cache_size:       Hardware Capability Tunables.
-                                                              (line  52)
+                                                              (line  57)
 * glibc.cpu.x86_shstk:                   Hardware Capability Tunables.
-                                                              (line  93)
+                                                              (line  98)
 * glibc.elision:                         Elision Tunables.    (line   6)
 * glibc.elision.enable:                  Elision Tunables.    (line  13)
 * glibc.elision.skip_lock_after_retries: Elision Tunables.    (line  37)

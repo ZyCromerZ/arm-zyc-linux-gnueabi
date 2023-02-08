@@ -2194,7 +2194,12 @@ File: libc.info,  Node: Hardware Capability Tunables,  Next: Memory Related Tuna
      ‘zzz’ where the feature name is case-sensitive and has to match the
      ones in ‘sysdeps/x86/include/cpu-features.h’.
 
-     This tunable is specific to i386 and x86-64.
+     On s390x, the supported HWCAP and STFLE features can be found in
+     ‘sysdeps/s390/cpu-features.c’.  In addition the user can also set a
+     CPU arch-level like ‘z13’ instead of single HWCAP and STFLE
+     features.
+
+     This tunable is specific to i386, x86-64 and s390x.
 
  -- Tunable: glibc.cpu.cached_memopt
      The ‘glibc.cpu.cached_memopt=[0|1]’ tunable allows the user to
