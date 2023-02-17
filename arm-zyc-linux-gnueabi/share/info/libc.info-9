@@ -5324,13 +5324,17 @@ defined there) so we have to do it as well.
 
           If BASE is zero, decimal radix is assumed unless the series of
           digits begins with ‘0’ (specifying octal radix), or ‘0x’ or
-          ‘0X’ (specifying hexadecimal radix); in other words, the same
-          syntax used for integer constants in C.
+          ‘0X’ (specifying hexadecimal radix), or ‘0b’ or ‘0B’
+          (specifying binary radix; only supported when C2X features are
+          enabled); in other words, the same syntax used for integer
+          constants in C.
 
           Otherwise BASE must have a value between ‘2’ and ‘36’.  If
           BASE is ‘16’, the digits may optionally be preceded by ‘0x’ or
-          ‘0X’.  If base has no legal value the value returned is ‘0l’
-          and the global variable ‘errno’ is set to ‘EINVAL’.
+          ‘0X’.  If BASE is ‘2’, and C2X features are enabled, the
+          digits may optionally be preceded by ‘0b’ or ‘0B’.  If base
+          has no legal value the value returned is ‘0l’ and the global
+          variable ‘errno’ is set to ‘EINVAL’.
 
         • Any remaining characters in the string.  If TAILPTR is not a
           null pointer, ‘strtol’ stores a pointer to this tail in

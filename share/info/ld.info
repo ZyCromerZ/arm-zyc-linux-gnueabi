@@ -4421,21 +4421,43 @@ endianness.  When the object file format does not have an explicit
 endianness, as is true of, for example, S-records, the value will be
 stored in the endianness of the first input object file.
 
-   You can include a zero-terminated string in an output section by
-using 'ASCIZ'.  The keyword is followed by a string which is stored at
-the current value of the location counter adding a zero byte at the end.
-If the string includes spaces it must be enclosed in double quotes.  The
-string may contain '\n', '\r', '\t' and octal numbers.  Hex numbers are
-not supported.
-
-   For example, this string of 16 characters will create a 17 byte area
-       ASCIZ "This is 16 bytes"
-
    Note--these commands only work inside a section description and not
 between them, so the following will produce an error from the linker:
      SECTIONS { .text : { *(.text) } LONG(1) .data : { *(.data) } } 
    whereas this will work:
      SECTIONS { .text : { *(.text) ; LONG(1) } .data : { *(.data) } } 
+
+   You can include a zero-terminated string in an output section by
+using 'ASCIZ'.  The keyword is followed by a string which is stored at
+the current value of the location counter including adding a zero byte
+at the end.  Any length of string is supported by this directive.
+
+   You can include a fixed size string in an output section by using
+'ASCII'.  The keyword is followed by a size enclosed in parentheses and
+then a string.  The string is stored at the current value of the
+location counter and zero bytes are added at the end to fill up to the
+specified size.  Note the fill value is ignored for this padding.
+
+   If the string is too long, a warning is issued and the string is
+truncated.  The string will still be zero-terminated in this case.
+
+   If the expression evaluates to zero then the directive will be
+treated as if it were 'ASCIZ' instead.
+
+   If the string in an 'ASCII' or 'ASCIZ' command includes spaces it
+must be enclosed in double quotes.
+
+   The string can have C escape characters like '\n', '\r', '\t' and
+octal numbers.  The '\"' escape is not supported.  Nor are escaped hex
+values.
+
+   Example 1: This is string of 16 characters and will create a 32 byte
+area:
+       ASCII (32) "This is 16 bytes"
+
+   Example 2: This is a string of 16 characters and will create a 17
+byte area:
+       ASCIZ "This is 16 bytes"
 
    You may use the 'FILL' command to set the fill pattern for the
 current section.  It is followed by an expression in parentheses.  Any
@@ -8839,8 +8861,10 @@ LD Index
 * arithmetic operators:                  Operators.          (line    6)
 * ARM interworking support:              ARM.                (line    6)
 * ARM1176 erratum workaround:            ARM.                (line  108)
+* ASCII (EXPRESSION) ``STRING'':         Output Section Data.
+                                                             (line   39)
 * ASCIZ ``STRING'':                      Output Section Data.
-                                                             (line    6)
+                                                             (line   39)
 * ASSERT:                                Miscellaneous Commands.
                                                              (line    9)
 * assertion in linker script:            Miscellaneous Commands.
@@ -8969,7 +8993,7 @@ LD Index
 * fill pattern, entire section:          Output Section Fill.
                                                              (line    6)
 * FILL(EXPRESSION):                      Output Section Data.
-                                                             (line   49)
+                                                             (line   71)
 * finalization function:                 Options.            (line  338)
 * first input file:                      File Commands.      (line   88)
 * first instruction:                     Entry Point.        (line    6)
@@ -9006,7 +9030,7 @@ LD Index
 * HIDDEN:                                HIDDEN.             (line    6)
 * holes:                                 Location Counter.   (line   12)
 * holes, filling:                        Output Section Data.
-                                                             (line   49)
+                                                             (line   71)
 * HPPA multiple sub-space stubs:         HPPA ELF32.         (line    6)
 * HPPA stub grouping:                    HPPA ELF32.         (line   12)
 * image base:                            Options.            (line 2421)
@@ -9155,6 +9179,8 @@ LD Index
                                                              (line    6)
 * output section data:                   Output Section Data.
                                                              (line    6)
+* output section strings:                Output Section Data.
+                                                             (line   39)
 * OUTPUT(FILENAME):                      File Commands.      (line   70)
 * OUTPUT_ARCH(BFDARCH):                  Miscellaneous Commands.
                                                              (line  121)
@@ -9355,7 +9381,7 @@ LD Index
 * uninitialized data placement:          Input Section Common.
                                                              (line    6)
 * unspecified memory:                    Output Section Data.
-                                                             (line   49)
+                                                             (line   71)
 * usage:                                 Options.            (line 1484)
 * USE_BLX:                               ARM.                (line   73)
 * using a DEF file:                      WIN32.              (line   52)
@@ -9417,62 +9443,62 @@ Node: Input Section Common191093
 Node: Input Section Keep192575
 Node: Input Section Example193065
 Node: Output Section Data194476
-Node: Output Section Keywords197733
-Node: Output Section Discarding201300
-Node: Output Section Attributes203190
-Node: Output Section Type204309
-Node: Output Section LMA206612
-Node: Forced Output Alignment209683
-Node: Forced Input Alignment210112
-Node: Output Section Constraint210500
-Node: Output Section Region210928
-Node: Output Section Phdr211361
-Node: Output Section Fill212025
-Node: Overlay Description213167
-Node: MEMORY217612
-Node: PHDRS222218
-Node: VERSION227544
-Node: Expressions235635
-Node: Constants236648
-Node: Symbolic Constants237522
-Node: Symbols238073
-Node: Orphan Sections238820
-Node: Location Counter240405
-Node: Operators244839
-Node: Evaluation245761
-Node: Expression Section247125
-Node: Builtin Functions251095
-Node: Implicit Linker Scripts259429
-Node: Plugins260204
-Node: libdep Plugin260760
-Node: Machine Dependent262557
-Node: H8/300263645
-Node: M68HC11/68HC12265718
-Node: ARM267165
-Node: HPPA ELF32279275
-Node: M68K280898
-Node: MIPS281807
-Node: MMIX282923
-Node: MSP430284088
-Node: NDS32286001
-Node: Nios II286965
-Node: PowerPC ELF32288281
-Node: PowerPC64 ELF64291112
-Node: S/390 ELF300870
-Node: SPU ELF301217
-Node: TI COFF303845
-Node: WIN32304371
-Node: Xtensa324518
-Node: BFD327961
-Node: BFD outline329419
-Node: BFD information loss330707
-Node: Canonical format333233
-Node: Reporting Bugs337561
-Node: Bug Criteria338255
-Node: Bug Reporting338954
-Node: MRI345989
-Node: GNU Free Documentation License350460
-Node: LD Index375597
+Node: Output Section Keywords198601
+Node: Output Section Discarding202168
+Node: Output Section Attributes204058
+Node: Output Section Type205177
+Node: Output Section LMA207480
+Node: Forced Output Alignment210551
+Node: Forced Input Alignment210980
+Node: Output Section Constraint211368
+Node: Output Section Region211796
+Node: Output Section Phdr212229
+Node: Output Section Fill212893
+Node: Overlay Description214035
+Node: MEMORY218480
+Node: PHDRS223086
+Node: VERSION228412
+Node: Expressions236503
+Node: Constants237516
+Node: Symbolic Constants238390
+Node: Symbols238941
+Node: Orphan Sections239688
+Node: Location Counter241273
+Node: Operators245707
+Node: Evaluation246629
+Node: Expression Section247993
+Node: Builtin Functions251963
+Node: Implicit Linker Scripts260297
+Node: Plugins261072
+Node: libdep Plugin261628
+Node: Machine Dependent263425
+Node: H8/300264513
+Node: M68HC11/68HC12266586
+Node: ARM268033
+Node: HPPA ELF32280143
+Node: M68K281766
+Node: MIPS282675
+Node: MMIX283791
+Node: MSP430284956
+Node: NDS32286869
+Node: Nios II287833
+Node: PowerPC ELF32289149
+Node: PowerPC64 ELF64291980
+Node: S/390 ELF301738
+Node: SPU ELF302085
+Node: TI COFF304713
+Node: WIN32305239
+Node: Xtensa325386
+Node: BFD328829
+Node: BFD outline330287
+Node: BFD information loss331575
+Node: Canonical format334101
+Node: Reporting Bugs338429
+Node: Bug Criteria339123
+Node: Bug Reporting339822
+Node: MRI346857
+Node: GNU Free Documentation License351328
+Node: LD Index376465
 
 End Tag Table
 
