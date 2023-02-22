@@ -8994,8 +8994,8 @@ File: bfd.info,  Node: Opening and Closing,  Next: File Caching,  Prev: Architec
           bfd_section *sect, const char *filename);
      Takes a BFD and containing a .gnu_debuglink section SECT and fills
      in the contents of the section to contain a link to the specified
-     FILENAME.  The filename should be relative to the current
-     directory.
+     FILENAME.  The filename should be absolute or relative to the
+     current directory.
 
      'TRUE' is returned if all is ok.  Otherwise 'FALSE' is returned and
      bfd_error is set.
@@ -14489,37 +14489,37 @@ Node: Targets274682
 Node: bfd_target276643
 Node: Architectures304587
 Node: Opening and Closing336332
-Node: Internal350860
-Node: File Caching350964
-Node: Linker Functions352840
-Node: Creating a Linker Hash Table354514
-Node: Adding Symbols to the Hash Table356253
-Node: Differing file formats357153
-Node: Adding symbols from an object file358878
-Node: Adding symbols from an archive361028
-Node: Performing the Final Link363374
-Node: Information provided by the linker364615
-Node: Relocating the section contents365769
-Node: Writing the symbol table367521
-Node: Hash Tables374611
-Node: Creating and Freeing a Hash Table375809
-Node: Looking Up or Entering a String377059
-Node: Traversing a Hash Table378312
-Node: Deriving a New Hash Table Type379101
-Node: Define the Derived Structures380167
-Node: Write the Derived Creation Routine381248
-Node: Write Other Derived Routines383859
-Node: BFD back ends385174
-Node: What to Put Where385423
-Node: aout385581
-Node: coff391666
-Node: elf420234
-Node: mmo420635
-Node: File layout421505
-Node: Symbol-table427418
-Node: mmo section mapping431181
-Node: GNU Free Documentation License434835
-Node: BFD Index459899
+Node: Internal350872
+Node: File Caching350976
+Node: Linker Functions352852
+Node: Creating a Linker Hash Table354526
+Node: Adding Symbols to the Hash Table356265
+Node: Differing file formats357165
+Node: Adding symbols from an object file358890
+Node: Adding symbols from an archive361040
+Node: Performing the Final Link363386
+Node: Information provided by the linker364627
+Node: Relocating the section contents365781
+Node: Writing the symbol table367533
+Node: Hash Tables374623
+Node: Creating and Freeing a Hash Table375821
+Node: Looking Up or Entering a String377071
+Node: Traversing a Hash Table378324
+Node: Deriving a New Hash Table Type379113
+Node: Define the Derived Structures380179
+Node: Write the Derived Creation Routine381260
+Node: Write Other Derived Routines383871
+Node: BFD back ends385186
+Node: What to Put Where385435
+Node: aout385593
+Node: coff391678
+Node: elf420246
+Node: mmo420647
+Node: File layout421517
+Node: Symbol-table427430
+Node: mmo section mapping431193
+Node: GNU Free Documentation License434847
+Node: BFD Index459911
 
 End Tag Table
 
