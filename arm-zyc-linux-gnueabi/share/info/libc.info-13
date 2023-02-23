@@ -7243,6 +7243,8 @@ with minimum and maximum values:
 				  capabilities seen by the GNU C Library
 * Memory Related Tunables::  Tunables that control the use of memory by
 			     the GNU C Library.
+* gmon Tunables::  Tunables that control the gmon profiler, used in
+                   conjunction with gprof
 
 
 File: libc.info,  Node: Tunable names,  Next: Memory Allocation Tunables,  Up: Tunables

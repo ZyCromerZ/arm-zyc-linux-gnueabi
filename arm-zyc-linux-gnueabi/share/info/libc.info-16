@@ -3879,6 +3879,7 @@ Concept Index
 * generation of signals:                 Signal Generation.   (line   6)
 * generic i/o control operations:        IOCTLs.              (line   6)
 * globbing:                              Globbing.            (line   6)
+* gmon tunables:                         gmon Tunables.       (line   6)
 * gnu allocator:                         The GNU Allocator.   (line   6)
 * graphic character:                     Classification of Characters.
                                                               (line 126)
@@ -5126,6 +5127,7 @@ Type Index
 * glibc.elision.skip_trylock_internal_abort: Elision Tunables.
                                                               (line  57)
 * glibc.elision.tries:                   Elision Tunables.    (line  48)
+* glibc.gmon:                            gmon Tunables.       (line   6)
 * glibc.malloc:                          Memory Allocation Tunables.
                                                               (line   6)
 * glibc.malloc.arena_max:                Memory Allocation Tunables.
@@ -5156,6 +5158,8 @@ Type Index
                                                               (line  74)
 * glibc.mem:                             Memory Related Tunables.
                                                               (line   6)
+* glibc.mem.maxarcs:                     gmon Tunables.       (line  37)
+* glibc.mem.minarcs:                     gmon Tunables.       (line  27)
 * glibc.mem.tagging:                     Memory Related Tunables.
                                                               (line  10)
 * glibc.pthread:                         POSIX Thread Tunables.
