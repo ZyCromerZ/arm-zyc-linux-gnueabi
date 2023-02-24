@@ -5105,6 +5105,8 @@ Type Index
                                                               (line  11)
 * glibc.cpu.name:                        Hardware Capability Tunables.
                                                               (line  43)
+* glibc.cpu.prefer_map_32bit_exec:       Hardware Capability Tunables.
+                                                              (line 112)
 * glibc.cpu.x86_data_cache_size:         Hardware Capability Tunables.
                                                               (line  51)
 * glibc.cpu.x86_ibt:                     Hardware Capability Tunables.

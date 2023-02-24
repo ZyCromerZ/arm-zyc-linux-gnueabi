@@ -2279,6 +2279,15 @@ File: libc.info,  Node: Hardware Capability Tunables,  Next: Memory Related Tuna
 
      This tunable is specific to i386 and x86-64.
 
+ -- Tunable: glibc.cpu.prefer_map_32bit_exec
+     When this tunable is set to ‘1’, shared libraries of non-setuid
+     programs will be loaded below 2GB with MAP_32BIT.
+
+     Note that the ‘LD_PREFER_MAP_32BIT_EXEC’ environment is an alias of
+     this tunable.
+
+     This tunable is specific to 64-bit x86-64.
+
 
 File: libc.info,  Node: Memory Related Tunables,  Next: gmon Tunables,  Prev: Hardware Capability Tunables,  Up: Tunables
 
