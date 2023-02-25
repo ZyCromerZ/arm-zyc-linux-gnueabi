@@ -6539,7 +6539,7 @@ gammaf        4               6               7               7               7
 gamma         3               7               4               4               4
 gammal        5               -               -               -               5
 gammaf128     -               -               -               -               -
-hypotf        -               1               -               -               -
+hypotf        1               1               -               -               -
 hypot         1               2               1               1               1
 hypotl        1               -               -               -               1
 hypotf128     -               -               -               -               -
@@ -7325,7 +7325,7 @@ gammaf        4               7               7               4               7
 gamma         4               4               4               3               4
 gammal        -               -               -               3               3
 gammaf128     -               -               -               5               -
-hypotf        -               -               -               -               -
+hypotf        -               -               -               1               -
 hypot         1               1               1               1               1
 hypotl        -               -               -               1               1
 hypotf128     -               -               -               1               -
