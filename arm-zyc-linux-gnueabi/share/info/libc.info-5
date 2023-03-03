@@ -4979,8 +4979,8 @@ the formats that the C language defines for specifying an integer
 constant.  The syntax that is recognized is the same as that for the
 ‘strtol’ function (*note Parsing of Integers::) with the value ‘0’ for
 the BASE argument.  (You can print integers in this syntax with ‘printf’
-by using the ‘#’ flag character with the ‘%x’, ‘%o’, or ‘%d’ conversion.
-*Note Integer Conversions::.)
+by using the ‘#’ flag character with the ‘%x’, ‘%o’, ‘%b’, or ‘%d’
+conversion.  *Note Integer Conversions::.)
 
    For example, any of the strings ‘10’, ‘0xa’, or ‘012’ could be read
 in as integers under the ‘%i’ conversion.  Each of these specifies a
