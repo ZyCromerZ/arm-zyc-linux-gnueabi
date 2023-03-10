@@ -4518,10 +4518,6 @@ specified on the command line using '-BE' or '-LE'.
 
    Some of the predefined polynomes are the same, but differs in the
 other parameters.
-
-   Note - the generation of 64-bit polynomes on 32-bit hosts for 32-bit
-targets is not supported.
-
    The 32-bit <polynome> command defines the following global symbols.
 
 '___CRC32___'          address of the CRC32 checksum
@@ -9250,7 +9246,7 @@ LD Index
 * DIGEST "<label>[#<endian>]" "CRC64-XZ" (EXPR, EXPR): Output Section Data.
                                                              (line   76)
 * DIGEST TABLE "<label>[#<endian>]":     Output Section Data.
-                                                             (line  184)
+                                                             (line  180)
 * direct linking to a dll:               WIN32.              (line  233)
 * discarding sections:                   Output Section Discarding.
                                                              (line    6)
@@ -9298,7 +9294,7 @@ LD Index
 * fill pattern, entire section:          Output Section Fill.
                                                              (line    6)
 * FILL(EXPRESSION):                      Output Section Data.
-                                                             (line  360)
+                                                             (line  356)
 * finalization function:                 Options.            (line  338)
 * first input file:                      File Commands.      (line   88)
 * first instruction:                     Entry Point.        (line    6)
@@ -9335,7 +9331,7 @@ LD Index
 * HIDDEN:                                HIDDEN.             (line    6)
 * holes:                                 Location Counter.   (line   12)
 * holes, filling:                        Output Section Data.
-                                                             (line  360)
+                                                             (line  356)
 * HPPA multiple sub-space stubs:         HPPA ELF32.         (line    6)
 * HPPA stub grouping:                    HPPA ELF32.         (line   12)
 * image base:                            Options.            (line 2421)
@@ -9489,9 +9485,9 @@ LD Index
 * output section strings <1>:            Output Section Data.
                                                              (line   76)
 * output section strings <2>:            Output Section Data.
-                                                             (line  184)
+                                                             (line  180)
 * output section strings <3>:            Output Section Data.
-                                                             (line  356)
+                                                             (line  352)
 * OUTPUT(FILENAME):                      File Commands.      (line   70)
 * OUTPUT_ARCH(BFDARCH):                  Miscellaneous Commands.
                                                              (line  121)
@@ -9682,7 +9678,7 @@ LD Index
 * thumb entry point:                     ARM.                (line   17)
 * TI COFF versions:                      TI COFF.            (line    6)
 * TIMESTAMP:                             Output Section Data.
-                                                             (line  356)
+                                                             (line  352)
 * traditional format:                    Options.            (line 1876)
 * trampoline generation on M68HC11:      M68HC11/68HC12.     (line   30)
 * trampoline generation on M68HC12:      M68HC11/68HC12.     (line   30)
@@ -9694,7 +9690,7 @@ LD Index
 * uninitialized data placement:          Input Section Common.
                                                              (line    6)
 * unspecified memory:                    Output Section Data.
-                                                             (line  360)
+                                                             (line  356)
 * usage:                                 Options.            (line 1484)
 * USE_BLX:                               ARM.                (line   73)
 * using a DEF file:                      WIN32.              (line   52)
@@ -9756,62 +9752,62 @@ Node: Input Section Common191093
 Node: Input Section Keep192575
 Node: Input Section Example193065
 Node: Output Section Data194476
-Node: Output Section Keywords207393
-Node: Output Section Discarding210960
-Node: Output Section Attributes212850
-Node: Output Section Type213969
-Node: Output Section LMA216272
-Node: Forced Output Alignment219343
-Node: Forced Input Alignment219772
-Node: Output Section Constraint220160
-Node: Output Section Region220588
-Node: Output Section Phdr221021
-Node: Output Section Fill221685
-Node: Overlay Description222827
-Node: MEMORY227272
-Node: PHDRS231878
-Node: VERSION237204
-Node: Expressions245295
-Node: Constants246308
-Node: Symbolic Constants247182
-Node: Symbols247733
-Node: Orphan Sections248480
-Node: Location Counter250065
-Node: Operators254499
-Node: Evaluation255421
-Node: Expression Section256785
-Node: Builtin Functions260755
-Node: Implicit Linker Scripts269089
-Node: Plugins269864
-Node: libdep Plugin270420
-Node: Machine Dependent272217
-Node: H8/300273305
-Node: M68HC11/68HC12275378
-Node: ARM276825
-Node: HPPA ELF32288935
-Node: M68K290558
-Node: MIPS291467
-Node: MMIX292583
-Node: MSP430293748
-Node: NDS32295661
-Node: Nios II296625
-Node: PowerPC ELF32297941
-Node: PowerPC64 ELF64300772
-Node: S/390 ELF310530
-Node: SPU ELF310877
-Node: TI COFF313505
-Node: WIN32314031
-Node: Xtensa334178
-Node: BFD337621
-Node: BFD outline339079
-Node: BFD information loss340367
-Node: Canonical format342893
-Node: Reporting Bugs347221
-Node: Bug Criteria347915
-Node: Bug Reporting348614
-Node: MRI355649
-Node: GNU Free Documentation License360120
-Node: LD Index385257
+Node: Output Section Keywords207293
+Node: Output Section Discarding210860
+Node: Output Section Attributes212750
+Node: Output Section Type213869
+Node: Output Section LMA216172
+Node: Forced Output Alignment219243
+Node: Forced Input Alignment219672
+Node: Output Section Constraint220060
+Node: Output Section Region220488
+Node: Output Section Phdr220921
+Node: Output Section Fill221585
+Node: Overlay Description222727
+Node: MEMORY227172
+Node: PHDRS231778
+Node: VERSION237104
+Node: Expressions245195
+Node: Constants246208
+Node: Symbolic Constants247082
+Node: Symbols247633
+Node: Orphan Sections248380
+Node: Location Counter249965
+Node: Operators254399
+Node: Evaluation255321
+Node: Expression Section256685
+Node: Builtin Functions260655
+Node: Implicit Linker Scripts268989
+Node: Plugins269764
+Node: libdep Plugin270320
+Node: Machine Dependent272117
+Node: H8/300273205
+Node: M68HC11/68HC12275278
+Node: ARM276725
+Node: HPPA ELF32288835
+Node: M68K290458
+Node: MIPS291367
+Node: MMIX292483
+Node: MSP430293648
+Node: NDS32295561
+Node: Nios II296525
+Node: PowerPC ELF32297841
+Node: PowerPC64 ELF64300672
+Node: S/390 ELF310430
+Node: SPU ELF310777
+Node: TI COFF313405
+Node: WIN32313931
+Node: Xtensa334078
+Node: BFD337521
+Node: BFD outline338979
+Node: BFD information loss340267
+Node: Canonical format342793
+Node: Reporting Bugs347121
+Node: Bug Criteria347815
+Node: Bug Reporting348514
+Node: MRI355549
+Node: GNU Free Documentation License360020
+Node: LD Index385157
 
 End Tag Table
 
