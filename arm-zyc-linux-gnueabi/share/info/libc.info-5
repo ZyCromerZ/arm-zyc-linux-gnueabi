@@ -3272,8 +3272,8 @@ Here is a table summarizing what all the different conversions do:
 ‘%b’, ‘%B’
      Print an integer as an unsigned binary number.  ‘%b’ uses
      lower-case ‘b’ with the ‘#’ flag and ‘%B’ uses upper-case.  ‘%b’ is
-     an ISO C2X feature; ‘%B’ is an extension recommended by ISO C2X.
-     *Note Integer Conversions::, for details.
+     an ISO C2X feature; ‘%B’ is an optional ISO C2X feature.  *Note
+     Integer Conversions::, for details.
 
 ‘%o’
      Print an integer as an unsigned octal number.  *Note Integer
