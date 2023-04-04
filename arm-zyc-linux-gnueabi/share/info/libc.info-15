@@ -3089,6 +3089,9 @@ call to its hardened variant that does additional safety checks at
 runtime.  Some hardened variants need the size of the buffer to perform
 access validation and this is provided by the ‘__builtin_object_size’ or
 the ‘__builtin_dynamic_object_size’ builtin functions.
+‘_FORTIFY_SOURCE’ also enables additional compile time diagnostics, such
+as unchecked return values from some functions, to encourage developers
+to add error checking for those functions.
 
    At runtime, if any of those safety checks fail, the program will
 terminate with a ‘SIGABRT’ signal.  ‘_FORTIFY_SOURCE’ may be defined to
