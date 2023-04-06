@@ -3935,17 +3935,31 @@ operating system are declared in ‘sys/platform/x86.h’.
 
    • ‘AMX_BF16’ – Tile computational operations on bfloat16 numbers.
 
+   • ‘AMX_COMPLEX’ – Tile computational operations on complex FP16
+     numbers.
+
    • ‘AMX_INT8’ – Tile computational operations on 8-bit numbers.
+
+   • ‘AMX_FP16’ – Tile computational operations on FP16 numbers.
 
    • ‘AMX_TILE’ – Tile architecture.
 
    • ‘ARCH_CAPABILITIES’ – IA32_ARCH_CAPABILITIES MSR.
 
+   • ‘ArchPerfmonExt’ – Architectural Performance Monitoring Extended
+     Leaf (EAX = 23H).
+
    • ‘AVX’ – The AVX instruction extensions.
 
    • ‘AVX2’ – The AVX2 instruction extensions.
 
+   • ‘AVX_IFMA’ – The AVX-IFMA instruction extensions.
+
+   • ‘AVX_NE_CONVERT’ – The AVX-NE-CONVERT instruction extensions.
+
    • ‘AVX_VNNI’ – The AVX-VNNI instruction extensions.
+
+   • ‘AVX_VNNI_INT8’ – The AVX-VNNI-INT8 instruction extensions.
 
    • ‘AVX512_4FMAPS’ – The AVX512_4FMAPS instruction extensions.
 
@@ -3988,6 +4002,8 @@ operating system are declared in ‘sys/platform/x86.h’.
 
    • ‘BMI2’ – BMI2 instructions.
 
+   • ‘BUS_LOCK_DETECT’ – Bus lock debug exceptions.
+
    • ‘CLDEMOTE’ – CLDEMOTE instruction.
 
    • ‘CLFLUSHOPT’ – CLFLUSHOPT instruction.
@@ -3997,6 +4013,8 @@ operating system are declared in ‘sys/platform/x86.h’.
    • ‘CLWB’ – CLWB instruction.
 
    • ‘CMOV’ – Conditional Move instructions.
+
+   • ‘CMPCCXADD’ – CMPccXADD instruction.
 
    • ‘CMPXCHG16B’ – CMPXCHG16B instruction.
 
@@ -4065,11 +4083,17 @@ operating system are declared in ‘sys/platform/x86.h’.
 
    • ‘KL’ – AES Key Locker instructions.
 
-   • ‘LAM’ – Linear Address Masking.
-
    • ‘L1D_FLUSH’ – IA32_FLUSH_CMD MSR.
 
+   • ‘LA57’ – 57-bit linear addresses and five-level paging.
+
    • ‘LAHF64_SAHF64’ – LAHF/SAHF available in 64-bit mode.
+
+   • ‘LAM’ – Linear Address Masking.
+
+   • ‘LASS’ – Linear Address Space Separation.
+
+   • ‘LBR’ – Architectural LBR.
 
    • ‘LM’ – Long mode.
 
@@ -4096,6 +4120,8 @@ operating system are declared in ‘sys/platform/x86.h’.
    • ‘MPX’ – Intel Memory Protection Extensions.
 
    • ‘MSR’ – Model Specific Registers RDMSR and WRMSR instructions.
+
+   • ‘MSRLIST’ – RDMSRLIST/WRMSRLIST instructions and IA32_BARRIER MSR.
 
    • ‘MTRR’ – Memory Type Range Registers.
 
@@ -4135,6 +4161,8 @@ operating system are declared in ‘sys/platform/x86.h’.
 
    • ‘PREFETCHWT1’ – PREFETCHWT1 instruction.
 
+   • ‘PREFETCHI’ – PREFETCHIT0/1 instructions.
+
    • ‘PSE’ – Page Size Extension.
 
    • ‘PSE_36’ – 36-Bit Page Size Extension.
@@ -4142,6 +4170,8 @@ operating system are declared in ‘sys/platform/x86.h’.
    • ‘PSN’ – Processor Serial Number.
 
    • ‘PTWRITE’ – PTWRITE instruction.
+
+   • ‘RAO_INT’ – RAO-INT instructions.
 
    • ‘RDPID’ – RDPID instruction.
 
@@ -4162,6 +4192,8 @@ operating system are declared in ‘sys/platform/x86.h’.
    • ‘RTM_ALWAYS_ABORT’ – Transactions always abort, making RTM
      unusable.
 
+   • ‘RTM_FORCE_ABORT’ – TSX_FORCE_ABORT MSR.
+
    • ‘SDBG’ – IA32_DEBUG_INTERFACE MSR for silicon debug.
 
    • ‘SEP’ – SYSENTER and SYSEXIT instructions.
@@ -4169,6 +4201,8 @@ operating system are declared in ‘sys/platform/x86.h’.
    • ‘SERIALIZE’ – SERIALIZE instruction.
 
    • ‘SGX’ – Intel Software Guard Extensions.
+
+   • ‘SGX_KEYS’ – Attestation Services for SGX.
 
    • ‘SGX_LC’ – SGX Launch Configuration.
 
@@ -4240,6 +4274,8 @@ operating system are declared in ‘sys/platform/x86.h’.
    • ‘WBNOINVD’ – WBINVD/WBNOINVD instructions.
 
    • ‘WIDE_KL’ – AES wide Key Locker instructions.
+
+   • ‘WRMSRNS’ – WRMSRNS instruction.
 
    • ‘X2APIC’ – x2APIC.
 
