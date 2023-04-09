@@ -5008,7 +5008,7 @@ Concept Index
 * variadic functions:                    Variadic Functions.  (line   6)
 * variadic functions, calling:           Calling Variadics.   (line   6)
 * va_copy:                               Concatenating Strings.
-                                                              (line  72)
+                                                              (line  75)
 * virtual time alarm signal:             Alarm Signals.       (line  26)
 * virtual timer:                         Setting an Alarm.    (line  17)
 * volatile declarations:                 Nonreentrancy.       (line  20)
@@ -7398,12 +7398,12 @@ Function and Macro Index
                                                               (line 283)
 * stpcpy:                                Copying Strings and Arrays.
                                                               (line 248)
-* stpncpy:                               Truncating Strings.  (line 101)
+* stpncpy:                               Truncating Strings.  (line 104)
 * strcasecmp:                            String/Array Comparison.
                                                               (line 127)
 * strcasestr:                            Search Functions.    (line 209)
 * strcat:                                Concatenating Strings.
-                                                              (line  12)
+                                                              (line  15)
 * strchr:                                Search Functions.    (line  65)
 * strchrnul:                             Search Functions.    (line 106)
 * strcmp:                                String/Array Comparison.
@@ -7432,12 +7432,12 @@ Function and Macro Index
 * strlen:                                String Length.       (line   9)
 * strncasecmp:                           String/Array Comparison.
                                                               (line 174)
-* strncat:                               Truncating Strings.  (line 162)
+* strncat:                               Truncating Strings.  (line 165)
 * strncmp:                               String/Array Comparison.
                                                               (line 154)
-* strncpy:                               Truncating Strings.  (line  13)
-* strndup:                               Truncating Strings.  (line  62)
-* strndupa:                              Truncating Strings.  (line  82)
+* strncpy:                               Truncating Strings.  (line  16)
+* strndup:                               Truncating Strings.  (line  65)
+* strndupa:                              Truncating Strings.  (line  85)
 * strnlen:                               String Length.       (line  86)
 * strpbrk:                               Search Functions.    (line 300)
 * strptime:                              Low-Level Time String Parsing.
@@ -7708,13 +7708,13 @@ Function and Macro Index
                                                               (line  46)
 * wcpcpy:                                Copying Strings and Arrays.
                                                               (line 283)
-* wcpncpy:                               Truncating Strings.  (line 130)
+* wcpncpy:                               Truncating Strings.  (line 133)
 * wcrtomb:                               Converting a Character.
                                                               (line 292)
 * wcscasecmp:                            String/Array Comparison.
                                                               (line 141)
 * wcscat:                                Concatenating Strings.
-                                                              (line  36)
+                                                              (line  39)
 * wcschr:                                Search Functions.    (line  90)
 * wcschrnul:                             Search Functions.    (line 117)
 * wcscmp:                                String/Array Comparison.
@@ -7730,10 +7730,10 @@ Function and Macro Index
 * wcslen:                                String Length.       (line  70)
 * wcsncasecmp:                           String/Array Comparison.
                                                               (line 186)
-* wcsncat:                               Truncating Strings.  (line 193)
+* wcsncat:                               Truncating Strings.  (line 197)
 * wcsncmp:                               String/Array Comparison.
                                                               (line 163)
-* wcsncpy:                               Truncating Strings.  (line  38)
+* wcsncpy:                               Truncating Strings.  (line  41)
 * wcsnlen:                               String Length.       (line 106)
 * wcsnrtombs:                            Converting Strings.  (line 205)
 * wcspbrk:                               Search Functions.    (line 320)

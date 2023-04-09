@@ -4955,8 +4955,7 @@ on semantics undefined within the standard.
      various library functions.  If defined to 2, even stricter checks
      are applied.  If defined to 3, the GNU C Library may also use
      checks that may have an additional performance overhead.  *Note
-     Fortification of function calls: Source Fortification. for more
-     information.
+     Fortification of function calls: Source Fortification.
 
  -- Macro: _DYNAMIC_STACK_SIZE_SOURCE
 

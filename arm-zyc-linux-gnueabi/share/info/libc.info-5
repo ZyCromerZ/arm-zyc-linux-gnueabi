@@ -3839,8 +3839,11 @@ way to make sure you have all the right prototypes is to just include
      The return value is the number of characters which would be
      generated for the given input, excluding the trailing null.  If
      this value is greater than or equal to SIZE, not all characters
-     from the result have been stored in S.  You should try again with a
-     bigger output string.  Here is an example of doing this:
+     from the result have been stored in S.  If this happens, you should
+     be wary of using the truncated result as that could lead to
+     security, encoding, or other bugs in your program (*note Truncating
+     Strings::).  Instead, you should try again with a bigger output
+     string.  Here is an example of doing this:
 
           /* Construct a message describing the value of a variable
              whose name is NAME and whose value is VALUE. */
