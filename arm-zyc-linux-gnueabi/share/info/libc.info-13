@@ -7611,3 +7611,18 @@ File: libc.info,  Node: POSIX Thread Tunables,  Next: Hardware Capability Tunabl
 
      Restartable sequences are a Linux-specific extension.
 
+ -- Tunable: glibc.pthread.stack_hugetlb
+     This tunable controls whether to use Huge Pages in the stacks
+     created by ‘pthread_create’.  This tunable only affects the stacks
+     created by the GNU C Library, it has no effect on stack assigned
+     with ‘pthread_attr_setstack’.
+
+     The default is ‘1’ where the system default value is used.  Setting
+     its value to ‘0’ enables the use of ‘madvise’ with
+     ‘MADV_NOHUGEPAGE’ after stack creation with ‘mmap’.
+
+     This is a memory utilization optimization, since internal glibc
+     setup of either the thread descriptor and the guard page might
+     force the kernel to move the thread stack originally backup by Huge
+     Pages to default pages.
+

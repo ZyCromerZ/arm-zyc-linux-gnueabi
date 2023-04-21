@@ -2168,6 +2168,2421 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
+File: libc.info,  Node: Function Index,  Next: Variable Index,  Prev: Type Index,  Up: Top
+
+Function and Macro Index
+************************
+
+ [index ]
+* Menu:
+
+* *pthread_getspecific:                  Thread-specific Data.
+                                                              (line  34)
+* *sbrk:                                 Resizing the Data Segment.
+                                                              (line  46)
+* *sem_open:                             Semaphores.          (line  43)
+* _dl_find_object:                       Dynamic Linker Introspection.
+                                                              (line 142)
+* _exit:                                 Termination Internals.
+                                                              (line   9)
+* _Exit:                                 Termination Internals.
+                                                              (line  18)
+* _flushlbf:                             Flushing Buffers.    (line  54)
+* _Fork:                                 Creating a Process.  (line  62)
+* _tolower:                              Case Conversion.     (line  50)
+* _toupper:                              Case Conversion.     (line  58)
+* __fbufsize:                            Controlling Buffering.
+                                                              (line 139)
+* __flbf:                                Controlling Buffering.
+                                                              (line 125)
+* __fpending:                            Controlling Buffering.
+                                                              (line 150)
+* __fpurge:                              Flushing Buffers.    (line  76)
+* __freadable:                           Opening Streams.     (line 219)
+* __freading:                            Opening Streams.     (line 244)
+* __fsetlocking:                         Streams and Threads. (line 172)
+* __fwritable:                           Opening Streams.     (line 230)
+* __fwriting:                            Opening Streams.     (line 258)
+* __ppc_get_timebase:                    PowerPC.             (line   9)
+* __ppc_get_timebase_freq:               PowerPC.             (line  25)
+* __ppc_mdoio:                           PowerPC.             (line  51)
+* __ppc_mdoom:                           PowerPC.             (line  60)
+* __ppc_set_ppr_low:                     PowerPC.             (line  85)
+* __ppc_set_ppr_med:                     PowerPC.             (line  69)
+* __ppc_set_ppr_med_high:                PowerPC.             (line 107)
+* __ppc_set_ppr_med_low:                 PowerPC.             (line  91)
+* __ppc_set_ppr_very_low:                PowerPC.             (line 101)
+* __ppc_yield:                           PowerPC.             (line  43)
+* __riscv_flush_icache:                  RISC-V.              (line   9)
+* __va_copy:                             Argument Macros.     (line  57)
+* __x86_get_cpuid_feature_leaf:          X86.                 (line   9)
+* a64l:                                  Encode Binary Data.  (line  84)
+* abort:                                 Aborting a Program.  (line   9)
+* abs:                                   Absolute Value.      (line  16)
+* accept:                                Accepting Connections.
+                                                              (line  25)
+* access:                                Testing File Access. (line  41)
+* acos:                                  Inverse Trig Functions.
+                                                              (line  27)
+* acosf:                                 Inverse Trig Functions.
+                                                              (line  28)
+* acosfN:                                Inverse Trig Functions.
+                                                              (line  30)
+* acosfNx:                               Inverse Trig Functions.
+                                                              (line  31)
+* acosh:                                 Hyperbolic Functions.
+                                                              (line  99)
+* acoshf:                                Hyperbolic Functions.
+                                                              (line 100)
+* acoshfN:                               Hyperbolic Functions.
+                                                              (line 102)
+* acoshfNx:                              Hyperbolic Functions.
+                                                              (line 103)
+* acoshl:                                Hyperbolic Functions.
+                                                              (line 101)
+* acosl:                                 Inverse Trig Functions.
+                                                              (line  29)
+* addmntent:                             mtab.                (line 181)
+* addseverity:                           Adding Severity Classes.
+                                                              (line  12)
+* adjtime:                               Setting and Adjusting the Time.
+                                                              (line 251)
+* adjtimex:                              Setting and Adjusting the Time.
+                                                              (line 305)
+* aio_cancel:                            Cancel AIO Operations.
+                                                              (line  18)
+* aio_cancel64:                          Cancel AIO Operations.
+                                                              (line  65)
+* aio_error:                             Status of AIO Operations.
+                                                              (line  14)
+* aio_error64:                           Status of AIO Operations.
+                                                              (line  36)
+* aio_fsync:                             Synchronizing AIO Operations.
+                                                              (line  17)
+* aio_fsync64:                           Synchronizing AIO Operations.
+                                                              (line  64)
+* aio_init:                              Configuration of AIO.
+                                                              (line  41)
+* aio_read:                              Asynchronous Reads/Writes.
+                                                              (line   6)
+* aio_read64:                            Asynchronous Reads/Writes.
+                                                              (line  69)
+* aio_return:                            Status of AIO Operations.
+                                                              (line  50)
+* aio_return64:                          Status of AIO Operations.
+                                                              (line  74)
+* aio_suspend:                           Synchronizing AIO Operations.
+                                                              (line  91)
+* aio_suspend64:                         Synchronizing AIO Operations.
+                                                              (line 129)
+* aio_write:                             Asynchronous Reads/Writes.
+                                                              (line  90)
+* aio_write64:                           Asynchronous Reads/Writes.
+                                                              (line 154)
+* alarm:                                 Setting an Alarm.    (line 113)
+* aligned_alloc:                         Aligned Memory Blocks.
+                                                              (line  12)
+* alloca:                                Variable Size Automatic.
+                                                              (line  18)
+* alphasort:                             Scanning Directory Content.
+                                                              (line  43)
+* alphasort64:                           Scanning Directory Content.
+                                                              (line  92)
+* arc4random:                            High Quality Random. (line  17)
+* arc4random_buf:                        High Quality Random. (line  26)
+* arc4random_uniform:                    High Quality Random. (line  34)
+* argp_error:                            Argp Helper Functions.
+                                                              (line  21)
+* argp_failure:                          Argp Helper Functions.
+                                                              (line  33)
+* argp_help:                             Argp Help.           (line  14)
+* argp_parse:                            Argp.                (line  34)
+* argp_state_help:                       Argp Helper Functions.
+                                                              (line  51)
+* argp_usage:                            Argp Helper Functions.
+                                                              (line  11)
+* argz_add:                              Argz Functions.      (line  82)
+* argz_add_sep:                          Argz Functions.      (line  91)
+* argz_append:                           Argz Functions.      (line 103)
+* argz_count:                            Argz Functions.      (line  46)
+* argz_create:                           Argz Functions.      (line  25)
+* argz_create_sep:                       Argz Functions.      (line  36)
+* argz_delete:                           Argz Functions.      (line 113)
+* argz_extract:                          Argz Functions.      (line  54)
+* argz_insert:                           Argz Functions.      (line 126)
+* argz_next:                             Argz Functions.      (line 140)
+* argz_replace:                          Argz Functions.      (line 172)
+* argz_stringify:                        Argz Functions.      (line  72)
+* asctime:                               Formatting Calendar Time.
+                                                              (line   9)
+* asctime_r:                             Formatting Calendar Time.
+                                                              (line  30)
+* asin:                                  Inverse Trig Functions.
+                                                              (line   9)
+* asinf:                                 Inverse Trig Functions.
+                                                              (line  10)
+* asinfN:                                Inverse Trig Functions.
+                                                              (line  12)
+* asinfNx:                               Inverse Trig Functions.
+                                                              (line  13)
+* asinh:                                 Hyperbolic Functions.
+                                                              (line  87)
+* asinhf:                                Hyperbolic Functions.
+                                                              (line  88)
+* asinhfN:                               Hyperbolic Functions.
+                                                              (line  90)
+* asinhfNx:                              Hyperbolic Functions.
+                                                              (line  91)
+* asinhl:                                Hyperbolic Functions.
+                                                              (line  89)
+* asinl:                                 Inverse Trig Functions.
+                                                              (line  11)
+* asprintf:                              Dynamic Output.      (line   9)
+* assert:                                Consistency Checking.
+                                                              (line  26)
+* assert_perror:                         Consistency Checking.
+                                                              (line  62)
+* atan:                                  Inverse Trig Functions.
+                                                              (line  45)
+* atan2:                                 Inverse Trig Functions.
+                                                              (line  60)
+* atan2f:                                Inverse Trig Functions.
+                                                              (line  61)
+* atan2fN:                               Inverse Trig Functions.
+                                                              (line  63)
+* atan2fNx:                              Inverse Trig Functions.
+                                                              (line  64)
+* atan2l:                                Inverse Trig Functions.
+                                                              (line  62)
+* atanf:                                 Inverse Trig Functions.
+                                                              (line  46)
+* atanfN:                                Inverse Trig Functions.
+                                                              (line  48)
+* atanfNx:                               Inverse Trig Functions.
+                                                              (line  49)
+* atanh:                                 Hyperbolic Functions.
+                                                              (line 112)
+* atanhf:                                Hyperbolic Functions.
+                                                              (line 113)
+* atanhfN:                               Hyperbolic Functions.
+                                                              (line 115)
+* atanhfNx:                              Hyperbolic Functions.
+                                                              (line 116)
+* atanhl:                                Hyperbolic Functions.
+                                                              (line 114)
+* atanl:                                 Inverse Trig Functions.
+                                                              (line  47)
+* atexit:                                Cleanups on Exit.    (line  14)
+* atof:                                  Parsing of Floats.   (line 136)
+* atoi:                                  Parsing of Integers. (line 268)
+* atol:                                  Parsing of Integers. (line 258)
+* atoll:                                 Parsing of Integers. (line 276)
+* backtrace:                             Backtraces.          (line  15)
+* backtrace_symbols:                     Backtraces.          (line  36)
+* backtrace_symbols_fd:                  Backtraces.          (line  69)
+* basename:                              Finding Tokens in a String.
+                                                              (line 207)
+* basename <1>:                          Finding Tokens in a String.
+                                                              (line 240)
+* bcmp:                                  String/Array Comparison.
+                                                              (line 292)
+* bcopy:                                 Copying Strings and Arrays.
+                                                              (line 344)
+* bind:                                  Setting Address.     (line  10)
+* bindtextdomain:                        Locating gettext catalog.
+                                                              (line 101)
+* bind_textdomain_codeset:               Charset conversion in gettext.
+                                                              (line  26)
+* brk:                                   Resizing the Data Segment.
+                                                              (line  14)
+* bsearch:                               Array Search Function.
+                                                              (line  55)
+* btowc:                                 Converting a Character.
+                                                              (line  15)
+* bzero:                                 Copying Strings and Arrays.
+                                                              (line 354)
+* cabs:                                  Absolute Value.      (line  46)
+* cabsf:                                 Absolute Value.      (line  47)
+* cabsfN:                                Absolute Value.      (line  49)
+* cabsfNx:                               Absolute Value.      (line  50)
+* cabsl:                                 Absolute Value.      (line  48)
+* cacos:                                 Inverse Trig Functions.
+                                                              (line  99)
+* cacosf:                                Inverse Trig Functions.
+                                                              (line 100)
+* cacosfN:                               Inverse Trig Functions.
+                                                              (line 102)
+* cacosfNx:                              Inverse Trig Functions.
+                                                              (line 103)
+* cacosh:                                Hyperbolic Functions.
+                                                              (line 138)
+* cacoshf:                               Hyperbolic Functions.
+                                                              (line 139)
+* cacoshfN:                              Hyperbolic Functions.
+                                                              (line 141)
+* cacoshfNx:                             Hyperbolic Functions.
+                                                              (line 142)
+* cacoshl:                               Hyperbolic Functions.
+                                                              (line 140)
+* cacosl:                                Inverse Trig Functions.
+                                                              (line 101)
+* calloc:                                Allocating Cleared Space.
+                                                              (line   9)
+* call_once:                             Call Once.           (line  19)
+* canonicalize:                          FP Bit Twiddling.    (line 127)
+* canonicalizef:                         FP Bit Twiddling.    (line 128)
+* canonicalizefN:                        FP Bit Twiddling.    (line 130)
+* canonicalizefNx:                       FP Bit Twiddling.    (line 131)
+* canonicalizel:                         FP Bit Twiddling.    (line 129)
+* canonicalize_file_name:                Symbolic Links.      (line 128)
+* carg:                                  Operations on Complex.
+                                                              (line  46)
+* cargf:                                 Operations on Complex.
+                                                              (line  47)
+* cargfN:                                Operations on Complex.
+                                                              (line  49)
+* cargfNx:                               Operations on Complex.
+                                                              (line  50)
+* cargl:                                 Operations on Complex.
+                                                              (line  48)
+* casin:                                 Inverse Trig Functions.
+                                                              (line  84)
+* casinf:                                Inverse Trig Functions.
+                                                              (line  85)
+* casinfN:                               Inverse Trig Functions.
+                                                              (line  87)
+* casinfNx:                              Inverse Trig Functions.
+                                                              (line  88)
+* casinh:                                Hyperbolic Functions.
+                                                              (line 126)
+* casinhf:                               Hyperbolic Functions.
+                                                              (line 127)
+* casinhfN:                              Hyperbolic Functions.
+                                                              (line 129)
+* casinhfNx:                             Hyperbolic Functions.
+                                                              (line 130)
+* casinhl:                               Hyperbolic Functions.
+                                                              (line 128)
+* casinl:                                Inverse Trig Functions.
+                                                              (line  86)
+* catan:                                 Inverse Trig Functions.
+                                                              (line 114)
+* catanf:                                Inverse Trig Functions.
+                                                              (line 115)
+* catanfN:                               Inverse Trig Functions.
+                                                              (line 117)
+* catanfNx:                              Inverse Trig Functions.
+                                                              (line 118)
+* catanh:                                Hyperbolic Functions.
+                                                              (line 151)
+* catanhf:                               Hyperbolic Functions.
+                                                              (line 152)
+* catanhfN:                              Hyperbolic Functions.
+                                                              (line 154)
+* catanhfNx:                             Hyperbolic Functions.
+                                                              (line 155)
+* catanhl:                               Hyperbolic Functions.
+                                                              (line 153)
+* catanl:                                Inverse Trig Functions.
+                                                              (line 116)
+* catclose:                              The catgets Functions.
+                                                              (line 187)
+* catgets:                               The catgets Functions.
+                                                              (line 150)
+* catopen:                               The catgets Functions.
+                                                              (line   6)
+* cbrt:                                  Exponents and Logarithms.
+                                                              (line 210)
+* cbrtf:                                 Exponents and Logarithms.
+                                                              (line 211)
+* cbrtfN:                                Exponents and Logarithms.
+                                                              (line 213)
+* cbrtfNx:                               Exponents and Logarithms.
+                                                              (line 214)
+* cbrtl:                                 Exponents and Logarithms.
+                                                              (line 212)
+* ccos:                                  Trig Functions.      (line 102)
+* ccosf:                                 Trig Functions.      (line 103)
+* ccosfN:                                Trig Functions.      (line 105)
+* ccosfNx:                               Trig Functions.      (line 106)
+* ccosh:                                 Hyperbolic Functions.
+                                                              (line  63)
+* ccoshf:                                Hyperbolic Functions.
+                                                              (line  64)
+* ccoshfN:                               Hyperbolic Functions.
+                                                              (line  66)
+* ccoshfNx:                              Hyperbolic Functions.
+                                                              (line  67)
+* ccoshl:                                Hyperbolic Functions.
+                                                              (line  65)
+* ccosl:                                 Trig Functions.      (line 104)
+* ceil:                                  Rounding Functions.  (line  42)
+* ceilf:                                 Rounding Functions.  (line  43)
+* ceilfN:                                Rounding Functions.  (line  45)
+* ceilfNx:                               Rounding Functions.  (line  46)
+* ceill:                                 Rounding Functions.  (line  44)
+* cexp:                                  Exponents and Logarithms.
+                                                              (line 267)
+* cexpf:                                 Exponents and Logarithms.
+                                                              (line 268)
+* cexpfN:                                Exponents and Logarithms.
+                                                              (line 270)
+* cexpfNx:                               Exponents and Logarithms.
+                                                              (line 271)
+* cexpl:                                 Exponents and Logarithms.
+                                                              (line 269)
+* cfgetispeed:                           Line Speed.          (line  40)
+* cfgetospeed:                           Line Speed.          (line  32)
+* cfmakeraw:                             Noncanonical Input.  (line  93)
+* cfsetispeed:                           Line Speed.          (line  57)
+* cfsetospeed:                           Line Speed.          (line  48)
+* cfsetspeed:                            Line Speed.          (line  66)
+* chdir:                                 Working Directory.   (line 110)
+* chmod:                                 Setting Permissions. (line  25)
+* chmod <1>:                             Setting Permissions. (line  74)
+* chown:                                 File Owner.          (line  33)
+* cimag:                                 Operations on Complex.
+                                                              (line  22)
+* cimagf:                                Operations on Complex.
+                                                              (line  23)
+* cimagfN:                               Operations on Complex.
+                                                              (line  25)
+* cimagfNx:                              Operations on Complex.
+                                                              (line  26)
+* cimagl:                                Operations on Complex.
+                                                              (line  24)
+* clearenv:                              Environment Access.  (line 116)
+* clearerr:                              Error Recovery.      (line   9)
+* clearerr_unlocked:                     Error Recovery.      (line  20)
+* clock:                                 CPU Time.            (line  39)
+* clock_getres:                          Getting the Time.    (line  89)
+* clock_gettime:                         Getting the Time.    (line  72)
+* clock_settime:                         Setting and Adjusting the Time.
+                                                              (line  15)
+* clog:                                  Exponents and Logarithms.
+                                                              (line 281)
+* clog10:                                Exponents and Logarithms.
+                                                              (line 298)
+* clog10f:                               Exponents and Logarithms.
+                                                              (line 299)
+* clog10fN:                              Exponents and Logarithms.
+                                                              (line 301)
+* clog10fNx:                             Exponents and Logarithms.
+                                                              (line 302)
+* clog10l:                               Exponents and Logarithms.
+                                                              (line 300)
+* clogf:                                 Exponents and Logarithms.
+                                                              (line 282)
+* clogfN:                                Exponents and Logarithms.
+                                                              (line 284)
+* clogfNx:                               Exponents and Logarithms.
+                                                              (line 285)
+* clogl:                                 Exponents and Logarithms.
+                                                              (line 283)
+* close:                                 Opening and Closing Files.
+                                                              (line 150)
+* closedir:                              Reading/Closing Directory.
+                                                              (line 143)
+* closefrom:                             Opening and Closing Files.
+                                                              (line 252)
+* closelog:                              closelog.            (line   9)
+* close_range:                           Opening and Closing Files.
+                                                              (line 205)
+* cnd_broadcast:                         ISO C Condition Variables.
+                                                              (line  43)
+* cnd_destroy:                           ISO C Condition Variables.
+                                                              (line  85)
+* cnd_init:                              ISO C Condition Variables.
+                                                              (line  21)
+* cnd_signal:                            ISO C Condition Variables.
+                                                              (line  32)
+* cnd_timedwait:                         ISO C Condition Variables.
+                                                              (line  66)
+* cnd_wait:                              ISO C Condition Variables.
+                                                              (line  54)
+* confstr:                               String Parameters.   (line   9)
+* conj:                                  Operations on Complex.
+                                                              (line  33)
+* conjf:                                 Operations on Complex.
+                                                              (line  34)
+* conjfN:                                Operations on Complex.
+                                                              (line  36)
+* conjfNx:                               Operations on Complex.
+                                                              (line  37)
+* conjl:                                 Operations on Complex.
+                                                              (line  35)
+* connect:                               Connecting.          (line  11)
+* continue:                              Actions in the NSS configuration.
+                                                              (line  50)
+* copysign:                              FP Bit Twiddling.    (line  10)
+* copysignf:                             FP Bit Twiddling.    (line  11)
+* copysignfN:                            FP Bit Twiddling.    (line  13)
+* copysignfNx:                           FP Bit Twiddling.    (line  14)
+* copysignl:                             FP Bit Twiddling.    (line  12)
+* copy_file_range:                       Copying File Data.   (line  14)
+* cos:                                   Trig Functions.      (line  30)
+* cosf:                                  Trig Functions.      (line  31)
+* cosfN:                                 Trig Functions.      (line  33)
+* cosfNx:                                Trig Functions.      (line  34)
+* cosh:                                  Hyperbolic Functions.
+                                                              (line  22)
+* coshf:                                 Hyperbolic Functions.
+                                                              (line  23)
+* coshfN:                                Hyperbolic Functions.
+                                                              (line  25)
+* coshfNx:                               Hyperbolic Functions.
+                                                              (line  26)
+* coshl:                                 Hyperbolic Functions.
+                                                              (line  24)
+* cosl:                                  Trig Functions.      (line  32)
+* cpow:                                  Exponents and Logarithms.
+                                                              (line 328)
+* cpowf:                                 Exponents and Logarithms.
+                                                              (line 330)
+* cpowfN:                                Exponents and Logarithms.
+                                                              (line 334)
+* cpowfNx:                               Exponents and Logarithms.
+                                                              (line 336)
+* cpowl:                                 Exponents and Logarithms.
+                                                              (line 332)
+* cproj:                                 Operations on Complex.
+                                                              (line  63)
+* cprojf:                                Operations on Complex.
+                                                              (line  64)
+* cprojfN:                               Operations on Complex.
+                                                              (line  66)
+* cprojfNx:                              Operations on Complex.
+                                                              (line  67)
+* cprojl:                                Operations on Complex.
+                                                              (line  65)
+* CPU_CLR:                               CPU Affinity.        (line  87)
+* CPU_FEATURE_ACTIVE:                    X86.                 (line  21)
+* CPU_FEATURE_PRESENT:                   X86.                 (line  17)
+* CPU_ISSET:                             CPU Affinity.        (line  99)
+* CPU_SET:                               CPU Affinity.        (line  75)
+* CPU_ZERO:                              CPU Affinity.        (line  66)
+* creal:                                 Operations on Complex.
+                                                              (line  11)
+* crealf:                                Operations on Complex.
+                                                              (line  12)
+* crealfN:                               Operations on Complex.
+                                                              (line  14)
+* crealfNx:                              Operations on Complex.
+                                                              (line  15)
+* creall:                                Operations on Complex.
+                                                              (line  13)
+* creat:                                 Opening and Closing Files.
+                                                              (line 111)
+* creat64:                               Opening and Closing Files.
+                                                              (line 131)
+* crypt:                                 Passphrase Storage.  (line  41)
+* crypt_r:                               Passphrase Storage.  (line 117)
+* csin:                                  Trig Functions.      (line  88)
+* csinf:                                 Trig Functions.      (line  89)
+* csinfN:                                Trig Functions.      (line  91)
+* csinfNx:                               Trig Functions.      (line  92)
+* csinh:                                 Hyperbolic Functions.
+                                                              (line  51)
+* csinhf:                                Hyperbolic Functions.
+                                                              (line  52)
+* csinhfN:                               Hyperbolic Functions.
+                                                              (line  54)
+* csinhfNx:                              Hyperbolic Functions.
+                                                              (line  55)
+* csinhl:                                Hyperbolic Functions.
+                                                              (line  53)
+* csinl:                                 Trig Functions.      (line  90)
+* csqrt:                                 Exponents and Logarithms.
+                                                              (line 315)
+* csqrtf:                                Exponents and Logarithms.
+                                                              (line 316)
+* csqrtfN:                               Exponents and Logarithms.
+                                                              (line 318)
+* csqrtfNx:                              Exponents and Logarithms.
+                                                              (line 319)
+* csqrtl:                                Exponents and Logarithms.
+                                                              (line 317)
+* ctan:                                  Trig Functions.      (line 116)
+* ctanf:                                 Trig Functions.      (line 117)
+* ctanfN:                                Trig Functions.      (line 119)
+* ctanfNx:                               Trig Functions.      (line 120)
+* ctanh:                                 Hyperbolic Functions.
+                                                              (line  75)
+* ctanhf:                                Hyperbolic Functions.
+                                                              (line  76)
+* ctanhfN:                               Hyperbolic Functions.
+                                                              (line  78)
+* ctanhfNx:                              Hyperbolic Functions.
+                                                              (line  79)
+* ctanhl:                                Hyperbolic Functions.
+                                                              (line  77)
+* ctanl:                                 Trig Functions.      (line 118)
+* ctermid:                               Identifying the Terminal.
+                                                              (line  15)
+* ctime:                                 Formatting Calendar Time.
+                                                              (line  45)
+* ctime_r:                               Formatting Calendar Time.
+                                                              (line  60)
+* cuserid:                               Who Logged In.       (line  28)
+* daddl:                                 Misc FP Arithmetic.  (line 227)
+* dcgettext:                             Translation with gettext.
+                                                              (line  94)
+* dcngettext:                            Advanced gettext functions.
+                                                              (line 103)
+* ddivl:                                 Misc FP Arithmetic.  (line 272)
+* dfmal:                                 Misc FP Arithmetic.  (line 303)
+* dgettext:                              Translation with gettext.
+                                                              (line  78)
+* difftime:                              Calculating Elapsed Time.
+                                                              (line  10)
+* dirfd:                                 Opening a Directory. (line 104)
+* dirname:                               Finding Tokens in a String.
+                                                              (line 274)
+* div:                                   Integer Division.    (line  30)
+* dlinfo:                                Dynamic Linker Introspection.
+                                                              (line   9)
+* dmull:                                 Misc FP Arithmetic.  (line 257)
+* dngettext:                             Advanced gettext functions.
+                                                              (line  92)
+* drand48:                               SVID Random.         (line  33)
+* drand48_r:                             SVID Random.         (line 191)
+* drem:                                  Remainder Functions. (line  56)
+* dremf:                                 Remainder Functions. (line  57)
+* dreml:                                 Remainder Functions. (line  58)
+* dsqrtl:                                Misc FP Arithmetic.  (line 287)
+* dsubl:                                 Misc FP Arithmetic.  (line 242)
+* DTTOIF:                                Directory Entries.   (line  78)
+* dup:                                   Duplicating Descriptors.
+                                                              (line  23)
+* dup2:                                  Duplicating Descriptors.
+                                                              (line  32)
+* ecvt:                                  System V Number Conversion.
+                                                              (line  17)
+* ecvt_r:                                System V Number Conversion.
+                                                              (line 116)
+* endfsent:                              fstab.               (line  95)
+* endgrent:                              Scanning All Groups. (line  88)
+* endhostent:                            Host Names.          (line 255)
+* endmntent:                             mtab.                (line 118)
+* endnetent:                             Networks Database.   (line  86)
+* endnetgrent:                           Lookup Netgroup.     (line  79)
+* endprotoent:                           Protocols Database.  (line  98)
+* endpwent:                              Scanning All Users.  (line  87)
+* endservent:                            Services Database.   (line  89)
+* endutent:                              Manipulating the Database.
+                                                              (line 152)
+* endutxent:                             XPG Functions.       (line 102)
+* envz_add:                              Envz Functions.      (line  50)
+* envz_entry:                            Envz Functions.      (line  28)
+* envz_get:                              Envz Functions.      (line  39)
+* envz_merge:                            Envz Functions.      (line  62)
+* envz_remove:                           Envz Functions.      (line  85)
+* envz_strip:                            Envz Functions.      (line  77)
+* erand48:                               SVID Random.         (line  47)
+* erand48_r:                             SVID Random.         (line 210)
+* erf:                                   Special Functions.   (line   9)
+* erfc:                                  Special Functions.   (line  22)
+* erfcf:                                 Special Functions.   (line  23)
+* erfcfN:                                Special Functions.   (line  25)
+* erfcfNx:                               Special Functions.   (line  26)
+* erfcl:                                 Special Functions.   (line  24)
+* erff:                                  Special Functions.   (line  10)
+* erffN:                                 Special Functions.   (line  12)
+* erffNx:                                Special Functions.   (line  13)
+* erfl:                                  Special Functions.   (line  11)
+* err:                                   Error Messages.      (line 358)
+* error:                                 Error Messages.      (line 183)
+* error_at_line:                         Error Messages.      (line 221)
+* errx:                                  Error Messages.      (line 377)
+* execl:                                 Executing a File.    (line  37)
+* execle:                                Executing a File.    (line  72)
+* execlp:                                Executing a File.    (line  98)
+* execv:                                 Executing a File.    (line  17)
+* execve:                                Executing a File.    (line  46)
+* execvp:                                Executing a File.    (line  84)
+* exit:                                  Normal Termination.  (line  10)
+* exp:                                   Exponents and Logarithms.
+                                                              (line   6)
+* exp10:                                 Exponents and Logarithms.
+                                                              (line  33)
+* exp10f:                                Exponents and Logarithms.
+                                                              (line  34)
+* exp10fN:                               Exponents and Logarithms.
+                                                              (line  36)
+* exp10fNx:                              Exponents and Logarithms.
+                                                              (line  37)
+* exp10l:                                Exponents and Logarithms.
+                                                              (line  35)
+* exp2:                                  Exponents and Logarithms.
+                                                              (line  21)
+* exp2f:                                 Exponents and Logarithms.
+                                                              (line  22)
+* exp2fN:                                Exponents and Logarithms.
+                                                              (line  24)
+* exp2fNx:                               Exponents and Logarithms.
+                                                              (line  25)
+* exp2l:                                 Exponents and Logarithms.
+                                                              (line  23)
+* expf:                                  Exponents and Logarithms.
+                                                              (line   7)
+* expfN:                                 Exponents and Logarithms.
+                                                              (line   9)
+* expfNx:                                Exponents and Logarithms.
+                                                              (line  10)
+* expl:                                  Exponents and Logarithms.
+                                                              (line   8)
+* explicit_bzero:                        Erasing Sensitive Data.
+                                                              (line  66)
+* expm1:                                 Exponents and Logarithms.
+                                                              (line 238)
+* expm1f:                                Exponents and Logarithms.
+                                                              (line 239)
+* expm1fN:                               Exponents and Logarithms.
+                                                              (line 241)
+* expm1fNx:                              Exponents and Logarithms.
+                                                              (line 242)
+* expm1l:                                Exponents and Logarithms.
+                                                              (line 240)
+* fabs:                                  Absolute Value.      (line  34)
+* fabsf:                                 Absolute Value.      (line  35)
+* fabsfN:                                Absolute Value.      (line  37)
+* fabsfNx:                               Absolute Value.      (line  38)
+* fabsl:                                 Absolute Value.      (line  36)
+* fadd:                                  Misc FP Arithmetic.  (line 225)
+* faddl:                                 Misc FP Arithmetic.  (line 226)
+* fchdir:                                Working Directory.   (line 124)
+* fchmod:                                Setting Permissions. (line 114)
+* fchown:                                File Owner.          (line  68)
+* fclose:                                Closing Streams.     (line  10)
+* fcloseall:                             Closing Streams.     (line  33)
+* fcntl:                                 Control Operations.  (line  17)
+* fcvt:                                  System V Number Conversion.
+                                                              (line  43)
+* fcvt_r:                                System V Number Conversion.
+                                                              (line 129)
+* fdatasync:                             Synchronizing I/O.   (line  67)
+* fdim:                                  Misc FP Arithmetic.  (line 182)
+* fdimf:                                 Misc FP Arithmetic.  (line 183)
+* fdimfN:                                Misc FP Arithmetic.  (line 185)
+* fdimfNx:                               Misc FP Arithmetic.  (line 186)
+* fdiml:                                 Misc FP Arithmetic.  (line 184)
+* fdiv:                                  Misc FP Arithmetic.  (line 270)
+* fdivl:                                 Misc FP Arithmetic.  (line 271)
+* fdopen:                                Descriptors and Streams.
+                                                              (line  11)
+* fdopendir:                             Opening a Directory. (line  61)
+* FD_CLR:                                Waiting for I/O.     (line  68)
+* FD_ISSET:                              Waiting for I/O.     (line  78)
+* FD_SET:                                Waiting for I/O.     (line  58)
+* FD_ZERO:                               Waiting for I/O.     (line  50)
+* feclearexcept:                         Status bit operations.
+                                                              (line  39)
+* fedisableexcept:                       Control Functions.   (line 143)
+* feenableexcept:                        Control Functions.   (line 130)
+* fegetenv:                              Control Functions.   (line  29)
+* fegetexcept:                           Control Functions.   (line 157)
+* fegetexceptflag:                       Status bit operations.
+                                                              (line 112)
+* fegetmode:                             Control Functions.   (line 104)
+* fegetround:                            Rounding.            (line  72)
+* feholdexcept:                          Control Functions.   (line  40)
+* feof:                                  EOF and Errors.      (line  33)
+* feof_unlocked:                         EOF and Errors.      (line  43)
+* feraiseexcept:                         Status bit operations.
+                                                              (line  50)
+* ferror:                                EOF and Errors.      (line  55)
+* ferror_unlocked:                       EOF and Errors.      (line  66)
+* fesetenv:                              Control Functions.   (line  71)
+* fesetexcept:                           Status bit operations.
+                                                              (line  65)
+* fesetexceptflag:                       Status bit operations.
+                                                              (line 124)
+* fesetmode:                             Control Functions.   (line 115)
+* fesetround:                            Rounding.            (line  82)
+* fetestexcept:                          Status bit operations.
+                                                              (line  77)
+* fetestexceptflag:                      Status bit operations.
+                                                              (line 139)
+* feupdateenv:                           Control Functions.   (line  81)
+* fexecve:                               Executing a File.    (line  57)
+* fflush:                                Flushing Buffers.    (line  25)
+* fflush_unlocked:                       Flushing Buffers.    (line  37)
+* ffma:                                  Misc FP Arithmetic.  (line 301)
+* ffmal:                                 Misc FP Arithmetic.  (line 302)
+* fgetc:                                 Character Input.     (line  22)
+* fgetc_unlocked:                        Character Input.     (line  41)
+* fgetgrent:                             Scanning All Groups. (line  13)
+* fgetgrent_r:                           Scanning All Groups. (line  27)
+* fgetpos:                               Portable Positioning.
+                                                              (line  78)
+* fgetpos64:                             Portable Positioning.
+                                                              (line  93)
+* fgetpwent:                             Scanning All Users.  (line  13)
+* fgetpwent_r:                           Scanning All Users.  (line  26)
+* fgets:                                 Line Input.          (line  82)
+* fgets_unlocked:                        Line Input.          (line 131)
+* fgetwc:                                Character Input.     (line  32)
+* fgetwc_unlocked:                       Character Input.     (line  49)
+* fgetws:                                Line Input.          (line 106)
+* fgetws_unlocked:                       Line Input.          (line 141)
+* fileno:                                Descriptors and Streams.
+                                                              (line  40)
+* fileno_unlocked:                       Descriptors and Streams.
+                                                              (line  50)
+* finite:                                Floating Point Classes.
+                                                              (line 156)
+* finitef:                               Floating Point Classes.
+                                                              (line 157)
+* finitel:                               Floating Point Classes.
+                                                              (line 158)
+* flockfile:                             Streams and Threads. (line  30)
+* floor:                                 Rounding Functions.  (line  54)
+* floorf:                                Rounding Functions.  (line  55)
+* floorfN:                               Rounding Functions.  (line  57)
+* floorfNx:                              Rounding Functions.  (line  58)
+* floorl:                                Rounding Functions.  (line  56)
+* fma:                                   Misc FP Arithmetic.  (line 197)
+* fMaddfN:                               Misc FP Arithmetic.  (line 228)
+* fMaddfNx:                              Misc FP Arithmetic.  (line 229)
+* fmaf:                                  Misc FP Arithmetic.  (line 198)
+* fmafN:                                 Misc FP Arithmetic.  (line 201)
+* fmafNx:                                Misc FP Arithmetic.  (line 202)
+* fmal:                                  Misc FP Arithmetic.  (line 199)
+* fmax:                                  Misc FP Arithmetic.  (line  29)
+* fmaxf:                                 Misc FP Arithmetic.  (line  30)
+* fmaxfN:                                Misc FP Arithmetic.  (line  32)
+* fmaxfNx:                               Misc FP Arithmetic.  (line  33)
+* fmaximum:                              Misc FP Arithmetic.  (line  57)
+* fmaximumf:                             Misc FP Arithmetic.  (line  58)
+* fmaximumfN:                            Misc FP Arithmetic.  (line  60)
+* fmaximumfNx:                           Misc FP Arithmetic.  (line  61)
+* fmaximuml:                             Misc FP Arithmetic.  (line  59)
+* fmaximum_mag:                          Misc FP Arithmetic.  (line 139)
+* fmaximum_magf:                         Misc FP Arithmetic.  (line 140)
+* fmaximum_magfN:                        Misc FP Arithmetic.  (line 142)
+* fmaximum_magfNx:                       Misc FP Arithmetic.  (line 143)
+* fmaximum_magl:                         Misc FP Arithmetic.  (line 141)
+* fmaximum_mag_num:                      Misc FP Arithmetic.  (line 167)
+* fmaximum_mag_numf:                     Misc FP Arithmetic.  (line 168)
+* fmaximum_mag_numfN:                    Misc FP Arithmetic.  (line 171)
+* fmaximum_mag_numfNx:                   Misc FP Arithmetic.  (line 172)
+* fmaximum_mag_numl:                     Misc FP Arithmetic.  (line 169)
+* fmaximum_num:                          Misc FP Arithmetic.  (line  84)
+* fmaximum_numf:                         Misc FP Arithmetic.  (line  85)
+* fmaximum_numfN:                        Misc FP Arithmetic.  (line  87)
+* fmaximum_numfNx:                       Misc FP Arithmetic.  (line  88)
+* fmaximum_numl:                         Misc FP Arithmetic.  (line  86)
+* fmaxl:                                 Misc FP Arithmetic.  (line  31)
+* fmaxmag:                               Misc FP Arithmetic.  (line 112)
+* fmaxmagf:                              Misc FP Arithmetic.  (line 113)
+* fmaxmagfN:                             Misc FP Arithmetic.  (line 115)
+* fmaxmagfNx:                            Misc FP Arithmetic.  (line 116)
+* fmaxmagl:                              Misc FP Arithmetic.  (line 114)
+* fMdivfN:                               Misc FP Arithmetic.  (line 273)
+* fMdivfNx:                              Misc FP Arithmetic.  (line 274)
+* fmemopen:                              String Streams.      (line   9)
+* fMfmafN:                               Misc FP Arithmetic.  (line 304)
+* fMfmafNx:                              Misc FP Arithmetic.  (line 305)
+* fmin:                                  Misc FP Arithmetic.  (line  11)
+* fminf:                                 Misc FP Arithmetic.  (line  12)
+* fminfN:                                Misc FP Arithmetic.  (line  14)
+* fminfNx:                               Misc FP Arithmetic.  (line  15)
+* fminimum:                              Misc FP Arithmetic.  (line  44)
+* fminimumf:                             Misc FP Arithmetic.  (line  45)
+* fminimumfN:                            Misc FP Arithmetic.  (line  47)
+* fminimumfNx:                           Misc FP Arithmetic.  (line  48)
+* fminimuml:                             Misc FP Arithmetic.  (line  46)
+* fminimum_mag:                          Misc FP Arithmetic.  (line 126)
+* fminimum_magf:                         Misc FP Arithmetic.  (line 127)
+* fminimum_magfN:                        Misc FP Arithmetic.  (line 129)
+* fminimum_magfNx:                       Misc FP Arithmetic.  (line 130)
+* fminimum_magl:                         Misc FP Arithmetic.  (line 128)
+* fminimum_mag_num:                      Misc FP Arithmetic.  (line 152)
+* fminimum_mag_numf:                     Misc FP Arithmetic.  (line 153)
+* fminimum_mag_numfN:                    Misc FP Arithmetic.  (line 156)
+* fminimum_mag_numfNx:                   Misc FP Arithmetic.  (line 157)
+* fminimum_mag_numl:                     Misc FP Arithmetic.  (line 154)
+* fminimum_num:                          Misc FP Arithmetic.  (line  70)
+* fminimum_numf:                         Misc FP Arithmetic.  (line  71)
+* fminimum_numfN:                        Misc FP Arithmetic.  (line  73)
+* fminimum_numfNx:                       Misc FP Arithmetic.  (line  74)
+* fminimum_numl:                         Misc FP Arithmetic.  (line  72)
+* fminl:                                 Misc FP Arithmetic.  (line  13)
+* fminmag:                               Misc FP Arithmetic.  (line  98)
+* fminmagf:                              Misc FP Arithmetic.  (line  99)
+* fminmagfN:                             Misc FP Arithmetic.  (line 101)
+* fminmagfNx:                            Misc FP Arithmetic.  (line 102)
+* fminmagl:                              Misc FP Arithmetic.  (line 100)
+* fMmulfN:                               Misc FP Arithmetic.  (line 258)
+* fMmulfNx:                              Misc FP Arithmetic.  (line 259)
+* fmod:                                  Remainder Functions. (line  10)
+* fmodf:                                 Remainder Functions. (line  11)
+* fmodfN:                                Remainder Functions. (line  14)
+* fmodfNx:                               Remainder Functions. (line  15)
+* fmodl:                                 Remainder Functions. (line  12)
+* fMsqrtfN:                              Misc FP Arithmetic.  (line 288)
+* fMsqrtfNx:                             Misc FP Arithmetic.  (line 289)
+* fMsubfN:                               Misc FP Arithmetic.  (line 243)
+* fMsubfNx:                              Misc FP Arithmetic.  (line 244)
+* fmtmsg:                                Printing Formatted Messages.
+                                                              (line  46)
+* fmul:                                  Misc FP Arithmetic.  (line 255)
+* fmull:                                 Misc FP Arithmetic.  (line 256)
+* fMxaddfN:                              Misc FP Arithmetic.  (line 230)
+* fMxaddfNx:                             Misc FP Arithmetic.  (line 231)
+* fMxdivfN:                              Misc FP Arithmetic.  (line 275)
+* fMxdivfNx:                             Misc FP Arithmetic.  (line 276)
+* fMxfmafN:                              Misc FP Arithmetic.  (line 306)
+* fMxfmafNx:                             Misc FP Arithmetic.  (line 307)
+* fMxmulfN:                              Misc FP Arithmetic.  (line 260)
+* fMxmulfNx:                             Misc FP Arithmetic.  (line 261)
+* fMxsqrtfN:                             Misc FP Arithmetic.  (line 290)
+* fMxsqrtfNx:                            Misc FP Arithmetic.  (line 291)
+* fMxsubfN:                              Misc FP Arithmetic.  (line 245)
+* fMxsubfNx:                             Misc FP Arithmetic.  (line 246)
+* fnmatch:                               Wildcard Matching.   (line  11)
+* fopen:                                 Opening Streams.     (line  13)
+* fopen64:                               Opening Streams.     (line 131)
+* fopencookie:                           Streams and Cookies. (line  56)
+* fork:                                  Creating a Process.  (line   9)
+* forkpty:                               Pseudo-Terminal Pairs.
+                                                              (line  38)
+* fpathconf:                             Pathconf.            (line  39)
+* fpclassify:                            Floating Point Classes.
+                                                              (line   9)
+* fprintf:                               Formatted Output Functions.
+                                                              (line  33)
+* fputc:                                 Simple Output.       (line  12)
+* fputc_unlocked:                        Simple Output.       (line  30)
+* fputs:                                 Simple Output.       (line 122)
+* fputs_unlocked:                        Simple Output.       (line 156)
+* fputwc:                                Simple Output.       (line  21)
+* fputwc_unlocked:                       Simple Output.       (line  38)
+* fputws:                                Simple Output.       (line 143)
+* fputws_unlocked:                       Simple Output.       (line 166)
+* fread:                                 Block Input/Output.  (line  27)
+* fread_unlocked:                        Block Input/Output.  (line  45)
+* free:                                  Freeing after Malloc.
+                                                              (line  10)
+* freopen:                               Opening Streams.     (line 160)
+* freopen64:                             Opening Streams.     (line 196)
+* frexp:                                 Normalization Functions.
+                                                              (line  16)
+* frexpf:                                Normalization Functions.
+                                                              (line  17)
+* frexpfN:                               Normalization Functions.
+                                                              (line  19)
+* frexpfNx:                              Normalization Functions.
+                                                              (line  20)
+* frexpl:                                Normalization Functions.
+                                                              (line  18)
+* fromfp:                                Rounding Functions.  (line 185)
+* fromfpf:                               Rounding Functions.  (line 186)
+* fromfpfN:                              Rounding Functions.  (line 189)
+* fromfpfNx:                             Rounding Functions.  (line 191)
+* fromfpl:                               Rounding Functions.  (line 187)
+* fromfpx:                               Rounding Functions.  (line 203)
+* fromfpxf:                              Rounding Functions.  (line 204)
+* fromfpxfN:                             Rounding Functions.  (line 207)
+* fromfpxfNx:                            Rounding Functions.  (line 209)
+* fromfpxl:                              Rounding Functions.  (line 205)
+* fscanf:                                Formatted Input Functions.
+                                                              (line  39)
+* fseek:                                 File Positioning.    (line  74)
+* fseeko:                                File Positioning.    (line  94)
+* fseeko64:                              File Positioning.    (line 117)
+* fsetpos:                               Portable Positioning.
+                                                              (line 105)
+* fsetpos64:                             Portable Positioning.
+                                                              (line 123)
+* fsqrt:                                 Misc FP Arithmetic.  (line 285)
+* fsqrtl:                                Misc FP Arithmetic.  (line 286)
+* fstat:                                 Reading Attributes.  (line  50)
+* fstat64:                               Reading Attributes.  (line  69)
+* fsub:                                  Misc FP Arithmetic.  (line 240)
+* fsubl:                                 Misc FP Arithmetic.  (line 241)
+* fsync:                                 Synchronizing I/O.   (line  31)
+* ftell:                                 File Positioning.    (line  21)
+* ftello:                                File Positioning.    (line  34)
+* ftello64:                              File Positioning.    (line  59)
+* ftruncate:                             File Size.           (line  81)
+* ftruncate64:                           File Size.           (line 137)
+* ftrylockfile:                          Streams and Threads. (line  42)
+* ftw:                                   Working with Directory Trees.
+                                                              (line 123)
+* ftw64:                                 Working with Directory Trees.
+                                                              (line 176)
+* funlockfile:                           Streams and Threads. (line  54)
+* futimes:                               File Times.          (line 132)
+* fwide:                                 Streams and I18N.    (line  57)
+* fwprintf:                              Formatted Output Functions.
+                                                              (line  41)
+* fwrite:                                Block Input/Output.  (line  56)
+* fwrite_unlocked:                       Block Input/Output.  (line  67)
+* fwscanf:                               Formatted Input Functions.
+                                                              (line  47)
+* gamma:                                 Special Functions.   (line  76)
+* gammaf:                                Special Functions.   (line  77)
+* gammal:                                Special Functions.   (line  78)
+* gcvt:                                  System V Number Conversion.
+                                                              (line  63)
+* getauxval:                             Auxiliary Vector.    (line  17)
+* getc:                                  Character Input.     (line  59)
+* getchar:                               Character Input.     (line  98)
+* getchar_unlocked:                      Character Input.     (line 114)
+* getcontext:                            System V contexts.   (line  49)
+* getcpu:                                CPU Affinity.        (line 169)
+* getcwd:                                Working Directory.   (line  23)
+* getc_unlocked:                         Character Input.     (line  80)
+* getdate:                               General Time String Parsing.
+                                                              (line  38)
+* getdate_r:                             General Time String Parsing.
+                                                              (line 142)
+* getdelim:                              Line Input.          (line  58)
+* getdents64:                            Low-level Directory Access.
+                                                              (line  14)
+* getdomainnname:                        Host Identification. (line 105)
+* getegid:                               Reading Persona.     (line  43)
+* getentropy:                            Unpredictable Bytes. (line  37)
+* getenv:                                Environment Access.  (line  15)
+* geteuid:                               Reading Persona.     (line  35)
+* getfsent:                              fstab.               (line 104)
+* getfsfile:                             fstab.               (line 137)
+* getfsspec:                             fstab.               (line 119)
+* getgid:                                Reading Persona.     (line  28)
+* getgrent:                              Scanning All Groups. (line  60)
+* getgrent_r:                            Scanning All Groups. (line  72)
+* getgrgid:                              Lookup Group.        (line  10)
+* getgrgid_r:                            Lookup Group.        (line  22)
+* getgrnam:                              Lookup Group.        (line  44)
+* getgrnam_r:                            Lookup Group.        (line  57)
+* getgrouplist:                          Setting Groups.      (line 117)
+* getgroups:                             Reading Persona.     (line  51)
+* gethostbyaddr:                         Host Names.          (line  86)
+* gethostbyaddr_r:                       Host Names.          (line 204)
+* gethostbyname:                         Host Names.          (line  67)
+* gethostbyname2:                        Host Names.          (line  76)
+* gethostbyname2_r:                      Host Names.          (line 191)
+* gethostbyname_r:                       Host Names.          (line 133)
+* gethostent:                            Host Names.          (line 246)
+* gethostid:                             Host Identification. (line 129)
+* gethostname:                           Host Identification. (line  53)
+* getitimer:                             Setting an Alarm.    (line  87)
+* getline:                               Line Input.          (line  20)
+* getloadavg:                            Processor Resources. (line  54)
+* getlogin:                              Who Logged In.       (line  16)
+* getmntent:                             mtab.                (line 130)
+* getmntent_r:                           mtab.                (line 158)
+* getnetbyaddr:                          Networks Database.   (line  47)
+* getnetbyname:                          Networks Database.   (line  38)
+* getnetent:                             Networks Database.   (line  77)
+* getnetgrent:                           Lookup Netgroup.     (line  39)
+* getnetgrent_r:                         Lookup Netgroup.     (line  58)
+* getopt:                                Using Getopt.        (line  38)
+* getopt_long:                           Getopt Long Options. (line  43)
+* getopt_long_only:                      Getopt Long Options. (line 100)
+* getpagesize:                           Query Memory Parameters.
+                                                              (line  33)
+* getpass:                               getpass.             (line  10)
+* getpayload:                            FP Bit Twiddling.    (line 155)
+* getpayloadf:                           FP Bit Twiddling.    (line 156)
+* getpayloadfN:                          FP Bit Twiddling.    (line 158)
+* getpayloadfNx:                         FP Bit Twiddling.    (line 159)
+* getpayloadl:                           FP Bit Twiddling.    (line 157)
+* getpeername:                           Who is Connected.    (line   6)
+* getpgid:                               Process Group Functions.
+                                                              (line  62)
+* getpgrp:                               Process Group Functions.
+                                                              (line  54)
+* getpid:                                Process Identification.
+                                                              (line  42)
+* getppid:                               Process Identification.
+                                                              (line  50)
+* getpriority:                           Traditional Scheduling Functions.
+                                                              (line  26)
+* getprotobyname:                        Protocols Database.  (line  51)
+* getprotobynumber:                      Protocols Database.  (line  61)
+* getprotoent:                           Protocols Database.  (line  89)
+* getpt:                                 Allocation.          (line  10)
+* getpwent:                              Scanning All Users.  (line  59)
+* getpwent_r:                            Scanning All Users.  (line  73)
+* getpwnam:                              Lookup User.         (line  45)
+* getpwnam_r:                            Lookup User.         (line  58)
+* getpwuid:                              Lookup User.         (line  10)
+* getpwuid_r:                            Lookup User.         (line  23)
+* getrandom:                             Unpredictable Bytes. (line  72)
+* getrlimit:                             Limits on Resources. (line  29)
+* getrlimit64:                           Limits on Resources. (line  44)
+* getrusage:                             Resource Usage.      (line  10)
+* gets:                                  Line Input.          (line 152)
+* getservbyname:                         Services Database.   (line  36)
+* getservbyport:                         Services Database.   (line  51)
+* getservent:                            Services Database.   (line  80)
+* getsid:                                Process Group Functions.
+                                                              (line  34)
+* getsockname:                           Reading Address.     (line  10)
+* getsockopt:                            Socket Option Functions.
+                                                              (line   9)
+* getsubopt:                             Suboptions.          (line  15)
+* gettext:                               Translation with gettext.
+                                                              (line  31)
+* gettid:                                Process Identification.
+                                                              (line  58)
+* gettimeofday:                          Getting the Time.    (line 118)
+* getuid:                                Reading Persona.     (line  21)
+* getumask:                              Setting Permissions. (line  65)
+* getutent:                              Manipulating the Database.
+                                                              (line 137)
+* getutent_r:                            Manipulating the Database.
+                                                              (line 241)
+* getutid:                               Manipulating the Database.
+                                                              (line 159)
+* getutid_r:                             Manipulating the Database.
+                                                              (line 259)
+* getutline:                             Manipulating the Database.
+                                                              (line 189)
+* getutline_r:                           Manipulating the Database.
+                                                              (line 276)
+* getutmp:                               XPG Functions.       (line 151)
+* getutmpx:                              XPG Functions.       (line 159)
+* getutxent:                             XPG Functions.       (line  93)
+* getutxid:                              XPG Functions.       (line 110)
+* getutxline:                            XPG Functions.       (line 119)
+* getw:                                  Character Input.     (line 163)
+* getwc:                                 Character Input.     (line  70)
+* getwchar:                              Character Input.     (line 106)
+* getwchar_unlocked:                     Character Input.     (line 122)
+* getwc_unlocked:                        Character Input.     (line  88)
+* getwd:                                 Working Directory.   (line  79)
+* get_avphys_pages:                      Query Memory Parameters.
+                                                              (line  79)
+* get_current_dir_name:                  Working Directory.   (line  94)
+* get_nprocs:                            Processor Resources. (line  38)
+* get_nprocs_conf:                       Processor Resources. (line  28)
+* get_phys_pages:                        Query Memory Parameters.
+                                                              (line  68)
+* glob:                                  Calling Glob.        (line 234)
+* glob64:                                Calling Glob.        (line 297)
+* globfree:                              More Flags for Globbing.
+                                                              (line 131)
+* globfree64:                            More Flags for Globbing.
+                                                              (line 141)
+* gmtime:                                Broken-down Time.    (line 127)
+* gmtime_r:                              Broken-down Time.    (line 141)
+* grantpt:                               Allocation.          (line  26)
+* grantpt <1>:                           Configuring and compiling.
+                                                              (line 203)
+* gsignal:                               Signaling Yourself.  (line  19)
+* gtty:                                  BSD Terminal Modes.  (line  31)
+* hasmntopt:                             mtab.                (line 205)
+* hcreate:                               Hash Search Function.
+                                                              (line  12)
+* hcreate_r:                             Hash Search Function.
+                                                              (line 118)
+* hdestroy:                              Hash Search Function.
+                                                              (line  42)
+* hdestroy_r:                            Hash Search Function.
+                                                              (line 137)
+* hsearch:                               Hash Search Function.
+                                                              (line  87)
+* hsearch_r:                             Hash Search Function.
+                                                              (line 147)
+* htonl:                                 Byte Order.          (line  50)
+* htons:                                 Byte Order.          (line  34)
+* hypot:                                 Exponents and Logarithms.
+                                                              (line 222)
+* hypotf:                                Exponents and Logarithms.
+                                                              (line 223)
+* hypotfN:                               Exponents and Logarithms.
+                                                              (line 225)
+* hypotfNx:                              Exponents and Logarithms.
+                                                              (line 226)
+* hypotl:                                Exponents and Logarithms.
+                                                              (line 224)
+* iconv:                                 Generic Conversion Interface.
+                                                              (line 114)
+* iconv_close:                           Generic Conversion Interface.
+                                                              (line  90)
+* iconv_open:                            Generic Conversion Interface.
+                                                              (line  27)
+* IFTODT:                                Directory Entries.   (line  71)
+* if_freenameindex:                      Interface Naming.    (line  69)
+* if_indextoname:                        Interface Naming.    (line  34)
+* if_nameindex:                          Interface Naming.    (line  56)
+* if_nametoindex:                        Interface Naming.    (line  25)
+* ilogb:                                 Exponents and Logarithms.
+                                                              (line 105)
+* ilogbf:                                Exponents and Logarithms.
+                                                              (line 106)
+* ilogbfN:                               Exponents and Logarithms.
+                                                              (line 108)
+* ilogbfNx:                              Exponents and Logarithms.
+                                                              (line 109)
+* ilogbl:                                Exponents and Logarithms.
+                                                              (line 107)
+* imaxabs:                               Absolute Value.      (line  19)
+* imaxdiv:                               Integer Division.    (line 114)
+* index:                                 Search Functions.    (line 335)
+* inet_addr:                             Host Address Functions.
+                                                              (line  22)
+* inet_aton:                             Host Address Functions.
+                                                              (line  12)
+* inet_lnaof:                            Host Address Functions.
+                                                              (line  79)
+* inet_makeaddr:                         Host Address Functions.
+                                                              (line  69)
+* inet_netof:                            Host Address Functions.
+                                                              (line  91)
+* inet_network:                          Host Address Functions.
+                                                              (line  35)
+* inet_ntoa:                             Host Address Functions.
+                                                              (line  49)
+* inet_ntop:                             Host Address Functions.
+                                                              (line 115)
+* inet_pton:                             Host Address Functions.
+                                                              (line 103)
+* initgroups:                            Setting Groups.      (line  96)
+* initstate:                             BSD Random.          (line  38)
+* initstate_r:                           BSD Random.          (line 112)
+* innetgr:                               Netgroup Membership. (line  10)
+* ioctl:                                 IOCTLs.              (line  31)
+* isalnum:                               Classification of Characters.
+                                                              (line  64)
+* isalpha:                               Classification of Characters.
+                                                              (line  43)
+* isascii:                               Classification of Characters.
+                                                              (line 151)
+* isatty:                                Is It a Terminal.    (line  13)
+* isblank:                               Classification of Characters.
+                                                              (line 117)
+* iscanonical:                           Floating Point Classes.
+                                                              (line  49)
+* iscntrl:                               Classification of Characters.
+                                                              (line 143)
+* isdigit:                               Classification of Characters.
+                                                              (line  57)
+* iseqsig:                               FP Comparison Functions.
+                                                              (line  80)
+* isfinite:                              Floating Point Classes.
+                                                              (line  67)
+* isgraph:                               Classification of Characters.
+                                                              (line 126)
+* isgreater:                             FP Comparison Functions.
+                                                              (line  23)
+* isgreaterequal:                        FP Comparison Functions.
+                                                              (line  32)
+* isinf:                                 Floating Point Classes.
+                                                              (line 129)
+* isinff:                                Floating Point Classes.
+                                                              (line 130)
+* isinfl:                                Floating Point Classes.
+                                                              (line 131)
+* isless:                                FP Comparison Functions.
+                                                              (line  41)
+* islessequal:                           FP Comparison Functions.
+                                                              (line  50)
+* islessgreater:                         FP Comparison Functions.
+                                                              (line  59)
+* islower:                               Classification of Characters.
+                                                              (line  27)
+* isnan:                                 Floating Point Classes.
+                                                              (line  90)
+* isnan <1>:                             Floating Point Classes.
+                                                              (line 139)
+* isnanf:                                Floating Point Classes.
+                                                              (line 140)
+* isnanl:                                Floating Point Classes.
+                                                              (line 141)
+* isnormal:                              Floating Point Classes.
+                                                              (line  80)
+* isprint:                               Classification of Characters.
+                                                              (line 135)
+* ispunct:                               Classification of Characters.
+                                                              (line  82)
+* issignaling:                           Floating Point Classes.
+                                                              (line  99)
+* isspace:                               Classification of Characters.
+                                                              (line  90)
+* issubnormal:                           Floating Point Classes.
+                                                              (line 107)
+* isunordered:                           FP Comparison Functions.
+                                                              (line  72)
+* isupper:                               Classification of Characters.
+                                                              (line  35)
+* iswalnum:                              Classification of Wide Characters.
+                                                              (line  76)
+* iswalpha:                              Classification of Wide Characters.
+                                                              (line  92)
+* iswblank:                              Classification of Wide Characters.
+                                                              (line 273)
+* iswcntrl:                              Classification of Wide Characters.
+                                                              (line 112)
+* iswctype:                              Classification of Wide Characters.
+                                                              (line  59)
+* iswdigit:                              Classification of Wide Characters.
+                                                              (line 126)
+* iswgraph:                              Classification of Wide Characters.
+                                                              (line 150)
+* iswlower:                              Classification of Wide Characters.
+                                                              (line 165)
+* iswprint:                              Classification of Wide Characters.
+                                                              (line 179)
+* iswpunct:                              Classification of Wide Characters.
+                                                              (line 193)
+* iswspace:                              Classification of Wide Characters.
+                                                              (line 207)
+* iswupper:                              Classification of Wide Characters.
+                                                              (line 240)
+* iswxdigit:                             Classification of Wide Characters.
+                                                              (line 254)
+* isxdigit:                              Classification of Characters.
+                                                              (line  73)
+* iszero:                                Floating Point Classes.
+                                                              (line 115)
+* j0:                                    Special Functions.   (line 104)
+* j0f:                                   Special Functions.   (line 105)
+* j0fN:                                  Special Functions.   (line 107)
+* j0fNx:                                 Special Functions.   (line 108)
+* j0l:                                   Special Functions.   (line 106)
+* j1:                                    Special Functions.   (line 118)
+* j1f:                                   Special Functions.   (line 119)
+* j1fN:                                  Special Functions.   (line 121)
+* j1fNx:                                 Special Functions.   (line 122)
+* j1l:                                   Special Functions.   (line 120)
+* jn:                                    Special Functions.   (line 132)
+* jnf:                                   Special Functions.   (line 133)
+* jnfN:                                  Special Functions.   (line 135)
+* jnfNx:                                 Special Functions.   (line 136)
+* jnl:                                   Special Functions.   (line 134)
+* jrand48:                               SVID Random.         (line  96)
+* jrand48_r:                             SVID Random.         (line 279)
+* kill:                                  Signaling Another Process.
+                                                              (line  26)
+* killpg:                                Signaling Another Process.
+                                                              (line  98)
+* l64a:                                  Encode Binary Data.  (line  11)
+* labs:                                  Absolute Value.      (line  17)
+* lcong48:                               SVID Random.         (line 159)
+* lcong48_r:                             SVID Random.         (line 347)
+* ldexp:                                 Normalization Functions.
+                                                              (line  40)
+* ldexpf:                                Normalization Functions.
+                                                              (line  41)
+* ldexpfN:                               Normalization Functions.
+                                                              (line  43)
+* ldexpfNx:                              Normalization Functions.
+                                                              (line  44)
+* ldexpl:                                Normalization Functions.
+                                                              (line  42)
+* ldiv:                                  Integer Division.    (line  63)
+* lfind:                                 Array Search Function.
+                                                              (line  11)
+* lgamma:                                Special Functions.   (line  34)
+* lgammaf:                               Special Functions.   (line  35)
+* lgammafN:                              Special Functions.   (line  37)
+* lgammafNx:                             Special Functions.   (line  38)
+* lgammafNx_r:                           Special Functions.   (line  65)
+* lgammafN_r:                            Special Functions.   (line  64)
+* lgammaf_r:                             Special Functions.   (line  62)
+* lgammal:                               Special Functions.   (line  36)
+* lgammal_r:                             Special Functions.   (line  63)
+* lgamma_r:                              Special Functions.   (line  61)
+* link:                                  Hard Links.          (line  27)
+* linkat:                                Hard Links.          (line  79)
+* lio_listio:                            Asynchronous Reads/Writes.
+                                                              (line 178)
+* lio_listio64:                          Asynchronous Reads/Writes.
+                                                              (line 262)
+* listen:                                Listening.           (line  29)
+* llabs:                                 Absolute Value.      (line  18)
+* lldiv:                                 Integer Division.    (line  86)
+* llogb:                                 Exponents and Logarithms.
+                                                              (line 110)
+* llogbf:                                Exponents and Logarithms.
+                                                              (line 111)
+* llogbfN:                               Exponents and Logarithms.
+                                                              (line 113)
+* llogbfNx:                              Exponents and Logarithms.
+                                                              (line 114)
+* llogbl:                                Exponents and Logarithms.
+                                                              (line 112)
+* llrint:                                Rounding Functions.  (line 149)
+* llrintf:                               Rounding Functions.  (line 150)
+* llrintfN:                              Rounding Functions.  (line 152)
+* llrintfNx:                             Rounding Functions.  (line 153)
+* llrintl:                               Rounding Functions.  (line 151)
+* llround:                               Rounding Functions.  (line 173)
+* llroundf:                              Rounding Functions.  (line 174)
+* llroundfN:                             Rounding Functions.  (line 176)
+* llroundfNx:                            Rounding Functions.  (line 177)
+* llroundl:                              Rounding Functions.  (line 175)
+* localeconv:                            The Lame Way to Locale Data.
+                                                              (line  15)
+* localtime:                             Broken-down Time.    (line  85)
+* localtime_r:                           Broken-down Time.    (line 110)
+* log:                                   Exponents and Logarithms.
+                                                              (line  47)
+* log10:                                 Exponents and Logarithms.
+                                                              (line  63)
+* log10f:                                Exponents and Logarithms.
+                                                              (line  64)
+* log10fN:                               Exponents and Logarithms.
+                                                              (line  66)
+* log10fNx:                              Exponents and Logarithms.
+                                                              (line  67)
+* log10l:                                Exponents and Logarithms.
+                                                              (line  65)
+* log1p:                                 Exponents and Logarithms.
+                                                              (line 252)
+* log1pf:                                Exponents and Logarithms.
+                                                              (line 253)
+* log1pfN:                               Exponents and Logarithms.
+                                                              (line 255)
+* log1pfNx:                              Exponents and Logarithms.
+                                                              (line 256)
+* log1pl:                                Exponents and Logarithms.
+                                                              (line 254)
+* log2:                                  Exponents and Logarithms.
+                                                              (line  75)
+* log2f:                                 Exponents and Logarithms.
+                                                              (line  76)
+* log2fN:                                Exponents and Logarithms.
+                                                              (line  78)
+* log2fNx:                               Exponents and Logarithms.
+                                                              (line  79)
+* log2l:                                 Exponents and Logarithms.
+                                                              (line  77)
+* logb:                                  Exponents and Logarithms.
+                                                              (line  87)
+* logbf:                                 Exponents and Logarithms.
+                                                              (line  88)
+* logbfN:                                Exponents and Logarithms.
+                                                              (line  90)
+* logbfNx:                               Exponents and Logarithms.
+                                                              (line  91)
+* logbl:                                 Exponents and Logarithms.
+                                                              (line  89)
+* logf:                                  Exponents and Logarithms.
+                                                              (line  48)
+* logfN:                                 Exponents and Logarithms.
+                                                              (line  50)
+* logfNx:                                Exponents and Logarithms.
+                                                              (line  51)
+* login:                                 Logging In and Out.  (line  25)
+* login_tty:                             Logging In and Out.  (line  13)
+* logl:                                  Exponents and Logarithms.
+                                                              (line  49)
+* logout:                                Logging In and Out.  (line  42)
+* logwtmp:                               Logging In and Out.  (line  53)
+* longjmp:                               Non-Local Details.   (line  26)
+* lrand48:                               SVID Random.         (line  60)
+* lrand48_r:                             SVID Random.         (line 228)
+* lrint:                                 Rounding Functions.  (line 137)
+* lrintf:                                Rounding Functions.  (line 138)
+* lrintfN:                               Rounding Functions.  (line 140)
+* lrintfNx:                              Rounding Functions.  (line 141)
+* lrintl:                                Rounding Functions.  (line 139)
+* lround:                                Rounding Functions.  (line 161)
+* lroundf:                               Rounding Functions.  (line 162)
+* lroundfN:                              Rounding Functions.  (line 164)
+* lroundfNx:                             Rounding Functions.  (line 165)
+* lroundl:                               Rounding Functions.  (line 163)
+* lsearch:                               Array Search Function.
+                                                              (line  31)
+* lseek:                                 File Position Primitive.
+                                                              (line  15)
+* lseek64:                               File Position Primitive.
+                                                              (line  99)
+* lstat:                                 Reading Attributes.  (line  84)
+* lstat64:                               Reading Attributes.  (line  98)
+* lutimes:                               File Times.          (line 114)
+* madvise:                               Memory-mapped I/O.   (line 279)
+* main:                                  Program Arguments.   (line   6)
+* makecontext:                           System V contexts.   (line  80)
+* mallinfo2:                             Statistics of Malloc.
+                                                              (line  55)
+* malloc:                                Basic Allocation.    (line   9)
+* mallopt:                               Malloc Tunable Parameters.
+                                                              (line  10)
+* mblen:                                 Non-reentrant Character Conversion.
+                                                              (line  80)
+* mbrlen:                                Converting a Character.
+                                                              (line 213)
+* mbrtowc:                               Converting a Character.
+                                                              (line  87)
+* mbsinit:                               Keeping the state.   (line  47)
+* mbsnrtowcs:                            Converting Strings.  (line 146)
+* mbsrtowcs:                             Converting Strings.  (line  13)
+* mbstowcs:                              Non-reentrant String Conversion.
+                                                              (line  11)
+* mbtowc:                                Non-reentrant Character Conversion.
+                                                              (line   6)
+* mcheck:                                Heap Consistency Checking.
+                                                              (line  11)
+* memalign:                              Aligned Memory Blocks.
+                                                              (line  35)
+* memccpy:                               Copying Strings and Arrays.
+                                                              (line 172)
+* memchr:                                Search Functions.    (line  10)
+* memcmp:                                String/Array Comparison.
+                                                              (line  24)
+* memcpy:                                Copying Strings and Arrays.
+                                                              (line  32)
+* memfd_create:                          Memory-mapped I/O.   (line 384)
+* memfrob:                               Obfuscating Data.    (line  22)
+* memmem:                                Search Functions.    (line 226)
+* memmove:                               Copying Strings and Arrays.
+                                                              (line 133)
+* mempcpy:                               Copying Strings and Arrays.
+                                                              (line  78)
+* memrchr:                               Search Functions.    (line  54)
+* memset:                                Copying Strings and Arrays.
+                                                              (line 183)
+* merge:                                 Actions in the NSS configuration.
+                                                              (line  57)
+* mkdir:                                 Creating Directories.
+                                                              (line   9)
+* mkdtemp:                               Temporary Files.     (line 207)
+* mkfifo:                                FIFO Special Files.  (line  19)
+* mknod:                                 Making Special Files.
+                                                              (line  12)
+* mkstemp:                               Temporary Files.     (line 185)
+* mktemp:                                Temporary Files.     (line 167)
+* mktime:                                Broken-down Time.    (line 153)
+* mlock:                                 Page Lock Functions. (line  19)
+* mlock2:                                Page Lock Functions. (line  57)
+* mlockall:                              Page Lock Functions. (line 102)
+* mmap:                                  Memory-mapped I/O.   (line  37)
+* mmap64:                                Memory-mapped I/O.   (line 157)
+* modf:                                  Rounding Functions.  (line 237)
+* modff:                                 Rounding Functions.  (line 238)
+* modffN:                                Rounding Functions.  (line 241)
+* modffNx:                               Rounding Functions.  (line 242)
+* modfl:                                 Rounding Functions.  (line 239)
+* mount:                                 Mount-Unmount-Remount.
+                                                              (line  16)
+* mprobe:                                Heap Consistency Checking.
+                                                              (line  53)
+* mprotect:                              Memory Protection.   (line  52)
+* mrand48:                               SVID Random.         (line  87)
+* mrand48_r:                             SVID Random.         (line 263)
+* mremap:                                Memory-mapped I/O.   (line 233)
+* msync:                                 Memory-mapped I/O.   (line 197)
+* mtrace:                                Tracing malloc.      (line   6)
+* mtx_destroy:                           ISO C Mutexes.       (line 133)
+* mtx_init:                              ISO C Mutexes.       (line  35)
+* mtx_lock:                              ISO C Mutexes.       (line  61)
+* mtx_timedlock:                         ISO C Mutexes.       (line  77)
+* mtx_trylock:                           ISO C Mutexes.       (line 101)
+* mtx_unlock:                            ISO C Mutexes.       (line 118)
+* munlock:                               Page Lock Functions. (line  92)
+* munlockall:                            Page Lock Functions. (line 168)
+* munmap:                                Memory-mapped I/O.   (line 175)
+* muntrace:                              Tracing malloc.      (line  36)
+* nan:                                   FP Bit Twiddling.    (line 110)
+* nanf:                                  FP Bit Twiddling.    (line 111)
+* nanfN:                                 FP Bit Twiddling.    (line 113)
+* nanfNx:                                FP Bit Twiddling.    (line 114)
+* nanl:                                  FP Bit Twiddling.    (line 112)
+* nanosleep:                             Sleeping.            (line  57)
+* nearbyint:                             Rounding Functions.  (line  99)
+* nearbyintf:                            Rounding Functions.  (line 100)
+* nearbyintfN:                           Rounding Functions.  (line 102)
+* nearbyintfNx:                          Rounding Functions.  (line 103)
+* nearbyintl:                            Rounding Functions.  (line 101)
+* nextafter:                             FP Bit Twiddling.    (line  42)
+* nextafterf:                            FP Bit Twiddling.    (line  43)
+* nextafterfN:                           FP Bit Twiddling.    (line  45)
+* nextafterfNx:                          FP Bit Twiddling.    (line  46)
+* nextafterl:                            FP Bit Twiddling.    (line  44)
+* nextdown:                              FP Bit Twiddling.    (line  92)
+* nextdownf:                             FP Bit Twiddling.    (line  93)
+* nextdownfN:                            FP Bit Twiddling.    (line  95)
+* nextdownfNx:                           FP Bit Twiddling.    (line  96)
+* nextdownl:                             FP Bit Twiddling.    (line  94)
+* nexttoward:                            FP Bit Twiddling.    (line  64)
+* nexttowardf:                           FP Bit Twiddling.    (line  65)
+* nexttowardl:                           FP Bit Twiddling.    (line  66)
+* nextup:                                FP Bit Twiddling.    (line  74)
+* nextupf:                               FP Bit Twiddling.    (line  75)
+* nextupfN:                              FP Bit Twiddling.    (line  77)
+* nextupfNx:                             FP Bit Twiddling.    (line  78)
+* nextupl:                               FP Bit Twiddling.    (line  76)
+* nftw:                                  Working with Directory Trees.
+                                                              (line 191)
+* nftw64:                                Working with Directory Trees.
+                                                              (line 254)
+* ngettext:                              Advanced gettext functions.
+                                                              (line  69)
+* nice:                                  Traditional Scheduling Functions.
+                                                              (line 101)
+* nl_langinfo:                           The Elegant and Fast Way.
+                                                              (line  12)
+* notfound:                              Actions in the NSS configuration.
+                                                              (line  25)
+* nrand48:                               SVID Random.         (line  71)
+* nrand48_r:                             SVID Random.         (line 245)
+* ntohl:                                 Byte Order.          (line  60)
+* ntohs:                                 Byte Order.          (line  42)
+* ntp_adjtime:                           Setting and Adjusting the Time.
+                                                              (line 215)
+* ntp_gettime:                           Setting and Adjusting the Time.
+                                                              (line  96)
+* obstack_1grow:                         Growing Objects.     (line  56)
+* obstack_1grow_fast:                    Extra Fast Growing.  (line  34)
+* obstack_alignment_mask:                Obstacks Data Alignment.
+                                                              (line  14)
+* obstack_alloc:                         Allocation in an Obstack.
+                                                              (line   9)
+* obstack_base:                          Status of an Obstack.
+                                                              (line  10)
+* obstack_blank:                         Growing Objects.     (line  28)
+* obstack_blank_fast:                    Extra Fast Growing.  (line  63)
+* obstack_chunk_alloc:                   Preparing for Obstacks.
+                                                              (line  11)
+* obstack_chunk_free:                    Preparing for Obstacks.
+                                                              (line  11)
+* obstack_chunk_size:                    Obstack Chunks.      (line  37)
+* obstack_copy:                          Allocation in an Obstack.
+                                                              (line  43)
+* obstack_copy0:                         Allocation in an Obstack.
+                                                              (line  53)
+* obstack_finish:                        Growing Objects.     (line  84)
+* obstack_free:                          Freeing Obstack Objects.
+                                                              (line  11)
+* obstack_grow:                          Growing Objects.     (line  36)
+* obstack_grow0:                         Growing Objects.     (line  46)
+* obstack_init:                          Preparing for Obstacks.
+                                                              (line  33)
+* obstack_int_grow:                      Growing Objects.     (line  74)
+* obstack_int_grow_fast:                 Extra Fast Growing.  (line  53)
+* obstack_next_free:                     Status of an Obstack.
+                                                              (line  25)
+* obstack_object_size:                   Growing Objects.     (line 104)
+* obstack_object_size <1>:               Status of an Obstack.
+                                                              (line  35)
+* obstack_printf:                        Dynamic Output.      (line  39)
+* obstack_ptr_grow:                      Growing Objects.     (line  64)
+* obstack_ptr_grow_fast:                 Extra Fast Growing.  (line  43)
+* obstack_room:                          Extra Fast Growing.  (line  22)
+* obstack_vprintf:                       Variable Arguments Output.
+                                                              (line 125)
+* offsetof:                              Structure Measurement.
+                                                              (line   9)
+* on_exit:                               Cleanups on Exit.    (line  26)
+* open:                                  Opening and Closing Files.
+                                                              (line  10)
+* open64:                                Opening and Closing Files.
+                                                              (line  94)
+* opendir:                               Opening a Directory. (line  22)
+* openlog:                               openlog.             (line   9)
+* openpty:                               Pseudo-Terminal Pairs.
+                                                              (line   9)
+* open_memstream:                        String Streams.      (line  77)
+* parse_printf_format:                   Parsing a Template String.
+                                                              (line  15)
+* pathconf:                              Pathconf.            (line  13)
+* pause:                                 Using Pause.         (line  10)
+* pclose:                                Pipe to a Subprocess.
+                                                              (line  42)
+* perror:                                Error Messages.      (line  53)
+* pipe:                                  Creating a Pipe.     (line  16)
+* pkey_alloc:                            Memory Protection.   (line 199)
+* pkey_free:                             Memory Protection.   (line 233)
+* pkey_get:                              Memory Protection.   (line 327)
+* pkey_mprotect:                         Memory Protection.   (line 253)
+* pkey_set:                              Memory Protection.   (line 287)
+* popen:                                 Pipe to a Subprocess.
+                                                              (line  17)
+* posix_fallocate:                       Storage Allocation.  (line  27)
+* posix_fallocate64:                     Storage Allocation.  (line  75)
+* posix_memalign:                        Aligned Memory Blocks.
+                                                              (line  59)
+* pow:                                   Exponents and Logarithms.
+                                                              (line 179)
+* powf:                                  Exponents and Logarithms.
+                                                              (line 180)
+* powfN:                                 Exponents and Logarithms.
+                                                              (line 182)
+* powfNx:                                Exponents and Logarithms.
+                                                              (line 183)
+* powl:                                  Exponents and Logarithms.
+                                                              (line 181)
+* pread:                                 I/O Primitives.      (line 113)
+* pread64:                               I/O Primitives.      (line 150)
+* preadv:                                Scatter-Gather.      (line  64)
+* preadv2:                               Scatter-Gather.      (line 148)
+* preadv64:                              Scatter-Gather.      (line  86)
+* preadv64v2:                            Scatter-Gather.      (line 199)
+* printf:                                Formatted Output Functions.
+                                                              (line  13)
+* printf_size:                           Predefined Printf Handlers.
+                                                              (line  10)
+* printf_size_info:                      Predefined Printf Handlers.
+                                                              (line  44)
+* psignal:                               Signal Messages.     (line  29)
+* pthread_attr_getsigmask_np:            Initial Thread Signal Mask.
+                                                              (line  26)
+* pthread_attr_setsigmask_np:            Initial Thread Signal Mask.
+                                                              (line  10)
+* pthread_clockjoin_np:                  Waiting with Explicit Clocks.
+                                                              (line  73)
+* pthread_cond_clockwait:                Waiting with Explicit Clocks.
+                                                              (line  15)
+* pthread_getattr_default_np:            Default Thread Attributes.
+                                                              (line   9)
+* pthread_key_create:                    Thread-specific Data.
+                                                              (line  10)
+* pthread_key_delete:                    Thread-specific Data.
+                                                              (line  25)
+* pthread_rwlock_clockrdlock:            Waiting with Explicit Clocks.
+                                                              (line  27)
+* pthread_rwlock_clockwrlock:            Waiting with Explicit Clocks.
+                                                              (line  39)
+* pthread_setattr_default_np:            Default Thread Attributes.
+                                                              (line  17)
+* pthread_setspecific:                   Thread-specific Data.
+                                                              (line  42)
+* pthread_timedjoin_np:                  Waiting with Explicit Clocks.
+                                                              (line  61)
+* pthread_tryjoin_np:                    Waiting with Explicit Clocks.
+                                                              (line  51)
+* ptsname:                               Allocation.          (line  83)
+* ptsname_r:                             Allocation.          (line  94)
+* putc:                                  Simple Output.       (line  48)
+* putchar:                               Simple Output.       (line  88)
+* putchar_unlocked:                      Simple Output.       (line 104)
+* putc_unlocked:                         Simple Output.       (line  70)
+* putenv:                                Environment Access.  (line  40)
+* putpwent:                              Writing a User Entry.
+                                                              (line   6)
+* puts:                                  Simple Output.       (line 176)
+* pututline:                             Manipulating the Database.
+                                                              (line 212)
+* pututxline:                            XPG Functions.       (line 128)
+* putw:                                  Simple Output.       (line 193)
+* putwc:                                 Simple Output.       (line  59)
+* putwchar:                              Simple Output.       (line  96)
+* putwchar_unlocked:                     Simple Output.       (line 112)
+* putwc_unlocked:                        Simple Output.       (line  78)
+* pwrite:                                I/O Primitives.      (line 278)
+* pwrite64:                              I/O Primitives.      (line 319)
+* pwritev:                               Scatter-Gather.      (line 104)
+* pwritev2:                              Scatter-Gather.      (line 217)
+* pwritev64:                             Scatter-Gather.      (line 130)
+* pwritev64v2:                           Scatter-Gather.      (line 240)
+* qecvt:                                 System V Number Conversion.
+                                                              (line  78)
+* qecvt_r:                               System V Number Conversion.
+                                                              (line 142)
+* qfcvt:                                 System V Number Conversion.
+                                                              (line  88)
+* qfcvt_r:                               System V Number Conversion.
+                                                              (line 155)
+* qgcvt:                                 System V Number Conversion.
+                                                              (line  98)
+* qsort:                                 Array Sort Function. (line   9)
+* raise:                                 Signaling Yourself.  (line   9)
+* rand:                                  ISO Random.          (line  20)
+* random:                                BSD Random.          (line  12)
+* random_r:                              BSD Random.          (line  93)
+* rand_r:                                ISO Random.          (line  44)
+* rawmemchr:                             Search Functions.    (line  31)
+* read:                                  I/O Primitives.      (line  16)
+* readdir:                               Reading/Closing Directory.
+                                                              (line  10)
+* readdir64:                             Reading/Closing Directory.
+                                                              (line 119)
+* readdir64_r:                           Reading/Closing Directory.
+                                                              (line 131)
+* readdir_r:                             Reading/Closing Directory.
+                                                              (line  54)
+* readlink:                              Symbolic Links.      (line  73)
+* readv:                                 Scatter-Gather.      (line  30)
+* realloc:                               Changing Block Size. (line  15)
+* reallocarray:                          Changing Block Size. (line  35)
+* realpath:                              Symbolic Links.      (line 167)
+* recv:                                  Receiving Data.      (line  10)
+* recvfrom:                              Receiving Datagrams. (line  10)
+* regcomp:                               POSIX Regexp Compilation.
+                                                              (line  31)
+* regerror:                              Regexp Cleanup.      (line  27)
+* regexec:                               Matching POSIX Regexps.
+                                                              (line  11)
+* regfree:                               Regexp Cleanup.      (line   9)
+* register_printf_function:              Registering New Conversions.
+                                                              (line   9)
+* remainder:                             Remainder Functions. (line  32)
+* remainderf:                            Remainder Functions. (line  33)
+* remainderfN:                           Remainder Functions. (line  36)
+* remainderfNx:                          Remainder Functions. (line  38)
+* remainderl:                            Remainder Functions. (line  34)
+* remove:                                Deleting Files.      (line  77)
+* rename:                                Renaming Files.      (line   8)
+* return:                                Actions in the NSS configuration.
+                                                              (line  42)
+* rewind:                                File Positioning.    (line 159)
+* rewinddir:                             Random Access Directory.
+                                                              (line  10)
+* rindex:                                Search Functions.    (line 345)
+* rint:                                  Rounding Functions.  (line  80)
+* rintf:                                 Rounding Functions.  (line  81)
+* rintfN:                                Rounding Functions.  (line  83)
+* rintfNx:                               Rounding Functions.  (line  84)
+* rintl:                                 Rounding Functions.  (line  82)
+* rmdir:                                 Deleting Files.      (line  54)
+* round:                                 Rounding Functions.  (line 111)
+* roundeven:                             Rounding Functions.  (line 124)
+* roundevenf:                            Rounding Functions.  (line 125)
+* roundevenfN:                           Rounding Functions.  (line 127)
+* roundevenfNx:                          Rounding Functions.  (line 128)
+* roundevenl:                            Rounding Functions.  (line 126)
+* roundf:                                Rounding Functions.  (line 112)
+* roundfN:                               Rounding Functions.  (line 114)
+* roundfNx:                              Rounding Functions.  (line 115)
+* roundl:                                Rounding Functions.  (line 113)
+* rpmatch:                               Yes-or-No Questions. (line  15)
+* scalb:                                 Normalization Functions.
+                                                              (line  61)
+* scalbf:                                Normalization Functions.
+                                                              (line  62)
+* scalbl:                                Normalization Functions.
+                                                              (line  63)
+* scalbln:                               Normalization Functions.
+                                                              (line  83)
+* scalblnf:                              Normalization Functions.
+                                                              (line  84)
+* scalblnfN:                             Normalization Functions.
+                                                              (line  86)
+* scalblnfNx:                            Normalization Functions.
+                                                              (line  87)
+* scalblnl:                              Normalization Functions.
+                                                              (line  85)
+* scalbn:                                Normalization Functions.
+                                                              (line  71)
+* scalbnf:                               Normalization Functions.
+                                                              (line  72)
+* scalbnfN:                              Normalization Functions.
+                                                              (line  74)
+* scalbnfNx:                             Normalization Functions.
+                                                              (line  75)
+* scalbnl:                               Normalization Functions.
+                                                              (line  73)
+* scandir:                               Scanning Directory Content.
+                                                              (line  11)
+* scandir64:                             Scanning Directory Content.
+                                                              (line  71)
+* scanf:                                 Formatted Input Functions.
+                                                              (line   9)
+* sched_getaffinity:                     CPU Affinity.        (line 115)
+* sched_getparam:                        Basic Scheduling Functions.
+                                                              (line 133)
+* sched_getscheduler:                    Basic Scheduling Functions.
+                                                              (line  94)
+* sched_get_priority_max:                Basic Scheduling Functions.
+                                                              (line 173)
+* sched_get_priority_min:                Basic Scheduling Functions.
+                                                              (line 156)
+* sched_rr_get_interval:                 Basic Scheduling Functions.
+                                                              (line 190)
+* sched_setaffinity:                     CPU Affinity.        (line 142)
+* sched_setparam:                        Basic Scheduling Functions.
+                                                              (line 122)
+* sched_setscheduler:                    Basic Scheduling Functions.
+                                                              (line  42)
+* sched_yield:                           Basic Scheduling Functions.
+                                                              (line 210)
+* secure_getenv:                         Environment Access.  (line  27)
+* seed48:                                SVID Random.         (line 130)
+* seed48_r:                              SVID Random.         (line 329)
+* seekdir:                               Random Access Directory.
+                                                              (line  32)
+* select:                                Waiting for I/O.     (line  91)
+* semctl:                                Semaphores.          (line  14)
+* semget:                                Semaphores.          (line  18)
+* semop:                                 Semaphores.          (line  22)
+* semtimedop:                            Semaphores.          (line  26)
+* sem_clockwait:                         Waiting with Explicit Clocks.
+                                                              (line   9)
+* sem_close:                             Semaphores.          (line  47)
+* sem_destroy:                           Semaphores.          (line  39)
+* sem_getvalue:                          Semaphores.          (line  72)
+* sem_init:                              Semaphores.          (line  34)
+* sem_post:                              Semaphores.          (line  68)
+* sem_timedwait:                         Semaphores.          (line  59)
+* sem_trywait:                           Semaphores.          (line  64)
+* sem_unlink:                            Semaphores.          (line  51)
+* sem_wait:                              Semaphores.          (line  55)
+* send:                                  Sending Data.        (line  12)
+* sendto:                                Sending Datagrams.   (line  17)
+* setbuf:                                Controlling Buffering.
+                                                              (line  85)
+* setbuffer:                             Controlling Buffering.
+                                                              (line  98)
+* setcontext:                            System V contexts.   (line 127)
+* setdomainname:                         Host Identification. (line 117)
+* setegid:                               Setting Groups.      (line  10)
+* setenv:                                Environment Access.  (line  65)
+* seteuid:                               Setting User ID.     (line  10)
+* setfsent:                              fstab.               (line  79)
+* setgid:                                Setting Groups.      (line  30)
+* setgrent:                              Scanning All Groups. (line  51)
+* setgroups:                             Setting Groups.      (line  81)
+* sethostent:                            Host Names.          (line 231)
+* sethostid:                             Host Identification. (line 148)
+* sethostname:                           Host Identification. (line  82)
+* setitimer:                             Setting an Alarm.    (line  67)
+* setjmp:                                Non-Local Details.   (line  16)
+* setlinebuf:                            Controlling Buffering.
+                                                              (line 110)
+* setlocale:                             Setting the Locale.  (line  24)
+* setlogmask:                            setlogmask.          (line   9)
+* setmntent:                             mtab.                (line 102)
+* setnetent:                             Networks Database.   (line  63)
+* setnetgrent:                           Lookup Netgroup.     (line  12)
+* setpayload:                            FP Bit Twiddling.    (line 175)
+* setpayloadf:                           FP Bit Twiddling.    (line 176)
+* setpayloadfN:                          FP Bit Twiddling.    (line 178)
+* setpayloadfNx:                         FP Bit Twiddling.    (line 179)
+* setpayloadl:                           FP Bit Twiddling.    (line 177)
+* setpayloadsig:                         FP Bit Twiddling.    (line 192)
+* setpayloadsigf:                        FP Bit Twiddling.    (line 193)
+* setpayloadsigfN:                       FP Bit Twiddling.    (line 195)
+* setpayloadsigfNx:                      FP Bit Twiddling.    (line 196)
+* setpayloadsigl:                        FP Bit Twiddling.    (line 194)
+* setpgid:                               Process Group Functions.
+                                                              (line  81)
+* setpgrp:                               Process Group Functions.
+                                                              (line 114)
+* setpriority:                           Traditional Scheduling Functions.
+                                                              (line  52)
+* setprotoent:                           Protocols Database.  (line  75)
+* setpwent:                              Scanning All Users.  (line  50)
+* setregid:                              Setting Groups.      (line  45)
+* setreuid:                              Setting User ID.     (line  55)
+* setrlimit:                             Limits on Resources. (line  58)
+* setrlimit64:                           Limits on Resources. (line  80)
+* setservent:                            Services Database.   (line  66)
+* setsid:                                Process Group Functions.
+                                                              (line  10)
+* setsockopt:                            Socket Option Functions.
+                                                              (line  37)
+* setstate:                              BSD Random.          (line  54)
+* setstate_r:                            BSD Random.          (line 122)
+* settimeofday:                          Setting and Adjusting the Time.
+                                                              (line 314)
+* setuid:                                Setting User ID.     (line  37)
+* setutent:                              Manipulating the Database.
+                                                              (line 125)
+* setutxent:                             XPG Functions.       (line  85)
+* setvbuf:                               Controlling Buffering.
+                                                              (line  13)
+* shm_open:                              Memory-mapped I/O.   (line 355)
+* shm_unlink:                            Memory-mapped I/O.   (line 374)
+* shutdown:                              Closing a Socket.    (line  16)
+* sigabbrev_np:                          Signal Messages.     (line  62)
+* sigaction:                             Advanced Signal Handling.
+                                                              (line  40)
+* sigaddset:                             Signal Sets.         (line  52)
+* sigaltstack:                           Signal Stack.        (line  70)
+* sigblock:                              BSD Signal Handling. (line  51)
+* sigdelset:                             Signal Sets.         (line  67)
+* sigdescr_np:                           Signal Messages.     (line  49)
+* sigemptyset:                           Signal Sets.         (line  36)
+* sigfillset:                            Signal Sets.         (line  44)
+* siginterrupt:                          BSD Signal Handling. (line  20)
+* sigismember:                           Signal Sets.         (line  80)
+* siglongjmp:                            Non-Local Exits and Signals.
+                                                              (line  34)
+* sigmask:                               BSD Signal Handling. (line  34)
+* signal:                                Basic Signal Handling.
+                                                              (line  20)
+* signbit:                               FP Bit Twiddling.    (line  29)
+* significand:                           Normalization Functions.
+                                                              (line  95)
+* significandf:                          Normalization Functions.
+                                                              (line  96)
+* significandl:                          Normalization Functions.
+                                                              (line  97)
+* sigpause:                              BSD Signal Handling. (line  71)
+* sigpending:                            Checking for Pending Signals.
+                                                              (line   9)
+* sigprocmask:                           Process Signal Mask. (line  20)
+* sigsetjmp:                             Non-Local Exits and Signals.
+                                                              (line  25)
+* sigsetmask:                            BSD Signal Handling. (line  61)
+* sigstack:                              Signal Stack.        (line 116)
+* sigsuspend:                            Sigsuspend.          (line  11)
+* sin:                                   Trig Functions.      (line  18)
+* sincos:                                Trig Functions.      (line  63)
+* sincosf:                               Trig Functions.      (line  64)
+* sincosfN:                              Trig Functions.      (line  67)
+* sincosfNx:                             Trig Functions.      (line  68)
+* sincosl:                               Trig Functions.      (line  65)
+* sinf:                                  Trig Functions.      (line  19)
+* sinfN:                                 Trig Functions.      (line  21)
+* sinfNx:                                Trig Functions.      (line  22)
+* sinh:                                  Hyperbolic Functions.
+                                                              (line   9)
+* sinhf:                                 Hyperbolic Functions.
+                                                              (line  10)
+* sinhfN:                                Hyperbolic Functions.
+                                                              (line  12)
+* sinhfNx:                               Hyperbolic Functions.
+                                                              (line  13)
+* sinhl:                                 Hyperbolic Functions.
+                                                              (line  11)
+* sinl:                                  Trig Functions.      (line  20)
+* sleep:                                 Sleeping.            (line  14)
+* snprintf:                              Formatted Output Functions.
+                                                              (line 101)
+* socket:                                Creating a Socket.   (line   9)
+* socketpair:                            Socket Pairs.        (line  13)
+* sprintf:                               Formatted Output Functions.
+                                                              (line  49)
+* sqrt:                                  Exponents and Logarithms.
+                                                              (line 196)
+* sqrtf:                                 Exponents and Logarithms.
+                                                              (line 197)
+* sqrtfN:                                Exponents and Logarithms.
+                                                              (line 199)
+* sqrtfNx:                               Exponents and Logarithms.
+                                                              (line 200)
+* sqrtl:                                 Exponents and Logarithms.
+                                                              (line 198)
+* srand:                                 ISO Random.          (line  28)
+* srand48:                               SVID Random.         (line 110)
+* srand48_r:                             SVID Random.         (line 312)
+* srandom:                               BSD Random.          (line  25)
+* srandom_r:                             BSD Random.          (line 103)
+* sscanf:                                Formatted Input Functions.
+                                                              (line  55)
+* ssignal:                               Basic Signal Handling.
+                                                              (line 145)
+* stat:                                  Reading Attributes.  (line  11)
+* stat64:                                Reading Attributes.  (line  36)
+* stime:                                 Setting and Adjusting the Time.
+                                                              (line 283)
+* stpcpy:                                Copying Strings and Arrays.
+                                                              (line 248)
+* stpncpy:                               Truncating Strings.  (line 104)
+* strcasecmp:                            String/Array Comparison.
+                                                              (line 127)
+* strcasestr:                            Search Functions.    (line 209)
+* strcat:                                Concatenating Strings.
+                                                              (line  15)
+* strchr:                                Search Functions.    (line  65)
+* strchrnul:                             Search Functions.    (line 106)
+* strcmp:                                String/Array Comparison.
+                                                              (line  87)
+* strcoll:                               Collation Functions. (line  39)
+* strcpy:                                Copying Strings and Arrays.
+                                                              (line 202)
+* strcspn:                               Search Functions.    (line 268)
+* strdup:                                Copying Strings and Arrays.
+                                                              (line 224)
+* strdupa:                               Copying Strings and Arrays.
+                                                              (line 301)
+* strerror:                              Error Messages.      (line  13)
+* strerrordesc_np:                       Error Messages.      (line  85)
+* strerrorname_np:                       Error Messages.      (line  74)
+* strerror_r:                            Error Messages.      (line  31)
+* strfmon:                               Formatting Numbers.  (line  15)
+* strfromd:                              Printing of Floats.  (line   8)
+* strfromf:                              Printing of Floats.  (line  10)
+* strfromfN:                             Printing of Floats.  (line  43)
+* strfromfNx:                            Printing of Floats.  (line  45)
+* strfroml:                              Printing of Floats.  (line  12)
+* strfry:                                Shuffling Bytes.     (line  15)
+* strftime:                              Formatting Calendar Time.
+                                                              (line  75)
+* strlen:                                String Length.       (line   9)
+* strncasecmp:                           String/Array Comparison.
+                                                              (line 174)
+* strncat:                               Truncating Strings.  (line 165)
+* strncmp:                               String/Array Comparison.
+                                                              (line 154)
+* strncpy:                               Truncating Strings.  (line  16)
+* strndup:                               Truncating Strings.  (line  65)
+* strndupa:                              Truncating Strings.  (line  85)
+* strnlen:                               String Length.       (line  86)
+* strpbrk:                               Search Functions.    (line 300)
+* strptime:                              Low-Level Time String Parsing.
+                                                              (line  11)
+* strrchr:                               Search Functions.    (line 147)
+* strsep:                                Finding Tokens in a String.
+                                                              (line 158)
+* strsignal:                             Signal Messages.     (line  14)
+* strspn:                                Search Functions.    (line 238)
+* strstr:                                Search Functions.    (line 169)
+* strtod:                                Parsing of Floats.   (line  12)
+* strtof:                                Parsing of Floats.   (line  84)
+* strtofN:                               Parsing of Floats.   (line  99)
+* strtofNx:                              Parsing of Floats.   (line 100)
+* strtoimax:                             Parsing of Integers. (line 206)
+* strtok:                                Finding Tokens in a String.
+                                                              (line  11)
+* strtok_r:                              Finding Tokens in a String.
+                                                              (line 140)
+* strtol:                                Parsing of Integers. (line  12)
+* strtold:                               Parsing of Floats.   (line  85)
+* strtoll:                               Parsing of Integers. (line 117)
+* strtoq:                                Parsing of Integers. (line 146)
+* strtoul:                               Parsing of Integers. (line  87)
+* strtoull:                              Parsing of Integers. (line 165)
+* strtoumax:                             Parsing of Integers. (line 235)
+* strtouq:                               Parsing of Integers. (line 187)
+* strverscmp:                            String/Array Comparison.
+                                                              (line 218)
+* strxfrm:                               Collation Functions. (line  86)
+* stty:                                  BSD Terminal Modes.  (line  41)
+* success:                               Actions in the NSS configuration.
+                                                              (line  21)
+* SUN_LEN:                               Local Namespace Details.
+                                                              (line  50)
+* swapcontext:                           System V contexts.   (line 162)
+* swprintf:                              Formatted Output Functions.
+                                                              (line  74)
+* swscanf:                               Formatted Input Functions.
+                                                              (line  69)
+* symlink:                               Symbolic Links.      (line  46)
+* sync:                                  Synchronizing I/O.   (line  15)
+* syscall:                               System Calls.        (line  39)
+* sysconf:                               Sysconf Definition.  (line   6)
+* syslog:                                syslog; vsyslog.     (line   9)
+* system:                                Running a Command.   (line  11)
+* sysv_signal:                           Basic Signal Handling.
+                                                              (line 132)
+* S_ISBLK:                               Testing File Type.   (line  41)
+* S_ISCHR:                               Testing File Type.   (line  33)
+* S_ISDIR:                               Testing File Type.   (line  26)
+* S_ISFIFO:                              Testing File Type.   (line  56)
+* S_ISLNK:                               Testing File Type.   (line  64)
+* S_ISREG:                               Testing File Type.   (line  49)
+* S_ISSOCK:                              Testing File Type.   (line  72)
+* S_TYPEISMQ:                            Testing File Type.   (line 134)
+* S_TYPEISSEM:                           Testing File Type.   (line 143)
+* S_TYPEISSHM:                           Testing File Type.   (line 152)
+* tan:                                   Trig Functions.      (line  42)
+* tanf:                                  Trig Functions.      (line  43)
+* tanfN:                                 Trig Functions.      (line  45)
+* tanfNx:                                Trig Functions.      (line  46)
+* tanh:                                  Hyperbolic Functions.
+                                                              (line  35)
+* tanhf:                                 Hyperbolic Functions.
+                                                              (line  36)
+* tanhfN:                                Hyperbolic Functions.
+                                                              (line  38)
+* tanhfNx:                               Hyperbolic Functions.
+                                                              (line  39)
+* tanhl:                                 Hyperbolic Functions.
+                                                              (line  37)
+* tanl:                                  Trig Functions.      (line  44)
+* tcdrain:                               Line Control.        (line  38)
+* tcflow:                                Line Control.        (line 108)
+* tcflush:                               Line Control.        (line  67)
+* tcgetattr:                             Mode Functions.      (line   6)
+* tcgetpgrp:                             Terminal Access Functions.
+                                                              (line  14)
+* tcgetsid:                              Terminal Access Functions.
+                                                              (line  82)
+* tcsendbreak:                           Line Control.        (line  14)
+* tcsetattr:                             Mode Functions.      (line  25)
+* tcsetpgrp:                             Terminal Access Functions.
+                                                              (line  43)
+* tdelete:                               Tree Search Function.
+                                                              (line  72)
+* tdestroy:                              Tree Search Function.
+                                                              (line  87)
+* telldir:                               Random Access Directory.
+                                                              (line  23)
+* tempnam:                               Temporary Files.     (line 111)
+* TEMP_FAILURE_RETRY:                    Interrupted Primitives.
+                                                              (line  20)
+* textdomain:                            Locating gettext catalog.
+                                                              (line  69)
+* tfind:                                 Tree Search Function.
+                                                              (line  57)
+* tgamma:                                Special Functions.   (line  88)
+* tgammaf:                               Special Functions.   (line  89)
+* tgammafN:                              Special Functions.   (line  91)
+* tgammafNx:                             Special Functions.   (line  92)
+* tgammal:                               Special Functions.   (line  90)
+* tgkill:                                Signaling Another Process.
+                                                              (line  83)
+* thrd_create:                           ISO C Thread Management.
+                                                              (line  24)
+* thrd_current:                          ISO C Thread Management.
+                                                              (line  37)
+* thrd_detach:                           ISO C Thread Management.
+                                                              (line  95)
+* thrd_equal:                            ISO C Thread Management.
+                                                              (line  44)
+* thrd_exit:                             ISO C Thread Management.
+                                                              (line  82)
+* thrd_join:                             ISO C Thread Management.
+                                                              (line 110)
+* thrd_sleep:                            ISO C Thread Management.
+                                                              (line  53)
+* thrd_yield:                            ISO C Thread Management.
+                                                              (line  74)
+* time:                                  Getting the Time.    (line   9)
+* timegm:                                Broken-down Time.    (line 193)
+* timelocal:                             Broken-down Time.    (line 181)
+* times:                                 Processor Time.      (line  48)
+* tmpfile:                               Temporary Files.     (line  19)
+* tmpfile64:                             Temporary Files.     (line  36)
+* tmpnam:                                Temporary Files.     (line  52)
+* tmpnam_r:                              Temporary Files.     (line  78)
+* toascii:                               Case Conversion.     (line  40)
+* tolower:                               Case Conversion.     (line  23)
+* totalorder:                            FP Comparison Functions.
+                                                              (line  89)
+* totalorderf:                           FP Comparison Functions.
+                                                              (line  90)
+* totalorderfN:                          FP Comparison Functions.
+                                                              (line  93)
+* totalorderfNx:                         FP Comparison Functions.
+                                                              (line  94)
+* totalorderl:                           FP Comparison Functions.
+                                                              (line  91)
+* totalordermag:                         FP Comparison Functions.
+                                                              (line 112)
+* totalordermagf:                        FP Comparison Functions.
+                                                              (line 113)
+* totalordermagfN:                       FP Comparison Functions.
+                                                              (line 116)
+* totalordermagfNx:                      FP Comparison Functions.
+                                                              (line 117)
+* totalordermagl:                        FP Comparison Functions.
+                                                              (line 114)
+* toupper:                               Case Conversion.     (line  32)
+* towctrans:                             Wide Character Case Conversion.
+                                                              (line  38)
+* towlower:                              Wide Character Case Conversion.
+                                                              (line  53)
+* towupper:                              Wide Character Case Conversion.
+                                                              (line  68)
+* trunc:                                 Rounding Functions.  (line  67)
+* truncate:                              File Size.           (line  25)
+* truncate64:                            File Size.           (line  66)
+* truncf:                                Rounding Functions.  (line  68)
+* truncfN:                               Rounding Functions.  (line  70)
+* truncfNx:                              Rounding Functions.  (line  71)
+* truncl:                                Rounding Functions.  (line  69)
+* tryagain:                              Actions in the NSS configuration.
+                                                              (line  35)
+* tsearch:                               Tree Search Function.
+                                                              (line  26)
+* tss_create:                            ISO C Thread-local Storage.
+                                                              (line  46)
+* tss_delete:                            ISO C Thread-local Storage.
+                                                              (line  86)
+* tss_get:                               ISO C Thread-local Storage.
+                                                              (line  76)
+* tss_set:                               ISO C Thread-local Storage.
+                                                              (line  65)
+* ttyname:                               Is It a Terminal.    (line  25)
+* ttyname_r:                             Is It a Terminal.    (line  37)
+* twalk:                                 Tree Search Function.
+                                                              (line 138)
+* twalk_r:                               Tree Search Function.
+                                                              (line 162)
+* tzset:                                 Time Zone Functions. (line  32)
+* ufromfp:                               Rounding Functions.  (line 193)
+* ufromfpf:                              Rounding Functions.  (line 195)
+* ufromfpfN:                             Rounding Functions.  (line 199)
+* ufromfpfNx:                            Rounding Functions.  (line 201)
+* ufromfpl:                              Rounding Functions.  (line 197)
+* ufromfpx:                              Rounding Functions.  (line 211)
+* ufromfpxf:                             Rounding Functions.  (line 213)
+* ufromfpxfN:                            Rounding Functions.  (line 217)
+* ufromfpxfNx:                           Rounding Functions.  (line 219)
+* ufromfpxl:                             Rounding Functions.  (line 215)
+* ulimit:                                Limits on Resources. (line 206)
+* umask:                                 Setting Permissions. (line  42)
+* umount:                                Mount-Unmount-Remount.
+                                                              (line 236)
+* umount2:                               Mount-Unmount-Remount.
+                                                              (line 179)
+* uname:                                 Platform Type.       (line  69)
+* unavail:                               Actions in the NSS configuration.
+                                                              (line  29)
+* ungetc:                                How Unread.          (line   9)
+* ungetwc:                               How Unread.          (line  48)
+* unlink:                                Deleting Files.      (line  12)
+* unlockpt:                              Allocation.          (line  61)
+* unsetenv:                              Environment Access.  (line  91)
+* updwtmp:                               Manipulating the Database.
+                                                              (line 327)
+* utime:                                 File Times.          (line  50)
+* utimes:                                File Times.          (line  99)
+* utmpname:                              Manipulating the Database.
+                                                              (line 300)
+* utmpxname:                             XPG Functions.       (line 137)
+* valloc:                                Aligned Memory Blocks.
+                                                              (line  86)
+* vasprintf:                             Variable Arguments Output.
+                                                              (line 116)
+* va_arg:                                Argument Macros.     (line  22)
+* va_copy:                               Argument Macros.     (line  56)
+* va_end:                                Argument Macros.     (line  36)
+* va_start:                              Argument Macros.     (line  13)
+* verr:                                  Error Messages.      (line 368)
+* verrx:                                 Error Messages.      (line 388)
+* versionsort:                           Scanning Directory Content.
+                                                              (line  57)
+* versionsort64:                         Scanning Directory Content.
+                                                              (line 106)
+* vfork:                                 Creating a Process.  (line  76)
+* vfprintf:                              Variable Arguments Output.
+                                                              (line  72)
+* vfscanf:                               Variable Arguments Input.
+                                                              (line  34)
+* vfwprintf:                             Variable Arguments Output.
+                                                              (line  81)
+* vfwscanf:                              Variable Arguments Input.
+                                                              (line  43)
+* vlimit:                                Limits on Resources. (line 246)
+* vprintf:                               Variable Arguments Output.
+                                                              (line  54)
+* vscanf:                                Variable Arguments Input.
+                                                              (line  16)
+* vsnprintf:                             Variable Arguments Output.
+                                                              (line 107)
+* vsprintf:                              Variable Arguments Output.
+                                                              (line  90)
+* vsscanf:                               Variable Arguments Input.
+                                                              (line  52)
+* vswprintf:                             Variable Arguments Output.
+                                                              (line  98)
+* vswscanf:                              Variable Arguments Input.
+                                                              (line  61)
+* vsyslog:                               syslog; vsyslog.     (line 126)
+* vwarn:                                 Error Messages.      (line 329)
+* vwarnx:                                Error Messages.      (line 349)
+* vwprintf:                              Variable Arguments Output.
+                                                              (line  63)
+* vwscanf:                               Variable Arguments Input.
+                                                              (line  25)
+* wait:                                  Process Completion.  (line 107)
+* wait3:                                 BSD Wait Functions.  (line  11)
+* wait4:                                 Process Completion.  (line 128)
+* waitpid:                               Process Completion.  (line  10)
+* warn:                                  Error Messages.      (line 319)
+* warnx:                                 Error Messages.      (line 338)
+* WCOREDUMP:                             Process Completion Status.
+                                                              (line  46)
+* wcpcpy:                                Copying Strings and Arrays.
+                                                              (line 283)
+* wcpncpy:                               Truncating Strings.  (line 133)
+* wcrtomb:                               Converting a Character.
+                                                              (line 292)
+* wcscasecmp:                            String/Array Comparison.
+                                                              (line 141)
+* wcscat:                                Concatenating Strings.
+                                                              (line  39)
+* wcschr:                                Search Functions.    (line  90)
+* wcschrnul:                             Search Functions.    (line 117)
+* wcscmp:                                String/Array Comparison.
+                                                              (line 107)
+* wcscoll:                               Collation Functions. (line  48)
+* wcscpy:                                Copying Strings and Arrays.
+                                                              (line 213)
+* wcscspn:                               Search Functions.    (line 287)
+* wcsdup:                                Copying Strings and Arrays.
+                                                              (line 235)
+* wcsftime:                              Formatting Calendar Time.
+                                                              (line 457)
+* wcslen:                                String Length.       (line  70)
+* wcsncasecmp:                           String/Array Comparison.
+                                                              (line 186)
+* wcsncat:                               Truncating Strings.  (line 197)
+* wcsncmp:                               String/Array Comparison.
+                                                              (line 163)
+* wcsncpy:                               Truncating Strings.  (line  41)
+* wcsnlen:                               String Length.       (line 106)
+* wcsnrtombs:                            Converting Strings.  (line 205)
+* wcspbrk:                               Search Functions.    (line 320)
+* wcsrchr:                               Search Functions.    (line 160)
+* wcsrtombs:                             Converting Strings.  (line  98)
+* wcsspn:                                Search Functions.    (line 256)
+* wcsstr:                                Search Functions.    (line 186)
+* wcstod:                                Parsing of Floats.   (line 110)
+* wcstof:                                Parsing of Floats.   (line 112)
+* wcstofN:                               Parsing of Floats.   (line 115)
+* wcstofNx:                              Parsing of Floats.   (line 116)
+* wcstoimax:                             Parsing of Integers. (line 224)
+* wcstok:                                Finding Tokens in a String.
+                                                              (line  53)
+* wcstol:                                Parsing of Integers. (line  76)
+* wcstold:                               Parsing of Floats.   (line 113)
+* wcstoll:                               Parsing of Integers. (line 135)
+* wcstombs:                              Non-reentrant String Conversion.
+                                                              (line  57)
+* wcstoq:                                Parsing of Integers. (line 154)
+* wcstoul:                               Parsing of Integers. (line 106)
+* wcstoull:                              Parsing of Integers. (line 176)
+* wcstoumax:                             Parsing of Integers. (line 247)
+* wcstouq:                               Parsing of Integers. (line 195)
+* wcswcs:                                Search Functions.    (line 199)
+* wcsxfrm:                               Collation Functions. (line 118)
+* wctob:                                 Converting a Character.
+                                                              (line  68)
+* wctomb:                                Non-reentrant Character Conversion.
+                                                              (line  41)
+* wctrans:                               Wide Character Case Conversion.
+                                                              (line  20)
+* wctype:                                Classification of Wide Characters.
+                                                              (line  37)
+* WEXITSTATUS:                           Process Completion Status.
+                                                              (line  20)
+* WIFEXITED:                             Process Completion Status.
+                                                              (line  12)
+* WIFSIGNALED:                           Process Completion Status.
+                                                              (line  29)
+* WIFSTOPPED:                            Process Completion Status.
+                                                              (line  54)
+* wmemchr:                               Search Functions.    (line  20)
+* wmemcmp:                               String/Array Comparison.
+                                                              (line  37)
+* wmemcpy:                               Copying Strings and Arrays.
+                                                              (line  53)
+* wmemmove:                              Copying Strings and Arrays.
+                                                              (line 146)
+* wmempcpy:                              Copying Strings and Arrays.
+                                                              (line 105)
+* wmemset:                               Copying Strings and Arrays.
+                                                              (line 192)
+* wordexp:                               Calling Wordexp.     (line  40)
+* wordfree:                              Calling Wordexp.     (line 101)
+* wprintf:                               Formatted Output Functions.
+                                                              (line  23)
+* write:                                 I/O Primitives.      (line 168)
+* writev:                                Scatter-Gather.      (line  48)
+* wscanf:                                Formatted Input Functions.
+                                                              (line  24)
+* WSTOPSIG:                              Process Completion Status.
+                                                              (line  61)
+* WTERMSIG:                              Process Completion Status.
+                                                              (line  38)
+* y0:                                    Special Functions.   (line 146)
+* y0f:                                   Special Functions.   (line 147)
+* y0fN:                                  Special Functions.   (line 149)
+* y0fNx:                                 Special Functions.   (line 150)
+* y0l:                                   Special Functions.   (line 148)
+* y1:                                    Special Functions.   (line 162)
+* y1f:                                   Special Functions.   (line 163)
+* y1fN:                                  Special Functions.   (line 165)
+* y1fNx:                                 Special Functions.   (line 166)
+* y1l:                                   Special Functions.   (line 164)
+* yn:                                    Special Functions.   (line 178)
+* ynf:                                   Special Functions.   (line 179)
+* ynfN:                                  Special Functions.   (line 181)
+* ynfNx:                                 Special Functions.   (line 182)
+* ynl:                                   Special Functions.   (line 180)
+
+
 File: libc.info,  Node: Variable Index,  Next: File Index,  Prev: Function Index,  Up: Top
 
 Variable and Constant Macro Index
