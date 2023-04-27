@@ -1613,6 +1613,7 @@ START-INFO-DIR-ENTRY
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
 * posix_memalign: (libc)Aligned Memory Blocks.
+* posix_openpt: (libc)Allocation.
 * pow: (libc)Exponents and Logarithms.
 * powf: (libc)Exponents and Logarithms.
 * powfN: (libc)Exponents and Logarithms.
@@ -2166,6 +2167,62 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: POSIX Thread Tunables,  Next: Hardware Capability Tunables,  Prev: Elision Tunables,  Up: Tunables
+
+38.5 POSIX Thread Tunables
+==========================
+
+ -- Tunable namespace: glibc.pthread
+     The behavior of POSIX threads can be tuned to gain performance
+     improvements according to specific hardware capabilities and
+     workload characteristics by setting the following tunables in the
+     ‘pthread’ namespace:
+
+ -- Tunable: glibc.pthread.mutex_spin_count
+     The ‘glibc.pthread.mutex_spin_count’ tunable sets the maximum
+     number of times a thread should spin on the lock before calling
+     into the kernel to block.  Adaptive spin is used for mutexes
+     initialized with the ‘PTHREAD_MUTEX_ADAPTIVE_NP’ GNU extension.  It
+     affects both ‘pthread_mutex_lock’ and ‘pthread_mutex_timedlock’.
+
+     The thread spins until either the maximum spin count is reached or
+     the lock is acquired.
+
+     The default value of this tunable is ‘100’.
+
+ -- Tunable: glibc.pthread.stack_cache_size
+     This tunable configures the maximum size of the stack cache.  Once
+     the stack cache exceeds this size, unused thread stacks are
+     returned to the kernel, to bring the cache size below this limit.
+
+     The value is measured in bytes.  The default is ‘41943040’ (fourty
+     mibibytes).
+
+ -- Tunable: glibc.pthread.rseq
+     The ‘glibc.pthread.rseq’ tunable can be set to ‘0’, to disable
+     restartable sequences support in the GNU C Library.  This enables
+     applications to perform direct restartable sequence registration
+     with the kernel.  The default is ‘1’, which means that the GNU C
+     Library performs registration on behalf of the application.
+
+     Restartable sequences are a Linux-specific extension.
+
+ -- Tunable: glibc.pthread.stack_hugetlb
+     This tunable controls whether to use Huge Pages in the stacks
+     created by ‘pthread_create’.  This tunable only affects the stacks
+     created by the GNU C Library, it has no effect on stack assigned
+     with ‘pthread_attr_setstack’.
+
+     The default is ‘1’ where the system default value is used.  Setting
+     its value to ‘0’ enables the use of ‘madvise’ with
+     ‘MADV_NOHUGEPAGE’ after stack creation with ‘mmap’.
+
+     This is a memory utilization optimization, since internal glibc
+     setup of either the thread descriptor and the guard page might
+     force the kernel to move the thread stack originally backup by Huge
+     Pages to default pages.
 
 
 File: libc.info,  Node: Hardware Capability Tunables,  Next: Memory Related Tunables,  Prev: POSIX Thread Tunables,  Up: Tunables
@@ -12377,6 +12434,10 @@ const void *NEEDLE, size_t NEEDLE-LEN)’
 ‘int posix_memalign (void **MEMPTR, size_t ALIGNMENT, size_t SIZE)’
 
      ‘stdlib.h’ (POSIX): *note Aligned Memory Blocks::.
+
+‘int posix_openpt (int FLAGS)’
+
+     ‘stdlib.h’ (POSIX.1): *note Allocation::.
 
 ‘double pow (double BASE, double POWER)’
 
