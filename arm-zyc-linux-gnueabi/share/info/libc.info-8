@@ -1613,6 +1613,7 @@ START-INFO-DIR-ENTRY
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
 * posix_memalign: (libc)Aligned Memory Blocks.
+* posix_openpt: (libc)Allocation.
 * pow: (libc)Exponents and Logarithms.
 * powf: (libc)Exponents and Logarithms.
 * powfN: (libc)Exponents and Logarithms.
@@ -2166,6 +2167,54 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Receiving Datagrams,  Next: Datagram Example,  Prev: Sending Datagrams,  Up: Datagrams
+
+16.10.2 Receiving Datagrams
+---------------------------
+
+The ‘recvfrom’ function reads a packet from a datagram socket and also
+tells you where it was sent from.  This function is declared in
+‘sys/socket.h’.
+
+ -- Function: ssize_t recvfrom (int SOCKET, void *BUFFER, size_t SIZE,
+          int FLAGS, struct sockaddr *ADDR, socklen_t *LENGTH-PTR)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     The ‘recvfrom’ function reads one packet from the socket SOCKET
+     into the buffer BUFFER.  The SIZE argument specifies the maximum
+     number of bytes to be read.
+
+     If the packet is longer than SIZE bytes, then you get the first
+     SIZE bytes of the packet and the rest of the packet is lost.
+     There’s no way to read the rest of the packet.  Thus, when you use
+     a packet protocol, you must always know how long a packet to
+     expect.
+
+     The ADDR and LENGTH-PTR arguments are used to return the address
+     where the packet came from.  *Note Socket Addresses::.  For a
+     socket in the local domain the address information won’t be
+     meaningful, since you can’t read the address of such a socket
+     (*note Local Namespace::).  You can specify a null pointer as the
+     ADDR argument if you are not interested in this information.
+
+     The FLAGS are interpreted the same way as for ‘recv’ (*note Socket
+     Data Options::).  The return value and error conditions are also
+     the same as for ‘recv’.
+
+     This function is defined as a cancellation point in multi-threaded
+     programs, so one has to be prepared for this and make sure that
+     allocated resources (like memory, file descriptors, semaphores or
+     whatever) are freed even if the thread is canceled.
+
+   You can use plain ‘recv’ (*note Receiving Data::) instead of
+‘recvfrom’ if you don’t need to find out who sent the packet (either
+because you know where it should come from or because you treat all
+possible senders alike).  Even ‘read’ can be used if you don’t want to
+specify FLAGS (*note I/O Primitives::).
 
 
 File: libc.info,  Node: Datagram Example,  Next: Example Receiver,  Prev: Receiving Datagrams,  Up: Datagrams
@@ -4496,10 +4545,38 @@ This subsection describes functions for allocating a pseudo-terminal,
 and for making this pseudo-terminal available for actual use.  These
 functions are declared in the header file ‘stdlib.h’.
 
+ -- Function: int posix_openpt (int FLAGS)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
+     Concepts::.
+
+     ‘posix_openpt’ returns a new file descriptor for the next available
+     master pseudo-terminal.  In the case of an error, it returns a
+     value of -1 instead, and sets ‘errno’ to indicate the error.  *Note
+     Opening and Closing Files:: for possible values of ‘errno’.
+
+     FLAGS is a bit mask created from a bitwise OR of zero or more of
+     the following flags:
+
+     ‘O_RDWR’
+          Open the device for both reading and writing.  It is usual to
+          specify this flag.
+     ‘O_NOCTTY’
+          Do not make the device the controlling terminal for the
+          process.
+
+     These flags are defined in ‘fcntl.h’.  *Note Access Modes::.
+
+     For this function to be available, ‘_XOPEN_SOURCE’ must be defined
+     to a value greater than ‘600’.  *Note Feature Test Macros::.
+
  -- Function: int getpt (void)
 
      Preliminary: | MT-Safe | AS-Safe | AC-Safe fd | *Note POSIX Safety
      Concepts::.
+
+     ‘getpt’ is similar to ‘posix_openpt’.  This function is a GNU
+     extension and should not be used in portable programs.
 
      The ‘getpt’ function returns a new file descriptor for the next
      available master pseudo-terminal.  The normal return value from
@@ -4509,8 +4586,6 @@ functions are declared in the header file ‘stdlib.h’.
 
      ‘ENOENT’
           There are no free master pseudo-terminals available.
-
-     This function is a GNU extension.
 
  -- Function: int grantpt (int FILEDES)
 
@@ -4593,13 +4668,14 @@ functions are declared in the header file ‘stdlib.h’.
 
    Typical usage of these functions is illustrated by the following
 example:
+
      int
      open_pty_pair (int *amaster, int *aslave)
      {
        int master, slave;
        char *name;
 
-       master = getpt ();
+       master = posix_openpt (O_RDWR | O_NOCTTY);
        if (master < 0)
          return 0;
 

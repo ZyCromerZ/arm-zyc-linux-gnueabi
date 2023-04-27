@@ -1613,6 +1613,7 @@ START-INFO-DIR-ENTRY
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
 * posix_memalign: (libc)Aligned Memory Blocks.
+* posix_openpt: (libc)Allocation.
 * pow: (libc)Exponents and Logarithms.
 * powf: (libc)Exponents and Logarithms.
 * powfN: (libc)Exponents and Logarithms.
@@ -7246,41 +7247,4 @@ signals.
 * Signal Generation::           Concepts of why and how signals occur.
 * Delivery of Signal::          Concepts of what a signal does to the
                                  process.
-
-
-File: libc.info,  Node: Kinds of Signals,  Next: Signal Generation,  Up: Concepts of Signals
-
-24.1.1 Some Kinds of Signals
-----------------------------
-
-A signal reports the occurrence of an exceptional event.  These are some
-of the events that can cause (or “generate”, or “raise”) a signal:
-
-   • A program error such as dividing by zero or issuing an address
-     outside the valid range.
-
-   • A user request to interrupt or terminate the program.  Most
-     environments are set up to let a user suspend the program by typing
-     ‘C-z’, or terminate it with ‘C-c’.  Whatever key sequence is used,
-     the operating system sends the proper signal to interrupt the
-     process.
-
-   • The termination of a child process.
-
-   • Expiration of a timer or alarm.
-
-   • A call to ‘kill’ or ‘raise’ by the same process.
-
-   • A call to ‘kill’ from another process.  Signals are a limited but
-     useful form of interprocess communication.
-
-   • An attempt to perform an I/O operation that cannot be done.
-     Examples are reading from a pipe that has no writer (*note Pipes
-     and FIFOs::), and reading or writing to a terminal in certain
-     situations (*note Job Control::).
-
-   Each of these kinds of events (excepting explicit calls to ‘kill’ and
-‘raise’) generates its own particular kind of signal.  The various kinds
-of signals are listed and described in detail in *note Standard
-Signals::.
 

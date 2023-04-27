@@ -1613,6 +1613,7 @@ START-INFO-DIR-ENTRY
 * posix_fallocate64: (libc)Storage Allocation.
 * posix_fallocate: (libc)Storage Allocation.
 * posix_memalign: (libc)Aligned Memory Blocks.
+* posix_openpt: (libc)Allocation.
 * pow: (libc)Exponents and Logarithms.
 * powf: (libc)Exponents and Logarithms.
 * powfN: (libc)Exponents and Logarithms.
@@ -3203,7 +3204,7 @@ Function and Macro Index
 * getprotobyname:                        Protocols Database.  (line  51)
 * getprotobynumber:                      Protocols Database.  (line  61)
 * getprotoent:                           Protocols Database.  (line  89)
-* getpt:                                 Allocation.          (line  10)
+* getpt:                                 Allocation.          (line  35)
 * getpwent:                              Scanning All Users.  (line  59)
 * getpwent_r:                            Scanning All Users.  (line  73)
 * getpwnam:                              Lookup User.         (line  45)
@@ -3269,7 +3270,7 @@ Function and Macro Index
                                                               (line 141)
 * gmtime:                                Broken-down Time.    (line 127)
 * gmtime_r:                              Broken-down Time.    (line 141)
-* grantpt:                               Allocation.          (line  26)
+* grantpt:                               Allocation.          (line  52)
 * grantpt <1>:                           Configuring and compiling.
                                                               (line 203)
 * gsignal:                               Signaling Yourself.  (line  19)
@@ -3798,6 +3799,7 @@ Function and Macro Index
 * posix_fallocate64:                     Storage Allocation.  (line  75)
 * posix_memalign:                        Aligned Memory Blocks.
                                                               (line  59)
+* posix_openpt:                          Allocation.          (line  10)
 * pow:                                   Exponents and Logarithms.
                                                               (line 179)
 * powf:                                  Exponents and Logarithms.
@@ -3847,8 +3849,8 @@ Function and Macro Index
                                                               (line  61)
 * pthread_tryjoin_np:                    Waiting with Explicit Clocks.
                                                               (line  51)
-* ptsname:                               Allocation.          (line  83)
-* ptsname_r:                             Allocation.          (line  94)
+* ptsname:                               Allocation.          (line 109)
+* ptsname_r:                             Allocation.          (line 120)
 * putc:                                  Simple Output.       (line  48)
 * putchar:                               Simple Output.       (line  88)
 * putchar_unlocked:                      Simple Output.       (line 104)
@@ -4411,7 +4413,7 @@ Function and Macro Index
 * ungetc:                                How Unread.          (line   9)
 * ungetwc:                               How Unread.          (line  48)
 * unlink:                                Deleting Files.      (line  12)
-* unlockpt:                              Allocation.          (line  61)
+* unlockpt:                              Allocation.          (line  87)
 * unsetenv:                              Environment Access.  (line  91)
 * updwtmp:                               Manipulating the Database.
                                                               (line 327)
