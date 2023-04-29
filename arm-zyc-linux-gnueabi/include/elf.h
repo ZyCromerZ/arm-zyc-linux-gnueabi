@@ -728,6 +728,7 @@ typedef struct
 #define PT_GNU_STACK	0x6474e551	/* Indicates stack executability */
 #define PT_GNU_RELRO	0x6474e552	/* Read-only after relocation */
 #define PT_GNU_PROPERTY	0x6474e553	/* GNU property */
+#define PT_GNU_SFRAME	0x6474e554	/* SFrame segment.  */
 #define PT_LOSUNW	0x6ffffffa
 #define PT_SUNWBSS	0x6ffffffa	/* Sun Specific segment */
 #define PT_SUNWSTACK	0x6ffffffb	/* Stack segment */
@@ -3931,6 +3932,13 @@ enum
 #define R_TILEGX_GNU_VTENTRY	129	/* GNU C++ vtable member usage */
 
 #define R_TILEGX_NUM		130
+
+/* RISC-V specific values for the Dyn d_tag field.  */
+#define DT_RISCV_VARIANT_CC	(DT_LOPROC + 1)
+#define DT_RISCV_NUM		2
+
+/* RISC-V specific values for the st_other field.  */
+#define STO_RISCV_VARIANT_CC 0x80
 
 /* RISC-V ELF Flags */
 #define EF_RISCV_RVC 			0x0001
