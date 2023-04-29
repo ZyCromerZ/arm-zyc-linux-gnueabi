@@ -3865,7 +3865,13 @@ File: libc.info,  Node: RISC-V,  Next: X86,  Prev: PowerPC,  Up: Platform
 E.2 RISC-V-specific Facilities
 ==============================
 
-Cache management facilities specific to RISC-V systems that implement
+Functions that are lazily bound must be compatible with the standard
+calling convention.  When a function is annotated with
+STO_RISCV_VARIANT_CC, it means this function is not compatible with the
+standard calling convention.  The dynamic linker will directly resolve
+it instead of using the lazy binding mechanism.
+
+   Cache management facilities specific to RISC-V systems that implement
 the Linux ABI are declared in ‘sys/cachectl.h’.
 
  -- Function: void __riscv_flush_icache (void *START, void *END,
