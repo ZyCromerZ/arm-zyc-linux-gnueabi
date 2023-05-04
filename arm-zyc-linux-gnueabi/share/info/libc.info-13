@@ -2169,6 +2169,147 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
+File: libc.info,  Node: Writing a User Entry,  Prev: Scanning All Users,  Up: User Database
+
+30.13.4 Writing a User Entry
+----------------------------
+
+ -- Function: int putpwent (const struct passwd *P, FILE *STREAM)
+
+     Preliminary: | MT-Safe locale | AS-Unsafe corrupt | AC-Unsafe lock
+     corrupt | *Note POSIX Safety Concepts::.
+
+     This function writes the user entry ‘*P’ to the stream STREAM, in
+     the format used for the standard user database file.  The return
+     value is zero on success and nonzero on failure.
+
+     This function exists for compatibility with SVID. We recommend that
+     you avoid using it, because it makes sense only on the assumption
+     that the ‘struct passwd’ structure has no members except the
+     standard ones; on a system which merges the traditional Unix data
+     base with other extended information about users, adding an entry
+     using this function would inevitably leave out much of the
+     important information.
+
+     The group and user ID fields are left empty if the group or user
+     name starts with a - or +.
+
+     The function ‘putpwent’ is declared in ‘pwd.h’.
+
+
+File: libc.info,  Node: Group Database,  Next: Database Example,  Prev: User Database,  Up: Users and Groups
+
+30.14 Group Database
+====================
+
+This section describes how to search and scan the database of registered
+groups.  The database itself is kept in the file ‘/etc/group’ on most
+systems, but on some systems a special network service provides access
+to it.
+
+* Menu:
+
+* Group Data Structure::        What each group record contains.
+* Lookup Group::                How to look for a particular group.
+* Scanning All Groups::         Scanning the list of all groups.
+
+
+File: libc.info,  Node: Group Data Structure,  Next: Lookup Group,  Up: Group Database
+
+30.14.1 The Data Structure for a Group
+--------------------------------------
+
+The functions and data structures for accessing the system group
+database are declared in the header file ‘grp.h’.
+
+ -- Data Type: struct group
+
+     The ‘group’ structure is used to hold information about an entry in
+     the system group database.  It has at least the following members:
+
+     ‘char *gr_name’
+          The name of the group.
+
+     ‘gid_t gr_gid’
+          The group ID of the group.
+
+     ‘char **gr_mem’
+          A vector of pointers to the names of users in the group.  Each
+          user name is a null-terminated string, and the vector itself
+          is terminated by a null pointer.
+
+
+File: libc.info,  Node: Lookup Group,  Next: Scanning All Groups,  Prev: Group Data Structure,  Up: Group Database
+
+30.14.2 Looking Up One Group
+----------------------------
+
+You can search the group database for information about a specific group
+using ‘getgrgid’ or ‘getgrnam’.  These functions are declared in
+‘grp.h’.
+
+ -- Function: struct group * getgrgid (gid_t GID)
+
+     Preliminary: | MT-Unsafe race:grgid locale | AS-Unsafe dlopen
+     plugin heap lock | AC-Unsafe corrupt lock fd mem | *Note POSIX
+     Safety Concepts::.
+
+     This function returns a pointer to a statically-allocated structure
+     containing information about the group whose group ID is GID.  This
+     structure may be overwritten by subsequent calls to ‘getgrgid’.
+
+     A null pointer indicates there is no group with ID GID.
+
+ -- Function: int getgrgid_r (gid_t GID, struct group *RESULT_BUF, char
+          *BUFFER, size_t BUFLEN, struct group **RESULT)
+
+     Preliminary: | MT-Safe locale | AS-Unsafe dlopen plugin heap lock |
+     AC-Unsafe corrupt lock fd mem | *Note POSIX Safety Concepts::.
+
+     This function is similar to ‘getgrgid’ in that it returns
+     information about the group whose group ID is GID.  However, it
+     fills the user supplied structure pointed to by RESULT_BUF with the
+     information instead of using a static buffer.  The first BUFLEN
+     bytes of the additional buffer pointed to by BUFFER are used to
+     contain additional information, normally strings which are pointed
+     to by the elements of the result structure.
+
+     If a group with ID GID is found, the pointer returned in RESULT
+     points to the record which contains the wanted data (i.e., RESULT
+     contains the value RESULT_BUF).  If no group is found or if an
+     error occurred, the pointer returned in RESULT is a null pointer.
+     The function returns zero or an error code.  If the buffer BUFFER
+     is too small to contain all the needed information, the error code
+     ‘ERANGE’ is returned and ‘errno’ is set to ‘ERANGE’.
+
+ -- Function: struct group * getgrnam (const char *NAME)
+
+     Preliminary: | MT-Unsafe race:grnam locale | AS-Unsafe dlopen
+     plugin heap lock | AC-Unsafe corrupt lock fd mem | *Note POSIX
+     Safety Concepts::.
+
+     This function returns a pointer to a statically-allocated structure
+     containing information about the group whose group name is NAME.
+     This structure may be overwritten by subsequent calls to
+     ‘getgrnam’.
+
+     A null pointer indicates there is no group named NAME.
+
+ -- Function: int getgrnam_r (const char *NAME, struct group
+          *RESULT_BUF, char *BUFFER, size_t BUFLEN, struct group
+          **RESULT)
+
+     Preliminary: | MT-Safe locale | AS-Unsafe dlopen plugin heap lock |
+     AC-Unsafe corrupt lock fd mem | *Note POSIX Safety Concepts::.
+
+     This function is similar to ‘getgrnam’ in that it returns
+     information about the group whose group name is NAME.  Like
+     ‘getgrgid_r’, it uses the user supplied buffers in RESULT_BUF and
+     BUFFER, not a static buffer.
+
+     The return values are the same as for ‘getgrgid_r’.
+
+
 File: libc.info,  Node: Scanning All Groups,  Prev: Lookup Group,  Up: Group Database
 
 30.14.3 Scanning the List of All Groups
@@ -7505,69 +7646,4 @@ File: libc.info,  Node: Dynamic Linking Tunables,  Next: Elision Tunables,  Prev
      not exhibit the performance issues of ‘1’.
 
      The default value of this tunable is ‘2’.
-
-
-File: libc.info,  Node: Elision Tunables,  Next: POSIX Thread Tunables,  Prev: Dynamic Linking Tunables,  Up: Tunables
-
-38.4 Elision Tunables
-=====================
-
- -- Tunable namespace: glibc.elision
-     Contended locks are usually slow and can lead to performance and
-     scalability issues in multithread code.  Lock elision will use
-     memory transactions to under certain conditions, to elide locks and
-     improve performance.  Elision behavior can be modified by setting
-     the following tunables in the ‘elision’ namespace:
-
- -- Tunable: glibc.elision.enable
-     The ‘glibc.elision.enable’ tunable enables lock elision if the
-     feature is supported by the hardware.  If elision is not supported
-     by the hardware this tunable has no effect.
-
-     Elision tunables are supported for 64-bit Intel, IBM POWER, and z
-     System architectures.
-
- -- Tunable: glibc.elision.skip_lock_busy
-     The ‘glibc.elision.skip_lock_busy’ tunable sets how many times to
-     use a non-transactional lock after a transactional failure has
-     occurred because the lock is already acquired.  Expressed in number
-     of lock acquisition attempts.
-
-     The default value of this tunable is ‘3’.
-
- -- Tunable: glibc.elision.skip_lock_internal_abort
-     The ‘glibc.elision.skip_lock_internal_abort’ tunable sets how many
-     times the thread should avoid using elision if a transaction
-     aborted for any reason other than a different thread’s memory
-     accesses.  Expressed in number of lock acquisition attempts.
-
-     The default value of this tunable is ‘3’.
-
- -- Tunable: glibc.elision.skip_lock_after_retries
-     The ‘glibc.elision.skip_lock_after_retries’ tunable sets how many
-     times to try to elide a lock with transactions, that only failed
-     due to a different thread’s memory accesses, before falling back to
-     regular lock.  Expressed in number of lock elision attempts.
-
-     This tunable is supported only on IBM POWER, and z System
-     architectures.
-
-     The default value of this tunable is ‘3’.
-
- -- Tunable: glibc.elision.tries
-     The ‘glibc.elision.tries’ sets how many times to retry elision if
-     there is chance for the transaction to finish execution e.g., it
-     wasn’t aborted due to the lock being already acquired.  If elision
-     is not supported by the hardware this tunable is set to ‘0’ to
-     avoid retries.
-
-     The default value of this tunable is ‘3’.
-
- -- Tunable: glibc.elision.skip_trylock_internal_abort
-     The ‘glibc.elision.skip_trylock_internal_abort’ tunable sets how
-     many times the thread should avoid trying the lock if a transaction
-     aborted due to reasons other than a different thread’s memory
-     accesses.  Expressed in number of try lock attempts.
-
-     The default value of this tunable is ‘3’.
 

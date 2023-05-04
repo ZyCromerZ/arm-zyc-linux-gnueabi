@@ -2169,6 +2169,103 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
+File: libc.info,  Node: Argp User Customization,  Prev: Argp Examples,  Up: Argp
+
+25.3.12 Argp User Customization
+-------------------------------
+
+The formatting of argp ‘--help’ output may be controlled to some extent
+by a program’s users, by setting the ‘ARGP_HELP_FMT’ environment
+variable to a comma-separated list of tokens.  Whitespace is ignored:
+
+‘dup-args’
+‘no-dup-args’
+     These turn “duplicate-argument-mode” on or off.  In duplicate
+     argument mode, if an option that accepts an argument has multiple
+     names, the argument is shown for each name.  Otherwise, it is only
+     shown for the first long option.  A note is subsequently printed so
+     the user knows that it applies to other names as well.  The default
+     is ‘no-dup-args’, which is less consistent, but prettier.
+
+‘dup-args-note’
+‘no-dup-args-note’
+     These will enable or disable the note informing the user of
+     suppressed option argument duplication.  The default is
+     ‘dup-args-note’.
+
+‘short-opt-col=N’
+     This prints the first short option in column N.  The default is 2.
+
+‘long-opt-col=N’
+     This prints the first long option in column N.  The default is 6.
+
+‘doc-opt-col=N’
+     This prints ‘documentation options’ (*note Argp Option Flags::) in
+     column N.  The default is 2.
+
+‘opt-doc-col=N’
+     This prints the documentation for options starting in column N.
+     The default is 29.
+
+‘header-col=N’
+     This will indent the group headers that document groups of options
+     to column N.  The default is 1.
+
+‘usage-indent=N’
+     This will indent continuation lines in ‘Usage:’ messages to column
+     N.  The default is 12.
+
+‘rmargin=N’
+     This will word wrap help output at or before column N.  The default
+     is 79.
+
+
+File: libc.info,  Node: Suboptions,  Next: Suboptions Example,  Prev: Argp,  Up: Parsing Program Arguments
+
+25.3.12.1 Parsing of Suboptions
+...............................
+
+Having a single level of options is sometimes not enough.  There might
+be too many options which have to be available or a set of options is
+closely related.
+
+   For this case some programs use suboptions.  One of the most
+prominent programs is certainly ‘mount’(8).  The ‘-o’ option take one
+argument which itself is a comma separated list of options.  To ease the
+programming of code like this the function ‘getsubopt’ is available.
+
+ -- Function: int getsubopt (char **OPTIONP, char *const *TOKENS, char
+          **VALUEP)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     The OPTIONP parameter must be a pointer to a variable containing
+     the address of the string to process.  When the function returns,
+     the reference is updated to point to the next suboption or to the
+     terminating ‘\0’ character if there are no more suboptions
+     available.
+
+     The TOKENS parameter references an array of strings containing the
+     known suboptions.  All strings must be ‘\0’ terminated and to mark
+     the end a null pointer must be stored.  When ‘getsubopt’ finds a
+     possible legal suboption it compares it with all strings available
+     in the TOKENS array and returns the index in the string as the
+     indicator.
+
+     In case the suboption has an associated value introduced by a ‘=’
+     character, a pointer to the value is returned in VALUEP.  The
+     string is ‘\0’ terminated.  If no argument is available VALUEP is
+     set to the null pointer.  By doing this the caller can check
+     whether a necessary value is given or whether no unexpected value
+     is present.
+
+     In case the next suboption in the string is not mentioned in the
+     TOKENS array the starting address of the suboption including a
+     possible value is returned in VALUEP and the return value of the
+     function is ‘-1’.
+
+
 File: libc.info,  Node: Suboptions Example,  Prev: Suboptions,  Up: Parsing Program Arguments
 
 25.3.13 Parsing of Suboptions Example
@@ -7405,145 +7502,4 @@ particular file.
 
      This function closes the internal stream used by ‘getpwent’ or
      ‘getpwent_r’.
-
-
-File: libc.info,  Node: Writing a User Entry,  Prev: Scanning All Users,  Up: User Database
-
-30.13.4 Writing a User Entry
-----------------------------
-
- -- Function: int putpwent (const struct passwd *P, FILE *STREAM)
-
-     Preliminary: | MT-Safe locale | AS-Unsafe corrupt | AC-Unsafe lock
-     corrupt | *Note POSIX Safety Concepts::.
-
-     This function writes the user entry ‘*P’ to the stream STREAM, in
-     the format used for the standard user database file.  The return
-     value is zero on success and nonzero on failure.
-
-     This function exists for compatibility with SVID. We recommend that
-     you avoid using it, because it makes sense only on the assumption
-     that the ‘struct passwd’ structure has no members except the
-     standard ones; on a system which merges the traditional Unix data
-     base with other extended information about users, adding an entry
-     using this function would inevitably leave out much of the
-     important information.
-
-     The group and user ID fields are left empty if the group or user
-     name starts with a - or +.
-
-     The function ‘putpwent’ is declared in ‘pwd.h’.
-
-
-File: libc.info,  Node: Group Database,  Next: Database Example,  Prev: User Database,  Up: Users and Groups
-
-30.14 Group Database
-====================
-
-This section describes how to search and scan the database of registered
-groups.  The database itself is kept in the file ‘/etc/group’ on most
-systems, but on some systems a special network service provides access
-to it.
-
-* Menu:
-
-* Group Data Structure::        What each group record contains.
-* Lookup Group::                How to look for a particular group.
-* Scanning All Groups::         Scanning the list of all groups.
-
-
-File: libc.info,  Node: Group Data Structure,  Next: Lookup Group,  Up: Group Database
-
-30.14.1 The Data Structure for a Group
---------------------------------------
-
-The functions and data structures for accessing the system group
-database are declared in the header file ‘grp.h’.
-
- -- Data Type: struct group
-
-     The ‘group’ structure is used to hold information about an entry in
-     the system group database.  It has at least the following members:
-
-     ‘char *gr_name’
-          The name of the group.
-
-     ‘gid_t gr_gid’
-          The group ID of the group.
-
-     ‘char **gr_mem’
-          A vector of pointers to the names of users in the group.  Each
-          user name is a null-terminated string, and the vector itself
-          is terminated by a null pointer.
-
-
-File: libc.info,  Node: Lookup Group,  Next: Scanning All Groups,  Prev: Group Data Structure,  Up: Group Database
-
-30.14.2 Looking Up One Group
-----------------------------
-
-You can search the group database for information about a specific group
-using ‘getgrgid’ or ‘getgrnam’.  These functions are declared in
-‘grp.h’.
-
- -- Function: struct group * getgrgid (gid_t GID)
-
-     Preliminary: | MT-Unsafe race:grgid locale | AS-Unsafe dlopen
-     plugin heap lock | AC-Unsafe corrupt lock fd mem | *Note POSIX
-     Safety Concepts::.
-
-     This function returns a pointer to a statically-allocated structure
-     containing information about the group whose group ID is GID.  This
-     structure may be overwritten by subsequent calls to ‘getgrgid’.
-
-     A null pointer indicates there is no group with ID GID.
-
- -- Function: int getgrgid_r (gid_t GID, struct group *RESULT_BUF, char
-          *BUFFER, size_t BUFLEN, struct group **RESULT)
-
-     Preliminary: | MT-Safe locale | AS-Unsafe dlopen plugin heap lock |
-     AC-Unsafe corrupt lock fd mem | *Note POSIX Safety Concepts::.
-
-     This function is similar to ‘getgrgid’ in that it returns
-     information about the group whose group ID is GID.  However, it
-     fills the user supplied structure pointed to by RESULT_BUF with the
-     information instead of using a static buffer.  The first BUFLEN
-     bytes of the additional buffer pointed to by BUFFER are used to
-     contain additional information, normally strings which are pointed
-     to by the elements of the result structure.
-
-     If a group with ID GID is found, the pointer returned in RESULT
-     points to the record which contains the wanted data (i.e., RESULT
-     contains the value RESULT_BUF).  If no group is found or if an
-     error occurred, the pointer returned in RESULT is a null pointer.
-     The function returns zero or an error code.  If the buffer BUFFER
-     is too small to contain all the needed information, the error code
-     ‘ERANGE’ is returned and ‘errno’ is set to ‘ERANGE’.
-
- -- Function: struct group * getgrnam (const char *NAME)
-
-     Preliminary: | MT-Unsafe race:grnam locale | AS-Unsafe dlopen
-     plugin heap lock | AC-Unsafe corrupt lock fd mem | *Note POSIX
-     Safety Concepts::.
-
-     This function returns a pointer to a statically-allocated structure
-     containing information about the group whose group name is NAME.
-     This structure may be overwritten by subsequent calls to
-     ‘getgrnam’.
-
-     A null pointer indicates there is no group named NAME.
-
- -- Function: int getgrnam_r (const char *NAME, struct group
-          *RESULT_BUF, char *BUFFER, size_t BUFLEN, struct group
-          **RESULT)
-
-     Preliminary: | MT-Safe locale | AS-Unsafe dlopen plugin heap lock |
-     AC-Unsafe corrupt lock fd mem | *Note POSIX Safety Concepts::.
-
-     This function is similar to ‘getgrnam’ in that it returns
-     information about the group whose group name is NAME.  Like
-     ‘getgrgid_r’, it uses the user supplied buffers in RESULT_BUF and
-     BUFFER, not a static buffer.
-
-     The return values are the same as for ‘getgrgid_r’.
 

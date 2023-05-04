@@ -6543,6 +6543,14 @@ cosf          1               1               1               1               1
 cos           1               4               1               1               1
 cosl          2               -               -               -               2
 cosf128       -               -               -               -               -
+cos_advsimdf  1               -               -               -               -
+cos_advsimd   1               -               -               -               -
+cos_advsimdl  -               -               -               -               -
+cos_advsimdf128-              -               -               -               -
+cos_svef      1               -               -               -               -
+cos_sve       1               -               -               -               -
+cos_svel      -               -               -               -               -
+cos_svef128   -               -               -               -               -
 coshf         2               3               2               2               2
 cosh          2               3               2               2               2
 coshl         2               -               -               -               2
@@ -6805,6 +6813,14 @@ cosf          1               1               1               -               1
 cos           1               1               2               -               2
 cosl          -               -               -               -               2
 cosf128       -               -               -               -               -
+cos_advsimdf  -               -               -               -               -
+cos_advsimd   -               -               -               -               -
+cos_advsimdl  -               -               -               -               -
+cos_advsimdf128-              -               -               -               -
+cos_svef      -               -               -               -               -
+cos_sve       -               -               -               -               -
+cos_svel      -               -               -               -               -
+cos_svef128   -               -               -               -               -
 coshf         2               2               -               -               2
 cosh          2               2               -               -               2
 coshl         -               -               -               -               -
@@ -7067,6 +7083,14 @@ cosf          1               1               -               1               1
 cos           1               1               1               1               1
 cosl          -               2               -               -               2
 cosf128       2               -               -               -               -
+cos_advsimdf  -               -               -               -               -
+cos_advsimd   -               -               -               -               -
+cos_advsimdl  -               -               -               -               -
+cos_advsimdf128-              -               -               -               -
+cos_svef      -               -               -               -               -
+cos_sve       -               -               -               -               -
+cos_svel      -               -               -               -               -
+cos_svef128   -               -               -               -               -
 coshf         -               2               -               2               2
 cosh          -               2               -               2               2
 coshl         -               2               -               -               2
@@ -7329,6 +7353,14 @@ cosf          1               1               1               3               1
 cos           -               1               1               1               1
 cosl          -               -               -               4               4
 cosf128       -               -               -               2               -
+cos_advsimdf  -               -               -               -               -
+cos_advsimd   -               -               -               -               -
+cos_advsimdl  -               -               -               -               -
+cos_advsimdf128-              -               -               -               -
+cos_svef      -               -               -               -               -
+cos_sve       -               -               -               -               -
+cos_svel      -               -               -               -               -
+cos_svef128   -               -               -               -               -
 coshf         1               2               2               2               2
 cosh          1               2               2               2               2
 coshl         -               -               -               3               3
@@ -7591,6 +7623,14 @@ cosf          1               1               1               1               1
 cos           1               1               1               1               1
 cosl          2               2               2               -               2
 cosf128       -               -               -               -               -
+cos_advsimdf  -               -               -               -               -
+cos_advsimd   -               -               -               -               -
+cos_advsimdl  -               -               -               -               -
+cos_advsimdf128-              -               -               -               -
+cos_svef      -               -               -               -               -
+cos_sve       -               -               -               -               -
+cos_svel      -               -               -               -               -
+cos_svef128   -               -               -               -               -
 coshf         2               2               2               2               2
 cosh          2               2               2               2               2
 coshl         2               2               2               -               2
@@ -7852,6 +7892,14 @@ cosf          1               1               1
 cos           1               1               1
 cosl          1               1               1
 cosf128       2               2               2
+cos_advsimdf  -               -               -
+cos_advsimd   -               -               -
+cos_advsimdl  -               -               -
+cos_advsimdf128-              -               -
+cos_svef      -               -               -
+cos_sve       -               -               -
+cos_svel      -               -               -
+cos_svef128   -               -               -
 coshf         2               2               2
 cosh          1               1               2
 coshl         3               3               3
