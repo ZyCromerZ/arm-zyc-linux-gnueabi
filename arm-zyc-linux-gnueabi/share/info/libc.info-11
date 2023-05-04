@@ -2168,6 +2168,68 @@ START-INFO-DIR-ENTRY
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
 
+
+
+File: libc.info,  Node: Signal Handling,  Next: Program Basics,  Prev: Non-Local Exits,  Up: Top
+
+24 Signal Handling
+******************
+
+A “signal” is a software interrupt delivered to a process.  The
+operating system uses signals to report exceptional situations to an
+executing program.  Some signals report errors such as references to
+invalid memory addresses; others report asynchronous events, such as
+disconnection of a phone line.
+
+   The GNU C Library defines a variety of signal types, each for a
+particular kind of event.  Some kinds of events make it inadvisable or
+impossible for the program to proceed as usual, and the corresponding
+signals normally abort the program.  Other kinds of signals that report
+harmless events are ignored by default.
+
+   If you anticipate an event that causes signals, you can define a
+handler function and tell the operating system to run it when that
+particular type of signal arrives.
+
+   Finally, one process can send a signal to another process; this
+allows a parent process to abort a child, or two related processes to
+communicate and synchronize.
+
+* Menu:
+
+* Concepts of Signals::         Introduction to the signal facilities.
+* Standard Signals::            Particular kinds of signals with
+                                 standard names and meanings.
+* Signal Actions::              Specifying what happens when a
+                                 particular signal is delivered.
+* Defining Handlers::           How to write a signal handler function.
+* Interrupted Primitives::	Signal handlers affect use of ‘open’,
+				 ‘read’, ‘write’ and other functions.
+* Generating Signals::          How to send a signal to a process.
+* Blocking Signals::            Making the system hold signals temporarily.
+* Waiting for a Signal::        Suspending your program until a signal
+                                 arrives.
+* Signal Stack::                Using a Separate Signal Stack.
+* BSD Signal Handling::         Additional functions for backward
+			         compatibility with BSD.
+
+
+File: libc.info,  Node: Concepts of Signals,  Next: Standard Signals,  Up: Signal Handling
+
+24.1 Basic Concepts of Signals
+==============================
+
+This section explains basic concepts of how signals are generated, what
+happens after a signal is delivered, and how programs can handle
+signals.
+
+* Menu:
+
+* Kinds of Signals::            Some examples of what can cause a signal.
+* Signal Generation::           Concepts of why and how signals occur.
+* Delivery of Signal::          Concepts of what a signal does to the
+                                 process.
+
 
 File: libc.info,  Node: Kinds of Signals,  Next: Signal Generation,  Up: Concepts of Signals
 
@@ -7399,101 +7461,4 @@ for possible translation into the current locale.
 
        exit (0);
      }
-
-
-File: libc.info,  Node: Argp User Customization,  Prev: Argp Examples,  Up: Argp
-
-25.3.12 Argp User Customization
--------------------------------
-
-The formatting of argp ‘--help’ output may be controlled to some extent
-by a program’s users, by setting the ‘ARGP_HELP_FMT’ environment
-variable to a comma-separated list of tokens.  Whitespace is ignored:
-
-‘dup-args’
-‘no-dup-args’
-     These turn “duplicate-argument-mode” on or off.  In duplicate
-     argument mode, if an option that accepts an argument has multiple
-     names, the argument is shown for each name.  Otherwise, it is only
-     shown for the first long option.  A note is subsequently printed so
-     the user knows that it applies to other names as well.  The default
-     is ‘no-dup-args’, which is less consistent, but prettier.
-
-‘dup-args-note’
-‘no-dup-args-note’
-     These will enable or disable the note informing the user of
-     suppressed option argument duplication.  The default is
-     ‘dup-args-note’.
-
-‘short-opt-col=N’
-     This prints the first short option in column N.  The default is 2.
-
-‘long-opt-col=N’
-     This prints the first long option in column N.  The default is 6.
-
-‘doc-opt-col=N’
-     This prints ‘documentation options’ (*note Argp Option Flags::) in
-     column N.  The default is 2.
-
-‘opt-doc-col=N’
-     This prints the documentation for options starting in column N.
-     The default is 29.
-
-‘header-col=N’
-     This will indent the group headers that document groups of options
-     to column N.  The default is 1.
-
-‘usage-indent=N’
-     This will indent continuation lines in ‘Usage:’ messages to column
-     N.  The default is 12.
-
-‘rmargin=N’
-     This will word wrap help output at or before column N.  The default
-     is 79.
-
-
-File: libc.info,  Node: Suboptions,  Next: Suboptions Example,  Prev: Argp,  Up: Parsing Program Arguments
-
-25.3.12.1 Parsing of Suboptions
-...............................
-
-Having a single level of options is sometimes not enough.  There might
-be too many options which have to be available or a set of options is
-closely related.
-
-   For this case some programs use suboptions.  One of the most
-prominent programs is certainly ‘mount’(8).  The ‘-o’ option take one
-argument which itself is a comma separated list of options.  To ease the
-programming of code like this the function ‘getsubopt’ is available.
-
- -- Function: int getsubopt (char **OPTIONP, char *const *TOKENS, char
-          **VALUEP)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     The OPTIONP parameter must be a pointer to a variable containing
-     the address of the string to process.  When the function returns,
-     the reference is updated to point to the next suboption or to the
-     terminating ‘\0’ character if there are no more suboptions
-     available.
-
-     The TOKENS parameter references an array of strings containing the
-     known suboptions.  All strings must be ‘\0’ terminated and to mark
-     the end a null pointer must be stored.  When ‘getsubopt’ finds a
-     possible legal suboption it compares it with all strings available
-     in the TOKENS array and returns the index in the string as the
-     indicator.
-
-     In case the suboption has an associated value introduced by a ‘=’
-     character, a pointer to the value is returned in VALUEP.  The
-     string is ‘\0’ terminated.  If no argument is available VALUEP is
-     set to the null pointer.  By doing this the caller can check
-     whether a necessary value is given or whether no unexpected value
-     is present.
-
-     In case the next suboption in the string is not mentioned in the
-     TOKENS array the starting address of the suboption including a
-     possible value is returned in VALUEP and the return value of the
-     function is ‘-1’.
 

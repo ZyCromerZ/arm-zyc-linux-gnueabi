@@ -2169,6 +2169,71 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
+File: libc.info,  Node: Elision Tunables,  Next: POSIX Thread Tunables,  Prev: Dynamic Linking Tunables,  Up: Tunables
+
+38.4 Elision Tunables
+=====================
+
+ -- Tunable namespace: glibc.elision
+     Contended locks are usually slow and can lead to performance and
+     scalability issues in multithread code.  Lock elision will use
+     memory transactions to under certain conditions, to elide locks and
+     improve performance.  Elision behavior can be modified by setting
+     the following tunables in the ‘elision’ namespace:
+
+ -- Tunable: glibc.elision.enable
+     The ‘glibc.elision.enable’ tunable enables lock elision if the
+     feature is supported by the hardware.  If elision is not supported
+     by the hardware this tunable has no effect.
+
+     Elision tunables are supported for 64-bit Intel, IBM POWER, and z
+     System architectures.
+
+ -- Tunable: glibc.elision.skip_lock_busy
+     The ‘glibc.elision.skip_lock_busy’ tunable sets how many times to
+     use a non-transactional lock after a transactional failure has
+     occurred because the lock is already acquired.  Expressed in number
+     of lock acquisition attempts.
+
+     The default value of this tunable is ‘3’.
+
+ -- Tunable: glibc.elision.skip_lock_internal_abort
+     The ‘glibc.elision.skip_lock_internal_abort’ tunable sets how many
+     times the thread should avoid using elision if a transaction
+     aborted for any reason other than a different thread’s memory
+     accesses.  Expressed in number of lock acquisition attempts.
+
+     The default value of this tunable is ‘3’.
+
+ -- Tunable: glibc.elision.skip_lock_after_retries
+     The ‘glibc.elision.skip_lock_after_retries’ tunable sets how many
+     times to try to elide a lock with transactions, that only failed
+     due to a different thread’s memory accesses, before falling back to
+     regular lock.  Expressed in number of lock elision attempts.
+
+     This tunable is supported only on IBM POWER, and z System
+     architectures.
+
+     The default value of this tunable is ‘3’.
+
+ -- Tunable: glibc.elision.tries
+     The ‘glibc.elision.tries’ sets how many times to retry elision if
+     there is chance for the transaction to finish execution e.g., it
+     wasn’t aborted due to the lock being already acquired.  If elision
+     is not supported by the hardware this tunable is set to ‘0’ to
+     avoid retries.
+
+     The default value of this tunable is ‘3’.
+
+ -- Tunable: glibc.elision.skip_trylock_internal_abort
+     The ‘glibc.elision.skip_trylock_internal_abort’ tunable sets how
+     many times the thread should avoid trying the lock if a transaction
+     aborted due to reasons other than a different thread’s memory
+     accesses.  Expressed in number of try lock attempts.
+
+     The default value of this tunable is ‘3’.
+
+
 File: libc.info,  Node: POSIX Thread Tunables,  Next: Hardware Capability Tunables,  Prev: Elision Tunables,  Up: Tunables
 
 38.5 POSIX Thread Tunables

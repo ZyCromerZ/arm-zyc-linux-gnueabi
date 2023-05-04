@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.2.1 20230503")
+(!version  "12.2.1 20230504")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 232 0
@@ -28864,15 +28864,15 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 2072 nil  gc_unused "cp_genericize_omp_taskreg"nil 
+ (!type struct 2072 nil  gc_unused "cp_fold_data"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 2073 nil  gc_unused "cp_genericize_data"nil 
+ (!type struct 2073 nil  gc_unused "cp_genericize_omp_taskreg"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 2074 nil  gc_unused "cp_fold_data"nil 
+ (!type struct 2074 nil  gc_unused "cp_genericize_data"nil 
   (!fields 0 )
   nil 0 nil nil )
  
