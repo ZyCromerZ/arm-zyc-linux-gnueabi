@@ -2185,9 +2185,9 @@ libc.info-12: 3384419
 libc.info-13: 3683539
 libc.info-14: 3984524
 libc.info-15: 4407729
-libc.info-16: 4595940
-libc.info-17: 4888539
-libc.info-18: 5279054
+libc.info-16: 4595621
+libc.info-17: 4888220
+libc.info-18: 5278735
 
 Tag Table:
 (Indirect)
@@ -2935,16 +2935,16 @@ Node: Porting to Unix4475183
 Node: Platform4477287
 Node: PowerPC4477733
 Node: RISC-V4482594
-Node: X864483901
-Node: Contributors4496217
-Node: Free Manuals4595940
-Node: Copying4600897
-Node: Documentation License4629156
-Node: Concept Index4654500
-Node: Type Index4781339
-Node: Function Index4888539
-Node: Variable Index5060129
-Node: File Index5279054
+Node: X864483582
+Node: Contributors4495898
+Node: Free Manuals4595621
+Node: Copying4600578
+Node: Documentation License4628837
+Node: Concept Index4654181
+Node: Type Index4781020
+Node: Function Index4888220
+Node: Variable Index5059810
+Node: File Index5278735
 
 End Tag Table
 
