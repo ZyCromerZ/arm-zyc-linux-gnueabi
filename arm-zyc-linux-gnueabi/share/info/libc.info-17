@@ -2214,7 +2214,7 @@ Function and Macro Index
 * __ppc_set_ppr_med_low:                 PowerPC.             (line  91)
 * __ppc_set_ppr_very_low:                PowerPC.             (line 101)
 * __ppc_yield:                           PowerPC.             (line  43)
-* __riscv_flush_icache:                  RISC-V.              (line  15)
+* __riscv_flush_icache:                  RISC-V.              (line   9)
 * __va_copy:                             Argument Macros.     (line  57)
 * __x86_get_cpuid_feature_leaf:          X86.                 (line   9)
 * a64l:                                  Encode Binary Data.  (line  84)
