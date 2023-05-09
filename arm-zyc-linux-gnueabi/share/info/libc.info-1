@@ -7101,7 +7101,7 @@ that, use ‘aligned_alloc’ or ‘posix_memalign’.  ‘aligned_alloc’ and
 
      The ‘aligned_alloc’ function allocates a block of SIZE bytes whose
      address is a multiple of ALIGNMENT.  The ALIGNMENT must be a power
-     of two and SIZE must be a multiple of ALIGNMENT.
+     of two.
 
      The ‘aligned_alloc’ function returns a null pointer on error and
      sets ‘errno’ to one of the following values:

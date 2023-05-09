@@ -3828,9 +3828,9 @@ Function and Macro Index
 * pthread_attr_setsigmask_np:            Initial Thread Signal Mask.
                                                               (line  10)
 * pthread_clockjoin_np:                  Waiting with Explicit Clocks.
-                                                              (line  73)
+                                                              (line  75)
 * pthread_cond_clockwait:                Waiting with Explicit Clocks.
-                                                              (line  15)
+                                                              (line  19)
 * pthread_getattr_default_np:            Default Thread Attributes.
                                                               (line   9)
 * pthread_key_create:                    Thread-specific Data.
@@ -3838,17 +3838,17 @@ Function and Macro Index
 * pthread_key_delete:                    Thread-specific Data.
                                                               (line  25)
 * pthread_rwlock_clockrdlock:            Waiting with Explicit Clocks.
-                                                              (line  27)
+                                                              (line  31)
 * pthread_rwlock_clockwrlock:            Waiting with Explicit Clocks.
-                                                              (line  39)
+                                                              (line  42)
 * pthread_setattr_default_np:            Default Thread Attributes.
                                                               (line  17)
 * pthread_setspecific:                   Thread-specific Data.
                                                               (line  42)
 * pthread_timedjoin_np:                  Waiting with Explicit Clocks.
-                                                              (line  61)
+                                                              (line  63)
 * pthread_tryjoin_np:                    Waiting with Explicit Clocks.
-                                                              (line  51)
+                                                              (line  53)
 * ptsname:                               Allocation.          (line 109)
 * ptsname_r:                             Allocation.          (line 120)
 * putc:                                  Simple Output.       (line  48)

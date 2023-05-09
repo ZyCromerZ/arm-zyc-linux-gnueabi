@@ -12596,6 +12596,10 @@ const void *NEEDLE, size_t NEEDLE-LEN)’
 
      ‘pthread.h’ (GNU): *note Initial Thread Signal Mask::.
 
+‘int pthread_clockjoin_np (pthread_t *THREAD, void **THREAD_RETURN, clockid_t CLOCKID, const struct timespec *ABSTIME)’
+
+     ‘pthread.h’ (GNU): *note Waiting with Explicit Clocks::.
+
 ‘int pthread_getattr_default_np (pthread_attr_t *ATTR)’
 
      ‘pthread.h’ (GNU): *note Default Thread Attributes::.
@@ -12619,6 +12623,14 @@ const void *NEEDLE, size_t NEEDLE-LEN)’
 ‘int pthread_setspecific (pthread_key_t KEY, const void *VALUE)’
 
      ‘pthread.h’ (POSIX): *note Thread-specific Data::.
+
+‘int pthread_timedjoin_np (pthread_t *THREAD, void **THREAD_RETURN, const struct timespec *ABSTIME)’
+
+     ‘pthread.h’ (GNU): *note Waiting with Explicit Clocks::.
+
+‘int pthread_tryjoin_np (pthread_t *THREAD, void **THREAD_RETURN)’
+
+     ‘pthread.h’ (GNU): *note Waiting with Explicit Clocks::.
 
 ‘ptrdiff_t’
 
