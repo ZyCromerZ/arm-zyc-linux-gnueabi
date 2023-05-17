@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2023-05-16" "gcc-14.0.0" "GNU"
+.TH GCC 1 "2023-05-17" "gcc-14.0.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -11649,8 +11649,8 @@ Attempt to remove redundant extension instructions.  This is especially
 helpful for the x86\-64 architecture, which implicitly zero-extends in 64\-bit
 registers after writing to their lower 32\-bit half.
 .Sp
-Enabled for Alpha, AArch64 and x86 at levels \fB\-O2\fR,
-\&\fB\-O3\fR, \fB\-Os\fR.
+Enabled for Alpha, AArch64, PowerPC, RISC-V, \s-1SPARC,\s0 h83000 and x86 at levels
+\&\fB\-O2\fR, \fB\-O3\fR, \fB\-Os\fR.
 .IP "\fB\-fno\-lifetime\-dse\fR" 4
 .IX Item "-fno-lifetime-dse"
 In \*(C+ the value of an object is only affected by changes within its
