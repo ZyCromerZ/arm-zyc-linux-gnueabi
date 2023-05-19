@@ -36,6 +36,8 @@ extern bool mve_imm_15 (rtx, machine_mode);
 extern bool mve_imm_31 (rtx, machine_mode);
 extern bool mve_imm_32 (rtx, machine_mode);
 extern bool mve_imm_selective_upto_8 (rtx, machine_mode);
+extern bool mve_vldrd_immediate (rtx, machine_mode);
+extern bool mve_vstrw_immediate (rtx, machine_mode);
 extern bool guard_addr_operand (rtx, machine_mode);
 extern bool guard_operand (rtx, machine_mode);
 extern bool vpr_register_operand (rtx, machine_mode);
@@ -161,7 +163,6 @@ extern bool add_operator (rtx, machine_mode);
 extern bool mem_noofs_operand (rtx, machine_mode);
 extern bool call_insn_operand (rtx, machine_mode);
 extern bool aligned_operand (rtx, machine_mode);
-extern bool mve_vldrd_immediate (rtx, machine_mode);
 #endif /* HAVE_MACHINE_MODES */
 
 #define CONSTRAINT_NUM_DEFINED_P 1
@@ -227,7 +228,6 @@ enum constraint_num
   CONSTRAINT_Uw,
   CONSTRAINT_Uz,
   CONSTRAINT_p,
-  CONSTRAINT_Ri,
   CONSTRAINT_Rd,
   CONSTRAINT_Ra,
   CONSTRAINT_Rb,
@@ -257,6 +257,8 @@ enum constraint_num
   CONSTRAINT_Ds,
   CONSTRAINT_Dp,
   CONSTRAINT_US,
+  CONSTRAINT_Ri,
+  CONSTRAINT_Rl,
   CONSTRAINT_c,
   CONSTRAINT_V,
   CONSTRAINT__l,
@@ -332,7 +334,7 @@ static inline void
 insn_extra_constraint_allows_reg_mem (enum constraint_num c,
 				      bool *allows_reg, bool *allows_mem)
 {
-  if (c >= CONSTRAINT_Ri && c <= CONSTRAINT_US)
+  if (c >= CONSTRAINT_Rd && c <= CONSTRAINT_Rl)
     return;
   if (c >= CONSTRAINT_c && c <= CONSTRAINT_c)
     {
@@ -398,7 +400,7 @@ get_constraint_type (enum constraint_num c)
 {
   if (c >= CONSTRAINT_p)
     {
-      if (c >= CONSTRAINT_Ri)
+      if (c >= CONSTRAINT_Rd)
         return CT_FIXED_FORM;
       return CT_ADDRESS;
     }
