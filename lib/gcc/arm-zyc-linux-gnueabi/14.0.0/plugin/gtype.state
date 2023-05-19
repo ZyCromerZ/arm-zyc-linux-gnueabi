@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "14.0.0 20230518 (experimental)")
+(!version  "14.0.0 20230519 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 12 ada c cp d fortran go jit lto m2 objc objcp rust)
 (!fileslist 246 0
@@ -440,7 +440,7 @@
                   (!type already_seen 22)
                  )
                  gc_pointed_to "tree_node"
-                 (!srcfileloc  "tree-core.h" 2101)
+                 (!srcfileloc  "tree-core.h" 2102)
                  (!fields 39 
                   (!pair  "base"
                    (!type struct 25 nil  gc_used "tree_base"
@@ -679,7 +679,7 @@
                      )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2058)
+                   (!srcfileloc  "tree-core.h" 2059)
                    (!options 
                     (!option tag string  "TS_BASE")
                    )
@@ -698,7 +698,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2059)
+                   (!srcfileloc  "tree-core.h" 2060)
                    (!options 
                     (!option tag string  "TS_TYPED")
                    )
@@ -717,7 +717,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2060)
+                   (!srcfileloc  "tree-core.h" 2061)
                    (!options 
                     (!option tag string  "TS_COMMON")
                    )
@@ -738,7 +738,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2061)
+                   (!srcfileloc  "tree-core.h" 2062)
                    (!options 
                     (!option tag string  "TS_INT_CST")
                    )
@@ -759,7 +759,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2062)
+                   (!srcfileloc  "tree-core.h" 2063)
                    (!options 
                     (!option tag string  "TS_POLY_INT_CST")
                    )
@@ -812,7 +812,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2063)
+                   (!srcfileloc  "tree-core.h" 2064)
                    (!options 
                     (!option tag string  "TS_REAL_CST")
                    )
@@ -858,7 +858,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2064)
+                   (!srcfileloc  "tree-core.h" 2065)
                    (!options 
                     (!option tag string  "TS_FIXED_CST")
                    )
@@ -882,7 +882,7 @@
                      )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2065)
+                   (!srcfileloc  "tree-core.h" 2066)
                    (!options 
                     (!option tag string  "TS_VECTOR")
                    )
@@ -907,7 +907,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2066)
+                   (!srcfileloc  "tree-core.h" 2067)
                    (!options 
                     (!option tag string  "TS_STRING")
                    )
@@ -930,7 +930,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2067)
+                   (!srcfileloc  "tree-core.h" 2068)
                    (!options 
                     (!option tag string  "TS_COMPLEX")
                    )
@@ -949,189 +949,189 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2068)
+                   (!srcfileloc  "tree-core.h" 2069)
                    (!options 
                     (!option tag string  "TS_IDENTIFIER")
                    )
                   )
                   (!pair  "decl_minimal"
                    (!type struct 51 nil  gc_used "tree_decl_minimal"
-                    (!srcfileloc  "tree-core.h" 1767)
+                    (!srcfileloc  "tree-core.h" 1768)
                     (!fields 5 
                      (!pair  "common"
                       (!type already_seen 32)
-                      (!srcfileloc  "tree-core.h" 1762)
+                      (!srcfileloc  "tree-core.h" 1763)
                       nil )
                      (!pair  "locus"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1763)
+                      (!srcfileloc  "tree-core.h" 1764)
                       nil )
                      (!pair  "uid"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1764)
+                      (!srcfileloc  "tree-core.h" 1765)
                       nil )
                      (!pair  "name"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1765)
+                      (!srcfileloc  "tree-core.h" 1766)
                       nil )
                      (!pair  "context"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1766)
+                      (!srcfileloc  "tree-core.h" 1767)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2069)
+                   (!srcfileloc  "tree-core.h" 2070)
                    (!options 
                     (!option tag string  "TS_DECL_MINIMAL")
                    )
                   )
                   (!pair  "decl_common"
                    (!type struct 52 nil  gc_used "tree_decl_common"
-                    (!srcfileloc  "tree-core.h" 1843)
+                    (!srcfileloc  "tree-core.h" 1844)
                     (!fields 37 
                      (!pair  "common"
                       (!type already_seen 51)
-                      (!srcfileloc  "tree-core.h" 1770)
+                      (!srcfileloc  "tree-core.h" 1771)
                       nil )
                      (!pair  "size"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1771)
+                      (!srcfileloc  "tree-core.h" 1772)
                       nil )
                      (!pair  "mode"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1773)
+                      (!srcfileloc  "tree-core.h" 1774)
                       nil )
                      (!pair  "nonlocal_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1775)
+                      (!srcfileloc  "tree-core.h" 1776)
                       nil )
                      (!pair  "virtual_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1776)
+                      (!srcfileloc  "tree-core.h" 1777)
                       nil )
                      (!pair  "ignored_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1777)
+                      (!srcfileloc  "tree-core.h" 1778)
                       nil )
                      (!pair  "abstract_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1778)
+                      (!srcfileloc  "tree-core.h" 1779)
                       nil )
                      (!pair  "artificial_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1779)
+                      (!srcfileloc  "tree-core.h" 1780)
                       nil )
                      (!pair  "preserve_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1780)
+                      (!srcfileloc  "tree-core.h" 1781)
                       nil )
                      (!pair  "debug_expr_is_from"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1781)
+                      (!srcfileloc  "tree-core.h" 1782)
                       nil )
                      (!pair  "lang_flag_0"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1783)
+                      (!srcfileloc  "tree-core.h" 1784)
                       nil )
                      (!pair  "lang_flag_1"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1784)
+                      (!srcfileloc  "tree-core.h" 1785)
                       nil )
                      (!pair  "lang_flag_2"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1785)
+                      (!srcfileloc  "tree-core.h" 1786)
                       nil )
                      (!pair  "lang_flag_3"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1786)
+                      (!srcfileloc  "tree-core.h" 1787)
                       nil )
                      (!pair  "lang_flag_4"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1787)
+                      (!srcfileloc  "tree-core.h" 1788)
                       nil )
                      (!pair  "lang_flag_5"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1788)
+                      (!srcfileloc  "tree-core.h" 1789)
                       nil )
                      (!pair  "lang_flag_6"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1789)
+                      (!srcfileloc  "tree-core.h" 1790)
                       nil )
                      (!pair  "lang_flag_7"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1790)
+                      (!srcfileloc  "tree-core.h" 1791)
                       nil )
                      (!pair  "lang_flag_8"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1791)
+                      (!srcfileloc  "tree-core.h" 1792)
                       nil )
                      (!pair  "decl_flag_0"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1796)
+                      (!srcfileloc  "tree-core.h" 1797)
                       nil )
                      (!pair  "decl_flag_1"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1800)
+                      (!srcfileloc  "tree-core.h" 1801)
                       nil )
                      (!pair  "decl_flag_2"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1804)
+                      (!srcfileloc  "tree-core.h" 1805)
                       nil )
                      (!pair  "decl_flag_3"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1806)
+                      (!srcfileloc  "tree-core.h" 1807)
                       nil )
                      (!pair  "not_gimple_reg_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1809)
+                      (!srcfileloc  "tree-core.h" 1810)
                       nil )
                      (!pair  "decl_by_reference_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1811)
+                      (!srcfileloc  "tree-core.h" 1812)
                       nil )
                      (!pair  "decl_read_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1813)
+                      (!srcfileloc  "tree-core.h" 1814)
                       nil )
                      (!pair  "decl_nonshareable_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1816)
+                      (!srcfileloc  "tree-core.h" 1817)
                       nil )
                      (!pair  "off_align"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1819)
+                      (!srcfileloc  "tree-core.h" 1820)
                       nil )
                      (!pair  "align"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1822)
+                      (!srcfileloc  "tree-core.h" 1823)
                       nil )
                      (!pair  "warn_if_not_align"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1826)
+                      (!srcfileloc  "tree-core.h" 1827)
                       nil )
                      (!pair  "decl_not_flexarray"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1829)
+                      (!srcfileloc  "tree-core.h" 1830)
                       nil )
                      (!pair  "pt_uid"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1834)
+                      (!srcfileloc  "tree-core.h" 1835)
                       nil )
                      (!pair  "size_unit"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1836)
+                      (!srcfileloc  "tree-core.h" 1837)
                       nil )
                      (!pair  "initial"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1837)
+                      (!srcfileloc  "tree-core.h" 1838)
                       nil )
                      (!pair  "attributes"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1838)
+                      (!srcfileloc  "tree-core.h" 1839)
                       nil )
                      (!pair  "abstract_origin"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1839)
+                      (!srcfileloc  "tree-core.h" 1840)
                       nil )
                      (!pair  "lang_specific"
                       (!type pointer 53 nil  gc_used
@@ -1598,7 +1598,7 @@
                                                       (!fields 2 
                                                        (!pair  "va_gc"
                                                         (!type undefined 80 nil  gc_unused "va_gc"
-                                                         (!srcfileloc  "rtl.h" 267)
+                                                         (!srcfileloc  "rtl.h" 269)
                                                         )
                                                         (!srcfileloc  "cp/cp-tree.h" 1564)
                                                         nil )
@@ -1975,22 +1975,22 @@
                         )
                        )
                       )
-                      (!srcfileloc  "tree-core.h" 1842)
+                      (!srcfileloc  "tree-core.h" 1843)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2070)
+                   (!srcfileloc  "tree-core.h" 2071)
                    (!options 
                     (!option tag string  "TS_DECL_COMMON")
                    )
                   )
                   (!pair  "decl_with_rtl"
                    (!type struct 99 nil  gc_used "tree_decl_with_rtl"
-                    (!srcfileloc  "tree-core.h" 1848)
+                    (!srcfileloc  "tree-core.h" 1849)
                     (!fields 2 
                      (!pair  "common"
                       (!type already_seen 52)
-                      (!srcfileloc  "tree-core.h" 1846)
+                      (!srcfileloc  "tree-core.h" 1847)
                       nil )
                      (!pair  "rtl"
                       (!type pointer 100 
@@ -2001,106 +2001,106 @@
                        (!type struct 102 
                         (!type already_seen 100)
                         gc_pointed_to "rtx_def"
-                        (!srcfileloc  "rtl.h" 453)
+                        (!srcfileloc  "rtl.h" 455)
                         (!fields 12 
-                         (!pair  "code"
-                          (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 313)
-                          nil )
                          (!pair  "mode"
                           (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 316)
+                          (!srcfileloc  "rtl.h" 315)
+                          nil )
+                         (!pair  "code"
+                          (!type already_seen 2)
+                          (!srcfileloc  "rtl.h" 318)
                           nil )
                          (!pair  "jump"
                           (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 329)
+                          (!srcfileloc  "rtl.h" 331)
                           nil )
                          (!pair  "call"
                           (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 336)
+                          (!srcfileloc  "rtl.h" 338)
                           nil )
                          (!pair  "unchanging"
                           (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 348)
+                          (!srcfileloc  "rtl.h" 350)
                           nil )
                          (!pair  "volatil"
                           (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 362)
+                          (!srcfileloc  "rtl.h" 364)
                           nil )
                          (!pair  "in_struct"
                           (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 377)
+                          (!srcfileloc  "rtl.h" 379)
                           nil )
                          (!pair  "used"
                           (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 386)
+                          (!srcfileloc  "rtl.h" 388)
                           nil )
                          (!pair  "frame_related"
                           (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 395)
+                          (!srcfileloc  "rtl.h" 397)
                           nil )
                          (!pair  "return_val"
                           (!type already_seen 2)
-                          (!srcfileloc  "rtl.h" 402)
+                          (!srcfileloc  "rtl.h" 404)
                           nil )
                          (!pair  "u2"
-                          (!type union 103 nil  gc_unused "anonymous:../../gcc/gcc/rtl.h:404"
-                           (!srcfileloc  "rtl.h" 438)
+                          (!type union 103 nil  gc_unused "anonymous:../../gcc/gcc/rtl.h:406"
+                           (!srcfileloc  "rtl.h" 440)
                            (!fields 6 
                             (!pair  "original_regno"
                              (!type already_seen 2)
-                             (!srcfileloc  "rtl.h" 411)
+                             (!srcfileloc  "rtl.h" 413)
                              nil )
                             (!pair  "insn_uid"
                              (!type already_seen 2)
-                             (!srcfileloc  "rtl.h" 414)
+                             (!srcfileloc  "rtl.h" 416)
                              nil )
                             (!pair  "symbol_ref_flags"
                              (!type already_seen 2)
-                             (!srcfileloc  "rtl.h" 417)
+                             (!srcfileloc  "rtl.h" 419)
                              nil )
                             (!pair  "var_location_status"
                              (!type already_seen 2)
-                             (!srcfileloc  "rtl.h" 420)
+                             (!srcfileloc  "rtl.h" 422)
                              nil )
                             (!pair  "num_elem"
                              (!type already_seen 2)
-                             (!srcfileloc  "rtl.h" 424)
+                             (!srcfileloc  "rtl.h" 426)
                              nil )
                             (!pair  "const_vector"
-                             (!type struct 104 nil  gc_unused "anonymous:../../gcc/gcc/rtl.h:428"
-                              (!srcfileloc  "rtl.h" 437)
+                             (!type struct 104 nil  gc_unused "anonymous:../../gcc/gcc/rtl.h:430"
+                              (!srcfileloc  "rtl.h" 439)
                               (!fields 3 
                                (!pair  "npatterns"
                                 (!type already_seen 2)
-                                (!srcfileloc  "rtl.h" 430)
+                                (!srcfileloc  "rtl.h" 432)
                                 nil )
                                (!pair  "nelts_per_pattern"
                                 (!type already_seen 2)
-                                (!srcfileloc  "rtl.h" 433)
+                                (!srcfileloc  "rtl.h" 435)
                                 nil )
                                (!pair  "unused"
                                 (!type already_seen 2)
-                                (!srcfileloc  "rtl.h" 436)
+                                (!srcfileloc  "rtl.h" 438)
                                 nil )
                               )
                               nil 4095 nil nil )
-                             (!srcfileloc  "rtl.h" 437)
+                             (!srcfileloc  "rtl.h" 439)
                              nil )
                            )
                            nil 4095 nil )
-                          (!srcfileloc  "rtl.h" 438)
+                          (!srcfileloc  "rtl.h" 440)
                           (!options 
                            (!option skip string  "")
                           )
                          )
                          (!pair  "u"
                           (!type union 105 nil  gc_used "rtx_def_subunion"
-                           (!srcfileloc  "rtl.h" 452)
+                           (!srcfileloc  "rtl.h" 454)
                            (!fields 152 
                             (!pair  ""
                              (!type struct 106 nil  gc_used "rtx_def_debug_marker"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 0 )
                               nil 4095 nil nil )
                              (!srcfileloc  "gengtype.cc" 1379)
@@ -2111,7 +2111,7 @@
                             )
                             (!pair  ""
                              (!type struct 107 nil  gc_used "rtx_def_debug_parameter_ref"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_tree"
                                 (!type already_seen 23)
@@ -2130,7 +2130,7 @@
                             )
                             (!pair  ""
                              (!type struct 108 nil  gc_used "rtx_def_entry_value"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2149,7 +2149,7 @@
                             )
                             (!pair  ""
                              (!type struct 109 nil  gc_used "rtx_def_debug_implicit_ptr"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_tree"
                                 (!type already_seen 23)
@@ -2168,7 +2168,7 @@
                             )
                             (!pair  ""
                              (!type struct 110 nil  gc_used "rtx_def_var_location"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2194,7 +2194,7 @@
                             )
                             (!pair  ""
                              (!type struct 111 nil  gc_used "rtx_def_fma"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 3 
                                (!pair  ".fld[2].rt_rtx"
                                 (!type already_seen 100)
@@ -2227,7 +2227,7 @@
                             )
                             (!pair  ""
                              (!type struct 112 nil  gc_used "rtx_def_us_truncate"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2246,7 +2246,7 @@
                             )
                             (!pair  ""
                              (!type struct 113 nil  gc_used "rtx_def_ss_truncate"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2265,7 +2265,7 @@
                             )
                             (!pair  ""
                              (!type struct 114 nil  gc_used "rtx_def_us_minus"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2291,7 +2291,7 @@
                             )
                             (!pair  ""
                              (!type struct 115 nil  gc_used "rtx_def_us_ashift"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2317,7 +2317,7 @@
                             )
                             (!pair  ""
                              (!type struct 116 nil  gc_used "rtx_def_ss_ashift"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2343,7 +2343,7 @@
                             )
                             (!pair  ""
                              (!type struct 117 nil  gc_used "rtx_def_ss_abs"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2362,7 +2362,7 @@
                             )
                             (!pair  ""
                              (!type struct 118 nil  gc_used "rtx_def_us_neg"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2381,7 +2381,7 @@
                             )
                             (!pair  ""
                              (!type struct 119 nil  gc_used "rtx_def_ss_neg"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2400,7 +2400,7 @@
                             )
                             (!pair  ""
                              (!type struct 120 nil  gc_used "rtx_def_ss_minus"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2426,7 +2426,7 @@
                             )
                             (!pair  ""
                              (!type struct 121 nil  gc_used "rtx_def_us_plus"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2452,7 +2452,7 @@
                             )
                             (!pair  ""
                              (!type struct 122 nil  gc_used "rtx_def_ss_plus"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2478,7 +2478,7 @@
                             )
                             (!pair  ""
                              (!type struct 123 nil  gc_used "rtx_def_vec_series"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2504,7 +2504,7 @@
                             )
                             (!pair  ""
                              (!type struct 124 nil  gc_used "rtx_def_vec_duplicate"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2523,7 +2523,7 @@
                             )
                             (!pair  ""
                              (!type struct 125 nil  gc_used "rtx_def_vec_concat"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2549,7 +2549,7 @@
                             )
                             (!pair  ""
                              (!type struct 126 nil  gc_used "rtx_def_vec_select"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2575,7 +2575,7 @@
                             )
                             (!pair  ""
                              (!type struct 127 nil  gc_used "rtx_def_vec_merge"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 3 
                                (!pair  ".fld[2].rt_rtx"
                                 (!type already_seen 100)
@@ -2608,7 +2608,7 @@
                             )
                             (!pair  ""
                              (!type struct 128 nil  gc_used "rtx_def_lo_sum"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -2634,7 +2634,7 @@
                             )
                             (!pair  ""
                              (!type struct 129 nil  gc_used "rtx_def_high"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2653,7 +2653,7 @@
                             )
                             (!pair  ""
                              (!type struct 130 nil  gc_used "rtx_def_zero_extract"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 3 
                                (!pair  ".fld[2].rt_rtx"
                                 (!type already_seen 100)
@@ -2686,7 +2686,7 @@
                             )
                             (!pair  ""
                              (!type struct 131 nil  gc_used "rtx_def_sign_extract"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 3 
                                (!pair  ".fld[2].rt_rtx"
                                 (!type already_seen 100)
@@ -2719,7 +2719,7 @@
                             )
                             (!pair  ""
                              (!type struct 132 nil  gc_used "rtx_def_parity"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2738,7 +2738,7 @@
                             )
                             (!pair  ""
                              (!type struct 133 nil  gc_used "rtx_def_popcount"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2757,7 +2757,7 @@
                             )
                             (!pair  ""
                              (!type struct 134 nil  gc_used "rtx_def_ctz"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2776,7 +2776,7 @@
                             )
                             (!pair  ""
                              (!type struct 135 nil  gc_used "rtx_def_clz"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2795,7 +2795,7 @@
                             )
                             (!pair  ""
                              (!type struct 136 nil  gc_used "rtx_def_clrsb"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2814,7 +2814,7 @@
                             )
                             (!pair  ""
                              (!type struct 137 nil  gc_used "rtx_def_ffs"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2833,7 +2833,7 @@
                             )
                             (!pair  ""
                              (!type struct 138 nil  gc_used "rtx_def_bswap"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2852,7 +2852,7 @@
                             )
                             (!pair  ""
                              (!type struct 139 nil  gc_used "rtx_def_sqrt"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2871,7 +2871,7 @@
                             )
                             (!pair  ""
                              (!type struct 140 nil  gc_used "rtx_def_abs"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2890,7 +2890,7 @@
                             )
                             (!pair  ""
                              (!type struct 141 nil  gc_used "rtx_def_unsigned_sat_fract"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2909,7 +2909,7 @@
                             )
                             (!pair  ""
                              (!type struct 142 nil  gc_used "rtx_def_sat_fract"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2928,7 +2928,7 @@
                             )
                             (!pair  ""
                              (!type struct 143 nil  gc_used "rtx_def_unsigned_fract_convert"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2947,7 +2947,7 @@
                             )
                             (!pair  ""
                              (!type struct 144 nil  gc_used "rtx_def_fract_convert"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2966,7 +2966,7 @@
                             )
                             (!pair  ""
                              (!type struct 145 nil  gc_used "rtx_def_unsigned_fix"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -2985,7 +2985,7 @@
                             )
                             (!pair  ""
                              (!type struct 146 nil  gc_used "rtx_def_unsigned_float"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3004,7 +3004,7 @@
                             )
                             (!pair  ""
                              (!type struct 147 nil  gc_used "rtx_def_fix"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3023,7 +3023,7 @@
                             )
                             (!pair  ""
                              (!type struct 148 nil  gc_used "rtx_def_float"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3042,7 +3042,7 @@
                             )
                             (!pair  ""
                              (!type struct 149 nil  gc_used "rtx_def_float_truncate"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3061,7 +3061,7 @@
                             )
                             (!pair  ""
                              (!type struct 150 nil  gc_used "rtx_def_float_extend"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3080,7 +3080,7 @@
                             )
                             (!pair  ""
                              (!type struct 151 nil  gc_used "rtx_def_truncate"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3099,7 +3099,7 @@
                             )
                             (!pair  ""
                              (!type struct 152 nil  gc_used "rtx_def_zero_extend"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3118,7 +3118,7 @@
                             )
                             (!pair  ""
                              (!type struct 153 nil  gc_used "rtx_def_sign_extend"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3137,7 +3137,7 @@
                             )
                             (!pair  ""
                              (!type struct 154 nil  gc_used "rtx_def_unlt"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3163,7 +3163,7 @@
                             )
                             (!pair  ""
                              (!type struct 155 nil  gc_used "rtx_def_unle"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3189,7 +3189,7 @@
                             )
                             (!pair  ""
                              (!type struct 156 nil  gc_used "rtx_def_ungt"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3215,7 +3215,7 @@
                             )
                             (!pair  ""
                              (!type struct 157 nil  gc_used "rtx_def_unge"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3241,7 +3241,7 @@
                             )
                             (!pair  ""
                              (!type struct 158 nil  gc_used "rtx_def_uneq"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3267,7 +3267,7 @@
                             )
                             (!pair  ""
                              (!type struct 159 nil  gc_used "rtx_def_ordered"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3293,7 +3293,7 @@
                             )
                             (!pair  ""
                              (!type struct 160 nil  gc_used "rtx_def_unordered"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3319,7 +3319,7 @@
                             )
                             (!pair  ""
                              (!type struct 161 nil  gc_used "rtx_def_ltu"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3345,7 +3345,7 @@
                             )
                             (!pair  ""
                              (!type struct 162 nil  gc_used "rtx_def_leu"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3371,7 +3371,7 @@
                             )
                             (!pair  ""
                              (!type struct 163 nil  gc_used "rtx_def_gtu"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3397,7 +3397,7 @@
                             )
                             (!pair  ""
                              (!type struct 164 nil  gc_used "rtx_def_geu"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3423,7 +3423,7 @@
                             )
                             (!pair  ""
                              (!type struct 165 nil  gc_used "rtx_def_ltgt"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3449,7 +3449,7 @@
                             )
                             (!pair  ""
                              (!type struct 166 nil  gc_used "rtx_def_lt"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3475,7 +3475,7 @@
                             )
                             (!pair  ""
                              (!type struct 167 nil  gc_used "rtx_def_le"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3501,7 +3501,7 @@
                             )
                             (!pair  ""
                              (!type struct 168 nil  gc_used "rtx_def_gt"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3527,7 +3527,7 @@
                             )
                             (!pair  ""
                              (!type struct 169 nil  gc_used "rtx_def_ge"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3553,7 +3553,7 @@
                             )
                             (!pair  ""
                              (!type struct 170 nil  gc_used "rtx_def_eq"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3579,7 +3579,7 @@
                             )
                             (!pair  ""
                              (!type struct 171 nil  gc_used "rtx_def_ne"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3605,7 +3605,7 @@
                             )
                             (!pair  ""
                              (!type struct 172 nil  gc_used "rtx_def_post_modify"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3631,7 +3631,7 @@
                             )
                             (!pair  ""
                              (!type struct 173 nil  gc_used "rtx_def_pre_modify"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3657,7 +3657,7 @@
                             )
                             (!pair  ""
                              (!type struct 174 nil  gc_used "rtx_def_post_inc"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3676,7 +3676,7 @@
                             )
                             (!pair  ""
                              (!type struct 175 nil  gc_used "rtx_def_post_dec"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3695,7 +3695,7 @@
                             )
                             (!pair  ""
                              (!type struct 176 nil  gc_used "rtx_def_pre_inc"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3714,7 +3714,7 @@
                             )
                             (!pair  ""
                              (!type struct 177 nil  gc_used "rtx_def_pre_dec"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3733,7 +3733,7 @@
                             )
                             (!pair  ""
                              (!type struct 178 nil  gc_used "rtx_def_umax"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3759,7 +3759,7 @@
                             )
                             (!pair  ""
                              (!type struct 179 nil  gc_used "rtx_def_umin"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3785,7 +3785,7 @@
                             )
                             (!pair  ""
                              (!type struct 180 nil  gc_used "rtx_def_smax"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3811,7 +3811,7 @@
                             )
                             (!pair  ""
                              (!type struct 181 nil  gc_used "rtx_def_smin"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3837,7 +3837,7 @@
                             )
                             (!pair  ""
                              (!type struct 182 nil  gc_used "rtx_def_rotatert"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3863,7 +3863,7 @@
                             )
                             (!pair  ""
                              (!type struct 183 nil  gc_used "rtx_def_lshiftrt"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3889,7 +3889,7 @@
                             )
                             (!pair  ""
                              (!type struct 184 nil  gc_used "rtx_def_ashiftrt"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3915,7 +3915,7 @@
                             )
                             (!pair  ""
                              (!type struct 185 nil  gc_used "rtx_def_rotate"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3941,7 +3941,7 @@
                             )
                             (!pair  ""
                              (!type struct 186 nil  gc_used "rtx_def_ashift"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -3967,7 +3967,7 @@
                             )
                             (!pair  ""
                              (!type struct 187 nil  gc_used "rtx_def_not"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -3986,7 +3986,7 @@
                             )
                             (!pair  ""
                              (!type struct 188 nil  gc_used "rtx_def_xor"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4012,7 +4012,7 @@
                             )
                             (!pair  ""
                              (!type struct 189 nil  gc_used "rtx_def_ior"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4038,7 +4038,7 @@
                             )
                             (!pair  ""
                              (!type struct 190 nil  gc_used "rtx_def_and"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4064,7 +4064,7 @@
                             )
                             (!pair  ""
                              (!type struct 191 nil  gc_used "rtx_def_umod"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4090,7 +4090,7 @@
                             )
                             (!pair  ""
                              (!type struct 192 nil  gc_used "rtx_def_udiv"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4116,7 +4116,7 @@
                             )
                             (!pair  ""
                              (!type struct 193 nil  gc_used "rtx_def_mod"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4142,7 +4142,7 @@
                             )
                             (!pair  ""
                              (!type struct 194 nil  gc_used "rtx_def_us_div"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4168,7 +4168,7 @@
                             )
                             (!pair  ""
                              (!type struct 195 nil  gc_used "rtx_def_ss_div"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4194,7 +4194,7 @@
                             )
                             (!pair  ""
                              (!type struct 196 nil  gc_used "rtx_def_div"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4220,7 +4220,7 @@
                             )
                             (!pair  ""
                              (!type struct 197 nil  gc_used "rtx_def_umul_highpart"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4246,7 +4246,7 @@
                             )
                             (!pair  ""
                              (!type struct 198 nil  gc_used "rtx_def_smul_highpart"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4272,7 +4272,7 @@
                             )
                             (!pair  ""
                              (!type struct 199 nil  gc_used "rtx_def_us_mult"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4298,7 +4298,7 @@
                             )
                             (!pair  ""
                              (!type struct 200 nil  gc_used "rtx_def_ss_mult"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4324,7 +4324,7 @@
                             )
                             (!pair  ""
                              (!type struct 201 nil  gc_used "rtx_def_mult"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4350,7 +4350,7 @@
                             )
                             (!pair  ""
                              (!type struct 202 nil  gc_used "rtx_def_neg"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -4369,7 +4369,7 @@
                             )
                             (!pair  ""
                              (!type struct 203 nil  gc_used "rtx_def_minus"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4395,7 +4395,7 @@
                             )
                             (!pair  ""
                              (!type struct 204 nil  gc_used "rtx_def_plus"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4421,7 +4421,7 @@
                             )
                             (!pair  ""
                              (!type struct 205 nil  gc_used "rtx_def_compare"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4447,7 +4447,7 @@
                             )
                             (!pair  ""
                              (!type struct 206 nil  gc_used "rtx_def_if_then_else"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 3 
                                (!pair  ".fld[2].rt_rtx"
                                 (!type already_seen 100)
@@ -4480,23 +4480,23 @@
                             )
                             (!pair  ""
                              (!type struct 207 nil  gc_used "rtx_def_symbol_ref"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 3 
                                (!pair  "block_sym"
                                 (!type union 208 nil  gc_used "fake_union_1"
-                                 (!srcfileloc  "rtl.h" 452)
+                                 (!srcfileloc  "rtl.h" 454)
                                  (!fields 1 
                                   (!pair  ""
                                    (!type struct 209 nil  gc_used "block_symbol"
-                                    (!srcfileloc  "rtl.h" 245)
+                                    (!srcfileloc  "rtl.h" 247)
                                     (!fields 3 
                                      (!pair  "fld"
                                       (!type array 210 nil  gc_unused "2" 
                                        (!type undefined 211 nil  gc_unused "rtunion"
-                                        (!srcfileloc  "rtl.h" 237)
+                                        (!srcfileloc  "rtl.h" 239)
                                        )
                                       )
-                                      (!srcfileloc  "rtl.h" 237)
+                                      (!srcfileloc  "rtl.h" 239)
                                       (!options 
                                        (!option skip string  "")
                                       )
@@ -4506,7 +4506,7 @@
                                        (!type struct 213 
                                         (!type already_seen 212)
                                         gc_pointed_to "object_block"
-                                        (!srcfileloc  "rtl.h" 278)
+                                        (!srcfileloc  "rtl.h" 280)
                                         (!fields 5 
                                          (!pair  "sect"
                                           (!type pointer 214 nil  gc_used
@@ -4612,39 +4612,39 @@
                                             )
                                             4095 nil )
                                           )
-                                          (!srcfileloc  "rtl.h" 251)
+                                          (!srcfileloc  "rtl.h" 253)
                                           nil )
                                          (!pair  "alignment"
                                           (!type already_seen 2)
-                                          (!srcfileloc  "rtl.h" 254)
+                                          (!srcfileloc  "rtl.h" 256)
                                           nil )
                                          (!pair  "size"
                                           (!type already_seen 2)
-                                          (!srcfileloc  "rtl.h" 257)
+                                          (!srcfileloc  "rtl.h" 259)
                                           nil )
                                          (!pair  "objects"
                                           (!type pointer 221 nil  gc_used
                                            (!type user_struct 222 
                                             (!type already_seen 221)
                                             gc_pointed_to "vec<rtx,va_gc>"
-                                            (!srcfileloc  "rtl.h" 267)
+                                            (!srcfileloc  "rtl.h" 269)
                                             (!fields 2 
                                              (!pair  "va_gc"
                                               (!type already_seen 80)
-                                              (!srcfileloc  "rtl.h" 267)
+                                              (!srcfileloc  "rtl.h" 269)
                                               nil )
                                              (!pair  "rtx"
                                               (!type already_seen 100)
-                                              (!srcfileloc  "rtl.h" 267)
+                                              (!srcfileloc  "rtl.h" 269)
                                               nil )
                                             )
                                            )
                                           )
-                                          (!srcfileloc  "rtl.h" 267)
+                                          (!srcfileloc  "rtl.h" 269)
                                           nil )
                                          (!pair  "anchors"
                                           (!type already_seen 221)
-                                          (!srcfileloc  "rtl.h" 277)
+                                          (!srcfileloc  "rtl.h" 279)
                                           nil )
                                         )
                                         (!options 
@@ -4652,11 +4652,11 @@
                                         )
                                         4095 nil nil )
                                       )
-                                      (!srcfileloc  "rtl.h" 240)
+                                      (!srcfileloc  "rtl.h" 242)
                                       nil )
                                      (!pair  "offset"
                                       (!type already_seen 2)
-                                      (!srcfileloc  "rtl.h" 244)
+                                      (!srcfileloc  "rtl.h" 246)
                                       nil )
                                     )
                                     nil 4095 nil nil )
@@ -4675,7 +4675,7 @@
                                )
                                (!pair  ".fld[1]."
                                 (!type union 223 nil  gc_used "rtx_def_symbol_subunion"
-                                 (!srcfileloc  "rtl.h" 452)
+                                 (!srcfileloc  "rtl.h" 454)
                                  (!fields 2 
                                   (!pair  "rt_constant"
                                    (!type pointer 224 nil  gc_used
@@ -4770,7 +4770,7 @@
                             )
                             (!pair  ""
                              (!type struct 226 nil  gc_used "rtx_def_label_ref"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -4789,46 +4789,46 @@
                             )
                             (!pair  ""
                              (!type struct 227 nil  gc_used "rtx_def_mem"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_mem"
                                 (!type pointer 228 nil  gc_used
                                  (!type struct 229 
                                   (!type already_seen 228)
                                   gc_pointed_to "mem_attrs"
-                                  (!srcfileloc  "rtl.h" 184)
+                                  (!srcfileloc  "rtl.h" 186)
                                   (!fields 8 
                                    (!pair  "expr"
                                     (!type already_seen 23)
-                                    (!srcfileloc  "rtl.h" 158)
+                                    (!srcfileloc  "rtl.h" 160)
                                     nil )
                                    (!pair  "offset"
                                     (!type already_seen 2)
-                                    (!srcfileloc  "rtl.h" 162)
+                                    (!srcfileloc  "rtl.h" 164)
                                     nil )
                                    (!pair  "size"
                                     (!type already_seen 2)
-                                    (!srcfileloc  "rtl.h" 166)
+                                    (!srcfileloc  "rtl.h" 168)
                                     nil )
                                    (!pair  "alias"
                                     (!type already_seen 2)
-                                    (!srcfileloc  "rtl.h" 169)
+                                    (!srcfileloc  "rtl.h" 171)
                                     nil )
                                    (!pair  "align"
                                     (!type already_seen 2)
-                                    (!srcfileloc  "rtl.h" 174)
+                                    (!srcfileloc  "rtl.h" 176)
                                     nil )
                                    (!pair  "addrspace"
                                     (!type already_seen 8)
-                                    (!srcfileloc  "rtl.h" 177)
+                                    (!srcfileloc  "rtl.h" 179)
                                     nil )
                                    (!pair  "offset_known_p"
                                     (!type already_seen 2)
-                                    (!srcfileloc  "rtl.h" 180)
+                                    (!srcfileloc  "rtl.h" 182)
                                     nil )
                                    (!pair  "size_known_p"
                                     (!type already_seen 2)
-                                    (!srcfileloc  "rtl.h" 183)
+                                    (!srcfileloc  "rtl.h" 185)
                                     nil )
                                   )
                                   nil 4095 nil nil )
@@ -4855,24 +4855,24 @@
                             )
                             (!pair  ""
                              (!type struct 230 nil  gc_used "rtx_def_concatn"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtvec"
                                 (!type pointer 231 nil  gc_used
                                  (!type struct 232 
                                   (!type already_seen 231)
                                   gc_pointed_to "rtvec_def"
-                                  (!srcfileloc  "rtl.h" 738)
+                                  (!srcfileloc  "rtl.h" 740)
                                   (!fields 2 
                                    (!pair  "num_elem"
                                     (!type already_seen 2)
-                                    (!srcfileloc  "rtl.h" 736)
+                                    (!srcfileloc  "rtl.h" 738)
                                     nil )
                                    (!pair  "elem"
                                     (!type array 233 nil  gc_used "1" 
                                      (!type already_seen 100)
                                     )
-                                    (!srcfileloc  "rtl.h" 737)
+                                    (!srcfileloc  "rtl.h" 739)
                                     (!options 
                                      (!option length string  "%h.num_elem")
                                     )
@@ -4895,7 +4895,7 @@
                             )
                             (!pair  ""
                              (!type struct 234 nil  gc_used "rtx_def_concat"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -4921,7 +4921,7 @@
                             )
                             (!pair  ""
                              (!type struct 235 nil  gc_used "rtx_def_strict_low_part"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -4940,7 +4940,7 @@
                             )
                             (!pair  ""
                              (!type struct 236 nil  gc_used "rtx_def_subreg"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_subreg"
                                 (!type already_seen 2)
@@ -4966,7 +4966,7 @@
                             )
                             (!pair  ""
                              (!type struct 237 nil  gc_used "rtx_def_scratch"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 0 )
                               nil 4095 nil nil )
                              (!srcfileloc  "gengtype.cc" 1379)
@@ -4977,22 +4977,22 @@
                             )
                             (!pair  ""
                              (!type struct 238 nil  gc_used "rtx_def_reg"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  "reg.attrs"
                                 (!type pointer 239 nil  gc_used
                                  (!type struct 240 
                                   (!type already_seen 239)
                                   gc_pointed_to "reg_attrs"
-                                  (!srcfileloc  "rtl.h" 229)
+                                  (!srcfileloc  "rtl.h" 231)
                                   (!fields 2 
                                    (!pair  "decl"
                                     (!type already_seen 23)
-                                    (!srcfileloc  "rtl.h" 195)
+                                    (!srcfileloc  "rtl.h" 197)
                                     nil )
                                    (!pair  "offset"
                                     (!type already_seen 2)
-                                    (!srcfileloc  "rtl.h" 196)
+                                    (!srcfileloc  "rtl.h" 198)
                                     nil )
                                   )
                                   (!options 
@@ -5019,7 +5019,7 @@
                             )
                             (!pair  ""
                              (!type struct 241 nil  gc_used "rtx_def_pc"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 0 )
                               nil 4095 nil nil )
                              (!srcfileloc  "gengtype.cc" 1379)
@@ -5030,7 +5030,7 @@
                             )
                             (!pair  ""
                              (!type struct 242 nil  gc_used "rtx_def_const"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -5049,7 +5049,7 @@
                             )
                             (!pair  ""
                              (!type struct 243 nil  gc_used "rtx_def_const_string"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_str"
                                 (!type already_seen 11)
@@ -5068,7 +5068,7 @@
                             )
                             (!pair  ""
                              (!type struct 244 nil  gc_used "rtx_def_const_vector"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtvec"
                                 (!type already_seen 231)
@@ -5087,7 +5087,7 @@
                             )
                             (!pair  ""
                              (!type struct 245 nil  gc_used "rtx_def_const_double"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_int"
                                 (!type already_seen 2)
@@ -5113,7 +5113,7 @@
                             )
                             (!pair  ""
                              (!type struct 246 nil  gc_used "rtx_def_const_fixed"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 3 
                                (!pair  ".fld[2].rt_int"
                                 (!type already_seen 2)
@@ -5146,7 +5146,7 @@
                             )
                             (!pair  ""
                              (!type struct 247 nil  gc_used "rtx_def_const_poly_int"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 0 )
                               nil 4095 nil nil )
                              (!srcfileloc  "gengtype.cc" 1379)
@@ -5157,7 +5157,7 @@
                             )
                             (!pair  ""
                              (!type struct 248 nil  gc_used "rtx_def_const_wide_int"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 0 )
                               nil 4095 nil nil )
                              (!srcfileloc  "gengtype.cc" 1379)
@@ -5168,7 +5168,7 @@
                             )
                             (!pair  ""
                              (!type struct 249 nil  gc_used "rtx_def_const_int"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_int"
                                 (!type already_seen 2)
@@ -5187,7 +5187,7 @@
                             )
                             (!pair  ""
                              (!type struct 250 nil  gc_used "rtx_def_trap_if"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -5213,7 +5213,7 @@
                             )
                             (!pair  ""
                              (!type struct 251 nil  gc_used "rtx_def_eh_return"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 0 )
                               nil 4095 nil nil )
                              (!srcfileloc  "gengtype.cc" 1379)
@@ -5224,7 +5224,7 @@
                             )
                             (!pair  ""
                              (!type struct 252 nil  gc_used "rtx_def_simple_return"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 0 )
                               nil 4095 nil nil )
                              (!srcfileloc  "gengtype.cc" 1379)
@@ -5235,7 +5235,7 @@
                             )
                             (!pair  ""
                              (!type struct 253 nil  gc_used "rtx_def_return"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 0 )
                               nil 4095 nil nil )
                              (!srcfileloc  "gengtype.cc" 1379)
@@ -5246,7 +5246,7 @@
                             )
                             (!pair  ""
                              (!type struct 254 nil  gc_used "rtx_def_call"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -5272,7 +5272,7 @@
                             )
                             (!pair  ""
                              (!type struct 255 nil  gc_used "rtx_def_clobber"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -5291,7 +5291,7 @@
                             )
                             (!pair  ""
                              (!type struct 256 nil  gc_used "rtx_def_use"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtx"
                                 (!type already_seen 100)
@@ -5310,7 +5310,7 @@
                             )
                             (!pair  ""
                              (!type struct 257 nil  gc_used "rtx_def_set"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -5336,7 +5336,7 @@
                             )
                             (!pair  ""
                              (!type struct 258 nil  gc_used "rtx_def_prefetch"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 3 
                                (!pair  ".fld[2].rt_rtx"
                                 (!type already_seen 100)
@@ -5369,7 +5369,7 @@
                             )
                             (!pair  ""
                              (!type struct 259 nil  gc_used "rtx_def_addr_diff_vec"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 5 
                                (!pair  ".fld[4].rt_int"
                                 (!type already_seen 2)
@@ -5416,7 +5416,7 @@
                             )
                             (!pair  ""
                              (!type struct 260 nil  gc_used "rtx_def_addr_vec"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtvec"
                                 (!type already_seen 231)
@@ -5435,7 +5435,7 @@
                             )
                             (!pair  ""
                              (!type struct 261 nil  gc_used "rtx_def_unspec_volatile"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_int"
                                 (!type already_seen 2)
@@ -5461,7 +5461,7 @@
                             )
                             (!pair  ""
                              (!type struct 262 nil  gc_used "rtx_def_unspec"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_int"
                                 (!type already_seen 2)
@@ -5487,7 +5487,7 @@
                             )
                             (!pair  ""
                              (!type struct 263 nil  gc_used "rtx_def_asm_operands"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 7 
                                (!pair  ".fld[6].rt_int"
                                 (!type already_seen 2)
@@ -5548,7 +5548,7 @@
                             )
                             (!pair  ""
                              (!type struct 264 nil  gc_used "rtx_def_asm_input"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_int"
                                 (!type already_seen 2)
@@ -5574,7 +5574,7 @@
                             )
                             (!pair  ""
                              (!type struct 265 nil  gc_used "rtx_def_parallel"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtvec"
                                 (!type already_seen 231)
@@ -5593,7 +5593,7 @@
                             )
                             (!pair  ""
                              (!type struct 266 nil  gc_used "rtx_def_cond_exec"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -5619,7 +5619,7 @@
                             )
                             (!pair  ""
                              (!type struct 267 nil  gc_used "rtx_def_note"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 6 
                                (!pair  ".fld[5].rt_int"
                                 (!type already_seen 2)
@@ -5637,7 +5637,7 @@
                                )
                                (!pair  ".fld[3]."
                                 (!type union 268 nil  gc_used "rtx_def_note_subunion"
-                                 (!srcfileloc  "rtl.h" 452)
+                                 (!srcfileloc  "rtl.h" 454)
                                  (!fields 19 
                                   (!pair  "rt_str"
                                    (!type already_seen 11)
@@ -6302,7 +6302,7 @@
                                            (!type struct 298 
                                             (!type already_seen 297)
                                             gc_pointed_to "rtx_insn"
-                                            (!srcfileloc  "rtl.h" 574)
+                                            (!srcfileloc  "rtl.h" 576)
                                             (!fields 0 )
                                             nil 4095 nil 
                                             (!type already_seen 102)
@@ -6408,7 +6408,7 @@
                             )
                             (!pair  ""
                              (!type struct 302 nil  gc_used "rtx_def_code_label"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 7 
                                (!pair  ".fld[6].rt_str"
                                 (!type already_seen 11)
@@ -6469,7 +6469,7 @@
                             )
                             (!pair  ""
                              (!type struct 303 nil  gc_used "rtx_def_barrier"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 7 
                                (!pair  ".fld[6].rt_int"
                                 (!type already_seen 2)
@@ -6530,7 +6530,7 @@
                             )
                             (!pair  ""
                              (!type struct 304 nil  gc_used "rtx_def_jump_table_data"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 8 
                                (!pair  ".fld[7].rt_int"
                                 (!type already_seen 2)
@@ -6598,7 +6598,7 @@
                             )
                             (!pair  ""
                              (!type struct 305 nil  gc_used "rtx_def_call_insn"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 8 
                                (!pair  ".fld[7].rt_rtx"
                                 (!type already_seen 100)
@@ -6666,7 +6666,7 @@
                             )
                             (!pair  ""
                              (!type struct 306 nil  gc_used "rtx_def_jump_insn"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 8 
                                (!pair  ".fld[7].rt_rtx"
                                 (!type already_seen 100)
@@ -6734,7 +6734,7 @@
                             )
                             (!pair  ""
                              (!type struct 307 nil  gc_used "rtx_def_insn"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 7 
                                (!pair  ".fld[6].rt_rtx"
                                 (!type already_seen 100)
@@ -6795,7 +6795,7 @@
                             )
                             (!pair  ""
                              (!type struct 308 nil  gc_used "rtx_def_debug_insn"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 7 
                                (!pair  ".fld[6].rt_rtx"
                                 (!type already_seen 100)
@@ -6856,7 +6856,7 @@
                             )
                             (!pair  ""
                              (!type struct 309 nil  gc_used "rtx_def_address"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_int"
                                 (!type already_seen 2)
@@ -6875,7 +6875,7 @@
                             )
                             (!pair  ""
                              (!type struct 310 nil  gc_used "rtx_def_sequence"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_rtvec"
                                 (!type already_seen 231)
@@ -6894,7 +6894,7 @@
                             )
                             (!pair  ""
                              (!type struct 311 nil  gc_used "rtx_def_int_list"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -6920,7 +6920,7 @@
                             )
                             (!pair  ""
                              (!type struct 312 nil  gc_used "rtx_def_insn_list"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -6946,7 +6946,7 @@
                             )
                             (!pair  ""
                              (!type struct 313 nil  gc_used "rtx_def_expr_list"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 2 
                                (!pair  ".fld[1].rt_rtx"
                                 (!type already_seen 100)
@@ -6972,7 +6972,7 @@
                             )
                             (!pair  ""
                              (!type struct 314 nil  gc_used "rtx_def_debug_expr"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_tree"
                                 (!type already_seen 23)
@@ -6991,7 +6991,7 @@
                             )
                             (!pair  ""
                              (!type struct 315 nil  gc_used "rtx_def_value"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_int"
                                 (!type already_seen 2)
@@ -7010,7 +7010,7 @@
                             )
                             (!pair  ""
                              (!type struct 316 nil  gc_used "rtx_def_UnKnown"
-                              (!srcfileloc  "rtl.h" 452)
+                              (!srcfileloc  "rtl.h" 454)
                               (!fields 1 
                                (!pair  ".fld[0].rt_int"
                                 (!type already_seen 2)
@@ -7032,7 +7032,7 @@
                             (!option dot string  "")
                            )
                            4095 nil )
-                          (!srcfileloc  "rtl.h" 452)
+                          (!srcfileloc  "rtl.h" 454)
                           (!options 
                            (!option desc string  "GET_CODE (&%0)")
                            (!option special string  "rtx_def")
@@ -7047,30 +7047,30 @@
                         )
                         4095 nil nil )
                       )
-                      (!srcfileloc  "tree-core.h" 1847)
+                      (!srcfileloc  "tree-core.h" 1848)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2071)
+                   (!srcfileloc  "tree-core.h" 2072)
                    (!options 
                     (!option tag string  "TS_DECL_WRTL")
                    )
                   )
                   (!pair  "decl_non_common"
                    (!type struct 317 nil  gc_used "tree_decl_non_common"
-                    (!srcfileloc  "tree-core.h" 1924)
+                    (!srcfileloc  "tree-core.h" 1925)
                     (!fields 2 
                      (!pair  "common"
                       (!type struct 318 nil  gc_used "tree_decl_with_vis"
-                       (!srcfileloc  "tree-core.h" 1914)
+                       (!srcfileloc  "tree-core.h" 1915)
                        (!fields 20 
                         (!pair  "common"
                          (!type already_seen 99)
-                         (!srcfileloc  "tree-core.h" 1880)
+                         (!srcfileloc  "tree-core.h" 1881)
                          nil )
                         (!pair  "assembler_name"
                          (!type already_seen 23)
-                         (!srcfileloc  "tree-core.h" 1881)
+                         (!srcfileloc  "tree-core.h" 1882)
                          nil )
                         (!pair  "symtab_node"
                          (!type pointer 319 nil  gc_used
@@ -7475,242 +7475,242 @@
                            )
                            4095 nil nil )
                          )
-                         (!srcfileloc  "tree-core.h" 1882)
+                         (!srcfileloc  "tree-core.h" 1883)
                          nil )
                         (!pair  "defer_output"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1885)
+                         (!srcfileloc  "tree-core.h" 1886)
                          nil )
                         (!pair  "hard_register"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1886)
+                         (!srcfileloc  "tree-core.h" 1887)
                          nil )
                         (!pair  "common_flag"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1887)
+                         (!srcfileloc  "tree-core.h" 1888)
                          nil )
                         (!pair  "in_text_section"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1888)
+                         (!srcfileloc  "tree-core.h" 1889)
                          nil )
                         (!pair  "in_constant_pool"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1889)
+                         (!srcfileloc  "tree-core.h" 1890)
                          nil )
                         (!pair  "dllimport_flag"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1890)
+                         (!srcfileloc  "tree-core.h" 1891)
                          nil )
                         (!pair  "weak_flag"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1892)
+                         (!srcfileloc  "tree-core.h" 1893)
                          nil )
                         (!pair  "seen_in_bind_expr"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1894)
+                         (!srcfileloc  "tree-core.h" 1895)
                          nil )
                         (!pair  "comdat_flag"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1895)
+                         (!srcfileloc  "tree-core.h" 1896)
                          nil )
                         (!pair  "visibility"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1897)
+                         (!srcfileloc  "tree-core.h" 1898)
                          nil )
                         (!pair  "visibility_specified"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1898)
+                         (!srcfileloc  "tree-core.h" 1899)
                          nil )
                         (!pair  "init_priority_p"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1901)
+                         (!srcfileloc  "tree-core.h" 1902)
                          nil )
                         (!pair  "shadowed_for_var_p"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1903)
+                         (!srcfileloc  "tree-core.h" 1904)
                          nil )
                         (!pair  "cxx_constructor"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1905)
+                         (!srcfileloc  "tree-core.h" 1906)
                          nil )
                         (!pair  "cxx_destructor"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1907)
+                         (!srcfileloc  "tree-core.h" 1908)
                          nil )
                         (!pair  "final"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1909)
+                         (!srcfileloc  "tree-core.h" 1910)
                          nil )
                         (!pair  "regdecl_flag"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1911)
+                         (!srcfileloc  "tree-core.h" 1912)
                          nil )
                        )
                        nil 4095 nil nil )
-                      (!srcfileloc  "tree-core.h" 1921)
+                      (!srcfileloc  "tree-core.h" 1922)
                       nil )
                      (!pair  "result"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1923)
+                      (!srcfileloc  "tree-core.h" 1924)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2073)
+                   (!srcfileloc  "tree-core.h" 2074)
                    (!options 
                     (!option tag string  "TS_DECL_NON_COMMON")
                    )
                   )
                   (!pair  "parm_decl"
                    (!type struct 344 nil  gc_used "tree_parm_decl"
-                    (!srcfileloc  "tree-core.h" 1877)
+                    (!srcfileloc  "tree-core.h" 1878)
                     (!fields 2 
                      (!pair  "common"
                       (!type already_seen 99)
-                      (!srcfileloc  "tree-core.h" 1875)
+                      (!srcfileloc  "tree-core.h" 1876)
                       nil )
                      (!pair  "incoming_rtl"
                       (!type already_seen 100)
-                      (!srcfileloc  "tree-core.h" 1876)
+                      (!srcfileloc  "tree-core.h" 1877)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2074)
+                   (!srcfileloc  "tree-core.h" 2075)
                    (!options 
                     (!option tag string  "TS_PARM_DECL")
                    )
                   )
                   (!pair  "decl_with_vis"
                    (!type already_seen 318)
-                   (!srcfileloc  "tree-core.h" 2075)
+                   (!srcfileloc  "tree-core.h" 2076)
                    (!options 
                     (!option tag string  "TS_DECL_WITH_VIS")
                    )
                   )
                   (!pair  "var_decl"
                    (!type struct 345 nil  gc_used "tree_var_decl"
-                    (!srcfileloc  "tree-core.h" 1918)
+                    (!srcfileloc  "tree-core.h" 1919)
                     (!fields 1 
                      (!pair  "common"
                       (!type already_seen 318)
-                      (!srcfileloc  "tree-core.h" 1917)
+                      (!srcfileloc  "tree-core.h" 1918)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2076)
+                   (!srcfileloc  "tree-core.h" 2077)
                    (!options 
                     (!option tag string  "TS_VAR_DECL")
                    )
                   )
                   (!pair  "field_decl"
                    (!type struct 346 nil  gc_used "tree_field_decl"
-                    (!srcfileloc  "tree-core.h" 1858)
+                    (!srcfileloc  "tree-core.h" 1859)
                     (!fields 6 
                      (!pair  "common"
                       (!type already_seen 52)
-                      (!srcfileloc  "tree-core.h" 1851)
+                      (!srcfileloc  "tree-core.h" 1852)
                       nil )
                      (!pair  "offset"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1853)
+                      (!srcfileloc  "tree-core.h" 1854)
                       nil )
                      (!pair  "bit_field_type"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1854)
+                      (!srcfileloc  "tree-core.h" 1855)
                       nil )
                      (!pair  "qualifier"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1855)
+                      (!srcfileloc  "tree-core.h" 1856)
                       nil )
                      (!pair  "bit_offset"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1856)
+                      (!srcfileloc  "tree-core.h" 1857)
                       nil )
                      (!pair  "fcontext"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1857)
+                      (!srcfileloc  "tree-core.h" 1858)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2077)
+                   (!srcfileloc  "tree-core.h" 2078)
                    (!options 
                     (!option tag string  "TS_FIELD_DECL")
                    )
                   )
                   (!pair  "label_decl"
                    (!type struct 347 nil  gc_used "tree_label_decl"
-                    (!srcfileloc  "tree-core.h" 1864)
+                    (!srcfileloc  "tree-core.h" 1865)
                     (!fields 3 
                      (!pair  "common"
                       (!type already_seen 99)
-                      (!srcfileloc  "tree-core.h" 1861)
+                      (!srcfileloc  "tree-core.h" 1862)
                       nil )
                      (!pair  "label_decl_uid"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1862)
+                      (!srcfileloc  "tree-core.h" 1863)
                       nil )
                      (!pair  "eh_landing_pad_nr"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1863)
+                      (!srcfileloc  "tree-core.h" 1864)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2078)
+                   (!srcfileloc  "tree-core.h" 2079)
                    (!options 
                     (!option tag string  "TS_LABEL_DECL")
                    )
                   )
                   (!pair  "result_decl"
                    (!type struct 348 nil  gc_used "tree_result_decl"
-                    (!srcfileloc  "tree-core.h" 1868)
+                    (!srcfileloc  "tree-core.h" 1869)
                     (!fields 1 
                      (!pair  "common"
                       (!type already_seen 99)
-                      (!srcfileloc  "tree-core.h" 1867)
+                      (!srcfileloc  "tree-core.h" 1868)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2079)
+                   (!srcfileloc  "tree-core.h" 2080)
                    (!options 
                     (!option tag string  "TS_RESULT_DECL")
                    )
                   )
                   (!pair  "const_decl"
                    (!type struct 349 nil  gc_used "tree_const_decl"
-                    (!srcfileloc  "tree-core.h" 1872)
+                    (!srcfileloc  "tree-core.h" 1873)
                     (!fields 1 
                      (!pair  "common"
                       (!type already_seen 52)
-                      (!srcfileloc  "tree-core.h" 1871)
+                      (!srcfileloc  "tree-core.h" 1872)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2080)
+                   (!srcfileloc  "tree-core.h" 2081)
                    (!options 
                     (!option tag string  "TS_CONST_DECL")
                    )
                   )
                   (!pair  "type_decl"
                    (!type struct 350 nil  gc_used "tree_type_decl"
-                    (!srcfileloc  "tree-core.h" 2003)
+                    (!srcfileloc  "tree-core.h" 2004)
                     (!fields 1 
                      (!pair  "common"
                       (!type already_seen 317)
-                      (!srcfileloc  "tree-core.h" 2001)
+                      (!srcfileloc  "tree-core.h" 2002)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2081)
+                   (!srcfileloc  "tree-core.h" 2082)
                    (!options 
                     (!option tag string  "TS_TYPE_DECL")
                    )
                   )
                   (!pair  "function_decl"
                    (!type struct 351 nil  gc_used "tree_function_decl"
-                    (!srcfileloc  "tree-core.h" 1990)
+                    (!srcfileloc  "tree-core.h" 1991)
                     (!fields 28 
                      (!pair  "common"
                       (!type already_seen 317)
-                      (!srcfileloc  "tree-core.h" 1944)
+                      (!srcfileloc  "tree-core.h" 1945)
                       nil )
                      (!pair  "f"
                       (!type pointer 352 nil  gc_used
@@ -10392,141 +10392,141 @@
                         )
                         nil 4095 nil nil )
                       )
-                      (!srcfileloc  "tree-core.h" 1946)
+                      (!srcfileloc  "tree-core.h" 1947)
                       nil )
                      (!pair  "arguments"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1949)
+                      (!srcfileloc  "tree-core.h" 1950)
                       nil )
                      (!pair  "personality"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1951)
+                      (!srcfileloc  "tree-core.h" 1952)
                       nil )
                      (!pair  "function_specific_target"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1954)
+                      (!srcfileloc  "tree-core.h" 1955)
                       nil )
                      (!pair  "function_specific_optimization"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1955)
+                      (!srcfileloc  "tree-core.h" 1956)
                       nil )
                      (!pair  "saved_tree"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1958)
+                      (!srcfileloc  "tree-core.h" 1959)
                       nil )
                      (!pair  "vindex"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1960)
+                      (!srcfileloc  "tree-core.h" 1961)
                       nil )
                      (!pair  "function_code"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1963)
+                      (!srcfileloc  "tree-core.h" 1964)
                       nil )
                      (!pair  "built_in_class"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1965)
+                      (!srcfileloc  "tree-core.h" 1966)
                       nil )
                      (!pair  "static_ctor_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1966)
+                      (!srcfileloc  "tree-core.h" 1967)
                       nil )
                      (!pair  "static_dtor_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1967)
+                      (!srcfileloc  "tree-core.h" 1968)
                       nil )
                      (!pair  "uninlinable"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1968)
+                      (!srcfileloc  "tree-core.h" 1969)
                       nil )
                      (!pair  "possibly_inlined"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1969)
+                      (!srcfileloc  "tree-core.h" 1970)
                       nil )
                      (!pair  "novops_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1970)
+                      (!srcfileloc  "tree-core.h" 1971)
                       nil )
                      (!pair  "returns_twice_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1971)
+                      (!srcfileloc  "tree-core.h" 1972)
                       nil )
                      (!pair  "malloc_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1973)
+                      (!srcfileloc  "tree-core.h" 1974)
                       nil )
                      (!pair  "declared_inline_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1974)
+                      (!srcfileloc  "tree-core.h" 1975)
                       nil )
                      (!pair  "no_inline_warning_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1975)
+                      (!srcfileloc  "tree-core.h" 1976)
                       nil )
                      (!pair  "no_instrument_function_entry_exit"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1976)
+                      (!srcfileloc  "tree-core.h" 1977)
                       nil )
                      (!pair  "no_limit_stack"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1977)
+                      (!srcfileloc  "tree-core.h" 1978)
                       nil )
                      (!pair  "disregard_inline_limits"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1978)
+                      (!srcfileloc  "tree-core.h" 1979)
                       nil )
                      (!pair  "pure_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1979)
+                      (!srcfileloc  "tree-core.h" 1980)
                       nil )
                      (!pair  "looping_const_or_pure_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1980)
+                      (!srcfileloc  "tree-core.h" 1981)
                       nil )
                      (!pair  "decl_type"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1983)
+                      (!srcfileloc  "tree-core.h" 1984)
                       nil )
                      (!pair  "has_debug_args_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1984)
+                      (!srcfileloc  "tree-core.h" 1985)
                       nil )
                      (!pair  "versioned_function"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1985)
+                      (!srcfileloc  "tree-core.h" 1986)
                       nil )
                      (!pair  "replaceable_operator"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1986)
+                      (!srcfileloc  "tree-core.h" 1987)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2082)
+                   (!srcfileloc  "tree-core.h" 2083)
                    (!options 
                     (!option tag string  "TS_FUNCTION_DECL")
                    )
                   )
                   (!pair  "translation_unit_decl"
                    (!type struct 516 nil  gc_used "tree_translation_unit_decl"
-                    (!srcfileloc  "tree-core.h" 1998)
+                    (!srcfileloc  "tree-core.h" 1999)
                     (!fields 2 
                      (!pair  "common"
                       (!type already_seen 52)
-                      (!srcfileloc  "tree-core.h" 1993)
+                      (!srcfileloc  "tree-core.h" 1994)
                       nil )
                      (!pair  "language"
                       (!type already_seen 11)
-                      (!srcfileloc  "tree-core.h" 1995)
+                      (!srcfileloc  "tree-core.h" 1996)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2084)
+                   (!srcfileloc  "tree-core.h" 2085)
                    (!options 
                     (!option tag string  "TS_TRANSLATION_UNIT_DECL")
                    )
                   )
                   (!pair  "type_common"
                    (!type struct 517 nil  gc_used "tree_type_common"
-                    (!srcfileloc  "tree-core.h" 1729)
+                    (!srcfileloc  "tree-core.h" 1730)
                     (!fields 37 
                      (!pair  "common"
                       (!type already_seen 32)
@@ -10548,169 +10548,169 @@
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1681)
                       nil )
-                     (!pair  "precision"
+                     (!pair  "mode"
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1683)
                       nil )
-                     (!pair  "mode"
-                      (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1684)
-                      nil )
-                     (!pair  "lang_flag_0"
+                     (!pair  "precision"
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1685)
                       nil )
-                     (!pair  "lang_flag_1"
+                     (!pair  "lang_flag_0"
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1686)
                       nil )
-                     (!pair  "lang_flag_2"
+                     (!pair  "lang_flag_1"
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1687)
                       nil )
-                     (!pair  "lang_flag_3"
+                     (!pair  "lang_flag_2"
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1688)
                       nil )
-                     (!pair  "lang_flag_4"
+                     (!pair  "lang_flag_3"
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1689)
                       nil )
-                     (!pair  "lang_flag_5"
+                     (!pair  "lang_flag_4"
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1690)
                       nil )
-                     (!pair  "lang_flag_6"
+                     (!pair  "lang_flag_5"
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1691)
                       nil )
-                     (!pair  "lang_flag_7"
+                     (!pair  "lang_flag_6"
                       (!type already_seen 2)
                       (!srcfileloc  "tree-core.h" 1692)
                       nil )
+                     (!pair  "lang_flag_7"
+                      (!type already_seen 2)
+                      (!srcfileloc  "tree-core.h" 1693)
+                      nil )
                      (!pair  "align"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1699)
+                      (!srcfileloc  "tree-core.h" 1700)
                       nil )
                      (!pair  "string_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1702)
+                      (!srcfileloc  "tree-core.h" 1703)
                       nil )
                      (!pair  "no_force_blk_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1703)
+                      (!srcfileloc  "tree-core.h" 1704)
                       nil )
                      (!pair  "warn_if_not_align"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1705)
+                      (!srcfileloc  "tree-core.h" 1706)
                       nil )
                      (!pair  "needs_constructing_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1706)
+                      (!srcfileloc  "tree-core.h" 1707)
                       nil )
                      (!pair  "transparent_aggr_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1707)
+                      (!srcfileloc  "tree-core.h" 1708)
                       nil )
                      (!pair  "contains_placeholder_bits"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1709)
+                      (!srcfileloc  "tree-core.h" 1710)
                       nil )
                      (!pair  "restrict_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1710)
+                      (!srcfileloc  "tree-core.h" 1711)
                       nil )
                      (!pair  "typeless_storage"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1711)
+                      (!srcfileloc  "tree-core.h" 1712)
                       nil )
                      (!pair  "empty_flag"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1712)
+                      (!srcfileloc  "tree-core.h" 1713)
                       nil )
                      (!pair  "indivisible_p"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1713)
+                      (!srcfileloc  "tree-core.h" 1714)
                       nil )
                      (!pair  "no_named_args_stdarg_p"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1714)
+                      (!srcfileloc  "tree-core.h" 1715)
                       nil )
                      (!pair  "spare"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1715)
+                      (!srcfileloc  "tree-core.h" 1716)
                       nil )
                      (!pair  "alias_set"
                       (!type already_seen 2)
-                      (!srcfileloc  "tree-core.h" 1717)
+                      (!srcfileloc  "tree-core.h" 1718)
                       nil )
                      (!pair  "pointer_to"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1718)
+                      (!srcfileloc  "tree-core.h" 1719)
                       nil )
                      (!pair  "reference_to"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1719)
+                      (!srcfileloc  "tree-core.h" 1720)
                       nil )
                      (!pair  "symtab"
                       (!type union 518 nil  gc_used "tree_type_symtab"
-                       (!srcfileloc  "tree-core.h" 1723)
+                       (!srcfileloc  "tree-core.h" 1724)
                        (!fields 2 
                         (!pair  "address"
                          (!type already_seen 2)
-                         (!srcfileloc  "tree-core.h" 1721)
+                         (!srcfileloc  "tree-core.h" 1722)
                          (!options 
                           (!option tag string  "TYPE_SYMTAB_IS_ADDRESS")
                          )
                         )
                         (!pair  "die"
                          (!type already_seen 486)
-                         (!srcfileloc  "tree-core.h" 1722)
+                         (!srcfileloc  "tree-core.h" 1723)
                          (!options 
                           (!option tag string  "TYPE_SYMTAB_IS_DIE")
                          )
                         )
                        )
                        nil 4095 nil )
-                      (!srcfileloc  "tree-core.h" 1723)
+                      (!srcfileloc  "tree-core.h" 1724)
                       (!options 
                        (!option desc string  "debug_hooks->tree_type_symtab_field")
                       )
                      )
                      (!pair  "canonical"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1724)
+                      (!srcfileloc  "tree-core.h" 1725)
                       nil )
                      (!pair  "next_variant"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1725)
+                      (!srcfileloc  "tree-core.h" 1726)
                       nil )
                      (!pair  "main_variant"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1726)
+                      (!srcfileloc  "tree-core.h" 1727)
                       nil )
                      (!pair  "context"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1727)
+                      (!srcfileloc  "tree-core.h" 1728)
                       nil )
                      (!pair  "name"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1728)
+                      (!srcfileloc  "tree-core.h" 1729)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2085)
+                   (!srcfileloc  "tree-core.h" 2086)
                    (!options 
                     (!option tag string  "TS_TYPE_COMMON")
                    )
                   )
                   (!pair  "type_with_lang_specific"
                    (!type struct 519 nil  gc_used "tree_type_with_lang_specific"
-                    (!srcfileloc  "tree-core.h" 1735)
+                    (!srcfileloc  "tree-core.h" 1736)
                     (!fields 2 
                      (!pair  "common"
                       (!type already_seen 517)
-                      (!srcfileloc  "tree-core.h" 1732)
+                      (!srcfileloc  "tree-core.h" 1733)
                       nil )
                      (!pair  "lang_specific"
                       (!type pointer 520 nil  gc_used
@@ -11247,42 +11247,42 @@
                         )
                        )
                       )
-                      (!srcfileloc  "tree-core.h" 1734)
+                      (!srcfileloc  "tree-core.h" 1735)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2087)
+                   (!srcfileloc  "tree-core.h" 2088)
                    (!options 
                     (!option tag string  "TS_TYPE_WITH_LANG_SPECIFIC")
                    )
                   )
                   (!pair  "type_non_common"
                    (!type struct 545 nil  gc_used "tree_type_non_common"
-                    (!srcfileloc  "tree-core.h" 1743)
+                    (!srcfileloc  "tree-core.h" 1744)
                     (!fields 5 
                      (!pair  "with_lang_specific"
                       (!type already_seen 519)
-                      (!srcfileloc  "tree-core.h" 1738)
+                      (!srcfileloc  "tree-core.h" 1739)
                       nil )
                      (!pair  "values"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1739)
+                      (!srcfileloc  "tree-core.h" 1740)
                       nil )
                      (!pair  "minval"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1740)
+                      (!srcfileloc  "tree-core.h" 1741)
                       nil )
                      (!pair  "maxval"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1741)
+                      (!srcfileloc  "tree-core.h" 1742)
                       nil )
                      (!pair  "lang_1"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1742)
+                      (!srcfileloc  "tree-core.h" 1743)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2089)
+                   (!srcfileloc  "tree-core.h" 2090)
                    (!options 
                     (!option tag string  "TS_TYPE_NON_COMMON")
                    )
@@ -11305,7 +11305,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2090)
+                   (!srcfileloc  "tree-core.h" 2091)
                    (!options 
                     (!option tag string  "TS_LIST")
                    )
@@ -11329,7 +11329,7 @@
                      )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2091)
+                   (!srcfileloc  "tree-core.h" 2092)
                    (!options 
                     (!option tag string  "TS_VEC")
                    )
@@ -11357,7 +11357,7 @@
                      )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2092)
+                   (!srcfileloc  "tree-core.h" 2093)
                    (!options 
                     (!option tag string  "TS_EXP")
                    )
@@ -11484,7 +11484,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2093)
+                   (!srcfileloc  "tree-core.h" 2094)
                    (!options 
                     (!option tag string  "TS_SSA_NAME")
                    )
@@ -11547,88 +11547,88 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2094)
+                   (!srcfileloc  "tree-core.h" 2095)
                    (!options 
                     (!option tag string  "TS_BLOCK")
                    )
                   )
                   (!pair  "binfo"
                    (!type struct 561 nil  gc_used "tree_binfo"
-                    (!srcfileloc  "tree-core.h" 1759)
+                    (!srcfileloc  "tree-core.h" 1760)
                     (!fields 10 
                      (!pair  "common"
                       (!type already_seen 32)
-                      (!srcfileloc  "tree-core.h" 1746)
+                      (!srcfileloc  "tree-core.h" 1747)
                       nil )
                      (!pair  "offset"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1748)
+                      (!srcfileloc  "tree-core.h" 1749)
                       nil )
                      (!pair  "vtable"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1749)
+                      (!srcfileloc  "tree-core.h" 1750)
                       nil )
                      (!pair  "virtuals"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1750)
+                      (!srcfileloc  "tree-core.h" 1751)
                       nil )
                      (!pair  "vptr_field"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1751)
+                      (!srcfileloc  "tree-core.h" 1752)
                       nil )
                      (!pair  "base_accesses"
                       (!type already_seen 85)
-                      (!srcfileloc  "tree-core.h" 1752)
+                      (!srcfileloc  "tree-core.h" 1753)
                       nil )
                      (!pair  "inheritance"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1753)
+                      (!srcfileloc  "tree-core.h" 1754)
                       nil )
                      (!pair  "vtt_subvtt"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1755)
+                      (!srcfileloc  "tree-core.h" 1756)
                       nil )
                      (!pair  "vtt_vptr"
                       (!type already_seen 23)
-                      (!srcfileloc  "tree-core.h" 1756)
+                      (!srcfileloc  "tree-core.h" 1757)
                       nil )
                      (!pair  "base_binfos"
                       (!type already_seen 86)
-                      (!srcfileloc  "tree-core.h" 1758)
+                      (!srcfileloc  "tree-core.h" 1759)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2095)
+                   (!srcfileloc  "tree-core.h" 2096)
                    (!options 
                     (!option tag string  "TS_BINFO")
                    )
                   )
                   (!pair  "stmt_list"
                    (!type struct 562 nil  gc_used "tree_statement_list"
-                    (!srcfileloc  "tree-core.h" 2017)
+                    (!srcfileloc  "tree-core.h" 2018)
                     (!fields 3 
                      (!pair  "typed"
                       (!type already_seen 31)
-                      (!srcfileloc  "tree-core.h" 2014)
+                      (!srcfileloc  "tree-core.h" 2015)
                       nil )
                      (!pair  "head"
                       (!type pointer 563 nil  gc_used
                        (!type struct 564 
                         (!type already_seen 563)
                         gc_pointed_to "tree_statement_list_node"
-                        (!srcfileloc  "tree-core.h" 2010)
+                        (!srcfileloc  "tree-core.h" 2011)
                         (!fields 3 
                          (!pair  "prev"
                           (!type already_seen 563)
-                          (!srcfileloc  "tree-core.h" 2007)
+                          (!srcfileloc  "tree-core.h" 2008)
                           nil )
                          (!pair  "next"
                           (!type already_seen 563)
-                          (!srcfileloc  "tree-core.h" 2008)
+                          (!srcfileloc  "tree-core.h" 2009)
                           nil )
                          (!pair  "stmt"
                           (!type already_seen 23)
-                          (!srcfileloc  "tree-core.h" 2009)
+                          (!srcfileloc  "tree-core.h" 2010)
                           nil )
                         )
                         (!options 
@@ -11637,15 +11637,15 @@
                         )
                         4095 nil nil )
                       )
-                      (!srcfileloc  "tree-core.h" 2015)
+                      (!srcfileloc  "tree-core.h" 2016)
                       nil )
                      (!pair  "tail"
                       (!type already_seen 563)
-                      (!srcfileloc  "tree-core.h" 2016)
+                      (!srcfileloc  "tree-core.h" 2017)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2096)
+                   (!srcfileloc  "tree-core.h" 2097)
                    (!options 
                     (!option tag string  "TS_STATEMENT_LIST")
                    )
@@ -11692,7 +11692,7 @@
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2097)
+                   (!srcfileloc  "tree-core.h" 2098)
                    (!options 
                     (!option tag string  "TS_CONSTRUCTOR")
                    )
@@ -11791,18 +11791,18 @@
                      )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2098)
+                   (!srcfileloc  "tree-core.h" 2099)
                    (!options 
                     (!option tag string  "TS_OMP_CLAUSE")
                    )
                   )
                   (!pair  "optimization"
                    (!type struct 572 nil  gc_used "tree_optimization_option"
-                    (!srcfileloc  "tree-core.h" 2035)
+                    (!srcfileloc  "tree-core.h" 2036)
                     (!fields 4 
                      (!pair  "base"
                       (!type already_seen 25)
-                      (!srcfileloc  "tree-core.h" 2023)
+                      (!srcfileloc  "tree-core.h" 2024)
                       nil )
                      (!pair  "opts"
                       (!type pointer 573 nil  gc_used
@@ -13816,11 +13816,11 @@
                         )
                         nil 4095 nil nil )
                       )
-                      (!srcfileloc  "tree-core.h" 2026)
+                      (!srcfileloc  "tree-core.h" 2027)
                       nil )
                      (!pair  "optabs"
                       (!type already_seen 3)
-                      (!srcfileloc  "tree-core.h" 2030)
+                      (!srcfileloc  "tree-core.h" 2031)
                       (!options 
                        (!option atomic string  "")
                       )
@@ -13833,25 +13833,25 @@
                         (!fields 0 )
                         nil 0 nil nil )
                       )
-                      (!srcfileloc  "tree-core.h" 2034)
+                      (!srcfileloc  "tree-core.h" 2035)
                       (!options 
                        (!option skip string  "")
                       )
                      )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2099)
+                   (!srcfileloc  "tree-core.h" 2100)
                    (!options 
                     (!option tag string  "TS_OPTIMIZATION")
                    )
                   )
                   (!pair  "target_option"
                    (!type struct 578 nil  gc_used "tree_target_option"
-                    (!srcfileloc  "tree-core.h" 2051)
+                    (!srcfileloc  "tree-core.h" 2052)
                     (!fields 3 
                      (!pair  "base"
                       (!type already_seen 25)
-                      (!srcfileloc  "tree-core.h" 2044)
+                      (!srcfileloc  "tree-core.h" 2045)
                       nil )
                      (!pair  "globals"
                       (!type pointer 579 nil  gc_used
@@ -13891,49 +13891,49 @@
                            (!type struct 586 
                             (!type already_seen 585)
                             gc_pointed_to "target_rtl"
-                            (!srcfileloc  "rtl.h" 3928)
+                            (!srcfileloc  "rtl.h" 3930)
                             (!fields 8 
                              (!pair  "x_global_rtl"
                               (!type array 587 nil  gc_used "GR_MAX" 
                                (!type already_seen 100)
                               )
-                              (!srcfileloc  "rtl.h" 3900)
+                              (!srcfileloc  "rtl.h" 3902)
                               nil )
                              (!pair  "x_pic_offset_table_rtx"
                               (!type already_seen 100)
-                              (!srcfileloc  "rtl.h" 3903)
+                              (!srcfileloc  "rtl.h" 3905)
                               nil )
                              (!pair  "x_return_address_pointer_rtx"
                               (!type already_seen 100)
-                              (!srcfileloc  "rtl.h" 3908)
+                              (!srcfileloc  "rtl.h" 3910)
                               nil )
                              (!pair  "x_initial_regno_reg_rtx"
                               (!type array 588 nil  gc_used "FIRST_PSEUDO_REGISTER" 
                                (!type already_seen 100)
                               )
-                              (!srcfileloc  "rtl.h" 3914)
+                              (!srcfileloc  "rtl.h" 3916)
                               nil )
                              (!pair  "x_top_of_stack"
                               (!type array 589 nil  gc_used "MAX_MACHINE_MODE" 
                                (!type already_seen 100)
                               )
-                              (!srcfileloc  "rtl.h" 3917)
+                              (!srcfileloc  "rtl.h" 3919)
                               nil )
                              (!pair  "x_static_reg_base_value"
                               (!type array 590 nil  gc_used "FIRST_PSEUDO_REGISTER" 
                                (!type already_seen 100)
                               )
-                              (!srcfileloc  "rtl.h" 3921)
+                              (!srcfileloc  "rtl.h" 3923)
                               nil )
                              (!pair  "x_mode_mem_attrs"
                               (!type array 591 nil  gc_used "(int) MAX_MACHINE_MODE" 
                                (!type already_seen 228)
                               )
-                              (!srcfileloc  "rtl.h" 3924)
+                              (!srcfileloc  "rtl.h" 3926)
                               nil )
                              (!pair  "target_specific_initialized"
                               (!type already_seen 2)
-                              (!srcfileloc  "rtl.h" 3927)
+                              (!srcfileloc  "rtl.h" 3929)
                               nil )
                             )
                             nil 4095 nil nil )
@@ -14143,14 +14143,14 @@
                         )
                         nil 4095 nil nil )
                       )
-                      (!srcfileloc  "tree-core.h" 2047)
+                      (!srcfileloc  "tree-core.h" 2048)
                       nil )
                      (!pair  "opts"
                       (!type pointer 622 nil  gc_used
                        (!type struct 623 
                         (!type already_seen 622)
                         gc_pointed_to "cl_target_option"
-                        (!srcfileloc  "config/arm/arm.cc" 28525)
+                        (!srcfileloc  "config/arm/arm.cc" 28523)
                         (!fields 16 
                          (!pair  "x_arm_stack_protector_guard_offset"
                           (!type already_seen 2)
@@ -14221,11 +14221,11 @@
                         )
                         nil 4095 nil nil )
                       )
-                      (!srcfileloc  "tree-core.h" 2050)
+                      (!srcfileloc  "tree-core.h" 2051)
                       nil )
                     )
                     nil 4095 nil nil )
-                   (!srcfileloc  "tree-core.h" 2100)
+                   (!srcfileloc  "tree-core.h" 2101)
                    (!options 
                     (!option tag string  "TS_TARGET_OPTION")
                    )
@@ -16125,7 +16125,7 @@
    (!type already_seen 747)
   )
   gc_pointed_to "rtx_expr_list"
-  (!srcfileloc  "rtl.h" 468)
+  (!srcfileloc  "rtl.h" 470)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 102)
@@ -16136,14 +16136,14 @@
    (!type already_seen 749)
   )
   gc_pointed_to "rtx_insn_list"
-  (!srcfileloc  "rtl.h" 498)
+  (!srcfileloc  "rtl.h" 500)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 102)
  )
  
  (!type struct 751 nil  gc_pointed_to "rtx_sequence"
-  (!srcfileloc  "rtl.h" 526)
+  (!srcfileloc  "rtl.h" 528)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 102)
@@ -16152,42 +16152,42 @@
  (!type already_seen 298)
  
  (!type struct 752 nil  gc_pointed_to "rtx_debug_insn"
-  (!srcfileloc  "rtl.h" 587)
+  (!srcfileloc  "rtl.h" 589)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 298)
  )
  
  (!type struct 753 nil  gc_pointed_to "rtx_nonjump_insn"
-  (!srcfileloc  "rtl.h" 598)
+  (!srcfileloc  "rtl.h" 600)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 298)
  )
  
  (!type struct 754 nil  gc_pointed_to "rtx_jump_insn"
-  (!srcfileloc  "rtl.h" 625)
+  (!srcfileloc  "rtl.h" 627)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 298)
  )
  
  (!type struct 755 nil  gc_pointed_to "rtx_call_insn"
-  (!srcfileloc  "rtl.h" 638)
+  (!srcfileloc  "rtl.h" 640)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 298)
  )
  
  (!type struct 756 nil  gc_pointed_to "rtx_jump_table_data"
-  (!srcfileloc  "rtl.h" 664)
+  (!srcfileloc  "rtl.h" 666)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 298)
  )
  
  (!type struct 757 nil  gc_pointed_to "rtx_barrier"
-  (!srcfileloc  "rtl.h" 675)
+  (!srcfileloc  "rtl.h" 677)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 298)
@@ -16213,13 +16213,13 @@
    (!type already_seen 760)
   )
   gc_unused "hwivec_def"
-  (!srcfileloc  "rtl.h" 282)
+  (!srcfileloc  "rtl.h" 284)
   (!fields 1 
    (!pair  "elem"
     (!type array 762 nil  gc_unused "1" 
      (!type already_seen 2)
     )
-    (!srcfileloc  "rtl.h" 281)
+    (!srcfileloc  "rtl.h" 283)
     nil )
   )
   (!options 
@@ -17399,15 +17399,15 @@
      (!type struct 835 
       (!type already_seen 834)
       gc_pointed_to "cgraph_rtl_info"
-      (!srcfileloc  "rtl.h" 4565)
+      (!srcfileloc  "rtl.h" 4567)
       (!fields 2 
        (!pair  "preferred_incoming_stack_boundary"
         (!type already_seen 2)
-        (!srcfileloc  "rtl.h" 4560)
+        (!srcfileloc  "rtl.h" 4562)
         nil )
        (!pair  "function_used_regs"
         (!type already_seen 2)
-        (!srcfileloc  "rtl.h" 4564)
+        (!srcfileloc  "rtl.h" 4566)
         nil )
       )
       nil 4095 nil nil )
@@ -18024,23 +18024,23 @@
   nil 0 nil )
  
  (!type struct 908 nil  gc_unused "reg_info"
-  (!srcfileloc  "rtl.h" 230)
+  (!srcfileloc  "rtl.h" 232)
   (!fields 4 
    (!pair  "regno"
     (!type already_seen 2)
-    (!srcfileloc  "rtl.h" 222)
+    (!srcfileloc  "rtl.h" 224)
     nil )
    (!pair  "nregs"
     (!type already_seen 2)
-    (!srcfileloc  "rtl.h" 225)
+    (!srcfileloc  "rtl.h" 227)
     nil )
    (!pair  "unused"
     (!type already_seen 2)
-    (!srcfileloc  "rtl.h" 226)
+    (!srcfileloc  "rtl.h" 228)
     nil )
    (!pair  "attrs"
     (!type already_seen 239)
-    (!srcfileloc  "rtl.h" 229)
+    (!srcfileloc  "rtl.h" 231)
     nil )
   )
   nil 4095 nil nil )
@@ -18056,13 +18056,13 @@
  (!type already_seen 80)
  
  (!type user_struct 909 nil  gc_unused "trailing_wide_ints<NUM_POLY_INT_COEFFS>"
-  (!srcfileloc  "rtl.h" 291)
+  (!srcfileloc  "rtl.h" 293)
   (!fields 1 
    (!pair  "NUM_POLY_INT_COEFFS"
     (!type undefined 910 nil  gc_unused "NUM_POLY_INT_COEFFS"
-     (!srcfileloc  "rtl.h" 291)
+     (!srcfileloc  "rtl.h" 293)
     )
-    (!srcfileloc  "rtl.h" 291)
+    (!srcfileloc  "rtl.h" 293)
     nil )
   )
  )
@@ -18070,11 +18070,11 @@
  (!type already_seen 910)
  
  (!type struct 911 nil  gc_unused "const_poly_int_def"
-  (!srcfileloc  "rtl.h" 292)
+  (!srcfileloc  "rtl.h" 294)
   (!fields 1 
    (!pair  "coeffs"
     (!type already_seen 909)
-    (!srcfileloc  "rtl.h" 291)
+    (!srcfileloc  "rtl.h" 293)
     nil )
   )
   (!options 
@@ -18467,41 +18467,41 @@
   nil 0 nil nil )
  
  (!type user_struct 921 nil  gc_unused "std::pair<rtx,machine_mode>"
-  (!srcfileloc  "rtl.h" 2259)
+  (!srcfileloc  "rtl.h" 2261)
   (!fields 2 
    (!pair  "machine_mode"
     (!type already_seen 2)
-    (!srcfileloc  "rtl.h" 2259)
+    (!srcfileloc  "rtl.h" 2261)
     nil )
    (!pair  "rtx"
     (!type already_seen 100)
-    (!srcfileloc  "rtl.h" 2259)
+    (!srcfileloc  "rtl.h" 2261)
     nil )
   )
  )
  
  (!type user_struct 922 nil  gc_unused "poly_int<NUM_POLY_INT_COEFFS,generic_wide_int<wide_int_ref_storage<false,false>>>"
-  (!srcfileloc  "rtl.h" 2347)
+  (!srcfileloc  "rtl.h" 2349)
   (!fields 3 
    (!pair  "false"
     (!type already_seen 874)
-    (!srcfileloc  "rtl.h" 2347)
+    (!srcfileloc  "rtl.h" 2349)
     nil )
    (!pair  "generic_wide_int<wide_int_ref_storage<false"
     (!type user_struct 923 nil  gc_unused "generic_wide_int<wide_int_ref_storage<false"
-     (!srcfileloc  "rtl.h" 2347)
+     (!srcfileloc  "rtl.h" 2349)
      (!fields 1 
       (!pair  "wide_int_ref_storage<false"
        (!type already_seen 873)
-       (!srcfileloc  "rtl.h" 2347)
+       (!srcfileloc  "rtl.h" 2349)
        nil )
      )
     )
-    (!srcfileloc  "rtl.h" 2347)
+    (!srcfileloc  "rtl.h" 2349)
     nil )
    (!pair  "NUM_POLY_INT_COEFFS"
     (!type already_seen 910)
-    (!srcfileloc  "rtl.h" 2347)
+    (!srcfileloc  "rtl.h" 2349)
     nil )
   )
  )
@@ -18895,7 +18895,7 @@
  (!type already_seen 487)
  
  (!type struct 973 nil  gc_used "alias_pair"
-  (!srcfileloc  "tree-core.h" 2333)
+  (!srcfileloc  "tree-core.h" 2334)
   (!fields 2 
    (!pair  "decl"
     (!type already_seen 23)
@@ -19045,29 +19045,29 @@
   nil 0 nil nil )
  
  (!type struct 978 nil  gc_used "tree_map_base"
-  (!srcfileloc  "tree-core.h" 2208)
+  (!srcfileloc  "tree-core.h" 2209)
   (!fields 1 
    (!pair  "from"
     (!type already_seen 23)
-    (!srcfileloc  "tree-core.h" 2207)
+    (!srcfileloc  "tree-core.h" 2208)
     nil )
   )
   nil 4095 nil nil )
  
  (!type struct 979 nil  gc_pointed_to "tree_map"
-  (!srcfileloc  "tree-core.h" 2216)
+  (!srcfileloc  "tree-core.h" 2217)
   (!fields 3 
    (!pair  "base"
     (!type already_seen 978)
-    (!srcfileloc  "tree-core.h" 2213)
+    (!srcfileloc  "tree-core.h" 2214)
     nil )
    (!pair  "hash"
     (!type already_seen 2)
-    (!srcfileloc  "tree-core.h" 2214)
+    (!srcfileloc  "tree-core.h" 2215)
     nil )
    (!pair  "to"
     (!type already_seen 23)
-    (!srcfileloc  "tree-core.h" 2215)
+    (!srcfileloc  "tree-core.h" 2216)
     nil )
   )
   (!options 
@@ -19076,15 +19076,15 @@
   4095 nil nil )
  
  (!type struct 980 nil  gc_pointed_to "tree_decl_map"
-  (!srcfileloc  "tree-core.h" 2222)
+  (!srcfileloc  "tree-core.h" 2223)
   (!fields 2 
    (!pair  "base"
     (!type already_seen 978)
-    (!srcfileloc  "tree-core.h" 2220)
+    (!srcfileloc  "tree-core.h" 2221)
     nil )
    (!pair  "to"
     (!type already_seen 23)
-    (!srcfileloc  "tree-core.h" 2221)
+    (!srcfileloc  "tree-core.h" 2222)
     nil )
   )
   (!options 
@@ -19093,15 +19093,15 @@
   4095 nil nil )
  
  (!type struct 981 nil  gc_pointed_to "tree_int_map"
-  (!srcfileloc  "tree-core.h" 2228)
+  (!srcfileloc  "tree-core.h" 2229)
   (!fields 2 
    (!pair  "base"
     (!type already_seen 978)
-    (!srcfileloc  "tree-core.h" 2226)
+    (!srcfileloc  "tree-core.h" 2227)
     nil )
    (!pair  "to"
     (!type already_seen 2)
-    (!srcfileloc  "tree-core.h" 2227)
+    (!srcfileloc  "tree-core.h" 2228)
     nil )
   )
   (!options 
@@ -19110,15 +19110,15 @@
   4095 nil nil )
  
  (!type struct 982 nil  gc_pointed_to "tree_vec_map"
-  (!srcfileloc  "tree-core.h" 2234)
+  (!srcfileloc  "tree-core.h" 2235)
   (!fields 2 
    (!pair  "base"
     (!type already_seen 978)
-    (!srcfileloc  "tree-core.h" 2232)
+    (!srcfileloc  "tree-core.h" 2233)
     nil )
    (!pair  "to"
     (!type already_seen 85)
-    (!srcfileloc  "tree-core.h" 2233)
+    (!srcfileloc  "tree-core.h" 2234)
     nil )
   )
   (!options 
@@ -19135,19 +19135,19 @@
   nil 0 nil nil )
  
  (!type struct 985 nil  gc_used "builtin_info_type"
-  (!srcfileloc  "tree-core.h" 2369)
+  (!srcfileloc  "tree-core.h" 2370)
   (!fields 3 
    (!pair  "decl"
     (!type already_seen 23)
-    (!srcfileloc  "tree-core.h" 2256)
+    (!srcfileloc  "tree-core.h" 2257)
     nil )
    (!pair  "implicit_p"
     (!type already_seen 2)
-    (!srcfileloc  "tree-core.h" 2259)
+    (!srcfileloc  "tree-core.h" 2260)
     nil )
    (!pair  "declared_p"
     (!type already_seen 2)
-    (!srcfileloc  "tree-core.h" 2261)
+    (!srcfileloc  "tree-core.h" 2262)
     nil )
   )
   nil 4095 nil nil )
@@ -19169,15 +19169,15 @@
    (!type already_seen 989)
   )
   gc_pointed_to "vec<alias_pair,va_gc>"
-  (!srcfileloc  "tree-core.h" 2333)
+  (!srcfileloc  "tree-core.h" 2334)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 80)
-    (!srcfileloc  "tree-core.h" 2333)
+    (!srcfileloc  "tree-core.h" 2334)
     nil )
    (!pair  "alias_pair"
     (!type already_seen 973)
-    (!srcfileloc  "tree-core.h" 2333)
+    (!srcfileloc  "tree-core.h" 2334)
     nil )
   )
  )
@@ -22977,16 +22977,16 @@
  )
  
  (!type struct 1365 nil  gc_unused "macinfo_entry_hasher"
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28876)
   (!fields 0 )
   nil 4095 nil nil )
  
  (!type user_struct 1366 nil  gc_unused "hash_table<macinfo_entry_hasher>"
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28876)
   (!fields 1 
    (!pair  "macinfo_entry_hasher"
     (!type already_seen 1365)
-    (!srcfileloc  "dwarf2out.cc" 28877)
+    (!srcfileloc  "dwarf2out.cc" 28876)
     nil )
   )
  )
@@ -22996,16 +22996,16 @@
   nil 0 nil nil )
  
  (!type struct 1368 nil  gc_unused "loc_list_hasher"
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31931)
   (!fields 0 )
   nil 4095 nil nil )
  
  (!type user_struct 1369 nil  gc_unused "hash_table<loc_list_hasher>"
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31931)
   (!fields 1 
    (!pair  "loc_list_hasher"
     (!type already_seen 1368)
-    (!srcfileloc  "dwarf2out.cc" 31932)
+    (!srcfileloc  "dwarf2out.cc" 31931)
     nil )
   )
  )
@@ -32475,7 +32475,7 @@
   nil )
  (!pair  "vinfo_t"
   (!type already_seen 1875)
-  (!srcfileloc  "ada/gcc-interface/decl.cc" 7917)
+  (!srcfileloc  "ada/gcc-interface/decl.cc" 7916)
   nil )
  (!pair  "intrin_binding_t"
   (!type already_seen 1873)
@@ -32905,7 +32905,7 @@
   nil )
  (!pair  "cl_target_option"
   (!type already_seen 623)
-  (!srcfileloc  "config/arm/arm.cc" 28525)
+  (!srcfileloc  "config/arm/arm.cc" 28523)
   nil )
  (!pair  "arm_pragma_enum"
   (!type already_seen 2)
@@ -33497,27 +33497,27 @@
   nil )
  (!pair  "loc_list_hash_type"
   (!type already_seen 1369)
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31931)
   nil )
  (!pair  "loc_list_hasher"
   (!type already_seen 1368)
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31931)
   nil )
  (!pair  "hash_table<loc_list_hasher>"
   (!type already_seen 1369)
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31931)
   nil )
  (!pair  "macinfo_hash_type"
   (!type already_seen 1366)
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28876)
   nil )
  (!pair  "macinfo_entry_hasher"
   (!type already_seen 1365)
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28876)
   nil )
  (!pair  "hash_table<macinfo_entry_hasher>"
   (!type already_seen 1366)
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28876)
   nil )
  (!pair  "inline_entry_data_hasher"
   (!type already_seen 1362)
@@ -34341,19 +34341,19 @@
   nil )
  (!pair  "builtin_info_type"
   (!type already_seen 985)
-  (!srcfileloc  "tree-core.h" 2369)
+  (!srcfileloc  "tree-core.h" 2370)
   nil )
  (!pair  "alias_pair"
   (!type already_seen 973)
-  (!srcfileloc  "tree-core.h" 2333)
+  (!srcfileloc  "tree-core.h" 2334)
   nil )
  (!pair  "vec<alias_pair,va_gc>"
   (!type already_seen 989)
-  (!srcfileloc  "tree-core.h" 2333)
+  (!srcfileloc  "tree-core.h" 2334)
   nil )
  (!pair  "record_layout_info"
   (!type already_seen 976)
-  (!srcfileloc  "tree-core.h" 2198)
+  (!srcfileloc  "tree-core.h" 2199)
   nil )
  (!pair  "vec<tree,va_gc>"
   (!type already_seen 86)
@@ -34549,75 +34549,75 @@
   nil )
  (!pair  "hash_rtx_callback_function"
   (!type already_seen 2)
-  (!srcfileloc  "rtl.h" 3717)
+  (!srcfileloc  "rtl.h" 3719)
   nil )
  (!pair  "rtx_equal_p_callback_function"
   (!type already_seen 2)
-  (!srcfileloc  "rtl.h" 3712)
+  (!srcfileloc  "rtl.h" 3714)
   nil )
  (!pair  "for_each_inc_dec_fn"
   (!type already_seen 2)
-  (!srcfileloc  "rtl.h" 3708)
+  (!srcfileloc  "rtl.h" 3710)
   nil )
  (!pair  "rtx_to_poly_wide_ref"
   (!type already_seen 922)
-  (!srcfileloc  "rtl.h" 2348)
+  (!srcfileloc  "rtl.h" 2350)
   nil )
  (!pair  "generic_wide_int<wide_int_ref_storage<false"
   (!type already_seen 923)
-  (!srcfileloc  "rtl.h" 2347)
+  (!srcfileloc  "rtl.h" 2349)
   nil )
  (!pair  "poly_int<NUM_POLY_INT_COEFFS,generic_wide_int<wide_int_ref_storage<false,false>>>"
   (!type already_seen 922)
-  (!srcfileloc  "rtl.h" 2347)
+  (!srcfileloc  "rtl.h" 2349)
   nil )
  (!pair  "rtx_mode_t"
   (!type already_seen 921)
-  (!srcfileloc  "rtl.h" 2259)
+  (!srcfileloc  "rtl.h" 2261)
   nil )
  (!pair  "std::pair<rtx,machine_mode>"
   (!type already_seen 921)
-  (!srcfileloc  "rtl.h" 2259)
+  (!srcfileloc  "rtl.h" 2261)
   nil )
  (!pair  "rtx_insn"
   (!type already_seen 298)
-  (!srcfileloc  "rtl.h" 496)
+  (!srcfileloc  "rtl.h" 498)
   nil )
  (!pair  "rtx_insn_list"
   (!type already_seen 749)
-  (!srcfileloc  "rtl.h" 493)
+  (!srcfileloc  "rtl.h" 495)
   nil )
  (!pair  "rtx_expr_list"
   (!type already_seen 747)
-  (!srcfileloc  "rtl.h" 464)
+  (!srcfileloc  "rtl.h" 466)
   nil )
  (!pair  "NUM_POLY_INT_COEFFS"
   (!type already_seen 910)
-  (!srcfileloc  "rtl.h" 291)
+  (!srcfileloc  "rtl.h" 293)
   nil )
  (!pair  "trailing_wide_ints<NUM_POLY_INT_COEFFS>"
   (!type already_seen 909)
-  (!srcfileloc  "rtl.h" 291)
+  (!srcfileloc  "rtl.h" 293)
   nil )
  (!pair  "va_gc"
   (!type already_seen 80)
-  (!srcfileloc  "rtl.h" 267)
+  (!srcfileloc  "rtl.h" 269)
   nil )
  (!pair  "vec<rtx,va_gc>"
   (!type already_seen 222)
-  (!srcfileloc  "rtl.h" 267)
+  (!srcfileloc  "rtl.h" 269)
   nil )
  (!pair  "rtunion"
   (!type already_seen 211)
-  (!srcfileloc  "rtl.h" 237)
+  (!srcfileloc  "rtl.h" 239)
   nil )
  (!pair  "reg_attrs"
   (!type already_seen 240)
-  (!srcfileloc  "rtl.h" 229)
+  (!srcfileloc  "rtl.h" 231)
   nil )
  (!pair  "mem_attrs"
   (!type already_seen 229)
-  (!srcfileloc  "rtl.h" 153)
+  (!srcfileloc  "rtl.h" 155)
   nil )
  (!pair  "trailing_wide_ints"
   (!type already_seen 894)
@@ -37375,7 +37375,7 @@
   nil )
  (!pair  "ext_block"
   (!type already_seen 23)
-  (!srcfileloc  "c/c-decl.cc" 12880)
+  (!srcfileloc  "c/c-decl.cc" 12894)
   nil )
  (!pair  "last_structptr_types"
   (!type array 2422 nil  gc_used "builtin_structptr_type_count" 
@@ -37755,19 +37755,19 @@
   nil )
  (!pair  "arm_previous_fndecl"
   (!type already_seen 23)
-  (!srcfileloc  "config/arm/arm.cc" 33386)
+  (!srcfileloc  "config/arm/arm.cc" 33384)
   nil )
  (!pair  "last_asm_targ_options"
   (!type already_seen 622)
-  (!srcfileloc  "config/arm/arm.cc" 28525)
+  (!srcfileloc  "config/arm/arm.cc" 28523)
   nil )
  (!pair  "tls_get_addr_libfunc"
   (!type already_seen 100)
-  (!srcfileloc  "config/arm/arm.cc" 9209)
+  (!srcfileloc  "config/arm/arm.cc" 9207)
   nil )
  (!pair  "pic_labelno"
   (!type already_seen 2)
-  (!srcfileloc  "config/arm/arm.cc" 8343)
+  (!srcfileloc  "config/arm/arm.cc" 8341)
   nil )
  (!pair  "init_optimize"
   (!type already_seen 23)
@@ -37871,7 +37871,7 @@
   nil )
  (!pair  "tmp_var_id_num"
   (!type already_seen 2)
-  (!srcfileloc  "gimple-expr.cc" 415)
+  (!srcfileloc  "gimple-expr.cc" 412)
   nil )
  (!pair  "stmt_list_cache"
   (!type already_seen 85)
@@ -38840,43 +38840,43 @@
   nil )
  (!pair  "current_function_func_begin_label"
   (!type already_seen 11)
-  (!srcfileloc  "tree-core.h" 2378)
+  (!srcfileloc  "tree-core.h" 2379)
   nil )
  (!pair  "current_function_decl"
   (!type already_seen 23)
-  (!srcfileloc  "tree-core.h" 2375)
+  (!srcfileloc  "tree-core.h" 2376)
   nil )
  (!pair  "builtin_info"
   (!type array 2445 nil  gc_used "(int)END_BUILTINS" 
    (!type already_seen 985)
   )
-  (!srcfileloc  "tree-core.h" 2369)
+  (!srcfileloc  "tree-core.h" 2370)
   nil )
  (!pair  "sizetype_tab"
   (!type array 2446 nil  gc_used "(int) stk_type_kind_last" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "tree-core.h" 2357)
+  (!srcfileloc  "tree-core.h" 2358)
   nil )
  (!pair  "integer_types"
   (!type array 2447 nil  gc_used "itk_none" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "tree-core.h" 2354)
+  (!srcfileloc  "tree-core.h" 2355)
   nil )
  (!pair  "global_trees"
   (!type array 2448 nil  gc_used "TI_MAX" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "tree-core.h" 2350)
+  (!srcfileloc  "tree-core.h" 2351)
   nil )
  (!pair  "all_translation_units"
   (!type already_seen 85)
-  (!srcfileloc  "tree-core.h" 2347)
+  (!srcfileloc  "tree-core.h" 2348)
   nil )
  (!pair  "alias_pairs"
   (!type already_seen 990)
-  (!srcfileloc  "tree-core.h" 2333)
+  (!srcfileloc  "tree-core.h" 2334)
   nil )
  (!pair  "int_n_trees"
   (!type array 2449 nil  gc_used "NUM_INT_N_ENTS" 
@@ -38886,27 +38886,27 @@
   nil )
  (!pair  "stack_limit_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 4495)
+  (!srcfileloc  "rtl.h" 4497)
   nil )
  (!pair  "default_target_rtl"
   (!type already_seen 586)
-  (!srcfileloc  "rtl.h" 3930)
+  (!srcfileloc  "rtl.h" 3932)
   nil )
  (!pair  "invalid_insn_rtx"
   (!type already_seen 297)
-  (!srcfileloc  "rtl.h" 3828)
+  (!srcfileloc  "rtl.h" 3830)
   nil )
  (!pair  "simple_return_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 3827)
+  (!srcfileloc  "rtl.h" 3829)
   nil )
  (!pair  "ret_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 3826)
+  (!srcfileloc  "rtl.h" 3828)
   nil )
  (!pair  "pc_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 3825)
+  (!srcfileloc  "rtl.h" 3827)
   nil )
  (!pair  "const_tiny_rtx"
   (!type array 2450 nil  gc_used "4" 
@@ -38914,17 +38914,17 @@
     (!type already_seen 100)
    )
   )
-  (!srcfileloc  "rtl.h" 3812)
+  (!srcfileloc  "rtl.h" 3814)
   nil )
  (!pair  "const_true_rtx"
   (!type already_seen 100)
-  (!srcfileloc  "rtl.h" 3810)
+  (!srcfileloc  "rtl.h" 3812)
   nil )
  (!pair  "const_int_rtx"
   (!type array 2452 nil  gc_used "MAX_SAVED_CONST_INT * 2 + 1" 
    (!type already_seen 100)
   )
-  (!srcfileloc  "rtl.h" 3804)
+  (!srcfileloc  "rtl.h" 3806)
   nil )
  (!pair  "gcov_fn_info_ptr_type"
   (!type already_seen 23)
