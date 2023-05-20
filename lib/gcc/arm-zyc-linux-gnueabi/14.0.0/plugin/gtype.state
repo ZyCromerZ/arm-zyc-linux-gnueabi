@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "14.0.0 20230519 (experimental)")
+(!version  "14.0.0 20230520 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 12 ada c cp d fortran go jit lto m2 objc objcp rust)
 (!fileslist 246 0
@@ -24975,7 +24975,7 @@
   nil 0 nil nil )
  
  (!type struct 1573 nil  gc_used "tm_clone_hasher"
-  (!srcfileloc  "varasm.cc" 6353)
+  (!srcfileloc  "varasm.cc" 6352)
   (!fields 0 )
   nil 4095 nil nil )
  
@@ -24984,11 +24984,11 @@
    (!type already_seen 1574)
   )
   gc_pointed_to "hash_table<tm_clone_hasher>"
-  (!srcfileloc  "varasm.cc" 6353)
+  (!srcfileloc  "varasm.cc" 6352)
   (!fields 1 
    (!pair  "tm_clone_hasher"
     (!type already_seen 1573)
-    (!srcfileloc  "varasm.cc" 6353)
+    (!srcfileloc  "varasm.cc" 6352)
     nil )
   )
  )
@@ -28558,7 +28558,7 @@
   nil 0 nil nil )
  
  (!type struct 2037 nil  gc_used "atom_hasher"
-  (!srcfileloc  "cp/constraint.cc" 814)
+  (!srcfileloc  "cp/constraint.cc" 801)
   (!fields 0 )
   nil 1028 nil nil )
  
@@ -29218,49 +29218,49 @@
    (!type already_seen 2100)
   )
   gc_pointed_to "hash_table<atom_hasher>"
-  (!srcfileloc  "cp/constraint.cc" 814)
+  (!srcfileloc  "cp/constraint.cc" 801)
   (!fields 1 
    (!pair  "atom_hasher"
     (!type already_seen 2037)
-    (!srcfileloc  "cp/constraint.cc" 814)
+    (!srcfileloc  "cp/constraint.cc" 801)
     nil )
   )
  )
  
  (!type struct 2102 nil  gc_pointed_to "sat_entry"
-  (!srcfileloc  "cp/constraint.cc" 2536)
+  (!srcfileloc  "cp/constraint.cc" 2523)
   (!fields 8 
    (!pair  "atom"
     (!type already_seen 23)
-    (!srcfileloc  "cp/constraint.cc" 2506)
+    (!srcfileloc  "cp/constraint.cc" 2493)
     nil )
    (!pair  "args"
     (!type already_seen 23)
-    (!srcfileloc  "cp/constraint.cc" 2509)
+    (!srcfileloc  "cp/constraint.cc" 2496)
     nil )
    (!pair  "result"
     (!type already_seen 23)
-    (!srcfileloc  "cp/constraint.cc" 2516)
+    (!srcfileloc  "cp/constraint.cc" 2503)
     nil )
    (!pair  "location"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2520)
+    (!srcfileloc  "cp/constraint.cc" 2507)
     nil )
    (!pair  "ftc_begin"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2525)
+    (!srcfileloc  "cp/constraint.cc" 2512)
     nil )
    (!pair  "ftc_end"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2525)
+    (!srcfileloc  "cp/constraint.cc" 2512)
     nil )
    (!pair  "diagnose_instability"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2530)
+    (!srcfileloc  "cp/constraint.cc" 2517)
     nil )
    (!pair  "evaluating"
     (!type already_seen 2)
-    (!srcfileloc  "cp/constraint.cc" 2535)
+    (!srcfileloc  "cp/constraint.cc" 2522)
     nil )
   )
   (!options 
@@ -29269,7 +29269,7 @@
   1028 nil nil )
  
  (!type struct 2103 nil  gc_used "sat_hasher"
-  (!srcfileloc  "cp/constraint.cc" 2614)
+  (!srcfileloc  "cp/constraint.cc" 2601)
   (!fields 0 )
   nil 1028 nil nil )
  
@@ -29278,11 +29278,11 @@
    (!type already_seen 2104)
   )
   gc_pointed_to "hash_table<sat_hasher>"
-  (!srcfileloc  "cp/constraint.cc" 2614)
+  (!srcfileloc  "cp/constraint.cc" 2601)
   (!fields 1 
    (!pair  "sat_hasher"
     (!type already_seen 2103)
-    (!srcfileloc  "cp/constraint.cc" 2614)
+    (!srcfileloc  "cp/constraint.cc" 2601)
     nil )
   )
  )
@@ -30381,15 +30381,15 @@
    (!type already_seen 2258)
   )
   gc_pointed_to "hash_map<tree,tree_pair_p>"
-  (!srcfileloc  "cp/pt.cc" 30430)
+  (!srcfileloc  "cp/pt.cc" 30431)
   (!fields 2 
    (!pair  "tree_pair_p"
     (!type already_seen 539)
-    (!srcfileloc  "cp/pt.cc" 30430)
+    (!srcfileloc  "cp/pt.cc" 30431)
     nil )
    (!pair  "tree"
     (!type already_seen 23)
-    (!srcfileloc  "cp/pt.cc" 30430)
+    (!srcfileloc  "cp/pt.cc" 30431)
     nil )
   )
  )
@@ -31711,7 +31711,7 @@
   nil )
  (!pair  "hash_map<tree,tree_pair_p>"
   (!type already_seen 2258)
-  (!srcfileloc  "cp/pt.cc" 30430)
+  (!srcfileloc  "cp/pt.cc" 30431)
   nil )
  (!pair  "pending_template"
   (!type already_seen 2242)
@@ -32051,19 +32051,19 @@
   nil )
  (!pair  "sat_hasher"
   (!type already_seen 2103)
-  (!srcfileloc  "cp/constraint.cc" 2614)
+  (!srcfileloc  "cp/constraint.cc" 2601)
   nil )
  (!pair  "hash_table<sat_hasher>"
   (!type already_seen 2104)
-  (!srcfileloc  "cp/constraint.cc" 2614)
+  (!srcfileloc  "cp/constraint.cc" 2601)
   nil )
  (!pair  "atom_hasher"
   (!type already_seen 2037)
-  (!srcfileloc  "cp/constraint.cc" 814)
+  (!srcfileloc  "cp/constraint.cc" 801)
   nil )
  (!pair  "hash_table<atom_hasher>"
   (!type already_seen 2100)
-  (!srcfileloc  "cp/constraint.cc" 814)
+  (!srcfileloc  "cp/constraint.cc" 801)
   nil )
  (!pair  "norm_hasher"
   (!type already_seen 2097)
@@ -33029,11 +33029,11 @@
   nil )
  (!pair  "tm_clone_hasher"
   (!type already_seen 1573)
-  (!srcfileloc  "varasm.cc" 6353)
+  (!srcfileloc  "varasm.cc" 6352)
   nil )
  (!pair  "hash_table<tm_clone_hasher>"
   (!type already_seen 1574)
-  (!srcfileloc  "varasm.cc" 6353)
+  (!srcfileloc  "varasm.cc" 6352)
   nil )
  (!pair  "const_rtx_desc_hasher"
   (!type already_seen 1013)
@@ -36676,7 +36676,7 @@
   nil )
  (!pair  "dguide_cache"
   (!type already_seen 2259)
-  (!srcfileloc  "cp/pt.cc" 30430)
+  (!srcfileloc  "cp/pt.cc" 30431)
   (!options 
    (!option deletable string  "")
   )
@@ -37110,42 +37110,42 @@
   nil )
  (!pair  "decl_satisfied_cache"
   (!type already_seen 394)
-  (!srcfileloc  "cp/constraint.cc" 2617)
+  (!srcfileloc  "cp/constraint.cc" 2604)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "sat_cache"
   (!type already_seen 2105)
-  (!srcfileloc  "cp/constraint.cc" 2614)
+  (!srcfileloc  "cp/constraint.cc" 2601)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "failed_type_completions"
   (!type already_seen 85)
-  (!srcfileloc  "cp/constraint.cc" 2466)
+  (!srcfileloc  "cp/constraint.cc" 2453)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "decl_constraints"
   (!type already_seen 942)
-  (!srcfileloc  "cp/constraint.cc" 1289)
+  (!srcfileloc  "cp/constraint.cc" 1276)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "normalized_map"
   (!type already_seen 394)
-  (!srcfileloc  "cp/constraint.cc" 903)
+  (!srcfileloc  "cp/constraint.cc" 890)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "atom_cache"
   (!type already_seen 2101)
-  (!srcfileloc  "cp/constraint.cc" 814)
+  (!srcfileloc  "cp/constraint.cc" 801)
   (!options 
    (!option deletable string  "")
   )
@@ -37375,13 +37375,13 @@
   nil )
  (!pair  "ext_block"
   (!type already_seen 23)
-  (!srcfileloc  "c/c-decl.cc" 12894)
+  (!srcfileloc  "c/c-decl.cc" 12868)
   nil )
  (!pair  "last_structptr_types"
   (!type array 2422 nil  gc_used "builtin_structptr_type_count" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "c/c-decl.cc" 1740)
+  (!srcfileloc  "c/c-decl.cc" 1724)
   nil )
  (!pair  "c_inline_statics"
   (!type already_seen 1911)
@@ -37890,22 +37890,22 @@
   nil )
  (!pair  "elf_fini_array_section"
   (!type already_seen 214)
-  (!srcfileloc  "varasm.cc" 8397)
+  (!srcfileloc  "varasm.cc" 8396)
   nil )
  (!pair  "elf_init_array_section"
   (!type already_seen 214)
-  (!srcfileloc  "varasm.cc" 8396)
+  (!srcfileloc  "varasm.cc" 8395)
   nil )
  (!pair  "tm_clone_hash"
   (!type already_seen 1575)
-  (!srcfileloc  "varasm.cc" 6353)
+  (!srcfileloc  "varasm.cc" 6352)
   (!options 
    (!option cache string  "")
   )
  )
  (!pair  "weakref_targets"
   (!type already_seen 23)
-  (!srcfileloc  "varasm.cc" 6008)
+  (!srcfileloc  "varasm.cc" 6007)
   nil )
  (!pair  "const_desc_htab"
   (!type already_seen 1568)
