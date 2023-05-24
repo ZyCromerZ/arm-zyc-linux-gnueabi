@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "14.0.0 20230523 (experimental)")
+(!version  "14.0.0 20230524 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 12 ada c cp d fortran go jit lto m2 objc objcp rust)
 (!fileslist 246 0
@@ -27653,7 +27653,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1975 nil  gc_unused "anonymous:../../gcc/gcc/c/c-parser.cc:8331"nil 
+ (!type struct 1975 nil  gc_unused "anonymous:../../gcc/gcc/c/c-parser.cc:8335"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -37375,7 +37375,7 @@
   nil )
  (!pair  "ext_block"
   (!type already_seen 23)
-  (!srcfileloc  "c/c-decl.cc" 12868)
+  (!srcfileloc  "c/c-decl.cc" 12881)
   nil )
  (!pair  "last_structptr_types"
   (!type array 2422 nil  gc_used "builtin_structptr_type_count" 
@@ -38163,7 +38163,7 @@
   nil )
  (!pair  "next_block_index"
   (!type already_seen 2)
-  (!srcfileloc  "function.cc" 4639)
+  (!srcfileloc  "function.cc" 4614)
   nil )
  (!pair  "temp_slot_address_table"
   (!type already_seen 1458)
