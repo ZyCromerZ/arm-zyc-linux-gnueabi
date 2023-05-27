@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "14.0.0 20230526 (experimental)")
+(!version  "14.0.0 20230527 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 12 ada c cp d fortran go jit lto m2 objc objcp rust)
 (!fileslist 246 0
@@ -32439,7 +32439,7 @@
   nil )
  (!pair  "atomic_acces_t"
   (!type already_seen 2)
-  (!srcfileloc  "ada/gcc-interface/trans.cc" 4174)
+  (!srcfileloc  "ada/gcc-interface/trans.cc" 4180)
   nil )
  (!pair  "vec<loop_info,va_gc>"
   (!type already_seen 1886)
@@ -32511,7 +32511,7 @@
   nil )
  (!pair  "rewrite_fn"
   (!type already_seen 2)
-  (!srcfileloc  "ada/gcc-interface/gigi.h" 965)
+  (!srcfileloc  "ada/gcc-interface/gigi.h" 966)
   nil )
  (!pair  "vec<registered_function*,va_gc>"
   (!type already_seen 1851)
@@ -37511,7 +37511,7 @@
  )
  (!pair  "thunk_labelno"
   (!type already_seen 2)
-  (!srcfileloc  "ada/gcc-interface/trans.cc" 10885)
+  (!srcfileloc  "ada/gcc-interface/trans.cc" 10891)
   nil )
  (!pair  "gnu_loop_stack"
   (!type already_seen 1887)
@@ -37570,19 +37570,19 @@
   (!type array 2428 nil  gc_used "(int) LAST_REASON_CODE + 1" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "ada/gcc-interface/gigi.h" 443)
+  (!srcfileloc  "ada/gcc-interface/gigi.h" 444)
   nil )
  (!pair  "gnat_raise_decls"
   (!type array 2429 nil  gc_used "(int) LAST_REASON_CODE + 1" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "ada/gcc-interface/gigi.h" 442)
+  (!srcfileloc  "ada/gcc-interface/gigi.h" 443)
   nil )
  (!pair  "gnat_std_decls"
   (!type array 2430 nil  gc_used "(int) ADT_LAST" 
    (!type already_seen 23)
   )
-  (!srcfileloc  "ada/gcc-interface/gigi.h" 441)
+  (!srcfileloc  "ada/gcc-interface/gigi.h" 442)
   nil )
  (!pair  "registered_functions"
   (!type already_seen 1852)
