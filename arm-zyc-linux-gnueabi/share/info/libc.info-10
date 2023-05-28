@@ -3037,7 +3037,7 @@ measurements are not affected by changes to the system clock.
 
  -- Function: int clock_gettime (clockid_t CLOCK, struct timespec *TS)
 
-     Get the current time accoding to the clock identified by CLOCK,
+     Get the current time according to the clock identified by CLOCK,
      storing it as seconds and nanoseconds in ‘*TS’.  *Note Time
      Types::, for a description of ‘struct timespec’.
 
