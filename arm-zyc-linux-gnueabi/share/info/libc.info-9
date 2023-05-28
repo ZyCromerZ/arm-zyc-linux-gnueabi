@@ -2958,7 +2958,7 @@ minimum possible values for each integer data type.  The macro names
 follow these examples: ‘INT32_MAX’, ‘UINT8_MAX’, ‘INT_FAST32_MIN’,
 ‘INT_LEAST64_MIN’, ‘UINTMAX_MAX’, ‘INTMAX_MAX’, ‘INTMAX_MIN’.  Note that
 there are no macros for unsigned integer minima.  These are always zero.
-Similiarly, there are macros such as ‘INTMAX_WIDTH’ for the width of
+Similarly, there are macros such as ‘INTMAX_WIDTH’ for the width of
 these types.  Those macros for integer type widths come from TS
 18661-1:2014.
 
