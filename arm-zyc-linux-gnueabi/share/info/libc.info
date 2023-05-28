@@ -2175,19 +2175,19 @@ libc.info-2: 384028
 libc.info-3: 684888
 libc.info-4: 983329
 libc.info-5: 1284265
-libc.info-6: 1596189
-libc.info-7: 1883383
+libc.info-6: 1596188
+libc.info-7: 1883382
 libc.info-8: 2182796
 libc.info-9: 2559065
-libc.info-10: 2785350
+libc.info-10: 2785349
 libc.info-11: 3083863
 libc.info-12: 3384378
 libc.info-13: 3683498
-libc.info-14: 3984627
-libc.info-15: 4408336
-libc.info-16: 4596228
-libc.info-17: 4888827
-libc.info-18: 5279342
+libc.info-14: 3984626
+libc.info-15: 4408334
+libc.info-16: 4596227
+libc.info-17: 4888826
+libc.info-18: 5279341
 
 Tag Table:
 (Indirect)
@@ -2431,88 +2431,88 @@ Node: Adding Severity Classes1478293
 Node: Example1480068
 Node: Low-Level I/O1483372
 Node: Opening and Closing Files1486737
-Node: I/O Primitives1497683
-Node: File Position Primitive1596189
-Node: Descriptors and Streams1603959
-Node: Stream/Descriptor Precautions1607051
-Node: Linked Channels1608284
-Node: Independent Channels1609586
-Node: Cleaning Streams1611514
-Node: Scatter-Gather1613378
-Node: Copying File Data1624687
-Node: Memory-mapped I/O1628502
-Node: Waiting for I/O1646216
-Node: Synchronizing I/O1655083
-Node: Asynchronous I/O1658844
-Node: Asynchronous Reads/Writes1667212
-Node: Status of AIO Operations1680919
-Node: Synchronizing AIO Operations1684983
-Node: Cancel AIO Operations1692012
-Node: Configuration of AIO1695856
-Node: Control Operations1698186
-Node: Duplicating Descriptors1701613
-Node: Descriptor Flags1706192
-Node: File Status Flags1709697
-Node: Access Modes1711213
-Node: Open-time Flags1714018
-Node: Operating Modes1720757
-Node: Getting File Status Flags1723598
-Node: File Locks1726282
-Node: Open File Description Locks1735960
-Node: Open File Description Locks Example1743981
-Node: Interrupt Input1746640
-Node: IOCTLs1749203
-Ref: IOCTLs-Footnote-11751320
-Node: File System Interface1751417
-Node: Working Directory1752955
-Node: Accessing Directories1758717
-Node: Directory Entries1760482
-Node: Opening a Directory1764365
-Node: Reading/Closing Directory1769014
-Node: Simple Directory Lister1776437
-Node: Random Access Directory1777431
-Node: Scanning Directory Content1779357
-Node: Simple Directory Lister Mark II1784765
-Node: Low-level Directory Access1785915
-Node: Working with Directory Trees1787553
-Node: Hard Links1883383
-Node: Symbolic Links1887738
-Node: Deleting Files1895891
-Node: Renaming Files1899260
-Node: Creating Directories1903100
-Node: File Attributes1905003
-Node: Attribute Meanings1906612
-Node: Reading Attributes1916125
-Node: Testing File Type1920924
-Node: File Owner1926055
-Node: Permission Bits1930006
-Node: Access Permission1935531
-Node: Setting Permissions1936706
-Node: Testing File Access1942465
-Node: File Times1946327
-Node: File Size1953327
-Node: Storage Allocation1960331
-Node: Making Special Files1964431
-Node: Temporary Files1966272
-Node: Pipes and FIFOs1976749
-Node: Creating a Pipe1978359
-Node: Pipe to a Subprocess1981789
-Node: FIFO Special Files1985131
-Node: Pipe Atomicity1986847
-Node: Sockets1987753
-Node: Socket Concepts1989827
-Node: Communication Styles1994162
-Node: Socket Addresses1996051
-Node: Address Formats1998157
-Node: Setting Address2001536
-Node: Reading Address2003420
-Node: Interface Naming2005345
-Node: Local Namespace2008253
-Node: Local Namespace Concepts2008928
-Node: Local Namespace Details2010476
-Node: Local Socket Example2012596
-Node: Internet Namespace2014074
-Node: Internet Address Formats2016336
+Node: I/O Primitives1497682
+Node: File Position Primitive1596188
+Node: Descriptors and Streams1603958
+Node: Stream/Descriptor Precautions1607050
+Node: Linked Channels1608283
+Node: Independent Channels1609585
+Node: Cleaning Streams1611513
+Node: Scatter-Gather1613377
+Node: Copying File Data1624686
+Node: Memory-mapped I/O1628501
+Node: Waiting for I/O1646215
+Node: Synchronizing I/O1655082
+Node: Asynchronous I/O1658843
+Node: Asynchronous Reads/Writes1667211
+Node: Status of AIO Operations1680918
+Node: Synchronizing AIO Operations1684982
+Node: Cancel AIO Operations1692011
+Node: Configuration of AIO1695855
+Node: Control Operations1698185
+Node: Duplicating Descriptors1701612
+Node: Descriptor Flags1706191
+Node: File Status Flags1709696
+Node: Access Modes1711212
+Node: Open-time Flags1714017
+Node: Operating Modes1720756
+Node: Getting File Status Flags1723597
+Node: File Locks1726281
+Node: Open File Description Locks1735959
+Node: Open File Description Locks Example1743980
+Node: Interrupt Input1746639
+Node: IOCTLs1749202
+Ref: IOCTLs-Footnote-11751319
+Node: File System Interface1751416
+Node: Working Directory1752954
+Node: Accessing Directories1758716
+Node: Directory Entries1760481
+Node: Opening a Directory1764364
+Node: Reading/Closing Directory1769013
+Node: Simple Directory Lister1776436
+Node: Random Access Directory1777430
+Node: Scanning Directory Content1779356
+Node: Simple Directory Lister Mark II1784764
+Node: Low-level Directory Access1785914
+Node: Working with Directory Trees1787552
+Node: Hard Links1883382
+Node: Symbolic Links1887737
+Node: Deleting Files1895890
+Node: Renaming Files1899259
+Node: Creating Directories1903099
+Node: File Attributes1905002
+Node: Attribute Meanings1906611
+Node: Reading Attributes1916124
+Node: Testing File Type1920923
+Node: File Owner1926054
+Node: Permission Bits1930005
+Node: Access Permission1935530
+Node: Setting Permissions1936705
+Node: Testing File Access1942464
+Node: File Times1946326
+Node: File Size1953326
+Node: Storage Allocation1960330
+Node: Making Special Files1964430
+Node: Temporary Files1966271
+Node: Pipes and FIFOs1976748
+Node: Creating a Pipe1978358
+Node: Pipe to a Subprocess1981788
+Node: FIFO Special Files1985130
+Node: Pipe Atomicity1986846
+Node: Sockets1987752
+Node: Socket Concepts1989826
+Node: Communication Styles1994161
+Node: Socket Addresses1996050
+Node: Address Formats1998156
+Node: Setting Address2001535
+Node: Reading Address2003419
+Node: Interface Naming2005344
+Node: Local Namespace2008252
+Node: Local Namespace Concepts2008927
+Node: Local Namespace Details2010475
+Node: Local Socket Example2012595
+Node: Internet Namespace2014073
+Node: Internet Address Formats2016335
 Node: Host Addresses2019472
 Node: Abstract Host Addresses2020652
 Node: Host Address Data Type2025247
@@ -2602,40 +2602,40 @@ Node: High Quality Random2584970
 Node: FP Function Optimizations2586450
 Node: Arithmetic2588233
 Node: Integers2589603
-Node: Integer Division2592857
-Node: Floating Point Numbers2597116
-Node: Floating Point Classes2598894
-Node: Floating Point Errors2604934
-Node: FP Exceptions2605441
-Node: Infinity and NaN2609543
-Node: Status bit operations2613472
-Node: Math Error Reporting2619065
-Node: Rounding2622375
-Node: Control Functions2626063
-Node: Arithmetic Functions2632580
-Node: Absolute Value2633455
-Node: Normalization Functions2636064
-Node: Rounding Functions2640565
-Node: Remainder Functions2650666
-Node: FP Bit Twiddling2653496
-Node: FP Comparison Functions2663392
-Node: Misc FP Arithmetic2669320
-Node: Complex Numbers2683377
-Node: Operations on Complex2685394
-Node: Parsing of Numbers2688757
-Node: Parsing of Integers2689458
-Node: Parsing of Floats2785350
-Node: Printing of Floats2792160
-Node: System V Number Conversion2794813
-Node: Date and Time2801598
-Node: Time Basics2802401
-Node: Time Types2805442
-Node: Calculating Elapsed Time2809203
-Node: Processor And CPU Time2811762
-Node: CPU Time2813718
-Node: Processor Time2815394
-Node: Calendar Time2818163
-Node: Getting the Time2819170
+Node: Integer Division2592856
+Node: Floating Point Numbers2597115
+Node: Floating Point Classes2598893
+Node: Floating Point Errors2604933
+Node: FP Exceptions2605440
+Node: Infinity and NaN2609542
+Node: Status bit operations2613471
+Node: Math Error Reporting2619064
+Node: Rounding2622374
+Node: Control Functions2626062
+Node: Arithmetic Functions2632579
+Node: Absolute Value2633454
+Node: Normalization Functions2636063
+Node: Rounding Functions2640564
+Node: Remainder Functions2650665
+Node: FP Bit Twiddling2653495
+Node: FP Comparison Functions2663391
+Node: Misc FP Arithmetic2669319
+Node: Complex Numbers2683376
+Node: Operations on Complex2685393
+Node: Parsing of Numbers2688756
+Node: Parsing of Integers2689457
+Node: Parsing of Floats2785349
+Node: Printing of Floats2792159
+Node: System V Number Conversion2794812
+Node: Date and Time2801597
+Node: Time Basics2802400
+Node: Time Types2805441
+Node: Calculating Elapsed Time2809202
+Node: Processor And CPU Time2811761
+Node: CPU Time2813717
+Node: Processor Time2815393
+Node: Calendar Time2818162
+Node: Getting the Time2819169
 Node: Setting and Adjusting the Time2825476
 Node: Broken-down Time2840492
 Node: Formatting Calendar Time2849691
@@ -2880,71 +2880,71 @@ Node: Default Thread Attributes3845172
 Node: Initial Thread Signal Mask3846494
 Node: Waiting with Explicit Clocks3849740
 Node: Single-Threaded3853610
-Node: Restartable Sequences3858288
-Node: Dynamic Linker3861989
-Node: Dynamic Linker Introspection3862525
-Node: Internal Probes3870681
-Node: Memory Allocation Probes3871481
-Node: Non-local Goto Probes3882929
-Node: Tunables3884788
-Node: Tunable names3889162
-Node: Memory Allocation Tunables3890147
-Node: Dynamic Linking Tunables3899077
-Node: Elision Tunables3984627
-Node: POSIX Thread Tunables3987482
-Node: Hardware Capability Tunables3990033
-Node: Memory Related Tunables3995656
-Node: gmon Tunables3997118
-Node: Language Features3999855
-Node: Consistency Checking4000807
-Node: Variadic Functions4005766
-Node: Why Variadic4006859
-Node: How Variadic4008859
-Node: Variadic Prototypes4010105
-Node: Receiving Arguments4011304
-Node: How Many Arguments4014050
-Node: Calling Variadics4015739
-Node: Argument Macros4017906
-Node: Variadic Example4021436
-Node: Null Pointer Constant4022563
-Node: Important Data Types4023675
-Node: Data Type Measurements4025610
-Node: Width of Type4026480
-Node: Range of Type4028766
-Node: Floating Type Macros4032612
-Node: Floating Point Concepts4033885
-Node: Floating Point Parameters4037740
-Node: IEEE Floating Point4045142
-Node: Structure Measurement4046920
-Node: Library Summary4047730
-Node: Installation4408336
-Node: Configuring and compiling4409204
-Node: Running make install4428571
-Node: Tools for Compilation4433687
-Node: Linux4439815
-Node: Reporting Bugs4442595
-Node: Maintenance4444970
-Node: Source Layout4445500
-Node: Adding Platform-specific4449803
-Node: Source Fortification4452901
-Node: Symbol handling4458256
-Node: 64-bit time symbol handling4458588
-Node: Porting4462807
-Node: Hierarchy Conventions4470845
-Node: Porting to Unix4475790
-Node: Platform4477894
-Node: PowerPC4478340
-Node: RISC-V4483201
-Node: X864484189
-Node: Contributors4496505
-Node: Free Manuals4596228
-Node: Copying4601185
-Node: Documentation License4629444
-Node: Concept Index4654788
-Node: Type Index4781627
-Node: Function Index4888827
-Node: Variable Index5060417
-Node: File Index5279342
+Node: Restartable Sequences3858287
+Node: Dynamic Linker3861988
+Node: Dynamic Linker Introspection3862524
+Node: Internal Probes3870680
+Node: Memory Allocation Probes3871480
+Node: Non-local Goto Probes3882928
+Node: Tunables3884787
+Node: Tunable names3889161
+Node: Memory Allocation Tunables3890146
+Node: Dynamic Linking Tunables3899076
+Node: Elision Tunables3984626
+Node: POSIX Thread Tunables3987481
+Node: Hardware Capability Tunables3990031
+Node: Memory Related Tunables3995654
+Node: gmon Tunables3997116
+Node: Language Features3999853
+Node: Consistency Checking4000805
+Node: Variadic Functions4005764
+Node: Why Variadic4006857
+Node: How Variadic4008857
+Node: Variadic Prototypes4010103
+Node: Receiving Arguments4011302
+Node: How Many Arguments4014048
+Node: Calling Variadics4015737
+Node: Argument Macros4017904
+Node: Variadic Example4021434
+Node: Null Pointer Constant4022561
+Node: Important Data Types4023673
+Node: Data Type Measurements4025608
+Node: Width of Type4026478
+Node: Range of Type4028764
+Node: Floating Type Macros4032610
+Node: Floating Point Concepts4033883
+Node: Floating Point Parameters4037738
+Node: IEEE Floating Point4045140
+Node: Structure Measurement4046918
+Node: Library Summary4047728
+Node: Installation4408334
+Node: Configuring and compiling4409202
+Node: Running make install4428569
+Node: Tools for Compilation4433685
+Node: Linux4439814
+Node: Reporting Bugs4442594
+Node: Maintenance4444969
+Node: Source Layout4445499
+Node: Adding Platform-specific4449802
+Node: Source Fortification4452900
+Node: Symbol handling4458255
+Node: 64-bit time symbol handling4458587
+Node: Porting4462806
+Node: Hierarchy Conventions4470844
+Node: Porting to Unix4475789
+Node: Platform4477893
+Node: PowerPC4478339
+Node: RISC-V4483200
+Node: X864484188
+Node: Contributors4496504
+Node: Free Manuals4596227
+Node: Copying4601184
+Node: Documentation License4629443
+Node: Concept Index4654787
+Node: Type Index4781626
+Node: Function Index4888826
+Node: Variable Index5060416
+Node: File Index5279341
 
 End Tag Table
 

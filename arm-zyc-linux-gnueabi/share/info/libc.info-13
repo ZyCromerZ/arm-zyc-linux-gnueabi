@@ -6759,7 +6759,7 @@ undefined behavior.)  In any case, an application must not write to
 ‘__libc_single_threaded’ even if it has joined the last
 application-created thread because future versions of the GNU C Library
 may create background threads after the first thread has been created,
-and the application has no way of knowning that these threads are
+and the application has no way of knowing that these threads are
 present.
 
 

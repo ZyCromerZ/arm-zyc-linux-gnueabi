@@ -2726,7 +2726,7 @@ file ‘log’.  The message printed by ‘mtrace’ shows there are no problems
 with the code, all allocated memory was freed afterwards.
 
    If we call ‘mtrace’ on the example trace given above we would get a
-different outout:
+different output:
 
      drepper$ mtrace errlog
      - 0x08064cc8 Free 2 was never alloc'd 0x8048209
