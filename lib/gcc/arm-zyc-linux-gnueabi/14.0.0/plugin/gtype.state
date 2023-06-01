@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "14.0.0 20230531 (experimental)")
+(!version  "14.0.0 20230601 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 12 ada c cp d fortran go jit lto m2 objc objcp rust)
 (!fileslist 246 0
@@ -9784,21 +9784,21 @@
                                                      (!fields 1 
                                                       (!pair  "wide_int_storage"
                                                        (!type struct 497 nil  gc_used "wide_int_storage"
-                                                        (!srcfileloc  "wide-int.h" 1092)
+                                                        (!srcfileloc  "wide-int.h" 1090)
                                                         (!fields 3 
                                                          (!pair  "val"
                                                           (!type array 498 nil  gc_used "WIDE_INT_MAX_ELTS" 
                                                            (!type already_seen 2)
                                                           )
-                                                          (!srcfileloc  "wide-int.h" 1066)
+                                                          (!srcfileloc  "wide-int.h" 1067)
                                                           nil )
                                                          (!pair  "len"
                                                           (!type already_seen 2)
-                                                          (!srcfileloc  "wide-int.h" 1067)
+                                                          (!srcfileloc  "wide-int.h" 1068)
                                                           nil )
                                                          (!pair  "precision"
                                                           (!type already_seen 2)
-                                                          (!srcfileloc  "wide-int.h" 1068)
+                                                          (!srcfileloc  "wide-int.h" 1069)
                                                           nil )
                                                         )
                                                         nil 4095 nil nil )
@@ -17889,14 +17889,14 @@
   nil 0 nil nil )
  
  (!type struct 887 nil  gc_unused "generic_wide_int"
-  (!srcfileloc  "wide-int.h" 778)
+  (!srcfileloc  "wide-int.h" 779)
   (!fields 0 )
   nil 4095 nil 
   (!type already_seen 886)
  )
  
  (!type undefined 888 nil  gc_unused "ASSIGNMENT_OPERATOR"
-  (!srcfileloc  "wide-int.h" 758)
+  (!srcfileloc  "wide-int.h" 759)
  )
  
  (!type struct 889 nil  gc_unused "int_traits"nil 
@@ -17904,38 +17904,38 @@
   nil 0 nil nil )
  
  (!type struct 890 nil  gc_unused "fixed_wide_int_storage"
-  (!srcfileloc  "wide-int.h" 1239)
+  (!srcfileloc  "wide-int.h" 1237)
   (!fields 2 
    (!pair  "val"
     (!type array 891 nil  gc_unused "WIDE_INT_MAX_HWIS (N)" 
      (!type already_seen 2)
     )
-    (!srcfileloc  "wide-int.h" 1221)
+    (!srcfileloc  "wide-int.h" 1219)
     nil )
    (!pair  "len"
     (!type already_seen 2)
-    (!srcfileloc  "wide-int.h" 1222)
+    (!srcfileloc  "wide-int.h" 1220)
     nil )
   )
   nil 4095 nil nil )
  
  (!type struct 892 nil  gc_unused "trailing_wide_int_storage"
-  (!srcfileloc  "wide-int.h" 1370)
+  (!srcfileloc  "wide-int.h" 1368)
   (!fields 0 )
   nil 4095 nil nil )
  
  (!type user_struct 893 nil  gc_unused "generic_wide_int<trailing_wide_int_storage>"
-  (!srcfileloc  "wide-int.h" 1370)
+  (!srcfileloc  "wide-int.h" 1368)
   (!fields 1 
    (!pair  "trailing_wide_int_storage"
     (!type already_seen 892)
-    (!srcfileloc  "wide-int.h" 1370)
+    (!srcfileloc  "wide-int.h" 1368)
     nil )
   )
  )
  
  (!type user_struct 894 nil  gc_unused "trailing_wide_ints"
-  (!srcfileloc  "wide-int.h" 1421)
+  (!srcfileloc  "wide-int.h" 1419)
   (!fields 0 )
  )
  
@@ -20489,15 +20489,15 @@
    (!type already_seen 1112)
   )
   gc_pointed_to "vec<alias_set_entry*,va_gc>"
-  (!srcfileloc  "alias.cc" 280)
+  (!srcfileloc  "alias.cc" 267)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 80)
-    (!srcfileloc  "alias.cc" 280)
+    (!srcfileloc  "alias.cc" 267)
     nil )
    (!pair  "alias_set_entry"
     (!type already_seen 1111)
-    (!srcfileloc  "alias.cc" 280)
+    (!srcfileloc  "alias.cc" 267)
     nil )
   )
  )
@@ -33953,7 +33953,7 @@
   nil )
  (!pair  "vec<alias_set_entry*,va_gc>"
   (!type already_seen 1112)
-  (!srcfileloc  "alias.cc" 280)
+  (!srcfileloc  "alias.cc" 267)
   nil )
  (!pair  "alias_set_hash"
   (!type already_seen 1107)
@@ -34613,31 +34613,31 @@
   nil )
  (!pair  "trailing_wide_ints"
   (!type already_seen 894)
-  (!srcfileloc  "wide-int.h" 1421)
+  (!srcfileloc  "wide-int.h" 1419)
   nil )
  (!pair  "trailing_wide_int"
   (!type already_seen 893)
-  (!srcfileloc  "wide-int.h" 1370)
+  (!srcfileloc  "wide-int.h" 1368)
   nil )
  (!pair  "trailing_wide_int_storage"
   (!type already_seen 892)
-  (!srcfileloc  "wide-int.h" 1370)
+  (!srcfileloc  "wide-int.h" 1368)
   nil )
  (!pair  "generic_wide_int<trailing_wide_int_storage>"
   (!type already_seen 893)
-  (!srcfileloc  "wide-int.h" 1370)
+  (!srcfileloc  "wide-int.h" 1368)
   nil )
  (!pair  "fixed_wide_int_storage"
   (!type already_seen 890)
-  (!srcfileloc  "wide-int.h" 1225)
+  (!srcfileloc  "wide-int.h" 1223)
   nil )
  (!pair  "ASSIGNMENT_OPERATOR"
   (!type already_seen 888)
-  (!srcfileloc  "wide-int.h" 758)
+  (!srcfileloc  "wide-int.h" 759)
   nil )
  (!pair  "generic_wide_int"
   (!type already_seen 887)
-  (!srcfileloc  "wide-int.h" 719)
+  (!srcfileloc  "wide-int.h" 720)
   nil )
  (!pair  "T1"
   (!type already_seen 884)
@@ -38189,14 +38189,14 @@
     (!type already_seen 100)
    )
   )
-  (!srcfileloc  "emit-rtl.cc" 6487)
+  (!srcfileloc  "emit-rtl.cc" 6483)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "free_sequence_stack"
   (!type already_seen 998)
-  (!srcfileloc  "emit-rtl.cc" 5471)
+  (!srcfileloc  "emit-rtl.cc" 5467)
   (!options 
    (!option deletable string  "")
   )
@@ -38674,34 +38674,34 @@
  )
  (!pair  "frame_set"
   (!type already_seen 2)
-  (!srcfileloc  "alias.cc" 1373)
+  (!srcfileloc  "alias.cc" 1360)
   nil )
  (!pair  "varargs_set"
   (!type already_seen 2)
-  (!srcfileloc  "alias.cc" 1351)
+  (!srcfileloc  "alias.cc" 1338)
   nil )
  (!pair  "alias_sets"
   (!type already_seen 1113)
-  (!srcfileloc  "alias.cc" 280)
+  (!srcfileloc  "alias.cc" 267)
   nil )
  (!pair  "reg_known_value"
   (!type already_seen 221)
-  (!srcfileloc  "alias.cc" 258)
+  (!srcfileloc  "alias.cc" 245)
   nil )
  (!pair  "old_reg_base_value"
   (!type already_seen 221)
-  (!srcfileloc  "alias.cc" 239)
+  (!srcfileloc  "alias.cc" 226)
   (!options 
    (!option deletable string  "")
   )
  )
  (!pair  "arg_base_value"
   (!type already_seen 100)
-  (!srcfileloc  "alias.cc" 231)
+  (!srcfileloc  "alias.cc" 218)
   nil )
  (!pair  "reg_base_value"
   (!type already_seen 221)
-  (!srcfileloc  "alias.cc" 226)
+  (!srcfileloc  "alias.cc" 213)
   nil )
  (!pair  "restinsn"
   (!type already_seen 297)

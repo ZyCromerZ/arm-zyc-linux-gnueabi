@@ -36,7 +36,7 @@
 #define _GLIBCXX_RELEASE 14
 
 // The datestamp of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20230531
+#define __GLIBCXX__ 20230601
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -931,6 +931,10 @@ namespace __gnu_cxx
 /* Define to 1 if you have the `at_quick_exit' function. */
 #define _GLIBCXX_HAVE_AT_QUICK_EXIT 1
 
+/* Define if C99 float_t and double_t in <math.h> should be imported in
+   <cmath> in namespace std for C++11. */
+#define _GLIBCXX_HAVE_C99_FLT_EVAL_TYPES 1
+
 /* Define to 1 if the target assembler supports thread-local storage. */
 /* #undef _GLIBCXX_HAVE_CC_TLS */
 
@@ -1668,8 +1672,8 @@ namespace __gnu_cxx
    C99 library functions to be present. */
 #define _GLIBCXX11_USE_C99_COMPLEX 1
 
-/* Define if C99 functions or macros in <math.h> should be imported in <cmath>
-   in namespace std for C++11. */
+/* Define if C99 generic macros in <math.h> should be imported in <cmath> in
+   namespace std for C++11. */
 #define _GLIBCXX11_USE_C99_MATH 1
 
 /* Define if C99 functions or macros in <stdio.h> should be imported in
@@ -1824,6 +1828,10 @@ namespace __gnu_cxx
 /* Define if wchar_t C99 functions in <inttypes.h> should be imported in
    <tr1/cinttypes> in namespace std::tr1. */
 #define _GLIBCXX_USE_C99_INTTYPES_WCHAR_T_TR1 1
+
+/* Define if C99 functions in <math.h> should be imported in <cmath> in
+   namespace std for C++11. */
+#define _GLIBCXX_USE_C99_MATH_FUNCS 1
 
 /* Define if C99 functions or macros in <math.h> should be imported in
    <tr1/cmath> in namespace std::tr1. */
