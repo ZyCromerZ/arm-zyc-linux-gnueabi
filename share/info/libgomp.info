@@ -415,7 +415,7 @@ New 'enter' clause as alias for 'to' on     Y
 declare target directive
 Deprecation of 'to' clause on declare       N
 target directive
-Extended list of directives permitted in    N
+Extended list of directives permitted in    Y
 Fortran pure procedures
 New 'allocators' directive for Fortran      N
 Deprecation of 'allocate' directive for     N
