@@ -46501,8 +46501,9 @@ expression simplified to a simple operand.  Consider for example
 
  which moves the outer 'plus' operation to the inner arms of the
 'vec_cond' expression but only if the actual plus operations both
-simplify.  Note this is currently only supported for code generation
-targeting 'GIMPLE'.
+simplify.  Note that on 'GENERIC' a simple operand means that the result
+satisfies '!EXPR_P' which can be limiting if the operation itself
+simplifies but the remaining operand is an (unrelated) expression.
 
  As intermediate conversions are often optional there is a way to avoid
 the need to repeat patterns both with and without such conversions.
@@ -58306,20 +58307,20 @@ Node: Internal flags2016281
 Node: Match and Simplify2017692
 Node: GIMPLE API2018654
 Node: The Language2021449
-Node: Static Analyzer2033948
-Node: Analyzer Internals2034213
-Node: Debugging the Analyzer2050100
-Node: User Experience Guidelines2052537
-Node: Guidelines for Diagnostics2053473
-Ref: input_location_example2061648
-Node: Guidelines for Options2071333
-Node: Funding2071510
-Node: GNU Project2074017
-Node: Copying2074666
-Node: GNU Free Documentation License2112177
-Node: Contributors2137298
-Node: Option Index2178274
-Node: Concept Index2179151
+Node: Static Analyzer2034065
+Node: Analyzer Internals2034330
+Node: Debugging the Analyzer2050217
+Node: User Experience Guidelines2052654
+Node: Guidelines for Diagnostics2053590
+Ref: input_location_example2061765
+Node: Guidelines for Options2071450
+Node: Funding2071627
+Node: GNU Project2074134
+Node: Copying2074783
+Node: GNU Free Documentation License2112294
+Node: Contributors2137415
+Node: Option Index2178391
+Node: Concept Index2179268
 
 End Tag Table
 
