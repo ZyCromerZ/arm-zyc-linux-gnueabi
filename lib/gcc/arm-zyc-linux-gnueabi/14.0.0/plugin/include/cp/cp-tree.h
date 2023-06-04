@@ -217,6 +217,7 @@ enum cp_tree_index
        definitions.  */
     CPTI_ALIGN_TYPE,
     CPTI_TERMINATE_FN,
+    CPTI_CALL_TERMINATE_FN,
     CPTI_CALL_UNEXPECTED_FN,
 
     /* These are lazily inited.  */
@@ -358,6 +359,7 @@ extern GTY(()) tree cp_global_trees[CPTI_MAX];
 /* Exception handling function declarations.  */
 #define terminate_fn			cp_global_trees[CPTI_TERMINATE_FN]
 #define call_unexpected_fn		cp_global_trees[CPTI_CALL_UNEXPECTED_FN]
+#define call_terminate_fn		cp_global_trees[CPTI_CALL_TERMINATE_FN]
 #define get_exception_ptr_fn		cp_global_trees[CPTI_GET_EXCEPTION_PTR_FN]
 #define begin_catch_fn			cp_global_trees[CPTI_BEGIN_CATCH_FN]
 #define end_catch_fn			cp_global_trees[CPTI_END_CATCH_FN]
@@ -1924,6 +1926,7 @@ extern GTY(()) struct saved_scope *scope_chain;
 #define current_template_parms scope_chain->template_parms
 #define current_template_depth \
   (current_template_parms ? TMPL_PARMS_DEPTH (current_template_parms) : 0)
+#define in_template_context (current_template_parms != NULL_TREE)
 
 #define processing_template_decl scope_chain->x_processing_template_decl
 #define processing_specialization scope_chain->x_processing_specialization
@@ -7353,7 +7356,6 @@ extern tree lookup_template_variable		(tree, tree);
 extern bool uses_template_parms			(tree);
 extern bool uses_template_parms_level		(tree, int);
 extern bool uses_outer_template_parms_in_constraints (tree);
-extern bool in_template_function		(void);
 extern bool need_generic_capture		(void);
 extern tree instantiate_class_template		(tree);
 extern tree instantiate_template		(tree, tree, tsubst_flags_t);
