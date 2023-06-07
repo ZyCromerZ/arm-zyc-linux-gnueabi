@@ -7047,7 +7047,7 @@ extern tree begin_eh_spec_block			(void);
 extern void finish_eh_spec_block		(tree, tree);
 extern tree build_eh_type_type			(tree);
 extern tree cp_protect_cleanup_actions		(void);
-extern void maybe_splice_retval_cleanup		(tree);
+extern void maybe_splice_retval_cleanup		(tree, bool);
 extern tree maybe_set_retval_sentinel		(void);
 
 extern tree template_parms_to_args		(tree);
@@ -7714,7 +7714,7 @@ extern bool check_accessibility_of_qualified_id (tree, tree, tree, tsubst_flags_
 extern tree finish_qualified_id_expr		(tree, tree, bool, bool,
 						 bool, bool, tsubst_flags_t);
 extern void simplify_aggr_init_expr		(tree *);
-extern void finalize_nrv			(tree *, tree, tree);
+extern void finalize_nrv			(tree, tree);
 extern tree omp_reduction_id			(enum tree_code, tree, tree);
 extern tree cp_remove_omp_priv_cleanup_stmt	(tree *, int *, void *);
 extern bool cp_check_omp_declare_reduction	(tree);

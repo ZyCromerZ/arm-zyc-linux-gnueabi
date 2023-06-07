@@ -36,7 +36,7 @@
 #define _GLIBCXX_RELEASE 14
 
 // The datestamp of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20230606
+#define __GLIBCXX__ 20230607
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -1143,6 +1143,9 @@ namespace __gnu_cxx
 /* Define to 1 if you have the `logl' function. */
 #define _GLIBCXX_HAVE_LOGL 1
 
+/* Define if lseek is available in <unistd.h>. */
+#define _GLIBCXX_HAVE_LSEEK 1
+
 /* Define to 1 if you have the <machine/endian.h> header file. */
 /* #undef _GLIBCXX_HAVE_MACHINE_ENDIAN_H */
 
@@ -1854,6 +1857,9 @@ namespace __gnu_cxx
 
 /* Defined if clock_gettime has realtime clock support. */
 #define _GLIBCXX_USE_CLOCK_REALTIME 1
+
+/* Define if copy_file_range is available in <unistd.h>. */
+#define _GLIBCXX_USE_COPY_FILE_RANGE 1
 
 /* Define if ISO/IEC TR 24733 decimal floating point types are supported on
    this host. */
