@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "14.0.0 20230609 (experimental)")
+(!version  "14.0.0 20230610 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 12 ada c cp d fortran go jit lto m2 objc objcp rust)
 (!fileslist 246 0
@@ -30323,7 +30323,7 @@
   nil 0 nil nil )
  
  (!type undefined 2243 nil  gc_unused "class_to_loc_map_t::iterator"
-  (!srcfileloc  "cp/parser.cc" 34672)
+  (!srcfileloc  "cp/parser.cc" 34671)
  )
  
  (!type struct 2244 
@@ -31788,11 +31788,11 @@
   nil )
  (!pair  "iter_t"
   (!type already_seen 2243)
-  (!srcfileloc  "cp/parser.cc" 34672)
+  (!srcfileloc  "cp/parser.cc" 34671)
   nil )
  (!pair  "class_to_loc_map_t::iterator"
   (!type already_seen 2243)
-  (!srcfileloc  "cp/parser.cc" 34672)
+  (!srcfileloc  "cp/parser.cc" 34671)
   nil )
  (!pair  "cp_parser_expression_stack"
   (!type array 2383 nil  gc_unused "NUM_PREC_VALUES" 
@@ -36806,7 +36806,7 @@
   nil )
  (!pair  "generic_parm_count"
   (!type already_seen 2)
-  (!srcfileloc  "cp/parser.cc" 49740)
+  (!srcfileloc  "cp/parser.cc" 49739)
   nil )
  (!pair  "cp_parser_decl_specs_attrs"
   (!type already_seen 85)
@@ -37246,7 +37246,7 @@
   nil )
  (!pair  "default_arg_context"
   (!type already_seen 85)
-  (!srcfileloc  "cp/call.cc" 9150)
+  (!srcfileloc  "cp/call.cc" 9158)
   nil )
  (!pair  "unemitted_tinfo_decls"
   (!type already_seen 85)
