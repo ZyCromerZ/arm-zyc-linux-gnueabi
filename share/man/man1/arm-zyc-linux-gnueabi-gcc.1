@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2023-06-12" "gcc-14.0.0" "GNU"
+.TH GCC 1 "2023-06-12" "gcc-13.1.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -530,7 +530,6 @@ in the following sections.
 \&\-gstrict\-dwarf  \-gno\-strict\-dwarf
 \&\-gas\-loc\-support  \-gno\-as\-loc\-support
 \&\-gas\-locview\-support  \-gno\-as\-locview\-support
-\&\-gcodeview
 \&\-gcolumn\-info  \-gno\-column\-info  \-gdwarf32  \-gdwarf64
 \&\-gstatement\-frontiers  \-gno\-statement\-frontiers
 \&\-gvariable\-location\-views  \-gno\-variable\-location\-views
@@ -1484,7 +1483,6 @@ See \s-1RS/6000\s0 and PowerPC Options.
 \&\-mlongcalls  \-mno\-longcalls
 \&\-mabi=\fR\fIabi-type\fR
 \&\fB\-mextra\-l32r\-costs=\fR\fIcycles\fR
-\&\fB\-mstrict\-align  \-mno\-strict\-align\fR
 .Sp
 \&\fIzSeries Options\fR
 See S/390 and zSeries Options.
@@ -3477,8 +3475,6 @@ defined in the \*(C+ standard; basically, a value that can be
 represented in the minimum number of bits needed to represent all the
 enumerators).  This assumption may not be valid if the program uses a
 cast to convert an arbitrary integer value to the enumerated type.
-This option has no effect for an enumeration type with a fixed underlying
-type.
 .IP "\fB\-fstrong\-eval\-order\fR" 4
 .IX Item "-fstrong-eval-order"
 Evaluate member access, array subscripting, and shift expressions in
@@ -3664,9 +3660,6 @@ in \*(C+20 with a pedantic warning that can be disabled with
 .Sp
 Enabled by default with \fB\-std=c++20\fR unless \fB\-Wno\-deprecated\fR,
 and with \fB\-std=c++23\fR regardless of \fB\-Wno\-deprecated\fR.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR in
-\&\*(C+23 mode or later.
 .IP "\fB\-Wctad\-maybe\-unsupported\fR (\*(C+ and Objective\-\*(C+ only)" 4
 .IX Item "-Wctad-maybe-unsupported ( and Objective- only)"
 Warn when performing class template argument deduction (\s-1CTAD\s0) on a type with
@@ -3747,7 +3740,7 @@ where \f(CW\*(C`std::minmax\*(C'\fR returns \f(CW\*(C`std::pair<const int&, cons
 both references dangle after the end of the full expression that contains
 the call to \f(CW\*(C`std::minmax\*(C'\fR.
 .Sp
-This warning is enabled by \fB\-Wall\fR.
+This warning is enabled by \fB\-Wextra\fR.
 .IP "\fB\-Wdelete\-non\-virtual\-dtor\fR (\*(C+ and Objective\-\*(C+ only)" 4
 .IX Item "-Wdelete-non-virtual-dtor ( and Objective- only)"
 Warn when \f(CW\*(C`delete\*(C'\fR is used to destroy an instance of a class that
@@ -5740,16 +5733,15 @@ warnings, in some cases it may also cause false positives.
 .IX Item "-pedantic"
 .PD
 Issue all the warnings demanded by strict \s-1ISO C\s0 and \s-1ISO \*(C+\s0;
-diagnose all programs that use forbidden extensions, and some other
-programs that do not follow \s-1ISO C\s0 and \s-1ISO \*(C+.\s0  This follows the version
-of the \s-1ISO C\s0 or \*(C+ standard specified by any \fB\-std\fR option used.
+reject all programs that use forbidden extensions, and some other
+programs that do not follow \s-1ISO C\s0 and \s-1ISO \*(C+.\s0  For \s-1ISO C,\s0 follows the
+version of the \s-1ISO C\s0 standard specified by any \fB\-std\fR option used.
 .Sp
 Valid \s-1ISO C\s0 and \s-1ISO \*(C+\s0 programs should compile properly with or without
 this option (though a rare few require \fB\-ansi\fR or a
-\&\fB\-std\fR option specifying the version of the standard).  However,
+\&\fB\-std\fR option specifying the required version of \s-1ISO C\s0).  However,
 without this option, certain \s-1GNU\s0 extensions and traditional C and \*(C+
-features are supported as well.  With this option, they are diagnosed
-(or rejected with \fB\-pedantic\-errors\fR).
+features are supported as well.  With this option, they are rejected.
 .Sp
 \&\fB\-Wpedantic\fR does not cause warning messages for use of the
 alternate keywords whose names begin and end with \fB_\|_\fR.  This alternate
@@ -5759,10 +5751,16 @@ Pedantic warnings are also disabled in the expression that follows
 \&\f(CW\*(C`_\|_extension_\|_\*(C'\fR.  However, only system header files should use
 these escape routes; application programs should avoid them.
 .Sp
-Some warnings about non-conforming programs are controlled by options
-other than \fB\-Wpedantic\fR; in many cases they are implied by
-\&\fB\-Wpedantic\fR but can be disabled separately by their specific
-option, e.g. \fB\-Wpedantic \-Wno\-pointer\-sign\fR.
+Some users try to use \fB\-Wpedantic\fR to check programs for strict \s-1ISO
+C\s0 conformance.  They soon find that it does not do quite what they want:
+it finds some non-ISO practices, but not all\-\-\-only those for which
+\&\s-1ISO C\s0 \fIrequires\fR a diagnostic, and some others for which
+diagnostics have been added.
+.Sp
+A feature to report any failure to conform to \s-1ISO C\s0 might be useful in
+some instances, but would require considerable additional work and would
+be quite different from \fB\-Wpedantic\fR.  We don't have plans to
+support such a feature in the near future.
 .Sp
 Where the standard specified with \fB\-std\fR represents a \s-1GNU\s0
 extended dialect of C, such as \fBgnu90\fR or \fBgnu99\fR, there is a
@@ -5779,42 +5777,8 @@ Give an error whenever the \fIbase standard\fR (see \fB\-Wpedantic\fR)
 requires a diagnostic, in some cases where there is undefined behavior
 at compile-time and in some other cases that do not prevent compilation
 of programs that are valid according to the standard. This is not
-equivalent to \fB\-Werror=pedantic\fR: the latter option is unlikely to be
-useful, as it only makes errors of the diagnostics that are controlled by
-\&\fB\-Wpedantic\fR, whereas this option also affects required diagnostics that
-are always enabled or controlled by options other than \fB\-Wpedantic\fR.
-.Sp
-If you want the required diagnostics that are warnings by default to
-be errors instead, but don't also want to enable the \fB\-Wpedantic\fR
-diagnostics, you can specify \fB\-pedantic\-errors \-Wno\-pedantic\fR
-(or \fB\-pedantic\-errors \-Wno\-error=pedantic\fR to enable them but
-only as warnings).
-.Sp
-Some required diagnostics are errors by default, but can be reduced to
-warnings using \fB\-fpermissive\fR or their specific warning option,
-e.g. \fB\-Wno\-error=narrowing\fR.
-.Sp
-Some diagnostics for non-ISO practices are controlled by specific
-warning options other than \fB\-Wpedantic\fR, but are also made
-errors by \fB\-pedantic\-errors\fR.  For instance:
-.Sp
-\&\fB\-Wattributes\fR (for standard attributes)
-\&\fB\-Wchanges\-meaning\fR (\*(C+)
-\&\fB\-Wcomma\-subscript\fR (\*(C+23 or later)
-\&\fB\-Wdeclaration\-after\-statement\fR (C90 or earlier)
-\&\fB\-Wimplicit\-int\fR (C99 or later)
-\&\fB\-Wimplicit\-function\-declaration\fR (C99 or later)
-\&\fB\-Wincompatible\-pointer\-types
-\&\-Wint\-conversion
-\&\-Wlong\-long\fR (C90 or earlier)
-\&\fB\-Wmain
-\&\-Wnarrowing\fR (\*(C+11 or later)
-\&\fB\-Wpointer\-arith
-\&\-Wpointer\-sign
-\&\-Wincompatible\-pointer\-types
-\&\-Wregister\fR (\*(C+17 or later)
-\&\fB\-Wvla\fR (C90 or earlier)
-\&\fB\-Wwrite\-strings\fR (\*(C+11 or later)\fB \fR
+equivalent to \fB\-Werror=pedantic\fR, since there are errors enabled
+by this option and not enabled by the latter and vice versa.
 .IP "\fB\-Wall\fR" 4
 .IX Item "-Wall"
 This enables all the warnings about constructions that some users
@@ -5906,7 +5870,8 @@ name is still supported, but the newer name is more descriptive.)
 .Sp
 \&\fB\-Wclobbered
 \&\-Wcast\-function\-type
-\&\-Wdeprecated\-copy\fR (\*(C+ only)
+\&\-Wdangling\-reference\fR (\*(C+ only)
+\&\fB\-Wdeprecated\-copy\fR (\*(C+ only)
 \&\fB\-Wempty\-body
 \&\-Wenum\-conversion\fR (C only)
 \&\fB\-Wignored\-qualifiers
@@ -6374,23 +6339,6 @@ undefined behavior due to dereferencing a null pointer.  This option
 is only active when \fB\-fdelete\-null\-pointer\-checks\fR is active,
 which is enabled by optimizations in most targets.  The precision of
 the warnings depends on the optimization options used.
-.IP "\fB\-Wnrvo\fR (\*(C+ and Objective\-\*(C+ only)" 4
-.IX Item "-Wnrvo ( and Objective- only)"
-Warn if the compiler does not elide the copy from a local variable to
-the return value of a function in a context where it is allowed by
-[class.copy.elision].  This elision is commonly known as the Named
-Return Value Optimization.  For instance, in the example below the
-compiler cannot elide copies from both v1 and b2, so it elides neither.
-.Sp
-.Vb 7
-\&        std::vector<int> f()
-\&        {
-\&          std::vector<int> v1, v2;
-\&          // ...
-\&          if (cond) return v1;
-\&          else return v2; // warning: not eliding copy
-\&        }
-.Ve
 .IP "\fB\-Winfinite\-recursion\fR" 4
 .IX Item "-Winfinite-recursion"
 Warn about infinitely recursive calls.  The warning is effective at all
@@ -6423,15 +6371,12 @@ This warning is enabled by \fB\-Wall\fR in \*(C+.
 This option controls warnings when a declaration does not specify a type.
 This warning is enabled by default in C99 and later dialects of C,
 and also by \fB\-Wall\fR.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wno\-implicit\-function\-declaration\fR (C and Objective-C only)" 4
 .IX Item "-Wno-implicit-function-declaration (C and Objective-C only)"
 This option controls warnings when a function is used before being declared.
 This warning is enabled by default in C99 and later dialects of C,
 and also by \fB\-Wall\fR.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
+The warning is made into an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wimplicit\fR (C and Objective-C only)" 4
 .IX Item "-Wimplicit (C and Objective-C only)"
 Same as \fB\-Wimplicit\-int\fR and \fB\-Wimplicit\-function\-declaration\fR.
@@ -6616,8 +6561,6 @@ a function with external linkage, returning int, taking either zero
 arguments, two, or three arguments of appropriate types.  This warning
 is enabled by default in \*(C+ and is enabled by either \fB\-Wall\fR
 or \fB\-Wpedantic\fR.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wmisleading\-indentation\fR (C and \*(C+ only)" 4
 .IX Item "-Wmisleading-indentation (C and only)"
 Warn when the indentation of the code does not reflect the block structure.
@@ -7952,16 +7895,12 @@ Do not warn when there is a conversion between pointers that have incompatible
 types.  This warning is for cases not covered by \fB\-Wno\-pointer\-sign\fR,
 which warns for pointer argument passing or assignment with different
 signedness.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wno\-int\-conversion\fR (C and Objective-C only)" 4
 .IX Item "-Wno-int-conversion (C and Objective-C only)"
 Do not warn about incompatible integer to pointer and pointer to integer
 conversions.  This warning is about implicit conversions; for explicit
 conversions the warnings \fB\-Wno\-int\-to\-pointer\-cast\fR and
 \&\fB\-Wno\-pointer\-to\-int\-cast\fR may be used.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wzero\-length\-bounds\fR" 4
 .IX Item "-Wzero-length-bounds"
 Warn about accesses to elements of zero-length array members that might
@@ -8131,8 +8070,6 @@ except when the same as the default promotion.
 Warn when a declaration is found after a statement in a block.  This
 construct, known from \*(C+, was introduced with \s-1ISO C99\s0 and is by default
 allowed in \s-1GCC.\s0  It is not supported by \s-1ISO C90.\s0
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wshadow\fR" 4
 .IX Item "-Wshadow"
 Warn whenever a local variable or type declaration shadows another
@@ -8299,8 +8236,6 @@ of \f(CW\*(C`void\*(C'\fR.  \s-1GNU C\s0 assigns these types a size of 1, for
 convenience in calculations with \f(CW\*(C`void *\*(C'\fR pointers and pointers
 to functions.  In \*(C+, warn also when an arithmetic operation involves
 \&\f(CW\*(C`NULL\*(C'\fR.  This warning is also enabled by \fB\-Wpedantic\fR.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wno\-pointer\-compare\fR" 4
 .IX Item "-Wno-pointer-compare"
 Do not warn if a pointer is compared with a zero character constant.
@@ -8433,9 +8368,6 @@ use of \fB[[]]\fR syntax for attributes, use of decimal
 floating-point types, and so on.  This option is independent of the
 standards mode.  Warnings are disabled in the expression that follows
 \&\f(CW\*(C`_\|_extension_\|_\*(C'\fR.
-.Sp
-When not compiling in C2X mode, these warnings are upgraded to errors
-by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wc++\-compat\fR (C and Objective-C only)" 4
 .IX Item "-Wc++-compat (C and Objective-C only)"
 Warn about \s-1ISO C\s0 constructs that are outside of the common subset of
@@ -8540,9 +8472,6 @@ these warnings.
 When compiling \*(C+, warn about the deprecated conversion from string
 literals to \f(CW\*(C`char *\*(C'\fR.  This warning is enabled by default for \*(C+
 programs.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR in
-\&\*(C+11 mode or later.
 .IP "\fB\-Wclobbered\fR" 4
 .IX Item "-Wclobbered"
 Warn for variables that might be changed by \f(CW\*(C`longjmp\*(C'\fR or
@@ -8930,9 +8859,6 @@ unrecognized attributes, function attributes applied to variables,
 etc.  This does not stop errors for incorrect use of supported
 attributes.
 .Sp
-Warnings about ill-formed uses of standard attributes are upgraded to
-errors by \fB\-pedantic\-errors\fR.
-.Sp
 Additionally, using \fB\-Wno\-attributes=\fR, it is possible to suppress
 warnings about unknown scoped attributes (in \*(C+11 and C2X).  For example,
 \&\fB\-Wno\-attributes=vendor::attr\fR disables warning about the following
@@ -9039,8 +8965,8 @@ example, the following code causes such a warning, because
 \&        struct s x = { 3, 4 };
 .Ve
 .Sp
-In C this option does not warn about designated initializers, so the
-following modification does not trigger a warning:
+This option does not warn about designated initializers, so the following
+modification does not trigger a warning:
 .Sp
 .Vb 2
 \&        struct s { int f, g, h; };
@@ -9377,8 +9303,6 @@ treated as separate tokens.  \fBWunicode\fR is enabled by default.
 Warn if \f(CW\*(C`long long\*(C'\fR type is used.  This is enabled by either
 \&\fB\-Wpedantic\fR or \fB\-Wtraditional\fR in \s-1ISO C90\s0 and \*(C+98
 modes.  To inhibit the warning messages, use \fB\-Wno\-long\-long\fR.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wvariadic\-macros\fR" 4
 .IX Item "-Wvariadic-macros"
 Warn if variadic macros are used in \s-1ISO C90\s0 mode, or if the \s-1GNU\s0
@@ -9404,8 +9328,6 @@ scalar type.
 Warn if a variable-length array is used in the code.
 \&\fB\-Wno\-vla\fR prevents the \fB\-Wpedantic\fR warning of
 the variable-length array.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wvla\-larger\-than=\fR\fIbyte-size\fR" 4
 .IX Item "-Wvla-larger-than=byte-size"
 If this option is used, the compiler warns for declarations of
@@ -9497,8 +9419,6 @@ Warn for pointer argument passing or assignment with different signedness.
 This option is only supported for C and Objective-C.  It is implied by
 \&\fB\-Wall\fR and by \fB\-Wpedantic\fR, which can be disabled with
 \&\fB\-Wno\-pointer\-sign\fR.
-.Sp
-This warning is upgraded to an error by \fB\-pedantic\-errors\fR.
 .IP "\fB\-Wstack\-protector\fR" 4
 .IX Item "-Wstack-protector"
 This option is only active when \fB\-fstack\-protector\fR is active.  It
@@ -10700,11 +10620,6 @@ at file-scope or global-scope only.
 .IX Item "-gvms"
 Produce debugging information in Alpha/VMS debug format (if that is
 supported).  This is the format used by \s-1DEBUG\s0 on Alpha/VMS systems.
-.IP "\fB\-gcodeview\fR" 4
-.IX Item "-gcodeview"
-Produce debugging information in CodeView debug format (if that is
-supported).  This is the format used by Microsoft Visual \*(C+ on
-Windows.
 .IP "\fB\-g\fR\fIlevel\fR" 4
 .IX Item "-glevel"
 .PD 0
@@ -11728,8 +11643,8 @@ Attempt to remove redundant extension instructions.  This is especially
 helpful for the x86\-64 architecture, which implicitly zero-extends in 64\-bit
 registers after writing to their lower 32\-bit half.
 .Sp
-Enabled for Alpha, AArch64, PowerPC, RISC-V, \s-1SPARC,\s0 h83000 and x86 at levels
-\&\fB\-O2\fR, \fB\-O3\fR, \fB\-Os\fR.
+Enabled for Alpha, AArch64 and x86 at levels \fB\-O2\fR,
+\&\fB\-O3\fR, \fB\-Os\fR.
 .IP "\fB\-fno\-lifetime\-dse\fR" 4
 .IX Item "-fno-lifetime-dse"
 In \*(C+ the value of an object is only affected by changes within its
@@ -15127,9 +15042,15 @@ use-def chain.
 The maximum number of may-defs we analyze when looking for a must-def
 specifying the dynamic type of an object that invokes a virtual call
 we may be able to devirtualize speculatively.
+.IP "\fBevrp-sparse-threshold\fR" 4
+.IX Item "evrp-sparse-threshold"
+Maximum number of basic blocks before \s-1EVRP\s0 uses a sparse cache.
 .IP "\fBranger-debug\fR" 4
 .IX Item "ranger-debug"
 Specifies the type of debug output to be issued for ranges.
+.IP "\fBevrp-switch-limit\fR" 4
+.IX Item "evrp-switch-limit"
+Specifies the maximum number of switch cases before \s-1EVRP\s0 ignores a switch.
 .IP "\fBunroll-jam-min-percent\fR" 4
 .IX Item "unroll-jam-min-percent"
 The minimum percentage of memory references that must be optimized
@@ -15188,15 +15109,6 @@ this parameter.  The default value of this parameter is 50.
 .IP "\fBvect-induction-float\fR" 4
 .IX Item "vect-induction-float"
 Enable loop vectorization of floating point inductions.
-.IP "\fBvrp-sparse-threshold\fR" 4
-.IX Item "vrp-sparse-threshold"
-Maximum number of basic blocks before \s-1VRP\s0 uses a sparse bitmap cache.
-.IP "\fBvrp-switch-limit\fR" 4
-.IX Item "vrp-switch-limit"
-Maximum number of outgoing edges in a switch before \s-1VRP\s0 will not process it.
-.IP "\fBvrp-vector-threshold\fR" 4
-.IX Item "vrp-vector-threshold"
-Maximum number of basic blocks for \s-1VRP\s0 to use a basic cache vector.
 .IP "\fBavoid-fma-max-bits\fR" 4
 .IX Item "avoid-fma-max-bits"
 Maximum number of bits for which we avoid creating FMAs.
@@ -17811,8 +17723,6 @@ Use it to conform to a non-default application binary interface.
 Allocate to an \f(CW\*(C`enum\*(C'\fR type only as many bytes as it needs for the
 declared range of possible values.  Specifically, the \f(CW\*(C`enum\*(C'\fR type
 is equivalent to the smallest integer type that has enough room.
-This option has no effect for an enumeration type with a fixed underlying
-type.
 .Sp
 \&\fBWarning:\fR the \fB\-fshort\-enums\fR switch causes \s-1GCC\s0 to generate
 code that is not binary compatible with code generated without that switch.
@@ -19493,15 +19403,6 @@ Generate code for the large code model.  This makes no assumptions about
 addresses and sizes of sections.  Programs can be statically linked only.  The
 \&\fB\-mcmodel=large\fR option is incompatible with \fB\-mabi=ilp32\fR,
 \&\fB\-fpic\fR and \fB\-fPIC\fR.
-.IP "\fB\-mtp=\fR\fIname\fR" 4
-.IX Item "-mtp=name"
-Specify the system register to use as a thread pointer.  The valid values
-are \fBel0\fR, \fBel1\fR, \fBel2\fR, \fBel3\fR.  These correspond to
-using the \fBtpidr_el0\fR, \fBtpidr_el1\fR, \fBtpidr_el2\fR,
-\&\fBtpidr_el3\fR registers accordingly.  The default setting is \fBel0\fR.
-It is recommended to compile all code intended to interoperate with the same
-value of this option to avoid accessing a different thread pointer from the
-wrong exception level.
 .IP "\fB\-mstrict\-align\fR" 4
 .IX Item "-mstrict-align"
 .PD 0
@@ -20199,18 +20100,13 @@ thread (wave-front).  Beware that there may be many threads and limited memory
 available.  The size of the stack allocation may also have an impact on
 run-time performance.  The default is 32KB when using OpenACC or OpenMP, and
 1MB otherwise.
-.IP "\fB\-mxnack=on\fR" 4
-.IX Item "-mxnack=on"
-.PD 0
-.IP "\fB\-mxnack=off\fR" 4
-.IX Item "-mxnack=off"
-.IP "\fB\-mxnack=any\fR" 4
-.IX Item "-mxnack=any"
-.PD
-Compile binaries suitable for devices with the \s-1XNACK\s0 feature enabled, disabled,
-or either mode.  Some devices always require \s-1XNACK\s0 and some allow the user to
-configure \s-1XNACK.\s0  The compiled code must match the device mode.
-At present this option is a placeholder for support that is not yet implemented.
+.IP "\fB\-mxnack\fR" 4
+.IX Item "-mxnack"
+Compile binaries suitable for devices with the \s-1XNACK\s0 feature enabled.  Some
+devices always require \s-1XNACK\s0 and some allow the user to configure \s-1XNACK.\s0  The
+compiled code must match the device mode.  The default is \fB\-mno\-xnack\fR.
+At present this option is a placeholder for support that is not yet
+implemented.
 .PP
 \fI\s-1ARC\s0 Options\fR
 .IX Subsection "ARC Options"
@@ -33402,17 +33298,6 @@ instructions, in clock cycles.  This affects, when optimizing for speed,
 whether loading a constant from literal pool using \f(CW\*(C`L32R\*(C'\fR or
 synthesizing the constant from a small one with a couple of arithmetic
 instructions.  The default value is 0.
-.IP "\fB\-mstrict\-align\fR" 4
-.IX Item "-mstrict-align"
-.PD 0
-.IP "\fB\-mno\-strict\-align\fR" 4
-.IX Item "-mno-strict-align"
-.PD
-Avoid or allow generating memory accesses that may not be aligned on a natural
-object boundary as described in the architecture specification.
-The default is \fB\-mno\-strict\-align\fR for cores that support both
-unaligned loads and stores in hardware and \fB\-mstrict\-align\fR for all
-other cores.
 .PP
 \fIzSeries Options\fR
 .IX Subsection "zSeries Options"
