@@ -1911,6 +1911,8 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strlcat: (libc)Truncating Strings.
+* strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
 * strncasecmp: (libc)String/Array Comparison.
 * strncat: (libc)Truncating Strings.
@@ -2106,6 +2108,8 @@ START-INFO-DIR-ENTRY
 * wcscspn: (libc)Search Functions.
 * wcsdup: (libc)Copying Strings and Arrays.
 * wcsftime: (libc)Formatting Calendar Time.
+* wcslcat: (libc)Truncating Strings.
+* wcslcpy: (libc)Truncating Strings.
 * wcslen: (libc)String Length.
 * wcsncasecmp: (libc)String/Array Comparison.
 * wcsncat: (libc)Truncating Strings.
@@ -5907,16 +5911,16 @@ have performance issues.
 
      As noted below, this function has significant performance issues.
 
-   Programmers using the ‘strcat’ or ‘wcscat’ function (or the ‘strncat’
-or ‘wcsncat’ functions defined in a later section, for that matter) can
-easily be recognized as lazy and reckless.  In almost all situations the
-lengths of the participating strings are known (it better should be
-since how can one otherwise ensure the allocated size of the buffer is
-sufficient?)  Or at least, one could know them if one keeps track of the
-results of the various function calls.  But then it is very inefficient
-to use ‘strcat’/‘wcscat’.  A lot of time is wasted finding the end of
-the destination string so that the actual copying can start.  This is a
-common example:
+   Programmers using the ‘strcat’ or ‘wcscat’ functions (or the
+‘strlcat’, ‘strncat’ and ‘wcsncat’ functions defined in a later section,
+for that matter) can easily be recognized as lazy and reckless.  In
+almost all situations the lengths of the participating strings are known
+(it better should be since how can one otherwise ensure the allocated
+size of the buffer is sufficient?)  Or at least, one could know them if
+one keeps track of the results of the various function calls.  But then
+it is very inefficient to use ‘strcat’/‘wcscat’.  A lot of time is
+wasted finding the end of the destination string so that the actual
+copying can start.  This is a common example:
 
      /* This function concatenates arbitrarily many strings.  The last
         parameter must be ‘NULL’.  */
@@ -6023,9 +6027,9 @@ The example would work for wide characters the same way.
    Whenever a programmer feels the need to use ‘strcat’ she or he should
 think twice and look through the program to see whether the code cannot
 be rewritten to take advantage of already calculated results.  The
-related functions ‘strncat’ and ‘wcscat’ are almost always unnecessary,
-too.  Again: it is almost always unnecessary to use functions like
-‘strcat’.
+related functions ‘strlcat’, ‘strncat’, ‘wcscat’ and ‘wcsncat’ are
+almost always unnecessary, too.  Again: it is almost always unnecessary
+to use functions like ‘strcat’.
 
 
 File: libc.info,  Node: Truncating Strings,  Next: String/Array Comparison,  Prev: Concatenating Strings,  Up: String and Array Utilities
@@ -6254,6 +6258,101 @@ have truncation-related bugs and performance issues.
      As noted below, this function is generally a poor choice for
      processing strings.  Also, this function has significant
      performance issues.  *Note Concatenating Strings::.
+
+ -- Function: size_t strlcpy (char *restrict TO, const char *restrict
+          FROM, size_t SIZE)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function copies the string FROM to the destination array TO,
+     limiting the result’s size (including the null terminator) to SIZE.
+     The caller should ensure that SIZE includes room for the result’s
+     terminating null byte.
+
+     If SIZE is greater than the length of the string FROM, this
+     function copies the non-null bytes of the string FROM to the
+     destination array TO, and terminates the copy with a null byte.
+     Like other string functions such as ‘strcpy’, but unlike ‘strncpy’,
+     any remaining bytes in the destination array remain unchanged.
+
+     If SIZE is nonzero and less than or equal to the the length of the
+     string FROM, this function copies only the first ‘SIZE - 1’ bytes
+     to the destination array TO, and writes a terminating null byte to
+     the last byte of the array.
+
+     This function returns the length of the string FROM.  This means
+     that truncation occurs if and only if the returned value is greater
+     than or equal to SIZE.
+
+     The behavior is undefined if TO or FROM is a null pointer, or if
+     the destination array’s size is less than SIZE, or if the string
+     FROM overlaps the first SIZE bytes of the destination array.
+
+     As noted below, this function is generally a poor choice for
+     processing strings.  Also, this function has a performance issue,
+     as its time cost is proportional to the length of FROM even when
+     SIZE is small.
+
+     This function is derived from OpenBSD 2.4.
+
+ -- Function: size_t wcslcpy (wchar_t *restrict TO, const wchar_t
+          *restrict FROM, size_t SIZE)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function is a variant of ‘strlcpy’ for wide strings.  The SIZE
+     argument counts the length of the destination buffer in wide
+     characters (and not bytes).
+
+     This function is derived from BSD.
+
+ -- Function: size_t strlcat (char *restrict TO, const char *restrict
+          FROM, size_t SIZE)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function appends the string FROM to the string TO, limiting
+     the result’s total size (including the null terminator) to SIZE.
+     The caller should ensure that SIZE includes room for the result’s
+     terminating null byte.
+
+     This function copies as much as possible of the string FROM into
+     the array at TO of SIZE bytes, starting at the terminating null
+     byte of the original string TO.  In effect, this appends the string
+     FROM to the string TO.  Although the resulting string will contain
+     a null terminator, it can be truncated (not all bytes in FROM may
+     be copied).
+
+     This function returns the sum of the original length of TO and the
+     length of FROM.  This means that truncation occurs if and only if
+     the returned value is greater than or equal to SIZE.
+
+     The behavior is undefined if TO or FROM is a null pointer, or if
+     the destination array’s size is less than SIZE, or if the
+     destination array does not contain a null byte in its first SIZE
+     bytes, or if the string FROM overlaps the first SIZE bytes of the
+     destination array.
+
+     As noted below, this function is generally a poor choice for
+     processing strings.  Also, this function has significant
+     performance issues.  *Note Concatenating Strings::.
+
+     This function is derived from OpenBSD 2.4.
+
+ -- Function: size_t wcslcat (wchar_t *restrict TO, const wchar_t
+          *restrict FROM, size_t SIZE)
+
+     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
+     Concepts::.
+
+     This function is a variant of ‘strlcat’ for wide strings.  The SIZE
+     argument counts the length of the destination buffer in wide
+     characters (and not bytes).
+
+     This function is derived from BSD.
 
    Because these functions can abruptly truncate strings or wide
 strings, they are generally poor choices for processing them.  When
