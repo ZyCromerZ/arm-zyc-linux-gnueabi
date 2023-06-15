@@ -1911,6 +1911,8 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strlcat: (libc)Truncating Strings.
+* strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
 * strncasecmp: (libc)String/Array Comparison.
 * strncat: (libc)Truncating Strings.
@@ -2106,6 +2108,8 @@ START-INFO-DIR-ENTRY
 * wcscspn: (libc)Search Functions.
 * wcsdup: (libc)Copying Strings and Arrays.
 * wcsftime: (libc)Formatting Calendar Time.
+* wcslcat: (libc)Truncating Strings.
+* wcslcpy: (libc)Truncating Strings.
 * wcslen: (libc)String Length.
 * wcsncasecmp: (libc)String/Array Comparison.
 * wcsncat: (libc)Truncating Strings.
@@ -4198,6 +4202,8 @@ Function and Macro Index
 * strfry:                                Shuffling Bytes.     (line  15)
 * strftime:                              Formatting Calendar Time.
                                                               (line  75)
+* strlcat:                               Truncating Strings.  (line 277)
+* strlcpy:                               Truncating Strings.  (line 228)
 * strlen:                                String Length.       (line   9)
 * strncasecmp:                           String/Array Comparison.
                                                               (line 174)
@@ -4496,6 +4502,8 @@ Function and Macro Index
                                                               (line 235)
 * wcsftime:                              Formatting Calendar Time.
                                                               (line 457)
+* wcslcat:                               Truncating Strings.  (line 311)
+* wcslcpy:                               Truncating Strings.  (line 265)
 * wcslen:                                String Length.       (line  70)
 * wcsncasecmp:                           String/Array Comparison.
                                                               (line 186)

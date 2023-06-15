@@ -1911,6 +1911,8 @@ START-INFO-DIR-ENTRY
 * strfroml: (libc)Printing of Floats.
 * strfry: (libc)Shuffling Bytes.
 * strftime: (libc)Formatting Calendar Time.
+* strlcat: (libc)Truncating Strings.
+* strlcpy: (libc)Truncating Strings.
 * strlen: (libc)String Length.
 * strncasecmp: (libc)String/Array Comparison.
 * strncat: (libc)Truncating Strings.
@@ -2106,6 +2108,8 @@ START-INFO-DIR-ENTRY
 * wcscspn: (libc)Search Functions.
 * wcsdup: (libc)Copying Strings and Arrays.
 * wcsftime: (libc)Formatting Calendar Time.
+* wcslcat: (libc)Truncating Strings.
+* wcslcpy: (libc)Truncating Strings.
 * wcslen: (libc)String Length.
 * wcsncasecmp: (libc)String/Array Comparison.
 * wcsncat: (libc)Truncating Strings.
@@ -2167,6 +2171,102 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Scanning All Users,  Next: Writing a User Entry,  Prev: Lookup User,  Up: User Database
+
+30.13.3 Scanning the List of All Users
+--------------------------------------
+
+This section explains how a program can read the list of all users in
+the system, one user at a time.  The functions described here are
+declared in ‘pwd.h’.
+
+   You can use the ‘fgetpwent’ function to read user entries from a
+particular file.
+
+ -- Function: struct passwd * fgetpwent (FILE *STREAM)
+
+     Preliminary: | MT-Unsafe race:fpwent | AS-Unsafe corrupt lock |
+     AC-Unsafe corrupt lock | *Note POSIX Safety Concepts::.
+
+     This function reads the next user entry from STREAM and returns a
+     pointer to the entry.  The structure is statically allocated and is
+     rewritten on subsequent calls to ‘fgetpwent’.  You must copy the
+     contents of the structure if you wish to save the information.
+
+     The stream must correspond to a file in the same format as the
+     standard user database file.
+
+ -- Function: int fgetpwent_r (FILE *STREAM, struct passwd *RESULT_BUF,
+          char *BUFFER, size_t BUFLEN, struct passwd **RESULT)
+
+     Preliminary: | MT-Safe | AS-Unsafe corrupt | AC-Unsafe corrupt lock
+     | *Note POSIX Safety Concepts::.
+
+     This function is similar to ‘fgetpwent’ in that it reads the next
+     user entry from STREAM.  But the result is returned in the
+     structure pointed to by RESULT_BUF.  The first BUFLEN bytes of the
+     additional buffer pointed to by BUFFER are used to contain
+     additional information, normally strings which are pointed to by
+     the elements of the result structure.
+
+     The stream must correspond to a file in the same format as the
+     standard user database file.
+
+     If the function returns zero RESULT points to the structure with
+     the wanted data (normally this is in RESULT_BUF).  If errors
+     occurred the return value is nonzero and RESULT contains a null
+     pointer.
+
+   The way to scan all the entries in the user database is with
+‘setpwent’, ‘getpwent’, and ‘endpwent’.
+
+ -- Function: void setpwent (void)
+
+     Preliminary: | MT-Unsafe race:pwent locale | AS-Unsafe dlopen
+     plugin heap lock | AC-Unsafe corrupt lock fd mem | *Note POSIX
+     Safety Concepts::.
+
+     This function initializes a stream which ‘getpwent’ and
+     ‘getpwent_r’ use to read the user database.
+
+ -- Function: struct passwd * getpwent (void)
+
+     Preliminary: | MT-Unsafe race:pwent race:pwentbuf locale |
+     AS-Unsafe dlopen plugin heap lock | AC-Unsafe corrupt lock fd mem |
+     *Note POSIX Safety Concepts::.
+
+     The ‘getpwent’ function reads the next entry from the stream
+     initialized by ‘setpwent’.  It returns a pointer to the entry.  The
+     structure is statically allocated and is rewritten on subsequent
+     calls to ‘getpwent’.  You must copy the contents of the structure
+     if you wish to save the information.
+
+     A null pointer is returned when no more entries are available.
+
+ -- Function: int getpwent_r (struct passwd *RESULT_BUF, char *BUFFER,
+          size_t BUFLEN, struct passwd **RESULT)
+
+     Preliminary: | MT-Unsafe race:pwent locale | AS-Unsafe dlopen
+     plugin heap lock | AC-Unsafe corrupt lock fd mem | *Note POSIX
+     Safety Concepts::.
+
+     This function is similar to ‘getpwent’ in that it returns the next
+     entry from the stream initialized by ‘setpwent’.  Like
+     ‘fgetpwent_r’, it uses the user-supplied buffers in RESULT_BUF and
+     BUFFER to return the information requested.
+
+     The return values are the same as for ‘fgetpwent_r’.
+
+ -- Function: void endpwent (void)
+
+     Preliminary: | MT-Unsafe race:pwent locale | AS-Unsafe dlopen
+     plugin heap lock | AC-Unsafe corrupt lock fd mem | *Note POSIX
+     Safety Concepts::.
+
+     This function closes the internal stream used by ‘getpwent’ or
+     ‘getpwent_r’.
 
 
 File: libc.info,  Node: Writing a User Entry,  Prev: Scanning All Users,  Up: User Database
@@ -7596,56 +7696,4 @@ File: libc.info,  Node: Memory Allocation Tunables,  Next: Dynamic Linking Tunab
      than ‘2’ specifies huge page size, which will be matched against
      the system supported ones.  If provided value is invalid,
      ‘MAP_HUGETLB’ will not be used.
-
-
-File: libc.info,  Node: Dynamic Linking Tunables,  Next: Elision Tunables,  Prev: Memory Allocation Tunables,  Up: Tunables
-
-38.3 Dynamic Linking Tunables
-=============================
-
- -- Tunable namespace: glibc.rtld
-     Dynamic linker behavior can be modified by setting the following
-     tunables in the ‘rtld’ namespace:
-
- -- Tunable: glibc.rtld.nns
-     Sets the number of supported dynamic link namespaces (see
-     ‘dlmopen’).  Currently this limit can be set between 1 and 16
-     inclusive, the default is 4.  Each link namespace consumes some
-     memory in all thread, and thus raising the limit will increase the
-     amount of memory each thread uses.  Raising the limit is useful
-     when your application uses more than 4 dynamic link namespaces as
-     created by ‘dlmopen’ with an lmid argument of ‘LM_ID_NEWLM’.
-     Dynamic linker audit modules are loaded in their own dynamic link
-     namespaces, but they are not accounted for in ‘glibc.rtld.nns’.
-     They implicitly increase the per-thread memory usage as necessary,
-     so this tunable does not need to be changed to allow many audit
-     modules e.g.  via ‘LD_AUDIT’.
-
- -- Tunable: glibc.rtld.optional_static_tls
-     Sets the amount of surplus static TLS in bytes to allocate at
-     program startup.  Every thread created allocates this amount of
-     specified surplus static TLS. This is a minimum value and
-     additional space may be allocated for internal purposes including
-     alignment.  Optional static TLS is used for optimizing dynamic TLS
-     access for platforms that support such optimizations e.g.  TLS
-     descriptors or optimized TLS access for POWER (‘DT_PPC64_OPT’ and
-     ‘DT_PPC_OPT’).  In order to make the best use of such optimizations
-     the value should be as many bytes as would be required to hold all
-     TLS variables in all dynamic loaded shared libraries.  The value
-     cannot be known by the dynamic loader because it doesn’t know the
-     expected set of shared libraries which will be loaded.  The
-     existing static TLS space cannot be changed once allocated at
-     process startup.  The default allocation of optional static TLS is
-     512 bytes and is allocated in every thread.
-
- -- Tunable: glibc.rtld.dynamic_sort
-     Sets the algorithm to use for DSO sorting, valid values are ‘1’ and
-     ‘2’.  For value of ‘1’, an older O(n^3) algorithm is used, which is
-     long time tested, but may have performance issues when dependencies
-     between shared objects contain cycles due to circular dependencies.
-     When set to the value of ‘2’, a different algorithm is used, which
-     implements a topological sort through depth-first search, and does
-     not exhibit the performance issues of ‘1’.
-
-     The default value of this tunable is ‘2’.
 
