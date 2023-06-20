@@ -3468,6 +3468,23 @@ these modifiers:
 
      This modifier was introduced in ISO C99.
 
+‘wN’
+     Specifies that the argument is a ‘intN_t’ or ‘int_leastN_t’ (which
+     are the same type), for conversions taking signed integers, or
+     ‘uintN_t’ or ‘uint_leastN_t’ (which are the same type), for
+     conversions taking unsigned integers.  If the type is narrower than
+     ‘int’, the promoted argument is converted back to the specified
+     type.
+
+     This modifier was introduced in ISO C2X.
+
+‘wfN’
+     Specifies that the argument is a ‘int_fastN_t’ or ‘uint_fastN_t’,
+     as appropriate.  If the type is narrower than ‘int’, the promoted
+     argument is converted back to the specified type.
+
+     This modifier was introduced in ISO C2X.
+
 ‘z’
 ‘Z’
      Specifies that the argument is a ‘size_t’.
@@ -4884,6 +4901,10 @@ Here is a table that summarizes the various conversion specifications:
      C language defines for specifying an integer constant.  *Note
      Numeric Input Conversions::.
 
+‘%b’
+     Matches an unsigned integer written in binary radix.  This is an
+     ISO C2X feature.  *Note Numeric Input Conversions::.
+
 ‘%o’
      Matches an unsigned integer written in octal radix.  *Note Numeric
      Input Conversions::.
@@ -4994,11 +5015,12 @@ conversion.  *Note Integer Conversions::.)
 in as integers under the ‘%i’ conversion.  Each of these specifies a
 number with decimal value ‘10’.
 
-   The ‘%o’, ‘%u’, and ‘%x’ conversions match unsigned integers in
-octal, decimal, and hexadecimal radices, respectively.  The syntax that
-is recognized is the same as that for the ‘strtoul’ function (*note
-Parsing of Integers::) with the appropriate value (‘8’, ‘10’, or ‘16’)
-for the BASE argument.
+   The ‘%b’, ‘%o’, ‘%u’, and ‘%x’ conversions match unsigned integers in
+binary, octal, decimal, and hexadecimal radices, respectively.  The
+syntax that is recognized is the same as that for the ‘strtoul’ function
+(*note Parsing of Integers::) with the appropriate value (‘2’, ‘8’,
+‘10’, or ‘16’) for the BASE argument.  The ‘%b’ conversion accepts an
+optional leading ‘0b’ or ‘0B’ in all standards modes.
 
    The ‘%X’ conversion is identical to the ‘%x’ conversion.  They both
 permit either uppercase or lowercase letters to be used as digits.
