@@ -9,7 +9,7 @@
 BASEVER, DATESTAMP, DEVPHASE, and REVISION are defined by the
 Makefile.  */
 
-#define version_string "13.1.1 20230621"
+#define version_string "13.1.1 20230622"
 #define pkgversion_string "(ZyC-GCC) "
 
 /* This is the location of the online document giving instructions for
