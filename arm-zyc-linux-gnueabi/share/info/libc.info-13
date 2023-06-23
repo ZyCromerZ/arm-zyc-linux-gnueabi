@@ -3903,8 +3903,8 @@ have on _any_ POSIX system.  *Note Minimums::.
 
  -- Macro: int TZNAME_MAX
 
-     If defined, the unvarying maximum length of a time zone name.
-     *Note Time Zone Functions::.
+     If defined, the unvarying maximum length of a time zone
+     abbreviation.  *Note Time Zone Functions::.
 
    These limit macros are always defined in ‘limits.h’.
 
@@ -4875,8 +4875,8 @@ system you are using can go that far.
 ‘_POSIX_TZNAME_MAX’
 
      The value of this macro is the most restrictive limit permitted by
-     POSIX for the maximum length of a time zone name.  Its value is
-     ‘3’.
+     POSIX for the maximum length of a time zone abbreviation.  Its
+     value is ‘3’.
 
 ‘_POSIX2_RE_DUP_MAX’
 

@@ -4558,7 +4558,7 @@ Concept Index
 * limits, POSIX:                         General Limits.      (line   6)
 * limits, program argument size:         General Limits.      (line  24)
 * limits, terminal input queue:          Limits for Files.    (line  29)
-* limits, time zone name length:         General Limits.      (line  48)
+* limits, time zone abbreviation length: General Limits.      (line  48)
 * line buffered stream:                  Buffering Concepts.  (line  12)
 * line speed:                            Line Speed.          (line   6)
 * lines (in a text file):                Binary Streams.      (line  25)

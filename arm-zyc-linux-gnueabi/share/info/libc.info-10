@@ -3540,9 +3540,9 @@ and it also indicates which time zone that is.
           visible in a strict ISO C environment.
 
      ‘const char *tm_zone’
-          This field is the name for the time zone that was used to
-          compute this broken-down time value.  Like ‘tm_gmtoff’, this
-          field is a BSD and GNU extension, and is not visible in a
+          This field is the abbreviation for the time zone that was used
+          to compute this broken-down time value.  Like ‘tm_gmtoff’,
+          this field is a BSD and GNU extension, and is not visible in a
           strict ISO C environment.
 
  -- Function: struct tm * localtime (const time_t *TIME)
@@ -4498,7 +4498,7 @@ is defined and implemented in terms of calls to ‘strptime’.
           The offset from GMT in ISO 8601/RFC822 format.
 
      ‘%Z’
-          The timezone name.
+          The time zone abbreviation.
 
           _Note:_ Currently, this is not fully implemented.  The format
           is recognized, input is consumed but no field in TM is set.
@@ -4651,10 +4651,10 @@ environment variable).
           timezone of the runtime environment.
 
           _Note_: This is not implemented (currently).  The problem is
-          that timezone names are not unique.  If a fixed timezone is
-          assumed for a given string (say ‘EST’ meaning US East Coast
-          time), then uses for countries other than the USA will fail.
-          So far we have found no good solution to this.
+          that time zone abbreviations are not unique.  If a fixed time
+          zone is assumed for a given string (say ‘EST’ meaning US East
+          Coast time), then uses for countries other than the USA will
+          fail.  So far we have found no good solution to this.
 
         • If only the weekday is specified the selected day depends on
           the current date.  If the current weekday is greater than or
@@ -4777,11 +4777,11 @@ summer time) in the local time zone:
 
      STD OFFSET
 
-   The STD string specifies the name of the time zone.  It must be three
-or more characters long and must not contain a leading colon, embedded
-digits, commas, nor plus and minus signs.  There is no space character
-separating the time zone name from the OFFSET, so these restrictions are
-necessary to parse the specification correctly.
+   The STD string specifies the time zone abbreviation.  It must be
+three or more characters long and must not contain a leading colon,
+embedded digits, commas, nor plus and minus signs.  There is no space
+character separating the time zone abbreviation from the OFFSET, so
+these restrictions are necessary to parse the specification correctly.
 
    The OFFSET specifies the time value you must add to the local time to
 get a Coordinated Universal Time value.  It has syntax like
@@ -4799,8 +4799,8 @@ without any Daylight Saving Time alternative:
      STD OFFSET DST [OFFSET]‘,’START[‘/’TIME]‘,’END[‘/’TIME]
 
    The initial STD and OFFSET specify the standard time zone, as
-described above.  The DST string and OFFSET specify the name and offset
-for the corresponding Daylight Saving Time zone; if the OFFSET is
+described above.  The DST string and OFFSET are the abbreviation and
+offset for the corresponding Daylight Saving Time zone; if the OFFSET is
 omitted, it defaults to one hour ahead of standard time.
 
    The remainder of the specification describes when Daylight Saving
@@ -4910,11 +4910,11 @@ File: libc.info,  Node: Time Zone Functions,  Next: Time Functions Example,  Pre
  -- Variable: char * tzname [2]
 
      The array ‘tzname’ contains two strings, which are the standard
-     names of the pair of time zones (standard and Daylight Saving) that
-     the user has selected.  ‘tzname[0]’ is the name of the standard
-     time zone (for example, ‘"EST"’), and ‘tzname[1]’ is the name for
-     the time zone when Daylight Saving Time is in use (for example,
-     ‘"EDT"’).  These correspond to the STD and DST strings
+     abbreviations of the pair of time zones (standard and Daylight
+     Saving) that the user has selected.  ‘tzname[0]’ abbreviates the
+     standard time zone (for example, ‘"EST"’), and ‘tzname[1]’
+     abbreviates the time zone when Daylight Saving Time is in use (for
+     example, ‘"EDT"’).  These correspond to the STD and DST strings
      (respectively) from the ‘TZ’ environment variable.  If Daylight
      Saving Time is never used, ‘tzname[1]’ is the empty string.
 
