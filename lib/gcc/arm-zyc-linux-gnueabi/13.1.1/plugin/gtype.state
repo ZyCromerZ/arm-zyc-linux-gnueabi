@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "13.1.1 20230623")
+(!version  "13.1.1 20230624")
 (!srcdir  "../../gcc/gcc")
 (!languages 12 ada c cp d fortran go jit lto m2 objc objcp rust)
 (!fileslist 246 0
@@ -23035,16 +23035,16 @@
  )
  
  (!type struct 1369 nil  gc_unused "macinfo_entry_hasher"
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   (!fields 0 )
   nil 4095 nil nil )
  
  (!type user_struct 1370 nil  gc_unused "hash_table<macinfo_entry_hasher>"
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   (!fields 1 
    (!pair  "macinfo_entry_hasher"
     (!type already_seen 1369)
-    (!srcfileloc  "dwarf2out.cc" 28877)
+    (!srcfileloc  "dwarf2out.cc" 28878)
     nil )
   )
  )
@@ -23054,16 +23054,16 @@
   nil 0 nil nil )
  
  (!type struct 1372 nil  gc_unused "loc_list_hasher"
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   (!fields 0 )
   nil 4095 nil nil )
  
  (!type user_struct 1373 nil  gc_unused "hash_table<loc_list_hasher>"
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   (!fields 1 
    (!pair  "loc_list_hasher"
     (!type already_seen 1372)
-    (!srcfileloc  "dwarf2out.cc" 31932)
+    (!srcfileloc  "dwarf2out.cc" 31933)
     nil )
   )
  )
@@ -33450,27 +33450,27 @@
   nil )
  (!pair  "loc_list_hash_type"
   (!type already_seen 1373)
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   nil )
  (!pair  "loc_list_hasher"
   (!type already_seen 1372)
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   nil )
  (!pair  "hash_table<loc_list_hasher>"
   (!type already_seen 1373)
-  (!srcfileloc  "dwarf2out.cc" 31932)
+  (!srcfileloc  "dwarf2out.cc" 31933)
   nil )
  (!pair  "macinfo_hash_type"
   (!type already_seen 1370)
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   nil )
  (!pair  "macinfo_entry_hasher"
   (!type already_seen 1369)
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   nil )
  (!pair  "hash_table<macinfo_entry_hasher>"
   (!type already_seen 1370)
-  (!srcfileloc  "dwarf2out.cc" 28877)
+  (!srcfileloc  "dwarf2out.cc" 28878)
   nil )
  (!pair  "inline_entry_data_hasher"
   (!type already_seen 1366)
@@ -37165,7 +37165,7 @@
   nil )
  (!pair  "default_arg_context"
   (!type already_seen 85)
-  (!srcfileloc  "cp/call.cc" 9147)
+  (!srcfileloc  "cp/call.cc" 9154)
   nil )
  (!pair  "unemitted_tinfo_decls"
   (!type already_seen 85)
