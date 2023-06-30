@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "STRIP 1"
-.TH STRIP 1 "2023-06-29" "binutils-2.40.50" "GNU Development Tools"
+.TH STRIP 1 "2023-06-30" "binutils-2.40.50" "GNU Development Tools"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -156,6 +156,7 @@ strip [\fB\-F\fR \fIbfdname\fR |\fB\-\-target=\fR\fIbfdname\fR]
       [\fB\-R\fR \fIsectionname\fR |\fB\-\-remove\-section=\fR\fIsectionname\fR]
       [\fB\-\-keep\-section=\fR\fIsectionpattern\fR]
       [\fB\-\-remove\-relocations=\fR\fIsectionpattern\fR]
+      [\fB\-\-strip\-section\-headers\fR]
       [\fB\-o\fR \fIfile\fR] [\fB\-p\fR|\fB\-\-preserve\-dates\fR]
       [\fB\-D\fR|\fB\-\-enable\-deterministic\-archives\fR]
       [\fB\-U\fR|\fB\-\-disable\-deterministic\-archives\fR]
@@ -260,6 +261,10 @@ For example:
 will remove all relocations for sections matching the pattern
 \&'.text.*', but will not remove relocations for the section
 \&'.text.foo'.
+.IP "\fB\-\-strip\-section\-headers\fR" 4
+.IX Item "--strip-section-headers"
+Strip section headers.  This option is specific to \s-1ELF\s0 files.  Implies
+\&\fB\-\-strip\-all\fR and \fB\-\-merge\-notes\fR.
 .IP "\fB\-s\fR" 4
 .IX Item "-s"
 .PD 0

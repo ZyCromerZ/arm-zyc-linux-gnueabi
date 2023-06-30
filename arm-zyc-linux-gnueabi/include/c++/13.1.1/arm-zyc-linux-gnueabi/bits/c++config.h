@@ -34,7 +34,7 @@
 #define _GLIBCXX_RELEASE 13
 
 // The datestamp of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20230629
+#define __GLIBCXX__ 20230630
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -1705,6 +1705,10 @@ namespace __gnu_cxx
 
 /* Define if the compiler supports C++11 atomics. */
 #define _GLIBCXX_ATOMIC_BUILTINS 1
+
+/* Define if global objects can be aligned to
+   std::hardware_destructive_interference_size. */
+#define _GLIBCXX_CAN_ALIGNAS_DESTRUCTIVE_SIZE 1
 
 /* Define to use concept checking code from the boost libraries. */
 /* #undef _GLIBCXX_CONCEPT_CHECKS */
