@@ -1053,6 +1053,7 @@ File: binutils.info,  Node: objcopy,  Next: objdump,  Prev: nm,  Up: Top
              [-R SECTIONPATTERN|--remove-section=SECTIONPATTERN]
              [--keep-section=SECTIONPATTERN]
              [--remove-relocations=SECTIONPATTERN]
+             [--strip-section-headers]
              [-p|--preserve-dates]
              [-D|--enable-deterministic-archives]
              [-U|--disable-deterministic-archives]
@@ -1251,6 +1252,10 @@ the '--reverse-bytes' option.)
      will remove all relocations for sections matching the pattern
      '.text.*', but will not remove relocations for the section
      '.text.foo'.
+
+'--strip-section-headers'
+     Strip section header This option is specific to ELF files.  Implies
+     '--strip-all' and '--merge-notes'.
 
 '-S'
 '--strip-all'
@@ -3222,6 +3227,7 @@ File: binutils.info,  Node: strip,  Next: c++filt,  Prev: strings,  Up: Top
            [-R SECTIONNAME |--remove-section=SECTIONNAME]
            [--keep-section=SECTIONPATTERN]
            [--remove-relocations=SECTIONPATTERN]
+           [--strip-section-headers]
            [-o FILE] [-p|--preserve-dates]
            [-D|--enable-deterministic-archives]
            [-U|--disable-deterministic-archives]
@@ -3308,6 +3314,10 @@ modified copies under different names.
      will remove all relocations for sections matching the pattern
      '.text.*', but will not remove relocations for the section
      '.text.foo'.
+
+'--strip-section-headers'
+     Strip section headers.  This option is specific to ELF files.
+     Implies '--strip-all' and '--merge-notes'.
 
 '-s'
 '--strip-all'
@@ -5960,12 +5970,12 @@ Binutils Index
 
 * -enable-deterministic-archives:        ar cmdline.          (line 150)
 * -enable-deterministic-archives <1>:    ar cmdline.          (line 238)
-* -enable-deterministic-archives <2>:    objcopy.             (line 359)
-* -enable-deterministic-archives <3>:    objcopy.             (line 369)
+* -enable-deterministic-archives <2>:    objcopy.             (line 364)
+* -enable-deterministic-archives <3>:    objcopy.             (line 374)
 * -enable-deterministic-archives <4>:    ranlib.              (line  32)
 * -enable-deterministic-archives <5>:    ranlib.              (line  44)
-* -enable-deterministic-archives <6>:    strip.               (line 158)
-* -enable-deterministic-archives <7>:    strip.               (line 168)
+* -enable-deterministic-archives <6>:    strip.               (line 163)
+* -enable-deterministic-archives <7>:    strip.               (line 173)
 * .stab:                                 objdump.             (line 793)
 * Add prefix to absolute paths:          objdump.             (line 538)
 * addr2line:                             addr2line.           (line   6)
@@ -5985,11 +5995,11 @@ Binutils Index
 * bugs:                                  Reporting Bugs.      (line   6)
 * bugs, reporting:                       Bug Reporting.       (line   6)
 * c++filt:                               c++filt.             (line   6)
-* changing object addresses:             objcopy.             (line 406)
-* changing section address:              objcopy.             (line 416)
-* changing section LMA:                  objcopy.             (line 425)
-* changing section VMA:                  objcopy.             (line 438)
-* changing start address:                objcopy.             (line 400)
+* changing object addresses:             objcopy.             (line 411)
+* changing section address:              objcopy.             (line 421)
+* changing section LMA:                  objcopy.             (line 430)
+* changing section VMA:                  objcopy.             (line 443)
+* changing start address:                objcopy.             (line 405)
 * collections of files:                  ar.                  (line   6)
 * Compact Type Format:                   objdump.             (line 764)
 * Compact Type Format <1>:               readelf.             (line 457)
@@ -6012,12 +6022,12 @@ Binutils Index
 * demangling in objdump <1>:             addr2line.           (line  91)
 * deterministic archives:                ar cmdline.          (line 150)
 * deterministic archives <1>:            ar cmdline.          (line 238)
-* deterministic archives <2>:            objcopy.             (line 359)
-* deterministic archives <3>:            objcopy.             (line 369)
+* deterministic archives <2>:            objcopy.             (line 364)
+* deterministic archives <3>:            objcopy.             (line 374)
 * deterministic archives <4>:            ranlib.              (line  32)
 * deterministic archives <5>:            ranlib.              (line  44)
-* deterministic archives <6>:            strip.               (line 158)
-* deterministic archives <7>:            strip.               (line 168)
+* deterministic archives <6>:            strip.               (line 163)
+* deterministic archives <7>:            strip.               (line 173)
 * disassembling object code:             objdump.             (line 153)
 * disassembly architecture:              objdump.             (line 275)
 * disassembly endianness:                objdump.             (line 202)
@@ -6153,30 +6163,30 @@ Node: ar cmdline6900
 Node: ar scripts20216
 Node: nm25902
 Node: objcopy41612
-Node: objdump82557
-Node: ranlib120518
-Node: size122117
-Node: strings126261
-Node: strip132096
-Node: c++filt141938
-Ref: c++filt-Footnote-1147799
-Node: addr2line147905
-Node: windmc153860
-Node: windres157519
-Node: dlltool164089
-Node: def file format177542
-Node: readelf180072
-Node: elfedit199203
-Node: Common Options202629
-Node: Selecting the Target System203663
-Node: Target Selection204591
-Node: Architecture Selection206572
-Node: debuginfod207400
-Node: Reporting Bugs208402
-Node: Bug Criteria209164
-Node: Bug Reporting209717
-Node: GNU Free Documentation License216584
-Node: Binutils Index241744
+Node: objdump82736
+Node: ranlib120697
+Node: size122296
+Node: strings126440
+Node: strip132275
+Node: c++filt142296
+Ref: c++filt-Footnote-1148157
+Node: addr2line148263
+Node: windmc154218
+Node: windres157877
+Node: dlltool164447
+Node: def file format177900
+Node: readelf180430
+Node: elfedit199561
+Node: Common Options202987
+Node: Selecting the Target System204021
+Node: Target Selection204949
+Node: Architecture Selection206930
+Node: debuginfod207758
+Node: Reporting Bugs208760
+Node: Bug Criteria209522
+Node: Bug Reporting210075
+Node: GNU Free Documentation License216942
+Node: Binutils Index242102
 
 End Tag Table
 
