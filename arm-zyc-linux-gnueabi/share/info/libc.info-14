@@ -1900,6 +1900,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -2171,6 +2173,330 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Non-local Goto Probes,  Prev: Memory Allocation Probes,  Up: Internal Probes
+
+37.2 Non-local Goto Probes
+==========================
+
+These probes are used to signal calls to ‘setjmp’, ‘sigsetjmp’,
+‘longjmp’ or ‘siglongjmp’.
+
+ -- Probe: setjmp (void *$ARG1, int $ARG2, void *$ARG3)
+     This probe is triggered whenever ‘setjmp’ or ‘sigsetjmp’ is called.
+     Argument $ARG1 is a pointer to the ‘jmp_buf’ passed as the first
+     argument of ‘setjmp’ or ‘sigsetjmp’, $ARG2 is the second argument
+     of ‘sigsetjmp’ or zero if this is a call to ‘setjmp’ and $ARG3 is a
+     pointer to the return address that will be stored in the ‘jmp_buf’.
+
+ -- Probe: longjmp (void *$ARG1, int $ARG2, void *$ARG3)
+     This probe is triggered whenever ‘longjmp’ or ‘siglongjmp’ is
+     called.  Argument $ARG1 is a pointer to the ‘jmp_buf’ passed as the
+     first argument of ‘longjmp’ or ‘siglongjmp’, $ARG2 is the return
+     value passed as the second argument of ‘longjmp’ or ‘siglongjmp’
+     and $ARG3 is a pointer to the return address ‘longjmp’ or
+     ‘siglongjmp’ will return to.
+
+     The ‘longjmp’ probe is triggered at a point where the registers
+     have not yet been restored to the values in the ‘jmp_buf’ and
+     unwinding will show a call stack including the caller of ‘longjmp’
+     or ‘siglongjmp’.
+
+ -- Probe: longjmp_target (void *$ARG1, int $ARG2, void *$ARG3)
+     This probe is triggered under the same conditions and with the same
+     arguments as the ‘longjmp’ probe.
+
+     The ‘longjmp_target’ probe is triggered at a point where the
+     registers have been restored to the values in the ‘jmp_buf’ and
+     unwinding will show a call stack including the caller of ‘setjmp’
+     or ‘sigsetjmp’.
+
+
+File: libc.info,  Node: Tunables,  Next: Language Features,  Prev: Internal Probes,  Up: Top
+
+38 Tunables
+***********
+
+“Tunables” are a feature in the GNU C Library that allows application
+authors and distribution maintainers to alter the runtime library
+behavior to match their workload.  These are implemented as a set of
+switches that may be modified in different ways.  The current default
+method to do this is via the ‘GLIBC_TUNABLES’ environment variable by
+setting it to a string of colon-separated NAME=VALUE pairs.  For
+example, the following example enables ‘malloc’ checking and sets the
+‘malloc’ trim threshold to 128 bytes:
+
+     GLIBC_TUNABLES=glibc.malloc.trim_threshold=128:glibc.malloc.check=3
+     export GLIBC_TUNABLES
+
+   Tunables are not part of the GNU C Library stable ABI, and they are
+subject to change or removal across releases.  Additionally, the method
+to modify tunable values may change between releases and across
+distributions.  It is possible to implement multiple ‘frontends’ for the
+tunables allowing distributions to choose their preferred method at
+build time.
+
+   Finally, the set of tunables available may vary between distributions
+as the tunables feature allows distributions to add their own tunables
+under their own namespace.
+
+   Passing ‘--list-tunables’ to the dynamic loader to print all tunables
+with minimum and maximum values:
+
+     $ /lib64/ld-linux-x86-64.so.2 --list-tunables
+     glibc.rtld.nns: 0x4 (min: 0x1, max: 0x10)
+     glibc.elision.skip_lock_after_retries: 3 (min: 0, max: 2147483647)
+     glibc.malloc.trim_threshold: 0x0 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.malloc.perturb: 0 (min: 0, max: 255)
+     glibc.cpu.x86_shared_cache_size: 0x100000 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.pthread.rseq: 1 (min: 0, max: 1)
+     glibc.cpu.prefer_map_32bit_exec: 0 (min: 0, max: 1)
+     glibc.mem.tagging: 0 (min: 0, max: 255)
+     glibc.elision.tries: 3 (min: 0, max: 2147483647)
+     glibc.elision.enable: 0 (min: 0, max: 1)
+     glibc.malloc.hugetlb: 0x0 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.cpu.x86_rep_movsb_threshold: 0x2000 (min: 0x100, max: 0xffffffffffffffff)
+     glibc.malloc.mxfast: 0x0 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.rtld.dynamic_sort: 2 (min: 1, max: 2)
+     glibc.elision.skip_lock_busy: 3 (min: 0, max: 2147483647)
+     glibc.malloc.top_pad: 0x20000 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.cpu.x86_rep_stosb_threshold: 0x800 (min: 0x1, max: 0xffffffffffffffff)
+     glibc.cpu.x86_non_temporal_threshold: 0xc0000 (min: 0x4040, max: 0xfffffffffffffff)
+     glibc.cpu.x86_shstk:
+     glibc.pthread.stack_cache_size: 0x2800000 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.cpu.hwcap_mask: 0x6 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.malloc.mmap_max: 0 (min: 0, max: 2147483647)
+     glibc.elision.skip_trylock_internal_abort: 3 (min: 0, max: 2147483647)
+     glibc.malloc.tcache_unsorted_limit: 0x0 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.cpu.x86_ibt:
+     glibc.cpu.hwcaps:
+     glibc.elision.skip_lock_internal_abort: 3 (min: 0, max: 2147483647)
+     glibc.malloc.arena_max: 0x0 (min: 0x1, max: 0xffffffffffffffff)
+     glibc.malloc.mmap_threshold: 0x0 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.cpu.x86_data_cache_size: 0x8000 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.malloc.tcache_count: 0x0 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.malloc.arena_test: 0x0 (min: 0x1, max: 0xffffffffffffffff)
+     glibc.pthread.mutex_spin_count: 100 (min: 0, max: 32767)
+     glibc.rtld.optional_static_tls: 0x200 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.malloc.tcache_max: 0x0 (min: 0x0, max: 0xffffffffffffffff)
+     glibc.malloc.check: 0 (min: 0, max: 3)
+
+* Menu:
+
+* Tunable names::  The structure of a tunable name
+* Memory Allocation Tunables::  Tunables in the memory allocation subsystem
+* Dynamic Linking Tunables:: Tunables in the dynamic linking subsystem
+* Elision Tunables::  Tunables in elision subsystem
+* POSIX Thread Tunables:: Tunables in the POSIX thread subsystem
+* Hardware Capability Tunables::  Tunables that modify the hardware
+				  capabilities seen by the GNU C Library
+* Memory Related Tunables::  Tunables that control the use of memory by
+			     the GNU C Library.
+* gmon Tunables::  Tunables that control the gmon profiler, used in
+                   conjunction with gprof
+
+
+File: libc.info,  Node: Tunable names,  Next: Memory Allocation Tunables,  Up: Tunables
+
+38.1 Tunable names
+==================
+
+A tunable name is split into three components, a top namespace, a
+tunable namespace and the tunable name.  The top namespace for tunables
+implemented in the GNU C Library is ‘glibc’.  Distributions that choose
+to add custom tunables in their maintained versions of the GNU C Library
+may choose to do so under their own top namespace.
+
+   The tunable namespace is a logical grouping of tunables in a single
+module.  This currently holds no special significance, although that may
+change in the future.
+
+   The tunable name is the actual name of the tunable.  It is possible
+that different tunable namespaces may have tunables within them that
+have the same name, likewise for top namespaces.  Hence, we only support
+identification of tunables by their full name, i.e.  with the top
+namespace, tunable namespace and tunable name, separated by periods.
+
+
+File: libc.info,  Node: Memory Allocation Tunables,  Next: Dynamic Linking Tunables,  Prev: Tunable names,  Up: Tunables
+
+38.2 Memory Allocation Tunables
+===============================
+
+ -- Tunable namespace: glibc.malloc
+     Memory allocation behavior can be modified by setting any of the
+     following tunables in the ‘malloc’ namespace:
+
+ -- Tunable: glibc.malloc.check
+     This tunable supersedes the ‘MALLOC_CHECK_’ environment variable
+     and is identical in features.  This tunable has no effect by
+     default and needs the debug library ‘libc_malloc_debug’ to be
+     preloaded using the ‘LD_PRELOAD’ environment variable.
+
+     Setting this tunable to a non-zero value less than 4 enables a
+     special (less efficient) memory allocator for the ‘malloc’ family
+     of functions that is designed to be tolerant against simple errors
+     such as double calls of free with the same argument, or overruns of
+     a single byte (off-by-one bugs).  Not all such errors can be
+     protected against, however, and memory leaks can result.  Any
+     detected heap corruption results in immediate termination of the
+     process.
+
+     Like ‘MALLOC_CHECK_’, ‘glibc.malloc.check’ has a problem in that it
+     diverges from normal program behavior by writing to ‘stderr’, which
+     could by exploited in SUID and SGID binaries.  Therefore,
+     ‘glibc.malloc.check’ is disabled by default for SUID and SGID
+     binaries.  This can be enabled again by the system administrator by
+     adding a file ‘/etc/suid-debug’; the content of the file could be
+     anything or even empty.
+
+ -- Tunable: glibc.malloc.top_pad
+     This tunable supersedes the ‘MALLOC_TOP_PAD_’ environment variable
+     and is identical in features.
+
+     This tunable determines the amount of extra memory in bytes to
+     obtain from the system when any of the arenas need to be extended.
+     It also specifies the number of bytes to retain when shrinking any
+     of the arenas.  This provides the necessary hysteresis in heap size
+     such that excessive amounts of system calls can be avoided.
+
+     The default value of this tunable is ‘131072’ (128 KB).
+
+ -- Tunable: glibc.malloc.perturb
+     This tunable supersedes the ‘MALLOC_PERTURB_’ environment variable
+     and is identical in features.
+
+     If set to a non-zero value, memory blocks are initialized with
+     values depending on some low order bits of this tunable when they
+     are allocated (except when allocated by ‘calloc’) and freed.  This
+     can be used to debug the use of uninitialized or freed heap memory.
+     Note that this option does not guarantee that the freed block will
+     have any specific values.  It only guarantees that the content the
+     block had before it was freed will be overwritten.
+
+     The default value of this tunable is ‘0’.
+
+ -- Tunable: glibc.malloc.mmap_threshold
+     This tunable supersedes the ‘MALLOC_MMAP_THRESHOLD_’ environment
+     variable and is identical in features.
+
+     When this tunable is set, all chunks larger than this value in
+     bytes are allocated outside the normal heap, using the ‘mmap’
+     system call.  This way it is guaranteed that the memory for these
+     chunks can be returned to the system on ‘free’.  Note that requests
+     smaller than this threshold might still be allocated via ‘mmap’.
+
+     If this tunable is not set, the default value is set to ‘131072’
+     bytes and the threshold is adjusted dynamically to suit the
+     allocation patterns of the program.  If the tunable is set, the
+     dynamic adjustment is disabled and the value is set as static.
+
+ -- Tunable: glibc.malloc.trim_threshold
+     This tunable supersedes the ‘MALLOC_TRIM_THRESHOLD_’ environment
+     variable and is identical in features.
+
+     The value of this tunable is the minimum size (in bytes) of the
+     top-most, releasable chunk in an arena that will trigger a system
+     call in order to return memory to the system from that arena.
+
+     If this tunable is not set, the default value is set as 128 KB and
+     the threshold is adjusted dynamically to suit the allocation
+     patterns of the program.  If the tunable is set, the dynamic
+     adjustment is disabled and the value is set as static.
+
+ -- Tunable: glibc.malloc.mmap_max
+     This tunable supersedes the ‘MALLOC_MMAP_MAX_’ environment variable
+     and is identical in features.
+
+     The value of this tunable is maximum number of chunks to allocate
+     with ‘mmap’.  Setting this to zero disables all use of ‘mmap’.
+
+     The default value of this tunable is ‘65536’.
+
+ -- Tunable: glibc.malloc.arena_test
+     This tunable supersedes the ‘MALLOC_ARENA_TEST’ environment
+     variable and is identical in features.
+
+     The ‘glibc.malloc.arena_test’ tunable specifies the number of
+     arenas that can be created before the test on the limit to the
+     number of arenas is conducted.  The value is ignored if
+     ‘glibc.malloc.arena_max’ is set.
+
+     The default value of this tunable is 2 for 32-bit systems and 8 for
+     64-bit systems.
+
+ -- Tunable: glibc.malloc.arena_max
+     This tunable supersedes the ‘MALLOC_ARENA_MAX’ environment variable
+     and is identical in features.
+
+     This tunable sets the number of arenas to use in a process
+     regardless of the number of cores in the system.
+
+     The default value of this tunable is ‘0’, meaning that the limit on
+     the number of arenas is determined by the number of CPU cores
+     online.  For 32-bit systems the limit is twice the number of cores
+     online and on 64-bit systems, it is 8 times the number of cores
+     online.
+
+ -- Tunable: glibc.malloc.tcache_max
+     The maximum size of a request (in bytes) which may be met via the
+     per-thread cache.  The default (and maximum) value is 1032 bytes on
+     64-bit systems and 516 bytes on 32-bit systems.
+
+ -- Tunable: glibc.malloc.tcache_count
+     The maximum number of chunks of each size to cache.  The default is
+     7.  The upper limit is 65535.  If set to zero, the per-thread cache
+     is effectively disabled.
+
+     The approximate maximum overhead of the per-thread cache is thus
+     equal to the number of bins times the chunk count in each bin times
+     the size of each chunk.  With defaults, the approximate maximum
+     overhead of the per-thread cache is approximately 236 KB on 64-bit
+     systems and 118 KB on 32-bit systems.
+
+ -- Tunable: glibc.malloc.tcache_unsorted_limit
+     When the user requests memory and the request cannot be met via the
+     per-thread cache, the arenas are used to meet the request.  At this
+     time, additional chunks will be moved from existing arena lists to
+     pre-fill the corresponding cache.  While copies from the fastbins,
+     smallbins, and regular bins are bounded and predictable due to the
+     bin sizes, copies from the unsorted bin are not bounded, and incur
+     additional time penalties as they need to be sorted as they’re
+     scanned.  To make scanning the unsorted list more predictable and
+     bounded, the user may set this tunable to limit the number of
+     chunks that are scanned from the unsorted list while searching for
+     chunks to pre-fill the per-thread cache with.  The default, or when
+     set to zero, is no limit.
+
+ -- Tunable: glibc.malloc.mxfast
+     One of the optimizations ‘malloc’ uses is to maintain a series of
+     “fast bins” that hold chunks up to a specific size.  The default
+     and maximum size which may be held this way is 80 bytes on 32-bit
+     systems or 160 bytes on 64-bit systems.  Applications which value
+     size over speed may choose to reduce the size of requests which are
+     serviced from fast bins with this tunable.  Note that the value
+     specified includes ‘malloc’’s internal overhead, which is normally
+     the size of one pointer, so add 4 on 32-bit systems or 8 on 64-bit
+     systems to the size passed to ‘malloc’ for the largest bin size to
+     enable.
+
+ -- Tunable: glibc.malloc.hugetlb
+     This tunable controls the usage of Huge Pages on ‘malloc’ calls.
+     The default value is ‘0’, which disables any additional support on
+     ‘malloc’.
+
+     Setting its value to ‘1’ enables the use of ‘madvise’ with
+     ‘MADV_HUGEPAGE’ after memory allocation with ‘mmap’.  It is enabled
+     only if the system supports Transparent Huge Page (currently only
+     on Linux).
+
+     Setting its value to ‘2’ enables the use of Huge Page directly with
+     ‘mmap’ with the use of ‘MAP_HUGETLB’ flag.  The huge page size to
+     use will be the default one provided by the system.  A value larger
+     than ‘2’ specifies huge page size, which will be matched against
+     the system supported ones.  If provided value is invalid,
+     ‘MAP_HUGETLB’ will not be used.
 
 
 File: libc.info,  Node: Dynamic Linking Tunables,  Next: Elision Tunables,  Prev: Memory Allocation Tunables,  Up: Tunables
@@ -13780,9 +14106,17 @@ const void *NEEDLE, size_t NEEDLE-LEN)’
 
      ‘string.h’ (ISO): *note Error Messages::.
 
+‘char * strerror_l (int ERRNUM, locale_t LOCALE)’
+
+     ‘string.h’ (POSIX): *note Error Messages::.
+
 ‘char * strerror_r (int ERRNUM, char *BUF, size_t N)’
 
      ‘string.h’ (GNU): *note Error Messages::.
+
+‘int strerror_r (int ERRNUM, char *BUF, size_t N)’
+
+     ‘string.h’ (POSIX): *note Error Messages::.
 
 ‘const char * strerrordesc_np (int ERRNUM)’
 

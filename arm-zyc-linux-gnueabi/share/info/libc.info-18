@@ -1900,6 +1900,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -2204,7 +2206,7 @@ Program and File Index
                                                               (line   6)
 * ctype.h:                               Character Handling.  (line   9)
 * ctype.h <1>:                           Classification of Characters.
-                                                              (line  25)
+                                                              (line  38)
 * ctype.h <2>:                           Case Conversion.     (line  21)
 * dirent.h:                              Reserved Names.      (line  80)
 * dirent.h <1>:                          Directory Entries.   (line   6)
@@ -2384,8 +2386,8 @@ Program and File Index
 * stdlib.h <22>:                         Exit Status.         (line  43)
 * stdlib.h <23>:                         Aborting a Program.  (line   7)
 * stdlib.h <24>:                         Running a Command.   (line  34)
-* string.h:                              Error Messages.      (line  82)
-* string.h <1>:                          Error Messages.      (line  94)
+* string.h:                              Error Messages.      (line 151)
+* string.h <1>:                          Error Messages.      (line 164)
 * string.h <2>:                          String Length.       (line   7)
 * string.h <3>:                          Copying Strings and Arrays.
                                                               (line   9)

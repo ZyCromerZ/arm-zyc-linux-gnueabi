@@ -1900,6 +1900,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -6085,43 +6087,111 @@ to the name of the program that encountered the error.
 
  -- Function: char * strerror (int ERRNUM)
 
-     Preliminary: | MT-Unsafe race:strerror | AS-Unsafe heap i18n |
-     AC-Unsafe mem | *Note POSIX Safety Concepts::.
+     Preliminary: | MT-Safe | AS-Unsafe heap i18n | AC-Unsafe mem |
+     *Note POSIX Safety Concepts::.
 
      The ‘strerror’ function maps the error code (*note Checking for
      Errors::) specified by the ERRNUM argument to a descriptive error
-     message string.  The return value is a pointer to this string.
+     message string.  The string is translated according to the current
+     locale.  The return value is a pointer to this string.
 
      The value ERRNUM normally comes from the variable ‘errno’.
 
      You should not modify the string returned by ‘strerror’.  Also, if
-     you make subsequent calls to ‘strerror’, the string might be
-     overwritten.  (But it’s guaranteed that no library function ever
-     calls ‘strerror’ behind your back.)
+     you make subsequent calls to ‘strerror’ or ‘strerror_l’, or the
+     thread that obtained the string exits, the returned pointer will be
+     invalidated.
+
+     As there is no way to restore the previous state after calling
+     ‘strerror’, library code should not call this function because it
+     may interfere with application use of ‘strerror’, invalidating the
+     string pointer before the application is done using it.  Instead,
+     ‘strerror_r’, ‘snprintf’ with the ‘%m’ or ‘%#m’ specifiers,
+     ‘strerrorname_np’, or ‘strerrordesc_np’ can be used instead.
+
+     The ‘strerror’ function preserves the value of ‘errno’ and cannot
+     fail.
 
      The function ‘strerror’ is declared in ‘string.h’.
+
+ -- Function: char * strerror_l (int ERRNUM, locale_t LOCALE)
+
+     Preliminary: | MT-Safe | AS-Unsafe heap i18n | AC-Unsafe mem |
+     *Note POSIX Safety Concepts::.
+
+     This function is like ‘strerror’, except that the returned string
+     is translated according to LOCALE (instead of the current locale
+     used by ‘strerror’).  Note that calling ‘strerror_l’ invalidates
+     the pointer returned by ‘strerror’ and vice versa.
+
+     The function ‘strerror_l’ is defined by POSIX and is declared in
+     ‘string.h’.
 
  -- Function: char * strerror_r (int ERRNUM, char *BUF, size_t N)
 
      Preliminary: | MT-Safe | AS-Unsafe i18n | AC-Unsafe | *Note POSIX
      Safety Concepts::.
 
+     The following description is for the GNU variant of the function,
+     used if ‘_GNU_SOURCE’ is defined.  *Note Feature Test Macros::.
+
      The ‘strerror_r’ function works like ‘strerror’ but instead of
-     returning the error message in a statically allocated buffer shared
-     by all threads in the process, it returns a private copy for the
-     thread.  This might be either some permanent global data or a
-     message string in the user supplied buffer starting at BUF with the
-     length of N bytes.
+     returning a pointer to a string that is managed by the GNU C
+     Library, it can use the user supplied buffer starting at BUF for
+     storing the string.
 
-     At most N characters are written (including the NUL byte) so it is
-     up to the user to select a buffer large enough.
+     At most N characters are written (including the NUL byte) to BUF,
+     so it is up to the user to select a buffer large enough.  Whether
+     returned pointer points to the BUF array or not depends on the
+     ERRNUM argument.  If the result string is not stored in BUF, the
+     string will not change for the remaining execution of the program.
 
-     This function should always be used in multi-threaded programs
-     since there is no way to guarantee the string returned by
-     ‘strerror’ really belongs to the last call of the current thread.
+     The function ‘strerror_r’ as described above is a GNU extension and
+     it is declared in ‘string.h’.  There is a POSIX variant of this
+     function, described next.
 
-     The function ‘strerror_r’ is a GNU extension and it is declared in
-     ‘string.h’.
+ -- Function: int strerror_r (int ERRNUM, char *BUF, size_t N)
+
+     Preliminary: | MT-Safe | AS-Unsafe i18n | AC-Unsafe | *Note POSIX
+     Safety Concepts::.
+
+     This variant of the ‘strerror_r’ function is used if a standard is
+     selected that includes ‘strerror_r’, but ‘_GNU_SOURCE’ is not
+     defined.  This POSIX variant of the function always writes the
+     error message to the specified buffer BUF of size N bytes.
+
+     Upon success, ‘strerror_r’ returns 0.  Two more return values are
+     used to indicate failure.
+
+     ‘EINVAL’
+          The ERRNUM argument does not correspond to a known error
+          constant.
+
+     ‘ERANGE’
+          The buffer size N is not large enough to store the entire
+          error message.
+
+     Even if an error is reported, ‘strerror_r’ still writes as much of
+     the error message to the output buffer as possible.  After a call
+     to ‘strerror_r’, the value of ‘errno’ is unspecified.
+
+     If you want to use the always-copying POSIX semantics of
+     ‘strerror_r’ in a program that is potentially compiled with
+     ‘_GNU_SOURCE’ defined, you can use ‘snprintf’ with the ‘%m’
+     conversion specifier, like this:
+
+          int saved_errno = errno;
+          errno = errnum;
+          int ret = snprintf (buf, n, "%m");
+          errno = saved_errno;
+          if (strerrorname_np (errnum) == NULL)
+            return EINVAL;
+          if (ret >= n)
+            return ERANGE:
+          return 0;
+
+     This function is declared in ‘string.h’ if it is declared at all.
+     It is a POSIX extension.
 
  -- Function: void perror (const char *MESSAGE)
 
@@ -6150,7 +6220,8 @@ to the name of the program that encountered the error.
 
      This function returns the name describing the error ERRNUM or
      ‘NULL’ if there is no known constant with this value (e.g "EINVAL"
-     for ‘EINVAL’).
+     for ‘EINVAL’).  The returned string does not change for the
+     remaining execution of the program.
 
      This function is a GNU extension, declared in the header file
      ‘string.h’.
@@ -6162,16 +6233,18 @@ to the name of the program that encountered the error.
      This function returns the message describing the error ERRNUM or
      ‘NULL’ if there is no known constant with this value (e.g "Invalid
      argument" for ‘EINVAL’).  Different than ‘strerror’ the returned
-     description is not translated.
+     description is not translated, and the returned string does not
+     change for the remaining execution of the program.
 
      This function is a GNU extension, declared in the header file
      ‘string.h’.
 
    ‘strerror’ and ‘perror’ produce the exact same message for any given
-error code; the precise text varies from system to system.  With the GNU
-C Library, the messages are fairly short; there are no multi-line
-messages or embedded newlines.  Each error message begins with a capital
-letter and does not include any terminating punctuation.
+error code under the same locale; the precise text varies from system to
+system.  With the GNU C Library, the messages are fairly short; there
+are no multi-line messages or embedded newlines.  Each error message
+begins with a capital letter and does not include any terminating
+punctuation.
 
    Many programs that don’t read input from the terminal are designed to
 exit if any system call fails.  By convention, the error message from
@@ -7085,110 +7158,4 @@ implementation knows for other reasons that the new memory block is
 zero, it need not zero out the block again with ‘memset’.  Also, if an
 application provides its own ‘reallocarray’ outside the C library,
 ‘calloc’ might not use that redefinition.  *Note Replacing malloc::.
-
-
-File: libc.info,  Node: Aligned Memory Blocks,  Next: Malloc Tunable Parameters,  Prev: Allocating Cleared Space,  Up: Unconstrained Allocation
-
-3.2.3.6 Allocating Aligned Memory Blocks
-........................................
-
-The address of a block returned by ‘malloc’ or ‘realloc’ in GNU systems
-is always a multiple of eight (or sixteen on 64-bit systems).  If you
-need a block whose address is a multiple of a higher power of two than
-that, use ‘aligned_alloc’ or ‘posix_memalign’.  ‘aligned_alloc’ and
-‘posix_memalign’ are declared in ‘stdlib.h’.
-
- -- Function: void * aligned_alloc (size_t ALIGNMENT, size_t SIZE)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
-     *Note POSIX Safety Concepts::.
-
-     The ‘aligned_alloc’ function allocates a block of SIZE bytes whose
-     address is a multiple of ALIGNMENT.  The ALIGNMENT must be a power
-     of two.
-
-     The ‘aligned_alloc’ function returns a null pointer on error and
-     sets ‘errno’ to one of the following values:
-
-     ‘ENOMEM’
-          There was insufficient memory available to satisfy the
-          request.
-
-     ‘EINVAL’
-          ALIGNMENT is not a power of two.
-
-          This function was introduced in ISO C11 and hence may have
-          better portability to modern non-POSIX systems than
-          ‘posix_memalign’.
-
- -- Function: void * memalign (size_t BOUNDARY, size_t SIZE)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
-     *Note POSIX Safety Concepts::.
-
-     The ‘memalign’ function allocates a block of SIZE bytes whose
-     address is a multiple of BOUNDARY.  The BOUNDARY must be a power of
-     two!  The function ‘memalign’ works by allocating a somewhat larger
-     block, and then returning an address within the block that is on
-     the specified boundary.
-
-     The ‘memalign’ function returns a null pointer on error and sets
-     ‘errno’ to one of the following values:
-
-     ‘ENOMEM’
-          There was insufficient memory available to satisfy the
-          request.
-
-     ‘EINVAL’
-          BOUNDARY is not a power of two.
-
-     The ‘memalign’ function is obsolete and ‘aligned_alloc’ or
-     ‘posix_memalign’ should be used instead.
-
- -- Function: int posix_memalign (void **MEMPTR, size_t ALIGNMENT,
-          size_t SIZE)
-
-     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
-     *Note POSIX Safety Concepts::.
-
-     The ‘posix_memalign’ function is similar to the ‘memalign’ function
-     in that it returns a buffer of SIZE bytes aligned to a multiple of
-     ALIGNMENT.  But it adds one requirement to the parameter ALIGNMENT:
-     the value must be a power of two multiple of ‘sizeof (void *)’.
-
-     If the function succeeds in allocation memory a pointer to the
-     allocated memory is returned in ‘*MEMPTR’ and the return value is
-     zero.  Otherwise the function returns an error value indicating the
-     problem.  The possible error values returned are:
-
-     ‘ENOMEM’
-          There was insufficient memory available to satisfy the
-          request.
-
-     ‘EINVAL’
-          ALIGNMENT is not a power of two multiple of ‘sizeof (void *)’.
-
-     This function was introduced in POSIX 1003.1d.  Although this
-     function is superseded by ‘aligned_alloc’, it is more portable to
-     older POSIX systems that do not support ISO C11.
-
- -- Function: void * valloc (size_t SIZE)
-
-     Preliminary: | MT-Unsafe init | AS-Unsafe init lock | AC-Unsafe
-     init lock fd mem | *Note POSIX Safety Concepts::.
-
-     Using ‘valloc’ is like using ‘memalign’ and passing the page size
-     as the value of the first argument.  It is implemented like this:
-
-          void *
-          valloc (size_t size)
-          {
-            return memalign (getpagesize (), size);
-          }
-
-     *note Query Memory Parameters:: for more information about the
-     memory subsystem.
-
-     The ‘valloc’ function is obsolete and ‘aligned_alloc’ or
-     ‘posix_memalign’ should be used instead.
 

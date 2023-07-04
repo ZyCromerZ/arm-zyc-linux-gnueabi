@@ -1900,6 +1900,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -2171,6 +2173,112 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Aligned Memory Blocks,  Next: Malloc Tunable Parameters,  Prev: Allocating Cleared Space,  Up: Unconstrained Allocation
+
+3.2.3.6 Allocating Aligned Memory Blocks
+........................................
+
+The address of a block returned by ‘malloc’ or ‘realloc’ in GNU systems
+is always a multiple of eight (or sixteen on 64-bit systems).  If you
+need a block whose address is a multiple of a higher power of two than
+that, use ‘aligned_alloc’ or ‘posix_memalign’.  ‘aligned_alloc’ and
+‘posix_memalign’ are declared in ‘stdlib.h’.
+
+ -- Function: void * aligned_alloc (size_t ALIGNMENT, size_t SIZE)
+
+     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
+     *Note POSIX Safety Concepts::.
+
+     The ‘aligned_alloc’ function allocates a block of SIZE bytes whose
+     address is a multiple of ALIGNMENT.  The ALIGNMENT must be a power
+     of two.
+
+     The ‘aligned_alloc’ function returns a null pointer on error and
+     sets ‘errno’ to one of the following values:
+
+     ‘ENOMEM’
+          There was insufficient memory available to satisfy the
+          request.
+
+     ‘EINVAL’
+          ALIGNMENT is not a power of two.
+
+          This function was introduced in ISO C11 and hence may have
+          better portability to modern non-POSIX systems than
+          ‘posix_memalign’.
+
+ -- Function: void * memalign (size_t BOUNDARY, size_t SIZE)
+
+     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
+     *Note POSIX Safety Concepts::.
+
+     The ‘memalign’ function allocates a block of SIZE bytes whose
+     address is a multiple of BOUNDARY.  The BOUNDARY must be a power of
+     two!  The function ‘memalign’ works by allocating a somewhat larger
+     block, and then returning an address within the block that is on
+     the specified boundary.
+
+     The ‘memalign’ function returns a null pointer on error and sets
+     ‘errno’ to one of the following values:
+
+     ‘ENOMEM’
+          There was insufficient memory available to satisfy the
+          request.
+
+     ‘EINVAL’
+          BOUNDARY is not a power of two.
+
+     The ‘memalign’ function is obsolete and ‘aligned_alloc’ or
+     ‘posix_memalign’ should be used instead.
+
+ -- Function: int posix_memalign (void **MEMPTR, size_t ALIGNMENT,
+          size_t SIZE)
+
+     Preliminary: | MT-Safe | AS-Unsafe lock | AC-Unsafe lock fd mem |
+     *Note POSIX Safety Concepts::.
+
+     The ‘posix_memalign’ function is similar to the ‘memalign’ function
+     in that it returns a buffer of SIZE bytes aligned to a multiple of
+     ALIGNMENT.  But it adds one requirement to the parameter ALIGNMENT:
+     the value must be a power of two multiple of ‘sizeof (void *)’.
+
+     If the function succeeds in allocation memory a pointer to the
+     allocated memory is returned in ‘*MEMPTR’ and the return value is
+     zero.  Otherwise the function returns an error value indicating the
+     problem.  The possible error values returned are:
+
+     ‘ENOMEM’
+          There was insufficient memory available to satisfy the
+          request.
+
+     ‘EINVAL’
+          ALIGNMENT is not a power of two multiple of ‘sizeof (void *)’.
+
+     This function was introduced in POSIX 1003.1d.  Although this
+     function is superseded by ‘aligned_alloc’, it is more portable to
+     older POSIX systems that do not support ISO C11.
+
+ -- Function: void * valloc (size_t SIZE)
+
+     Preliminary: | MT-Unsafe init | AS-Unsafe init lock | AC-Unsafe
+     init lock fd mem | *Note POSIX Safety Concepts::.
+
+     Using ‘valloc’ is like using ‘memalign’ and passing the page size
+     as the value of the first argument.  It is implemented like this:
+
+          void *
+          valloc (size_t size)
+          {
+            return memalign (getpagesize (), size);
+          }
+
+     *note Query Memory Parameters:: for more information about the
+     memory subsystem.
+
+     The ‘valloc’ function is obsolete and ‘aligned_alloc’ or
+     ‘posix_memalign’ should be used instead.
 
 
 File: libc.info,  Node: Malloc Tunable Parameters,  Next: Heap Consistency Checking,  Prev: Aligned Memory Blocks,  Up: Unconstrained Allocation
@@ -4518,19 +4626,32 @@ File: libc.info,  Node: Classification of Characters,  Next: Case Conversion,  U
 
 This section explains the library functions for classifying characters.
 For example, ‘isalpha’ is the function to test for an alphabetic
-character.  It takes one argument, the character to test, and returns a
-nonzero integer if the character is alphabetic, and zero otherwise.  You
-would use it like this:
+character.  It takes one argument, the character to test as an ‘unsigned
+char’ value, and returns a nonzero integer if the character is
+alphabetic, and zero otherwise.  You would use it like this:
 
-     if (isalpha (c))
+     if (isalpha ((unsigned char) c))
        printf ("The character `%c' is alphabetic.\n", c);
 
    Each of the functions in this section tests for membership in a
 particular class of characters; each has a name starting with ‘is’.
-Each of them takes one argument, which is a character to test, and
-returns an ‘int’ which is treated as a boolean value.  The character
-argument is passed as an ‘int’, and it may be the constant value ‘EOF’
-instead of a real character.
+Each of them takes one argument, which is a character to test.  The
+character argument must be in the value range of ‘unsigned char’ (0 to
+255 for the GNU C Library).  On a machine where the ‘char’ type is
+signed, it may be necessary to cast the argument to ‘unsigned char’, or
+mask it with ‘& 0xff’.  (On ‘unsigned char’ machines, this step is
+harmless, so portable code should always perform it.)  The ‘is’
+functions return an ‘int’ which is treated as a boolean value.
+
+   All ‘is’ functions accept the special value ‘EOF’ and return zero.
+(Note that ‘EOF’ must not be cast to ‘unsigned char’ for this to work.)
+
+   As an extension, the GNU C Library accepts signed ‘char’ values as
+‘is’ functions arguments in the range -128 to -2, and returns the result
+for the corresponding unsigned character.  However, as there might be an
+actual character corresponding to the ‘EOF’ integer constant, doing so
+may introduce bugs, and it is recommended to apply the conversion to the
+unsigned character range as appropriate.
 
    The attributes of any given character can vary between locales.
 *Note Locales::, for more information on locales.
