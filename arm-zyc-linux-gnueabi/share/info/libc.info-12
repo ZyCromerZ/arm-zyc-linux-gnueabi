@@ -1900,6 +1900,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -2171,6 +2173,447 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Argp Help Filter Keys,  Up: Argp Help Filtering
+
+25.3.8.1 Special Keys for Argp Help Filter Functions
+....................................................
+
+The following special values may be passed to an argp help filter
+function as the first argument in addition to key values for user
+options.  They specify which help text the TEXT argument contains:
+
+‘ARGP_KEY_HELP_PRE_DOC’
+
+     The help text preceding options.
+
+‘ARGP_KEY_HELP_POST_DOC’
+
+     The help text following options.
+
+‘ARGP_KEY_HELP_HEADER’
+
+     The option header string.
+
+‘ARGP_KEY_HELP_EXTRA’
+
+     This is used after all other documentation; TEXT is zero for this
+     key.
+
+‘ARGP_KEY_HELP_DUP_ARGS_NOTE’
+
+     The explanatory note printed when duplicate option arguments have
+     been suppressed.
+
+‘ARGP_KEY_HELP_ARGS_DOC’
+
+     The argument doc string; formally the ‘args_doc’ field from the
+     argp parser.  *Note Argp Parsers::.
+
+
+File: libc.info,  Node: Argp Help,  Next: Argp Examples,  Prev: Argp Flags,  Up: Argp
+
+25.3.9 The ‘argp_help’ Function
+-------------------------------
+
+Normally programs using argp need not be written with particular
+printing argument-usage-type help messages in mind as the standard
+‘--help’ option is handled automatically by argp.  Typical error cases
+can be handled using ‘argp_usage’ and ‘argp_error’.  *Note Argp Helper
+Functions::.  However, if it’s desirable to print a help message in some
+context other than parsing the program options, argp offers the
+‘argp_help’ interface.
+
+ -- Function: void argp_help (const struct argp *ARGP, FILE *STREAM,
+          unsigned FLAGS, char *NAME)
+
+     Preliminary: | MT-Unsafe race:argpbuf env locale | AS-Unsafe heap
+     i18n corrupt | AC-Unsafe mem corrupt lock | *Note POSIX Safety
+     Concepts::.
+
+     This outputs a help message for the argp parser ARGP to STREAM.
+     The type of messages printed will be determined by FLAGS.
+
+     Any options such as ‘--help’ that are implemented automatically by
+     argp itself will _not_ be present in the help output; for this
+     reason it is best to use ‘argp_state_help’ if calling from within
+     an argp parser function.  *Note Argp Helper Functions::.
+
+* Menu:
+
+* Flags: Argp Help Flags.       Specifying what sort of help message to print.
+
+
+File: libc.info,  Node: Argp Help Flags,  Up: Argp Help
+
+25.3.10 Flags for the ‘argp_help’ Function
+------------------------------------------
+
+When calling ‘argp_help’ (*note Argp Help::) or ‘argp_state_help’ (*note
+Argp Helper Functions::) the exact output is determined by the FLAGS
+argument.  This should consist of any of the following flags, or’d
+together:
+
+‘ARGP_HELP_USAGE’
+
+     A unix ‘Usage:’ message that explicitly lists all options.
+
+‘ARGP_HELP_SHORT_USAGE’
+
+     A unix ‘Usage:’ message that displays an appropriate placeholder to
+     indicate where the options go; useful for showing the non-option
+     argument syntax.
+
+‘ARGP_HELP_SEE’
+
+     A ‘Try ... for more help’ message; ‘...’ contains the program name
+     and ‘--help’.
+
+‘ARGP_HELP_LONG’
+
+     A verbose option help message that gives each option available
+     along with its documentation string.
+
+‘ARGP_HELP_PRE_DOC’
+
+     The part of the argp parser doc string preceding the verbose option
+     help.
+
+‘ARGP_HELP_POST_DOC’
+
+     The part of the argp parser doc string that following the verbose
+     option help.
+
+‘ARGP_HELP_DOC’
+
+     ‘(ARGP_HELP_PRE_DOC | ARGP_HELP_POST_DOC)’
+
+‘ARGP_HELP_BUG_ADDR’
+
+     A message that prints where to report bugs for this program, if the
+     ‘argp_program_bug_address’ variable contains this information.
+
+‘ARGP_HELP_LONG_ONLY’
+
+     This will modify any output to reflect the ‘ARGP_LONG_ONLY’ mode.
+
+   The following flags are only understood when used with
+‘argp_state_help’.  They control whether the function returns after
+printing its output, or terminates the program:
+
+‘ARGP_HELP_EXIT_ERR’
+
+     This will terminate the program with ‘exit (argp_err_exit_status)’.
+
+‘ARGP_HELP_EXIT_OK’
+
+     This will terminate the program with ‘exit (0)’.
+
+   The following flags are combinations of the basic flags for printing
+standard messages:
+
+‘ARGP_HELP_STD_ERR’
+
+     Assuming that an error message for a parsing error has printed,
+     this prints a message on how to get help, and terminates the
+     program with an error.
+
+‘ARGP_HELP_STD_USAGE’
+
+     This prints a standard usage message and terminates the program
+     with an error.  This is used when no other specific error messages
+     are appropriate or available.
+
+‘ARGP_HELP_STD_HELP’
+
+     This prints the standard response for a ‘--help’ option, and
+     terminates the program successfully.
+
+
+File: libc.info,  Node: Argp Examples,  Next: Argp User Customization,  Prev: Argp Help,  Up: Argp
+
+25.3.11 Argp Examples
+---------------------
+
+These example programs demonstrate the basic usage of argp.
+
+* Menu:
+
+* 1: Argp Example 1.            A minimal program using argp.
+* 2: Argp Example 2.            A program using only default options.
+* 3: Argp Example 3.            A simple program with user options.
+* 4: Argp Example 4.            Combining multiple argp parsers.
+
+
+File: libc.info,  Node: Argp Example 1,  Next: Argp Example 2,  Up: Argp Examples
+
+25.3.11.1 A Minimal Program Using Argp
+......................................
+
+This is perhaps the smallest program possible that uses argp.  It won’t
+do much except give an error message and exit when there are any
+arguments, and prints a rather pointless message for ‘--help’.
+
+
+     /* This is (probably) the smallest possible program that
+        uses argp.  It won’t do much except give an error
+        messages and exit when there are any arguments, and print
+        a (rather pointless) messages for –help. */
+
+     #include <stdlib.h>
+     #include <argp.h>
+
+     int
+     main (int argc, char **argv)
+     {
+       argp_parse (0, argc, argv, 0, 0, 0);
+       exit (0);
+     }
+
+
+File: libc.info,  Node: Argp Example 2,  Next: Argp Example 3,  Prev: Argp Example 1,  Up: Argp Examples
+
+25.3.11.2 A Program Using Argp with Only Default Options
+........................................................
+
+This program doesn’t use any options or arguments, it uses argp to be
+compliant with the GNU standard command line format.
+
+   In addition to giving no arguments and implementing a ‘--help’
+option, this example has a ‘--version’ option, which will put the given
+documentation string and bug address in the ‘--help’ output, as per GNU
+standards.
+
+   The variable ‘argp’ contains the argument parser specification.
+Adding fields to this structure is the way most parameters are passed to
+‘argp_parse’.  The first three fields are normally used, but they are
+not in this small program.  There are also two global variables that
+argp can use defined here, ‘argp_program_version’ and
+‘argp_program_bug_address’.  They are considered global variables
+because they will almost always be constant for a given program, even if
+they use different argument parsers for various tasks.
+
+
+     /* This program doesn’t use any options or arguments, but uses
+        argp to be compliant with the GNU standard command line
+        format.
+
+        In addition to making sure no arguments are given, and
+        implementing a –help option, this example will have a
+        –version option, and will put the given documentation string
+        and bug address in the –help output, as per GNU standards.
+
+        The variable ARGP contains the argument parser specification;
+        adding fields to this structure is the way most parameters are
+        passed to argp_parse (the first three fields are usually used,
+        but not in this small program).  There are also two global
+        variables that argp knows about defined here,
+        ARGP_PROGRAM_VERSION and ARGP_PROGRAM_BUG_ADDRESS (they are
+        global variables because they will almost always be constant
+        for a given program, even if it uses different argument
+        parsers for various tasks). */
+
+     #include <stdlib.h>
+     #include <argp.h>
+
+     const char *argp_program_version =
+       "argp-ex2 1.0";
+     const char *argp_program_bug_address =
+       "<bug-gnu-utils@gnu.org>";
+
+     /* Program documentation. */
+     static char doc[] =
+       "Argp example #2 -- a pretty minimal program using argp";
+
+     /* Our argument parser.  The ‘options’, ‘parser’, and
+        ‘args_doc’ fields are zero because we have neither options or
+        arguments; ‘doc’ and ‘argp_program_bug_address’ will be
+        used in the output for ‘--help’, and the ‘--version’
+        option will print out ‘argp_program_version’. */
+     static struct argp argp = { 0, 0, 0, doc };
+
+     int
+     main (int argc, char **argv)
+     {
+       argp_parse (&argp, argc, argv, 0, 0, 0);
+       exit (0);
+     }
+
+
+File: libc.info,  Node: Argp Example 3,  Next: Argp Example 4,  Prev: Argp Example 2,  Up: Argp Examples
+
+25.3.11.3 A Program Using Argp with User Options
+................................................
+
+This program uses the same features as example 2, adding user options
+and arguments.
+
+   We now use the first four fields in ‘argp’ (*note Argp Parsers::) and
+specify ‘parse_opt’ as the parser function.  *Note Argp Parser
+Functions::.
+
+   Note that in this example, ‘main’ uses a structure to communicate
+with the ‘parse_opt’ function, a pointer to which it passes in the
+‘input’ argument to ‘argp_parse’.  *Note Argp::.  It is retrieved by
+‘parse_opt’ through the ‘input’ field in its ‘state’ argument.  *Note
+Argp Parsing State::.  Of course, it’s also possible to use global
+variables instead, but using a structure like this is somewhat more
+flexible and clean.
+
+
+     /* This program uses the same features as example 2, and uses options and
+        arguments.
+
+        We now use the first four fields in ARGP, so here’s a description of them:
+          OPTIONS  – A pointer to a vector of struct argp_option (see below)
+          PARSER   – A function to parse a single option, called by argp
+          ARGS_DOC – A string describing how the non-option arguments should look
+          DOC      – A descriptive string about this program; if it contains a
+                      vertical tab character (\v), the part after it will be
+                      printed *following* the options
+
+        The function PARSER takes the following arguments:
+          KEY  – An integer specifying which option this is (taken
+                  from the KEY field in each struct argp_option), or
+                  a special key specifying something else; the only
+                  special keys we use here are ARGP_KEY_ARG, meaning
+                  a non-option argument, and ARGP_KEY_END, meaning
+                  that all arguments have been parsed
+          ARG  – For an option KEY, the string value of its
+                  argument, or NULL if it has none
+          STATE– A pointer to a struct argp_state, containing
+                  various useful information about the parsing state; used here
+                  are the INPUT field, which reflects the INPUT argument to
+                  argp_parse, and the ARG_NUM field, which is the number of the
+                  current non-option argument being parsed
+        It should return either 0, meaning success, ARGP_ERR_UNKNOWN, meaning the
+        given KEY wasn’t recognized, or an errno value indicating some other
+        error.
+
+        Note that in this example, main uses a structure to communicate with the
+        parse_opt function, a pointer to which it passes in the INPUT argument to
+        argp_parse.  Of course, it’s also possible to use global variables
+        instead, but this is somewhat more flexible.
+
+        The OPTIONS field contains a pointer to a vector of struct argp_option’s;
+        that structure has the following fields (if you assign your option
+        structures using array initialization like this example, unspecified
+        fields will be defaulted to 0, and need not be specified):
+          NAME   – The name of this option’s long option (may be zero)
+          KEY    – The KEY to pass to the PARSER function when parsing this option,
+                    *and* the name of this option’s short option, if it is a
+                    printable ascii character
+          ARG    – The name of this option’s argument, if any
+          FLAGS  – Flags describing this option; some of them are:
+                      OPTION_ARG_OPTIONAL – The argument to this option is optional
+                      OPTION_ALIAS        – This option is an alias for the
+                                             previous option
+                      OPTION_HIDDEN       – Don’t show this option in –help output
+          DOC    – A documentation string for this option, shown in –help output
+
+        An options vector should be terminated by an option with all fields zero. */
+
+     #include <stdlib.h>
+     #include <argp.h>
+
+     const char *argp_program_version =
+       "argp-ex3 1.0";
+     const char *argp_program_bug_address =
+       "<bug-gnu-utils@gnu.org>";
+
+     /* Program documentation. */
+     static char doc[] =
+       "Argp example #3 -- a program with options and arguments using argp";
+
+     /* A description of the arguments we accept. */
+     static char args_doc[] = "ARG1 ARG2";
+
+     /* The options we understand. */
+     static struct argp_option options[] = {
+       {"verbose",  'v', 0,      0,  "Produce verbose output" },
+       {"quiet",    'q', 0,      0,  "Don't produce any output" },
+       {"silent",   's', 0,      OPTION_ALIAS },
+       {"output",   'o', "FILE", 0,
+        "Output to FILE instead of standard output" },
+       { 0 }
+     };
+
+     /* Used by ‘main’ to communicate with ‘parse_opt’. */
+     struct arguments
+     {
+       char *args[2];                /* ARG1 & ARG2 */
+       int silent, verbose;
+       char *output_file;
+     };
+
+     /* Parse a single option. */
+     static error_t
+     parse_opt (int key, char *arg, struct argp_state *state)
+     {
+       /* Get the INPUT argument from ‘argp_parse’, which we
+          know is a pointer to our arguments structure. */
+       struct arguments *arguments = state->input;
+
+       switch (key)
+         {
+         case 'q': case 's':
+           arguments->silent = 1;
+           break;
+         case 'v':
+           arguments->verbose = 1;
+           break;
+         case 'o':
+           arguments->output_file = arg;
+           break;
+
+         case ARGP_KEY_ARG:
+           if (state->arg_num >= 2)
+             /* Too many arguments. */
+             argp_usage (state);
+
+           arguments->args[state->arg_num] = arg;
+
+           break;
+
+         case ARGP_KEY_END:
+           if (state->arg_num < 2)
+             /* Not enough arguments. */
+             argp_usage (state);
+           break;
+
+         default:
+           return ARGP_ERR_UNKNOWN;
+         }
+       return 0;
+     }
+
+     /* Our argp parser. */
+     static struct argp argp = { options, parse_opt, args_doc, doc };
+
+     int
+     main (int argc, char **argv)
+     {
+       struct arguments arguments;
+
+       /* Default values. */
+       arguments.silent = 0;
+       arguments.verbose = 0;
+       arguments.output_file = "-";
+
+       /* Parse our arguments; every option seen by ‘parse_opt’ will
+          be reflected in ‘arguments’. */
+       argp_parse (&argp, argc, argv, 0, 0, &arguments);
+
+       printf ("ARG1 = %s\nARG2 = %s\nOUTPUT_FILE = %s\n"
+               "VERBOSE = %s\nSILENT = %s\n",
+               arguments.args[0], arguments.args[1],
+               arguments.output_file,
+               arguments.verbose ? "yes" : "no",
+               arguments.silent ? "yes" : "no");
+
+       exit (0);
+     }
 
 
 File: libc.info,  Node: Argp Example 4,  Prev: Argp Example 3,  Up: Argp Examples
@@ -7226,311 +7669,4 @@ described in this section.  If however, you want your program to be
 portable, consider using the XPG functions described in *note XPG
 Functions::, or take a look at the BSD compatible functions in *note
 Logging In and Out::.
-
-
-File: libc.info,  Node: XPG Functions,  Next: Logging In and Out,  Prev: Manipulating the Database,  Up: User Accounting Database
-
-30.12.2 XPG User Accounting Database Functions
-----------------------------------------------
-
-These functions, described in the X/Open Portability Guide, are declared
-in the header file ‘utmpx.h’.
-
- -- Data Type: struct utmpx
-     The ‘utmpx’ data structure contains at least the following members:
-
-     ‘short int ut_type’
-          Specifies the type of login; one of ‘EMPTY’, ‘RUN_LVL’,
-          ‘BOOT_TIME’, ‘OLD_TIME’, ‘NEW_TIME’, ‘INIT_PROCESS’,
-          ‘LOGIN_PROCESS’, ‘USER_PROCESS’ or ‘DEAD_PROCESS’.
-
-     ‘pid_t ut_pid’
-          The process ID number of the login process.
-
-     ‘char ut_line[]’
-          The device name of the tty (without ‘/dev/’).
-
-     ‘char ut_id[]’
-          The inittab ID of the process.
-
-     ‘char ut_user[]’
-          The user’s login name.
-
-     ‘struct timeval ut_tv’
-          Time the entry was made.  For entries of type ‘OLD_TIME’ this
-          is the time when the system clock changed, and for entries of
-          type ‘NEW_TIME’ this is the time the system clock was set to.
-     In the GNU C Library, ‘struct utmpx’ is identical to ‘struct utmp’
-     except for the fact that including ‘utmpx.h’ does not make visible
-     the declaration of ‘struct exit_status’.
-
-   The following macros are defined for use as values for the ‘ut_type’
-member of the ‘utmpx’ structure.  The values are integer constants and
-are, in the GNU C Library, identical to the definitions in ‘utmp.h’.
-
-‘EMPTY’
-
-     This macro is used to indicate that the entry contains no valid
-     user accounting information.
-
-‘RUN_LVL’
-
-     This macro is used to identify the system’s runlevel.
-
-‘BOOT_TIME’
-
-     This macro is used to identify the time of system boot.
-
-‘OLD_TIME’
-
-     This macro is used to identify the time when the system clock
-     changed.
-
-‘NEW_TIME’
-
-     This macro is used to identify the time after the system clock
-     changed.
-
-‘INIT_PROCESS’
-
-     This macro is used to identify a process spawned by the init
-     process.
-
-‘LOGIN_PROCESS’
-
-     This macro is used to identify the session leader of a logged in
-     user.
-
-‘USER_PROCESS’
-
-     This macro is used to identify a user process.
-
-‘DEAD_PROCESS’
-
-     This macro is used to identify a terminated process.
-
-   The size of the ‘ut_line’, ‘ut_id’ and ‘ut_user’ arrays can be found
-using the ‘sizeof’ operator.
-
- -- Function: void setutxent (void)
-
-     Preliminary: | MT-Unsafe race:utent | AS-Unsafe lock | AC-Unsafe
-     lock fd | *Note POSIX Safety Concepts::.
-
-     This function is similar to ‘setutent’.  In the GNU C Library it is
-     simply an alias for ‘setutent’.
-
- -- Function: struct utmpx * getutxent (void)
-
-     Preliminary: | MT-Unsafe init race:utent sig:ALRM timer | AS-Unsafe
-     heap lock | AC-Unsafe lock fd mem | *Note POSIX Safety Concepts::.
-
-     The ‘getutxent’ function is similar to ‘getutent’, but returns a
-     pointer to a ‘struct utmpx’ instead of ‘struct utmp’.  In the GNU C
-     Library it simply is an alias for ‘getutent’.
-
- -- Function: void endutxent (void)
-
-     Preliminary: | MT-Unsafe race:utent | AS-Unsafe lock | AC-Unsafe
-     lock | *Note POSIX Safety Concepts::.
-
-     This function is similar to ‘endutent’.  In the GNU C Library it is
-     simply an alias for ‘endutent’.
-
- -- Function: struct utmpx * getutxid (const struct utmpx *ID)
-
-     Preliminary: | MT-Unsafe init race:utent sig:ALRM timer | AS-Unsafe
-     lock heap | AC-Unsafe lock mem fd | *Note POSIX Safety Concepts::.
-
-     This function is similar to ‘getutid’, but uses ‘struct utmpx’
-     instead of ‘struct utmp’.  In the GNU C Library it is simply an
-     alias for ‘getutid’.
-
- -- Function: struct utmpx * getutxline (const struct utmpx *LINE)
-
-     Preliminary: | MT-Unsafe init race:utent sig:ALRM timer | AS-Unsafe
-     heap lock | AC-Unsafe lock fd mem | *Note POSIX Safety Concepts::.
-
-     This function is similar to ‘getutid’, but uses ‘struct utmpx’
-     instead of ‘struct utmp’.  In the GNU C Library it is simply an
-     alias for ‘getutline’.
-
- -- Function: struct utmpx * pututxline (const struct utmpx *UTMP)
-
-     Preliminary: | MT-Unsafe race:utent sig:ALRM timer | AS-Unsafe lock
-     | AC-Unsafe lock fd | *Note POSIX Safety Concepts::.
-
-     The ‘pututxline’ function is functionally identical to ‘pututline’,
-     but uses ‘struct utmpx’ instead of ‘struct utmp’.  In the GNU C
-     Library, ‘pututxline’ is simply an alias for ‘pututline’.
-
- -- Function: int utmpxname (const char *FILE)
-
-     Preliminary: | MT-Unsafe race:utent | AS-Unsafe lock heap |
-     AC-Unsafe lock mem | *Note POSIX Safety Concepts::.
-
-     The ‘utmpxname’ function is functionally identical to ‘utmpname’.
-     In the GNU C Library, ‘utmpxname’ is simply an alias for
-     ‘utmpname’.
-
-   You can translate between a traditional ‘struct utmp’ and an XPG
-‘struct utmpx’ with the following functions.  In the GNU C Library,
-these functions are merely copies, since the two structures are
-identical.
-
- -- Function: int getutmp (const struct utmpx *UTMPX, struct utmp *UTMP)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     ‘getutmp’ copies the information, insofar as the structures are
-     compatible, from UTMPX to UTMP.
-
- -- Function: int getutmpx (const struct utmp *UTMP, struct utmpx
-          *UTMPX)
-
-     Preliminary: | MT-Safe | AS-Safe | AC-Safe | *Note POSIX Safety
-     Concepts::.
-
-     ‘getutmpx’ copies the information, insofar as the structures are
-     compatible, from UTMP to UTMPX.
-
-
-File: libc.info,  Node: Logging In and Out,  Prev: XPG Functions,  Up: User Accounting Database
-
-30.12.3 Logging In and Out
---------------------------
-
-These functions, derived from BSD, are available in the separate
-‘libutil’ library, and declared in ‘utmp.h’.
-
-   Note that the ‘ut_user’ member of ‘struct utmp’ is called ‘ut_name’
-in BSD. Therefore, ‘ut_name’ is defined as an alias for ‘ut_user’ in
-‘utmp.h’.
-
- -- Function: int login_tty (int FILEDES)
-
-     Preliminary: | MT-Unsafe race:ttyname | AS-Unsafe heap lock |
-     AC-Unsafe lock fd mem | *Note POSIX Safety Concepts::.
-
-     This function makes FILEDES the controlling terminal of the current
-     process, redirects standard input, standard output and standard
-     error output to this terminal, and closes FILEDES.
-
-     This function returns ‘0’ on successful completion, and ‘-1’ on
-     error.
-
- -- Function: void login (const struct utmp *ENTRY)
-
-     Preliminary: | MT-Unsafe race:utent sig:ALRM timer | AS-Unsafe lock
-     heap | AC-Unsafe lock corrupt fd mem | *Note POSIX Safety
-     Concepts::.
-
-     The ‘login’ functions inserts an entry into the user accounting
-     database.  The ‘ut_line’ member is set to the name of the terminal
-     on standard input.  If standard input is not a terminal ‘login’
-     uses standard output or standard error output to determine the name
-     of the terminal.  If ‘struct utmp’ has a ‘ut_type’ member, ‘login’
-     sets it to ‘USER_PROCESS’, and if there is an ‘ut_pid’ member, it
-     will be set to the process ID of the current process.  The
-     remaining entries are copied from ENTRY.
-
-     A copy of the entry is written to the user accounting log file.
-
- -- Function: int logout (const char *UT_LINE)
-
-     Preliminary: | MT-Unsafe race:utent sig:ALRM timer | AS-Unsafe lock
-     heap | AC-Unsafe lock fd mem | *Note POSIX Safety Concepts::.
-
-     This function modifies the user accounting database to indicate
-     that the user on UT_LINE has logged out.
-
-     The ‘logout’ function returns ‘1’ if the entry was successfully
-     written to the database, or ‘0’ on error.
-
- -- Function: void logwtmp (const char *UT_LINE, const char *UT_NAME,
-          const char *UT_HOST)
-
-     Preliminary: | MT-Unsafe sig:ALRM timer | AS-Unsafe | AC-Unsafe fd
-     | *Note POSIX Safety Concepts::.
-
-     The ‘logwtmp’ function appends an entry to the user accounting log
-     file, for the current time and the information provided in the
-     UT_LINE, UT_NAME and UT_HOST arguments.
-
-   *Portability Note:* The BSD ‘struct utmp’ only has the ‘ut_line’,
-‘ut_name’, ‘ut_host’ and ‘ut_time’ members.  Older systems do not even
-have the ‘ut_host’ member.
-
-
-File: libc.info,  Node: User Database,  Next: Group Database,  Prev: User Accounting Database,  Up: Users and Groups
-
-30.13 User Database
-===================
-
-This section describes how to search and scan the database of registered
-users.  The database itself is kept in the file ‘/etc/passwd’ on most
-systems, but on some systems a special network server gives access to
-it.
-
-   Historically, this database included one-way hashes of user
-passphrases (*note Passphrase Storage::) as well as public information
-about each user (such as their user ID and full name).  Many of the
-functions and data structures associated with this database, and the
-filename ‘/etc/passwd’ itself, reflect this history.  However, the
-information in this database is available to all users, and it is no
-longer considered safe to make passphrase hashes available to all users,
-so they have been moved to a “shadow” database that can only be accessed
-with special privileges.
-
-* Menu:
-
-* User Data Structure::         What each user record contains.
-* Lookup User::                 How to look for a particular user.
-* Scanning All Users::          Scanning the list of all users, one by one.
-* Writing a User Entry::        How a program can rewrite a user’s record.
-
-
-File: libc.info,  Node: User Data Structure,  Next: Lookup User,  Up: User Database
-
-30.13.1 The Data Structure that Describes a User
-------------------------------------------------
-
-The functions and data structures for accessing the system user database
-are declared in the header file ‘pwd.h’.
-
- -- Data Type: struct passwd
-
-     The ‘passwd’ data structure is used to hold information about
-     entries in the system user data base.  It has at least the
-     following members:
-
-     ‘char *pw_name’
-          The user’s login name.
-
-     ‘char *pw_passwd’
-          Historically, this field would hold the one-way hash of the
-          user’s passphrase.  Nowadays, it will almost always be the
-          single character ‘x’, indicating that the hash is in the
-          shadow database.
-
-     ‘uid_t pw_uid’
-          The user ID number.
-
-     ‘gid_t pw_gid’
-          The user’s default group ID number.
-
-     ‘char *pw_gecos’
-          A string typically containing the user’s real name, and
-          possibly other information such as a phone number.
-
-     ‘char *pw_dir’
-          The user’s home directory, or initial working directory.  This
-          might be a null pointer, in which case the interpretation is
-          system-dependent.
-
-     ‘char *pw_shell’
-          The user’s default shell, or the initial program run when the
-          user logs in.  This might be a null pointer, indicating that
-          the system default should be used.
 

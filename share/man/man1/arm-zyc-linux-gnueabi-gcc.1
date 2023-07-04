@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2023-06-30" "gcc-13.1.1" "GNU"
+.TH GCC 1 "2023-07-04" "gcc-13.1.1" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -4650,10 +4650,12 @@ and Objective\-\*(C+ programs:
 Use \fIclass-name\fR as the name of the class to instantiate for each
 literal string specified with the syntax \f(CW\*(C`@"..."\*(C'\fR.  The default
 class name is \f(CW\*(C`NXConstantString\*(C'\fR if the \s-1GNU\s0 runtime is being used, and
-\&\f(CW\*(C`NSConstantString\*(C'\fR if the NeXT runtime is being used (see below).  The
-\&\fB\-fconstant\-cfstrings\fR option, if also present, overrides the
-\&\fB\-fconstant\-string\-class\fR setting and cause \f(CW\*(C`@"..."\*(C'\fR literals
-to be laid out as constant CoreFoundation strings.
+\&\f(CW\*(C`NSConstantString\*(C'\fR if the NeXT runtime is being used (see below).  On
+Darwin (macOS, MacOS X) platforms, the \fB\-fconstant\-cfstrings\fR option, if
+also present, overrides the \fB\-fconstant\-string\-class\fR setting and cause
+\&\f(CW\*(C`@"..."\*(C'\fR literals to be laid out as constant CoreFoundation strings.
+Note that \fB\-fconstant\-cfstrings\fR is an alias for the target-specific
+\&\fB\-mconstant\-cfstrings\fR equivalent.
 .IP "\fB\-fgnu\-runtime\fR" 4
 .IX Item "-fgnu-runtime"
 Generate object code compatible with the standard \s-1GNU\s0 Objective-C
@@ -23285,11 +23287,19 @@ This is by default \s-1ON.\s0
 .IP "\fB\-gfull\fR" 4
 .IX Item "-gfull"
 Emit debugging information for all symbols and types.
+.IP "\fB\-fconstant\-cfstrings\fR" 4
+.IX Item "-fconstant-cfstrings"
+The \fB\-fconstant\-cfstrings\fR is an alias for \fB\-mconstant\-cfstrings\fR.
+.IP "\fB\-mconstant\-cfstrings\fR" 4
+.IX Item "-mconstant-cfstrings"
+When the NeXT runtime is being used (the default on these systems), override
+any \fB\-fconstant\-string\-class\fR setting and cause \f(CW\*(C`@"..."\*(C'\fR
+literals to be laid out as constant CoreFoundation strings.
 .IP "\fB\-mmacosx\-version\-min=\fR\fIversion\fR" 4
 .IX Item "-mmacosx-version-min=version"
-The earliest version of MacOS X that this executable will run on
-is \fIversion\fR.  Typical values of \fIversion\fR include \f(CW10.1\fR,
-\&\f(CW10.2\fR, and \f(CW10.3.9\fR.
+The earliest version of MacOS X that this executable will run on is
+\&\fIversion\fR.  Typical values supported for \fIversion\fR include \f(CW12\fR,
+\&\f(CW10.12\fR, and \f(CW10.5.8\fR.
 .Sp
 If the compiler was built to use the system's headers by default,
 then the default for this option is the system version on which the

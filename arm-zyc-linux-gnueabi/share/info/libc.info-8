@@ -1900,6 +1900,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -2171,6 +2173,167 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Out-of-Band Data,  Prev: Server Example,  Up: Connections
+
+16.9.8 Out-of-Band Data
+-----------------------
+
+Streams with connections permit “out-of-band” data that is delivered
+with higher priority than ordinary data.  Typically the reason for
+sending out-of-band data is to send notice of an exceptional condition.
+To send out-of-band data use ‘send’, specifying the flag ‘MSG_OOB’
+(*note Sending Data::).
+
+   Out-of-band data are received with higher priority because the
+receiving process need not read it in sequence; to read the next
+available out-of-band data, use ‘recv’ with the ‘MSG_OOB’ flag (*note
+Receiving Data::).  Ordinary read operations do not read out-of-band
+data; they read only ordinary data.
+
+   When a socket finds that out-of-band data are on their way, it sends
+a ‘SIGURG’ signal to the owner process or process group of the socket.
+You can specify the owner using the ‘F_SETOWN’ command to the ‘fcntl’
+function; see *note Interrupt Input::.  You must also establish a
+handler for this signal, as described in *note Signal Handling::, in
+order to take appropriate action such as reading the out-of-band data.
+
+   Alternatively, you can test for pending out-of-band data, or wait
+until there is out-of-band data, using the ‘select’ function; it can
+wait for an exceptional condition on the socket.  *Note Waiting for
+I/O::, for more information about ‘select’.
+
+   Notification of out-of-band data (whether with ‘SIGURG’ or with
+‘select’) indicates that out-of-band data are on the way; the data may
+not actually arrive until later.  If you try to read the out-of-band
+data before it arrives, ‘recv’ fails with an ‘EWOULDBLOCK’ error.
+
+   Sending out-of-band data automatically places a “mark” in the stream
+of ordinary data, showing where in the sequence the out-of-band data
+“would have been”.  This is useful when the meaning of out-of-band data
+is “cancel everything sent so far”.  Here is how you can test, in the
+receiving process, whether any ordinary data was sent before the mark:
+
+     success = ioctl (socket, SIOCATMARK, &atmark);
+
+   The ‘integer’ variable ATMARK is set to a nonzero value if the
+socket’s read pointer has reached the “mark”.
+
+   Here’s a function to discard any ordinary data preceding the
+out-of-band mark:
+
+     int
+     discard_until_mark (int socket)
+     {
+       while (1)
+         {
+           /* This is not an arbitrary limit; any size will do.  */
+           char buffer[1024];
+           int atmark, success;
+
+           /* If we have reached the mark, return.  */
+           success = ioctl (socket, SIOCATMARK, &atmark);
+           if (success < 0)
+             perror ("ioctl");
+           if (result)
+             return;
+
+           /* Otherwise, read a bunch of ordinary data and discard it.
+              This is guaranteed not to read past the mark
+              if it starts before the mark.  */
+           success = read (socket, buffer, sizeof buffer);
+           if (success < 0)
+             perror ("read");
+         }
+     }
+
+   If you don’t want to discard the ordinary data preceding the mark,
+you may need to read some of it anyway, to make room in internal system
+buffers for the out-of-band data.  If you try to read out-of-band data
+and get an ‘EWOULDBLOCK’ error, try reading some ordinary data (saving
+it so that you can use it when you want it) and see if that makes room.
+Here is an example:
+
+     struct buffer
+     {
+       char *buf;
+       int size;
+       struct buffer *next;
+     };
+
+     /* Read the out-of-band data from SOCKET and return it
+        as a ‘struct buffer’, which records the address of the data
+        and its size.
+
+        It may be necessary to read some ordinary data
+        in order to make room for the out-of-band data.
+        If so, the ordinary data are saved as a chain of buffers
+        found in the ‘next’ field of the value.  */
+
+     struct buffer *
+     read_oob (int socket)
+     {
+       struct buffer *tail = 0;
+       struct buffer *list = 0;
+
+       while (1)
+         {
+           /* This is an arbitrary limit.
+              Does anyone know how to do this without a limit?  */
+     #define BUF_SZ 1024
+           char *buf = (char *) xmalloc (BUF_SZ);
+           int success;
+           int atmark;
+
+           /* Try again to read the out-of-band data.  */
+           success = recv (socket, buf, BUF_SZ, MSG_OOB);
+           if (success >= 0)
+             {
+               /* We got it, so return it.  */
+               struct buffer *link
+                 = (struct buffer *) xmalloc (sizeof (struct buffer));
+               link->buf = buf;
+               link->size = success;
+               link->next = list;
+               return link;
+             }
+
+           /* If we fail, see if we are at the mark.  */
+           success = ioctl (socket, SIOCATMARK, &atmark);
+           if (success < 0)
+             perror ("ioctl");
+           if (atmark)
+             {
+               /* At the mark; skipping past more ordinary data cannot help.
+                  So just wait a while.  */
+               sleep (1);
+               continue;
+             }
+
+           /* Otherwise, read a bunch of ordinary data and save it.
+              This is guaranteed not to read past the mark
+              if it starts before the mark.  */
+           success = read (socket, buf, BUF_SZ);
+           if (success < 0)
+             perror ("read");
+
+           /* Save this data in the buffer list.  */
+           {
+             struct buffer *link
+               = (struct buffer *) xmalloc (sizeof (struct buffer));
+             link->buf = buf;
+             link->size = success;
+
+             /* Add the new link to the end of the list.  */
+             if (tail)
+               tail->next = link;
+             else
+               list = link;
+             tail = link;
+           }
+         }
+     }
 
 
 File: libc.info,  Node: Datagrams,  Next: Inetd,  Prev: Connections,  Up: Sockets
@@ -6620,7 +6783,7 @@ cos           1               4               1               1               1
 cosl          2               -               -               -               2
 cosf128       -               -               -               -               -
 cos_advsimdf  1               -               -               -               -
-cos_advsimd   1               -               -               -               -
+cos_advsimd   2               -               -               -               -
 cos_advsimdl  -               -               -               -               -
 cos_advsimdf128-              -               -               -               -
 cos_svef      1               -               -               -               -
@@ -6679,6 +6842,14 @@ exp2f         1               1               -               1               1
 exp2          1               1               1               1               1
 exp2l         1               -               -               -               1
 exp2f128      -               -               -               -               -
+exp_advsimdf  1               -               -               -               -
+exp_advsimd   1               -               -               -               -
+exp_advsimdl  -               -               -               -               -
+exp_advsimdf128-              -               -               -               -
+exp_svef      1               -               -               -               -
+exp_sve       1               -               -               -               -
+exp_svel      -               -               -               -               -
+exp_svef128   -               -               -               -               -
 expm1f        1               2               1               1               1
 expm1         1               2               1               1               1
 expm1l        2               -               -               -               2
@@ -6735,6 +6906,14 @@ log2f         1               1               1               1               1
 log2          1               2               2               2               2
 log2l         3               -               -               -               3
 log2f128      -               -               -               -               -
+log_advsimdf  3               -               -               -               -
+log_advsimd   1               -               -               -               -
+log_advsimdl  -               -               -               -               -
+log_advsimdf128-              -               -               -               -
+log_svef      3               -               -               -               -
+log_sve       1               -               -               -               -
+log_svel      -               -               -               -               -
+log_svef128   -               -               -               -               -
 mul_ldoublef  -               -               -               -               -
 mul_ldouble   -               -               -               -               -
 mul_ldoublel  -               -               -               -               -
@@ -6751,6 +6930,14 @@ sinf          1               1               1               1               1
 sin           1               7               1               1               1
 sinl          2               -               -               -               2
 sinf128       -               -               -               -               -
+sin_advsimdf  1               -               -               -               -
+sin_advsimd   2               -               -               -               -
+sin_advsimdl  -               -               -               -               -
+sin_advsimdf128-              -               -               -               -
+sin_svef      1               -               -               -               -
+sin_sve       2               -               -               -               -
+sin_svel      -               -               -               -               -
+sin_svef128   -               -               -               -               -
 sincosf       1               1               1               1               1
 sincos        1               1               1               1               1
 sincosl       1               -               -               -               1
@@ -6949,6 +7136,14 @@ exp2f         -               1               -               -               1
 exp2          1               1               -               -               1
 exp2l         -               -               -               -               -
 exp2f128      -               -               -               -               -
+exp_advsimdf  -               -               -               -               -
+exp_advsimd   -               -               -               -               -
+exp_advsimdl  -               -               -               -               -
+exp_advsimdf128-              -               -               -               -
+exp_svef      -               -               -               -               -
+exp_sve       -               -               -               -               -
+exp_svel      -               -               -               -               -
+exp_svef128   -               -               -               -               -
 expm1f        1               1               1               -               1
 expm1         1               1               1               -               1
 expm1l        -               -               -               -               1
@@ -7005,6 +7200,14 @@ log2f         1               1               -               -               1
 log2          2               2               -               -               2
 log2l         -               -               -               -               -
 log2f128      -               -               -               -               -
+log_advsimdf  -               -               -               -               -
+log_advsimd   -               -               -               -               -
+log_advsimdl  -               -               -               -               -
+log_advsimdf128-              -               -               -               -
+log_svef      -               -               -               -               -
+log_sve       -               -               -               -               -
+log_svel      -               -               -               -               -
+log_svef128   -               -               -               -               -
 mul_ldoublef  -               -               -               -               -
 mul_ldouble   -               -               -               -               -
 mul_ldoublel  -               -               -               -               -
@@ -7021,6 +7224,14 @@ sinf          1               1               -               -               1
 sin           1               1               -               -               1
 sinl          -               -               -               -               -
 sinf128       -               -               -               -               -
+sin_advsimdf  -               -               -               -               -
+sin_advsimd   -               -               -               -               -
+sin_advsimdl  -               -               -               -               -
+sin_advsimdf128-              -               -               -               -
+sin_svef      -               -               -               -               -
+sin_sve       -               -               -               -               -
+sin_svel      -               -               -               -               -
+sin_svef128   -               -               -               -               -
 sincosf       -               1               1               -               1
 sincos        1               1               1               -               1
 sincosl       -               -               -               -               1
@@ -7219,6 +7430,14 @@ exp2f         -               -               -               1               1
 exp2          1               1               1               1               1
 exp2l         1               1               -               -               1
 exp2f128      1               -               -               -               -
+exp_advsimdf  -               -               -               -               -
+exp_advsimd   -               -               -               -               -
+exp_advsimdl  -               -               -               -               -
+exp_advsimdf128-              -               -               -               -
+exp_svef      -               -               -               -               -
+exp_sve       -               -               -               -               -
+exp_svel      -               -               -               -               -
+exp_svef128   -               -               -               -               -
 expm1f        -               1               -               1               1
 expm1         1               1               -               1               1
 expm1l        1               2               -               -               2
@@ -7275,6 +7494,14 @@ log2f         -               1               -               1               1
 log2          -               1               -               2               2
 log2l         -               3               -               -               3
 log2f128      3               -               -               -               -
+log_advsimdf  -               -               -               -               -
+log_advsimd   -               -               -               -               -
+log_advsimdl  -               -               -               -               -
+log_advsimdf128-              -               -               -               -
+log_svef      -               -               -               -               -
+log_sve       -               -               -               -               -
+log_svel      -               -               -               -               -
+log_svef128   -               -               -               -               -
 mul_ldoublef  -               -               -               -               -
 mul_ldouble   -               -               -               -               -
 mul_ldoublel  -               -               -               -               -
@@ -7291,6 +7518,14 @@ sinf          -               1               -               1               1
 sin           1               1               1               1               1
 sinl          -               2               -               -               2
 sinf128       2               -               -               -               -
+sin_advsimdf  -               -               -               -               -
+sin_advsimd   -               -               -               -               -
+sin_advsimdl  -               -               -               -               -
+sin_advsimdf128-              -               -               -               -
+sin_svef      -               -               -               -               -
+sin_sve       -               -               -               -               -
+sin_svel      -               -               -               -               -
+sin_svef128   -               -               -               -               -
 sincosf       -               -               -               1               1
 sincos        1               1               -               1               1
 sincosl       -               1               -               -               1
@@ -7489,6 +7724,14 @@ exp2f         1               1               -               -               1
 exp2          1               1               1               1               1
 exp2l         -               -               -               2               1
 exp2f128      -               -               -               1               -
+exp_advsimdf  -               -               -               -               -
+exp_advsimd   -               -               -               -               -
+exp_advsimdl  -               -               -               -               -
+exp_advsimdf128-              -               -               -               -
+exp_svef      -               -               -               -               -
+exp_sve       -               -               -               -               -
+exp_svel      -               -               -               -               -
+exp_svef128   -               -               -               -               -
 expm1f        1               1               1               1               1
 expm1         1               1               1               1               1
 expm1l        -               -               -               1               1
@@ -7545,6 +7788,14 @@ log2f         1               1               1               1               1
 log2          2               2               -               1               2
 log2l         -               -               -               1               1
 log2f128      -               -               -               3               -
+log_advsimdf  -               -               -               -               -
+log_advsimd   -               -               -               -               -
+log_advsimdl  -               -               -               -               -
+log_advsimdf128-              -               -               -               -
+log_svef      -               -               -               -               -
+log_sve       -               -               -               -               -
+log_svel      -               -               -               -               -
+log_svef128   -               -               -               -               -
 mul_ldoublef  -               -               -               1               1
 mul_ldouble   -               -               -               1               1
 mul_ldoublel  -               -               -               -               -
@@ -7561,6 +7812,14 @@ sinf          1               1               1               1               1
 sin           -               1               1               1               1
 sinl          -               -               -               1               1
 sinf128       -               -               -               2               -
+sin_advsimdf  -               -               -               -               -
+sin_advsimd   -               -               -               -               -
+sin_advsimdl  -               -               -               -               -
+sin_advsimdf128-              -               -               -               -
+sin_svef      -               -               -               -               -
+sin_sve       -               -               -               -               -
+sin_svel      -               -               -               -               -
+sin_svef128   -               -               -               -               -
 sincosf       1               1               -               1               1
 sincos        -               1               1               1               1
 sincosl       -               -               -               1               1
@@ -7759,6 +8018,14 @@ exp2f         -               -               -               -               1
 exp2          1               1               1               1               1
 exp2l         1               1               1               -               1
 exp2f128      -               -               -               -               -
+exp_advsimdf  -               -               -               -               -
+exp_advsimd   -               -               -               -               -
+exp_advsimdl  -               -               -               -               -
+exp_advsimdf128-              -               -               -               -
+exp_svef      -               -               -               -               -
+exp_sve       -               -               -               -               -
+exp_svel      -               -               -               -               -
+exp_svef128   -               -               -               -               -
 expm1f        1               1               1               1               1
 expm1         1               1               1               1               1
 expm1l        2               2               2               -               2
@@ -7815,6 +8082,14 @@ log2f         1               1               1               1               1
 log2          1               2               -               2               2
 log2l         3               3               3               -               3
 log2f128      -               -               -               -               -
+log_advsimdf  -               -               -               -               -
+log_advsimd   -               -               -               -               -
+log_advsimdl  -               -               -               -               -
+log_advsimdf128-              -               -               -               -
+log_svef      -               -               -               -               -
+log_sve       -               -               -               -               -
+log_svel      -               -               -               -               -
+log_svef128   -               -               -               -               -
 mul_ldoublef  -               -               -               -               -
 mul_ldouble   -               -               -               -               -
 mul_ldoublel  -               -               -               -               -
@@ -7831,6 +8106,14 @@ sinf          1               1               1               1               1
 sin           1               1               1               1               1
 sinl          2               2               2               -               2
 sinf128       -               -               -               -               -
+sin_advsimdf  -               -               -               -               -
+sin_advsimd   -               -               -               -               -
+sin_advsimdl  -               -               -               -               -
+sin_advsimdf128-              -               -               -               -
+sin_svef      -               -               -               -               -
+sin_sve       -               -               -               -               -
+sin_svel      -               -               -               -               -
+sin_svef128   -               -               -               -               -
 sincosf       -               -               -               1               1
 sincos        1               1               1               1               1
 sincosl       1               1               1               -               1
@@ -8028,6 +8311,14 @@ exp2f         -               -               1
 exp2          1               1               1
 exp2l         1               1               1
 exp2f128      1               1               1
+exp_advsimdf  -               -               -
+exp_advsimd   -               -               -
+exp_advsimdl  -               -               -
+exp_advsimdf128-              -               -
+exp_svef      -               -               -
+exp_sve       -               -               -
+exp_svel      -               -               -
+exp_svef128   -               -               -
 expm1f        -               -               1
 expm1         1               1               1
 expm1l        3               3               3
@@ -8084,6 +8375,14 @@ log2f         1               1               1
 log2          1               1               2
 log2l         1               1               1
 log2f128      3               3               3
+log_advsimdf  -               -               -
+log_advsimd   -               -               -
+log_advsimdl  -               -               -
+log_advsimdf128-              -               -
+log_svef      -               -               -
+log_sve       -               -               -
+log_svel      -               -               -
+log_svef128   -               -               -
 mul_ldoublef  -               -               -
 mul_ldouble   -               -               -
 mul_ldoublel  -               -               -
@@ -8100,6 +8399,14 @@ sinf          1               1               1
 sin           1               1               1
 sinl          2               2               2
 sinf128       2               2               2
+sin_advsimdf  -               -               -
+sin_advsimd   -               -               -
+sin_advsimdl  -               -               -
+sin_advsimdf128-              -               -
+sin_svef      -               -               -
+sin_sve       -               -               -
+sin_svel      -               -               -
+sin_svef128   -               -               -
 sincosf       -               1               -
 sincos        1               1               1
 sincosl       1               1               1

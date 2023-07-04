@@ -1900,6 +1900,8 @@ START-INFO-DIR-ENTRY
 * strdup: (libc)Copying Strings and Arrays.
 * strdupa: (libc)Copying Strings and Arrays.
 * strerror: (libc)Error Messages.
+* strerror_l: (libc)Error Messages.
+* strerror_r: (libc)Error Messages.
 * strerror_r: (libc)Error Messages.
 * strerrordesc_np: (libc)Error Messages.
 * strerrorname_np: (libc)Error Messages.
@@ -2171,6 +2173,359 @@ START-INFO-DIR-ENTRY
 * ynfNx: (libc)Special Functions.
 * ynl: (libc)Special Functions.
 END-INFO-DIR-ENTRY
+
+
+File: libc.info,  Node: Type Index,  Next: Function Index,  Prev: Concept Index,  Up: Top
+
+Type Index
+**********
+
+ [index ]
+* Menu:
+
+* __ftw64_func_t:                        Working with Directory Trees.
+                                                              (line  60)
+* __ftw_func_t:                          Working with Directory Trees.
+                                                              (line  20)
+* __nftw64_func_t:                       Working with Directory Trees.
+                                                              (line  95)
+* __nftw_func_t:                         Working with Directory Trees.
+                                                              (line  69)
+* blkcnt64_t:                            Attribute Meanings.  (line 232)
+* blkcnt_t:                              Attribute Meanings.  (line 224)
+* cc_t:                                  Mode Data Types.     (line  48)
+* clockid_t:                             Getting the Time.    (line  39)
+* clock_t:                               Time Types.          (line   9)
+* cnd_t:                                 ISO C Condition Variables.
+                                                              (line  14)
+* comparison_fn_t:                       Comparison Functions.
+                                                              (line  31)
+* cookie_close_function_t:               Hook Functions.      (line  62)
+* cookie_io_functions_t:                 Streams and Cookies. (line  26)
+* cookie_read_function_t:                Hook Functions.      (line  48)
+* cookie_seek_function_t:                Hook Functions.      (line  58)
+* cookie_write_function_t:               Hook Functions.      (line  54)
+* cpu_set_t:                             CPU Affinity.        (line  43)
+* dev_t:                                 Attribute Meanings.  (line 214)
+* DIR:                                   Opening a Directory. (line   9)
+* div_t:                                 Integer Division.    (line  19)
+* ENTRY:                                 Hash Search Function.
+                                                              (line  69)
+* enum mcheck_status:                    Heap Consistency Checking.
+                                                              (line  67)
+* fd_set:                                Waiting for I/O.     (line  34)
+* FILE:                                  Streams.             (line  16)
+* fpos64_t:                              Portable Positioning.
+                                                              (line  67)
+* fpos_t:                                Portable Positioning.
+                                                              (line  52)
+* gid_t:                                 Reading Persona.     (line  16)
+* glibc.cpu:                             Hardware Capability Tunables.
+                                                              (line   6)
+* glibc.cpu.cached_memopt:               Hardware Capability Tunables.
+                                                              (line  34)
+* glibc.cpu.hwcaps:                      Hardware Capability Tunables.
+                                                              (line  21)
+* glibc.cpu.hwcap_mask:                  Hardware Capability Tunables.
+                                                              (line  11)
+* glibc.cpu.name:                        Hardware Capability Tunables.
+                                                              (line  43)
+* glibc.cpu.prefer_map_32bit_exec:       Hardware Capability Tunables.
+                                                              (line 112)
+* glibc.cpu.x86_data_cache_size:         Hardware Capability Tunables.
+                                                              (line  51)
+* glibc.cpu.x86_ibt:                     Hardware Capability Tunables.
+                                                              (line  86)
+* glibc.cpu.x86_non_temporal_threshold:  Hardware Capability Tunables.
+                                                              (line  62)
+* glibc.cpu.x86_rep_movsb_threshold:     Hardware Capability Tunables.
+                                                              (line  72)
+* glibc.cpu.x86_rep_stosb_threshold:     Hardware Capability Tunables.
+                                                              (line  79)
+* glibc.cpu.x86_shared_cache_size:       Hardware Capability Tunables.
+                                                              (line  57)
+* glibc.cpu.x86_shstk:                   Hardware Capability Tunables.
+                                                              (line  98)
+* glibc.elision:                         Elision Tunables.    (line   6)
+* glibc.elision.enable:                  Elision Tunables.    (line  13)
+* glibc.elision.skip_lock_after_retries: Elision Tunables.    (line  37)
+* glibc.elision.skip_lock_busy:          Elision Tunables.    (line  21)
+* glibc.elision.skip_lock_internal_abort: Elision Tunables.   (line  29)
+* glibc.elision.skip_trylock_internal_abort: Elision Tunables.
+                                                              (line  57)
+* glibc.elision.tries:                   Elision Tunables.    (line  48)
+* glibc.gmon:                            gmon Tunables.       (line   6)
+* glibc.malloc:                          Memory Allocation Tunables.
+                                                              (line   6)
+* glibc.malloc.arena_max:                Memory Allocation Tunables.
+                                                              (line 108)
+* glibc.malloc.arena_test:               Memory Allocation Tunables.
+                                                              (line  96)
+* glibc.malloc.check:                    Memory Allocation Tunables.
+                                                              (line  10)
+* glibc.malloc.hugetlb:                  Memory Allocation Tunables.
+                                                              (line 163)
+* glibc.malloc.mmap_max:                 Memory Allocation Tunables.
+                                                              (line  87)
+* glibc.malloc.mmap_threshold:           Memory Allocation Tunables.
+                                                              (line  59)
+* glibc.malloc.mxfast:                   Memory Allocation Tunables.
+                                                              (line 151)
+* glibc.malloc.perturb:                  Memory Allocation Tunables.
+                                                              (line  45)
+* glibc.malloc.tcache_count:             Memory Allocation Tunables.
+                                                              (line 126)
+* glibc.malloc.tcache_max:               Memory Allocation Tunables.
+                                                              (line 121)
+* glibc.malloc.tcache_unsorted_limit:    Memory Allocation Tunables.
+                                                              (line 137)
+* glibc.malloc.top_pad:                  Memory Allocation Tunables.
+                                                              (line  33)
+* glibc.malloc.trim_threshold:           Memory Allocation Tunables.
+                                                              (line  74)
+* glibc.mem:                             Memory Related Tunables.
+                                                              (line   6)
+* glibc.mem.maxarcs:                     gmon Tunables.       (line  37)
+* glibc.mem.minarcs:                     gmon Tunables.       (line  27)
+* glibc.mem.tagging:                     Memory Related Tunables.
+                                                              (line  10)
+* glibc.pthread:                         POSIX Thread Tunables.
+                                                              (line   6)
+* glibc.pthread.mutex_spin_count:        POSIX Thread Tunables.
+                                                              (line  12)
+* glibc.pthread.rseq:                    POSIX Thread Tunables.
+                                                              (line  32)
+* glibc.pthread.stack_cache_size:        POSIX Thread Tunables.
+                                                              (line  24)
+* glibc.pthread.stack_hugetlb:           POSIX Thread Tunables.
+                                                              (line  41)
+* glibc.rtld:                            Dynamic Linking Tunables.
+                                                              (line   6)
+* glibc.rtld.dynamic_sort:               Dynamic Linking Tunables.
+                                                              (line  41)
+* glibc.rtld.nns:                        Dynamic Linking Tunables.
+                                                              (line  10)
+* glibc.rtld.optional_static_tls:        Dynamic Linking Tunables.
+                                                              (line  24)
+* glob64_t:                              Calling Glob.        (line 154)
+* glob_t:                                Calling Glob.        (line  11)
+* iconv_t:                               Generic Conversion Interface.
+                                                              (line  15)
+* imaxdiv_t:                             Integer Division.    (line  98)
+* ino64_t:                               Attribute Meanings.  (line 205)
+* ino_t:                                 Attribute Meanings.  (line 195)
+* jmp_buf:                               Non-Local Details.   (line  10)
+* ldiv_t:                                Integer Division.    (line  49)
+* lldiv_t:                               Integer Division.    (line  72)
+* longjmp:                               Non-local Goto Probes.
+                                                              (line  16)
+* longjmp_target:                        Non-local Goto Probes.
+                                                              (line  29)
+* mbstate_t:                             Keeping the state.   (line  14)
+* memory_arena_new:                      Memory Allocation Probes.
+                                                              (line  75)
+* memory_arena_retry:                    Memory Allocation Probes.
+                                                              (line  63)
+* memory_arena_reuse:                    Memory Allocation Probes.
+                                                              (line  83)
+* memory_arena_reuse_free_list:          Memory Allocation Probes.
+                                                              (line 112)
+* memory_arena_reuse_wait:               Memory Allocation Probes.
+                                                              (line  97)
+* memory_calloc_retry:                   Memory Allocation Probes.
+                                                              (line  46)
+* memory_heap_free:                      Memory Allocation Probes.
+                                                              (line  28)
+* memory_heap_less:                      Memory Allocation Probes.
+                                                              (line  38)
+* memory_heap_more:                      Memory Allocation Probes.
+                                                              (line  33)
+* memory_heap_new:                       Memory Allocation Probes.
+                                                              (line  22)
+* memory_malloc_retry:                   Memory Allocation Probes.
+                                                              (line  43)
+* memory_mallopt:                        Memory Allocation Probes.
+                                                              (line 118)
+* memory_mallopt_arena_max:              Memory Allocation Probes.
+                                                              (line 174)
+* memory_mallopt_arena_test:             Memory Allocation Probes.
+                                                              (line 167)
+* memory_mallopt_free_dyn_thresholds:    Memory Allocation Probes.
+                                                              (line 181)
+* memory_mallopt_mmap_max:               Memory Allocation Probes.
+                                                              (line 154)
+* memory_mallopt_mmap_threshold:         Memory Allocation Probes.
+                                                              (line 145)
+* memory_mallopt_mxfast:                 Memory Allocation Probes.
+                                                              (line 124)
+* memory_mallopt_perturb:                Memory Allocation Probes.
+                                                              (line 161)
+* memory_mallopt_top_pad:                Memory Allocation Probes.
+                                                              (line 138)
+* memory_mallopt_trim_threshold:         Memory Allocation Probes.
+                                                              (line 130)
+* memory_memalign_retry:                 Memory Allocation Probes.
+                                                              (line  45)
+* memory_realloc_retry:                  Memory Allocation Probes.
+                                                              (line  44)
+* memory_sbrk_less:                      Memory Allocation Probes.
+                                                              (line  15)
+* memory_sbrk_more:                      Memory Allocation Probes.
+                                                              (line   9)
+* memory_tcache_double_free:             Memory Allocation Probes.
+                                                              (line 202)
+* memory_tunable_tcache_count:           Memory Allocation Probes.
+                                                              (line 191)
+* memory_tunable_tcache_max_bytes:       Memory Allocation Probes.
+                                                              (line 186)
+* memory_tunable_tcache_unsorted_limit:  Memory Allocation Probes.
+                                                              (line 196)
+* mode_t:                                Attribute Meanings.  (line 189)
+* mtx_t:                                 ISO C Mutexes.       (line  13)
+* nlink_t:                               Attribute Meanings.  (line 220)
+* off64_t:                               File Position Primitive.
+                                                              (line 162)
+* off_t:                                 File Position Primitive.
+                                                              (line 154)
+* once_flag:                             Call Once.           (line  10)
+* pid_t:                                 Process Identification.
+                                                              (line  37)
+* printf_arginfo_function:               Defining the Output Handler.
+                                                              (line  54)
+* printf_function:                       Defining the Output Handler.
+                                                              (line  34)
+* ptrdiff_t:                             Important Data Types.
+                                                              (line  13)
+* regex_t:                               POSIX Regexp Compilation.
+                                                              (line  15)
+* regmatch_t:                            Regexp Subexpressions.
+                                                              (line  14)
+* regoff_t:                              Regexp Subexpressions.
+                                                              (line  26)
+* setjmp:                                Non-local Goto Probes.
+                                                              (line   9)
+* sighandler_t:                          Basic Signal Handling.
+                                                              (line  10)
+* sigjmp_buf:                            Non-Local Exits and Signals.
+                                                              (line  20)
+* sigset_t:                              Signal Sets.         (line  13)
+* sig_atomic_t:                          Atomic Types.        (line  15)
+* size_t:                                Important Data Types.
+                                                              (line  22)
+* speed_t:                               Line Speed.          (line  76)
+* ssize_t:                               I/O Primitives.      (line  10)
+* stack_t:                               Signal Stack.        (line  26)
+* struct aiocb:                          Asynchronous I/O.    (line  27)
+* struct aiocb64:                        Asynchronous I/O.    (line 110)
+* struct aioinit:                        Configuration of AIO.
+                                                              (line  17)
+* struct argp:                           Argp Parsers.        (line   9)
+* struct argp_child:                     Argp Children.       (line  17)
+* struct argp_option:                    Argp Option Vectors. (line  13)
+* struct argp_state:                     Argp Parsing State.  (line  10)
+* struct crypt_data:                     Passphrase Storage.  (line 123)
+* struct dirent:                         Directory Entries.   (line  10)
+* struct dl_find_object:                 Dynamic Linker Introspection.
+                                                              (line  87)
+* struct entry:                          Hash Search Function.
+                                                              (line  84)
+* struct exit_status:                    Manipulating the Database.
+                                                              (line   9)
+* struct flock:                          File Locks.          (line  41)
+* struct fstab:                          fstab.               (line   9)
+* struct FTW:                            Working with Directory Trees.
+                                                              (line 104)
+* struct group:                          Group Data Structure.
+                                                              (line   9)
+* struct hostent:                        Host Names.          (line  20)
+* struct if_nameindex:                   Interface Naming.    (line  45)
+* struct in6_addr:                       Host Address Data Type.
+                                                              (line  56)
+* struct in_addr:                        Host Address Data Type.
+                                                              (line  25)
+* struct iovec:                          Scatter-Gather.      (line  20)
+* struct itimerval:                      Setting an Alarm.    (line  53)
+* struct lconv:                          The Lame Way to Locale Data.
+                                                              (line  29)
+* struct linger:                         Socket-Level Options.
+                                                              (line  55)
+* struct mallinfo2:                      Statistics of Malloc.
+                                                              (line  11)
+* struct mntent:                         mtab.                (line   8)
+* struct netent:                         Networks Database.   (line  13)
+* struct ntptimeval:                     Setting and Adjusting the Time.
+                                                              (line  78)
+* struct ntptimeval <1>:                 Setting and Adjusting the Time.
+                                                              (line  78)
+* struct obstack:                        Creating Obstacks.   (line   9)
+* struct option:                         Getopt Long Options. (line  12)
+* struct passwd:                         User Data Structure. (line   9)
+* struct printf_info:                    Conversion Specifier Options.
+                                                              (line  15)
+* struct protoent:                       Protocols Database.  (line  29)
+* struct random_data:                    BSD Random.          (line  83)
+* struct rlimit:                         Limits on Resources. (line  94)
+* struct rlimit64:                       Limits on Resources. (line 111)
+* struct rseq:                           Restartable Sequences.
+                                                              (line   9)
+* struct rusage:                         Resource Usage.      (line  39)
+* struct sched_param:                    Basic Scheduling Functions.
+                                                              (line  36)
+* struct servent:                        Services Database.   (line  11)
+* struct sgttyb:                         BSD Terminal Modes.  (line  15)
+* struct sigaction:                      Advanced Signal Handling.
+                                                              (line  14)
+* struct sigstack:                       Signal Stack.        (line 101)
+* struct sockaddr:                       Address Formats.     (line  22)
+* struct sockaddr_in:                    Internet Address Formats.
+                                                              (line  15)
+* struct sockaddr_in6:                   Internet Address Formats.
+                                                              (line  39)
+* struct sockaddr_un:                    Local Namespace Details.
+                                                              (line  27)
+* struct stat:                           Attribute Meanings.  (line  14)
+* struct stat64:                         Attribute Meanings.  (line 107)
+* struct termios:                        Mode Data Types.     (line  10)
+* struct timespec:                       Time Types.          (line  38)
+* struct timeval:                        Time Types.          (line  59)
+* struct timex:                          Setting and Adjusting the Time.
+                                                              (line 116)
+* struct timex <1>:                      Setting and Adjusting the Time.
+                                                              (line 116)
+* struct tm:                             Time Types.          (line  82)
+* struct tm <1>:                         Broken-down Time.    (line  19)
+* struct tms:                            Processor Time.      (line  11)
+* struct utimbuf:                        File Times.          (line  38)
+* struct utmp:                           Manipulating the Database.
+                                                              (line  21)
+* struct utmpx:                          XPG Functions.       (line   9)
+* struct utsname:                        Platform Type.       (line  15)
+* struct __gconv_step:                   glibc iconv Implementation.
+                                                              (line 203)
+* struct __gconv_step_data:              glibc iconv Implementation.
+                                                              (line 272)
+* tcflag_t:                              Mode Data Types.     (line  43)
+* thrd_start_t:                          ISO C Thread Management.
+                                                              (line  16)
+* thrd_t:                                ISO C Thread Management.
+                                                              (line  12)
+* time_t:                                Time Types.          (line  17)
+* tss_dtor_t:                            ISO C Thread-local Storage.
+                                                              (line  20)
+* tss_t:                                 ISO C Thread-local Storage.
+                                                              (line  14)
+* ucontext_t:                            System V contexts.   (line  23)
+* uid_t:                                 Reading Persona.     (line  11)
+* va_list:                               Argument Macros.     (line   9)
+* VISIT:                                 Tree Search Function.
+                                                              (line 116)
+* wchar_t:                               Extended Char Intro. (line  64)
+* wctrans_t:                             Wide Character Case Conversion.
+                                                              (line  11)
+* wctype_t:                              Classification of Wide Characters.
+                                                              (line  29)
+* wint_t:                                Extended Char Intro. (line  88)
+* wordexp_t:                             Calling Wordexp.     (line  14)
 
 
 File: libc.info,  Node: Function Index,  Next: Variable Index,  Prev: Type Index,  Up: Top
@@ -2795,10 +3150,10 @@ Function and Macro Index
 * erffN:                                 Special Functions.   (line  12)
 * erffNx:                                Special Functions.   (line  13)
 * erfl:                                  Special Functions.   (line  11)
-* err:                                   Error Messages.      (line 358)
-* error:                                 Error Messages.      (line 183)
-* error_at_line:                         Error Messages.      (line 221)
-* errx:                                  Error Messages.      (line 377)
+* err:                                   Error Messages.      (line 429)
+* error:                                 Error Messages.      (line 254)
+* error_at_line:                         Error Messages.      (line 292)
+* errx:                                  Error Messages.      (line 448)
 * execl:                                 Executing a File.    (line  37)
 * execle:                                Executing a File.    (line  72)
 * execlp:                                Executing a File.    (line  98)
@@ -3352,26 +3707,26 @@ Function and Macro Index
 * innetgr:                               Netgroup Membership. (line  10)
 * ioctl:                                 IOCTLs.              (line  31)
 * isalnum:                               Classification of Characters.
-                                                              (line  64)
+                                                              (line  77)
 * isalpha:                               Classification of Characters.
-                                                              (line  43)
+                                                              (line  56)
 * isascii:                               Classification of Characters.
-                                                              (line 151)
+                                                              (line 164)
 * isatty:                                Is It a Terminal.    (line  13)
 * isblank:                               Classification of Characters.
-                                                              (line 117)
+                                                              (line 130)
 * iscanonical:                           Floating Point Classes.
                                                               (line  49)
 * iscntrl:                               Classification of Characters.
-                                                              (line 143)
+                                                              (line 156)
 * isdigit:                               Classification of Characters.
-                                                              (line  57)
+                                                              (line  70)
 * iseqsig:                               FP Comparison Functions.
                                                               (line  80)
 * isfinite:                              Floating Point Classes.
                                                               (line  67)
 * isgraph:                               Classification of Characters.
-                                                              (line 126)
+                                                              (line 139)
 * isgreater:                             FP Comparison Functions.
                                                               (line  23)
 * isgreaterequal:                        FP Comparison Functions.
@@ -3389,7 +3744,7 @@ Function and Macro Index
 * islessgreater:                         FP Comparison Functions.
                                                               (line  59)
 * islower:                               Classification of Characters.
-                                                              (line  27)
+                                                              (line  40)
 * isnan:                                 Floating Point Classes.
                                                               (line  90)
 * isnan <1>:                             Floating Point Classes.
@@ -3401,19 +3756,19 @@ Function and Macro Index
 * isnormal:                              Floating Point Classes.
                                                               (line  80)
 * isprint:                               Classification of Characters.
-                                                              (line 135)
+                                                              (line 148)
 * ispunct:                               Classification of Characters.
-                                                              (line  82)
+                                                              (line  95)
 * issignaling:                           Floating Point Classes.
                                                               (line  99)
 * isspace:                               Classification of Characters.
-                                                              (line  90)
+                                                              (line 103)
 * issubnormal:                           Floating Point Classes.
                                                               (line 107)
 * isunordered:                           FP Comparison Functions.
                                                               (line  72)
 * isupper:                               Classification of Characters.
-                                                              (line  35)
+                                                              (line  48)
 * iswalnum:                              Classification of Wide Characters.
                                                               (line  76)
 * iswalpha:                              Classification of Wide Characters.
@@ -3441,7 +3796,7 @@ Function and Macro Index
 * iswxdigit:                             Classification of Wide Characters.
                                                               (line 254)
 * isxdigit:                              Classification of Characters.
-                                                              (line  73)
+                                                              (line  86)
 * iszero:                                Floating Point Classes.
                                                               (line 115)
 * j0:                                    Special Functions.   (line 104)
@@ -3790,7 +4145,7 @@ Function and Macro Index
 * pause:                                 Using Pause.         (line  10)
 * pclose:                                Pipe to a Subprocess.
                                                               (line  42)
-* perror:                                Error Messages.      (line  53)
+* perror:                                Error Messages.      (line 121)
 * pipe:                                  Creating a Pipe.     (line  16)
 * pkey_alloc:                            Memory Protection.   (line 199)
 * pkey_free:                             Memory Protection.   (line 233)
@@ -4190,9 +4545,11 @@ Function and Macro Index
 * strdupa:                               Copying Strings and Arrays.
                                                               (line 301)
 * strerror:                              Error Messages.      (line  13)
-* strerrordesc_np:                       Error Messages.      (line  85)
-* strerrorname_np:                       Error Messages.      (line  74)
-* strerror_r:                            Error Messages.      (line  31)
+* strerrordesc_np:                       Error Messages.      (line 154)
+* strerrorname_np:                       Error Messages.      (line 142)
+* strerror_l:                            Error Messages.      (line  42)
+* strerror_r:                            Error Messages.      (line  55)
+* strerror_r <1>:                        Error Messages.      (line  78)
 * strfmon:                               Formatting Numbers.  (line  15)
 * strfromd:                              Printing of Floats.  (line   8)
 * strfromf:                              Printing of Floats.  (line  10)
@@ -4436,8 +4793,8 @@ Function and Macro Index
 * va_copy:                               Argument Macros.     (line  56)
 * va_end:                                Argument Macros.     (line  36)
 * va_start:                              Argument Macros.     (line  13)
-* verr:                                  Error Messages.      (line 368)
-* verrx:                                 Error Messages.      (line 388)
+* verr:                                  Error Messages.      (line 439)
+* verrx:                                 Error Messages.      (line 459)
 * versionsort:                           Scanning Directory Content.
                                                               (line  57)
 * versionsort64:                         Scanning Directory Content.
@@ -4467,8 +4824,8 @@ Function and Macro Index
 * vswscanf:                              Variable Arguments Input.
                                                               (line  61)
 * vsyslog:                               syslog; vsyslog.     (line 126)
-* vwarn:                                 Error Messages.      (line 329)
-* vwarnx:                                Error Messages.      (line 349)
+* vwarn:                                 Error Messages.      (line 400)
+* vwarnx:                                Error Messages.      (line 420)
 * vwprintf:                              Variable Arguments Output.
                                                               (line  63)
 * vwscanf:                               Variable Arguments Input.
@@ -4477,8 +4834,8 @@ Function and Macro Index
 * wait3:                                 BSD Wait Functions.  (line  11)
 * wait4:                                 Process Completion.  (line 128)
 * waitpid:                               Process Completion.  (line  10)
-* warn:                                  Error Messages.      (line 319)
-* warnx:                                 Error Messages.      (line 338)
+* warn:                                  Error Messages.      (line 390)
+* warnx:                                 Error Messages.      (line 409)
 * WCOREDUMP:                             Process Completion Status.
                                                               (line  46)
 * wcpcpy:                                Copying Strings and Arrays.
@@ -4607,7 +4964,7 @@ Variable and Constant Macro Index
                                                               (line 576)
 * (*__gconv_init_fct):                   glibc iconv Implementation.
                                                               (line 403)
-* (void):                                Error Messages.      (line 255)
+* (void):                                Error Messages.      (line 326)
 * _ATFILE_SOURCE:                        Feature Test Macros. (line 274)
 * _Complex_I:                            Complex Numbers.     (line  21)
 * _CS_LFS64_CFLAGS:                      String Parameters.   (line  71)
@@ -5309,7 +5666,8 @@ Variable and Constant Macro Index
 * EINPROGRESS:                           Error Codes.         (line 259)
 * EINTR:                                 Error Codes.         (line  27)
 * EINVAL:                                Error Codes.         (line 137)
-* EINVAL <1>:                            Line Control.        (line 144)
+* EINVAL <1>:                            Error Messages.      (line  91)
+* EINVAL <2>:                            Line Control.        (line 144)
 * EIO:                                   Error Codes.         (line  37)
 * EISCONN:                               Error Codes.         (line 372)
 * EISDIR:                                Error Codes.         (line 132)
@@ -5396,6 +5754,7 @@ Variable and Constant Macro Index
 * ERA:                                   The Elegant and Fast Way.
                                                               (line 134)
 * ERANGE:                                Error Codes.         (line 214)
+* ERANGE <1>:                            Error Messages.      (line  95)
 * ERA_D_FMT:                             The Elegant and Fast Way.
                                                               (line 156)
 * ERA_D_T_FMT:                           The Elegant and Fast Way.
@@ -5412,8 +5771,8 @@ Variable and Constant Macro Index
 * EROFS:                                 Error Codes.         (line 189)
 * ERPCMISMATCH:                          Error Codes.         (line 475)
 * errno:                                 Checking for Errors. (line  14)
-* error_message_count:                   Error Messages.      (line 267)
-* error_one_per_line:                    Error Messages.      (line 273)
+* error_message_count:                   Error Messages.      (line 338)
+* error_one_per_line:                    Error Messages.      (line 344)
 * ESHUTDOWN:                             Error Codes.         (line 392)
 * ESOCKTNOSUPPORT:                       Error Codes.         (line 303)
 * ESPIPE:                                Error Codes.         (line 185)
@@ -6139,8 +6498,8 @@ Variable and Constant Macro Index
                                                               (line  84)
 * PRIO_USER:                             Traditional Scheduling Functions.
                                                               (line  93)
-* program_invocation_name:               Error Messages.      (line 109)
-* program_invocation_short_name:         Error Messages.      (line 118)
+* program_invocation_name:               Error Messages.      (line 180)
+* program_invocation_short_name:         Error Messages.      (line 189)
 * PROT_EXEC:                             Memory Protection.   (line  22)
 * PROT_NONE:                             Memory Protection.   (line  28)
 * PROT_READ:                             Memory Protection.   (line  16)
