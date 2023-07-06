@@ -2191,9 +2191,9 @@ libc.info-12: 3383065
 libc.info-13: 3687475
 libc.info-14: 3988502
 libc.info-15: 4432208
-libc.info-16: 4584778
-libc.info-17: 4888731
-libc.info-18: 5304547
+libc.info-16: 4582974
+libc.info-17: 4889031
+libc.info-18: 5304847
 
 Tag Table:
 (Indirect)
@@ -2925,32 +2925,32 @@ Node: Structure Measurement4069789
 Node: Library Summary4070599
 Node: Installation4432208
 Node: Configuring and compiling4433076
-Node: Running make install4452443
-Node: Tools for Compilation4457559
-Node: Linux4463688
-Node: Reporting Bugs4466468
-Node: Maintenance4468843
-Node: Source Layout4469373
-Node: Adding Platform-specific4473676
-Node: Source Fortification4476774
-Node: Symbol handling4482217
-Node: 64-bit time symbol handling4482549
-Node: Porting4486768
-Node: Hierarchy Conventions4494806
-Node: Porting to Unix4499751
-Node: Platform4584778
-Node: PowerPC4585224
-Node: RISC-V4590085
-Node: X864591073
-Node: Contributors4603389
-Node: Free Manuals4620409
-Node: Copying4625366
-Node: Documentation License4653625
-Node: Concept Index4678969
-Node: Type Index4888731
-Node: Function Index4913228
-Node: Variable Index5085256
-Node: File Index5304547
+Node: Running make install4452743
+Node: Tools for Compilation4457859
+Node: Linux4463988
+Node: Reporting Bugs4466768
+Node: Maintenance4469143
+Node: Source Layout4469673
+Node: Adding Platform-specific4473976
+Node: Source Fortification4477074
+Node: Symbol handling4482517
+Node: 64-bit time symbol handling4482849
+Node: Porting4487068
+Node: Hierarchy Conventions4495106
+Node: Porting to Unix4582974
+Node: Platform4585078
+Node: PowerPC4585524
+Node: RISC-V4590385
+Node: X864591373
+Node: Contributors4603689
+Node: Free Manuals4620709
+Node: Copying4625666
+Node: Documentation License4653925
+Node: Concept Index4679269
+Node: Type Index4889031
+Node: Function Index4913528
+Node: Variable Index5085556
+Node: File Index5304847
 
 End Tag Table
 

@@ -2175,6 +2175,45 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
+File: libc.info,  Node: Porting to Unix,  Prev: Hierarchy Conventions,  Up: Porting
+
+D.4.2 Porting the GNU C Library to Unix Systems
+-----------------------------------------------
+
+Most Unix systems are fundamentally very similar.  There are variations
+between different machines, and variations in what facilities are
+provided by the kernel.  But the interface to the operating system
+facilities is, for the most part, pretty uniform and simple.
+
+   The code for Unix systems is in the directory ‘unix’, at the top
+level of the ‘sysdeps’ hierarchy.  This directory contains
+subdirectories (and subdirectory trees) for various Unix variants.
+
+   The functions which are system calls in most Unix systems are
+implemented in assembly code, which is generated automatically from
+specifications in files named ‘syscalls.list’.  There are several such
+files, one in ‘sysdeps/unix’ and others in its subdirectories.  Some
+special system calls are implemented in files that are named with a
+suffix of ‘.S’; for example, ‘_exit.S’.  Files ending in ‘.S’ are run
+through the C preprocessor before being fed to the assembler.
+
+   These files all use a set of macros that should be defined in
+‘sysdep.h’.  The ‘sysdep.h’ file in ‘sysdeps/unix’ partially defines
+them; a ‘sysdep.h’ file in another directory must finish defining them
+for the particular machine and operating system variant.  See
+‘sysdeps/unix/sysdep.h’ and the machine-specific ‘sysdep.h’
+implementations to see what these macros are and what they should do.
+
+   The system-specific makefile for the ‘unix’ directory
+(‘sysdeps/unix/Makefile’) gives rules to generate several files from the
+Unix system you are building the library on (which is assumed to be the
+target system you are building the library _for_).  All the generated
+files are put in the directory where the object files are kept; they
+should not affect the source tree itself.  The files generated are
+‘ioctls.h’, ‘errnos.h’, ‘sys/param.h’, and ‘errlist.c’ (for the ‘stdio’
+section of the library).
+
+
 File: libc.info,  Node: Platform,  Next: Contributors,  Prev: Maintenance,  Up: Top
 
 Appendix E Platform-specific facilities
