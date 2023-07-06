@@ -47,15 +47,15 @@ SECTIONS
   .rela.bss       : { *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*) }
   .rel.iplt       :
     {
-      PROVIDE_HIDDEN (__rel_iplt_start = .);
+      PROVIDE_HIDDEN (__rel_iplt_start =  . );
       *(.rel.iplt)
-      PROVIDE_HIDDEN (__rel_iplt_end = .);
+      PROVIDE_HIDDEN (__rel_iplt_end =  . );
     }
   .rela.iplt      :
     {
-      PROVIDE_HIDDEN (__rela_iplt_start = .);
+      PROVIDE_HIDDEN (__rela_iplt_start =  . );
       *(.rela.iplt)
-      PROVIDE_HIDDEN (__rela_iplt_end = .);
+      PROVIDE_HIDDEN (__rela_iplt_end =  . );
     }
   .rel.plt        :
     {
@@ -118,29 +118,29 @@ SECTIONS
   /* Thread Local Storage sections  */
   .tdata	  :
    {
-     PROVIDE_HIDDEN (__tdata_start = .);
+     PROVIDE_HIDDEN (__tdata_start =  . );
      *(.tdata .tdata.* .gnu.linkonce.td.*)
    }
   .tbss		  : { *(.tbss .tbss.* .gnu.linkonce.tb.*) *(.tcommon) }
   .preinit_array    :
   {
-    PROVIDE_HIDDEN (__preinit_array_start = .);
+    PROVIDE_HIDDEN (__preinit_array_start =  . );
     KEEP (*(.preinit_array))
-    PROVIDE_HIDDEN (__preinit_array_end = .);
+    PROVIDE_HIDDEN (__preinit_array_end =  . );
   }
   .init_array    :
   {
-    PROVIDE_HIDDEN (__init_array_start = .);
+    PROVIDE_HIDDEN (__init_array_start =  . );
     KEEP (*(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*)))
     KEEP (*(.init_array EXCLUDE_FILE (*crtbegin.o *crtbegin?.o *crtend.o *crtend?.o ) .ctors))
-    PROVIDE_HIDDEN (__init_array_end = .);
+    PROVIDE_HIDDEN (__init_array_end =  . );
   }
   .fini_array    :
   {
-    PROVIDE_HIDDEN (__fini_array_start = .);
+    PROVIDE_HIDDEN (__fini_array_start =  . );
     KEEP (*(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*)))
     KEEP (*(.fini_array EXCLUDE_FILE (*crtbegin.o *crtbegin?.o *crtend.o *crtend?.o ) .dtors))
-    PROVIDE_HIDDEN (__fini_array_end = .);
+    PROVIDE_HIDDEN (__fini_array_end =  . );
   }
   .ctors          :
   {
@@ -183,9 +183,9 @@ SECTIONS
     SORT(CONSTRUCTORS)
   }
   .data1          : { *(.data1) }
-  _edata = .; PROVIDE (edata = .);
+  _edata =  . ; PROVIDE (edata =  . );
   . = .;
-  __bss_start = .;
+  __bss_start =  . ;
   __bss_start__ = .;
   .bss            :
   {
@@ -204,7 +204,7 @@ SECTIONS
   . = SEGMENT_START("ldata-segment", .);
   . = ALIGN(32 / 8);
   __end__ = .;
-  _end = .; PROVIDE (end = .);
+  _end =  . ; PROVIDE (end =  . );
   . = DATA_SEGMENT_END (.);
   /* Stabs debugging sections.  */
   .stab          0 : { *(.stab) }
