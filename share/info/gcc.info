@@ -6223,7 +6223,7 @@ warnings, in some cases it may also cause false positives.
 
 '-Wmissing-include-dirs (C, C++, Objective-C, Objective-C++ and Fortran only)'
      Warn if a user-supplied include directory does not exist.  This
-     opions is disabled by default for C, C++, Objective-C and
+     option is disabled by default for C, C++, Objective-C and
      Objective-C++.  For Fortran, it is partially enabled by default by
      warning for -I and -J, only.
 
