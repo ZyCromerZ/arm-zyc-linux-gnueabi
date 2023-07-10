@@ -1490,13 +1490,14 @@ the '--reverse-bytes' option.)
      Set the flags for any sections matching SECTIONPATTERN.  The FLAGS
      argument is a comma separated string of flag names.  The recognized
      names are 'alloc', 'contents', 'load', 'noload', 'readonly',
-     'code', 'data', 'rom', 'exclude', 'share', and 'debug'.  You can
-     set the 'contents' flag for a section which does not have contents,
-     but it is not meaningful to clear the 'contents' flag of a section
-     which does have contents-just remove the section instead.  Not all
-     flags are meaningful for all object file formats.  In particular
-     the 'share' flag is only meaningful for COFF format files and not
-     for ELF format files.
+     'code', 'data', 'rom', 'exclude', 'share', 'debug', and 'large'.
+     You can set the 'contents' flag for a section which does not have
+     contents, but it is not meaningful to clear the 'contents' flag of
+     a section which does have contents-just remove the section instead.
+     Not all flags are meaningful for all object file formats.  In
+     particular the 'share' flag is only meaningful for COFF format
+     files and not for ELF format files.  The ELF x86-64 specific flag
+     'large' corresponds to SHF_X86_64_LARGE.
 
 '--set-section-alignment SECTIONPATTERN=ALIGN'
      Set the alignment for any sections matching SECTIONPATTERN.  ALIGN
@@ -6163,30 +6164,30 @@ Node: ar cmdline6900
 Node: ar scripts20216
 Node: nm25902
 Node: objcopy41612
-Node: objdump82736
-Node: ranlib120697
-Node: size122296
-Node: strings126440
-Node: strip132275
-Node: c++filt142296
-Ref: c++filt-Footnote-1148157
-Node: addr2line148263
-Node: windmc154218
-Node: windres157877
-Node: dlltool164447
-Node: def file format177900
-Node: readelf180430
-Node: elfedit199561
-Node: Common Options202987
-Node: Selecting the Target System204021
-Node: Target Selection204949
-Node: Architecture Selection206930
-Node: debuginfod207758
-Node: Reporting Bugs208760
-Node: Bug Criteria209522
-Node: Bug Reporting210075
-Node: GNU Free Documentation License216942
-Node: Binutils Index242102
+Node: objdump82819
+Node: ranlib120780
+Node: size122379
+Node: strings126523
+Node: strip132358
+Node: c++filt142379
+Ref: c++filt-Footnote-1148240
+Node: addr2line148346
+Node: windmc154301
+Node: windres157960
+Node: dlltool164530
+Node: def file format177983
+Node: readelf180513
+Node: elfedit199644
+Node: Common Options203070
+Node: Selecting the Target System204104
+Node: Target Selection205032
+Node: Architecture Selection207013
+Node: debuginfod207841
+Node: Reporting Bugs208843
+Node: Bug Criteria209605
+Node: Bug Reporting210158
+Node: GNU Free Documentation License217025
+Node: Binutils Index242185
 
 End Tag Table
 
