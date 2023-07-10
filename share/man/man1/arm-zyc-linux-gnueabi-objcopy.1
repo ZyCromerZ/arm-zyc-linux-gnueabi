@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "OBJCOPY 1"
-.TH OBJCOPY 1 "2023-07-09" "binutils-2.41.50" "GNU Development Tools"
+.TH OBJCOPY 1 "2023-07-10" "binutils-2.41.50" "GNU Development Tools"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -702,13 +702,14 @@ Set the flags for any sections matching \fIsectionpattern\fR.  The
 \&\fIflags\fR argument is a comma separated string of flag names.  The
 recognized names are \fBalloc\fR, \fBcontents\fR, \fBload\fR,
 \&\fBnoload\fR, \fBreadonly\fR, \fBcode\fR, \fBdata\fR, \fBrom\fR,
-\&\fBexclude\fR, \fBshare\fR, and \fBdebug\fR.  You can set the
-\&\fBcontents\fR flag for a section which does not have contents, but it
-is not meaningful to clear the \fBcontents\fR flag of a section which
-does have contents\*(--just remove the section instead.  Not all flags are
-meaningful for all object file formats.  In particular the
-\&\fBshare\fR flag is only meaningful for \s-1COFF\s0 format files and not for
-\&\s-1ELF\s0 format files.
+\&\fBexclude\fR, \fBshare\fR, \fBdebug\fR, and \fBlarge\fR.
+You can set the \fBcontents\fR flag for a section which does not have
+contents, but it is not meaningful to clear the \fBcontents\fR flag of a
+section which does have contents\*(--just remove the section instead.  Not all
+flags are meaningful for all object file formats.  In particular the
+\&\fBshare\fR flag is only meaningful for \s-1COFF\s0 format files and not for \s-1ELF\s0
+format files.  The \s-1ELF\s0 x86\-64 specific flag \fBlarge\fR corresponds to
+\&\s-1SHF_X86_64_LARGE.\s0
 .IP "\fB\-\-set\-section\-alignment\fR \fIsectionpattern\fR\fB=\fR\fIalign\fR" 4
 .IX Item "--set-section-alignment sectionpattern=align"
 Set the alignment for any sections matching \fIsectionpattern\fR.

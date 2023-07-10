@@ -1656,6 +1656,9 @@ Here is the section structure:
           TMS320C54X only.  */
      #define SEC_TIC54X_BLOCK           0x10000000
 
+       /* This section has the SHF_X86_64_LARGE flag.  This is ELF x86-64 only.  */
+     #define SEC_ELF_LARGE              0x10000000
+
        /* Conditionally link this section; do not link if there are no
           references found to any symbol in the section.  This is for TI
           TMS320C54X only.  */
@@ -14116,54 +14119,54 @@ Node: Sections53119
 Node: Section Input53600
 Node: Section Output54794
 Node: typedef asection57281
-Node: section prototypes74426
-Node: Symbols85699
-Node: Reading Symbols87302
-Node: Writing Symbols88410
-Node: Mini Symbols90154
-Node: typedef asymbol91128
-Node: symbol handling functions97334
-Node: Archives102549
-Node: Formats106697
-Node: Relocations109710
-Node: typedef arelent110435
-Node: howto manager124292
-Node: Core Files261018
-Node: Targets263019
-Node: bfd_target264980
-Node: Architectures291755
-Node: Opening and Closing323577
-Node: Internal339192
-Node: File Caching339296
-Node: Linker Functions341172
-Node: Creating a Linker Hash Table342846
-Node: Adding Symbols to the Hash Table344585
-Node: Differing file formats345485
-Node: Adding symbols from an object file347210
-Node: Adding symbols from an archive349360
-Node: Performing the Final Link351706
-Node: Information provided by the linker352947
-Node: Relocating the section contents354101
-Node: Writing the symbol table355853
-Node: Hash Tables362944
-Node: Creating and Freeing a Hash Table364142
-Node: Looking Up or Entering a String365392
-Node: Traversing a Hash Table366645
-Node: Deriving a New Hash Table Type367434
-Node: Define the Derived Structures368500
-Node: Write the Derived Creation Routine369581
-Node: Write Other Derived Routines372192
-Node: BFD back ends377617
-Node: What to Put Where377866
-Node: aout378024
-Node: coff384109
-Node: elf405252
-Node: mmo405653
-Node: File layout406523
-Node: Symbol-table412436
-Node: mmo section mapping416199
-Node: GNU Free Documentation License419853
-Node: BFD Index444917
+Node: section prototypes74562
+Node: Symbols85835
+Node: Reading Symbols87438
+Node: Writing Symbols88546
+Node: Mini Symbols90290
+Node: typedef asymbol91264
+Node: symbol handling functions97470
+Node: Archives102685
+Node: Formats106833
+Node: Relocations109846
+Node: typedef arelent110571
+Node: howto manager124428
+Node: Core Files261154
+Node: Targets263155
+Node: bfd_target265116
+Node: Architectures291891
+Node: Opening and Closing323713
+Node: Internal339328
+Node: File Caching339432
+Node: Linker Functions341308
+Node: Creating a Linker Hash Table342982
+Node: Adding Symbols to the Hash Table344721
+Node: Differing file formats345621
+Node: Adding symbols from an object file347346
+Node: Adding symbols from an archive349496
+Node: Performing the Final Link351842
+Node: Information provided by the linker353083
+Node: Relocating the section contents354237
+Node: Writing the symbol table355989
+Node: Hash Tables363080
+Node: Creating and Freeing a Hash Table364278
+Node: Looking Up or Entering a String365528
+Node: Traversing a Hash Table366781
+Node: Deriving a New Hash Table Type367570
+Node: Define the Derived Structures368636
+Node: Write the Derived Creation Routine369717
+Node: Write Other Derived Routines372328
+Node: BFD back ends377753
+Node: What to Put Where378002
+Node: aout378160
+Node: coff384245
+Node: elf405388
+Node: mmo405789
+Node: File layout406659
+Node: Symbol-table412572
+Node: mmo section mapping416335
+Node: GNU Free Documentation License419989
+Node: BFD Index445053
 
 End Tag Table
 
