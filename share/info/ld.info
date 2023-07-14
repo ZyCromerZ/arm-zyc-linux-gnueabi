@@ -5712,19 +5712,21 @@ File: ld.info,  Node: Operators,  Next: Evaluation,  Prev: Location Counter,  Up
 
 The linker recognizes the standard C set of arithmetic operators, with
 the standard bindings and precedence levels:
-     precedence      associativity   Operators                Notes
+     precedence      associativity   Operators                           Notes
      (highest)
-     1               left            !  -  ~                  (1)
+     1               left            !  -  ~                             (1)
      2               left            *  /  %
      3               left            +  -
      4               left            >>  <<
-     5               left            ==  !=  >  <  <=  >=
-     6               left            &
-     7               left            |
-     8               left            &&
-     9               left            ||
-     10              right           ? :
-     11              right           &=  +=  -=  *=  /=       (2)
+     5               left            >  <  <=  >=
+     6               left            ==  !=
+     7               left            &
+     8               left            ^
+     9               left            |
+     10              left            &&
+     11              left            ||
+     12              right           ? :
+     13              right           +=  -=  *=  /=  <<=  >>=  &=  |=    (2)
      (lowest)
    Notes: (1) Prefix operators (2) *Note Assignments::.
 
@@ -9581,40 +9583,40 @@ Node: Symbols242777
 Node: Orphan Sections243524
 Node: Location Counter245109
 Node: Operators249543
-Node: Evaluation250465
-Node: Expression Section251829
-Node: Builtin Functions255799
-Node: Implicit Linker Scripts264133
-Node: Plugins264908
-Node: libdep Plugin265465
-Node: Machine Dependent267262
-Node: H8/300268350
-Node: M68HC11/68HC12270423
-Node: ARM271870
-Node: HPPA ELF32283980
-Node: M68K285603
-Node: MIPS286512
-Node: MMIX287628
-Node: MSP430288793
-Node: NDS32290706
-Node: Nios II291670
-Node: PowerPC ELF32292986
-Node: PowerPC64 ELF64295817
-Node: S/390 ELF305575
-Node: SPU ELF305922
-Node: TI COFF308550
-Node: WIN32309076
-Node: Xtensa330295
-Node: BFD333738
-Node: BFD outline335196
-Node: BFD information loss336484
-Node: Canonical format339010
-Node: Reporting Bugs343338
-Node: Bug Criteria344032
-Node: Bug Reporting344731
-Node: MRI351766
-Node: GNU Free Documentation License356237
-Node: LD Index381374
+Node: Evaluation250573
+Node: Expression Section251937
+Node: Builtin Functions255907
+Node: Implicit Linker Scripts264241
+Node: Plugins265016
+Node: libdep Plugin265573
+Node: Machine Dependent267370
+Node: H8/300268458
+Node: M68HC11/68HC12270531
+Node: ARM271978
+Node: HPPA ELF32284088
+Node: M68K285711
+Node: MIPS286620
+Node: MMIX287736
+Node: MSP430288901
+Node: NDS32290814
+Node: Nios II291778
+Node: PowerPC ELF32293094
+Node: PowerPC64 ELF64295925
+Node: S/390 ELF305683
+Node: SPU ELF306030
+Node: TI COFF308658
+Node: WIN32309184
+Node: Xtensa330403
+Node: BFD333846
+Node: BFD outline335304
+Node: BFD information loss336592
+Node: Canonical format339118
+Node: Reporting Bugs343446
+Node: Bug Criteria344140
+Node: Bug Reporting344839
+Node: MRI351874
+Node: GNU Free Documentation License356345
+Node: LD Index381482
 
 End Tag Table
 
