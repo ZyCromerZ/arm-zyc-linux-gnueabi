@@ -184,7 +184,7 @@ SECTIONS
   }
   .data1          : { *(.data1) }
   _edata = .; PROVIDE (edata = .);
-  . = .;
+  . = ALIGN(ALIGNOF(NEXT_SECTION));
   __bss_start = .;
   __bss_start__ = .;
   .bss            :
