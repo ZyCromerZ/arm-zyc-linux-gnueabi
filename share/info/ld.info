@@ -5921,8 +5921,11 @@ use in linker script expressions.
 
 'ALIGNOF(SECTION)'
      Return the alignment in bytes of the named SECTION, if that section
-     has been allocated.  If the section has not been allocated when
-     this is evaluated, the linker will report an error.  In the
+     has been allocated, or zero if the section has not been allocated.
+     If the section does not exist in the linker script the linker will
+     report an error.  If SECTION is 'NEXT_SECTION' then 'ALIGNOF' will
+     return the alignment of the next allocated section specified in the
+     linker script, or zero if there is no such section.  In the
      following example, the alignment of the '.output' section is stored
      as the first value in that section.
           SECTIONS{ ...
@@ -6033,9 +6036,13 @@ use in linker script expressions.
 
 'SIZEOF(SECTION)'
      Return the size in bytes of the named SECTION, if that section has
-     been allocated.  If the section has not been allocated when this is
-     evaluated, the linker will report an error.  In the following
-     example, 'symbol_1' and 'symbol_2' are assigned identical values:
+     been allocated, or zero if the section has not been allocated.  If
+     the section does not exist in the linker script the linker will
+     report an error.  If SECTION is 'NEXT_SECTION' then 'SIZEOF' will
+     return the alignment of the next allocated section specified in the
+     linker script, or zero if there is no such section.  In the
+     following example, 'symbol_1' and 'symbol_2' are assigned identical
+     values:
           SECTIONS{ ...
             .output {
               .start = . ;
@@ -8996,7 +9003,7 @@ LD Index
 * BFD requirements:                      BFD.                (line   16)
 * big-endian objects:                    Options.            (line  301)
 * binary input format:                   Options.            (line  121)
-* BLOCK(EXP):                            Builtin Functions.  (line   76)
+* BLOCK(EXP):                            Builtin Functions.  (line   79)
 * bug criteria:                          Bug Criteria.       (line    6)
 * bug reports:                           Bug Reporting.      (line    6)
 * bugs in ld:                            Reporting Bugs.     (line    6)
@@ -9048,15 +9055,15 @@ LD Index
 * data:                                  Output Section Data.
                                                              (line    6)
 * DATA_SEGMENT_ALIGN(MAXPAGESIZE, COMMONPAGESIZE): Builtin Functions.
-                                                             (line   81)
-* DATA_SEGMENT_END(EXP):                 Builtin Functions.  (line  105)
-* DATA_SEGMENT_RELRO_END(OFFSET, EXP):   Builtin Functions.  (line  111)
+                                                             (line   84)
+* DATA_SEGMENT_END(EXP):                 Builtin Functions.  (line  108)
+* DATA_SEGMENT_RELRO_END(OFFSET, EXP):   Builtin Functions.  (line  114)
 * dbx:                                   Options.            (line 1969)
 * DEF files, creating:                   Options.            (line 2567)
 * default emulation:                     Environment.        (line   21)
 * default input format:                  Environment.        (line    9)
 * defined symbol:                        Options.            (line  761)
-* DEFINED(SYMBOL):                       Builtin Functions.  (line  124)
+* DEFINED(SYMBOL):                       Builtin Functions.  (line  127)
 * deleting local symbols:                Options.            (line  828)
 * demangling, default:                   Environment.        (line   29)
 * demangling, from command line:         Options.            (line 1449)
@@ -9139,7 +9146,7 @@ LD Index
 * grouping input files:                  File Commands.      (line   53)
 * groups of archives:                    Options.            (line 1198)
 * H8/300 support:                        H8/300.             (line    6)
-* header size:                           Builtin Functions.  (line  190)
+* header size:                           Builtin Functions.  (line  197)
 * heap size:                             Options.            (line 2502)
 * help:                                  Options.            (line 1572)
 * HIDDEN:                                HIDDEN.             (line    6)
@@ -9196,7 +9203,7 @@ LD Index
                                                              (line  133)
 * len =:                                 MEMORY.             (line   72)
 * LENGTH =:                              MEMORY.             (line   72)
-* LENGTH(MEMORY):                        Builtin Functions.  (line  141)
+* LENGTH(MEMORY):                        Builtin Functions.  (line  144)
 * library search path in linker script:  File Commands.      (line   80)
 * link map:                              Options.            (line  506)
 * link map discarded:                    Options.            (line  561)
@@ -9219,12 +9226,12 @@ LD Index
 * little-endian objects:                 Options.            (line  304)
 * LOAD (MRI):                            MRI.                (line   76)
 * load address:                          Output Section LMA. (line    6)
-* LOADADDR(SECTION):                     Builtin Functions.  (line  144)
+* LOADADDR(SECTION):                     Builtin Functions.  (line  147)
 * loading, preventing:                   Output Section Type.
                                                              (line   49)
 * local symbols, deleting:               Options.            (line  832)
 * location counter:                      Location Counter.   (line    6)
-* LOG2CEIL(EXP):                         Builtin Functions.  (line  148)
+* LOG2CEIL(EXP):                         Builtin Functions.  (line  151)
 * LONG(EXPRESSION):                      Output Section Data.
                                                              (line    6)
 * M and K integer suffixes:              Constants.          (line   15)
@@ -9233,7 +9240,7 @@ LD Index
                                                              (line  127)
 * machine dependencies:                  Machine Dependent.  (line    6)
 * mapping input sections to output sections: Input Section.  (line    6)
-* MAX:                                   Builtin Functions.  (line  151)
+* MAX:                                   Builtin Functions.  (line  154)
 * MAXPAGESIZE:                           Symbolic Constants. (line   10)
 * MEMORY:                                MEMORY.             (line    6)
 * memory region attributes:              MEMORY.             (line   34)
@@ -9243,7 +9250,7 @@ LD Index
 * memory usage:                          Options.            (line 1560)
 * memory usage <1>:                      Options.            (line 1609)
 * Merging exidx entries:                 ARM.                (line  216)
-* MIN:                                   Builtin Functions.  (line  154)
+* MIN:                                   Builtin Functions.  (line  157)
 * MIPS branch relocation check control:  MIPS.               (line   13)
 * MIPS microMIPS instruction choice selection: MIPS.         (line    6)
 * Motorola 68K GOT generation:           M68K.               (line    6)
@@ -9255,7 +9262,7 @@ LD Index
                                                              (line    6)
 * names:                                 Symbols.            (line    6)
 * naming the output file:                Options.            (line  595)
-* NEXT(EXP):                             Builtin Functions.  (line  158)
+* NEXT(EXP):                             Builtin Functions.  (line  161)
 * Nios II call relaxation:               Nios II.            (line    6)
 * NMAGIC:                                Options.            (line  574)
 * NOCROSSREFS(SECTIONS):                 Miscellaneous Commands.
@@ -9264,7 +9271,7 @@ LD Index
                                                              (line  110)
 * NOLOAD:                                Output Section Type.
                                                              (line   49)
-* not enough room for program headers:   Builtin Functions.  (line  195)
+* not enough room for program headers:   Builtin Functions.  (line  202)
 * NO_ENUM_SIZE_WARNING:                  ARM.                (line  155)
 * NO_WCHAR_SIZE_WARNING:                 ARM.                (line  162)
 * o =:                                   MEMORY.             (line   67)
@@ -9285,7 +9292,7 @@ LD Index
 * ORDER (MRI):                           MRI.                (line   87)
 * org =:                                 MEMORY.             (line   67)
 * ORIGIN =:                              MEMORY.             (line   67)
-* ORIGIN(MEMORY):                        Builtin Functions.  (line  164)
+* ORIGIN(MEMORY):                        Builtin Functions.  (line  167)
 * orphan:                                Orphan Sections.    (line    6)
 * orphan sections:                       Options.            (line  784)
 * output file after errors:              Options.            (line 1703)
@@ -9348,7 +9355,7 @@ LD Index
 * program headers:                       PHDRS.              (line    6)
 * program headers and sections:          Output Section Phdr.
                                                              (line    6)
-* program headers, not enough room:      Builtin Functions.  (line  195)
+* program headers, not enough room:      Builtin Functions.  (line  202)
 * program segments:                      PHDRS.              (line    6)
 * PROVIDE:                               PROVIDE.            (line    6)
 * PROVIDE_HIDDEN:                        PROVIDE_HIDDEN.     (line    6)
@@ -9410,12 +9417,12 @@ LD Index
 * section groups <1>:                    Miscellaneous Commands.
                                                              (line   56)
 * section load address:                  Output Section LMA. (line    6)
-* section load address in expression:    Builtin Functions.  (line  144)
+* section load address in expression:    Builtin Functions.  (line  147)
 * section name:                          Output Section Name.
                                                              (line    6)
 * section name wildcard patterns:        Input Section Wildcards.
                                                              (line    6)
-* section size:                          Builtin Functions.  (line  175)
+* section size:                          Builtin Functions.  (line  178)
 * section, assigning to memory region:   Output Section Region.
                                                              (line    6)
 * section, assigning to program header:  Output Section Phdr.
@@ -9427,12 +9434,12 @@ LD Index
 * Secure gateway import library:         ARM.                (line  231)
 * segment origins, cmd line:             Options.            (line 1985)
 * segments, ELF:                         PHDRS.              (line    6)
-* SEGMENT_START(SEGMENT, DEFAULT):       Builtin Functions.  (line  167)
+* SEGMENT_START(SEGMENT, DEFAULT):       Builtin Functions.  (line  170)
 * shared libraries:                      Options.            (line 1903)
 * SHORT(EXPRESSION):                     Output Section Data.
                                                              (line    6)
-* SIZEOF(SECTION):                       Builtin Functions.  (line  175)
-* SIZEOF_HEADERS:                        Builtin Functions.  (line  190)
+* SIZEOF(SECTION):                       Builtin Functions.  (line  178)
+* SIZEOF_HEADERS:                        Builtin Functions.  (line  197)
 * small common symbols:                  Input Section Common.
                                                              (line   20)
 * SORT:                                  Input Section Wildcards.
@@ -9469,7 +9476,7 @@ LD Index
 * SUBALIGN(SUBSECTION_ALIGN):            Forced Input Alignment.
                                                              (line    6)
 * suffixes for integers:                 Constants.          (line   15)
-* symbol defaults:                       Builtin Functions.  (line  124)
+* symbol defaults:                       Builtin Functions.  (line  127)
 * symbol definition, scripts:            Assignments.        (line    6)
 * symbol names:                          Symbols.            (line    6)
 * symbol tracing:                        Options.            (line  838)
@@ -9491,7 +9498,7 @@ LD Index
 * traditional format:                    Options.            (line 1964)
 * trampoline generation on M68HC11:      M68HC11/68HC12.     (line   30)
 * trampoline generation on M68HC12:      M68HC11/68HC12.     (line   30)
-* unallocated address, next:             Builtin Functions.  (line  158)
+* unallocated address, next:             Builtin Functions.  (line  161)
 * undefined symbol:                      Options.            (line  748)
 * undefined symbol in linker script:     Miscellaneous Commands.
                                                              (line   39)
@@ -9586,37 +9593,37 @@ Node: Operators249543
 Node: Evaluation250573
 Node: Expression Section251937
 Node: Builtin Functions255907
-Node: Implicit Linker Scripts264241
-Node: Plugins265016
-Node: libdep Plugin265573
-Node: Machine Dependent267370
-Node: H8/300268458
-Node: M68HC11/68HC12270531
-Node: ARM271978
-Node: HPPA ELF32284088
-Node: M68K285711
-Node: MIPS286620
-Node: MMIX287736
-Node: MSP430288901
-Node: NDS32290814
-Node: Nios II291778
-Node: PowerPC ELF32293094
-Node: PowerPC64 ELF64295925
-Node: S/390 ELF305683
-Node: SPU ELF306030
-Node: TI COFF308658
-Node: WIN32309184
-Node: Xtensa330403
-Node: BFD333846
-Node: BFD outline335304
-Node: BFD information loss336592
-Node: Canonical format339118
-Node: Reporting Bugs343446
-Node: Bug Criteria344140
-Node: Bug Reporting344839
-Node: MRI351874
-Node: GNU Free Documentation License356345
-Node: LD Index381482
+Node: Implicit Linker Scripts264686
+Node: Plugins265461
+Node: libdep Plugin266018
+Node: Machine Dependent267815
+Node: H8/300268903
+Node: M68HC11/68HC12270976
+Node: ARM272423
+Node: HPPA ELF32284533
+Node: M68K286156
+Node: MIPS287065
+Node: MMIX288181
+Node: MSP430289346
+Node: NDS32291259
+Node: Nios II292223
+Node: PowerPC ELF32293539
+Node: PowerPC64 ELF64296370
+Node: S/390 ELF306128
+Node: SPU ELF306475
+Node: TI COFF309103
+Node: WIN32309629
+Node: Xtensa330848
+Node: BFD334291
+Node: BFD outline335749
+Node: BFD information loss337037
+Node: Canonical format339563
+Node: Reporting Bugs343891
+Node: Bug Criteria344585
+Node: Bug Reporting345284
+Node: MRI352319
+Node: GNU Free Documentation License356790
+Node: LD Index381927
 
 End Tag Table
 
