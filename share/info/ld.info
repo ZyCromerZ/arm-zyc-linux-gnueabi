@@ -5726,7 +5726,7 @@ the standard bindings and precedence levels:
      10              left            &&
      11              left            ||
      12              right           ? :
-     13              right           +=  -=  *=  /=  <<=  >>=  &=  |=    (2)
+     13              right           +=  -=  *=  /=  <<=  >>=  &=  |= ^= (2)
      (lowest)
    Notes: (1) Prefix operators (2) *Note Assignments::.
 
