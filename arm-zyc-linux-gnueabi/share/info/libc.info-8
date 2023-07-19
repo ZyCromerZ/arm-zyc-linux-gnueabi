@@ -8339,7 +8339,7 @@ gammaf        5               5               7
 gamma         4               4               4
 gammal        4               4               4
 gammaf128     -               -               -
-hypotf        -               -               1
+hypotf        1               -               1
 hypot         1               1               1
 hypotl        1               1               1
 hypotf128     1               1               1
