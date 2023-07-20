@@ -34,7 +34,7 @@
 #define _GLIBCXX_RELEASE 13
 
 // The datestamp of the C++ library in compressed ISO date format.
-#define __GLIBCXX__ 20230719
+#define __GLIBCXX__ 20230720
 
 // Macros for various attributes.
 //   _GLIBCXX_PURE
@@ -1842,6 +1842,9 @@ namespace __gnu_cxx
 
 /* Define if get_nprocs is available in <sys/sysinfo.h>. */
 #define _GLIBCXX_USE_GET_NPROCS 1
+
+/* Define if init_priority should be used for iostream initialization. */
+#define _GLIBCXX_USE_INIT_PRIORITY_ATTRIBUTE 1
 
 /* Define if LFS support is available. */
 #define _GLIBCXX_USE_LFS 1
